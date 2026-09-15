@@ -1,0 +1,8 @@
+# Ubuntu 22.04 / Python 3.10. ROS dependencies are installed with apt/rosdep.
+numpy>=1.23,<2
+scipy>=1.10,<1.15
+opencv-python>=4.8,<4.12
+# best.pt metadata reports yolo26m-seg; use a YOLO26-capable release.
+ultralytics>=8.4,<9
+pytest>=7,<9
+PyYAML>=6,<7

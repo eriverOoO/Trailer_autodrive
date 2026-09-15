@@ -104,10 +104,13 @@ def _front_left_wheel_visual_center_local_xy(source_root):
     return (link_x, link_y), (visual_x, visual_y), (center_x, center_y)
 
 
-def _choose_random_ego_pose(source_root):
+def _choose_random_ego_pose(source_root, start_index=0):
     """Choose one target and place the model so its FL tire visual center is there."""
-    point_index, (target_pixel, target) = random.choice(
-        tuple(enumerate(IN_START_TARGETS, start=1)))
+    choices = tuple(enumerate(IN_START_TARGETS, start=1))
+    if start_index not in range(5):
+        raise ValueError('start_index must be 0 (random) or 1..4')
+    point_index, (target_pixel, target) = (
+        choices[start_index-1] if start_index else random.choice(choices))
     target_x, target_y, target_z, _, _, original_yaw = target
     corrected_yaw = math.atan2(
         math.sin(original_yaw + math.pi), math.cos(original_yaw + math.pi))
@@ -234,9 +237,33 @@ def _pose(x, y, z, yaw):
     return pose
 
 
+def _with_parking_lidar(xml, name):
+    """Optional 360-degree rear-axle scan; only used by fused parking launch."""
+    root = ET.fromstring(xml)
+    chassis = root.find("model/link[@name='chassis']")
+    mount_y = -2.45 if name == 'tractor' else 2.45
+    chassis.append(ET.fromstring(f'''
+      <sensor name="parking_{name}_scan" type="ray">
+        <pose>0 {mount_y} 0.5 0 0 -1.5707963267948966</pose>
+        <always_on>true</always_on><update_rate>15</update_rate>
+        <ray><scan><horizontal><samples>720</samples><resolution>1</resolution>
+          <min_angle>-3.141592653589793</min_angle><max_angle>3.141592653589793</max_angle>
+        </horizontal></scan><range><min>0.15</min><max>20</max><resolution>0.01</resolution></range>
+        <noise><type>gaussian</type><mean>0</mean><stddev>0.01</stddev></noise></ray>
+        <plugin name="parking_{name}_lidar" filename="libgazebo_ros_ray_sensor.so">
+          <ros><remapping>~/out:=/parking/{name}/scan</remapping></ros>
+          <output_type>sensor_msgs/LaserScan</output_type>
+          <frame_name>{name}_rear_axle</frame_name>
+        </plugin>
+      </sensor>'''))
+    return ET.tostring(root, encoding='unicode')
+
+
 class TowingSystemLoader(Node):
     def __init__(self):
         super().__init__('towing_system_loader')
+        self.start_index = self.declare_parameter('start_index', 0).value
+        self.parking_lidar = self.declare_parameter('parking_lidar', False).value
         self.spawn_client = self.create_client(SpawnEntity, '/spawn_entity')
 
     def spawn(self, name, xml, pose):
@@ -261,11 +288,14 @@ class TowingSystemLoader(Node):
         source = _read_prius_model()
         tractor_xml = _tractor_xml(source)
         trailer_xml = _trailer_xml(source)
+        if self.parking_lidar:
+            tractor_xml = _with_parking_lidar(tractor_xml, 'tractor')
+            trailer_xml = _with_parking_lidar(trailer_xml, 'trailer')
         static_xml = _static_prius_xml(source)
 
         (point_index, target_pixel, target, original_yaw, corrected_yaw,
          link_local_xy, visual_local_xy, center_local_xy, ego_pose,
-         expected_fl_xy, target_error) = _choose_random_ego_pose(source)
+         expected_fl_xy, target_error) = _choose_random_ego_pose(source, self.start_index)
         target_x, target_y, _, _, _, _ = target
         link_local_x, link_local_y = link_local_xy
         visual_local_x, visual_local_y = visual_local_xy

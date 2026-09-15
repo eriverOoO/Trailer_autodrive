@@ -15,3 +15,9 @@ install/
 .idea/
 .DS_Store
 Thumbs.db
+
+# Local reference checkout and parking test/training outputs
+.reference/
+.venv-parking/
+artifacts/
+runs/

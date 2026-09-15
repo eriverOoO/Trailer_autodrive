@@ -1,0 +1,9 @@
+# Replace path with your labelled dataset; same classes as repository best.pt.
+path: /absolute/path/to/parking_dataset
+train: images/train
+val: images/val
+test: images/test
+names:
+  0: parking_space
+  1: car_front
+  2: car_back
