@@ -1,0 +1,17 @@
+# Python-generated files
+__pycache__/
+*.py[cod]
+
+# Runtime logs
+log/
+*.log
+
+# ROS/colcon build outputs
+build/
+install/
+
+# Editor and OS metadata
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
