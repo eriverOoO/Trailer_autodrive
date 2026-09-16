@@ -25,6 +25,7 @@ class ParkingController(Node):
         self.speed = self.declare_parameter('parking_speed', 0.30).value
         self.motor_pwm = int(self.declare_parameter('parking_pwm', 90).value)
         self.steer_steps = int(self.declare_parameter('steer_steps', 7).value)
+        self.steering_sign = int(self.declare_parameter('steering_sign', -1).value)
         self.planning_timeout = self.declare_parameter('planning_timeout', 50.0).value
         self.scene_bounds = tuple(self.declare_parameter('bounds', [-19.5, 19.5, -26.0, 26.0]).value)
         self.safety_margin = self.declare_parameter('collision_margin', 0.18).value
@@ -32,7 +33,7 @@ class ParkingController(Node):
         self.g = Geometry()
         self.actuation = StrollerActuation(max_steer_rad=self.g.max_steer,
             max_steer_step=self.steer_steps, reference_speed_mps=self.speed,
-            reference_pwm=self.motor_pwm)
+            reference_pwm=self.motor_pwm, steering_sign=self.steering_sign)
         self.slot, self.tracker, self.future = None, None, None
         self.slot_candidate, self.slot_count, self.last_slot_stamp = None, 0, None
         self.obstacle_memory = {}

@@ -1,4 +1,5 @@
 // Stroller controller compatible with: s<steer>l<left_pwm>r<right_pwm>\n
+// Original hardware convention: steering -7 = left, +7 = right.
 const unsigned int MAX_INPUT = 20;
 const int STEERING_1 = 3;
 const int STEERING_2 = 2;

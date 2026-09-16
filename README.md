@@ -94,7 +94,8 @@ beta_rate = trailer_yaw_rate - tractor_yaw_rate
 오차를 함께 줄이며 기어 전환을 건너뛰지 않습니다.
 
 경로 추종기의 최종 출력은 실차와 같은 `interfaces_pkg/MotionCommand`입니다.
-`steering`은 -7~7, 좌·우 속도는 부호 있는 PWM -255~255이며 기본 0.30m/s를
+`steering`은 -7~7(원본 유아차 기준 -7=좌, +7=우), 좌·우 속도는 부호 있는
+PWM -255~255이며 기본 0.30m/s를
 PWM 90에 대응시킵니다. 두 구동륜에는 같은 PWM을 주고 전륜 조향을 별도로 제어합니다.
 Gazebo Classic Ackermann 플러그인은 `Twist.angular.z`를 조향각으로 사용하고
 후진일 때 부호를 내부에서 뒤집으므로, 이 차이는 시뮬레이션 어댑터에서만 보상합니다.
@@ -177,7 +178,7 @@ ros2 launch trailer_parking_pkg parallel_camera_yolo_hardware.launch.py \
   -> Arduino 전륜 조향 + 좌/우 구동 모터
 ```
 
-`parking_pwm:=90`, `steer_steps:=7`이 원본 유아차 기본값입니다. 실제 속도와
+`parking_pwm:=90`, `steer_steps:=7`, `steering_sign:=-1`이 원본 유아차 기본값입니다. 실제 속도와
 `speed:=0.30`의 대응은 엔코더나 실측 거리로 다시 보정해야 합니다. 최초 시험은
 구동륜을 바닥에서 띄우고 `s0l0r0`, 저속 전진, 저속 후진, ±1 조향 순서로 확인한 뒤
 진행해야 합니다. 물리 비상정지 장치 없이 자동주차 시험을 시작하면 안 됩니다.

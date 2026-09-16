@@ -8,6 +8,8 @@ class StrollerActuation:
     """Limits used by the existing MotionCommand -> Arduino serial pipeline."""
     max_steer_rad: float = 0.60
     max_steer_step: int = 7
+    # Supplied stroller firmware: negative step is left, positive is right.
+    steering_sign: int = -1
     reference_speed_mps: float = 0.30
     reference_pwm: int = 90
     max_pwm: int = 255
@@ -15,7 +17,7 @@ class StrollerActuation:
     def __post_init__(self):
         if (not math.isfinite(self.max_steer_rad) or self.max_steer_rad <= 0 or
                 not math.isfinite(self.reference_speed_mps) or self.reference_speed_mps <= 0 or
-                not 1 <= self.max_steer_step <= 7 or
+                not 1 <= self.max_steer_step <= 7 or self.steering_sign not in (-1, 1) or
                 not 1 <= self.reference_pwm <= self.max_pwm <= 255):
             raise ValueError('Invalid stroller actuation limits')
 
@@ -29,7 +31,8 @@ def motion_values(speed_mps, steering_rad, limits=StrollerActuation()):
     """
     if not math.isfinite(speed_mps) or not math.isfinite(steering_rad):
         raise ValueError('Non-finite actuation command')
-    steer = round(steering_rad / limits.max_steer_rad * limits.max_steer_step)
+    steer = round(steering_rad / limits.max_steer_rad *
+                  limits.max_steer_step * limits.steering_sign)
     steer = max(-limits.max_steer_step, min(limits.max_steer_step, steer))
     pwm = round(speed_mps / limits.reference_speed_mps * limits.reference_pwm)
     pwm = max(-limits.max_pwm, min(limits.max_pwm, pwm))
