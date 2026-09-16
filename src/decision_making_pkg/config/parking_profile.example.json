@@ -1,0 +1,34 @@
+{
+  "tuned": false,
+  "note": "Template, NOT measured. Record /parking_bboxes (record_only:=true) with the car stopped at the END of each stage, copy front/rear [cx, cy, w, h] into targets, then set tuned=true. steering: Arduino -7 left .. +7 right. pwm: + forward, - reverse. tolerance 1.0 ignores that element; omit a camera to ignore it for a stage.",
+  "stages": [
+    {
+      "name": "APPROACH",
+      "steering": 0,
+      "pwm": 90,
+      "timeout": 10.0,
+      "targets": {
+        "front": {"class": "parking_space", "box": [0.20, 0.55, 0.30, 0.12], "tolerance": [0.05, 0.05, 0.03, 0.03]}
+      }
+    },
+    {
+      "name": "REVERSE_ENTRY",
+      "steering": 7,
+      "pwm": -90,
+      "timeout": 10.0,
+      "targets": {
+        "rear": {"class": "car_front", "box": [0.50, 0.50, 0.30, 0.25], "tolerance": [0.05, 0.05, 0.03, 0.03]}
+      }
+    },
+    {
+      "name": "COUNTERSTEER",
+      "steering": -7,
+      "pwm": -90,
+      "timeout": 10.0,
+      "targets": {
+        "front": {"class": "car_back", "box": [0.50, 0.50, 0.40, 0.30], "tolerance": [0.05, 0.05, 0.03, 0.03]},
+        "rear": {"class": "car_front", "box": [0.50, 0.50, 0.45, 0.35], "tolerance": [0.05, 0.05, 0.03, 0.03]}
+      }
+    }
+  ]
+}

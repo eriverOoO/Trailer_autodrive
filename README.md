@@ -1,5 +1,44 @@
 # Trailer Autodrive — 전후방 카메라 기반 평행주차
 
+## bbox 기준 주차 노드 (`decision_making_pkg/parking_node`)
+
+기존 구조에 주차 노드 하나만 추가한 방식입니다.
+
+```text
+camera_perception_pkg/yolov8_node ×2 (전방/후방) -> detections_front / detections_rear
+  -> decision_making_pkg/parking_node -> topic_control_signal
+  -> simulation_sender_node(시뮬) 또는 serial_sender_node(아두이노)
+```
+
+단계별 bbox 기준값과 명령은
+[`config/parking_profile.example.json`](src/decision_making_pkg/config/parking_profile.example.json)
+형식으로 작성합니다. 각 단계는 설정한 조향(-7 왼쪽 ~ +7 오른쪽)과 PWM(+전진, -후진)으로
+움직이다가, 설정한 카메라 bbox의 정규화 `cx, cy, w, h`가 허용오차 안에 들어오면 정지합니다.
+새 프레임 5장으로 확인한 뒤 다음 단계로 넘어갑니다. 대상이 안 보이거나 같은 클래스가 여러 개
+보이거나, 영상이 오래됐거나 단계 제한시간을 넘으면 명령 0으로 멈춥니다.
+템플릿 값은 실측값이 아니며 `tuned: false`에서는 실행되지 않습니다.
+
+```bash
+# 다른 PC: git lfs install && git lfs pull  (best.pt는 LFS 파일)
+colcon build && source install/setup.bash
+
+# 1) 기준값 수집: 모터 0, 차량을 각 단계 끝 위치에 두고 bbox 기록
+ros2 launch decision_making_pkg parking.launch.py weights:=$(pwd)/best.pt record_only:=true
+ros2 topic echo /parking_bboxes
+
+# 2) 주차 실행 (시뮬 / 실차)
+ros2 launch decision_making_pkg parking.launch.py weights:=$(pwd)/best.pt profile:=/abs/profile.json
+ros2 launch decision_making_pkg parking.launch.py sim:=false port:=/dev/ttyACM0 \
+  weights:=$(pwd)/best.pt profile:=/abs/profile.json device:=cuda:0
+```
+
+상태는 `/parking_status`에 발행됩니다. CPU YOLO는 카메라당 약 1.7Hz라서 영상 신선도 기준
+`stale_timeout`의 기본값을 1.0초로 두었습니다.
+
+---
+
+아래는 이전의 경로계획 방식(`trailer_parking_pkg`) 설명입니다.
+
 ROS 2 Humble / Ubuntu 22.04 / Gazebo Classic용 실험 구현입니다.
 `trailer_parking_pkg`에 **LiDAR + YOLO**와 **카메라 + YOLO 전용** 실행 파일을
 추가했습니다. 둘 다 견인차 전방 카메라와 트레일러 후방 카메라를 사용합니다.

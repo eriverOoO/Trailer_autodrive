@@ -282,8 +282,8 @@ class TowingSystemLoader(Node):
 
     def load_all(self):
         self.get_logger().info('Waiting for Gazebo /spawn_entity service...')
-        if not self.spawn_client.wait_for_service(timeout_sec=30.0):
-            raise RuntimeError('Gazebo /spawn_entity service was not available after 30 s')
+        if not self.spawn_client.wait_for_service(timeout_sec=90.0):
+            raise RuntimeError('Gazebo /spawn_entity service was not available after 90 s')
 
         source = _read_prius_model()
         tractor_xml = _tractor_xml(source)
