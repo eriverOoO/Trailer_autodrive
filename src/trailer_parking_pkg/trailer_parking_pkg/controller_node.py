@@ -7,11 +7,13 @@ import rclpy
 from rclpy.node import Node
 from rclpy.qos import qos_profile_sensor_data
 from sensor_msgs.msg import LaserScan
-from geometry_msgs.msg import Twist, PoseStamped
+from geometry_msgs.msg import PoseStamped
 from nav_msgs.msg import Path
 from std_msgs.msg import String
+from interfaces_pkg.msg import MotionCommand
 from .core import (Geometry, State, Scene, Slot, Tracker, PlanningError, plan,
-                   goal_reached, trailer_pose, wrap, gazebo_command, advance)
+                   goal_reached, trailer_pose, wrap, advance)
+from .actuation import StrollerActuation, motion_values
 from .sensors import fresh, scan_obstacles
 
 
@@ -21,18 +23,23 @@ class ParkingController(Node):
         self.use_lidar = use_lidar
         self.timeout = self.declare_parameter('sensor_timeout', 0.8).value
         self.speed = self.declare_parameter('parking_speed', 0.30).value
+        self.motor_pwm = int(self.declare_parameter('parking_pwm', 90).value)
+        self.steer_steps = int(self.declare_parameter('steer_steps', 7).value)
         self.planning_timeout = self.declare_parameter('planning_timeout', 50.0).value
         self.scene_bounds = tuple(self.declare_parameter('bounds', [-19.5, 19.5, -26.0, 26.0]).value)
         self.safety_margin = self.declare_parameter('collision_margin', 0.18).value
         self.observations, self.scans = {}, {}
         self.g = Geometry()
+        self.actuation = StrollerActuation(max_steer_rad=self.g.max_steer,
+            max_steer_step=self.steer_steps, reference_speed_mps=self.speed,
+            reference_pwm=self.motor_pwm)
         self.slot, self.tracker, self.future = None, None, None
         self.slot_candidate, self.slot_count, self.last_slot_stamp = None, 0, None
         self.obstacle_memory = {}
         self.phase = ''
         self.fault = None
         self.executor_pool = ThreadPoolExecutor(max_workers=1)
-        self.publisher = self.create_publisher(Twist, '/parking/raw_cmd', 1)
+        self.publisher = self.create_publisher(MotionCommand, '/parking/raw_motion_command', 1)
         self.status_pub = self.create_publisher(String, '/parking/status', 5)
         self.path_pub = self.create_publisher(Path, '/parking/path', 1)
         for camera in ('front', 'rear'):
@@ -80,8 +87,14 @@ class ParkingController(Node):
         self.status_pub.publish(msg)
 
     def stop(self, why):
-        self.publisher.publish(Twist())
+        self.publish_motion(0.0, 0.0)
         self.status(why)
+
+    def publish_motion(self, speed, steering):
+        values = motion_values(speed, steering, self.actuation)
+        msg = MotionCommand()
+        msg.steering, msg.left_speed, msg.right_speed = values
+        self.publisher.publish(msg)
 
     def inputs(self, now):
         if any(name not in self.observations for name in ('front', 'rear')):
@@ -187,9 +200,7 @@ class ParkingController(Node):
                 if not scene.free(q, self.g):
                     self.stop('STOP_SEARCH_OBSTACLE')
                     return
-            msg = Twist()
-            msg.linear.x = 0.12
-            self.publisher.publish(msg)
+            self.publish_motion(0.12, 0.0)
             self.status('APPROACH_VISIBLE_SLOT')
             return
         if goal_reached(state, self.slot, self.g):
@@ -247,9 +258,7 @@ class ParkingController(Node):
         if time.monotonic()-self.last_change < 0.6:
             self.stop('GEAR_CHANGE_SETTLE')
             return
-        msg = Twist()
-        msg.linear.x, msg.angular.z = gazebo_command(v, steer)
-        self.publisher.publish(msg)
+        self.publish_motion(v, steer)
         self.status('TRACK_FORWARD' if v > 0 else 'TRACK_REVERSE' if v < 0 else 'TRACK_HOLD')
 
     def publish_path(self, path):
@@ -274,7 +283,7 @@ def run(use_lidar, args=None):
     except KeyboardInterrupt:
         pass
     finally:
-        node.publisher.publish(Twist())
+        node.publish_motion(0.0, 0.0)
         node.executor_pool.shutdown(wait=False, cancel_futures=True)
         node.destroy_node()
         rclpy.shutdown()

@@ -6,3 +6,4 @@ opencv-python>=4.8,<4.12
 ultralytics>=8.4,<9
 pytest>=7,<9
 PyYAML>=6,<7
+pyserial>=3.5,<4

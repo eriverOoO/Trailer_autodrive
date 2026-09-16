@@ -93,8 +93,11 @@ beta_rate = trailer_yaw_rate - tractor_yaw_rate
 두 차체와 히치의 장애물 충돌을 다시 검사합니다. 추종기는 위치·차체 방향·연결각
 오차를 함께 줄이며 기어 전환을 건너뛰지 않습니다.
 
+경로 추종기의 최종 출력은 실차와 같은 `interfaces_pkg/MotionCommand`입니다.
+`steering`은 -7~7, 좌·우 속도는 부호 있는 PWM -255~255이며 기본 0.30m/s를
+PWM 90에 대응시킵니다. 두 구동륜에는 같은 PWM을 주고 전륜 조향을 별도로 제어합니다.
 Gazebo Classic Ackermann 플러그인은 `Twist.angular.z`를 조향각으로 사용하고
-후진일 때 부호를 내부에서 뒤집습니다. 이를 `gazebo_command()`에서 보상합니다.
+후진일 때 부호를 내부에서 뒤집으므로, 이 차이는 시뮬레이션 어댑터에서만 보상합니다.
 [플러그인 원문](https://github.com/ros-simulation/gazebo_ros_pkgs/blob/ros2/gazebo_plugins/src/gazebo_ros_ackermann_drive.cpp)
 의 `OnUpdate`를 기준으로 했습니다. 일반 differential-drive `/cmd_vel`과 의미가 다릅니다.
 
@@ -108,12 +111,13 @@ source /opt/ros/humble/setup.bash
 sudo apt update
 sudo apt install ros-humble-gazebo-ros-pkgs ros-humble-cv-bridge \
   ros-humble-ackermann-msgs python3-colcon-common-extensions \
-  python3-venv python3-numpy python3-scipy python3-opencv
+  python3-venv python3-numpy python3-scipy python3-opencv python3-serial
 python3 -m venv --system-site-packages .venv-parking-linux
 source .venv-parking-linux/bin/activate
 python -m pip install -r requirements-parking.txt
 colcon build --symlink-install --packages-select \
-  interfaces_pkg simulation_trailer_plugins simulation_pkg trailer_parking_pkg
+  interfaces_pkg serial_communication_pkg simulation_trailer_plugins \
+  simulation_pkg trailer_parking_pkg
 source install/setup.bash
 ```
 
@@ -136,6 +140,47 @@ ros2 launch trailer_parking_pkg parallel_lidar_yolo.launch.py \
 ros2 launch trailer_parking_pkg parallel_camera_yolo.launch.py \
   weights:="$(pwd)/best.pt" start_index:=1 device:=cpu
 ```
+
+두 시뮬레이션 실행도 내부적으로 실차와 같은 `topic_control_signal`을 만들고,
+`simulation_sender_node`만 이를 `/cmd_vel`로 변환합니다.
+
+## 실제 유아차 실행
+
+아두이노에는 [실차 펌웨어](src/control/driving/driving.ino)를 업로드합니다. 원본과 같은
+115200bps 및 `s<조향>l<좌PWM>r<우PWM>\n` 형식을 사용하며, 통신이 300ms 끊기면
+구동 모터를 정지하도록 fail-safe를 추가했습니다.
+
+실차에서는 시뮬레이션 SDF 보정을 사용하지 않습니다. 전후방 카메라 외부 파라미터,
+두 차체 치수와 초기 자세를 실측한 JSON을 반드시 `calibration`으로 전달합니다.
+
+```bash
+# A. 실차 LiDAR + 전후방 YOLO
+ros2 launch trailer_parking_pkg parallel_lidar_yolo_hardware.launch.py \
+  weights:="$(pwd)/best.pt" calibration:="$(pwd)/real_calibration.json" \
+  port:=/dev/ttyACM0 tractor_scan:=/scan trailer_scan:=/rear_scan
+
+# B. 실차 전후방 카메라 + YOLO 전용
+ros2 launch trailer_parking_pkg parallel_camera_yolo_hardware.launch.py \
+  weights:="$(pwd)/best.pt" calibration:="$(pwd)/real_calibration.json" \
+  port:=/dev/ttyACM0
+```
+
+제어 흐름은 다음과 같습니다.
+
+```text
+경로 추종기
+  -> /parking/raw_motion_command (MotionCommand)
+  -> 250ms wall-clock watchdog / 범위 검사
+  -> topic_control_signal
+  -> serial_sender_node
+  -> 115200bps: s0l90r90\n
+  -> Arduino 전륜 조향 + 좌/우 구동 모터
+```
+
+`parking_pwm:=90`, `steer_steps:=7`이 원본 유아차 기본값입니다. 실제 속도와
+`speed:=0.30`의 대응은 엔코더나 실측 거리로 다시 보정해야 합니다. 최초 시험은
+구동륜을 바닥에서 띄우고 `s0l0r0`, 저속 전진, 저속 후진, ±1 조향 순서로 확인한 뒤
+진행해야 합니다. 물리 비상정지 장치 없이 자동주차 시험을 시작하면 안 됩니다.
 
 GPU가 구성된 환경은 `device:=cuda:0`를 사용합니다. CPU에서 두 카메라의 추론 지연이
 크면 freshness 조건 때문에 정지할 수 있습니다. 지연을 실제로 측정하고 모델 크기나

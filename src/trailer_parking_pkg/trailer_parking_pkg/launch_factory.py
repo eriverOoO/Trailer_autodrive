@@ -17,6 +17,10 @@ def parking_launch(use_lidar):
         start = int(value('start_index'))
         if start not in range(1, 5):
             raise RuntimeError('start_index must be 1..4 for calibrated visual initialization')
+        speed, parking_pwm, steer_steps = (float(value('speed')),
+            int(value('parking_pwm')), int(value('steer_steps')))
+        if speed <= 0 or not 1 <= parking_pwm <= 255 or not 1 <= steer_steps <= 7:
+            raise RuntimeError('speed>0, parking_pwm=1..255 and steer_steps=1..7 required')
         sim = Path(get_package_share_directory('simulation_pkg'))
         # Package-local loader is installed as Python source, including symlink install.
         import importlib.util
@@ -34,9 +38,14 @@ def parking_launch(use_lidar):
             Node(package='simulation_pkg', executable='load_towing_system_node', output='screen',
                  parameters=[{'start_index': start, 'parking_lidar': use_lidar, 'use_sim_time': True}]),
             Node(package='trailer_parking_pkg', executable='parking_command_guard', output='screen'),
+            Node(package='simulation_pkg', executable='sim_simulation_sender_node', output='screen',
+                 parameters=[{'max_speed': speed * 255.0 / parking_pwm,
+                              'max_steer': 0.60}]),
             Node(package='trailer_parking_pkg',
                  executable='parallel_lidar_yolo' if use_lidar else 'parallel_camera_yolo',
-                 parameters=[{'use_sim_time': True, 'parking_speed': float(value('speed')),
+                 parameters=[{'use_sim_time': True, 'parking_speed': speed,
+                              'parking_pwm': parking_pwm,
+                              'steer_steps': steer_steps,
                               'sensor_timeout': float(value('sensor_timeout'))}], output='screen')]
         for camera, topic in [('front', 'camera'), ('rear', 'rear_camera')]:
             actions.append(Node(package='trailer_parking_pkg', executable='parking_vision',
@@ -52,6 +61,8 @@ def parking_launch(use_lidar):
         DeclareLaunchArgument('start_index', default_value='1'),
         DeclareLaunchArgument('gui', default_value='true'),
         DeclareLaunchArgument('speed', default_value='0.30'),
+        DeclareLaunchArgument('parking_pwm', default_value='90'),
+        DeclareLaunchArgument('steer_steps', default_value='7'),
         DeclareLaunchArgument('sensor_timeout', default_value='0.8'),
         DeclareLaunchArgument('calibration', default_value=''),
         DeclareLaunchArgument('front_image', default_value='/camera/image_raw'),
@@ -59,3 +70,66 @@ def parking_launch(use_lidar):
         DeclareLaunchArgument('rear_image', default_value='/rear_camera/image_raw'),
         DeclareLaunchArgument('rear_info', default_value='/rear_camera/camera_info'),
         OpaqueFunction(function=setup)])
+
+
+def hardware_parking_launch(use_lidar):
+    """Real stroller: cameras/LiDAR -> planner -> MotionCommand -> Arduino."""
+    def setup(context):
+        value = lambda key: LaunchConfiguration(key).perform(context)
+        weights = str(Path(value('weights')).expanduser().resolve())
+        calibration = str(Path(value('calibration')).expanduser().resolve())
+        if not Path(weights).is_file():
+            raise RuntimeError('Supply weights:=/absolute/path/to/parking/best.pt')
+        if not Path(calibration).is_file():
+            raise RuntimeError('Real hardware requires calibration:=/absolute/path/to/measured.json')
+        speed, parking_pwm, steer_steps = (float(value('speed')),
+            int(value('parking_pwm')), int(value('steer_steps')))
+        if speed <= 0 or not 1 <= parking_pwm <= 255 or not 1 <= steer_steps <= 7:
+            raise RuntimeError('speed>0, parking_pwm=1..255 and steer_steps=1..7 required')
+        vision_params = dict(weights=weights, device=value('device'),
+                             calibration=calibration, use_sim_time=False)
+        controller_remaps = []
+        if use_lidar:
+            controller_remaps = [('/parking/tractor/scan', value('tractor_scan')),
+                                 ('/parking/trailer/scan', value('trailer_scan'))]
+        actions = [
+            Node(package='trailer_parking_pkg', executable='parking_command_guard', output='screen'),
+            Node(package='serial_communication_pkg', executable='serial_sender_node', output='screen',
+                 parameters=[{'port': value('port'), 'baud': int(value('baud')),
+                              'startup_delay': float(value('serial_startup_delay'))}]),
+            Node(package='trailer_parking_pkg',
+                 executable='parallel_lidar_yolo' if use_lidar else 'parallel_camera_yolo',
+                 parameters=[{'use_sim_time': False, 'parking_speed': speed,
+                              'parking_pwm': parking_pwm,
+                              'steer_steps': steer_steps,
+                              'sensor_timeout': float(value('sensor_timeout'))}],
+                 remappings=controller_remaps, output='screen')]
+        for camera in ('front', 'rear'):
+            actions.append(Node(package='trailer_parking_pkg', executable='parking_vision',
+                name=f'parking_{camera}_vision', parameters=[vision_params, {'camera': camera}],
+                remappings=[('image', value(f'{camera}_image')),
+                            ('camera_info', value(f'{camera}_info')),
+                            ('observation', f'/parking/{camera}/observation')], output='screen'))
+        return actions
+
+    arguments = [
+        DeclareLaunchArgument('weights', description='YOLO segmentation weights'),
+        DeclareLaunchArgument('calibration', description='Measured real-stroller camera/geometry JSON'),
+        DeclareLaunchArgument('device', default_value='cpu'),
+        DeclareLaunchArgument('speed', default_value='0.30'),
+        DeclareLaunchArgument('parking_pwm', default_value='90'),
+        DeclareLaunchArgument('steer_steps', default_value='7'),
+        DeclareLaunchArgument('sensor_timeout', default_value='0.8'),
+        DeclareLaunchArgument('port', default_value='/dev/ttyACM0'),
+        DeclareLaunchArgument('baud', default_value='115200'),
+        DeclareLaunchArgument('serial_startup_delay', default_value='4.5'),
+        DeclareLaunchArgument('front_image', default_value='/camera/image_raw'),
+        DeclareLaunchArgument('front_info', default_value='/camera/camera_info'),
+        DeclareLaunchArgument('rear_image', default_value='/rear_camera/image_raw'),
+        DeclareLaunchArgument('rear_info', default_value='/rear_camera/camera_info')]
+    if use_lidar:
+        arguments.extend([
+            DeclareLaunchArgument('tractor_scan', default_value='/scan'),
+            DeclareLaunchArgument('trailer_scan', default_value='/rear_scan')])
+    arguments.append(OpaqueFunction(function=setup))
+    return LaunchDescription(arguments)
