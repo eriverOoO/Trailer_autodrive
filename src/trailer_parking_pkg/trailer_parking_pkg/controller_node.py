@@ -1,5 +1,6 @@
 """Two entry points share one articulated controller and differ in required sensors."""
 from concurrent.futures import ThreadPoolExecutor
+from dataclasses import replace
 import json
 import math
 import time
@@ -29,6 +30,15 @@ class ParkingController(Node):
         self.planning_timeout = self.declare_parameter('planning_timeout', 50.0).value
         self.scene_bounds = tuple(self.declare_parameter('bounds', [-19.5, 19.5, -26.0, 26.0]).value)
         self.safety_margin = self.declare_parameter('collision_margin', 0.18).value
+        self.scan_offsets = {
+            'tractor': tuple(self.declare_parameter('tractor_scan_offset', [3.90, 0.0, 0.0]).value),
+            'trailer': tuple(self.declare_parameter('trailer_scan_offset', [-1.0, 0.0, 0.0]).value),
+        }
+        if not math.isfinite(self.safety_margin) or self.safety_margin < 0 or any(
+                len(offset) != 3 or not all(isinstance(v, (int, float)) and math.isfinite(v)
+                                            for v in offset)
+                for offset in self.scan_offsets.values()):
+            raise ValueError('Invalid collision margin or LaserScan mounting offset')
         self.observations, self.scans = {}, {}
         self.g = Geometry()
         self.actuation = StrollerActuation(max_steer_rad=self.g.max_steer,
@@ -109,6 +119,8 @@ class ParkingController(Node):
         self.g = Geometry(**front['geometry'])
         if front['geometry'] != rear['geometry']:
             raise ValueError('STOP_GEOMETRY_MISMATCH')
+        if self.actuation.max_steer_rad != self.g.max_steer:
+            self.actuation = replace(self.actuation, max_steer_rad=self.g.max_steer)
         x, y, yaw = front['pose']
         tx, ty, tyaw = rear['pose']
         state = State(x, y, yaw, wrap(tyaw-yaw))
@@ -123,8 +135,9 @@ class ParkingController(Node):
                 self.obstacle_memory[center] = poly
         obstacles = list(self.obstacle_memory.values())
         if self.use_lidar:
-            for name, pose, offset in (('tractor', (x, y, yaw), (3.90, 0.0, 0.0)),
-                                       ('trailer', (tx, ty, tyaw), (-1.0, 0.0, 0.0))):
+            for name, pose in (('tractor', (x, y, yaw)),
+                               ('trailer', (tx, ty, tyaw))):
+                offset = self.scan_offsets[name]
                 scan = self.scans.get(name)
                 if scan is None:
                     raise ValueError('WAIT_LIDAR')

@@ -151,20 +151,41 @@ ros2 launch trailer_parking_pkg parallel_camera_yolo.launch.py \
 115200bps 및 `s<조향>l<좌PWM>r<우PWM>\n` 형식을 사용하며, 통신이 300ms 끊기면
 구동 모터를 정지하도록 fail-safe를 추가했습니다.
 
-실차에서는 시뮬레이션 SDF 보정을 사용하지 않습니다. 전후방 카메라 외부 파라미터,
-두 차체 치수와 초기 자세를 실측한 JSON을 반드시 `calibration`으로 전달합니다.
+실차에서는 시뮬레이션 SDF 보정을 사용하지 않습니다. 전후방 카메라 외부 파라미터와
+초기 자세를 실측한 JSON을 반드시 `calibration`으로 전달합니다. 차체 기하값은
+아래 실차 launch 인자로 양쪽 인식 노드와 주차 제어기에 동일하게 전달되며,
+실차 실행 시 JSON 안의 `geometry`보다 우선합니다.
+
+실차 기하 기본값은 이전에 측정한 **대략값**을 반영했습니다. 앞차 축거 0.52m,
+앞차 뒤축→연결축 0.33m, 연결축→뒤차 앞축 0.30m입니다. 뒤차 축거도
+0.52m라고 가정하여 연결축→뒤차 뒤축은 0.82m로 계산합니다. 한 대의
+길이 0.99m와 폭 0.55m는 [참고 제품 설명서](https://daehotoys.godohosting.com/new_manual/benz_gtr_NEW_manual_0619.pdf)의 규격이며 실차 실측값이 아닙니다.
+앞뒤 오버행을 동일하게 가정해 뒤축→뒤끝 0.235m, 뒤축→앞끝 0.755m로
+나눴습니다. 따라서 직선 상태 전체 길이는 약 2.14m입니다. 이 값들은
+`wheelbase`, `trailer_wheelbase`, `hitch_offset`,
+`hitch_to_trailer_front_axle`, `body_length`, `body_width`, `rear_overhang`
+인자로 각각 조정할 수 있습니다. 시뮬레이션의 Prius 치수는 그대로 유지됩니다.
+
+`max_steer_rad:=0.60`과 `max_beta_deg:=20.0`은 아직 실측되지 않은
+초기 제한값입니다. 조향 단계별 실제 바퀴 각도와 연결부의 기계적 한계를
+확인해 조정해야 합니다.
 
 ```bash
 # A. 실차 LiDAR + 전후방 YOLO
 ros2 launch trailer_parking_pkg parallel_lidar_yolo_hardware.launch.py \
   weights:="$(pwd)/best.pt" calibration:="$(pwd)/real_calibration.json" \
-  port:=/dev/ttyACM0 tractor_scan:=/scan trailer_scan:=/rear_scan
+  port:=/dev/ttyACM0 tractor_scan:=/scan trailer_scan:=/rear_scan \
+  tractor_scan_offset:='[X,Y,YAW]' trailer_scan_offset:='[X,Y,YAW]'
 
 # B. 실차 전후방 카메라 + YOLO 전용
 ros2 launch trailer_parking_pkg parallel_camera_yolo_hardware.launch.py \
   weights:="$(pwd)/best.pt" calibration:="$(pwd)/real_calibration.json" \
   port:=/dev/ttyACM0
 ```
+
+LiDAR 버전의 `X,Y,YAW`는 각 차체 **뒤축 중심 기준** 실제 센서 위치(m)와
+방향(rad)으로 교체해야 합니다. 센서 장착 위치를 아직 모르므로 실차 LiDAR
+실행에는 이 두 인자를 필수로 둡니다.
 
 제어 흐름은 다음과 같습니다.
 
@@ -202,15 +223,15 @@ ros2 topic hz /parking/front/observation
 ros2 topic hz /parking/rear/observation
 ```
 
-추가 LiDAR는 견인차 앞 범퍼 밖과 트레일러 뒤 범퍼 밖에 생성합니다.
-두 스캔의 위치 오프셋은 모델 기준 고정값입니다. 실차에 센서를 다르게 달면
-해당 오프셋과 frame convention을 수정해야 합니다.
+시뮬레이션 LiDAR는 견인차 앞 범퍼 밖과 트레일러 뒤 범퍼 밖에 생성합니다.
+실차 센서 위치는 위의 실행 인자로 전달합니다.
 
 ## 카메라 보정과 재학습
 
 시뮬레이션 기본값은 SDF의 실제 카메라 장착 위치와 방향을 읽고,
 내부 보정값은 `CameraInfo`를 사용합니다. 실차에서는 아래 JSON을 예시로 내보내고
-`geometry`, 전후방 `rotation`, `translation`, `initial_pose`를 실측값으로 교체합니다.
+전후방 `rotation`, `translation`, `initial_pose`를 실측값으로 교체합니다.
+이 예시의 Prius 카메라 위치와 시작 자세를 실차에 그대로 사용할 수 없습니다.
 `rotation`은 optical frame → 해당 차체 뒤축 좌표계 변환입니다.
 
 ```bash
@@ -264,7 +285,7 @@ python tools/train_parking_yolo.py --data /path/to/parking_dataset.yaml \
 - 정적 주차 차량은 시야에서 사라져도 보수적으로 지도에 남깁니다. 이동 장애물이나
   잘못된 검출이 지도에 오래 남으면 정지/재시작이 필요할 수 있습니다.
 - 실제 범퍼/타이어 접촉, 마찰, 구동 PID, 영상 인식 실패를 포함한 Gazebo 전체 검증과
-  실제 유아차 치수로의 교체·조향 부호·제동거리 검증은 별도 작업이 남아 있습니다.
+  실차 기하 추정값·조향 부호·제동거리 검증은 별도 작업이 남아 있습니다.
 
 ## 테스트
 

@@ -79,7 +79,7 @@ class ParkingStateMachine:
     ORDER = (
         'WAIT_TARGET',
         'APPROACH',
-        'FORWARD_RIGHT_SETUP',
+        'FORWARD_SIDE_SETUP',
         'STOP_BEFORE_REVERSE',
         'REVERSE_ENTRY',
         'REVERSE_COUNTER_STEER',
@@ -154,7 +154,7 @@ class ParkingStateMachine:
     def _condition(self, observations, now):
         c, state = self.config, self.state
         front_class, rear_class = c['front_class'], c['rear_class']
-        if state in ('WAIT_TARGET', 'APPROACH', 'FORWARD_RIGHT_SETUP'):
+        if state in ('WAIT_TARGET', 'APPROACH', 'FORWARD_SIDE_SETUP'):
             front, stamp, error = self._target(
                 observations, 'front', front_class, now)
             if error:
@@ -202,7 +202,7 @@ class ParkingStateMachine:
         commands = {
             'WAIT_TARGET': (0, 0),
             'APPROACH': (0, c['approach_pwm']),
-            'FORWARD_RIGHT_SETUP': (side*c['steer'], c['setup_pwm']),
+            'FORWARD_SIDE_SETUP': (side*c['steer'], c['setup_pwm']),
             'STOP_BEFORE_REVERSE': (0, 0),
             # Reversing with opposite steering first creates trailer angle.
             'REVERSE_ENTRY': (-side*c['steer'], -c['reverse_pwm']),
@@ -268,7 +268,8 @@ class ParkingNode(Node):
                 not 0 <= self.merge_iou <= 1):
             raise ValueError('invalid image, timer, confidence, or IoU parameter')
         config = {
-            'parking_side': int(param('parking_side', 1)),
+            # The parking space is on the vehicle's left by default.
+            'parking_side': int(param('parking_side', -1)),
             'steer': int(param('steer', 6)),
             'approach_pwm': int(param('approach_pwm', 70)),
             'setup_pwm': int(param('setup_pwm', 70)),

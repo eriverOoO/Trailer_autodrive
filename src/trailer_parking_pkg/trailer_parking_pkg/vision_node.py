@@ -11,6 +11,7 @@ from std_msgs.msg import String
 from cv_bridge import CvBridge
 from ultralytics import YOLO
 from .calibration import simulation_calibration
+from .core import Geometry
 from .vision import GroundCamera, GroundOdometry, slot_from_mask, obstacle_from_mask, merge_slots
 
 
@@ -34,6 +35,10 @@ class ParkingVision(Node):
             self.calibration = json.loads(Path(calibration_path).read_text())
         else:
             self.calibration = simulation_calibration(param('model_sdf', ''), param('loader_source', ''), param('start_index', 1))
+        geometry_override = param('geometry_override', '')
+        if geometry_override:
+            # The real vehicle geometry comes from the hardware launch arguments.
+            self.calibration['geometry'] = vars(Geometry(**json.loads(geometry_override)))
         if self.camera_name not in self.calibration['cameras']:
             raise ValueError('Missing camera extrinsic calibration')
         self.model = YOLO(str(weights))

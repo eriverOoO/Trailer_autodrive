@@ -1,4 +1,6 @@
 """One mutually exclusive command source per launch; front/rear cameras only."""
+import json
+import math
 from pathlib import Path
 from ament_index_python.packages import get_package_share_directory, get_package_prefix
 from launch import LaunchDescription
@@ -6,6 +8,8 @@ from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription, Opaq
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration, EnvironmentVariable
 from launch_ros.actions import Node
+from launch_ros.parameter_descriptions import ParameterValue
+from .core import Geometry
 
 
 def parking_launch(use_lidar):
@@ -78,6 +82,15 @@ def parking_launch(use_lidar):
 
 def hardware_parking_launch(use_lidar):
     """Real stroller: cameras/LiDAR -> planner -> MotionCommand -> Arduino."""
+    def measured_scan_offset(value):
+        try:
+            offset = [float(item) for item in json.loads(value)]
+        except (TypeError, ValueError) as exc:
+            raise RuntimeError('Scan offset must be [x,y,yaw]') from exc
+        if len(offset) != 3 or not all(math.isfinite(item) for item in offset):
+            raise RuntimeError('Scan offset must contain three finite numbers')
+        return offset
+
     def setup(context):
         value = lambda key: LaunchConfiguration(key).perform(context)
         weights = str(Path(value('weights')).expanduser().resolve())
@@ -92,12 +105,42 @@ def hardware_parking_launch(use_lidar):
         if (speed <= 0 or not 1 <= parking_pwm <= 255 or
                 not 1 <= steer_steps <= 7 or steering_sign not in (-1, 1)):
             raise RuntimeError('speed>0, parking_pwm=1..255, steer_steps=1..7 and steering_sign=±1 required')
+        wheelbase = float(value('wheelbase'))
+        trailer_wheelbase = float(value('trailer_wheelbase'))
+        hitch_to_front_axle = float(value('hitch_to_trailer_front_axle'))
+        body_length = float(value('body_length'))
+        rear_overhang = float(value('rear_overhang'))
+        if (not all(math.isfinite(item) and item > 0 for item in
+                    (trailer_wheelbase, hitch_to_front_axle, body_length, rear_overhang)) or
+                not rear_overhang < body_length or
+                body_length - rear_overhang < wheelbase):
+            raise RuntimeError('Invalid real body/axle dimensions')
+        geometry = Geometry(
+            wheelbase=wheelbase,
+            hitch_offset=float(value('hitch_offset')),
+            trailer_axle=hitch_to_front_axle + trailer_wheelbase,
+            front=body_length - rear_overhang,
+            rear=rear_overhang,
+            width=float(value('body_width')),
+            max_steer=float(value('max_steer_rad')),
+            max_beta=math.radians(float(value('max_beta_deg'))))
         vision_params = dict(weights=weights, device=value('device'),
-                             calibration=calibration, use_sim_time=False)
+                             calibration=calibration, use_sim_time=False,
+                             geometry_override=ParameterValue(
+                                 json.dumps(vars(geometry)), value_type=str))
         controller_remaps = []
+        controller_params = {'use_sim_time': False, 'parking_speed': speed,
+                             'parking_pwm': parking_pwm,
+                             'steer_steps': steer_steps,
+                             'steering_sign': steering_sign,
+                             'sensor_timeout': float(value('sensor_timeout')),
+                             'collision_margin': float(value('collision_margin'))}
         if use_lidar:
             controller_remaps = [('/parking/tractor/scan', value('tractor_scan')),
                                  ('/parking/trailer/scan', value('trailer_scan'))]
+            controller_params.update(
+                tractor_scan_offset=measured_scan_offset(value('tractor_scan_offset')),
+                trailer_scan_offset=measured_scan_offset(value('trailer_scan_offset')))
         actions = [
             Node(package='trailer_parking_pkg', executable='parking_command_guard', output='screen'),
             Node(package='serial_communication_pkg', executable='serial_sender_node', output='screen',
@@ -105,11 +148,7 @@ def hardware_parking_launch(use_lidar):
                               'startup_delay': float(value('serial_startup_delay'))}]),
             Node(package='trailer_parking_pkg',
                  executable='parallel_lidar_yolo' if use_lidar else 'parallel_camera_yolo',
-                 parameters=[{'use_sim_time': False, 'parking_speed': speed,
-                              'parking_pwm': parking_pwm,
-                              'steer_steps': steer_steps,
-                              'steering_sign': steering_sign,
-                              'sensor_timeout': float(value('sensor_timeout'))}],
+                 parameters=[controller_params],
                  remappings=controller_remaps, output='screen')]
         for camera in ('front', 'rear'):
             actions.append(Node(package='trailer_parking_pkg', executable='parking_vision',
@@ -121,7 +160,17 @@ def hardware_parking_launch(use_lidar):
 
     arguments = [
         DeclareLaunchArgument('weights', description='YOLO segmentation weights'),
-        DeclareLaunchArgument('calibration', description='Measured real-stroller camera/geometry JSON'),
+        DeclareLaunchArgument('calibration', description='Measured real-stroller camera calibration JSON'),
+        DeclareLaunchArgument('wheelbase', default_value='0.52'),
+        DeclareLaunchArgument('trailer_wheelbase', default_value='0.52'),
+        DeclareLaunchArgument('hitch_offset', default_value='0.33'),
+        DeclareLaunchArgument('hitch_to_trailer_front_axle', default_value='0.30'),
+        DeclareLaunchArgument('body_length', default_value='0.99'),
+        DeclareLaunchArgument('body_width', default_value='0.55'),
+        DeclareLaunchArgument('rear_overhang', default_value='0.235'),
+        DeclareLaunchArgument('max_steer_rad', default_value='0.60'),
+        DeclareLaunchArgument('max_beta_deg', default_value='20.0'),
+        DeclareLaunchArgument('collision_margin', default_value='0.03'),
         DeclareLaunchArgument('device', default_value='cpu'),
         DeclareLaunchArgument('speed', default_value='0.30'),
         DeclareLaunchArgument('parking_pwm', default_value='90'),
@@ -138,6 +187,10 @@ def hardware_parking_launch(use_lidar):
     if use_lidar:
         arguments.extend([
             DeclareLaunchArgument('tractor_scan', default_value='/scan'),
-            DeclareLaunchArgument('trailer_scan', default_value='/rear_scan')])
+            DeclareLaunchArgument('trailer_scan', default_value='/rear_scan'),
+            DeclareLaunchArgument('tractor_scan_offset',
+                description='Measured [x,y,yaw] from tractor rear axle'),
+            DeclareLaunchArgument('trailer_scan_offset',
+                description='Measured [x,y,yaw] from trailer rear axle')])
     arguments.append(OpaqueFunction(function=setup))
     return LaunchDescription(arguments)
