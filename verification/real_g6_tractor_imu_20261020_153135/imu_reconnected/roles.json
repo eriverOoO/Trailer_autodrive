@@ -1,0 +1,21 @@
+{
+  "at": "2026-10-20T15:52:59.021862+09:00",
+  "tractor_imu": {
+    "port": "/dev/serial/by-path/pci-0000:80:14.0-usb-0:8:1.0-port0",
+    "tty": "/dev/ttyUSB1",
+    "usb": "3-8",
+    "confirmed": "User reconnected same previously identified IMU socket; udev confirms 3-8"
+  },
+  "g6": {
+    "port": "/dev/serial/by-path/pci-0000:80:14.0-usb-0:7:1.0-port0",
+    "tty": "/dev/ttyUSB0",
+    "pid": 21573
+  },
+  "preserved_pids": [
+    21573,
+    21575,
+    21577,
+    17521,
+    22858
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "range_min": 0.15000000596046448,
+  "range_max": 12.0,
+  "valid": 998,
+  "over_1m": 495,
+  "over_2m": 309,
+  "maximum": 7.97599983215332,
+  "out_of_range_nonzero": 0,
+  "invalid_zero": 547
+}

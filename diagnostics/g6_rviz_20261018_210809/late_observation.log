@@ -1,0 +1,44 @@
+{
+  "scan_count": 175,
+  "scan_hz": 11.654076389855147,
+  "scan_age_s": {
+    "min": 0.085023662,
+    "median": 0.086396925,
+    "mean": 0.08642200274285713,
+    "max": 0.089579426
+  },
+  "valid_beams": {
+    "min": 990.0,
+    "median": 1017.0,
+    "mean": 1017.9142857142857,
+    "max": 1055.0
+  },
+  "valid_fraction": {
+    "min": 0.6416072585871678,
+    "median": 0.6591056383668179,
+    "mean": 0.6595418555245371,
+    "max": 0.6837329876863253
+  },
+  "map_count": 16,
+  "map_hz": 1.050614971874007,
+  "matched_cloud_count": 175,
+  "submap_list_count": 50,
+  "tf_edges": {
+    "map -> odom": 3000,
+    "odom -> laser_frame": 3000
+  },
+  "static_tf": [],
+  "tf_lookup_successes": 149,
+  "tf_lookup_failures": [
+    {
+      "elapsed_s": 0.10464005199992243,
+      "error": "Lookup would require extrapolation into the past.  Requested time 1792325532.242293 but the earliest data is at time 1792325532.304594, when looking up transform from frame [laser_frame] to frame [map]"
+    }
+  ],
+  "map_to_laser_yaw_deg": {
+    "min": -7.384404671817512,
+    "median": -6.641613463912168,
+    "mean": -6.6446793075896595,
+    "max": -6.122934167311013
+  }
+}

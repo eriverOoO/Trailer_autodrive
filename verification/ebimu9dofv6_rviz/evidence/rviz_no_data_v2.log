@@ -1,0 +1,6 @@
+[INFO] [1792408232.561085028] [rviz2]: Stereo is NOT SUPPORTED
+[INFO] [1792408232.561154356] [rviz2]: OpenGl version: 4.6 (GLSL 4.6)
+[INFO] [1792408232.571986427] [rviz2]: Stereo is NOT SUPPORTED
+[ERROR] [1792408232.631743080] [rviz2]: InternalErrorException: Vertex Buffer: Out of memory in GLHardwareVertexBuffer::lock at ./.obj-x86_64-linux-gnu/ogre-v1.12.1-prefix/src/ogre-v1.12.1/RenderSystems/GL/src/OgreGLHardwareVertexBuffer.cpp (line 125)
+terminate called after throwing an instance of 'Ogre::InternalErrorException'
+  what():  InternalErrorException: Vertex Buffer: Out of memory in GLHardwareVertexBuffer::lock at ./.obj-x86_64-linux-gnu/ogre-v1.12.1-prefix/src/ogre-v1.12.1/RenderSystems/GL/src/OgreGLHardwareVertexBuffer.cpp (line 125)

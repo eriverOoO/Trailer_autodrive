@@ -1,0 +1,11 @@
+# IMU position and axes relative to LiDAR. Fill measured values for sensor mode.
+# Vehicle mode instead requires parent_frame: base_footprint and body measurements.
+# xyz: metres; rpy: fixed-axis roll/pitch/yaw in radians.
+# Keep driver mounting_rpy at zero: this TF describes the physical mount.
+measured: false
+parent_frame: laser_frame
+child_frame: tractor_imu_link
+# Position transformed from measured body-frame positions, including LiDAR pitch.
+# IMU orientation is still pending; measured remains false.
+xyz: [0.6813571547563834, 0.0, -0.3755002365675498]
+rpy: [null, null, null]

@@ -1,0 +1,77 @@
+status: PROVISIONAL — measure before actuation
+# Body dimensions updated by user (2026-10-26).
+# Retain prior edge-to-axle, hitch-clearance and edge-to-sensor measurements.
+# Tractor axles measured: rear 0.19m ahead of body rear; wheelbase 0.55m.
+# Trailer axle measured 0.19m ahead of body rear.
+# Sensor mounts and control values remain provisional.
+tractor_length: 0.99
+tractor_width: 0.55
+trailer_length: 0.99
+trailer_width: 0.55
+tractor_wheelbase: 0.55
+tractor_rear_axle_position:
+# -0.99 / 2 + 0.19, relative to tractor body centre.
+- -0.305
+- 0.0
+- 0.0
+tractor_steering_axis:
+# Measured rear axle x=-0.305 plus wheelbase 0.55.
+- 0.245
+- 0.0
+- 0.0
+trailer_axle_position:
+# -0.99 / 2 + 0.19, relative to trailer body centre.
+- -0.305
+- 0.0
+- 0.0
+hitch_position:
+# Tractor body centre: -(0.99 / 2 + 0.15).
+- -0.645
+- 0.0
+- 0.0
+# Hinge to axle: 0.06 + 0.99 - 0.19.
+hitch_to_axle_distance: 0.86
+# Straight body-to-body gap; hitch is NOT at its midpoint.
+connection_length: 0.21
+tractor_rear_to_hitch_distance: 0.15
+trailer_front_to_hitch_distance: 0.06
+maximum_steering_angle: 0.45
+steering_rate_limit: 0.9
+forward_velocity: 0.14
+reverse_velocity: 0.08775
+lidar_mounting_offset:
+# Measured x = 0.99 / 2 - 0.895, y = 0 (body width centre).
+# Measured height 0.687m, nose-down pitch +1.397deg, roll 0.
+# Yaw 0 uses the previously calibrated driver front alignment.
+- -0.4
+- 0.0
+- 0.687
+- 0.0
+- 0.024382249650360784
+- 0.0
+tractor_imu_offset:
+# Measured x = 0.99 / 2 - 0.223; y = 0 (body width centre).
+# Measured height above ground: 0.295m; orientation pending.
+- 0.272
+- 0.0
+- 0.295
+- 0.0
+- 0.0
+- 0.0
+trailer_imu_offset:
+# Measured x = 0.99 / 2 - 0.215; y = 0 (body width centre).
+# Measured height above ground: 0.295m; roll/pitch still pending.
+# User reports heading opposite tractor IMU: relative yaw +pi.
+# Absolute yaw below assumes the still-pending tractor IMU yaw is zero;
+# verify both sensor axes together before confirming geometry.
+- 0.28
+- 0.0
+- 0.295
+- 0.0
+- 0.0
+- 3.141592653589793
+initial_articulation_rad: 0.0
+initial_alignment_confirmed: false
+trailer_gyro_bias_rad_s: 0.0
+trailer_bias_confirmed: false
+geometry_confirmed: false

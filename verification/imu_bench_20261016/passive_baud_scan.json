@@ -1,0 +1,49 @@
+{
+  "at": "2026-10-16T22:57:45.963863+09:00",
+  "port": "/dev/serial/by-id/usb-Silicon_Labs_CP2102_USB_to_UART_Bridge_Controller_0001-if00-port0",
+  "commands_sent": [],
+  "duration_per_baud_s": 0.75,
+  "results": [
+    {
+      "baud": 9600,
+      "bytes": 0,
+      "hex": ""
+    },
+    {
+      "baud": 19200,
+      "bytes": 0,
+      "hex": ""
+    },
+    {
+      "baud": 38400,
+      "bytes": 0,
+      "hex": ""
+    },
+    {
+      "baud": 57600,
+      "bytes": 0,
+      "hex": ""
+    },
+    {
+      "baud": 115200,
+      "bytes": 0,
+      "hex": ""
+    },
+    {
+      "baud": 230400,
+      "bytes": 0,
+      "hex": ""
+    },
+    {
+      "baud": 460800,
+      "bytes": 0,
+      "hex": ""
+    },
+    {
+      "baud": 921600,
+      "bytes": 0,
+      "hex": ""
+    }
+  ],
+  "note": "Host baud only; no sensor configuration writes; port closed."
+}

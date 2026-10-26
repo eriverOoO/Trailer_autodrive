@@ -1,0 +1,7 @@
+{
+  "messages": 3,
+  "frame": "laser_frame",
+  "range_min": 0.15000000596046448,
+  "range_max": 0.800000011920929,
+  "valid_points": 276
+}

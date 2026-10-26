@@ -1,0 +1,4 @@
+[INFO] [launch]: All log files can be found below /home/venezuelachocolatemilk/mvsim_slam_real/verification/real_g6_tractor_imu_20261020_153135/ros_logs/2026-10-20-16-29-10-165747-venezuelachocolatemilk-Legion-Pro-5-16IAX10H-50281
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [tt2d_visualizer-1]: process started with pid [50283]
+[tt2d_visualizer-1] [INFO] [1792481350.699599637] [tractor_trailer_2d_visualizer]: DIAGNOSTIC_ONLY

@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "original_files": 174,
+  "protected_files": 103,
+  "changed_existing_files": [
+    "src/mvsim_slam_real_bringup/config/g6.yaml",
+    "src/mvsim_slam_real_bringup/config/g6_lidar_only.lua"
+  ],
+  "failures": []
+}

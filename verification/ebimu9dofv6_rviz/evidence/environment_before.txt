@@ -1,0 +1,62 @@
+2026-10-19T20:05:58.745017+09:00
+
+devices exit=0
+lrwxrwxrwx 1 root root        13 Oct 19 19:59 /dev/serial/by-id/usb-Silicon_Labs_CP2102_USB_to_UART_Bridge_Controller_0001-if00-port0 -> ../../ttyUSB0
+lrwxrwxrwx 1 root root        13 Oct 19 19:59 /dev/serial/by-path/pci-0000:80:14.0-usb-0:7:1.0-port0 -> ../../ttyUSB0
+crw-rw---- 1 root dialout 188, 0 Oct 19 19:59 /dev/ttyUSB0
+
+usb exit=0
+Bus 004 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 003 Device 004: ID 25a7:fa61 Areson Technology Corp Elecom Co., Ltd MR-K013 Multicard Reader
+Bus 003 Device 007: ID 10c4:ea60 Silicon Labs CP210x UART Bridge
+Bus 003 Device 003: ID 048d:c195 Integrated Technology Express, Inc. ITE Device(8258)
+Bus 003 Device 002: ID 17ef:f006 Lenovo Idea5003
+Bus 003 Device 006: ID 0489:e111 Foxconn / Hon Hai Wireless_Device
+Bus 003 Device 005: ID 30c9:00f8 Luxvisions Innotech Limited Integrated Camera
+Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+
+udev exit=0
+DEVPATH=/devices/pci0000:80/0000:80:14.0/usb3/3-7/3-7:1.0/ttyUSB0/tty/ttyUSB0
+DEVNAME=/dev/ttyUSB0
+MAJOR=188
+MINOR=0
+SUBSYSTEM=tty
+USEC_INITIALIZED=2901404133
+ID_BUS=usb
+ID_VENDOR_ID=10c4
+ID_MODEL_ID=ea60
+ID_PCI_CLASS_FROM_DATABASE=Serial bus controller
+ID_PCI_SUBCLASS_FROM_DATABASE=USB controller
+ID_PCI_INTERFACE_FROM_DATABASE=XHCI
+ID_VENDOR_FROM_DATABASE=Silicon Labs
+ID_VENDOR=Silicon_Labs
+ID_VENDOR_ENC=Silicon\x20Labs
+ID_MODEL=CP2102_USB_to_UART_Bridge_Controller
+ID_MODEL_ENC=CP2102\x20USB\x20to\x20UART\x20Bridge\x20Controller
+ID_REVISION=0100
+ID_SERIAL=Silicon_Labs_CP2102_USB_to_UART_Bridge_Controller_0001
+ID_SERIAL_SHORT=0001
+ID_TYPE=generic
+ID_USB_INTERFACES=:ff0000:
+ID_USB_INTERFACE_NUM=00
+ID_USB_DRIVER=cp210x
+ID_MODEL_FROM_DATABASE=CP210x UART Bridge
+ID_PATH=pci-0000:80:14.0-usb-0:7:1.0
+ID_PATH_TAG=pci-0000_80_14_0-usb-0_7_1_0
+ID_MM_CANDIDATE=1
+DEVLINKS=/dev/serial/by-path/pci-0000:80:14.0-usb-0:7:1.0-port0 /dev/serial/by-id/usb-Silicon_Labs_CP2102_USB_to_UART_Bridge_Controller_0001-if00-port0
+TAGS=:systemd:
+CURRENT_TAGS=:systemd:
+
+occupancy exit=1
+
+processes exit=0
+   1045 /usr/sbin/ModemManager
+  42140 /bin/bash -c mkdir -p verification/ebimu9dofv6_rviz/scripts verification/ebimu9dofv6_rviz/reports verification/ebimu9dofv6_rviz/evidence python3 - <<'PY' from pathlib import Path import hashlib,json,subprocess,datetime p=Path('verification/ebimu9dofv6_rviz') roots=[Path('src'),Path('tools'),Path('tests'),Path('references')] files=[f for root in roots for f in root.rglob('*') if f.is_file() and '__pycache__' not in f.parts] # Read-only preservation baseline: original simulation file content and real project's protected trees. original=Path('/home/venezuelachocolatemilk/mvsim_slam') # Existing original manifests inspected later; avoid hashing gigabytes of run datasets. manifest={str(f.resolve()):hashlib.sha256(f.read_bytes()).hexdigest() for f in files} (p/'evidence/protected_sha256_before.json').write_text(json.dumps(manifest,indent=2)) commands={'devices':'ls -l /dev/ttyUSB* /dev/serial/by-id/* /dev/serial/by-path/* 2>/dev/null','usb':'lsusb','udev':'udevadm info --query=property --name=/dev/ttyUSB0','occupancy':'fuser -v /dev/ttyUSB0','processes':"ps -eo pid,args | rg 'ydlidar|cartographer|ebimu|rviz|ModemManager'",'identity':'id'} with (p/'evidence/environment_before.txt').open('x') as out:  out.write(datetime.datetime.now().astimezone().isoformat()+'\n')  for k,cmd in commands.items():   r=subprocess.run(cmd,shell=True,text=True,stdout=subprocess.PIPE,stderr=subprocess.STDOUT)   out.write('\n'+k+' exit='+str(r.returncode)+'\n'+r.stdout) print('protected baseline files',len(files)) PY
+  42156 /bin/sh -c ps -eo pid,args | rg 'ydlidar|cartographer|ebimu|rviz|ModemManager'
+  42158 rg ydlidar|cartographer|ebimu|rviz|ModemManager
+
+identity exit=0
+uid=1000(venezuelachocolatemilk) gid=1000(venezuelachocolatemilk) groups=1000(venezuelachocolatemilk),4(adm),20(dialout),24(cdrom),27(sudo),30(dip),46(plugdev),122(lpadmin),135(lxd),136(sambashare),999(docker)

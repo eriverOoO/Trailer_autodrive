@@ -1,0 +1,11 @@
+{
+  "rx_bytes": 7619409,
+  "tx_bytes": 0,
+  "messages": 107405,
+  "accepted": 107405,
+  "rejected": 0,
+  "estimated_sensor_missing": 0,
+  "sensor_resets": 18,
+  "duration_s": 1074.0625358799998,
+  "error": ""
+}

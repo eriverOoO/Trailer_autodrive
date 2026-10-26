@@ -1,0 +1,3 @@
+# Dedicated tractor USB socket only. Serial 0001 is NOT globally unique.
+# Other sockets are not matched. Never connect G6/another CP2102 here.
+ACTION=="add|change", SUBSYSTEM=="tty", KERNEL=="ttyUSB[0-9]*", ENV{ID_BUS}=="usb", ATTRS{idVendor}=="10c4", ATTRS{idProduct}=="ea60", ATTRS{serial}=="0001", ENV{ID_USB_INTERFACE_NUM}=="00", ENV{ID_PATH}=="pci-0000:80:14.0-usb-0:8:1.0", SYMLINK+="imu_tractor"

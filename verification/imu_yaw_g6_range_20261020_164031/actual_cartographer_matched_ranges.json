@@ -1,0 +1,10 @@
+{
+  "source": "REAL Cartographer /scan_matched_points2",
+  "published_nothing": true,
+  "stamp_ns": 1792482351098674300,
+  "frame": "map",
+  "points": 477,
+  "above_1m": 381,
+  "above_2m": 304,
+  "maximum_m": 7.963582536473409
+}

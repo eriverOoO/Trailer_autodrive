@@ -1,0 +1,13 @@
+{
+  "ID_VENDOR_ID": "10c4",
+  "ID_MODEL_ID": "ea60",
+  "ID_SERIAL_SHORT": "0001",
+  "ID_SERIAL": "Silicon_Labs_CP2102_USB_to_UART_Bridge_Controller_0001",
+  "ID_PATH": "pci-0000:80:14.0-usb-0:8:1.0",
+  "ID_USB_INTERFACE_NUM": "00",
+  "USEC_INITIALIZED": "8332675776",
+  "DEVPATH": "/devices/pci0000:80/0000:80:14.0/usb3/3-8/3-8:1.0/ttyUSB0/tty/ttyUSB0",
+  "method": "DEDICATED_PHYSICAL_USB_PORT_ONLY",
+  "operator_confirmation": "PENDING",
+  "globally_unique_serial": false
+}

@@ -1,0 +1,9 @@
+[INFO] [launch]: All log files can be found below /home/venezuelachocolatemilk/mvsim_slam_real/verification/real_g6_tractor_imu_20261020_153135/ros_logs/2026-10-20-15-32-40-569303-venezuelachocolatemilk-Legion-Pro-5-16IAX10H-17519
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [tt2d_visualizer-1]: process started with pid [17521]
+[INFO] [rviz2-2]: process started with pid [17523]
+[tt2d_visualizer-1] [INFO] [1792477960.853410674] [tractor_trailer_2d_visualizer]: measured finite geometry required: slam_to_rear_axle_xy
+[rviz2-2] [INFO] [1792477960.943400469] [rviz2]: Stereo is NOT SUPPORTED
+[rviz2-2] [INFO] [1792477960.943450911] [rviz2]: OpenGl version: 4.6 (GLSL 4.6)
+[rviz2-2] [INFO] [1792477960.956833206] [rviz2]: Stereo is NOT SUPPORTED
+[INFO] [rviz2-2]: process has finished cleanly [pid 17523]

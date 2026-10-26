@@ -1,0 +1,27 @@
+{
+  "domain_id": 0,
+  "nodes": [
+    "vehicle_viz_read_only_inventory"
+  ],
+  "topics": [
+    [
+      "/parameter_events",
+      [
+        "rcl_interfaces/msg/ParameterEvent"
+      ]
+    ],
+    [
+      "/rosout",
+      [
+        "rcl_interfaces/msg/Log"
+      ]
+    ],
+    [
+      "/tf",
+      [
+        "tf2_msgs/msg/TFMessage"
+      ]
+    ]
+  ],
+  "dynamic_tf_edges": []
+}

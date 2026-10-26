@@ -1,0 +1,8 @@
+{
+  "changed_existing_files": [
+    "src/mvsim_slam_real_bringup/config/g6.yaml",
+    "src/mvsim_slam_real_bringup/config/g6_lidar_only.lua"
+  ],
+  "new_observer": "tools/g6_performance_probe.py",
+  "protected_code_unchanged": true
+}

@@ -1,0 +1,708 @@
+{
+  "tf:map -> odom": {
+    "count": 4001,
+    "receipt_hz": 200.0296905669955,
+    "stamp_hz": 199.99897300527363,
+    "nonincreasing_stamps": 0,
+    "first": {
+      "receipt": 2273.914543979,
+      "stamp_ns": 1792479245595016300,
+      "xy": [
+        -0.023148986945977827,
+        0.0020140375407646767
+      ],
+      "yaw": 0.015622175962575799
+    },
+    "last": {
+      "receipt": 2293.911575363,
+      "stamp_ns": 1792479265595119000,
+      "xy": [
+        -0.023148986945977827,
+        0.0020140375407646767
+      ],
+      "yaw": 0.015622175962575799
+    }
+  },
+  "tf:odom -> laser_frame": {
+    "count": 4001,
+    "receipt_hz": 200.02970962265698,
+    "stamp_hz": 199.99897300527363,
+    "nonincreasing_stamps": 0,
+    "first": {
+      "receipt": 2273.914548471,
+      "stamp_ns": 1792479245595016300,
+      "xy": [
+        0.015514400704120558,
+        -0.004097649612378037
+      ],
+      "yaw": -0.033498599099424625
+    },
+    "last": {
+      "receipt": 2293.91157795,
+      "stamp_ns": 1792479265595119000,
+      "xy": [
+        0.022301354195418257,
+        0.00431839495490319
+      ],
+      "yaw": -0.0399424246279001
+    }
+  },
+  "imu": {
+    "count": 1973,
+    "receipt_hz": 98.61161583695313,
+    "stamp_hz": 98.60996752510043,
+    "nonincreasing_stamps": 0,
+    "first": {
+      "receipt": 2273.914804131,
+      "stamp_ns": 1792479245598108058,
+      "frame": "vehicle_viz_2d_tractor_imu",
+      "yaw_deg": 3.1630795397941043,
+      "norm": 1.0,
+      "age_s": 0.000639898
+    },
+    "last": {
+      "receipt": 2293.912448255,
+      "stamp_ns": 1792479265596086452,
+      "frame": "vehicle_viz_2d_tractor_imu",
+      "yaw_deg": 3.0919845396607264,
+      "norm": 0.9999999999999999,
+      "age_s": 0.000318208
+    },
+    "yaw_min_deg": 3.021957638095243,
+    "yaw_max_deg": 3.1751265937108424
+  },
+  "map": {
+    "count": 25,
+    "receipt_hz": 1.224496801976786,
+    "stamp_hz": 0.9999994714586127,
+    "nonincreasing_stamps": 0,
+    "first": {
+      "receipt": 2273.921065282,
+      "stamp_ns": 1792479240909926099,
+      "frame": "map",
+      "width": 50,
+      "height": 51,
+      "resolution": 0.05000000074505806,
+      "known": 888,
+      "occupied": 176,
+      "free": 526,
+      "digest": "9b3183ace68d6c28c9f4d34f22538883d735478adf1f1a7c7abf484b174c5e7a",
+      "origin": [
+        -1.1770068168640138,
+        -1.2668272972106935
+      ]
+    },
+    "last": {
+      "receipt": 2293.520953139,
+      "stamp_ns": 1792479264909938784,
+      "frame": "map",
+      "width": 50,
+      "height": 51,
+      "resolution": 0.05000000074505806,
+      "known": 888,
+      "occupied": 178,
+      "free": 524,
+      "digest": "a2ce246e0c60764abd1dc9acaa2cfbd556dfbfc89cd650485620d242220e70db",
+      "origin": [
+        -1.1770068168640138,
+        -1.2668272972106935
+      ]
+    },
+    "unique_grids": 12
+  },
+  "scan": {
+    "count": 234,
+    "receipt_hz": 11.672699833415074,
+    "stamp_hz": 11.671735689788308,
+    "nonincreasing_stamps": 0,
+    "first": {
+      "receipt": 2273.946402621,
+      "stamp_ns": 1792479245543336000,
+      "frame": "laser_frame",
+      "rays": 1545,
+      "valid": 550,
+      "minimum": 0.3375000059604645,
+      "maximum": 1.0,
+      "range_min": 0.15000000596046448,
+      "range_max": 1.0,
+      "scan_time": 0.08619000017642975,
+      "time_increment": 5.5786407756386325e-05,
+      "age_s": 0.087016212
+    },
+    "last": {
+      "receipt": 2293.907508734,
+      "stamp_ns": 1792479265506091000,
+      "frame": "laser_frame",
+      "rays": 1545,
+      "valid": 504,
+      "minimum": 0.3319999873638153,
+      "maximum": 0.9994999766349792,
+      "range_min": 0.15000000596046448,
+      "range_max": 1.0,
+      "scan_time": 0.08562999963760376,
+      "time_increment": 5.542394865187816e-05,
+      "age_s": 0.085372712
+    },
+    "valid_min": 503,
+    "valid_max": 552
+  },
+  "matched_points": {
+    "count": 234,
+    "receipt_hz": 11.673496693725472,
+    "stamp_hz": 11.672084693087367,
+    "nonincreasing_stamps": 0,
+    "first": {
+      "receipt": 2273.951607812,
+      "stamp_ns": 1792479245626680800,
+      "frame": "map",
+      "points": 103
+    },
+    "last": {
+      "receipt": 2293.911351333,
+      "stamp_ns": 1792479265588838900,
+      "frame": "map",
+      "points": 114
+    }
+  },
+  "submaps": {
+    "count": 67,
+    "receipt_hz": 3.3796082824628746,
+    "stamp_hz": 3.3333317252533012,
+    "nonincreasing_stamps": 0,
+    "first": {
+      "receipt": 2274.297461141,
+      "stamp_ns": 1792479245709925790,
+      "versions": [
+        {
+          "trajectory_id": 0,
+          "submap_index": 0,
+          "version": 180
+        },
+        {
+          "trajectory_id": 0,
+          "submap_index": 1,
+          "version": 180
+        },
+        {
+          "trajectory_id": 0,
+          "submap_index": 2,
+          "version": 180
+        },
+        {
+          "trajectory_id": 0,
+          "submap_index": 3,
+          "version": 180
+        },
+        {
+          "trajectory_id": 0,
+          "submap_index": 4,
+          "version": 180
+        },
+        {
+          "trajectory_id": 0,
+          "submap_index": 5,
+          "version": 180
+        },
+        {
+          "trajectory_id": 0,
+          "submap_index": 6,
+          "version": 180
+        },
+        {
+          "trajectory_id": 0,
+          "submap_index": 7,
+          "version": 180
+        },
+        {
+          "trajectory_id": 0,
+          "submap_index": 8,
+          "version": 180
+        },
+        {
+          "trajectory_id": 0,
+          "submap_index": 9,
+          "version": 180
+        },
+        {
+          "trajectory_id": 0,
+          "submap_index": 10,
+          "version": 180
+        },
+        {
+          "trajectory_id": 0,
+          "submap_index": 11,
+          "version": 180
+        },
+        {
+          "trajectory_id": 0,
+          "submap_index": 12,
+          "version": 180
+        },
+        {
+          "trajectory_id": 0,
+          "submap_index": 13,
+          "version": 180
+        },
+        {
+          "trajectory_id": 0,
+          "submap_index": 14,
+          "version": 180
+        },
+        {
+          "trajectory_id": 0,
+          "submap_index": 15,
+          "version": 158
+        },
+        {
+          "trajectory_id": 0,
+          "submap_index": 16,
+          "version": 68
+        }
+      ]
+    },
+    "last": {
+      "receipt": 2293.826351617,
+      "stamp_ns": 1792479265509935342,
+      "versions": [
+        {
+          "trajectory_id": 0,
+          "submap_index": 0,
+          "version": 180
+        },
+        {
+          "trajectory_id": 0,
+          "submap_index": 1,
+          "version": 180
+        },
+        {
+          "trajectory_id": 0,
+          "submap_index": 2,
+          "version": 180
+        },
+        {
+          "trajectory_id": 0,
+          "submap_index": 3,
+          "version": 180
+        },
+        {
+          "trajectory_id": 0,
+          "submap_index": 4,
+          "version": 180
+        },
+        {
+          "trajectory_id": 0,
+          "submap_index": 5,
+          "version": 180
+        },
+        {
+          "trajectory_id": 0,
+          "submap_index": 6,
+          "version": 180
+        },
+        {
+          "trajectory_id": 0,
+          "submap_index": 7,
+          "version": 180
+        },
+        {
+          "trajectory_id": 0,
+          "submap_index": 8,
+          "version": 180
+        },
+        {
+          "trajectory_id": 0,
+          "submap_index": 9,
+          "version": 180
+        },
+        {
+          "trajectory_id": 0,
+          "submap_index": 10,
+          "version": 180
+        },
+        {
+          "trajectory_id": 0,
+          "submap_index": 11,
+          "version": 180
+        },
+        {
+          "trajectory_id": 0,
+          "submap_index": 12,
+          "version": 180
+        },
+        {
+          "trajectory_id": 0,
+          "submap_index": 13,
+          "version": 180
+        },
+        {
+          "trajectory_id": 0,
+          "submap_index": 14,
+          "version": 180
+        },
+        {
+          "trajectory_id": 0,
+          "submap_index": 15,
+          "version": 173
+        },
+        {
+          "trajectory_id": 0,
+          "submap_index": 16,
+          "version": 83
+        }
+      ]
+    }
+  },
+  "imu_diagnostics": {
+    "count": 100,
+    "receipt_hz": 5.051845305940945,
+    "stamp_hz": 5.000000438383877,
+    "nonincreasing_stamps": 0,
+    "first": {
+      "receipt": 2274.297569387,
+      "stamp_ns": 1792479245778084320,
+      "status": [
+        {
+          "message": "LIVE:",
+          "values": {
+            "rx_bytes": "188711",
+            "tx_bytes": "0",
+            "parsed": "2621",
+            "rejected": "0",
+            "published": "2621",
+            "timestamp": "host receipt, not hardware synchronized",
+            "covariance": "received fields unknown=0; unavailable=-1",
+            "reference": "manufacturer native; mounting and sign require validation"
+          }
+        }
+      ]
+    },
+    "last": {
+      "receipt": 2293.894368973,
+      "stamp_ns": 1792479265578082584,
+      "status": [
+        {
+          "message": "LIVE:",
+          "values": {
+            "rx_bytes": "331254",
+            "tx_bytes": "0",
+            "parsed": "4601",
+            "rejected": "0",
+            "published": "4601",
+            "timestamp": "host receipt, not hardware synchronized",
+            "covariance": "received fields unknown=0; unavailable=-1",
+            "reference": "manufacturer native; mounting and sign require validation"
+          }
+        }
+      ]
+    }
+  },
+  "markers": {
+    "count": 381,
+    "receipt_hz": 20.00068429709677,
+    "stamp_hz": 20.000682185373314,
+    "nonincreasing_stamps": 0,
+    "first": {
+      "receipt": 2274.912969469,
+      "stamp_ns": 1792479246596921652,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:LIVE R:NO_DATA SLAM:LIVE",
+          "frame": "map"
+        }
+      ]
+    },
+    "last": {
+      "receipt": 2293.912319409,
+      "stamp_ns": 1792479265596273598,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:LIVE R:NO_DATA SLAM:LIVE",
+          "frame": "map"
+        }
+      ]
+    }
+  },
+  "viz_status": {
+    "count": 390,
+    "receipt_hz": 20.48477420044097,
+    "stamp_hz": 20.484769081868592,
+    "nonincreasing_stamps": 0,
+    "first": {
+      "receipt": 2274.922779964,
+      "stamp_ns": 1792479246606718119,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792479246145899600,
+        "valid": false,
+        "imu": {
+          "tractor": "LIVE",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": 0.009589607999714644,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "LIVE",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    "last": {
+      "receipt": 2293.912493797,
+      "stamp_ns": 1792479265596436697,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792479265595891031,
+        "valid": false,
+        "imu": {
+          "tractor": "LIVE",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": 0.009200837000207684,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "LIVE",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    }
+  },
+  "tf_edges": {
+    "map -> odom": 4001,
+    "odom -> laser_frame": 4001
+  },
+  "lookup": {
+    "laser_frame": {
+      "available": true,
+      "stamp_ns": 1792479265600005000
+    },
+    "odom": {
+      "available": true,
+      "stamp_ns": 1792479265600005000
+    },
+    "base_footprint": {
+      "available": false,
+      "reason": "\"base_footprint\" passed to lookupTransform argument source_frame does not exist. "
+    },
+    "base_link": {
+      "available": false,
+      "reason": "\"base_link\" passed to lookupTransform argument source_frame does not exist. "
+    }
+  },
+  "scan_timestamp_tf": true,
+  "graph_nodes": [
+    [
+      "vehicle_viz_2d_tractor_bridge",
+      "/"
+    ],
+    [
+      "ydlidar_ros2_driver_node",
+      "/"
+    ],
+    [
+      "cartographer_node",
+      "/"
+    ],
+    [
+      "transform_listener_impl_617497293560",
+      "/"
+    ],
+    [
+      "cartographer_occupancy_grid_node",
+      "/"
+    ],
+    [
+      "tractor_trailer_rviz_2d",
+      "/"
+    ],
+    [
+      "transform_listener_impl_647a1dc40d00",
+      "/"
+    ],
+    [
+      "real_sensor_readonly_verification",
+      "/"
+    ],
+    [
+      "_ros2cli_daemon_0_080d3118254248adafbf8d86a1b128b8",
+      "/"
+    ],
+    [
+      "tractor_trailer_2d_visualizer",
+      "/"
+    ]
+  ],
+  "graph_topics": [
+    [
+      "/constraint_list",
+      [
+        "visualization_msgs/msg/MarkerArray"
+      ]
+    ],
+    [
+      "/landmark_poses_list",
+      [
+        "visualization_msgs/msg/MarkerArray"
+      ]
+    ],
+    [
+      "/map",
+      [
+        "nav_msgs/msg/OccupancyGrid"
+      ]
+    ],
+    [
+      "/map_updates",
+      [
+        "map_msgs/msg/OccupancyGridUpdate"
+      ]
+    ],
+    [
+      "/parameter_events",
+      [
+        "rcl_interfaces/msg/ParameterEvent"
+      ]
+    ],
+    [
+      "/parking/estimated_tractor_trajectory",
+      [
+        "nav_msgs/msg/Path"
+      ]
+    ],
+    [
+      "/parking/planned_tractor_path",
+      [
+        "nav_msgs/msg/Path"
+      ]
+    ],
+    [
+      "/parking/planned_trailer_path",
+      [
+        "nav_msgs/msg/Path"
+      ]
+    ],
+    [
+      "/parking/status",
+      [
+        "std_msgs/msg/String"
+      ]
+    ],
+    [
+      "/parking/target_geometry",
+      [
+        "visualization_msgs/msg/MarkerArray"
+      ]
+    ],
+    [
+      "/point_cloud",
+      [
+        "sensor_msgs/msg/PointCloud"
+      ]
+    ],
+    [
+      "/rosout",
+      [
+        "rcl_interfaces/msg/Log"
+      ]
+    ],
+    [
+      "/scan",
+      [
+        "sensor_msgs/msg/LaserScan"
+      ]
+    ],
+    [
+      "/scan_matched_points2",
+      [
+        "sensor_msgs/msg/PointCloud2"
+      ]
+    ],
+    [
+      "/submap_list",
+      [
+        "cartographer_ros_msgs/msg/SubmapList"
+      ]
+    ],
+    [
+      "/tf",
+      [
+        "tf2_msgs/msg/TFMessage"
+      ]
+    ],
+    [
+      "/tf_static",
+      [
+        "tf2_msgs/msg/TFMessage"
+      ]
+    ],
+    [
+      "/trajectory_node_list",
+      [
+        "visualization_msgs/msg/MarkerArray"
+      ]
+    ],
+    [
+      "/vehicle_viz_2d/model",
+      [
+        "visualization_msgs/msg/MarkerArray"
+      ]
+    ],
+    [
+      "/vehicle_viz_2d/status",
+      [
+        "std_msgs/msg/String"
+      ]
+    ],
+    [
+      "/vehicle_viz_2d/tractor/diagnostics",
+      [
+        "diagnostic_msgs/msg/DiagnosticArray"
+      ]
+    ],
+    [
+      "/vehicle_viz_2d/tractor/imu/data",
+      [
+        "sensor_msgs/msg/Imu"
+      ]
+    ],
+    [
+      "/vehicle_viz_2d/trailer/diagnostics",
+      [
+        "diagnostic_msgs/msg/DiagnosticArray"
+      ]
+    ],
+    [
+      "/vehicle_viz_2d/trailer/imu/data",
+      [
+        "sensor_msgs/msg/Imu"
+      ]
+    ]
+  ]
+}

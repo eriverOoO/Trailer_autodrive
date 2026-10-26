@@ -1,0 +1,66 @@
+{
+  "physical_fixation_confirmed_by_user": true,
+  "data_scope": "Fresh Cartographer session; 0.15-1.0 m software range, not the previous 15 m baseline",
+  "warmup_excluded_s": 5,
+  "steady_scan_count": 758,
+  "steady_scan_span_s": 64.92048802299996,
+  "at_least_60s_observed": true,
+  "steady_scan_hz": 11.660417582378784,
+  "scan_count": 793,
+  "scan_hz": 11.651810251489588,
+  "valid_beams": {
+    "min": 299.0,
+    "median": 318.0,
+    "mean": 318.78814627994956,
+    "max": 361.0
+  },
+  "valid_fraction": {
+    "min": 0.19402985074626866,
+    "median": 0.20609202851587816,
+    "mean": 0.20647675460359355,
+    "max": 0.22164614387556708
+  },
+  "map_count": 67,
+  "map_hz": 0.9999852182488019,
+  "matched_cloud_count": 793,
+  "matched_cloud_hz": 11.651989761220761,
+  "submap_list_count": 234,
+  "tf_edges": {
+    "map -> odom": 13605,
+    "odom -> laser_frame": 13605
+  },
+  "static_tf": [],
+  "tf_failures_after_warmup": [],
+  "range_min_m": 0.15000000596046448,
+  "range_max_m": 1.0,
+  "physical_target_direction_verified": false,
+  "estimated_xy_change": {
+    "max_distance_from_first_m": 0.01836021464113878,
+    "x_stats_m": {
+      "min": -0.012071462640030669,
+      "median": 0.00582608992665485,
+      "max": 0.010419656002633854,
+      "std": 0.003909425639398763
+    },
+    "y_stats_m": {
+      "min": 0.003922744955350461,
+      "median": 0.012522316618199351,
+      "max": 0.028426684415884255,
+      "std": 0.0027950141894256732
+    }
+  },
+  "estimated_yaw_deg": {
+    "min": -5.381528876003479,
+    "median": -0.41337624603578055,
+    "max": 0.6956552025156726,
+    "std": 0.45883338796031287
+  },
+  "estimated_yaw_peak_to_peak_deg": 6.077184078519151,
+  "log_counts_at_analysis": {
+    "[ERROR]": 0,
+    "[FATAL]": 0,
+    "[WARN]": 1,
+    "Checksum error": 0,
+    "Dropped": 0
+  }
+}

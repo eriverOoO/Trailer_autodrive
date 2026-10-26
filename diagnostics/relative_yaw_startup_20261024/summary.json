@@ -1,0 +1,143 @@
+{
+  "real_hardware": true,
+  "synthetic_samples": false,
+  "status_count": 238,
+  "ready_count": 61,
+  "ready_reached": true,
+  "last_status": {
+    "mode": "REAL_INPUT",
+    "stamp_ns": 1792824803867190757,
+    "valid": true,
+    "visualization_mode": "FULL_VEHICLE",
+    "diagnostic_valid": false,
+    "imu": {
+      "tractor": "LIVE",
+      "trailer": "LIVE"
+    },
+    "imu_age_s": {
+      "tractor": 0.002306000999851676,
+      "trailer": 0.003119690999483282
+    },
+    "imu_reason": {
+      "tractor": "",
+      "trailer": ""
+    },
+    "yaw_source": {
+      "tractor": "orientation",
+      "trailer": "orientation"
+    },
+    "slam": "LIVE",
+    "reason": "OK",
+    "values": {
+      "tractor_yaw": 0.002541368896079679,
+      "trailer_yaw": 0.0013240213591215544,
+      "tractor_delta": 0.0003402623181587572,
+      "trailer_delta": -0.0008770852187993672,
+      "phi": -0.0012173475369579023
+    },
+    "state_machine": "STATE_UNKNOWN",
+    "tf_published": false,
+    "poses": {
+      "tractor": [
+        -0.29174833506277253,
+        0.010045426080796603
+      ],
+      "hitch": [
+        -0.6317472371088664,
+        0.009181361586231682
+      ],
+      "trailer": [
+        -0.6317472371088664,
+        0.009181361586231682
+      ],
+      "trailer_axle": [
+        -1.4467465227482026,
+        0.008102284493823893
+      ]
+    },
+    "paired_stamp_ns": 1792824803863578476,
+    "paired_age_ms": 3.612281,
+    "marker_update_period_s": 0.4,
+    "ready": true,
+    "reference_recorded": true,
+    "startup_progress": 1.0,
+    "heading_reference": "INDEPENDENT_AVERAGED_STARTUP_YAW_DELTAS",
+    "heading_alignment_verified": false,
+    "sign_convention": "configured native-yaw sign -1 for both; physical direction needs confirmation",
+    "control_authorized": false
+  },
+  "imu_subscribers": {
+    "/tractor/imu/data": [
+      "tractor_trailer_2d_visualizer"
+    ],
+    "/trailer/imu/data": [
+      "tractor_trailer_2d_visualizer"
+    ]
+  },
+  "marker_batches": 238,
+  "physical_turn_accuracy_verified": false,
+  "first_ready": {
+    "mode": "REAL_INPUT",
+    "stamp_ns": 1792824800867204728,
+    "valid": true,
+    "visualization_mode": "FULL_VEHICLE",
+    "diagnostic_valid": false,
+    "imu": {
+      "tractor": "LIVE",
+      "trailer": "LIVE"
+    },
+    "imu_age_s": {
+      "tractor": 0.00245310900027107,
+      "trailer": 0.003233078999983263
+    },
+    "imu_reason": {
+      "tractor": "",
+      "trailer": ""
+    },
+    "yaw_source": {
+      "tractor": "orientation",
+      "trailer": "orientation"
+    },
+    "slam": "LIVE",
+    "reason": "OK",
+    "values": {
+      "tractor_yaw": 0.002283843291334222,
+      "trailer_yaw": 0.001598155010645288,
+      "tractor_delta": 8.273671341330058e-05,
+      "trailer_delta": -0.0006029515672756336,
+      "phi": -0.0006856882806891562
+    },
+    "state_machine": "STATE_UNKNOWN",
+    "tf_published": false,
+    "poses": {
+      "tractor": [
+        -0.2969098335386103,
+        0.006494043088131269
+      ],
+      "hitch": [
+        -0.6369089468291653,
+        0.00571753704411289
+      ],
+      "trailer": [
+        -0.6369089468291653,
+        0.00571753704411289
+      ],
+      "trailer_axle": [
+        -1.4519079060338658,
+        0.004415041264887769
+      ]
+    },
+    "paired_stamp_ns": 1792824800863566752,
+    "paired_age_ms": 3.637976,
+    "marker_update_period_s": 0.4,
+    "ready": true,
+    "reference_recorded": true,
+    "startup_progress": 1.0,
+    "heading_reference": "INDEPENDENT_AVERAGED_STARTUP_YAW_DELTAS",
+    "heading_alignment_verified": false,
+    "sign_convention": "configured native-yaw sign -1 for both; physical direction needs confirmation",
+    "control_authorized": false
+  },
+  "ready_after_process_start_s": 9.284758609999699,
+  "status": "PASS"
+}

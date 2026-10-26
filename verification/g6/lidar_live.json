@@ -1,0 +1,116 @@
+{
+  "source": "LIVE_HARDWARE_ONLY; observer publishes no scans or commands",
+  "test_scope": "stationary sensor-origin SLAM; no vehicle motion",
+  "requested_duration_s": 40.0,
+  "scan_pass": true,
+  "slam_pass": null,
+  "scan_count": 387,
+  "continuous_scan_span_s": 39.88209300200015,
+  "measured_scan_hz": 9.678529157951703,
+  "receipt_gap_s": {
+    "min": 0.1010333129997889,
+    "median": 0.10332247099995584,
+    "p95": 0.10424576599984903,
+    "max": 0.10587928600011765
+  },
+  "stamp_gap_s": {
+    "min": 0.101226,
+    "median": 0.1033125,
+    "p95": 0.104173,
+    "max": 0.10548
+  },
+  "timestamp_age_s": {
+    "min": 0.101799968,
+    "median": 0.103886005,
+    "p95": 0.104838747,
+    "max": 0.106613256
+  },
+  "valid_beams": {
+    "min": 839,
+    "median": 891,
+    "p95": 920,
+    "max": 950
+  },
+  "beam_count": {
+    "min": 1853,
+    "median": 1859,
+    "p95": 1861,
+    "max": 1863
+  },
+  "first_scan": {
+    "wall": 1376.18627662,
+    "stamp_ns": 1792236557160756000,
+    "frame": "laser_frame",
+    "age_s": 0.103635384,
+    "beams": 1859,
+    "valid": 933,
+    "valid_min_m": 0.48100000619888306,
+    "valid_max_m": 9.458999633789062,
+    "angle_min": -3.1415927410125732,
+    "angle_max": 3.1415927410125732,
+    "angle_increment": 0.0033816928043961525,
+    "scan_time": 0.1027899980545044,
+    "time_increment": 5.529316695174202e-05,
+    "range_min": 0.2800000011920929,
+    "range_max": 16.0,
+    "angle_count_error_beams": 7.435834940988387e-05
+  },
+  "last_scan": {
+    "wall": 1416.068369622,
+    "stamp_ns": 1792236597042497000,
+    "frame": "laser_frame",
+    "age_s": 0.103986457,
+    "beams": 1857,
+    "valid": 901,
+    "valid_min_m": 0.45249998569488525,
+    "valid_max_m": 9.550000190734863,
+    "angle_min": -3.1415927410125732,
+    "angle_max": 3.1415927410125732,
+    "angle_increment": 0.003385336836799979,
+    "scan_time": 0.10315100103616714,
+    "time_increment": 5.554711970034987e-05,
+    "range_min": 0.2800000011920929,
+    "range_max": 16.0,
+    "angle_count_error_beams": 9.243522879885579e-05
+  },
+  "map_count": 0,
+  "distinct_map_contents": 0,
+  "maps": [],
+  "matched_cloud_count": 0,
+  "last_matched_cloud": null,
+  "dynamic_tf_edges": {},
+  "static_tf_parents": {},
+  "scan_time_tf_lookup_successes": 0,
+  "tf_lookup_failures": {
+    "\"map\" passed to lookupTransform argument target_frame does not exist. ": 400
+  },
+  "latest_map_to_laser_pose": null,
+  "publishers": {
+    "/scan": [
+      {
+        "name": "ydlidar_ros2_driver_node",
+        "namespace": "/",
+        "type": "sensor_msgs/msg/LaserScan",
+        "reliability": "ReliabilityPolicy.BEST_EFFORT"
+      }
+    ],
+    "/map": [],
+    "/tf": [],
+    "/tf_static": [],
+    "/scan_matched_points2": []
+  },
+  "scan_subscribers": [
+    {
+      "name": "g6_real_data_probe",
+      "type": "sensor_msgs/msg/LaserScan"
+    }
+  ],
+  "nodes": [
+    "ydlidar_ros2_driver_node",
+    "g6_real_data_probe",
+    "_ros2cli_daemon_232_cfb73cdd9050429a9c1f258bb785b7f2"
+  ],
+  "vehicle_extrinsics_verified": false,
+  "moving_slam_verified": false,
+  "physical_direction_verified": false
+}

@@ -1,0 +1,3 @@
+1792158191.2016194 [INFO] [launch]: All log files can be found below /home/venezuelachocolatemilk/mvsim_slam_real/verification/ros/2026-10-16-22-43-11-201214-venezuelachocolatemilk-Legion-Pro-5-16IAX10H-24736
+1792158191.2016773 [INFO] [launch]: Default logging verbosity is set to INFO
+1792158191.2114849 [ERROR] [launch]: Caught exception in launch (see debug for traceback): enable_actuation requires development_mode=false

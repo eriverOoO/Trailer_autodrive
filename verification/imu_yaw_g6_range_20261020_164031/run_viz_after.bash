@@ -1,0 +1,3 @@
+set -o pipefail
+source /home/venezuelachocolatemilk/mvsim_slam_real/verification/imu_yaw_g6_range_20261020_164031/environment.bash
+ros2 launch tractor_trailer_rviz_2d visualization.launch.py rviz:=false config_file:=/home/venezuelachocolatemilk/mvsim_slam_real/visualization/tractor_trailer_rviz_2d/config/tractor_only_diagnostic.yaml visualization_mode:=TRACTOR_ONLY_DIAGNOSTIC slam_frame:=laser_frame output_directory:=/home/venezuelachocolatemilk/mvsim_slam_real/verification/imu_yaw_g6_range_20261020_164031/viz_after 2>&1 | tee /home/venezuelachocolatemilk/mvsim_slam_real/verification/imu_yaw_g6_range_20261020_164031/viz_after.log

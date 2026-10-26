@@ -1,0 +1,36 @@
+--- before/src/mvsim_slam_real_bringup/config/g6.yaml
++++ after/src/mvsim_slam_real_bringup/config/g6.yaml
+@@ -21,7 +21,7 @@
+     angle_min: -180.0
+     angle_max: 180.0
+     range_min: 0.15
+-    range_max: 1.0
++    range_max: 12.0
+     ignore_array: ''
+     invalid_range_is_inf: false
+     debug: false
+--- before/src/mvsim_slam_real_bringup/config/g6_lidar_only.lua
++++ after/src/mvsim_slam_real_bringup/config/g6_lidar_only.lua
+@@ -3,7 +3,7 @@
+ options.tracking_frame = "laser_frame"
+ options.published_frame = "laser_frame"
+ TRAJECTORY_BUILDER_2D.min_range = 0.15
+-TRAJECTORY_BUILDER_2D.max_range = 1.0
+--- Limit missing-return clearing rays to the current scan range.
++TRAJECTORY_BUILDER_2D.max_range = 12.0
++-- Keep conservative 1 m miss rays, independently of the 12 m accepted returns.
+ TRAJECTORY_BUILDER_2D.missing_data_ray_length = 1.0
+ return options
+--- before/visualization/tractor_trailer_rviz_2d/config/tractor_only_diagnostic.yaml
++++ after/visualization/tractor_trailer_rviz_2d/config/tractor_only_diagnostic.yaml
+@@ -24,7 +24,9 @@
+   topic: /vehicle_viz_2d/tractor/imu/data
+   frame: vehicle_viz_2d_tractor_imu
+   source: orientation
+-  sign: 1
++  # Physical CCW decreased native yaw in the 2026-10-20 manual test.
++  # This sign affects this diagnostic display only, never the public Imu.
++  sign: -1
+   sensor_to_body_rpy: [0.0, 0.0, 0.0]
+   mounting_and_sign_confirmed: false
+   gyro_bias_rad_s: 0.0

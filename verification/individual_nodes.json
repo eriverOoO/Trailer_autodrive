@@ -1,0 +1,20 @@
+[
+  {
+    "entry": "gap_detector",
+    "startup": "PASS",
+    "shutdown": "PASS",
+    "hardware": false
+  },
+  {
+    "entry": "hybrid_astar",
+    "startup": "PASS",
+    "shutdown": "PASS",
+    "hardware": false
+  },
+  {
+    "entry": "lqr",
+    "startup": "PASS",
+    "shutdown": "PASS",
+    "hardware": false
+  }
+]

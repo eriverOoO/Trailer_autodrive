@@ -1,0 +1,21 @@
+{
+  "checked_at": "2026-10-24T15:29:39.289463+09:00",
+  "devices": [
+    {
+      "alias": "/dev/imu_tractor",
+      "target": "/dev/ttyUSB1",
+      "is_symlink": true,
+      "read_write_access": true,
+      "installed_rule_matches": true
+    },
+    {
+      "alias": "/dev/lidar_g6",
+      "target": "/dev/ttyUSB0",
+      "is_symlink": true,
+      "read_write_access": true,
+      "installed_rule_matches": true
+    }
+  ],
+  "distinct_devices": true,
+  "reconnect_tested": false
+}

@@ -1,0 +1,7 @@
+{
+  "at": "2026-10-19T21:09:19.179535+09:00",
+  "files": 585,
+  "status": "PASS",
+  "changes": [],
+  "scope": "selected real project source, prior 3D files, prior IMU diagnostics, final B source/config/assets; original record datasets not exhaustively hashed"
+}

@@ -1,0 +1,52 @@
+{
+  "before_fix_left": {
+    "status": "CONFIRMED_REVERSED",
+    "physical_direction": "CCW user confirmed",
+    "raw_delta_deg": -33.761380925058965,
+    "visual_delta_deg": -33.76203126354736,
+    "physical_angle_accuracy": "NOT TESTED; approximate physical angle differs from native Euler change and pitch changed"
+  },
+  "after_fix_left": "NOT TESTED",
+  "after_fix_right": {
+    "physical_direction": "CW",
+    "user_confirmed": true,
+    "start_ns": 1792482920272250381,
+    "end_ns": 1792483104364236200,
+    "status": "FAIL_OR_INCONCLUSIVE",
+    "note": "Direction evidence only; exact physical angle/mounting remains uncalibrated.",
+    "raw_imu": {
+      "pre_samples": 500,
+      "post_samples": 300,
+      "delta_deg": -9.350148577415924,
+      "post_span_deg": 0.25307851527941727
+    },
+    "arrow": {
+      "pre_samples": 100,
+      "post_samples": 60,
+      "delta_deg": 9.353941486490358,
+      "post_span_deg": 0.22791157883552826
+    },
+    "body": {
+      "pre_samples": 103,
+      "post_samples": 61,
+      "delta_deg": 9.376672892915026,
+      "post_span_deg": 0.2279115788355028
+    },
+    "sensor_anchor_shift_m": 0.0040872698783120925,
+    "latest_state": {
+      "imu": {
+        "tractor": "LIVE",
+        "trailer": "NO DATA"
+      },
+      "slam": "LIVE",
+      "diagnostic_valid": true,
+      "paired_age_ms": 9.977475,
+      "position_reference": "UNMEASURED_SENSOR_ANCHOR",
+      "heading_alignment_verified": false
+    },
+    "correction_error_arrow_deg": 0.003792909074434192,
+    "correction_error_body_deg": 0.026524315499102613
+  },
+  "mounting_axis": "NOT TESTED",
+  "angle_accuracy": "NOT TESTED"
+}

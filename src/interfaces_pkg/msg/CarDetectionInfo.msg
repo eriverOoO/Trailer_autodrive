@@ -1,0 +1,7 @@
+bool car_detected
+float64 bbox_width
+float64 bbox_height
+float64 bbox_area
+float64 bbox_center_x
+float64 bbox_center_y
+float64 score

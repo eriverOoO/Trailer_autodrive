@@ -1,0 +1,192 @@
+{
+  "at": "2026-10-20T16:30:23.510911+09:00",
+  "status": {
+    "mode": "REAL_INPUT",
+    "stamp_ns": 1792481375941555661,
+    "valid": false,
+    "visualization_mode": "TRACTOR_ONLY_DIAGNOSTIC",
+    "diagnostic_valid": true,
+    "imu": {
+      "tractor": "LIVE",
+      "trailer": "NO DATA"
+    },
+    "imu_age_s": {
+      "tractor": 0.008968289999756962,
+      "trailer": null
+    },
+    "imu_reason": {
+      "tractor": "",
+      "trailer": ""
+    },
+    "yaw_source": {
+      "tractor": "orientation",
+      "trailer": "orientation"
+    },
+    "slam": "LIVE",
+    "reason": "DIAGNOSTIC_ONLY",
+    "values": {
+      "tractor_delta": -0.2587774173141151,
+      "tractor_yaw": null,
+      "trailer_yaw": null,
+      "phi": null
+    },
+    "state_machine": "STATE_UNKNOWN",
+    "tf_published": false,
+    "vehicle_pose_valid": false,
+    "full_vehicle_valid": false,
+    "position_reference": "UNMEASURED_SENSOR_ANCHOR",
+    "position_source": "laser_frame",
+    "mounting_and_sign_confirmed": false,
+    "extrinsics_confirmed": false,
+    "heading_reference": "INITIAL_SLAM_TRACKING_YAW_PLUS_NATIVE_IMU_DELTA",
+    "heading_alignment_verified": false,
+    "display_anchor_xy": [
+      -0.021344827018118795,
+      -0.013452581828645366
+    ],
+    "display_yaw_rad": -0.3127384532172474,
+    "native_imu_delta_rad": -0.2587774173141151,
+    "reference_stamp_ns": 1792481350682399123,
+    "paired_stamp_ns": 1792481375932383277,
+    "paired_age_ms": 9.172384
+  },
+  "imu_diagnostic_message": "LIVE:",
+  "imu_diagnostics": {
+    "rx_bytes": "5186205",
+    "tx_bytes": "0",
+    "parsed": "72720",
+    "rejected": "0",
+    "published": "72720",
+    "sensor_rollovers": "12",
+    "estimated_missing": "0",
+    "sensor_clock_event": "LIVE",
+    "timestamp": "host receipt, not hardware synchronized",
+    "covariance": "received fields unknown=0; unavailable=-1",
+    "reference": "manufacturer native; mounting and sign require validation"
+  },
+  "marker_keys": [
+    [
+      "current_body",
+      0
+    ],
+    [
+      "articulation",
+      0
+    ],
+    [
+      "tractor_pose_arrow",
+      0
+    ]
+  ],
+  "rollover_validation": {
+    "count": 77380,
+    "duration_s": 773.787055663,
+    "host_hz": 100.00038050998378,
+    "host_stamp_nonincreasing": 0,
+    "estimated_missing": 0,
+    "rollovers": [
+      {
+        "before_ms": 59992.0,
+        "after_ms": 2.0,
+        "host_dt_s": 0.009951471,
+        "at": "2026-10-20T16:18:26.566370+09:00"
+      },
+      {
+        "before_ms": 59992.0,
+        "after_ms": 2.0,
+        "host_dt_s": 0.009980574,
+        "at": "2026-10-20T16:19:26.566395+09:00"
+      },
+      {
+        "before_ms": 59992.0,
+        "after_ms": 2.0,
+        "host_dt_s": 0.009970608,
+        "at": "2026-10-20T16:20:26.568373+09:00"
+      },
+      {
+        "before_ms": 59992.0,
+        "after_ms": 2.0,
+        "host_dt_s": 0.007996254,
+        "at": "2026-10-20T16:21:26.568397+09:00"
+      },
+      {
+        "before_ms": 59992.0,
+        "after_ms": 2.0,
+        "host_dt_s": 0.009940796,
+        "at": "2026-10-20T16:22:26.570393+09:00"
+      },
+      {
+        "before_ms": 59992.0,
+        "after_ms": 2.0,
+        "host_dt_s": 0.009999885,
+        "at": "2026-10-20T16:23:26.572388+09:00"
+      },
+      {
+        "before_ms": 59992.0,
+        "after_ms": 2.0,
+        "host_dt_s": 0.010047125,
+        "at": "2026-10-20T16:24:26.570434+09:00"
+      },
+      {
+        "before_ms": 59992.0,
+        "after_ms": 2.0,
+        "host_dt_s": 0.009998721,
+        "at": "2026-10-20T16:25:26.568391+09:00"
+      },
+      {
+        "before_ms": 59992.0,
+        "after_ms": 2.0,
+        "host_dt_s": 0.009771557,
+        "at": "2026-10-20T16:26:26.566431+09:00"
+      },
+      {
+        "before_ms": 59992.0,
+        "after_ms": 2.0,
+        "host_dt_s": 0.010042228,
+        "at": "2026-10-20T16:27:26.564417+09:00"
+      },
+      {
+        "before_ms": 59992.0,
+        "after_ms": 2.0,
+        "host_dt_s": 0.007983838,
+        "at": "2026-10-20T16:28:26.562387+09:00"
+      },
+      {
+        "before_ms": 59992.0,
+        "after_ms": 2.0,
+        "host_dt_s": 0.009991472,
+        "at": "2026-10-20T16:29:26.562384+09:00"
+      }
+    ],
+    "incomplete_json_lines_at_snapshot": 0
+  },
+  "protection": {
+    "checked": 766,
+    "changed": [
+      "/home/venezuelachocolatemilk/mvsim_slam_real/visualization/tractor_trailer_rviz_2d/README.md",
+      "/home/venezuelachocolatemilk/mvsim_slam_real/visualization/tractor_trailer_rviz_2d/launch/visualization.launch.py",
+      "/home/venezuelachocolatemilk/mvsim_slam_real/visualization/tractor_trailer_rviz_2d/tractor_trailer_rviz_2d/render_adapter.py",
+      "/home/venezuelachocolatemilk/mvsim_slam_real/visualization/tractor_trailer_rviz_2d/tractor_trailer_rviz_2d/visualizer.py",
+      "/home/venezuelachocolatemilk/mvsim_slam_real/visualization/tractor_trailer_rviz_2d/tractor_trailer_rviz_2d/serial_bridge.py"
+    ],
+    "unexpected_changes": [],
+    "preserved_pids": {
+      "21573": {
+        "alive": true,
+        "same_start": true
+      },
+      "21575": {
+        "alive": true,
+        "same_start": true
+      },
+      "21577": {
+        "alive": true,
+        "same_start": true
+      },
+      "22858": {
+        "alive": true,
+        "same_start": true
+      }
+    }
+  }
+}

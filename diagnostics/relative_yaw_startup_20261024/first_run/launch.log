@@ -1,0 +1,188 @@
+[INFO] [launch]: All log files can be found below /home/venezuelachocolatemilk/.ros/log/2026-10-24-15-52-01-351991-venezuelachocolatemilk-Legion-Pro-5-16IAX10H-56419
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [launch.user]: Keep both vehicles stationary and straight until READY. No vehicle control is started.
+[INFO] [launch.user]: Vehicle SLAM: run only one Cartographer and one publisher per TF edge
+[INFO] [launch.user]: Using EXTERNAL measured sensor TF; do not run duplicate publishers
+[INFO] [launch.user]: Matching IMU profiles; raw sensor frames. Trailer yaw +pi is in mount TF only. Absolute sensor-axis alignment remains unverified.
+[INFO] [ydlidar_ros2_driver_node-1]: process started with pid [56433]
+[INFO] [cartographer_node-2]: process started with pid [56439]
+[INFO] [cartographer_occupancy_grid_node-3]: process started with pid [56441]
+[INFO] [ebimu_node-4]: process started with pid [56443]
+[INFO] [ebimu_node-5]: process started with pid [56445]
+[INFO] [sensor_tf-6]: process started with pid [56447]
+[INFO] [tt2d_visualizer-7]: process started with pid [56449]
+[ydlidar_ros2_driver_node-1] [INFO] [1792824721.613316716] [ydlidar_ros2_driver_node]: [YDLIDAR INFO] Current ROS Driver Version: 1.0.1
+[ydlidar_ros2_driver_node-1] 
+[ydlidar_ros2_driver_node-1] [2026-10-24 15:52:01][info] SDK initializing
+[ydlidar_ros2_driver_node-1] [2026-10-24 15:52:01][info] SDK has been initialized
+[ydlidar_ros2_driver_node-1] [2026-10-24 15:52:01][info] SDK Version: 1.2.20
+[ydlidar_ros2_driver_node-1] [2026-10-24 15:52:01][info] Connect elapsed time 2 ms
+[ydlidar_ros2_driver_node-1] [2026-10-24 15:52:01][info] Lidar successfully connected [/dev/lidar_g6:512000]
+[cartographer_node-2] [INFO] [1792824721.638572600] [cartographer logger]: I1024 15:52:01.000000 56439 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/g6_vehicle.lua' for 'g6_vehicle.lua'.
+[cartographer_node-2] [INFO] [1792824721.638752118] [cartographer logger]: I1024 15:52:01.000000 56439 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/g6_lidar_only.lua' for 'g6_lidar_only.lua'.
+[cartographer_node-2] [INFO] [1792824721.638768201] [cartographer logger]: I1024 15:52:01.000000 56439 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/g6_lidar_only.lua' for 'g6_lidar_only.lua'.
+[cartographer_node-2] [INFO] [1792824721.638802954] [cartographer logger]: I1024 15:52:01.000000 56439 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/reference_lidar_only.lua' for 'reference_lidar_only.lua'.
+[cartographer_node-2] [INFO] [1792824721.638813428] [cartographer logger]: I1024 15:52:01.000000 56439 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/reference_lidar_only.lua' for 'reference_lidar_only.lua'.
+[cartographer_node-2] [INFO] [1792824721.638867508] [cartographer logger]: I1024 15:52:01.000000 56439 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/map_builder.lua' for 'map_builder.lua'.
+[cartographer_node-2] [INFO] [1792824721.638877406] [cartographer logger]: I1024 15:52:01.000000 56439 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/map_builder.lua' for 'map_builder.lua'.
+[cartographer_node-2] [INFO] [1792824721.638911494] [cartographer logger]: I1024 15:52:01.000000 56439 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/pose_graph.lua' for 'pose_graph.lua'.
+[cartographer_node-2] [INFO] [1792824721.638929041] [cartographer logger]: I1024 15:52:01.000000 56439 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/pose_graph.lua' for 'pose_graph.lua'.
+[cartographer_node-2] [INFO] [1792824721.639014577] [cartographer logger]: I1024 15:52:01.000000 56439 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/trajectory_builder.lua' for 'trajectory_builder.lua'.
+[cartographer_node-2] [INFO] [1792824721.639028507] [cartographer logger]: I1024 15:52:01.000000 56439 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/trajectory_builder.lua' for 'trajectory_builder.lua'.
+[cartographer_node-2] [INFO] [1792824721.639052520] [cartographer logger]: I1024 15:52:01.000000 56439 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/trajectory_builder_2d.lua' for 'trajectory_builder_2d.lua'.
+[cartographer_node-2] [INFO] [1792824721.639061997] [cartographer logger]: I1024 15:52:01.000000 56439 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/trajectory_builder_2d.lua' for 'trajectory_builder_2d.lua'.
+[cartographer_node-2] [INFO] [1792824721.639135867] [cartographer logger]: I1024 15:52:01.000000 56439 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/trajectory_builder_3d.lua' for 'trajectory_builder_3d.lua'.
+[cartographer_node-2] [INFO] [1792824721.639145525] [cartographer logger]: I1024 15:52:01.000000 56439 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/trajectory_builder_3d.lua' for 'trajectory_builder_3d.lua'.
+[cartographer_node-2] [INFO] [1792824721.654057337] [cartographer logger]: I1024 15:52:01.000000 56439 map_builder_bridge.cpp:136] Added trajectory with ID '0'.
+[ebimu_node-4] [WARN] [1792824721.762163033] [tractor_imu]: No valid EBIMU data; rejected frames=0
+[ebimu_node-5] [WARN] [1792824721.765914041] [trailer_imu]: No valid EBIMU data; rejected frames=0
+[tt2d_visualizer-7] [INFO] [1792824721.795646591] [tractor_trailer_2d_visualizer]: Display dimensions loaded from /home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/vehicle_geometry.yaml: tractor (0.9449999999999998, 0.475) m, trailer (0.9449999999999998, 0.475) m
+[tt2d_visualizer-7] [INFO] [1792824721.846373725] [tractor_trailer_2d_visualizer]: both IMUs must be LIVE
+[ydlidar_ros2_driver_node-1] [2026-10-24 15:52:02][info] Lidar running correctly! The health status good
+[ydlidar_ros2_driver_node-1] [2026-10-24 15:52:02][info] Current Lidar Model Code 13
+[ydlidar_ros2_driver_node-1] [2026-10-24 15:52:02][info] Baseplate device info
+[ydlidar_ros2_driver_node-1] Firmware version: 3.2
+[ydlidar_ros2_driver_node-1] Hardware version: 3
+[ydlidar_ros2_driver_node-1] Model: G6
+[ydlidar_ros2_driver_node-1] Serial: 2022061000071139
+[ydlidar_ros2_driver_node-1] [2026-10-24 15:52:02][info] Current scan frequency: 7.40Hz
+[ydlidar_ros2_driver_node-1] [2026-10-24 15:52:02][info] Current scan frequency: 12.00Hz
+[ydlidar_ros2_driver_node-1] [2026-10-24 15:52:02][info] Check status, Elapsed time 520 ms
+[ydlidar_ros2_driver_node-1] [2026-10-24 15:52:02][info] Lidar init success, elapsed time [522]ms
+[ebimu_node-4] [WARN] [1792824723.753132309] [tractor_imu]: No valid EBIMU data; rejected frames=199
+[ebimu_node-5] [WARN] [1792824723.755811727] [trailer_imu]: No valid EBIMU data; rejected frames=200
+[ydlidar_ros2_driver_node-1] [2026-10-24 15:52:03][info] [YDLIDAR] Create thread 0x8DE44640
+[ydlidar_ros2_driver_node-1] [2026-10-24 15:52:04][info] Successed to start the lidar, elapsed time 2276 ms
+[ydlidar_ros2_driver_node-1] [2026-10-24 15:52:04][info] Scan Frequency: 12.00Hz
+[ydlidar_ros2_driver_node-1] [2026-10-24 15:52:04][info] Fixed Size: 1525
+[ydlidar_ros2_driver_node-1] [2026-10-24 15:52:04][info] Sample Rate: 18.00K
+[ydlidar_ros2_driver_node-1] [2026-10-24 15:52:04][info] Successed to check the lidar, elapsed time 1 ms
+[ydlidar_ros2_driver_node-1] [2026-10-24 15:52:04][info] Lidar has started!
+[cartographer_node-2] [INFO] [1792824724.419597506] [cartographer logger]: I1024 15:52:04.000000 56439 ordered_multi_queue.cc:172] All sensor data for trajectory 0 is available starting at '639284215244132120'.
+[ydlidar_ros2_driver_node-1] [0;31m[2026-10-24 15:52:04][error] Checksum error 0x0DA2 != 0x0F6D
+[cartographer_node-2] [WARN] [1792824724.419996741] [cartographer logger]: W1024 15:52:04.000000 56439 pose_extrapolator.cc:168] Queue too short for velocity estimation. Queue duration: 0 s
+[cartographer_node-2] [INFO] [1792824724.420405476] [cartographer logger]: I1024 15:52:04.000000 56439 pose_graph_2d.cc:148] Inserted submap (0, 0).
+[ydlidar_ros2_driver_node-1] [0m[0;31m[2026-10-24 15:52:04][error] Checksum error 0x0DA2 != 0x0F6D
+[ydlidar_ros2_driver_node-1] [0m[2026-10-24 15:52:04][info] The intensity has been automatically adjusted to[16]bit
+[ydlidar_ros2_driver_node-1] [0;31m[2026-10-24 15:52:04][error] Checksum error 0x5A4A != 0x0F6D
+[ydlidar_ros2_driver_node-1] [0m[0;31m[2026-10-24 15:52:04][error] Checksum error 0x5A4A != 0x0F6D
+[ydlidar_ros2_driver_node-1] [0m[2026-10-24 15:52:04][info] The intensity has been automatically adjusted to[8]bit
+[ydlidar_ros2_driver_node-1] [0;31m[2026-10-24 15:52:04][error] Checksum error 0x2300 != 0x0F6C
+[ydlidar_ros2_driver_node-1] [0m[0;31m[2026-10-24 15:52:04][error] Checksum error 0x0F55 != 0x0F6D
+[ydlidar_ros2_driver_node-1] [0m[2026-10-24 15:52:04][info] The intensity has been automatically adjusted to[0]bit
+[ebimu_node-4] [WARN] [1792824725.753075095] [tractor_imu]: No valid EBIMU data; rejected frames=399
+[ebimu_node-5] [WARN] [1792824725.755799684] [trailer_imu]: No valid EBIMU data; rejected frames=400
+[cartographer_node-2] [WARN] [1792824726.675313245] [cartographer logger]: W1024 15:52:06.000000 56439 range_data_collator.cc:82] Dropped 1 earlier points.
+[ebimu_node-4] [WARN] [1792824727.753415977] [tractor_imu]: No valid EBIMU data; rejected frames=599
+[ebimu_node-5] [WARN] [1792824727.757810923] [trailer_imu]: No valid EBIMU data; rejected frames=600
+[ebimu_node-4] [WARN] [1792824729.755056548] [tractor_imu]: No valid EBIMU data; rejected frames=800
+[ebimu_node-5] [WARN] [1792824729.759822144] [trailer_imu]: No valid EBIMU data; rejected frames=800
+[cartographer_node-2] [WARN] [1792824731.404556981] [cartographer logger]: W1024 15:52:11.000000 56439 range_data_collator.cc:82] Dropped 10 earlier points.
+[ebimu_node-4] [WARN] [1792824731.755242932] [tractor_imu]: No valid EBIMU data; rejected frames=1000
+[ebimu_node-5] [WARN] [1792824731.761774777] [trailer_imu]: No valid EBIMU data; rejected frames=1000
+[ebimu_node-4] [WARN] [1792824733.757279918] [tractor_imu]: No valid EBIMU data; rejected frames=1200
+[ebimu_node-5] [WARN] [1792824733.761786126] [trailer_imu]: No valid EBIMU data; rejected frames=1200
+[ebimu_node-4] [WARN] [1792824735.759216247] [tractor_imu]: No valid EBIMU data; rejected frames=1400
+[ebimu_node-5] [WARN] [1792824735.763826151] [trailer_imu]: No valid EBIMU data; rejected frames=1401
+[cartographer_node-2] [INFO] [1792824736.731755342] [cartographer logger]: I1024 15:52:16.000000 56439 collated_trajectory_builder.cc:81] scan rate: 11.61 Hz 8.61e-02 s +/- 1.42e-03 s (pulsed at 100.02% real time)
+[ebimu_node-4] [WARN] [1792824737.761216630] [tractor_imu]: No valid EBIMU data; rejected frames=1600
+[ebimu_node-5] [WARN] [1792824737.765786572] [trailer_imu]: No valid EBIMU data; rejected frames=1601
+[ebimu_node-4] [WARN] [1792824739.763182704] [tractor_imu]: No valid EBIMU data; rejected frames=1800
+[ebimu_node-5] [WARN] [1792824739.767757005] [trailer_imu]: No valid EBIMU data; rejected frames=1801
+[ebimu_node-4] [WARN] [1792824741.765231465] [tractor_imu]: No valid EBIMU data; rejected frames=2001
+[ebimu_node-5] [WARN] [1792824741.767824369] [trailer_imu]: No valid EBIMU data; rejected frames=2001
+[ebimu_node-4] [WARN] [1792824743.765258464] [tractor_imu]: No valid EBIMU data; rejected frames=2201
+[ebimu_node-5] [WARN] [1792824743.767891423] [trailer_imu]: No valid EBIMU data; rejected frames=2201
+[ebimu_node-4] [WARN] [1792824745.765310961] [tractor_imu]: No valid EBIMU data; rejected frames=2401
+[ebimu_node-5] [WARN] [1792824745.769804311] [trailer_imu]: No valid EBIMU data; rejected frames=2401
+[ebimu_node-4] [WARN] [1792824747.767170406] [tractor_imu]: No valid EBIMU data; rejected frames=2601
+[ebimu_node-5] [WARN] [1792824747.771800668] [trailer_imu]: No valid EBIMU data; rejected frames=2601
+[ebimu_node-4] [WARN] [1792824749.767226821] [tractor_imu]: No valid EBIMU data; rejected frames=2801
+[ebimu_node-5] [WARN] [1792824749.771795395] [trailer_imu]: No valid EBIMU data; rejected frames=2801
+[cartographer_node-2] [INFO] [1792824751.736743117] [cartographer logger]: I1024 15:52:31.000000 56439 collated_trajectory_builder.cc:81] scan rate: 11.66 Hz 8.58e-02 s +/- 1.53e-03 s (pulsed at 100.03% real time)
+[ebimu_node-4] [WARN] [1792824751.769102575] [tractor_imu]: No valid EBIMU data; rejected frames=3001
+[ebimu_node-5] [WARN] [1792824751.771848225] [trailer_imu]: No valid EBIMU data; rejected frames=3001
+[ebimu_node-4] [WARN] [1792824753.769085778] [tractor_imu]: No valid EBIMU data; rejected frames=3201
+[ebimu_node-5] [WARN] [1792824753.773811478] [trailer_imu]: No valid EBIMU data; rejected frames=3202
+[ebimu_node-4] [WARN] [1792824755.769291461] [tractor_imu]: No valid EBIMU data; rejected frames=3401
+[ebimu_node-5] [WARN] [1792824755.773796122] [trailer_imu]: No valid EBIMU data; rejected frames=3402
+[ebimu_node-4] [WARN] [1792824757.771279447] [tractor_imu]: No valid EBIMU data; rejected frames=3601
+[ebimu_node-5] [WARN] [1792824757.775763331] [trailer_imu]: No valid EBIMU data; rejected frames=3602
+[ebimu_node-4] [WARN] [1792824759.773290811] [tractor_imu]: No valid EBIMU data; rejected frames=3801
+[ebimu_node-5] [WARN] [1792824759.775891580] [trailer_imu]: No valid EBIMU data; rejected frames=3802
+[ebimu_node-4] [WARN] [1792824761.775099017] [tractor_imu]: No valid EBIMU data; rejected frames=4002
+[ebimu_node-5] [WARN] [1792824761.775950297] [trailer_imu]: No valid EBIMU data; rejected frames=4002
+[cartographer_node-2] [WARN] [1792824761.845556375] [cartographer logger]: W1024 15:52:41.000000 56439 range_data_collator.cc:82] Dropped 7 earlier points.
+[ebimu_node-4] [WARN] [1792824763.775177227] [tractor_imu]: No valid EBIMU data; rejected frames=4202
+[ebimu_node-5] [WARN] [1792824763.777814003] [trailer_imu]: No valid EBIMU data; rejected frames=4202
+[ebimu_node-4] [WARN] [1792824765.777213430] [tractor_imu]: No valid EBIMU data; rejected frames=4402
+[ebimu_node-5] [WARN] [1792824765.778073407] [trailer_imu]: No valid EBIMU data; rejected frames=4402
+[WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+[INFO] [tt2d_visualizer-7]: sending signal 'SIGINT' to process[tt2d_visualizer-7]
+[INFO] [sensor_tf-6]: sending signal 'SIGINT' to process[sensor_tf-6]
+[INFO] [ebimu_node-5]: sending signal 'SIGINT' to process[ebimu_node-5]
+[INFO] [ebimu_node-4]: sending signal 'SIGINT' to process[ebimu_node-4]
+[INFO] [cartographer_occupancy_grid_node-3]: sending signal 'SIGINT' to process[cartographer_occupancy_grid_node-3]
+[INFO] [cartographer_node-2]: sending signal 'SIGINT' to process[cartographer_node-2]
+[INFO] [ydlidar_ros2_driver_node-1]: sending signal 'SIGINT' to process[ydlidar_ros2_driver_node-1]
+[ydlidar_ros2_driver_node-1] [INFO] [1792824766.450603379] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[cartographer_occupancy_grid_node-3] [INFO] [1792824766.450602257] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[cartographer_node-2] [INFO] [1792824766.450617232] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[cartographer_node-2] [INFO] [1792824766.451181946] [cartographer logger]: I1024 15:52:46.000000 56439 node.cpp:569] Shutdown the subscriber of [scan]
+[cartographer_node-2] [INFO] [1792824766.451190594] [cartographer logger]: I1024 15:52:46.000000 56439 map_builder_bridge.cpp:152] Finishing trajectory with ID '0'...
+[cartographer_node-2] [WARN] [1792824766.451220140] [cartographer logger]: W1024 15:52:46.000000 56439 node.cpp:773] Can't run final optimization if there are one or more active trajectories. Trying to finish trajectory with ID 0 now.
+[cartographer_node-2] [INFO] [1792824766.451223524] [cartographer logger]: I1024 15:52:46.000000 56439 node.cpp:551] Trajectory 0 already pending to finish.
+[cartographer_node-2] [INFO] [1792824766.451225920] [cartographer logger]: I1024 15:52:46.000000 56439 map_builder_bridge.cpp:161] Running final trajectory optimization...
+[cartographer_node-2] [INFO] [1792824766.451249708] [cartographer logger]: I1024 15:52:46.000000 56485 pose_graph_2d.cc:538] Remaining work items in queue: 2
+[cartographer_node-2] [INFO] [1792824766.451263740] [cartographer logger]: I1024 15:52:46.000000 56485 constraint_builder_2d.cc:290] 0 computations resulted in 0 additional constraints.
+[cartographer_node-2] [INFO] [1792824766.451266877] [cartographer logger]: I1024 15:52:46.000000 56485 constraint_builder_2d.cc:292] Score histogram:
+[cartographer_node-2] Count: 0
+[cartographer_node-2] [INFO] [1792824766.453140901] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[ydlidar_ros2_driver_node-1] [INFO] [1792824766.453358627] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[ERROR] [cartographer_occupancy_grid_node-3]: process has died [pid 56441, exit code -2, cmd '/opt/ros/humble/lib/cartographer_ros/cartographer_occupancy_grid_node -resolution 0.05 -publish_period_sec 1.0 --ros-args -r __node:=cartographer_occupancy_grid_node --params-file /tmp/launch_params_3r5ihx8h'].
+[INFO] [launch]: process[cartographer_occupancy_grid_node-3] was required: shutting down launched system
+[ebimu_node-4] Traceback (most recent call last):
+[ebimu_node-4]   File "/home/venezuelachocolatemilk/mvsim_slam_real/install/ebimu_driver/lib/ebimu_driver/ebimu_node", line 33, in <module>
+[ebimu_node-4]     sys.exit(load_entry_point('ebimu-driver', 'console_scripts', 'ebimu_node')())
+[ebimu_node-4]   File "/home/venezuelachocolatemilk/mvsim_slam_real/build/ebimu_driver/ebimu_driver/node.py", line 75, in main
+[ebimu_node-4]     if node:node.destroy_node()
+[ebimu_node-4]   File "/home/venezuelachocolatemilk/mvsim_slam_real/build/ebimu_driver/ebimu_driver/node.py", line 67, in destroy_node
+[ebimu_node-4]     if self.serial:self.serial.close()
+[ebimu_node-4]   File "/usr/local/lib/python3.10/dist-packages/serial/serialposix.py", line 533, in close
+[ebimu_node-4]     os.close(self.fd)
+[ebimu_node-4] KeyboardInterrupt
+[ebimu_node-5] Traceback (most recent call last):
+[ebimu_node-5]   File "/home/venezuelachocolatemilk/mvsim_slam_real/install/ebimu_driver/lib/ebimu_driver/ebimu_node", line 33, in <module>
+[ebimu_node-5]     sys.exit(load_entry_point('ebimu-driver', 'console_scripts', 'ebimu_node')())
+[ebimu_node-5]   File "/home/venezuelachocolatemilk/mvsim_slam_real/build/ebimu_driver/ebimu_driver/node.py", line 75, in main
+[ebimu_node-5]     if node:node.destroy_node()
+[ebimu_node-5]   File "/home/venezuelachocolatemilk/mvsim_slam_real/build/ebimu_driver/ebimu_driver/node.py", line 67, in destroy_node
+[ebimu_node-5]     if self.serial:self.serial.close()
+[ebimu_node-5]   File "/usr/local/lib/python3.10/dist-packages/serial/serialposix.py", line 533, in close
+[ebimu_node-5]     os.close(self.fd)
+[ebimu_node-5] KeyboardInterrupt
+[ydlidar_ros2_driver_node-1] [INFO] [1792824766.468560631] [ydlidar_ros2_driver_node]: [YDLIDAR INFO] Now YDLIDAR is stopping .......
+[ydlidar_ros2_driver_node-1] [2026-10-24 15:52:46][info] Lidar has stopped!
+[cartographer_node-2] [INFO] [1792824766.480678776] [cartographer logger]: I1024 15:52:46.000000 56485 pose_graph_2d.cc:538] Remaining work items in queue: 1
+[cartographer_node-2] [INFO] [1792824766.480700873] [cartographer logger]: I1024 15:52:46.000000 56485 constraint_builder_2d.cc:290] 0 computations resulted in 0 additional constraints.
+[cartographer_node-2] [INFO] [1792824766.480704350] [cartographer logger]: I1024 15:52:46.000000 56485 constraint_builder_2d.cc:292] Score histogram:
+[cartographer_node-2] Count: 0
+[cartographer_node-2] [INFO] [1792824766.482048082] [cartographer logger]: I1024 15:52:46.000000 56483 constraint_builder_2d.cc:290] 0 computations resulted in 0 additional constraints.
+[cartographer_node-2] [INFO] [1792824766.482072133] [cartographer logger]: I1024 15:52:46.000000 56483 constraint_builder_2d.cc:292] Score histogram:
+[cartographer_node-2] Count: 0
+[cartographer_node-2] [KOptimizing: Done.     
+[ERROR] [ebimu_node-4]: process has died [pid 56443, exit code -2, cmd '/home/venezuelachocolatemilk/mvsim_slam_real/install/ebimu_driver/lib/ebimu_driver/ebimu_node --ros-args -r __node:=tractor_imu --params-file /home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/g6.yaml --params-file /tmp/launch_params_hol9kxeb'].
+[INFO] [launch]: process[ebimu_node-4] was required: shutting down launched system
+[cartographer_node-2] [INFO] [1792824766.486816861] [cartographer logger]: I1024 15:52:46.000000 56484 constraint_builder_2d.cc:290] 0 computations resulted in 0 additional constraints.
+[cartographer_node-2] [INFO] [1792824766.486851130] [cartographer logger]: I1024 15:52:46.000000 56484 constraint_builder_2d.cc:292] Score histogram:
+[cartographer_node-2] Count: 0
+[cartographer_node-2] [KOptimizing: Done.     
+[ERROR] [ebimu_node-5]: process has died [pid 56445, exit code -2, cmd '/home/venezuelachocolatemilk/mvsim_slam_real/install/ebimu_driver/lib/ebimu_driver/ebimu_node --ros-args -r __node:=trailer_imu --params-file /home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/g6.yaml --params-file /tmp/launch_params_98212tma'].
+[INFO] [launch]: process[ebimu_node-5] was required: shutting down launched system
+[INFO] [cartographer_node-2]: process has finished cleanly [pid 56439]
+[INFO] [launch]: process[cartographer_node-2] was required: shutting down launched system
+[INFO] [sensor_tf-6]: process has finished cleanly [pid 56447]
+[INFO] [launch]: process[sensor_tf-6] was required: shutting down launched system
+[INFO] [tt2d_visualizer-7]: process has finished cleanly [pid 56449]
+[INFO] [ydlidar_ros2_driver_node-1]: process has finished cleanly [pid 56433]
+[INFO] [launch]: process[ydlidar_ros2_driver_node-1] was required: shutting down launched system

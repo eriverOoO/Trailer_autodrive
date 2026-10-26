@@ -1,0 +1,66 @@
+# 읽기 전용 초기 조사 (기존 프로젝트/소스 수정 없음)
+lsusb
+ls -l /dev/serial/by-id/ /dev/serial/by-path/ /dev/ttyUSB* /dev/imu_tractor
+udevadm info --query=property --name=/dev/ttyUSB0
+udevadm info --query=property --name=/dev/ttyUSB1
+id
+fuser -v /dev/ttyUSB0 /dev/ttyUSB1
+env | sort | rg 'ROS|RMW|AMENT|COLCON|DISPLAY|WAYLAND|XAUTH|TMUX'
+ps -eo user,pid,ppid,lstart,args --width 260
+source /opt/ros/humble/setup.bash
+PYTHONDONTWRITEBYTECODE=1 timeout 15s ros2 node list --no-daemon
+PYTHONDONTWRITEBYTECODE=1 timeout 15s ros2 topic list --no-daemon
+ss -lunp
+source /home/venezuelachocolatemilk/mvsim_slam_real/install/setup.bash
+ros2 launch mvsim_slam_real_bringup g6_slam.launch.py --show-args
+# --show-args만 실행. G6 드라이버/Cartographer는 시작하지 않음.
+
+# 시각화 실행 환경
+source /home/venezuelachocolatemilk/mvsim_slam_real/verification/real_g6_tractor_imu_20261020_153135/environment.bash
+Environment: source /home/venezuelachocolatemilk/mvsim_slam_real/verification/real_g6_tractor_imu_20261020_153135/environment.bash
+ros2 launch tractor_trailer_rviz_2d visualization.launch.py slam_frame:=laser_frame output_directory:=/home/venezuelachocolatemilk/mvsim_slam_real/verification/real_g6_tractor_imu_20261020_153135/viz_live
+
+# 진단 및 창 캡처
+ros2 topic info /vehicle_viz_2d/model -v
+ros2 topic echo /vehicle_viz_2d/status --once
+/usr/bin/python3 /home/venezuelachocolatemilk/mvsim_slam_real/verification/real_g6_tractor_imu_20261020_153135/observe_real.py /home/venezuelachocolatemilk/mvsim_slam_real/verification/real_g6_tractor_imu_20261020_153135/before_port_confirmation 8 > /home/venezuelachocolatemilk/mvsim_slam_real/verification/real_g6_tractor_imu_20261020_153135/before_port_confirmation/observer.log 2>&1
+import -window 0x4a00106 /home/venezuelachocolatemilk/mvsim_slam_real/verification/real_g6_tractor_imu_20261020_153135/rviz_initial_no_sensor.png
+
+# Confirmed physical G6 port; original LiDAR-only launch
+ros2 launch mvsim_slam_real_bringup g6_slam.launch.py lidar_port:=/dev/serial/by-path/pci-0000:80:14.0-usb-0:7:1.0-port0 frame_mode:=sensor use_imu:=false start_imu:=false enable_rviz:=false
+
+# User-closed RViz reopened; existing visualizer reused
+ros2 run rviz2 rviz2 -d /home/venezuelachocolatemilk/mvsim_slam_real/visualization/tractor_trailer_rviz_2d/rviz/live.rviz --ros-args -r __node:=tractor_trailer_rviz_2d -p use_sim_time:=false
+
+# Camera-only runtime copy under verification; existing rviz config untouched
+ros2 run rviz2 rviz2 -d /home/venezuelachocolatemilk/mvsim_slam_real/verification/real_g6_tractor_imu_20261020_153135/rviz_map_origin_view.rviz --ros-args -r __node:=tractor_trailer_rviz_2d -p use_sim_time:=false
+
+# Real G6 stationary observation and read-only services
+/usr/bin/python3 /home/venezuelachocolatemilk/mvsim_slam_real/verification/real_g6_tractor_imu_20261020_153135/observe_real.py /home/venezuelachocolatemilk/mvsim_slam_real/verification/real_g6_tractor_imu_20261020_153135/g6_stationary_observation 30 > /home/venezuelachocolatemilk/mvsim_slam_real/verification/real_g6_tractor_imu_20261020_153135/g6_stationary_observation/observer.log 2>&1
+timeout -s INT 16s ros2 topic hz /scan
+ros2 param dump /ydlidar_ros2_driver_node
+ros2 topic info /tf -v
+ros2 node info /cartographer_node
+ros2 service call /get_trajectory_states cartographer_ros_msgs/srv/GetTrajectoryStates '{}'
+ros2 service call /trajectory_query cartographer_ros_msgs/srv/TrajectoryQuery '{trajectory_id: 0}'
+ros2 topic echo /map --once --full-length
+ros2 topic echo /scan --once --full-length
+
+# Reconnected tractor IMU passive diagnostic (no --query, TX=0)
+/usr/bin/python3 /home/venezuelachocolatemilk/mvsim_slam_real/tools/diagnose_ebimu.py --port /dev/serial/by-path/pci-0000:80:14.0-usb-0:8:1.0-port0 --baud 115200 --init-wait 1 --duration 10 --log-prefix /home/venezuelachocolatemilk/mvsim_slam_real/verification/real_g6_tractor_imu_20261020_153135/imu_reconnected/passive_uart
+
+# Existing receive-only bridge: tractor only; no trailer data
+ros2 launch tractor_trailer_rviz_2d imu_bridges.launch.py start_tractor:=true start_trailer:=false ports_confirmed:=true tractor_port:=/dev/serial/by-path/pci-0000:80:14.0-usb-0:8:1.0-port0 lidar_port:=/dev/serial/by-path/pci-0000:80:14.0-usb-0:7:1.0-port0 tractor_baud:=115200 tractor_orientation:=quaternion tractor_gyro:=true tractor_accel:=true tractor_timestamp:=true output_directory:=/home/venezuelachocolatemilk/mvsim_slam_real/verification/real_g6_tractor_imu_20261020_153135/imu_reconnected/bridge
+
+# Investigate documented 60s sensor timestamp rollover; UART only, TX=0
+/usr/bin/python3 /home/venezuelachocolatemilk/mvsim_slam_real/tools/diagnose_ebimu.py --port /dev/serial/by-path/pci-0000:80:14.0-usb-0:8:1.0-port0 --baud 115200 --init-wait 1 --duration 60 --log-prefix /home/venezuelachocolatemilk/mvsim_slam_real/verification/real_g6_tractor_imu_20261020_153135/imu_reconnected/rollover_uart
+
+# Existing independent hardware-only diagnostic receiver; separate diagnostic topic; no 2D/SLAM remapping
+/usr/bin/python3 /home/venezuelachocolatemilk/mvsim_slam_real/verification/ebimu9dofv6_rviz/scripts/imu_publisher.py --port /dev/serial/by-path/pci-0000:80:14.0-usb-0:8:1.0-port0 --confirmed-imu-port --baud 115200 --orientation quaternion --gyro --accel --timestamp --namespace /ebimu_diag/tractor --frame ebimu_diag_tractor_sensor --output /home/venezuelachocolatemilk/mvsim_slam_real/verification/real_g6_tractor_imu_20261020_153135/imu_reconnected/independent_live
+
+# Read-only real concurrent capture and yaw calculation
+/usr/bin/python3 /home/venezuelachocolatemilk/mvsim_slam_real/verification/real_g6_tractor_imu_20261020_153135/observe_real.py /home/venezuelachocolatemilk/mvsim_slam_real/verification/real_g6_tractor_imu_20261020_153135/imu_reconnected/concurrent_observation 20
+/usr/bin/python3 /home/venezuelachocolatemilk/mvsim_slam_real/verification/real_g6_tractor_imu_20261020_153135/imu_reconnected/observe_real_yaw_delta.py
+/usr/bin/python3 /home/venezuelachocolatemilk/mvsim_slam_real/verification/real_g6_tractor_imu_20261020_153135/imu_reconnected/observe_independent_real_yaw_delta.py
+ros2 topic echo /vehicle_viz_2d/tractor/diagnostics --once --full-length
+ros2 topic echo /vehicle_viz_2d/status --once --full-length

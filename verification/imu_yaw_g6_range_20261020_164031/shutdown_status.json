@@ -1,0 +1,18 @@
+{
+  "at": "2026-10-20T17:08:14.231435+09:00",
+  "reason": "user requested shutdown",
+  "processes_stopped": [
+    "G6 driver",
+    "Cartographer",
+    "occupancy grid",
+    "tractor IMU bridge",
+    "2D visualizer",
+    "RViz",
+    "read-only motion recorder"
+  ],
+  "tmux_session": "real_yaw_range_20261020 ended",
+  "ttyUSB0_occupied": false,
+  "ttyUSB1_occupied": false,
+  "yaw_direction_result": "INCONCLUSIVE; manual retest not completed",
+  "source_settings": "preserved; no rollback"
+}

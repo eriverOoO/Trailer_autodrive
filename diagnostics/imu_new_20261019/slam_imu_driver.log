@@ -1,0 +1,8 @@
+[INFO] [launch]: All log files can be found below /home/venezuelachocolatemilk/.ros/log/2026-10-19-15-39-10-071814-venezuelachocolatemilk-Legion-Pro-5-16IAX10H-28906
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [ebimu_node-1]: process started with pid [28924]
+[ebimu_node-1] [WARN] [1792391950.288852793] [tractor_imu]: No valid EBIMU data; rejected frames=0
+[WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+[INFO] [ebimu_node-1]: sending signal 'SIGINT' to process[ebimu_node-1]
+[INFO] [ebimu_node-1]: process has finished cleanly [pid 28924]
+[INFO] [launch]: process[ebimu_node-1] was required: shutting down launched system

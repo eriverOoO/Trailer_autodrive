@@ -1,0 +1,16 @@
+tractor_parallel_parking_auto:
+  ros__parameters:
+    auto_execute: true
+    execute_parking: true
+    auto_detect_target: true
+    enable_pose_freshness_stop: true
+    parking_stop_policy: legacy
+    slot_length: 6.2
+    slot_width: 2.1
+    search_speed: 0.14
+    parking_speed_factor: 1.755
+    completion_hinge_deg: 6.25
+    completion_settle_max_s: 8.0
+    planner_timeout: 90.0
+    beam_gap_filling: true
+    max_replans: 3

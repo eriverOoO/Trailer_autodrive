@@ -1,0 +1,19 @@
+{
+  "progress_percent": 90,
+  "stationary_real_g6_slam": "PASS",
+  "packages_built": 12,
+  "existing_tests_passed": 20,
+  "changed_existing_source": [
+    "src/mvsim_slam_real_bringup/package.xml"
+  ],
+  "missing_baseline_source": [],
+  "unverified": [
+    "measured_vehicle_extrinsics",
+    "physical_scan_direction",
+    "vehicle_self_reflections",
+    "IMU_fusion",
+    "moving_SLAM",
+    "autonomous_parking"
+  ],
+  "report": "G6_INTEGRATION_REPORT.md"
+}

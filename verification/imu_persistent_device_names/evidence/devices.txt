@@ -1,0 +1,6 @@
+2026-10-19T21:34:04.343984+09:00
+lrwxrwxrwx 1 root root        13 Oct 19 21:29 /dev/serial/by-id/usb-Silicon_Labs_CP2102_USB_to_UART_Bridge_Controller_0001-if00-port0 -> ../../ttyUSB0
+lrwxrwxrwx 1 root root        13 Oct 19 21:29 /dev/serial/by-path/pci-0000:80:14.0-usb-0:8:1.0-port0 -> ../../ttyUSB0
+crw-rw---- 1 root dialout 188, 0 Oct 19 21:29 /dev/ttyUSB0
+
+exit=2

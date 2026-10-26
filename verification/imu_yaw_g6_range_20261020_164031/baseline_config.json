@@ -1,0 +1,9 @@
+{
+  "G6_range_min": 0.15,
+  "G6_range_max": 1.0,
+  "cartographer_min": 0.15,
+  "cartographer_max": 1.0,
+  "missing_data_ray_length": 1.0,
+  "tractor_visual_sign": 1,
+  "initial_processes": "all stopped on user request, no existing active map to preserve"
+}

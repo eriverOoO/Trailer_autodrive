@@ -1,0 +1,230 @@
+TRACTOR / TRAILER 2D RVIZ MATCH REPORT
+작성: 2026-10-19T21:10:55.435848+09:00
+
+진행률: 85% (2D 이식·빌드·소프트웨어 검증·실행 문서 완료)
+실제 두 IMU·G6·Cartographer 통합 및 손 회전 시험은 미완료. 전체 하드웨어 성공/100%로 보고하지 않음.
+
+1. 최종 시뮬레이터의 실제 RViz 구성
+읽기 전용 실행 추적:
+/home/venezuelachocolatemilk/mvsim_slam/run_parking.sh
+ -> mvsim_slam_final/scripts/run.py --configuration 2 --mode parking --gui
+ -> src/parking_system/scripts/auto_parking_entry.py
+ -> vendor/tractor_parallel_parking_auto.py AutoParking.tick -> visualize()
+ -> /parking/debug_markers -> src/parking_system/config/slam.rviz.
+실제 run.py는 ROOT=src/parking_system을 사용한다. 최상위 config/slam.rviz와 runtime 파일은 동일함을 확인.
+원본의 3D FBX는 MVSim 별도 GUI용이며 이번 기준은 RViz의 2D Marker이다.
+
+2. 원본 차량 모델 및 생성 코드
+/home/venezuelachocolatemilk/mvsim_slam/mvsim_slam_final/src/parking_system/vendor/tractor_parallel_parking_auto.py
+ - 784~816행 AutoParking.visualize()가 직접 MarkerArray를 발행.
+ - current_body id0,1: mint LINE_STRIP.
+ - trailer_pose_arrow id0: 빨간 트레일러 화살표.
+ - articulation id0: 흰색 상태 및 phi.
+/home/venezuelachocolatemilk/mvsim_slam/mvsim_slam_final/src/parking_system/scripts/parking_node.py
+ - __init__에서 active_world_geometry.json의 chassis 꼭짓점을 local로 변환해
+   /tractor/chassis_polygon, /trailer/chassis_polygon에 발행.
+/home/venezuelachocolatemilk/mvsim_slam/mvsim_slam_final/src/parking_system/vendor/tractor_trailer_model.py
+ - Geometry.from_world가 XML 바퀴·히치 치수를 읽음.
+ - Footprints.__init__가 바퀴와 전륜 조향범위[-.9,0,.9]rad를 합쳐 ConvexHull을 구성.
+ - Footprints.world가 트랙터 rear axle와 트레일러 hitch 기준으로 회전·이동.
+/home/venezuelachocolatemilk/mvsim_slam/mvsim_slam_final/src/parking_system/active_world_geometry.json
+/home/venezuelachocolatemilk/mvsim_slam/mvsim_slam_final/src/parking_system/config/rect.world.xml
+추출된 hull: 트랙터10개, 트레일러9개 vertex. 닫힌 Marker 점 수는11개/10개.
+직선 상태 전체 hull 크기: 4.067248651828051 x 1.3357328704963085m.
+Geometry: wheelbase1.13m, rear axle-to-hitch0.524m, hitch-to-trailer-axle1.33m.
+이 값들은 원본 디자인 참고치이며 실차 실측치라고 가정하지 않음.
+
+3. 기존 3D 구현과 차이
+기존 visualization/tractor_trailer_rviz/는 FBX body/wheel Mesh와 별도 TF, 다중 상태 텍스트를 사용.
+이번 새 패키지는 MESH_RESOURCE/RobotModel/Cube/입체 바퀴를 사용하지 않음.
+기존 3D 코드·설정·에셋·시험 로그는 보존하며 새로운 LIVE/TEST Launch에서 실행하지 않음.
+새 2D RViz 설정은 /vehicle_viz/model 등 이전 3D Marker 토픽을 구독하지 않음.
+새 노드는 TF Publisher 자체가 없음.
+
+4. 복사·재사용한 코드/설정/에셋
+신규 경로: /home/venezuelachocolatemilk/mvsim_slam_real/visualization/tractor_trailer_rviz_2d
+models/original_tractor_parallel_parking_auto.py.txt: 원본 전체를 출처 참고용으로 보존.
+models/original_visualize_method.txt: 784~816행 메서드 원문.
+tractor_trailer_rviz_2d/reference_renderer.py: 그 visualize 메서드를 그대로 포함한 좁은 클래스.
+models/original_tractor_trailer_model.py.txt: 원본 기하 소스 참고본.
+tractor_trailer_rviz_2d/reference_geometry.py: Geometry/Footprints/transform/hitch/inside/wrap 추출.
+tractor_trailer_rviz_2d/reference_math.py: 원본 wrap 수식.
+models/original_rect.world.xml, active_world_geometry.json: 정적 디자인 추출 근거.
+models/reference_footprints.json: 실제 hull 로컬 꼭짓점, 모델 기준점·치수.
+models/original_slam.rviz: 실제 runtime RViz 설정 원문.
+가상 센서·GT 런타임 노드는 실행하지 않았고, 초기 geometry artifact는 정적 vertex 추출에만 사용.
+
+5. 신규 구현 구조
+reference_renderer.py: 원본 visualize 메서드, 제어·계획 노드 import/생성 없음.
+render_adapter.py: 실제 hitch 벡터와 원본 hull을 조합하고 map frame으로 출력.
+core.py: 독립 yaw 이력·wrap·보간·기하·정렬. 이전 진단의 비렌더 로직을 분리 복사했고
+ 이번 phi 부호는 최종 B 원본과 같은 trailer-tractor로 수정.
+visualizer.py: SLAM TF/두 Imu/실제 상태 입력을 읽고 MarkerArray·진단 JSON만 발행.
+serial_protocol.py, serial_bridge.py: 선택적 수신 전용 브리지. 포트 미지정/미확인 기본 비활성.
+runtime.py: 진단 프로세스만 정상 종료.
+launch/visualization.launch.py: 새 2D 노드 + 새 RViz만 실행.
+launch/imu_bridges.launch.py: start_tractor/start_trailer 기본 false.
+launch/test_preview.launch.py: 명시적 테스트에서만 가상 입력 실행.
+
+6. 트랙터 X,Y
+Cartographer의 map -> 실제 slam_frame TF에서 위치를 얻는다.
+map/odom/base_link/base_footprint/laser_frame을 재발행하거나 변경하지 않음.
+slam_to_rear_axle_xy 벡터를 실제 추적 프레임 방향으로 회전해 rear axle 위치를 보정.
+기존 G6 센서 모드는 laser_frame을 추적하고, 차량 모드는 base_footprint를 추적함.
+기존 실차 g6_mount.yaml은 base_footprint를 body center라고 명시하므로 rear axle로 단정하지 않음.
+실측되지 않은 offset은 null/confirmed=false로 두고 정상 차량 위치를 만들어내지 않음.
+IMU만으로 X,Y를 적분하지 않음.
+
+7. 트랙터 Yaw
+기본 /vehicle_viz_2d/tractor/imu/data의 실제 orientation Quaternion에서 yaw를 추출.
+센서-to-body 고정 회전과 확인된 sign을 적용한 후 unwrap된 초기 대비 변화량 사용.
+처음 지도 방향은 SLAM yaw + 실측 slam_to_body_yaw_rad로 기록.
+그 이후 tractor_yaw=initial_map_heading+tractor_IMU_delta.
+Cartographer의 이후 yaw를 차체 yaw로 대체하지 않음.
+단, 위치 기준점 lever arm 보정에는 SLAM 추적 프레임 yaw가 필요함.
+
+8. 트레일러 Yaw 및 위치
+기본 /vehicle_viz_2d/trailer/imu/data에서 독립 변화량을 추출.
+trailer_yaw=initial_map_heading+trailer_IMU_delta.
+트랙터 yaw로 대신하거나 없는 두 번째 센서를 생성하지 않음.
+Hitch = tractor_rear_axle + R(tractor_yaw) * rear_axle_to_hitch_xy.
+원본 trailer hull 원점은 hitch이므로 그 hitch에서 R(trailer_yaw)로 변환.
+별도 실제 trailer_origin/hitch/axle geometry로 물리 축 위치도 계산해 status에 기록.
+차체의 실제 폭·길이와 시뮬레이터 디자인 치수가 같다는 주장은 하지 않음.
+
+9. 최초 기준 및 phi
+사용자가 두 차체가 일직선·정지 상태임을 확인한 뒤 align_straight SetBool true 요청.
+양쪽 수신 LIVE, 실측 기하와 mounting/sign 확인, 최근0.3초 정지 조건이 모두 필요.
+초기 yaw는 각각 다른 센서 절대값이어도 따로 기록하고 변화량을 계산.
+동일한 host timestamp 시각의 두 unwrapped yaw와 SLAM pose를 보간. extrapolation 없음.
+최신 IMU timestamp 차이 기본50ms 초과 시 유효 phi를 만들지 않음.
+phi = wrap(trailer_yaw - tractor_yaw), 범위[-pi,pi).
+예: tractor+30deg / trailer+10deg -> phi=-20deg. 원본과 동일하며 이전 3D 예시 부호와 다름.
+통신 gap/reset/INVALID 후 기준 epoch가 바뀌면 ALIGNMENT LOST, 수동 재정렬 필요.
+기본은 AHRS orientation. gyro_z는 명시적 source 선택·bias 확인이 필요하고 적분 drift를 포함.
+브리지 header는 host 수신 시각이며 센서 내부 시간의 물리 동기화/전송 지연 보정은 미검증.
+
+10. 지도·Scan·화면 설정
+실제 /map OccupancyGrid와 /scan LaserScan을 원본 Display 그대로 읽는다.
+Map Alpha0.8, Color Scheme map; reliable/transient local.
+Scan FlatColor255/20/20, points3px 또는0.03m, Decay0, Best Effort.
+Grid60칸/1m/100,100,100; Background35,35,35; FixedFrame map.
+TopDownOrtho Scale25 / X10 / Y0 / Angle0 / FrameRate20 / Window1100x850.
+TEST에서는 가상 입력을 구분해 private map/scan/frame을 사용하며 테스트 원점에 맞춰 중심만0,0.
+TEST 화면에서 Map과 빨간 Scan이 동시에 보이는 것을 확인했고 데이터/SLAM 파라미터를 바꾸지 않음.
+실제 G6/Cartographer는 현재 실행되지 않아 실제 지도/Scan의 정상 여부는 미검증.
+현재 기존 g6.yaml 및 g6_lidar_only.lua는 range_max/max_range=1.0m로 읽힘.
+사용자 설명의15m와 차이가 있지만 보호 조건에 따라 변경하지 않음. 12Hz/18K 설정도 그대로임.
+
+11. Topic / TF / 상태
+실제 입력: /map, /scan(RViz), map->configured slam_frame TF, 두 role의 Imu,
+/parking/status(std_msgs/String, state와 stamp_ns).
+출력: /vehicle_viz_2d/model(MarkerArray, transient local depth1),
+/vehicle_viz_2d/status(String JSON). ROS 기본 parameter_events/rosout 제외.
+서비스: /vehicle_viz_2d/align_straight(std_srvs/SetBool).
+브리지 선택 시 /vehicle_viz_2d/role/imu/data와 /diagnostics만 발행.
+센서 역할·물리 포트 확인이 필요하고 두 IMU/G6는 서로 다른 실제 포트여야 함.
+TF 출력0개. 원본 local_map identity alias 대신 map에 직접 Marker를 그려 중복 TF를 피함.
+상태가 없거나 timestamp가3초보다 오래되면 STATE_UNKNOWN. SEARCH_FORWARD 고정 생성 없음.
+정렬 전/중단 때 phi는 표시하지 않음. last pose 유지 시 LAST_POSE_NOT_LIVE 명시.
+센서별 LIVE/STALE/NO DATA/INVALID는 JSON 및 원본 스타일의 흰색 경고 텍스트로 구분.
+
+12. 디자인 일치도와 필수 차이
+일치: 원본10/9개 hull vertex 및 순서, 폐곡선 처리, 민트색 RGB0/1/.7 alpha.85,
+두께.04m, z.08m; trailer arrow .8/.08/.18m, red alpha1, centroid 위치 z.15m;
+흰색 text .4m, tractor x/y+1/z1, 상태명과 phi 소수1자리; 원본 약.4초 시각화 갱신.
+원본에는 별도 hitch Marker/tractor arrow가 없으므로 추가하지 않음.
+변경: 실제 data source, 출력 Topic과 RViz 해당 Display 이름, local_map->map alias,
+Marker lifetime0.8초(노드 종료 시 마지막 모습이 영구 잔류하지 않게 함), 미확인/오래된 상태 경고.
+원본 계획 footprint/slot/control_target 부가 Marker는 계획·제어 내부 객체가 없는 새 노드에서 생성하지 않음.
+기존 실제 주차면·Path 토픽의 RViz Display는 보존해 실제 발행 데이터가 있을 때 읽을 수 있음.
+가상 주차 목표·계획 경로를 꾸며내지 않음.
+TEST는 원본 흰색 텍스트 앞에 TEST/SIMULATED를 명시. 녹색 대형 상태 패널 없음.
+원본 형상은 보수적 collision hull이므로 극단 접힘에서 연결부 hull 겹침 가능성까지 제거한 새 디자인이 아님.
+원본과 무관한 장식이나3D RobotModel을 추가하지 않음.
+
+13. 실제 수신 및 검증 결과
+현재 USB-UART: CP2102 VID/PID10c4:ea60, serial0001, USB location3-7 한 개.
+현재 장치 경로는 /dev/ttyUSB0, role은 미확인. 이 번호는 새 드라이버 기본값에 하드코딩하지 않음.
+권한 RW 가능, fuser 점유 없음. 물리 역할 미확인으로 이번 UART open 안 함.
+따라서 이번 RX는 미측정이지0바이트 실측 실패가 아님.
+과거 기록: 10월16일0바이트; 10월19일15:32 RX29086/399패킷/99.64Hz.
+과거 성공을 현재 두 IMU 성공으로 보고하지 않음.
+실제 tractor/trailer yaw 방향·부호·정지 안정성·동시 갱신률·물리 통신 중단 모두 미검증.
+실차 domain0 조사에서 SLAM/센서 노드와 TF edge 없음. 실제 map/scan 통합 미검증.
+
+소프트웨어 실측 결과:
+- 새 isolated colcon build: 성공. 작성된 scripts/build.bash 직접 실행 성공.
+- 단위/원본 디자인 비교: 13 tests PASS.
+- 명시적 TEST runtime: 16 checks PASS, status612개 중 valid494개,
+  트랙터 단독/트레일러 단독/다른각도/같은각도/STALE/INVALID/재정렬/
+  SLAM yaw만 변화시 body 불변/hitch 유지/원본phi텍스트/상태만료/
+  원본QoS/2D style/제어토픽없음/TF발행없음 등을 확인.
+- 초기 GUI 검사에서 volatile Publisher와 원본 transient-local Subscriber의 불일치로 Marker가 안 보임.
+  새 Publisher를 원본과 같은 transient local로 수정. 최종 runtime 재시험·창 캡처에서 mint 외곽선 확인.
+- GUI: evidence/synthetic_runtime_02/A_TRACTOR_ONLY.png 및 B_TRAILER_ONLY.png.
+  TEST/SIMULATED임을 명시하며 실제 하드웨어 GUI 결과가 아님.
+- 기본 LIVE 무입력 runtime: status74개 모두 두 IMU NO DATA, phi/SEARCH_FORWARD/차량 생성 없음.
+  TF Publisher0, IMU Publisher0. evidence/live_no_data/rviz_NO_DATA.png 확인.
+- 기존 설치환경 SciPy/NumPy 호환 경고1건(참고 hull 계산 시험); 시험은 통과.
+  시스템 패키지는 변경하지 않았고 LIVE 렌더 경로는 SciPy를 import하지 않음.
+
+14. 수정·추가 파일 및 보호
+추가 파일은 /home/venezuelachocolatemilk/mvsim_slam_real/visualization/tractor_trailer_rviz_2d/ 내부와 이 보고서만 작성.
+기존 3D 코드 삭제/수정 없음. 원본 시뮬레이터 source/config/assets, 기존 실차/IMU진단/3D 파일 등
+보호 해시585개 시작/종료 일치, 변경0. 전체 과거 대용량 record dataset을 해시한 것은 아님.
+LiDAR SDK/driver/config, Cartographer Lua, Hybrid A*, LQR, Arduino, serial sender,
+MotionCommand, 기존 IMU driver, 기존 검증 Launch/RViz는 변경하지 않음.
+모터·조향 명령 발행0, 기존 프로세스 강제 종료 없음.
+Git commit/push/pull/원격 작업 없음. 시스템·USB 드라이버·쉘 설정 변경 없음.
+생성 파일 목록: reports/generated_files.txt.
+검증 표: reports/verification_matrix.csv. 상태 JSON: reports/verification_status.json.
+
+15. 실행 명령
+빌드:
+bash /home/venezuelachocolatemilk/mvsim_slam_real/visualization/tractor_trailer_rviz_2d/scripts/build.bash
+
+각 LIVE 터미널:
+source /opt/ros/humble/setup.bash
+source /home/venezuelachocolatemilk/mvsim_slam_real/visualization/tractor_trailer_rviz_2d/install/setup.bash
+export ROS_DOMAIN_ID=0 ROS_LOCALHOST_ONLY=1 PYTHONDONTWRITEBYTECODE=1
+cd /home/venezuelachocolatemilk/mvsim_slam_real/visualization/tractor_trailer_rviz_2d
+export ROS_LOG_DIR="$PWD/evidence/ros_live_logs"
+
+기본2D(기존 실제 SLAM을 읽기만 함):
+ros2 launch tractor_trailer_rviz_2d visualization.launch.py
+
+실측 설정 후:
+ros2 launch tractor_trailer_rviz_2d visualization.launch.py config_file:="$PWD/config/measured_vehicle.yaml"
+measured_vehicle.yaml은 config/live.yaml을 복사해 실측한 뒤 작성하는 파일이며 현재 실측본은 없음.
+
+기준 기록(정지·일직선·두 IMU LIVE 및 실측 config 완료 후):
+ros2 service call /vehicle_viz_2d/align_straight std_srvs/srv/SetBool '{data: true}'
+
+현재 포트 조사:
+/usr/bin/python3 scripts/list_devices.py
+ls -l /dev/serial/by-id/* /dev/serial/by-path/*
+
+선택적 실물 브리지는 README의 read 명령으로 실제 role별 port를 입력하고 imu_bridges.launch.py에 지정.
+기본 포트는 비어 있고 start_tractor/start_trailer=false. 센서 명령 송신0.
+현재 기본11필드 형식은 과거 실측 기준이므로 현재 raw와 반드시 대조해야 함.
+
+명시적 소프트웨어 TEST만 실행:
+export ROS_DOMAIN_ID=88 ROS_LOCALHOST_ONLY=1
+ros2 launch tractor_trailer_rviz_2d test_preview.launch.py
+이 명령은 실제 센서 검증이 아님. 기본 LIVE Launch에는 TEST 소스가 없음.
+
+16. 종료 및 원복
+새 Launch 터미널 Ctrl+C. 시작한 시험 프로세스는 이번 작업 종료 전에 정리됨.
+기존 G6/Cartographer/실차 실행 스크립트·기본 동작을 바꾸지 않아 설정 복원 작업이 필요 없음.
+기존 시스템은 기존 명령 그대로 실행. 새2D Launch를 종료하면 새Marker는0.8초 이내 만료.
+이전3D 패키지는 보존됨. 별도로 이전3D Launch를 실행하지 않는 한 새2D 화면에3D가 나타나지 않음.
+
+17. 미해결/추가 하드웨어 작업
+- CP2102 물리 역할 식별, 실제 두 번째 IMU 및 G6 연결 확인.
+- 각 실제 UART RX/형식/Hz, 두 센서 frame/장착축/수직Z/좌우sign 확인.
+- 실제 추적 기준점과 rear axle/hitch/trailer axle 기하 실측.
+- 초기 일직선 기준 및 실제 map 방향 정렬.
+- 실제 두 IMU 단독·동시·같은각도·복귀·중단 실험, host/sensor 지연과 drift 측정.
+- 실제 /map, /scan 표시와 Cartographer pose source TF의 갱신·정상성 확인.
+그 전까지 실제 하드웨어 통합은 미완료이며 코드/디자인 시험 통과와 구분한다.

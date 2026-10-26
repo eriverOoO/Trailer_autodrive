@@ -1,0 +1,51 @@
+{
+  "port": "/dev/ttyUSB0",
+  "baud": 115200,
+  "tx_bytes": 0,
+  "rx_bytes": 29086,
+  "duration_s": 4.004472,
+  "complete_numeric_frames": 399,
+  "approx_frame_rate_hz": 99.64,
+  "field_counts": {
+    "11": 399
+  },
+  "invalid_numeric_frames": 0,
+  "first_frame": [
+    -0.7064,
+    0.0251,
+    0.0517,
+    0.7055,
+    -0.32,
+    -0.14,
+    -0.07,
+    0.106,
+    0.038,
+    0.987,
+    42982.0
+  ],
+  "last_frame": [
+    -0.7056,
+    0.0251,
+    0.0518,
+    0.7063,
+    -0.07,
+    -0.15,
+    -0.13,
+    0.106,
+    0.039,
+    0.992,
+    46962.0
+  ],
+  "existing_6_field_parser": {
+    "accepted": 0,
+    "rejected": 399
+  },
+  "existing_9_field_parser": {
+    "accepted": 0,
+    "rejected": 399
+  },
+  "first_four_fields_norm_range": [
+    0.9999414532861411,
+    1.0000224497480044
+  ]
+}

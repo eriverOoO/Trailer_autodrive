@@ -1,0 +1,12 @@
+1792410459.3440585 [INFO] [launch]: All log files can be found below /home/venezuelachocolatemilk/mvsim_slam_real/visualization/tractor_trailer_rviz/evidence/ros_test_logs/2026-10-19-20-47-39-343645-venezuelachocolatemilk-Legion-Pro-5-16IAX10H-74688
+1792410459.3441167 [INFO] [launch]: Default logging verbosity is set to INFO
+1792410459.3762634 [INFO] [tt_visualizer-1]: process started with pid [74693]
+1792410459.3763332 [INFO] [tt_test_source-2]: process started with pid [74695]
+1792410459.3763640 [INFO] [rviz2-3]: process started with pid [74697]
+1792410490.1786306 [WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+1792410490.1794672 [INFO] [rviz2-3]: sending signal 'SIGINT' to process[rviz2-3]
+1792410490.1796350 [INFO] [tt_test_source-2]: sending signal 'SIGINT' to process[tt_test_source-2]
+1792410490.1797566 [INFO] [tt_visualizer-1]: sending signal 'SIGINT' to process[tt_visualizer-1]
+1792410490.2074280 [ERROR] [tt_test_source-2]: process has died [pid 74695, exit code -2, cmd '/home/venezuelachocolatemilk/mvsim_slam_real/visualization/tractor_trailer_rviz/install/tractor_trailer_rviz/lib/tractor_trailer_rviz/tt_test_source --ros-args --params-file /tmp/launch_params_70uyv471'].
+1792410490.2097394 [ERROR] [tt_visualizer-1]: process has died [pid 74693, exit code -2, cmd '/home/venezuelachocolatemilk/mvsim_slam_real/visualization/tractor_trailer_rviz/install/tractor_trailer_rviz/lib/tractor_trailer_rviz/tt_visualizer --ros-args --params-file /tmp/launch_params_erd01faa'].
+1792410490.3824854 [INFO] [rviz2-3]: process has finished cleanly [pid 74697]

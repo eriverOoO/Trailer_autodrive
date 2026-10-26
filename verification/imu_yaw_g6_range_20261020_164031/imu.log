@@ -1,0 +1,4 @@
+[INFO] [launch]: All log files can be found below /home/venezuelachocolatemilk/mvsim_slam_real/verification/imu_yaw_g6_range_20261020_164031/ros_logs/2026-10-20-16-40-32-085058-venezuelachocolatemilk-Legion-Pro-5-16IAX10H-57646
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [tt2d_serial_bridge-1]: process started with pid [57654]
+[tt2d_serial_bridge-1] [INFO] [1792482032.317143491] [vehicle_viz_2d_tractor_bridge]: REAL_UART_ONLY; TX=0; role=tractor; port=/dev/serial/by-path/pci-0000:80:14.0-usb-0:8:1.0-port0

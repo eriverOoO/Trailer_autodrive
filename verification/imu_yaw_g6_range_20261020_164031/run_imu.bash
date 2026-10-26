@@ -1,0 +1,3 @@
+set -o pipefail
+source /home/venezuelachocolatemilk/mvsim_slam_real/verification/imu_yaw_g6_range_20261020_164031/environment.bash
+ros2 launch tractor_trailer_rviz_2d imu_bridges.launch.py start_tractor:=true start_trailer:=false ports_confirmed:=true tractor_port:=/dev/serial/by-path/pci-0000:80:14.0-usb-0:8:1.0-port0 lidar_port:=/dev/serial/by-path/pci-0000:80:14.0-usb-0:7:1.0-port0 output_directory:=/home/venezuelachocolatemilk/mvsim_slam_real/verification/imu_yaw_g6_range_20261020_164031/imu 2>&1 | tee /home/venezuelachocolatemilk/mvsim_slam_real/verification/imu_yaw_g6_range_20261020_164031/imu.log

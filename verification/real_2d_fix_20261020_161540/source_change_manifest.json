@@ -1,0 +1,57 @@
+[
+  {
+    "path": "/home/venezuelachocolatemilk/mvsim_slam_real/visualization/tractor_trailer_rviz_2d/README.md",
+    "backup": "/home/venezuelachocolatemilk/mvsim_slam_real/verification/real_2d_fix_20261020_161540/backups/README.md",
+    "sha256_after": "c078a5cf2f8bf84f586dbe1bd0d7757235dff2d744697c4be7a82d38c66bcbe9",
+    "added": false
+  },
+  {
+    "path": "/home/venezuelachocolatemilk/mvsim_slam_real/visualization/tractor_trailer_rviz_2d/launch/visualization.launch.py",
+    "backup": "/home/venezuelachocolatemilk/mvsim_slam_real/verification/real_2d_fix_20261020_161540/backups/launch/visualization.launch.py",
+    "sha256_after": "cc05361146869d2577701e2e91576a00782e38fc2e06880b151315d31c3401b8",
+    "added": false
+  },
+  {
+    "path": "/home/venezuelachocolatemilk/mvsim_slam_real/visualization/tractor_trailer_rviz_2d/tractor_trailer_rviz_2d/render_adapter.py",
+    "backup": "/home/venezuelachocolatemilk/mvsim_slam_real/verification/real_2d_fix_20261020_161540/backups/tractor_trailer_rviz_2d/render_adapter.py",
+    "sha256_after": "b358636330ce7b703d5cacc038c2a83c37d5c547a9964c7db182be4332e1c583",
+    "added": false
+  },
+  {
+    "path": "/home/venezuelachocolatemilk/mvsim_slam_real/visualization/tractor_trailer_rviz_2d/tractor_trailer_rviz_2d/visualizer.py",
+    "backup": "/home/venezuelachocolatemilk/mvsim_slam_real/verification/real_2d_fix_20261020_161540/backups/tractor_trailer_rviz_2d/visualizer.py",
+    "sha256_after": "d4ec4725918224cc9ddf4aad97f6a97e74a523ed3aeee14d45e33973ef430bab",
+    "added": false
+  },
+  {
+    "path": "/home/venezuelachocolatemilk/mvsim_slam_real/visualization/tractor_trailer_rviz_2d/tractor_trailer_rviz_2d/serial_bridge.py",
+    "backup": "/home/venezuelachocolatemilk/mvsim_slam_real/verification/real_2d_fix_20261020_161540/backups/tractor_trailer_rviz_2d/serial_bridge.py",
+    "sha256_after": "93a484e8dfc295233235402b7e7b2c70f4d987376cf10beb562ddc6f2859c9b5",
+    "added": false
+  },
+  {
+    "path": "/home/venezuelachocolatemilk/mvsim_slam_real/visualization/tractor_trailer_rviz_2d/tractor_trailer_rviz_2d/timestamp_guard.py",
+    "sha256_after": "2477ea4f026482b85fd7d8f7831d6efcb33764c7b549798a6ed3f00e1434f4d9",
+    "added": true
+  },
+  {
+    "path": "/home/venezuelachocolatemilk/mvsim_slam_real/visualization/tractor_trailer_rviz_2d/config/tractor_only_diagnostic.yaml",
+    "sha256_after": "7a96438696e4633a272a8412cf95a529c1e51575830616c6f28845dd7700355a",
+    "added": true
+  },
+  {
+    "path": "/home/venezuelachocolatemilk/mvsim_slam_real/visualization/tractor_trailer_rviz_2d/tests/test_timestamp_guard.py",
+    "sha256_after": "07da1e778cb5983f63f0bcce8cef9e2fa39fefc08d1ebcb6e1ba078be6673519",
+    "added": true
+  },
+  {
+    "path": "/home/venezuelachocolatemilk/mvsim_slam_real/visualization/tractor_trailer_rviz_2d/tests/test_tractor_only_design.py",
+    "sha256_after": "91a9b5cb1ce1b88e5aecac775f45fba7d4c9c06b860f487bd235c864249476f9",
+    "added": true
+  },
+  {
+    "path": "/home/venezuelachocolatemilk/mvsim_slam_real/visualization/tractor_trailer_rviz_2d/tests/test_tractor_only_validity.py",
+    "sha256_after": "f5767a28ca8db75632b320a9b54e3118168fe0ff264de17ca1517810b3127ad2",
+    "added": true
+  }
+]

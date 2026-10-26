@@ -1,0 +1,7 @@
+enable_actuation: false
+arduino_port: ''
+lidar_model: UNDECIDED
+imu_model: E2BOX EBIMU-9DOFV6
+tractor_imu_port: ''
+trailer_imu_port: ''
+hardware_verified: false

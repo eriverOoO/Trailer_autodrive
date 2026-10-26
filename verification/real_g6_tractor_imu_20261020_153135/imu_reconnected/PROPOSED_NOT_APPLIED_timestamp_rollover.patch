@@ -1,0 +1,37 @@
+--- a/visualization/tractor_trailer_rviz_2d/tractor_trailer_rviz_2d/serial_bridge.py
++++ b/visualization/tractor_trailer_rviz_2d/tractor_trailer_rviz_2d/serial_bridge.py
+@@ -37,6 +37,7 @@
+         self.count=self.bytes=0
+         self.started=time.monotonic();self.last=None
+         self.error='';self.previous_sensor_ms=None;self.parser_fault=False
++        self.sensor_rollovers=0
+         self.create_timer(.002,self.poll);self.create_timer(.2,self.health)
+         self.get_logger().info('REAL_UART_ONLY; TX=0; role='+self.role+'; port='+v['port'])
+ 
+@@ -53,7 +54,16 @@
+                 self.parser_fault=False
+                 sensor_ms=sample['sensor_ms']
+                 if sensor_ms is not None and self.previous_sensor_ms is not None and sensor_ms<=self.previous_sensor_ms:
+-                    raise ValueError('sensor timestamp reset/repeated; restart bridge and realign')
++                    # EBIMU rev10: the millisecond counter wraps every 60000 ms.
++                    # Accept only a boundary crossing during uninterrupted RX;
++                    # repeats, other backward jumps and long gaps remain faults.
++                    wrapped_step=sensor_ms+60000-self.previous_sensor_ms
++                    normal_rollover=(self.previous_sensor_ms>=59000 and sensor_ms<1000
++                                     and 0<wrapped_step<=100 and self.last is not None
++                                     and time.monotonic()-self.last<=.5)
++                    if not normal_rollover:
++                        raise ValueError('sensor timestamp reset/repeated; restart bridge and realign')
++                    self.sensor_rollovers+=1
+                 self.previous_sensor_ms=sensor_ms
+                 stamp=self.get_clock().now().nanoseconds
+                 m=Imu();m.header.frame_id=self.frame
+@@ -74,7 +84,7 @@
+         d.hardware_id=self.ser.port;d.message=state+':'+self.error
+         d.level=DiagnosticStatus.OK if state=='LIVE' else DiagnosticStatus.ERROR
+         values=dict(rx_bytes=self.bytes,tx_bytes=0,parsed=self.parser.accepted,
+-                    rejected=self.parser.rejected,published=self.count,
++                    rejected=self.parser.rejected,published=self.count,sensor_rollovers=self.sensor_rollovers,
+                     timestamp='host receipt, not hardware synchronized',
+                     covariance='received fields unknown=0; unavailable=-1',
+                     reference='manufacturer native; mounting and sign require validation')

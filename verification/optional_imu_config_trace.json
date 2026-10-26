@@ -1,0 +1,1480 @@
+{
+  "states": [
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158228007892050,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158228057833790,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158228107814354,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158228157809284,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158228207831107,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158228257816511,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158228307799793,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158228357801488,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158228407814471,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158228457800952,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158228507807890,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158228557857044,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158228607815847,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158228657807775,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158228707803122,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158228757913957,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158228807814783,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158228857797945,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158228907979375,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158228957985125,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158229007818454,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158229057801636,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158229107880837,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158229157804676,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158229207862636,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158229257968554,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158229307831109,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158229357803836,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158229407965216,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158229457798515,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158229507812344,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158229557797254,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158229607907786,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158229657808720,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158229707846080,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158229757795798,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158229807861100,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158229857881811,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158229907908043,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158229957798372,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158230007812483,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158230057798201,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158230107802682,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158230157800661,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158230207812231,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158230257897584,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158230307864236,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158230357880782,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158230407835733,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158230457835434,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158230507811661,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158230557800065,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158230607793259,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158230657788113,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158230707785728,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158230757784308,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158230807792419,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158230857972704,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158230907871702,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158230957874204,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158231007871278,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158231057962375,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158231107940242,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158231157972107,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158231207927281,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158231257979728,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158231307931325,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158231357856202,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158231407821810,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158231457905215,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158231507954865,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158231557915696,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158231607811072,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158231657798009,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158231707862403,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158231757799875,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158231807776571,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158231857831604,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158231907918056,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158231957804521,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158232007804994,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158232057891173,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158232107810574,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158232157802536,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158232207806677,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158232257800605,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158232307870465,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158232357800736,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158232407971841,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158232457811694,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158232507877257,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158232557808034,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158232607823174,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158232657826119,
+      "reason": "initial articulated alignment and trailer bias not confirmed",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    }
+  ],
+  "parking_status": [
+    {
+      "stamp_ns": 1792158228122045213,
+      "physical_parking_speed_factor": 1.755,
+      "state": "WAIT_FOR_LOCALIZATION",
+      "pose": null,
+      "goal": null,
+      "v": 0.0,
+      "steering_deg": 0.0,
+      "omega": 0.0,
+      "progress": 0,
+      "path_states": 0,
+      "replans": 0,
+      "max_articulation_deg": 0.0,
+      "collisions": 0,
+      "planning_seconds": 0.0,
+      "planned_length": 0.0,
+      "gear_changes": 0,
+      "planned_max_articulation_deg": null,
+      "planning_articulation_limit_deg": 30.0,
+      "speed_from_slam": 0.0,
+      "failure": "",
+      "estimator": "initial articulated alignment and trailer bias not confirmed",
+      "first_obstacle": false,
+      "gap_seen": false,
+      "second_obstacle": false,
+      "search_distance": 0.0,
+      "max_tracking_error": 0.0,
+      "gap_center": null,
+      "gap_confidence": null,
+      "gap_yaw": null,
+      "gap_length": null,
+      "gap_width": null,
+      "target_source": "observe_gap(Cartographer OccupancyGrid)",
+      "goal_shift_m": 0.0,
+      "parking_stop_policy": "legacy",
+      "legacy_stop_evidence": null,
+      "legacy_stop_completed": null,
+      "goal_lateral_shift_m": 0.0,
+      "planning_map_stamp_ns": null,
+      "map_age_s": 1419.497876624,
+      "lidar_age_s": 1419.497876624,
+      "tractor_imu_age_s": null,
+      "trailer_imu_age_s": 1419.497876624,
+      "localization_status_age_s": 1419.497876624,
+      "independent_observation_hits": 0,
+      "reference_state": null,
+      "pose_freshness_stop_enabled": true,
+      "pose_freshness_threshold_s": 0.8,
+      "max_pose_age_s": 0.0,
+      "pose_freshness_exceed_count": 0,
+      "pose_age_samples": 0
+    },
+    {
+      "stamp_ns": 1792158230222006253,
+      "physical_parking_speed_factor": 1.755,
+      "state": "WAIT_FOR_LOCALIZATION",
+      "pose": null,
+      "goal": null,
+      "v": 0.0,
+      "steering_deg": 0.0,
+      "omega": 0.0,
+      "progress": 0,
+      "path_states": 0,
+      "replans": 0,
+      "max_articulation_deg": 0.0,
+      "collisions": 0,
+      "planning_seconds": 0.0,
+      "planned_length": 0.0,
+      "gear_changes": 0,
+      "planned_max_articulation_deg": null,
+      "planning_articulation_limit_deg": 30.0,
+      "speed_from_slam": 0.0,
+      "failure": "",
+      "estimator": "initial articulated alignment and trailer bias not confirmed",
+      "first_obstacle": false,
+      "gap_seen": false,
+      "second_obstacle": false,
+      "search_distance": 0.0,
+      "max_tracking_error": 0.0,
+      "gap_center": null,
+      "gap_confidence": null,
+      "gap_yaw": null,
+      "gap_length": null,
+      "gap_width": null,
+      "target_source": "observe_gap(Cartographer OccupancyGrid)",
+      "goal_shift_m": 0.0,
+      "parking_stop_policy": "legacy",
+      "legacy_stop_evidence": null,
+      "legacy_stop_completed": null,
+      "goal_lateral_shift_m": 0.0,
+      "planning_map_stamp_ns": null,
+      "map_age_s": 1421.597836474,
+      "lidar_age_s": 1421.597836474,
+      "tractor_imu_age_s": null,
+      "trailer_imu_age_s": 1421.597836474,
+      "localization_status_age_s": 1421.597836474,
+      "independent_observation_hits": 0,
+      "reference_state": null,
+      "pose_freshness_stop_enabled": true,
+      "pose_freshness_threshold_s": 0.8,
+      "max_pose_age_s": 0.0,
+      "pose_freshness_exceed_count": 0,
+      "pose_age_samples": 0
+    },
+    {
+      "stamp_ns": 1792158232321828999,
+      "physical_parking_speed_factor": 1.755,
+      "state": "WAIT_FOR_LOCALIZATION",
+      "pose": null,
+      "goal": null,
+      "v": 0.0,
+      "steering_deg": 0.0,
+      "omega": 0.0,
+      "progress": 0,
+      "path_states": 0,
+      "replans": 0,
+      "max_articulation_deg": 0.0,
+      "collisions": 0,
+      "planning_seconds": 0.0,
+      "planned_length": 0.0,
+      "gear_changes": 0,
+      "planned_max_articulation_deg": null,
+      "planning_articulation_limit_deg": 30.0,
+      "speed_from_slam": 0.0,
+      "failure": "",
+      "estimator": "initial articulated alignment and trailer bias not confirmed",
+      "first_obstacle": false,
+      "gap_seen": false,
+      "second_obstacle": false,
+      "search_distance": 0.0,
+      "max_tracking_error": 0.0,
+      "gap_center": null,
+      "gap_confidence": null,
+      "gap_yaw": null,
+      "gap_length": null,
+      "gap_width": null,
+      "target_source": "observe_gap(Cartographer OccupancyGrid)",
+      "goal_shift_m": 0.0,
+      "parking_stop_policy": "legacy",
+      "legacy_stop_evidence": null,
+      "legacy_stop_completed": null,
+      "goal_lateral_shift_m": 0.0,
+      "planning_map_stamp_ns": null,
+      "map_age_s": 1423.697660172,
+      "lidar_age_s": 1423.697660172,
+      "tractor_imu_age_s": null,
+      "trailer_imu_age_s": 1423.697660172,
+      "localization_status_age_s": 1423.697660172,
+      "independent_observation_hits": 0,
+      "reference_state": null,
+      "pose_freshness_stop_enabled": true,
+      "pose_freshness_threshold_s": 0.8,
+      "max_pose_age_s": 0.0,
+      "pose_freshness_exceed_count": 0,
+      "pose_age_samples": 0
+    }
+  ],
+  "preview": [
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ]
+  ]
+}

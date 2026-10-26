@@ -1,0 +1,8127 @@
+[
+  {
+    "wall": 2315.6827566,
+    "stamp_ns": 1792377639729760371,
+    "frame": "map",
+    "submaps": []
+  },
+  {
+    "wall": 2315.982716431,
+    "stamp_ns": 1792377640029779590,
+    "frame": "map",
+    "submaps": []
+  },
+  {
+    "wall": 2316.282568354,
+    "stamp_ns": 1792377640329779999,
+    "frame": "map",
+    "submaps": []
+  },
+  {
+    "wall": 2316.582612322,
+    "stamp_ns": 1792377640629776468,
+    "frame": "map",
+    "submaps": []
+  },
+  {
+    "wall": 2316.882855333,
+    "stamp_ns": 1792377640929886643,
+    "frame": "map",
+    "submaps": []
+  },
+  {
+    "wall": 2317.182695151,
+    "stamp_ns": 1792377641229799180,
+    "frame": "map",
+    "submaps": []
+  },
+  {
+    "wall": 2317.48280943,
+    "stamp_ns": 1792377641529798223,
+    "frame": "map",
+    "submaps": []
+  },
+  {
+    "wall": 2317.782645934,
+    "stamp_ns": 1792377641829819101,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 1,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2318.083067045,
+    "stamp_ns": 1792377642129917369,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 1,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2318.38277899,
+    "stamp_ns": 1792377642429822329,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 3,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2318.683140131,
+    "stamp_ns": 1792377642729919198,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 4,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2318.983016307,
+    "stamp_ns": 1792377643029834905,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 6,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2319.282839567,
+    "stamp_ns": 1792377643329838986,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 7,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2319.582915547,
+    "stamp_ns": 1792377643629835507,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 7,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2319.882650732,
+    "stamp_ns": 1792377643929866114,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 7,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2320.183075303,
+    "stamp_ns": 1792377644229997621,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 8,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2320.482704644,
+    "stamp_ns": 1792377644529967434,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 10,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2320.782986713,
+    "stamp_ns": 1792377644829884751,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 12,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2321.082947337,
+    "stamp_ns": 1792377645129954498,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 13,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2321.383111305,
+    "stamp_ns": 1792377645429898434,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 13,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2321.682893574,
+    "stamp_ns": 1792377645729885951,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 13,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2321.982939391,
+    "stamp_ns": 1792377646029892228,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 15,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2322.282822586,
+    "stamp_ns": 1792377646329900004,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 17,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2322.583025153,
+    "stamp_ns": 1792377646629988409,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 18,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2322.883113962,
+    "stamp_ns": 1792377646930000248,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 18,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2323.183189746,
+    "stamp_ns": 1792377647229923856,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 18,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2323.483127762,
+    "stamp_ns": 1792377647529921591,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 18,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2323.783049204,
+    "stamp_ns": 1792377647829925741,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 20,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2324.083124182,
+    "stamp_ns": 1792377648130071025,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 22,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2324.383043614,
+    "stamp_ns": 1792377648429939362,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 23,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2324.68304991,
+    "stamp_ns": 1792377648729951772,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 23,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2324.982778001,
+    "stamp_ns": 1792377649030020435,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 23,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2325.283027791,
+    "stamp_ns": 1792377649329953572,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 24,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2325.583034392,
+    "stamp_ns": 1792377649630100552,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 26,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2325.882888946,
+    "stamp_ns": 1792377649929970312,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 27,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2326.183162787,
+    "stamp_ns": 1792377650229979108,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 28,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2326.482898855,
+    "stamp_ns": 1792377650529985376,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 28,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2326.783027137,
+    "stamp_ns": 1792377650829983924,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 28,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2327.08299489,
+    "stamp_ns": 1792377651129990050,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 29,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2327.38316847,
+    "stamp_ns": 1792377651430063215,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 31,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2327.682819205,
+    "stamp_ns": 1792377651730007695,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 32,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2327.982889561,
+    "stamp_ns": 1792377652030131719,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 33,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2328.283073323,
+    "stamp_ns": 1792377652330016822,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 34,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2328.582851248,
+    "stamp_ns": 1792377652630108158,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 34,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2328.883228877,
+    "stamp_ns": 1792377652930104340,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 34,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2329.18312988,
+    "stamp_ns": 1792377653230067413,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 36,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2329.483097974,
+    "stamp_ns": 1792377653530037438,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 38,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2329.782991299,
+    "stamp_ns": 1792377653830059093,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 39,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2330.083161183,
+    "stamp_ns": 1792377654130046630,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 39,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2330.383171584,
+    "stamp_ns": 1792377654430126281,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 39,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2330.683065764,
+    "stamp_ns": 1792377654730064765,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 39,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2330.983154305,
+    "stamp_ns": 1792377655030063013,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 41,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2331.283100799,
+    "stamp_ns": 1792377655330071930,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 42,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2331.583139629,
+    "stamp_ns": 1792377655630079195,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 42,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2331.883266792,
+    "stamp_ns": 1792377655930094398,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 43,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2332.183271964,
+    "stamp_ns": 1792377656230168473,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 44,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2332.483246323,
+    "stamp_ns": 1792377656530177695,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 47,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2332.783515691,
+    "stamp_ns": 1792377656830267817,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 51,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2333.082992072,
+    "stamp_ns": 1792377657130106172,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 54,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2333.383310497,
+    "stamp_ns": 1792377657430111154,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 58,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2333.682973551,
+    "stamp_ns": 1792377657730124067,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 61,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2333.983309245,
+    "stamp_ns": 1792377658030140026,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 65,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2334.283321399,
+    "stamp_ns": 1792377658330129752,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 67,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2334.583320972,
+    "stamp_ns": 1792377658630135425,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 68,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2334.883225487,
+    "stamp_ns": 1792377658930143002,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 68,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2335.183219961,
+    "stamp_ns": 1792377659230151616,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 70,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2335.483229118,
+    "stamp_ns": 1792377659530156296,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 71,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2335.783243744,
+    "stamp_ns": 1792377659830149251,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 75,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2336.08312757,
+    "stamp_ns": 1792377660130349045,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 76,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2336.383185017,
+    "stamp_ns": 1792377660430171772,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 78,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2336.683269025,
+    "stamp_ns": 1792377660730175529,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 80,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2336.983230204,
+    "stamp_ns": 1792377661030259528,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 81,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2337.283151393,
+    "stamp_ns": 1792377661330193444,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 81,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2337.58322389,
+    "stamp_ns": 1792377661630184507,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 81,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2337.883466063,
+    "stamp_ns": 1792377661930287331,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 82,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2338.183427656,
+    "stamp_ns": 1792377662230290359,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 84,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2338.483580171,
+    "stamp_ns": 1792377662530382577,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 85,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2338.78329393,
+    "stamp_ns": 1792377662830210748,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 87,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2339.083481796,
+    "stamp_ns": 1792377663130339481,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 89,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2339.38329435,
+    "stamp_ns": 1792377663430330953,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 91,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 1,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2339.682967956,
+    "stamp_ns": 1792377663730221717,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 92,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 2,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2339.983616357,
+    "stamp_ns": 1792377664030336734,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 92,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 2,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2340.283518622,
+    "stamp_ns": 1792377664330336660,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 92,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 2,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2340.583393847,
+    "stamp_ns": 1792377664630321106,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 94,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 4,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2340.883481804,
+    "stamp_ns": 1792377664930349468,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 95,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 5,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2341.183524775,
+    "stamp_ns": 1792377665230420926,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 97,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 7,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2341.483475955,
+    "stamp_ns": 1792377665530365553,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 99,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 9,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2341.783290364,
+    "stamp_ns": 1792377665830285785,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 100,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 10,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2342.083599841,
+    "stamp_ns": 1792377666130378111,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 101,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 11,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2342.383525059,
+    "stamp_ns": 1792377666430394706,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 101,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 11,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2342.683799749,
+    "stamp_ns": 1792377666730543548,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 101,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 11,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2342.983458609,
+    "stamp_ns": 1792377667030361937,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 101,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 11,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2343.283581647,
+    "stamp_ns": 1792377667330432657,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 102,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 12,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2343.58345375,
+    "stamp_ns": 1792377667630321222,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 104,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 14,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2343.883509224,
+    "stamp_ns": 1792377667930419628,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 106,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 16,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2344.183578123,
+    "stamp_ns": 1792377668230421860,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 108,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 18,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2344.483576034,
+    "stamp_ns": 1792377668530391265,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 109,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 19,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2344.783393903,
+    "stamp_ns": 1792377668830387090,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 109,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 19,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2345.08358184,
+    "stamp_ns": 1792377669130408677,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 109,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 19,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2345.383650007,
+    "stamp_ns": 1792377669430407408,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 110,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 20,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2345.683723653,
+    "stamp_ns": 1792377669730493623,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 111,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 21,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2345.983482062,
+    "stamp_ns": 1792377670030370618,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 113,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 23,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2346.283737322,
+    "stamp_ns": 1792377670330602264,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 114,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 24,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2346.583524052,
+    "stamp_ns": 1792377670630429433,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 116,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 26,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2346.883627827,
+    "stamp_ns": 1792377670930455587,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 116,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 26,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2347.183657476,
+    "stamp_ns": 1792377671230547030,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 117,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 27,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2347.483549424,
+    "stamp_ns": 1792377671530441569,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 117,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 27,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2347.783704072,
+    "stamp_ns": 1792377671830542153,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 118,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 28,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2348.083805656,
+    "stamp_ns": 1792377672130517818,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 119,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 29,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2348.383778318,
+    "stamp_ns": 1792377672430496480,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 121,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 31,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2348.683701652,
+    "stamp_ns": 1792377672730514551,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 122,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 32,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2348.983521804,
+    "stamp_ns": 1792377673030485154,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 123,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 33,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2349.283653397,
+    "stamp_ns": 1792377673330474074,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 124,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 34,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2349.583627323,
+    "stamp_ns": 1792377673630538236,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 124,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 34,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2349.883464797,
+    "stamp_ns": 1792377673930419561,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 124,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 34,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2350.183660282,
+    "stamp_ns": 1792377674230528462,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 125,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 35,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2350.483598876,
+    "stamp_ns": 1792377674530492162,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 126,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 36,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2350.783188675,
+    "stamp_ns": 1792377674830432029,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 128,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 38,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2351.083644813,
+    "stamp_ns": 1792377675130516371,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 129,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 39,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2351.383681471,
+    "stamp_ns": 1792377675430535488,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 130,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 40,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2351.683489062,
+    "stamp_ns": 1792377675730452469,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 130,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 40,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2351.983789449,
+    "stamp_ns": 1792377676030573617,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 130,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 40,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2352.283830923,
+    "stamp_ns": 1792377676330575799,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 130,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 40,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2352.583800254,
+    "stamp_ns": 1792377676630571652,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 131,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 41,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2352.883712529,
+    "stamp_ns": 1792377676930572704,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 132,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 42,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2353.183494606,
+    "stamp_ns": 1792377677230571438,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 134,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 44,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2353.483741057,
+    "stamp_ns": 1792377677530624298,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 134,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 44,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2353.78364445,
+    "stamp_ns": 1792377677830564272,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 135,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 45,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2354.083377921,
+    "stamp_ns": 1792377678130457598,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 135,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 45,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2354.383537003,
+    "stamp_ns": 1792377678430451687,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 135,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 45,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2354.683438006,
+    "stamp_ns": 1792377678730504113,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 136,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 46,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2354.983281988,
+    "stamp_ns": 1792377679030514937,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 138,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 48,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2355.283462247,
+    "stamp_ns": 1792377679330679761,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 139,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 49,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2355.583576926,
+    "stamp_ns": 1792377679630520617,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 140,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 50,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2355.883385459,
+    "stamp_ns": 1792377679930537314,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 140,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 50,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2356.183803929,
+    "stamp_ns": 1792377680230554446,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 141,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 51,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2356.483515925,
+    "stamp_ns": 1792377680530558954,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 141,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 51,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2356.783604265,
+    "stamp_ns": 1792377680830516239,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 142,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 52,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2357.083807576,
+    "stamp_ns": 1792377681130676372,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 143,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 53,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2357.383630388,
+    "stamp_ns": 1792377681430554037,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 144,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 54,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2357.683757383,
+    "stamp_ns": 1792377681730557094,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 145,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 55,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2357.983459208,
+    "stamp_ns": 1792377682030572029,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 146,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 56,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2358.2835279,
+    "stamp_ns": 1792377682330569156,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 147,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 57,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2358.583485352,
+    "stamp_ns": 1792377682630720972,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 147,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 57,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2358.883758788,
+    "stamp_ns": 1792377682930642405,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 147,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 57,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2359.183703327,
+    "stamp_ns": 1792377683230585387,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 149,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 59,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2359.483558051,
+    "stamp_ns": 1792377683530554872,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 150,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 60,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2359.78382895,
+    "stamp_ns": 1792377683830618562,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 151,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 61,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2360.083703979,
+    "stamp_ns": 1792377684130607900,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 152,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 62,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2360.383784403,
+    "stamp_ns": 1792377684430692846,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 152,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 62,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2360.683933316,
+    "stamp_ns": 1792377684730611299,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 152,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 62,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2360.983804425,
+    "stamp_ns": 1792377685030616973,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 152,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 62,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2361.283769265,
+    "stamp_ns": 1792377685330622733,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 153,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 63,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2361.583843814,
+    "stamp_ns": 1792377685630645976,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 154,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 64,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2361.883828586,
+    "stamp_ns": 1792377685930738333,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 155,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 65,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2362.183967298,
+    "stamp_ns": 1792377686230728180,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 156,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 66,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2362.483679044,
+    "stamp_ns": 1792377686530642361,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 156,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 66,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2362.783732653,
+    "stamp_ns": 1792377686830650476,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 156,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 66,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2363.083691235,
+    "stamp_ns": 1792377687130627243,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 156,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 66,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2363.383874903,
+    "stamp_ns": 1792377687430657483,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 157,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 67,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2363.683877461,
+    "stamp_ns": 1792377687730660192,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 157,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 67,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2363.98393062,
+    "stamp_ns": 1792377688030668524,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 158,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 68,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2364.283741037,
+    "stamp_ns": 1792377688330675954,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 159,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 69,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2364.583814012,
+    "stamp_ns": 1792377688630655566,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 159,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 69,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2364.883863136,
+    "stamp_ns": 1792377688930706741,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 159,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 69,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2365.183878899,
+    "stamp_ns": 1792377689230817239,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 159,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 69,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2365.483878255,
+    "stamp_ns": 1792377689530695702,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 159,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 69,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2365.783550714,
+    "stamp_ns": 1792377689830781102,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 160,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 70,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2366.083940201,
+    "stamp_ns": 1792377690130700686,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 161,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 71,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2366.383859827,
+    "stamp_ns": 1792377690430709868,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 162,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 72,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2366.68384843,
+    "stamp_ns": 1792377690730772365,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 162,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 72,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2366.983961836,
+    "stamp_ns": 1792377691030828050,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 162,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 72,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2367.283824229,
+    "stamp_ns": 1792377691330726153,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 162,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 72,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2367.583979027,
+    "stamp_ns": 1792377691630730864,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 163,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 73,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2367.884056665,
+    "stamp_ns": 1792377691930881875,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 164,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 74,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2368.183884069,
+    "stamp_ns": 1792377692230738448,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 165,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 75,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2368.483718861,
+    "stamp_ns": 1792377692530747174,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 165,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 75,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2368.783644853,
+    "stamp_ns": 1792377692830829156,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 165,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 75,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2369.084056548,
+    "stamp_ns": 1792377693130892327,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 165,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 75,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2369.383830494,
+    "stamp_ns": 1792377693430763008,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 165,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 75,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2369.683797608,
+    "stamp_ns": 1792377693730766447,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 165,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 75,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2369.98353285,
+    "stamp_ns": 1792377694030770653,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 166,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 76,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2370.283875847,
+    "stamp_ns": 1792377694330779163,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 167,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 77,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2370.58371527,
+    "stamp_ns": 1792377694630782317,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 167,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 77,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2370.883925898,
+    "stamp_ns": 1792377694930784290,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 168,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 78,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2371.183481375,
+    "stamp_ns": 1792377695230784492,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 168,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 78,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2371.483729888,
+    "stamp_ns": 1792377695530803056,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 168,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 78,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2371.783793859,
+    "stamp_ns": 1792377695830802573,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 169,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 79,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2372.083977558,
+    "stamp_ns": 1792377696130907901,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 169,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 79,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2372.383991251,
+    "stamp_ns": 1792377696430897094,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 170,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 80,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2372.683940442,
+    "stamp_ns": 1792377696730819169,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 170,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 80,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2372.983828228,
+    "stamp_ns": 1792377697030823598,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 170,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 80,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2373.284034608,
+    "stamp_ns": 1792377697330923815,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 170,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 80,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2373.58400976,
+    "stamp_ns": 1792377697630912706,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 170,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 80,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2373.883841841,
+    "stamp_ns": 1792377697930836973,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 170,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 80,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2374.183725331,
+    "stamp_ns": 1792377698230942153,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 170,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 80,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2374.484063546,
+    "stamp_ns": 1792377698530973520,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 170,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 80,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2374.783646572,
+    "stamp_ns": 1792377698830918451,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 171,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 81,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2375.083845149,
+    "stamp_ns": 1792377699131015410,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 171,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 81,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2375.383825569,
+    "stamp_ns": 1792377699430864828,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 171,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 81,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2375.684111771,
+    "stamp_ns": 1792377699730869862,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 171,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 81,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2375.984011708,
+    "stamp_ns": 1792377700030935021,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 172,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 82,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2376.283655874,
+    "stamp_ns": 1792377700330880886,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 172,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 82,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2376.584866118,
+    "stamp_ns": 1792377700631587952,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 172,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 82,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2376.883951419,
+    "stamp_ns": 1792377700930952179,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 172,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 82,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2377.183985475,
+    "stamp_ns": 1792377701231007625,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 172,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 82,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2377.483834558,
+    "stamp_ns": 1792377701530900742,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 172,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 82,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2377.78412776,
+    "stamp_ns": 1792377701830900712,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 172,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 82,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2378.084045272,
+    "stamp_ns": 1792377702130985603,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 173,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 83,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2378.383785852,
+    "stamp_ns": 1792377702430989655,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 173,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 83,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2378.68410119,
+    "stamp_ns": 1792377702731020649,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 173,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 83,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2378.984171003,
+    "stamp_ns": 1792377703030925179,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 173,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 83,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2379.28368386,
+    "stamp_ns": 1792377703330929582,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 173,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 83,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2379.583675789,
+    "stamp_ns": 1792377703630933887,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 174,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 84,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2379.884051464,
+    "stamp_ns": 1792377703930953414,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 174,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 84,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2380.184058245,
+    "stamp_ns": 1792377704230945927,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 175,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 85,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2380.484237439,
+    "stamp_ns": 1792377704531034113,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 175,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 85,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2380.784102193,
+    "stamp_ns": 1792377704830975842,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 175,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 85,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2381.083851647,
+    "stamp_ns": 1792377705130980434,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 175,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 85,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2381.384074194,
+    "stamp_ns": 1792377705430965457,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 175,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 85,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2381.683858434,
+    "stamp_ns": 1792377705731081831,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 176,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 86,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2381.984303629,
+    "stamp_ns": 1792377706031087182,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 176,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 86,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2382.28412869,
+    "stamp_ns": 1792377706331083243,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 177,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 87,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2382.584050537,
+    "stamp_ns": 1792377706630988229,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 177,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 87,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2382.883870141,
+    "stamp_ns": 1792377706930997543,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 177,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 87,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2383.18379328,
+    "stamp_ns": 1792377707230993338,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 177,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 87,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2383.483949808,
+    "stamp_ns": 1792377707530988984,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 177,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 87,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2383.784045911,
+    "stamp_ns": 1792377707831009603,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 178,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 88,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2384.084117634,
+    "stamp_ns": 1792377708131012633,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 178,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 88,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2384.384150846,
+    "stamp_ns": 1792377708431011847,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 178,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 88,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2384.68414233,
+    "stamp_ns": 1792377708731013254,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 178,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 88,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2384.984094397,
+    "stamp_ns": 1792377709031017255,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 178,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 88,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2385.283927791,
+    "stamp_ns": 1792377709331027404,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 178,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 88,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  },
+  {
+    "wall": 2385.584003042,
+    "stamp_ns": 1792377709631039250,
+    "frame": "map",
+    "submaps": [
+      {
+        "trajectory_id": 0,
+        "submap_index": 0,
+        "submap_version": 178,
+        "is_frozen": false,
+        "xyz": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "trajectory_id": 0,
+        "submap_index": 1,
+        "submap_version": 88,
+        "is_frozen": false,
+        "xyz": [
+          0.007725603878498077,
+          0.0067901560105383335,
+          0.0
+        ],
+        "xyzw": [
+          -0.0,
+          -0.0,
+          -8.235544781100537e-20,
+          1.0
+        ]
+      }
+    ]
+  }
+]

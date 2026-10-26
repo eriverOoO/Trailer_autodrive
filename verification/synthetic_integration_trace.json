@@ -1,0 +1,7835 @@
+{
+  "states": [
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158167580945357,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158167630914498,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158167680915995,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158167730850419,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158167780850166,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158167830845294,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158167880859409,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158167930860879,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158167980883994,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158168030852371,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158168080854806,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158168130847709,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158168180846984,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158168230858081,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158168280845913,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158168330853457,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158168380880064,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158168430861938,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158168480995659,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158168530980004,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158168580979293,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158168630973384,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158168680983550,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158168730992612,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158168780967969,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158168830999404,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158168880844194,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158168930851844,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158168980878065,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158169030872105,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158169080850002,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158169130849990,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158169180841621,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158169233846196,
+      "reason": "scan missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158169280970585,
+      "reason": "scan missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158169331008675,
+      "reason": "SLAM map unavailable",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158169380919033,
+      "reason": "SLAM map unavailable",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158169431053416,
+      "reason": "SLAM map unavailable",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158169481009051,
+      "reason": "SLAM map unavailable",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158169530844011,
+      "reason": "SLAM map unavailable",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158169580842882,
+      "reason": "SLAM map unavailable",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158169630843074,
+      "reason": "SLAM map unavailable",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158169680833374,
+      "reason": "SLAM map unavailable",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158169730853030,
+      "reason": "SLAM map unavailable",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158169780859231,
+      "reason": "SLAM map unavailable",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158169830832314,
+      "reason": "SLAM map unavailable",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158169880853457,
+      "reason": "SLAM map unavailable",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158169930860590,
+      "reason": "SLAM map unavailable",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158169980985750,
+      "reason": "SLAM map unavailable",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158170030898412,
+      "reason": "SLAM map unavailable",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158170080854577,
+      "reason": "SLAM map unavailable",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158170130888653,
+      "reason": "SLAM map unavailable",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158170180852882,
+      "reason": "SLAM map unavailable",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158170230852138,
+      "reason": "SLAM map unavailable",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158170280853118,
+      "reason": "SLAM map unavailable",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158170330850300,
+      "reason": "SLAM map unavailable",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28705311791181853,
+        0.00821319742559437,
+        -0.0030125992788916224,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158170371401300,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2871771184269213,
+        0.008422672796226922,
+        -0.003043385918795059,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158170421465100,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 3.078663990343676e-05
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28733143632915664,
+        0.008361766583371214,
+        -0.0030275922161676523,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158170471435400,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 1.4992937276029922e-05
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28725012060304334,
+        0.008625004008790424,
+        -0.0030639840279767885,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158170521493400,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 5.13847490851661e-05
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28730552774376483,
+        0.008699973702436907,
+        -0.003070073117534709,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158170571438300,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 5.747383864308656e-05
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2872166731948008,
+        0.008861791569682868,
+        -0.0030901341668182632,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158170621402600,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 7.753488792664083e-05
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2872116565773648,
+        0.008973128047828077,
+        -0.0031020743887923354,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158170671351300,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 8.947510990071298e-05
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28720661792296015,
+        0.009084952680464711,
+        -0.0031140669626503314,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158170721519000,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.00010146768375870899
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2872016046777023,
+        0.009196212480183642,
+        -0.003125998961314,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158170771433300,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.00011339968242237743
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28704934708867974,
+        0.009135632440412858,
+        -0.003109167461670837,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158170821453900,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 9.656818277921451e-05
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2869827587430309,
+        0.009174830267773408,
+        -0.0031090488405711306,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158170871326800,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 9.644956167950821e-05
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2869158415472503,
+        0.009214221675713355,
+        -0.0031089296336547383,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158170921446000,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 9.633035476311596e-05
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28684903864123795,
+        0.009253545805952935,
+        -0.0031088106303352155,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158170971479600,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 9.62113514435931e-05
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2868651009601034,
+        0.00915469305119204,
+        -0.003118432414014633,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158171021322500,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.00010583313512301049
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28683309042857824,
+        0.009135996963213487,
+        -0.0031224037070275473,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158171071279000,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.00010980442813592495
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28692030015044084,
+        0.00901761221476572,
+        -0.0031074536961995204,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158171121272700,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 9.485441730789799e-05
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2869384115707412,
+        0.008956860815902207,
+        -0.0031034666625037507,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158171171403900,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 9.086738361212829e-05
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2869564783321904,
+        0.008896259201448115,
+        -0.0030994894589610016,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158171221411500,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 8.689018006937917e-05
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28697452113617666,
+        0.008835737932508072,
+        -0.003095517528388633,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158171271352800,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 8.291824949701068e-05
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2870110105468807,
+        0.008883700714644878,
+        -0.0030911270398972838,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158171321297200,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 7.852776100566138e-05
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28703690093421497,
+        0.008868637631824373,
+        -0.003086962222744187,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158171371447600,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 7.436294385256481e-05
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28706271573683056,
+        0.00885361852142583,
+        -0.003082809563604469,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158171421451600,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 7.021028471284642e-05
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2870885099358867,
+        0.008838611395303236,
+        -0.0030786602180216272,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158171471415700,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 6.606093913000483e-05
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2870834416277378,
+        0.008844884862525564,
+        -0.0030869901271463446,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158171521407100,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 7.439084825472224e-05
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28709627220586453,
+        0.008838812644955065,
+        -0.003088073843272457,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158171571312800,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 7.547456438083444e-05
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.287019677963837,
+        0.00891195237048052,
+        -0.003093603540713098,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158171621407400,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 8.100426182147551e-05
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28699499553226016,
+        0.008939111063343084,
+        -0.0030965530024440416,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158171671412400,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 8.395372355241926e-05
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28697036620945027,
+        0.008966211316534781,
+        -0.0030994961175679803,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158171721309800,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 8.689683867635791e-05
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28694569171978357,
+        0.008993361265157056,
+        -0.0031024446296672027,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158171771298700,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 8.984535077558031e-05
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2869209697433288,
+        0.009020563461871706,
+        -0.003105398815963353,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158171821383800,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 9.279953707173058e-05
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28689632960314004,
+        0.009047675609358008,
+        -0.0031083432228223616,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158171871303100,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 9.574394393073926e-05
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2869637435448639,
+        0.009001413220112529,
+        -0.003107410103671851,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158171921298100,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 9.48108247802288e-05
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28697770841031567,
+        0.008997761953237895,
+        -0.0031087303943387744,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158171971301900,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 9.6131115447152e-05
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.286989116404834,
+        0.008992981326784348,
+        -0.003105500627257642,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158172021423300,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 9.290134836601946e-05
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28700197418204343,
+        0.00898886706715878,
+        -0.003104913122031818,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158172071343900,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 9.23138431401958e-05
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2870148471039486,
+        0.008984747961468031,
+        -0.003104324924800941,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158172121323300,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 9.172564590931862e-05
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2870277438762309,
+        0.00898062122404896,
+        -0.0031037356377798028,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158172171395300,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 9.113635888818035e-05
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2870406417301836,
+        0.008976494140482084,
+        -0.003103146301329731,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158172221471500,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 9.054702243810851e-05
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.287053505740054,
+        0.008972377886386395,
+        -0.0031025585112991077,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158172271416300,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 8.995923240748532e-05
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28706639187461874,
+        0.008968254552750047,
+        -0.0031019697103291323,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158172321447000,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 8.937043143750992e-05
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2870792353563945,
+        0.008964144867214459,
+        -0.0031013828582713387,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158172371312100,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 8.878357937971634e-05
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28709213339024026,
+        0.008960017725955087,
+        -0.003100793513583111,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158172421389000,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 8.819423469148867e-05
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28710499129543,
+        0.008955903425118997,
+        -0.003100206002472889,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158172471310100,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 8.760672358126657e-05
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.287117898601398,
+        0.008951773316880508,
+        -0.0030996162341081035,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158172521423000,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 8.701695521648109e-05
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2871307829840215,
+        0.008947650543671873,
+        -0.003099027513165926,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158172571446900,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 8.642823427430345e-05
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2870235625613276,
+        0.008934977788111429,
+        -0.003094116719013431,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158172621424600,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 8.151744012180849e-05
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2869861074752229,
+        0.008927272980214895,
+        -0.0030917168060821698,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158172671414100,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 7.911752719054737e-05
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2869597308391177,
+        0.008918523996318763,
+        -0.0030948418408477205,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158172721386500,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 8.224256195609814e-05
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28692686434100273,
+        0.008910366791374455,
+        -0.0030947591565324145,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158172771457400,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 8.215987764079212e-05
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2868940609228478,
+        0.008902225242377907,
+        -0.0030946766309113303,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158172821432200,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 8.207735201970792e-05
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2868612819883806,
+        0.00889408977003954,
+        -0.0030945941668854052,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158172871369700,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 8.199488799378282e-05
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.286946850508968,
+        0.008942532829287598,
+        -0.003101503111565202,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158172921306100,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 8.890383267357981e-05
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2869637804062129,
+        0.00895819016650177,
+        -0.003104364207597571,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158172971431600,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 9.176492870594876e-05
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28698063096358056,
+        0.008973774129707129,
+        -0.003107211895854279,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158173021322200,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 9.461261696265674e-05
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2869975206300551,
+        0.008989394264507405,
+        -0.0031100661938190375,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158173071328600,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 9.746691492741511e-05
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28700593037356775,
+        0.009005001956484914,
+        -0.0031066375858053484,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158173121326000,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 9.403830691372605e-05
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28701927282679307,
+        0.009020631600776962,
+        -0.00310685458459711,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158173171375800,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 9.425530570548752e-05
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28703257438608876,
+        0.009036213341032703,
+        -0.0031070709182990093,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158173221272200,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 9.44716394073869e-05
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28704594661666905,
+        0.009051877867207661,
+        -0.0031072884013837194,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158173271433700,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 9.468912249209699e-05
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2869892117676276,
+        0.008979432533283113,
+        -0.003098502029178761,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158173321378600,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 8.590275028713852e-05
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2869731146399024,
+        0.008958060414962906,
+        -0.003094934940234973,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158173371443100,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 8.233566134335053e-05
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2869670960110822,
+        0.008932790304760959,
+        -0.0030962097166346353,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158173421281700,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 8.361043774301287e-05
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2869551994937279,
+        0.008909718945774841,
+        -0.0030946719272442625,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158173471386400,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 8.207264835264011e-05
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28694331969098386,
+        0.008886680003379712,
+        -0.0030931362985368816,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158173521420700,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 8.053701964525926e-05
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2869314382255236,
+        0.008863637837741677,
+        -0.0030916004549888625,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158173571462000,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 7.900117609724007e-05
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28691959565093905,
+        0.008840671095936082,
+        -0.0030900696387117844,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158173621339500,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 7.7470359820162e-05
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28690772847759294,
+        0.008817656650164644,
+        -0.0030885356427932556,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158173671320600,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 7.593636390163319e-05
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28698579970206567,
+        0.008909164083472032,
+        -0.00309924976817807,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158173721339900,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 8.665048928644748e-05
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28701174659685896,
+        0.008934278990000575,
+        -0.003102865638484289,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158173771468000,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 9.02663595926667e-05
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2870274270400693,
+        0.00896468158421024,
+        -0.003102160231728295,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158173821446200,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 8.956095283667266e-05
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28704899329689626,
+        0.008991923830001065,
+        -0.003103956707835937,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158173871343700,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 9.135742894431477e-05
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2870705962475133,
+        0.009019212428144659,
+        -0.003105756240626206,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158173921326100,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 9.315696173458352e-05
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2870922149728971,
+        0.009046520953976525,
+        -0.003107557087537983,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158173971345000,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 9.495780864636048e-05
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28701012863662173,
+        0.008984918745790774,
+        -0.0030983499487091852,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158174021384600,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 8.575066981756285e-05
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2869882379105894,
+        0.008974902053927262,
+        -0.0030955336758576794,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158174071282600,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 8.293439696605703e-05
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2869733714995112,
+        0.008956340106969173,
+        -0.003097662445838672,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158174121264000,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 8.506316694704975e-05
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28695432676446037,
+        0.008942670784446303,
+        -0.0030969151588818187,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158174171456400,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 8.431587999019635e-05
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2869353569675893,
+        0.008929055248775094,
+        -0.0030961708123935206,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158174221451300,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 8.357153350189821e-05
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28691639923657924,
+        0.008915448373467433,
+        -0.00309542693935788,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158174271414400,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 8.28276604662578e-05
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28689741194744967,
+        0.008901820282990752,
+        -0.003094681906512115,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158174321455400,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 8.208262762049272e-05
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2868784336128169,
+        0.00888819861970198,
+        -0.0030939372250337258,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158174371472800,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 8.133794614210337e-05
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28685947379443444,
+        0.008874590246531122,
+        -0.0030931932701116203,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158174421441400,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 8.05939912199979e-05
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2868405137482306,
+        0.008860981709956672,
+        -0.0030924493062564466,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158174471410600,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 7.985002736482418e-05
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28694989501606066,
+        0.008928064510970973,
+        -0.0031001391782502358,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158174521470200,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 8.753989935861338e-05
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28698481207685267,
+        0.00894833111592149,
+        -0.003102935320916472,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158174571439500,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 9.033604202484963e-05
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2870197400361923,
+        0.008968604047930527,
+        -0.0031057323365151846,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158174621424400,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 9.313305762356218e-05
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2870546705088357,
+        0.008988878440024571,
+        -0.003108529553559866,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158174671412900,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 9.593027466824359e-05
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2874006043870111,
+        0.01038609692931958,
+        -0.0036354375796880584,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158174716383700,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0006228383007964361
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28759029210191045,
+        0.011071933635903582,
+        -0.003890847211520057,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158174771301900,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0008782479326284346
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28752598562294157,
+        0.012314311763623681,
+        -0.003841409957708859,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158174821346000,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0008288106788172365
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2875989846622333,
+        0.013197444241861499,
+        -0.003955304143270087,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158174871307400,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0009427048643784649
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28754085807838514,
+        0.013421626904588339,
+        -0.003911419407809311,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158174921416400,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0008988201289176884
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28755872921023073,
+        0.014026206606278728,
+        -0.003958904201167992,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158174971292500,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0009463049222763698
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28739628294088887,
+        0.013434113328021767,
+        -0.003885473029585605,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158175021404700,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0008728737506939828
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28733856111982065,
+        0.013536730406569063,
+        -0.0038822459340016,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158175071349900,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0008696466551099775
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28738295191948643,
+        0.012963747494583885,
+        -0.003853316532333156,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158175121454700,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0008407172534415338
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28736809851954476,
+        0.012782767009112166,
+        -0.0038393011133508615,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158175171461500,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0008267018344592391
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28751919197713,
+        0.01237512340904098,
+        -0.003815240948195418,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158175221314400,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0008026416693037956
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28757403376811286,
+        0.012098725627475649,
+        -0.003796990428238423,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158175271311700,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0007843911493468007
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2876290236526325,
+        0.011821580978406852,
+        -0.003778690592718278,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158175321444100,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0007660913138266556
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2876839094548441,
+        0.011544960407466094,
+        -0.0037604253620498428,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158175371481700,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0007478260831582204
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2876600737259848,
+        0.011834601922198207,
+        -0.0037593551092500194,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158175421308300,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.000746755830358397
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28768196966798204,
+        0.011795419735415587,
+        -0.0037482885992981864,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158175471314500,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.000735689320406564
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2876308961829744,
+        0.012073937984990813,
+        -0.003775914888628054,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158175521301900,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0007633156097364316
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2876221725493457,
+        0.012168072864850225,
+        -0.003781084752220431,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158175571302900,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0007684854733288086
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28761342001583085,
+        0.012262519513166875,
+        -0.003786271738058474,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158175621469500,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0007736724591668516
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2876047224324286,
+        0.012356373123572111,
+        -0.003791426154407337,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158175671321100,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0007788268755157145
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2875861309724158,
+        0.0124284110422711,
+        -0.0038059387881792485,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158175721398000,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0007933395092876261
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2875732938875998,
+        0.012513052215282672,
+        -0.00381501086572637,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158175771306500,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0008024115868347477
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2875566779812207,
+        0.012528967220462739,
+        -0.0038171649099622996,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158175821331500,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0008045656310706772
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2875422512570092,
+        0.012584826049973335,
+        -0.00382333995573807,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158175871309000,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0008107406768464477
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28753968452499074,
+        0.012550569924576436,
+        -0.003824761701945499,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158175921296700,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0008121624230538766
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2875302271706516,
+        0.012568637452669867,
+        -0.003828945338981053,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158175971309000,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0008163460600894307
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.287520757311679,
+        0.012586728860141618,
+        -0.0038331345054244746,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158176021387400,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0008205352265328522
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28751129368794437,
+        0.012604808345958082,
+        -0.0038373209113465733,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158176071432800,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0008247216324549509
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28750184670000845,
+        0.012622856040726296,
+        -0.003841499955878338,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158176121390200,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0008289006769867154
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2874924067982963,
+        0.012640890188161698,
+        -0.003845675863454052,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158176171310100,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0008330765845624295
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2875001142380419,
+        0.01255478303913939,
+        -0.003823956378142203,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158176221440600,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0008113570992505808
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2874978641421296,
+        0.012529178555289164,
+        -0.0038172814794547897,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158176271413800,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0008046822005631673
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28749561759038533,
+        0.012503614548169839,
+        -0.0038106171327634093,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158176321308000,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0007980178538717869
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28749336322713714,
+        0.012477961799503468,
+        -0.003803929651822878,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158176371375400,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0007913303729312556
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28750597640379877,
+        0.012424180852212854,
+        -0.0038065449119585267,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158176421323000,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0007939456330669043
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28750997825622304,
+        0.012386593438979505,
+        -0.0038037546420096884,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158176471504600,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0007911553631180661
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28751395063177315,
+        0.012349282866410963,
+        -0.003800984923094976,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158176521316600,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0007883856442033538
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2875179467219438,
+        0.012311749532967391,
+        -0.0037981986677150374,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158176571426000,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.000785599388823415
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28752193354323285,
+        0.0122743032365452,
+        -0.003795418873455686,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158176621419200,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0007828195945640636
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28752591537010597,
+        0.012236903829254563,
+        -0.0037926425599721218,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158176671349800,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0007800432810804994
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28756724401888917,
+        0.01232845298089671,
+        -0.0038071381191890686,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158176721339200,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0007945388402974463
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28758692830539373,
+        0.012345137235499416,
+        -0.0038116117782211138,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158176771424100,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0007990124993294914
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2875919571365789,
+        0.012373767081529062,
+        -0.003809273606651701,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158176821503400,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0007966743277600784
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2876054071871879,
+        0.012395340867733272,
+        -0.003810877027268452,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158176871292200,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0007982777483768298
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2876189129133319,
+        0.012417003958303008,
+        -0.003812487085221087,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158176921287100,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0007998878063294647
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28763242828279545,
+        0.012438682517894383,
+        -0.003814098292872374,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158176971317700,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0008014990139807517
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2876459211756885,
+        0.012460325026422981,
+        -0.003815706821113922,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158177021265100,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0008031075422222996
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.287659468069222,
+        0.012482054152819798,
+        -0.003817321787023811,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158177071412400,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0008047225081321886
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2875712698255071,
+        0.012411715503030052,
+        -0.0038084927842971872,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158177121424200,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0007958935054055648
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2875421398499991,
+        0.012394789312016583,
+        -0.00380572615006041,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158177171315600,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0007931268711687876
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2875128597014892,
+        0.012377775863143977,
+        -0.0038029452532788895,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158177221464200,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0007903459743872672
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28748375459429776,
+        0.012360864124619182,
+        -0.0038001809813454153,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158177271313000,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0007875817024537929
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2874765792226554,
+        0.012342597185503023,
+        -0.00380245240774051,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158177321327400,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0007898531288488878
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28745664460653786,
+        0.01232509468723486,
+        -0.003801798981410699,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158177371309800,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0007891997025190767
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28754981656321776,
+        0.01236474629523125,
+        -0.003809705580259208,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158177421297900,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0007971063013675856
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2875773486766319,
+        0.012371223760897618,
+        -0.0038126451249555276,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158177471320000,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0008000458460639052
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2875913301326098,
+        0.012384781705061456,
+        -0.003809732279803739,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158177521287600,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0007971330009121165
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28761320711758037,
+        0.012394243906793737,
+        -0.003810216637292759,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158177571358300,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0007976173584011365
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28763510061813025,
+        0.012403713251849607,
+        -0.003810701360439005,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158177621466800,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0007981020815473827
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28765688095584296,
+        0.012413133651908477,
+        -0.0038111835781561355,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158177671316300,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0007985842992645131
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2875779434197096,
+        0.012381486653772252,
+        -0.0038057644711481245,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158177721314400,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0007931651922565021
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28755750624964177,
+        0.01237369399735509,
+        -0.00380377158343998,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158177771318600,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0007911723045483576
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28753704108184847,
+        0.012365890665890953,
+        -0.003801775965705001,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158177821391300,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0007891766868133787
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28751663836365493,
+        0.012358111146780227,
+        -0.0037997864377233167,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158177871311200,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0007871871588316943
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28750879579007066,
+        0.012348041771475412,
+        -0.003802506826056068,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158177921433700,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0007899075471644454
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2874937024104605,
+        0.012339325935741604,
+        -0.0038024926667985263,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158177971301000,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0007898933879069039
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28747853003375046,
+        0.012330564482275803,
+        -0.0038024784334329776,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158178021429300,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0007898791545413554
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2874633993348206,
+        0.012321827096096194,
+        -0.003802464239165791,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158178071419900,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0007898649602741687
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2875503207394842,
+        0.012368758502701516,
+        -0.003807947999282136,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158178121314200,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0007953487203905137
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28757799052008565,
+        0.012383368100315659,
+        -0.003810240325272654,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158178171307300,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0007976410463810318
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28760566876728383,
+        0.012397982169077879,
+        -0.0038125333528117285,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158178221315700,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0007999340739201061
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28763333865553137,
+        0.01241259182512686,
+        -0.0038148256879728146,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158178271309000,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0008022264090811922
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28761310329156753,
+        0.012416124688741492,
+        -0.0038096284869208997,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158178321307200,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0007970292080292773
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2876206751394874,
+        0.012426088341359541,
+        -0.003808778403894492,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158178371309400,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0007961791250028698
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2875434592269009,
+        0.012377750311972626,
+        -0.003808902694145577,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158178421317300,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0007963034152539544
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28751540509118684,
+        0.012363222824056079,
+        -0.0038084610647895452,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158178471384600,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0007958617858979228
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28748742318176157,
+        0.012348732737660713,
+        -0.0038080205724236034,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158178521323000,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.000795421293531981
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28745936428314217,
+        0.0123342027833905,
+        -0.003807578868091501,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158178571398800,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0007949795891998784
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28754186568669343,
+        0.012374302285666435,
+        -0.003800927947331115,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158178621333800,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0007883286684394926
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2875601908121611,
+        0.012382691791273312,
+        -0.0037978825726707457,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158178671317800,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0007852832937791233
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28757520215327675,
+        0.0123771050129299,
+        -0.0038022274377166937,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158178721328700,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0007896281588250713
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2875921885849422,
+        0.012379639609222488,
+        -0.003802282178280869,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158178771475500,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0007896828993892467
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28760912586628734,
+        0.012382166871648862,
+        -0.0038023367604529657,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158178821477200,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0007897374815613433
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2876260533243425,
+        0.012384692668312863,
+        -0.0038023913109684793,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158178871449900,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0007897920320768569
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2876429559531865,
+        0.012387214760136107,
+        -0.0038024457814692476,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158178921349300,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0007898465025776252
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2876599082404502,
+        0.012389744261640852,
+        -0.0038025004119995043,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158178971395300,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0007899011331078818
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28755114236698903,
+        0.012360362011233616,
+        -0.003810780735178328,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158179021420400,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0007981814562867057
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2875153908031213,
+        0.012349518566261024,
+        -0.003814280367117255,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158179071311800,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0008016810882256328
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28749028478281224,
+        0.012356642407082674,
+        -0.0038101150639910436,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158179121342500,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0007975157850994212
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2874589854160666,
+        0.012353334344659496,
+        -0.003810399584069,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158179171313600,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0007978003051773776
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.287427658991005,
+        0.012350023422417316,
+        -0.003810684350114469,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158179221327900,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0007980850712228468
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28739627932622375,
+        0.012346706873216548,
+        -0.0038109696001238026,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158179271427200,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0007983703212321802
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2875396453019677,
+        0.012390517055710228,
+        -0.0038004413207011704,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158179321334200,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.000787842041809548
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2875815967466017,
+        0.012406977513188599,
+        -0.0037961885627769373,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158179371357800,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.000783589283885315
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28761200374520207,
+        0.012399443667138757,
+        -0.0038020172609423237,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158179421341700,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0007894179820507013
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2876491856813314,
+        0.01240585022454405,
+        -0.0038019940558162244,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158179471448200,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.000789394776924602
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28758288221104455,
+        0.012381883317498598,
+        -0.0038077495245810106,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158179521379000,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0007951502456893882
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2875766265094504,
+        0.012375531962624402,
+        -0.00381015588717167,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158179571509000,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0007975566082800475
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28756283143925776,
+        0.012374642570158644,
+        -0.003808632147119173,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158179621387400,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0007960328682275505
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28755342576130527,
+        0.01237059153002127,
+        -0.003809386975810756,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158179671327700,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0007967876969191336
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2876639357118155,
+        0.012654192348633204,
+        -0.004252389804503584,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158179721491600,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0012397905256119619
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2877046761427575,
+        0.012770395816865976,
+        -0.0044380004492099705,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158179771320800,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0014254011703183482
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28730734683024806,
+        0.013077469967032341,
+        -0.004496070638875381,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158179821546200,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0014834713599837586
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2871650900603235,
+        0.013272990169848477,
+        -0.004627869057382998,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158179871387000,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0016152697784913759
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28704882141238186,
+        0.01348618515176096,
+        -0.004464673479815389,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158179921360500,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.001452074200923767
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2869169009396513,
+        0.013689956806731346,
+        -0.004472949169393262,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158179971465500,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0014603498905016396
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2869957944797586,
+        0.013516281655995693,
+        -0.004422411465011768,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158180021356700,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0014098121861201456
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2869523403310429,
+        0.013561620142210943,
+        -0.004405970881669388,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158180071434500,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0013933716027777654
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28706682235994607,
+        0.013336818282394199,
+        -0.004401811059823884,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158180121343800,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0013892117809322616
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2870896171134536,
+        0.013268857968495983,
+        -0.00439052908291978,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158180171323200,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0013779298040281578
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2871375496068949,
+        0.01314509546617827,
+        -0.00438725519237862,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158180221366200,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0013746559134869972
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28717084377690666,
+        0.013053850827266216,
+        -0.004379342507653769,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158180271306200,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.001366743228762147
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28715226130523364,
+        0.013051670287300032,
+        -0.004384560982080975,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158180321428700,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0013719617031893523
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2871637627910286,
+        0.012997929323304546,
+        -0.004382163176807707,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158180371314600,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0013695638979160847
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28717529795935776,
+        0.012944030969040352,
+        -0.0043797583491222945,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158180421346600,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0013671590702306721
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2871868254715585,
+        0.012890168380386055,
+        -0.004377355117221157,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158180471345400,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0013647558383295343
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2871585945490054,
+        0.012993582046424455,
+        -0.004374676195316062,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158180521277300,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0013620769164244398
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28715343821709655,
+        0.013005705282224049,
+        -0.004372153654936412,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158180571320900,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0013595543760447895
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28714343267999887,
+        0.013041874062024119,
+        -0.004379686534496237,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158180621444900,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0013670872556046146
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28713627338236647,
+        0.013063990298767692,
+        -0.004381377328228963,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158180671295100,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0013687780493373404
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28712907300965695,
+        0.013086233420529302,
+        -0.0043830778223642435,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158180721431300,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0013704785434726214
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28712188616476136,
+        0.013108434750087798,
+        -0.004384775121471831,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158180771473300,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.001372175842580209
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28711471204343325,
+        0.013130596771905161,
+        -0.004386469415489668,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158180821426700,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.001373870136598046
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2871075307404575,
+        0.013152780976414959,
+        -0.004388165405382086,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158180871430100,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0013755661264904637
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28710603643584115,
+        0.013162739325055373,
+        -0.004392336793662061,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158180921452800,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0013797375147704383
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28710125519117025,
+        0.013179744637304293,
+        -0.004395063698519937,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158180971321500,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0013824644196283142
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2870964473385501,
+        0.013196844577519696,
+        -0.004397805777547121,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158181021467700,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0013852064986554983
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28709166407614206,
+        0.013213857050785613,
+        -0.0044005338307205035,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158181071357400,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0013879345518288812
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2870868614540463,
+        0.01323093837228825,
+        -0.004403272924127342,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158181121449000,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0013906736452357197
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28708206756415694,
+        0.01324798862852511,
+        -0.004406007036032115,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158181171449500,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0013934077571404924
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28713051264112976,
+        0.013176256195478681,
+        -0.004388799072508759,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158181221322700,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0013761997936171367
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28714810529611606,
+        0.01315600228755501,
+        -0.004383150628219713,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158181271425600,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0013705513493280908
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2871590321844991,
+        0.013119799755312496,
+        -0.004384882609586785,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158181321323200,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0013722833306951628
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2871738706422092,
+        0.013092773548804155,
+        -0.004382324145560632,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158181371486400,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.00136972486666901
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28718861343513846,
+        0.013065921579082374,
+        -0.004379782175842385,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158181421326200,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.001367182896950763
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2872033961596741,
+        0.01303899687599643,
+        -0.004377233320745149,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158181471301000,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0013646340418535263
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2871441877062628,
+        0.013081215323989502,
+        -0.004387980172549242,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158181521481600,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0013753808936576193
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2871279320304768,
+        0.013083327211585276,
+        -0.0043910084427919195,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158181571421100,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0013784091639002971
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2871132905292291,
+        0.013098763698674553,
+        -0.004389712438460671,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158181621400100,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0013771131595690486
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2870976917443094,
+        0.013106466815105997,
+        -0.004390930767533182,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158181671418000,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.00137833148864156
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28708212751349743,
+        0.013114152867538453,
+        -0.004392146397754652,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158181721325100,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0013795471188630293
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28706653452838954,
+        0.01312185311943231,
+        -0.0043933642737709385,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158181771324400,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.001380764994879316
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2870509383930242,
+        0.013129554926796936,
+        -0.004394582395801623,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158181821333800,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.001381983116910001
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28703536224771675,
+        0.013137246862298543,
+        -0.004395798956493396,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158181871279100,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0013831996776017736
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2870197343637262,
+        0.013144964347591725,
+        -0.004397019558154367,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158181921390300,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0013844202792627444
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2870041583423045,
+        0.013152656221486677,
+        -0.004398236109103,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158181971335200,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0013856368302113777
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2870980746512469,
+        0.013138912963391099,
+        -0.004390274579424652,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158182021355000,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0013776753005330295
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28712847900248617,
+        0.013137611499224426,
+        -0.004387636716543191,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158182071419200,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.001375037437651569
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2871588568731145,
+        0.013136311168470357,
+        -0.004385001150928486,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158182121439800,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0013724018720368636
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2871892089919056,
+        0.013135011939933824,
+        -0.004382367819352989,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158182171418000,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0013697685404613666
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2872003863578567,
+        0.013120895211062742,
+        -0.004385445864998806,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158182221317200,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0013728465861071837
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.287222765939758,
+        0.013114200408093007,
+        -0.004385206897423137,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158182271415600,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0013726076185315143
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28712873946588885,
+        0.013102735859122718,
+        -0.004390802313913723,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158182321338700,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0013782030350221008
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.287102204004995,
+        0.013094041249862116,
+        -0.004393014494672636,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158182371333900,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0013804152157810134
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2870850704084238,
+        0.013099302494192886,
+        -0.0043903697635398085,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158182421504100,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.001377770484648186
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.287062587084493,
+        0.013096475442891584,
+        -0.004390543824018364,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158182471332400,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0013779445451267418
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28704002800139466,
+        0.01309363886563986,
+        -0.004390718471006079,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158182521328600,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0013781191921144564
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28701746445124954,
+        0.013090801726703113,
+        -0.004390893152576524,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158182571334700,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0013782938736849018
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2871282639193635,
+        0.013130801645721286,
+        -0.00438424300867565,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158182621464900,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0013716437297840276
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28716164243912223,
+        0.013145927283811833,
+        -0.004381556238326777,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158182671453000,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0013689569594351543
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28718240460242594,
+        0.01314187788437632,
+        -0.004386484326461553,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158182721288100,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0013738850475699302
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2872105602790308,
+        0.013148980651323276,
+        -0.004386991543903391,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158182771331100,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0013743922650117685
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2871410989934443,
+        0.013122553637944824,
+        -0.004391676982627428,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158182821439900,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0013790777037358056
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28712830860109567,
+        0.013115601627654532,
+        -0.0043939304439303,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158182871325200,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0013813311650386778
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2871159888273105,
+        0.013117153716094914,
+        -0.004391535688779506,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158182921487200,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0013789364098878835
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28710343536413524,
+        0.013113775810896474,
+        -0.0043918404749135834,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158182971330700,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.001379241196021961
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2870908445000826,
+        0.013110387841819537,
+        -0.004392146169104699,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158183021322700,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.001379546890213077
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28707825144484195,
+        0.013106999283141525,
+        -0.004392451916495116,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158183071323400,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.001379852637603494
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2870656281666646,
+        0.01310360259203642,
+        -0.004392758397668995,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158183121444100,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0013801591187773729
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28705305437847456,
+        0.013100219217780366,
+        -0.004393063677272455,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158183171368300,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0013804643983808327
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28704044467536644,
+        0.01309682617949014,
+        -0.004393369828855263,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158183221435100,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.001380770549963641
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28702784154571404,
+        0.013093434910002663,
+        -0.0043936758208401715,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158183271475800,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0013810765419485492
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2870152529985885,
+        0.013090047564411077,
+        -0.004393981458774552,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158183321458600,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0013813821798829297
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2870026938935872,
+        0.013086668141158655,
+        -0.0043942863818815445,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158183371324500,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0013816871029899223
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28699009952849736,
+        0.013083279230074638,
+        -0.004394592161069243,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158183421330400,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0013819928821776207
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28697750710268377,
+        0.013079890840821236,
+        -0.004394897893172504,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158183471328600,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0013822986142808815
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28696488369836026,
+        0.013076494115830064,
+        -0.004395204377403819,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158183521449800,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0013826050985121965
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28695231985832825,
+        0.013073113418496938,
+        -0.004395509415470218,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158183571334500,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0013829101365785954
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2869397128246934,
+        0.013069721098570138,
+        -0.004395815502235489,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158183621390700,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0013832162233438669
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2869271362154277,
+        0.013066336965286378,
+        -0.004396120850325406,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158183671326100,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0013835215714337837
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2869145424798191,
+        0.01306294822362721,
+        -0.004396426614225951,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158183721329500,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0013838273353343282
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2869019556702671,
+        0.013059561345649107,
+        -0.00439673220996779,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158183771305400,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.001384132931076168
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28707233206779414,
+        0.01310403366852798,
+        -0.004387999394545946,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158183821332300,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.001375400115654324
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2871365685365416,
+        0.013120742105330627,
+        -0.0043845099491913375,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158183871323100,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.001371910670299715
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2871894919587389,
+        0.013127348402591601,
+        -0.0043857502553128124,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158183921362900,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.00137315097642119
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28724895236625797,
+        0.013139812844310936,
+        -0.004384245596074531,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158183971348600,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0013716463171829086
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.2871720467105603,
+        0.013126072591864818,
+        -0.004389741763257015,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158184021402900,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0013771424843653924
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28717428254344385,
+        0.013127538805176475,
+        -0.004391172383018693,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158184071335200,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0013785731041270702
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28717652108923647,
+        0.013129006797945444,
+        -0.004392604739042414,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158184121328100,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0013800054601507913
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.287178760516546,
+        0.013130475369183091,
+        -0.004394037659494562,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158184171340700,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0013814383806029398
+    },
+    {
+      "valid": true,
+      "state": [
+        -0.28718010476101896,
+        0.013131356897767713,
+        -0.0043948977882424765,
+        -0.0030125992788916224
+      ],
+      "stamp_ns": 1792158184201361400,
+      "reason": "",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": 0.0013822985093508541
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158184280998222,
+      "reason": "gyro/SLAM timestamp pairing unavailable; pose=1792158184276629500, gyro=1792158184202266692, lag_ms=74.362808, buffered=1000",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158184330922099,
+      "reason": "gyro/SLAM timestamp pairing unavailable; pose=1792158184326345200, gyro=1792158184202266692, lag_ms=124.078508, buffered=1000",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158184381415016,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158184431029863,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158184480845877,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158184530842608,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158184580858556,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158184630864336,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158184680849536,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158184730904127,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158184780860901,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158184830904443,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158184880853507,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158184930851777,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158184980989022,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158185030842797,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158185080926568,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158185130852017,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158185180860513,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158185230851939,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158185280968357,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158185330860005,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158185380837198,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158185430850476,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158185480842949,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158185530851444,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158185580869635,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158185630887890,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158185680853321,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158185730843688,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158185780844074,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158185830843497,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158185880910325,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158185930934590,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158185980953331,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158186030842262,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158186080886505,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158186130855358,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158186180856198,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158186230842230,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158186280844204,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158186330843799,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158186380930583,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158186430907933,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158186480835827,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158186530860251,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158186580864409,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158186630847756,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158186680866874,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158186730846790,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158186781011246,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158186831033641,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158186880892612,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158186931034457,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158186980850807,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158187030917894,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158187080955964,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158187130983914,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158187180900333,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158187230948900,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158187280934258,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158187330993407,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158187380853611,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158187430857608,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158187480853237,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158187530850292,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158187580948593,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158187630879759,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158187680844009,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158187730845432,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158187780851957,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158187830840796,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158187880833788,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158187930841032,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158187980833631,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158188030843915,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158188080919059,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158188130850517,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    },
+    {
+      "valid": false,
+      "state": null,
+      "stamp_ns": 1792158188180863121,
+      "reason": "trailer IMU missing/stale",
+      "tractor_source": "Cartographer rear axle",
+      "trailer_source": "Final B gyro integration",
+      "articulation_rad": null
+    }
+  ],
+  "parking_status": [
+    {
+      "stamp_ns": 1792158167682371946,
+      "physical_parking_speed_factor": 1.755,
+      "state": "WAIT_FOR_LOCALIZATION",
+      "pose": null,
+      "goal": null,
+      "v": 0.0,
+      "steering_deg": 0.0,
+      "omega": 0.0,
+      "progress": 0,
+      "path_states": 0,
+      "replans": 0,
+      "max_articulation_deg": 0.0,
+      "collisions": 0,
+      "planning_seconds": 0.0,
+      "planned_length": 0.0,
+      "gear_changes": 0,
+      "planned_max_articulation_deg": null,
+      "planning_articulation_limit_deg": 30.0,
+      "speed_from_slam": 0.0,
+      "failure": "",
+      "estimator": "trailer IMU missing/stale",
+      "first_obstacle": false,
+      "gap_seen": false,
+      "second_obstacle": false,
+      "search_distance": 0.0,
+      "max_tracking_error": 0.0,
+      "gap_center": null,
+      "gap_confidence": null,
+      "gap_yaw": null,
+      "gap_length": null,
+      "gap_width": null,
+      "target_source": "observe_gap(Cartographer OccupancyGrid)",
+      "goal_shift_m": 0.0,
+      "parking_stop_policy": "legacy",
+      "legacy_stop_evidence": null,
+      "legacy_stop_completed": null,
+      "goal_lateral_shift_m": 0.0,
+      "planning_map_stamp_ns": null,
+      "map_age_s": 1359.058201724,
+      "lidar_age_s": 1359.058201724,
+      "tractor_imu_age_s": null,
+      "trailer_imu_age_s": 1359.058201724,
+      "localization_status_age_s": 1359.058201724,
+      "independent_observation_hits": 0,
+      "reference_state": null,
+      "pose_freshness_stop_enabled": true,
+      "pose_freshness_threshold_s": 0.8,
+      "max_pose_age_s": 0.0,
+      "pose_freshness_exceed_count": 0,
+      "pose_age_samples": 0
+    },
+    {
+      "stamp_ns": 1792158169682421192,
+      "physical_parking_speed_factor": 1.755,
+      "state": "WAIT_FOR_LOCALIZATION",
+      "pose": null,
+      "goal": null,
+      "v": 0.0,
+      "steering_deg": 0.0,
+      "omega": 0.0,
+      "progress": 0,
+      "path_states": 0,
+      "replans": 0,
+      "max_articulation_deg": 0.0,
+      "collisions": 0,
+      "planning_seconds": 0.0,
+      "planned_length": 0.0,
+      "gear_changes": 0,
+      "planned_max_articulation_deg": null,
+      "planning_articulation_limit_deg": 30.0,
+      "speed_from_slam": 0.0,
+      "failure": "",
+      "estimator": "SLAM map unavailable",
+      "first_obstacle": false,
+      "gap_seen": false,
+      "second_obstacle": false,
+      "search_distance": 0.0,
+      "max_tracking_error": 0.0,
+      "gap_center": null,
+      "gap_confidence": null,
+      "gap_yaw": null,
+      "gap_length": null,
+      "gap_width": null,
+      "target_source": "observe_gap(Cartographer OccupancyGrid)",
+      "goal_shift_m": 0.0,
+      "parking_stop_policy": "legacy",
+      "legacy_stop_evidence": null,
+      "legacy_stop_completed": null,
+      "goal_lateral_shift_m": 0.0,
+      "planning_map_stamp_ns": null,
+      "map_age_s": 1361.058250787,
+      "lidar_age_s": 0.07901849199993194,
+      "tractor_imu_age_s": null,
+      "trailer_imu_age_s": 1361.058250787,
+      "localization_status_age_s": 1361.058250787,
+      "independent_observation_hits": 0,
+      "reference_state": null,
+      "pose_freshness_stop_enabled": true,
+      "pose_freshness_threshold_s": 0.8,
+      "max_pose_age_s": 0.0,
+      "pose_freshness_exceed_count": 0,
+      "pose_age_samples": 0
+    },
+    {
+      "stamp_ns": 1792158170382938806,
+      "physical_parking_speed_factor": 1.755,
+      "state": "SEARCH_FORWARD",
+      "pose": [
+        -0.28705311791181853,
+        0.00821319742559437,
+        -0.0030125992788916224,
+        -0.0030125992788916224
+      ],
+      "goal": null,
+      "v": 0.0,
+      "steering_deg": 0.0,
+      "omega": 0.0,
+      "progress": 0,
+      "path_states": 0,
+      "replans": 0,
+      "max_articulation_deg": 0.0,
+      "collisions": 0,
+      "planning_seconds": 0.0,
+      "planned_length": 0.0,
+      "gear_changes": 0,
+      "planned_max_articulation_deg": null,
+      "planning_articulation_limit_deg": 30.0,
+      "speed_from_slam": 0.0,
+      "failure": "",
+      "estimator": "",
+      "first_obstacle": false,
+      "gap_seen": false,
+      "second_obstacle": false,
+      "search_distance": 0.0,
+      "max_tracking_error": 0.0,
+      "gap_center": null,
+      "gap_confidence": null,
+      "gap_yaw": null,
+      "gap_length": null,
+      "gap_width": null,
+      "target_source": "observe_gap(Cartographer OccupancyGrid)",
+      "goal_shift_m": 0.0,
+      "parking_stop_policy": "legacy",
+      "legacy_stop_evidence": null,
+      "legacy_stop_completed": null,
+      "goal_lateral_shift_m": 0.0,
+      "planning_map_stamp_ns": null,
+      "map_age_s": 0.018904505999898902,
+      "lidar_age_s": 0.07955788100002792,
+      "tractor_imu_age_s": null,
+      "trailer_imu_age_s": 0.0014317790000859532,
+      "localization_status_age_s": 0.0014005630000610836,
+      "independent_observation_hits": 0,
+      "reference_state": null,
+      "pose_freshness_stop_enabled": true,
+      "pose_freshness_threshold_s": 0.8,
+      "max_pose_age_s": 0.011408567428588867,
+      "pose_freshness_exceed_count": 0,
+      "pose_age_samples": 1,
+      "pose_age_s": 0.011549949645996094
+    },
+    {
+      "stamp_ns": 1792158172384043846,
+      "physical_parking_speed_factor": 1.755,
+      "state": "SEARCH_FORWARD",
+      "pose": [
+        -0.2870792353563945,
+        0.008964144867214459,
+        -0.0031013828582713387,
+        -0.0030125992788916224
+      ],
+      "goal": null,
+      "v": 0.14,
+      "steering_deg": -0.01,
+      "omega": -2.8166425044806393e-05,
+      "progress": 0,
+      "path_states": 0,
+      "replans": 0,
+      "max_articulation_deg": 0.006497323200934344,
+      "collisions": 0,
+      "planning_seconds": 0.0,
+      "planned_length": 0.0,
+      "gear_changes": 0,
+      "planned_max_articulation_deg": null,
+      "planning_articulation_limit_deg": 30.0,
+      "speed_from_slam": 0.0004021637058947831,
+      "failure": "",
+      "estimator": "",
+      "first_obstacle": false,
+      "gap_seen": false,
+      "second_obstacle": false,
+      "search_distance": -2.8379626357405392e-05,
+      "max_tracking_error": 0.0,
+      "gap_center": null,
+      "gap_confidence": null,
+      "gap_yaw": null,
+      "gap_length": null,
+      "gap_width": null,
+      "target_source": "observe_gap(Cartographer OccupancyGrid)",
+      "goal_shift_m": 0.0,
+      "parking_stop_policy": "legacy",
+      "legacy_stop_evidence": null,
+      "legacy_stop_completed": null,
+      "goal_lateral_shift_m": 0.0,
+      "planning_map_stamp_ns": null,
+      "map_age_s": 0.021254193000004307,
+      "lidar_age_s": 0.08071427300001233,
+      "tractor_imu_age_s": null,
+      "trailer_imu_age_s": 0.0023673379998854216,
+      "localization_status_age_s": 0.0023402169999826583,
+      "independent_observation_hits": 0,
+      "reference_state": null,
+      "pose_freshness_stop_enabled": true,
+      "pose_freshness_threshold_s": 0.8,
+      "max_pose_age_s": 0.011408567428588867,
+      "pose_freshness_exceed_count": 0,
+      "pose_age_samples": 21,
+      "pose_age_s": 0.012750387191772461,
+      "observed_intervals": [],
+      "gap_reason": "waiting for U-shaped occupied boundaries",
+      "candidate_center": null
+    },
+    {
+      "stamp_ns": 1792158174482353320,
+      "physical_parking_speed_factor": 1.755,
+      "state": "SEARCH_FORWARD",
+      "pose": [
+        -0.2868405137482306,
+        0.008860981709956672,
+        -0.0030924493062564466,
+        -0.0030125992788916224
+      ],
+      "goal": null,
+      "v": 0.14,
+      "steering_deg": -0.01,
+      "omega": -2.370958828217614e-05,
+      "progress": 0,
+      "path_states": 0,
+      "replans": 0,
+      "max_articulation_deg": 0.006497323200934344,
+      "collisions": 0,
+      "planning_seconds": 0.0,
+      "planned_length": 0.0,
+      "gear_changes": 0,
+      "planned_max_articulation_deg": null,
+      "planning_articulation_limit_deg": 30.0,
+      "speed_from_slam": 0.0002668308005873088,
+      "failure": "",
+      "estimator": "",
+      "first_obstacle": false,
+      "gap_seen": false,
+      "second_obstacle": false,
+      "search_distance": 0.00021065168730103007,
+      "max_tracking_error": 0.0,
+      "gap_center": null,
+      "gap_confidence": null,
+      "gap_yaw": null,
+      "gap_length": null,
+      "gap_width": null,
+      "target_source": "observe_gap(Cartographer OccupancyGrid)",
+      "goal_shift_m": 0.0,
+      "parking_stop_policy": "legacy",
+      "legacy_stop_evidence": null,
+      "legacy_stop_completed": null,
+      "goal_lateral_shift_m": 0.0,
+      "planning_map_stamp_ns": null,
+      "map_age_s": 0.11954767199995331,
+      "lidar_age_s": 0.07886463399995591,
+      "tractor_imu_age_s": null,
+      "trailer_imu_age_s": 0.0006428659999073716,
+      "localization_status_age_s": 0.0006123849998402875,
+      "independent_observation_hits": 0,
+      "reference_state": null,
+      "pose_freshness_stop_enabled": true,
+      "pose_freshness_threshold_s": 0.8,
+      "max_pose_age_s": 0.011408567428588867,
+      "pose_freshness_exceed_count": 0,
+      "pose_age_samples": 42,
+      "pose_age_s": 0.010961055755615234,
+      "observed_intervals": [],
+      "gap_reason": "waiting for U-shaped occupied boundaries",
+      "candidate_center": null
+    },
+    {
+      "stamp_ns": 1792158176493619522,
+      "physical_parking_speed_factor": 1.755,
+      "state": "SEARCH_FORWARD",
+      "pose": [
+        -0.28750997825622304,
+        0.012386593438979505,
+        -0.0038037546420096884,
+        -0.0030125992788916224
+      ],
+      "goal": null,
+      "v": 0.14,
+      "steering_deg": -0.02,
+      "omega": -9.898384215197287e-05,
+      "progress": 0,
+      "path_states": 0,
+      "replans": 0,
+      "max_articulation_deg": 0.05421927817888216,
+      "collisions": 0,
+      "planning_seconds": 0.0,
+      "planned_length": 0.0,
+      "gear_changes": 0,
+      "planned_max_articulation_deg": null,
+      "planning_articulation_limit_deg": 30.0,
+      "speed_from_slam": 0.0009010625135656469,
+      "failure": "",
+      "estimator": "",
+      "first_obstacle": false,
+      "gap_seen": false,
+      "second_obstacle": false,
+      "search_distance": -0.00046943102203249895,
+      "max_tracking_error": 0.0,
+      "gap_center": null,
+      "gap_confidence": null,
+      "gap_yaw": null,
+      "gap_length": null,
+      "gap_width": null,
+      "target_source": "observe_gap(Cartographer OccupancyGrid)",
+      "goal_shift_m": 0.0,
+      "parking_stop_policy": "legacy",
+      "legacy_stop_evidence": null,
+      "legacy_stop_completed": null,
+      "goal_lateral_shift_m": 0.0,
+      "planning_map_stamp_ns": null,
+      "map_age_s": 0.1308938259999195,
+      "lidar_age_s": 0.0899702490000891,
+      "tractor_imu_age_s": null,
+      "trailer_imu_age_s": 0.012193651999950816,
+      "localization_status_age_s": 0.012114657999973133,
+      "independent_observation_hits": 0,
+      "reference_state": null,
+      "pose_freshness_stop_enabled": true,
+      "pose_freshness_threshold_s": 0.8,
+      "max_pose_age_s": 0.011408567428588867,
+      "pose_freshness_exceed_count": 0,
+      "pose_age_samples": 62,
+      "pose_age_s": 0.022137165069580078,
+      "observed_intervals": [],
+      "gap_reason": "waiting for U-shaped occupied boundaries",
+      "candidate_center": null
+    },
+    {
+      "stamp_ns": 1792158178582714507,
+      "physical_parking_speed_factor": 1.755,
+      "state": "SEARCH_FORWARD",
+      "pose": [
+        -0.28745936428314217,
+        0.0123342027833905,
+        -0.003807578868091501,
+        -0.0030125992788916224
+      ],
+      "goal": null,
+      "v": 0.14,
+      "steering_deg": -0.02,
+      "omega": -9.509308088990173e-05,
+      "progress": 0,
+      "path_states": 0,
+      "replans": 0,
+      "max_articulation_deg": 0.05421927817888216,
+      "collisions": 0,
+      "planning_seconds": 0.0,
+      "planned_length": 0.0,
+      "gear_changes": 0,
+      "planned_max_articulation_deg": null,
+      "planning_articulation_limit_deg": 30.0,
+      "speed_from_slam": 6.445120593984873e-05,
+      "failure": "",
+      "estimator": "",
+      "first_obstacle": false,
+      "gap_seen": false,
+      "second_obstacle": false,
+      "search_distance": -0.0004186594468189419,
+      "max_tracking_error": 0.0,
+      "gap_center": null,
+      "gap_confidence": null,
+      "gap_yaw": null,
+      "gap_length": null,
+      "gap_width": null,
+      "target_source": "observe_gap(Cartographer OccupancyGrid)",
+      "goal_shift_m": 0.0,
+      "parking_stop_policy": "legacy",
+      "legacy_stop_evidence": null,
+      "legacy_stop_completed": null,
+      "goal_lateral_shift_m": 0.0,
+      "planning_map_stamp_ns": null,
+      "map_age_s": 0.2197882660000232,
+      "lidar_age_s": 0.07951366899987988,
+      "tractor_imu_age_s": null,
+      "trailer_imu_age_s": 0.0012628360000235261,
+      "localization_status_age_s": 0.0012337929999830521,
+      "independent_observation_hits": 0,
+      "reference_state": null,
+      "pose_freshness_stop_enabled": true,
+      "pose_freshness_threshold_s": 0.8,
+      "max_pose_age_s": 0.06124591827392578,
+      "pose_freshness_exceed_count": 0,
+      "pose_age_samples": 83,
+      "pose_age_s": 0.01133275032043457,
+      "observed_intervals": [],
+      "gap_reason": "waiting for U-shaped occupied boundaries",
+      "candidate_center": null
+    },
+    {
+      "stamp_ns": 1792158180594794646,
+      "physical_parking_speed_factor": 1.755,
+      "state": "SEARCH_FORWARD",
+      "pose": [
+        -0.28715343821709655,
+        0.013005705282224049,
+        -0.004372153654936412,
+        -0.0030125992788916224
+      ],
+      "goal": null,
+      "v": 0.14,
+      "steering_deg": -0.01,
+      "omega": -2.664887224167988e-05,
+      "progress": 0,
+      "path_states": 0,
+      "replans": 0,
+      "max_articulation_deg": 0.09254814108257976,
+      "collisions": 0,
+      "planning_seconds": 0.0,
+      "planned_length": 0.0,
+      "gear_changes": 0,
+      "planned_max_articulation_deg": null,
+      "planning_articulation_limit_deg": 30.0,
+      "speed_from_slam": 0.0015792991320949664,
+      "failure": "",
+      "estimator": "",
+      "first_obstacle": false,
+      "gap_seen": false,
+      "second_obstacle": false,
+      "search_distance": -0.00011475773391095685,
+      "max_tracking_error": 0.0,
+      "gap_center": null,
+      "gap_confidence": null,
+      "gap_yaw": null,
+      "gap_length": null,
+      "gap_width": null,
+      "target_source": "observe_gap(Cartographer OccupancyGrid)",
+      "goal_shift_m": 0.0,
+      "parking_stop_policy": "legacy",
+      "legacy_stop_evidence": null,
+      "legacy_stop_completed": null,
+      "goal_lateral_shift_m": 0.0,
+      "planning_map_stamp_ns": null,
+      "map_age_s": 0.23201945200003138,
+      "lidar_age_s": 0.09180671700005405,
+      "tractor_imu_age_s": null,
+      "trailer_imu_age_s": 0.013414780999937648,
+      "localization_status_age_s": 0.013385544000129812,
+      "independent_observation_hits": 0,
+      "reference_state": null,
+      "pose_freshness_stop_enabled": true,
+      "pose_freshness_threshold_s": 0.8,
+      "max_pose_age_s": 0.06332731246948242,
+      "pose_freshness_exceed_count": 0,
+      "pose_age_samples": 103,
+      "pose_age_s": 0.02349090576171875,
+      "observed_intervals": [],
+      "gap_reason": "waiting for U-shaped occupied boundaries",
+      "candidate_center": null
+    },
+    {
+      "stamp_ns": 1792158182682409846,
+      "physical_parking_speed_factor": 1.755,
+      "state": "SEARCH_FORWARD",
+      "pose": [
+        -0.28716164243912223,
+        0.013145927283811833,
+        -0.004381556238326777,
+        -0.0030125992788916224
+      ],
+      "goal": null,
+      "v": 0.14,
+      "steering_deg": -0.01,
+      "omega": -3.329334369829811e-05,
+      "progress": 0,
+      "path_states": 0,
+      "replans": 0,
+      "max_articulation_deg": 0.09254814108257976,
+      "collisions": 0,
+      "planning_seconds": 0.0,
+      "planned_length": 0.0,
+      "gear_changes": 0,
+      "planned_max_articulation_deg": null,
+      "planning_articulation_limit_deg": 30.0,
+      "speed_from_slam": 0.0001153118615191722,
+      "failure": "",
+      "estimator": "",
+      "first_obstacle": false,
+      "gap_seen": false,
+      "second_obstacle": false,
+      "search_distance": -0.00012338435076880597,
+      "max_tracking_error": 0.0,
+      "gap_center": null,
+      "gap_confidence": null,
+      "gap_yaw": null,
+      "gap_length": null,
+      "gap_width": null,
+      "target_source": "observe_gap(Cartographer OccupancyGrid)",
+      "goal_shift_m": 0.0,
+      "parking_stop_policy": "legacy",
+      "legacy_stop_evidence": null,
+      "legacy_stop_completed": null,
+      "goal_lateral_shift_m": 0.0,
+      "planning_map_stamp_ns": null,
+      "map_age_s": 0.31917138999983763,
+      "lidar_age_s": 0.07915402200001154,
+      "tractor_imu_age_s": null,
+      "trailer_imu_age_s": 0.0008395729998937895,
+      "localization_status_age_s": 0.0007677989999592683,
+      "independent_observation_hits": 0,
+      "reference_state": null,
+      "pose_freshness_stop_enabled": true,
+      "pose_freshness_threshold_s": 0.8,
+      "max_pose_age_s": 0.06332731246948242,
+      "pose_freshness_exceed_count": 0,
+      "pose_age_samples": 124,
+      "pose_age_s": 0.01097559928894043,
+      "observed_intervals": [],
+      "gap_reason": "waiting for U-shaped occupied boundaries",
+      "candidate_center": null
+    },
+    {
+      "stamp_ns": 1792158184282473358,
+      "physical_parking_speed_factor": 1.755,
+      "state": "EMERGENCY_STOP",
+      "pose": [
+        -0.287178760516546,
+        0.013130475369183091,
+        -0.004394037659494562,
+        -0.0030125992788916224
+      ],
+      "goal": null,
+      "v": 0.0,
+      "steering_deg": 0.0,
+      "omega": 0.0,
+      "progress": 0,
+      "path_states": 0,
+      "replans": 0,
+      "max_articulation_deg": 0.09254814108257976,
+      "collisions": 0,
+      "planning_seconds": 0.0,
+      "planned_length": 0.0,
+      "gear_changes": 0,
+      "planned_max_articulation_deg": null,
+      "planning_articulation_limit_deg": 30.0,
+      "speed_from_slam": 0.0005202228963201649,
+      "failure": "gyro/SLAM state missing/stale",
+      "estimator": "gyro/SLAM state missing/stale",
+      "first_obstacle": false,
+      "gap_seen": false,
+      "second_obstacle": false,
+      "search_distance": -0.00014045580015644888,
+      "max_tracking_error": 0.0,
+      "gap_center": null,
+      "gap_confidence": null,
+      "gap_yaw": null,
+      "gap_length": null,
+      "gap_width": null,
+      "target_source": "observe_gap(Cartographer OccupancyGrid)",
+      "goal_shift_m": 0.0,
+      "parking_stop_policy": "legacy",
+      "legacy_stop_evidence": null,
+      "legacy_stop_completed": null,
+      "goal_lateral_shift_m": 0.0,
+      "planning_map_stamp_ns": null,
+      "map_age_s": 0.9196604820001539,
+      "lidar_age_s": 0.07928644200001145,
+      "tractor_imu_age_s": null,
+      "trailer_imu_age_s": 0.05085671000006187,
+      "localization_status_age_s": 1375.658307052,
+      "independent_observation_hits": 0,
+      "reference_state": null,
+      "pose_freshness_stop_enabled": true,
+      "pose_freshness_threshold_s": 0.8,
+      "max_pose_age_s": 0.0808253288269043,
+      "pose_freshness_exceed_count": 0,
+      "pose_age_samples": 140,
+      "pose_age_s": 0.08113622665405273,
+      "observed_intervals": [],
+      "gap_reason": "waiting for U-shaped occupied boundaries",
+      "candidate_center": null
+    },
+    {
+      "stamp_ns": 1792158186382348803,
+      "physical_parking_speed_factor": 1.755,
+      "state": "EMERGENCY_STOP",
+      "pose": [
+        -0.287178760516546,
+        0.013130475369183091,
+        -0.004394037659494562,
+        -0.0030125992788916224
+      ],
+      "goal": null,
+      "v": 0.0,
+      "steering_deg": 0.0,
+      "omega": 0.0,
+      "progress": 0,
+      "path_states": 0,
+      "replans": 0,
+      "max_articulation_deg": 0.09254814108257976,
+      "collisions": 0,
+      "planning_seconds": 0.0,
+      "planned_length": 0.0,
+      "gear_changes": 0,
+      "planned_max_articulation_deg": null,
+      "planning_articulation_limit_deg": 30.0,
+      "speed_from_slam": 0.0005202228963201649,
+      "failure": "gyro/SLAM state missing/stale",
+      "estimator": "trailer IMU missing/stale",
+      "first_obstacle": false,
+      "gap_seen": false,
+      "second_obstacle": false,
+      "search_distance": -0.00014045580015644888,
+      "max_tracking_error": 0.0,
+      "gap_center": null,
+      "gap_confidence": null,
+      "gap_yaw": null,
+      "gap_length": null,
+      "gap_width": null,
+      "target_source": "observe_gap(Cartographer OccupancyGrid)",
+      "goal_shift_m": 0.0,
+      "parking_stop_policy": "legacy",
+      "legacy_stop_evidence": null,
+      "legacy_stop_completed": null,
+      "goal_lateral_shift_m": 0.0,
+      "planning_map_stamp_ns": null,
+      "map_age_s": 0.02342276900003526,
+      "lidar_age_s": 2.179162159000043,
+      "tractor_imu_age_s": null,
+      "trailer_imu_age_s": 2.1507324270000936,
+      "localization_status_age_s": 1377.758182769,
+      "independent_observation_hits": 0,
+      "reference_state": null,
+      "pose_freshness_stop_enabled": true,
+      "pose_freshness_threshold_s": 0.8,
+      "max_pose_age_s": 0.0808253288269043,
+      "pose_freshness_exceed_count": 0,
+      "pose_age_samples": 140,
+      "pose_age_s": 2.1810121536254883,
+      "observed_intervals": [],
+      "gap_reason": "waiting for U-shaped occupied boundaries",
+      "candidate_center": null
+    }
+  ],
+  "preview": [
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      140,
+      140
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ]
+  ]
+}

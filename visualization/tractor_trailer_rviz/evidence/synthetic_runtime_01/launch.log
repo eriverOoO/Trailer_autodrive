@@ -1,0 +1,52 @@
+[INFO] [launch]: All log files can be found below /home/venezuelachocolatemilk/mvsim_slam_real/visualization/tractor_trailer_rviz/evidence/ros_test_logs/2026-10-19-20-47-39-343645-venezuelachocolatemilk-Legion-Pro-5-16IAX10H-74688
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [tt_visualizer-1]: process started with pid [74693]
+[INFO] [tt_test_source-2]: process started with pid [74695]
+[INFO] [rviz2-3]: process started with pid [74697]
+[tt_visualizer-1] [INFO] [1792410459.649191221] [tractor_trailer_visualizer]: NOT ALIGNED: confirm stationary straight alignment
+[rviz2-3] [INFO] [1792410459.734343208] [rviz2]: Stereo is NOT SUPPORTED
+[rviz2-3] [INFO] [1792410459.734403441] [rviz2]: OpenGl version: 4.6 (GLSL 4.6)
+[rviz2-3] [INFO] [1792410459.744316368] [rviz2]: Stereo is NOT SUPPORTED
+[rviz2-3] [INFO] [1792410459.833737411] [rviz2]: Trying to create a map of size 120 x 120 using 1 swatches
+[tt_visualizer-1] [INFO] [1792410460.573715993] [tractor_trailer_visualizer]: Straight alignment accepted at 1792410460572698899; later body yaw increments come ONLY from each IMU
+[tt_visualizer-1] [INFO] [1792410460.591654363] [tractor_trailer_visualizer]: TEST/SIMULATED
+[tt_visualizer-1] [INFO] [1792410477.641554666] [tractor_trailer_visualizer]: IMU latest timestamps exceed pair skew limit
+[tt_visualizer-1] [INFO] [1792410478.091379842] [tractor_trailer_visualizer]: both IMUs must be LIVE
+[tt_visualizer-1] [INFO] [1792410479.591608986] [tractor_trailer_visualizer]: ALIGNMENT LOST: discontinuity; realign both sensors
+[tt_visualizer-1] [INFO] [1792410480.573960332] [tractor_trailer_visualizer]: Straight alignment accepted at 1792410480572855459; later body yaw increments come ONLY from each IMU
+[tt_visualizer-1] [INFO] [1792410480.591643338] [tractor_trailer_visualizer]: TEST/SIMULATED
+[tt_visualizer-1] [INFO] [1792410481.591634118] [tractor_trailer_visualizer]: both IMUs must be LIVE
+[tt_visualizer-1] [INFO] [1792410482.591618511] [tractor_trailer_visualizer]: ALIGNMENT LOST: discontinuity; realign both sensors
+[tt_visualizer-1] [INFO] [1792410483.573704648] [tractor_trailer_visualizer]: Straight alignment accepted at 1792410483572702067; later body yaw increments come ONLY from each IMU
+[tt_visualizer-1] [INFO] [1792410483.592094543] [tractor_trailer_visualizer]: TEST/SIMULATED
+[WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+[rviz2-3] [INFO] [1792410490.178462841] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[INFO] [rviz2-3]: sending signal 'SIGINT' to process[rviz2-3]
+[INFO] [tt_test_source-2]: sending signal 'SIGINT' to process[tt_test_source-2]
+[INFO] [tt_visualizer-1]: sending signal 'SIGINT' to process[tt_visualizer-1]
+[rviz2-3] [INFO] [1792410490.179550375] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[tt_visualizer-1] Traceback (most recent call last):
+[tt_visualizer-1]   File "/home/venezuelachocolatemilk/mvsim_slam_real/visualization/tractor_trailer_rviz/install/tractor_trailer_rviz/lib/tractor_trailer_rviz/tt_visualizer", line 33, in <module>
+[tt_visualizer-1]     sys.exit(load_entry_point('tractor-trailer-rviz', 'console_scripts', 'tt_visualizer')())
+[tt_visualizer-1]   File "/home/venezuelachocolatemilk/mvsim_slam_real/visualization/tractor_trailer_rviz/build/tractor_trailer_rviz/tractor_trailer_rviz/visualizer.py", line 294, in main
+[tt_visualizer-1]     if node:node.destroy_node()
+[tt_visualizer-1]   File "/home/venezuelachocolatemilk/mvsim_slam_real/visualization/tractor_trailer_rviz/build/tractor_trailer_rviz/tractor_trailer_rviz/visualizer.py", line 285, in destroy_node
+[tt_visualizer-1]     return super().destroy_node()
+[tt_visualizer-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/node.py", line 1691, in destroy_node
+[tt_test_source-2] Traceback (most recent call last):
+[tt_test_source-2]   File "/home/venezuelachocolatemilk/mvsim_slam_real/visualization/tractor_trailer_rviz/install/tractor_trailer_rviz/lib/tractor_trailer_rviz/tt_test_source", line 33, in <module>
+[tt_test_source-2]     sys.exit(load_entry_point('tractor-trailer-rviz', 'console_scripts', 'tt_test_source')())
+[tt_test_source-2]   File "/home/venezuelachocolatemilk/mvsim_slam_real/visualization/tractor_trailer_rviz/build/tractor_trailer_rviz/tractor_trailer_rviz/test_source.py", line 93, in main
+[tt_test_source-2]     if node:node.destroy_node()
+[tt_test_source-2]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/node.py", line 1696, in destroy_node
+[tt_visualizer-1]     self.destroy_service(self._services[0])
+[tt_visualizer-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/node.py", line 1615, in destroy_service
+[tt_test_source-2]     self.__node.destroy_when_not_in_use()
+[tt_test_source-2] KeyboardInterrupt
+[tt_visualizer-1]     service.destroy()
+[tt_visualizer-1]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/service.py", line 93, in destroy
+[tt_visualizer-1]     self.__service.destroy_when_not_in_use()
+[tt_visualizer-1] KeyboardInterrupt
+[ERROR] [tt_test_source-2]: process has died [pid 74695, exit code -2, cmd '/home/venezuelachocolatemilk/mvsim_slam_real/visualization/tractor_trailer_rviz/install/tractor_trailer_rviz/lib/tractor_trailer_rviz/tt_test_source --ros-args --params-file /tmp/launch_params_70uyv471'].
+[ERROR] [tt_visualizer-1]: process has died [pid 74693, exit code -2, cmd '/home/venezuelachocolatemilk/mvsim_slam_real/visualization/tractor_trailer_rviz/install/tractor_trailer_rviz/lib/tractor_trailer_rviz/tt_visualizer --ros-args --params-file /tmp/launch_params_erd01faa'].
+[INFO] [rviz2-3]: process has finished cleanly [pid 74697]

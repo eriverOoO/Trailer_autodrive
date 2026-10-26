@@ -1,0 +1,592 @@
+{
+  "tf:map -> odom": {
+    "count": 4001,
+    "receipt_hz": 200.0250841856903,
+    "stamp_hz": 199.99954700102603,
+    "nonincreasing_stamps": 0,
+    "first": {
+      "receipt": 5232.314087881,
+      "stamp_ns": 1792482203995187800,
+      "xy": [
+        0.0,
+        0.0
+      ],
+      "yaw": 0.0
+    },
+    "last": {
+      "receipt": 5252.311579777,
+      "stamp_ns": 1792482223995233100,
+      "xy": [
+        0.0,
+        0.0
+      ],
+      "yaw": 0.0
+    }
+  },
+  "tf:odom -> laser_frame": {
+    "count": 4001,
+    "receipt_hz": 200.0250990994241,
+    "stamp_hz": 199.99954700102603,
+    "nonincreasing_stamps": 0,
+    "first": {
+      "receipt": 5232.314093047,
+      "stamp_ns": 1792482203995187800,
+      "xy": [
+        0.0051506080807385834,
+        -0.0017937905429284274
+      ],
+      "yaw": -0.003103922611914874
+    },
+    "last": {
+      "receipt": 5252.311583452,
+      "stamp_ns": 1792482223995233100,
+      "xy": [
+        0.0034701508228895343,
+        -0.004149101492147316
+      ],
+      "yaw": -0.0027545482711320737
+    }
+  },
+  "viz_status": {
+    "count": 401,
+    "receipt_hz": 20.00158863617837,
+    "stamp_hz": 20.0015752280574,
+    "nonincreasing_stamps": 0,
+    "first": {
+      "receipt": 5232.314189291,
+      "stamp_ns": 1792482203998103796,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792482203994081139,
+        "valid": false,
+        "visualization_mode": "TRACTOR_ONLY_DIAGNOSTIC",
+        "diagnostic_valid": true,
+        "imu": {
+          "tractor": "LIVE",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": 0.004342704999544367,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "LIVE",
+        "reason": "DIAGNOSTIC_ONLY",
+        "values": {
+          "tractor_delta": 0.002720065925079229,
+          "tractor_yaw": null,
+          "trailer_yaw": null,
+          "phi": null
+        },
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false,
+        "vehicle_pose_valid": false,
+        "full_vehicle_valid": false,
+        "position_reference": "UNMEASURED_SENSOR_ANCHOR",
+        "position_source": "laser_frame",
+        "mounting_and_sign_confirmed": false,
+        "extrinsics_confirmed": false,
+        "heading_reference": "INITIAL_SLAM_TRACKING_YAW_PLUS_NATIVE_IMU_DELTA",
+        "heading_alignment_verified": false,
+        "display_anchor_xy": [
+          0.0051071719136839295,
+          -0.0018653532901899486
+        ],
+        "display_yaw_rad": 0.002720065925079229,
+        "native_imu_delta_rad": 0.002720065925079229,
+        "reference_stamp_ns": 1792482035089149085,
+        "paired_stamp_ns": 1792482203989317442,
+        "paired_age_ms": 4.763697
+      }
+    },
+    "last": {
+      "receipt": 5252.312600781,
+      "stamp_ns": 1792482223996528692,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792482223994180042,
+        "valid": false,
+        "visualization_mode": "TRACTOR_ONLY_DIAGNOSTIC",
+        "diagnostic_valid": true,
+        "imu": {
+          "tractor": "LIVE",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": 0.0026813579997906345,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "LIVE",
+        "reason": "DIAGNOSTIC_ONLY",
+        "values": {
+          "tractor_delta": 0.0007754251434035631,
+          "tractor_yaw": null,
+          "trailer_yaw": null,
+          "phi": null
+        },
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false,
+        "vehicle_pose_valid": false,
+        "full_vehicle_valid": false,
+        "position_reference": "UNMEASURED_SENSOR_ANCHOR",
+        "position_source": "laser_frame",
+        "mounting_and_sign_confirmed": false,
+        "extrinsics_confirmed": false,
+        "heading_reference": "INITIAL_SLAM_TRACKING_YAW_PLUS_NATIVE_IMU_DELTA",
+        "heading_alignment_verified": false,
+        "display_anchor_xy": [
+          0.003369243362076492,
+          -0.004144733063880927
+        ],
+        "display_yaw_rad": 0.0007754251434035631,
+        "native_imu_delta_rad": 0.0007754251434035631,
+        "reference_stamp_ns": 1792482035089149085,
+        "paired_stamp_ns": 1792482223990243257,
+        "paired_age_ms": 3.936785
+      }
+    }
+  },
+  "scan": {
+    "count": 233,
+    "receipt_hz": 11.641930605834538,
+    "stamp_hz": 11.642042909559292,
+    "nonincreasing_stamps": 0,
+    "first": {
+      "receipt": 5232.323508311,
+      "stamp_ns": 1792482203921117000,
+      "frame": "laser_frame",
+      "rays": 1545,
+      "valid": 1002,
+      "minimum": 0.46149998903274536,
+      "maximum": 7.994500160217285,
+      "range_min": 0.15000000596046448,
+      "range_max": 12.0,
+      "scan_time": 0.08569499850273132,
+      "time_increment": 5.546601823880337e-05,
+      "age_s": 0.086338289
+    },
+    "last": {
+      "receipt": 5252.251474544,
+      "stamp_ns": 1792482223848891000,
+      "frame": "laser_frame",
+      "rays": 1545,
+      "valid": 977,
+      "minimum": 0.4724999964237213,
+      "maximum": 8.02299976348877,
+      "range_min": 0.15000000596046448,
+      "range_max": 12.0,
+      "scan_time": 0.08579400181770325,
+      "time_increment": 5.5530097597511485e-05,
+      "age_s": 0.086536713
+    },
+    "valid_min": 949,
+    "valid_max": 1022
+  },
+  "markers": {
+    "count": 401,
+    "receipt_hz": 20.01299062233637,
+    "stamp_hz": 20.012979689153276,
+    "nonincreasing_stamps": 0,
+    "first": {
+      "receipt": 5232.325303369,
+      "stamp_ns": 1792482204009237234,
+      "items": [
+        {
+          "ns": "current_body",
+          "type": 4,
+          "points": 11,
+          "text": "",
+          "frame": "map"
+        },
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "TRACTOR DIAG\nphi=N/A\nSENSOR ANCHOR\nUNALIGNED\nTRAILER NO DATA",
+          "frame": "map"
+        },
+        {
+          "ns": "tractor_pose_arrow",
+          "type": 0,
+          "points": 0,
+          "text": "",
+          "frame": "map"
+        }
+      ]
+    },
+    "last": {
+      "receipt": 5252.312321179,
+      "stamp_ns": 1792482223996265963,
+      "items": [
+        {
+          "ns": "current_body",
+          "type": 4,
+          "points": 11,
+          "text": "",
+          "frame": "map"
+        },
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "TRACTOR DIAG\nphi=N/A\nSENSOR ANCHOR\nUNALIGNED\nTRAILER NO DATA",
+          "frame": "map"
+        },
+        {
+          "ns": "tractor_pose_arrow",
+          "type": 0,
+          "points": 0,
+          "text": "",
+          "frame": "map"
+        }
+      ]
+    }
+  },
+  "matched_points": {
+    "count": 233,
+    "receipt_hz": 11.641439216277647,
+    "stamp_hz": 11.641985131288147,
+    "nonincreasing_stamps": 0,
+    "first": {
+      "receipt": 5232.327588914,
+      "stamp_ns": 1792482204006756500,
+      "frame": "map",
+      "points": 472
+    },
+    "last": {
+      "receipt": 5252.256396314,
+      "stamp_ns": 1792482223934629400,
+      "frame": "map",
+      "points": 461
+    }
+  },
+  "map": {
+    "count": 25,
+    "receipt_hz": 1.241743776466114,
+    "stamp_hz": 0.9999930582565215,
+    "nonincreasing_stamps": 0,
+    "first": {
+      "receipt": 5232.33428654,
+      "stamp_ns": 1792482199255010731,
+      "frame": "map",
+      "width": 285,
+      "height": 247,
+      "resolution": 0.05000000074505806,
+      "known": 13878,
+      "occupied": 351,
+      "free": 10309,
+      "digest": "73d94e680bd1df50ba777550ab062b587a458dee3b09f57f6ee00bb89b42f793",
+      "origin": [
+        -7.5,
+        -4.6000000000000005
+      ]
+    },
+    "last": {
+      "receipt": 5251.661945317,
+      "stamp_ns": 1792482223255177334,
+      "frame": "map",
+      "width": 285,
+      "height": 249,
+      "resolution": 0.05000000074505806,
+      "known": 14168,
+      "occupied": 406,
+      "free": 11603,
+      "digest": "1e361b1972cb848830791e26d80239c372f7d03d33ba0e89d050ff57e165e723",
+      "origin": [
+        -7.5,
+        -4.6000000000000005
+      ]
+    },
+    "unique_grids": 15
+  },
+  "imu": {
+    "count": 1999,
+    "receipt_hz": 100.04194136719144,
+    "stamp_hz": 99.99991274281888,
+    "nonincreasing_stamps": 0,
+    "first": {
+      "receipt": 5232.34393651,
+      "stamp_ns": 1792482204019156020,
+      "frame": "vehicle_viz_2d_tractor_imu",
+      "yaw_deg": 32.33582114624425,
+      "norm": 1.0,
+      "age_s": 0.008726834
+    },
+    "last": {
+      "receipt": 5252.315560138,
+      "stamp_ns": 1792482223999173454,
+      "frame": "vehicle_viz_2d_tractor_imu",
+      "yaw_deg": 32.21164845228405,
+      "norm": 1.0,
+      "age_s": 0.000335866
+    },
+    "yaw_min_deg": 32.126931032904935,
+    "yaw_max_deg": 32.40747642880692
+  },
+  "submaps": {
+    "count": 67,
+    "receipt_hz": 3.3333218071105493,
+    "stamp_hz": 3.3333583412650585,
+    "nonincreasing_stamps": 0,
+    "first": {
+      "receipt": 5232.371608334,
+      "stamp_ns": 1792482204055297964,
+      "versions": [
+        {
+          "trajectory_id": 0,
+          "submap_index": 0,
+          "version": 46
+        }
+      ]
+    },
+    "last": {
+      "receipt": 5252.1716768,
+      "stamp_ns": 1792482223855149418,
+      "versions": [
+        {
+          "trajectory_id": 0,
+          "submap_index": 0,
+          "version": 77
+        }
+      ]
+    }
+  },
+  "imu_diagnostics": {
+    "count": 100,
+    "receipt_hz": 5.000090127382106,
+    "stamp_hz": 5.000047365095151,
+    "nonincreasing_stamps": 0,
+    "first": {
+      "receipt": 5232.426027449,
+      "stamp_ns": 1792482204109504247,
+      "status": [
+        {
+          "message": "LIVE:",
+          "values": {
+            "rx_bytes": "1222188",
+            "tx_bytes": "0",
+            "parsed": "17181",
+            "rejected": "0",
+            "published": "17181",
+            "sensor_rollovers": "2",
+            "estimated_missing": "0",
+            "sensor_clock_event": "LIVE",
+            "timestamp": "host receipt, not hardware synchronized",
+            "covariance": "received fields unknown=0; unavailable=-1",
+            "reference": "manufacturer native; mounting and sign require validation"
+          }
+        }
+      ]
+    },
+    "last": {
+      "receipt": 5252.225670551,
+      "stamp_ns": 1792482223909316683,
+      "status": [
+        {
+          "message": "LIVE:",
+          "values": {
+            "rx_bytes": "1362177",
+            "tx_bytes": "0",
+            "parsed": "19161",
+            "rejected": "0",
+            "published": "19161",
+            "sensor_rollovers": "3",
+            "estimated_missing": "0",
+            "sensor_clock_event": "LIVE",
+            "timestamp": "host receipt, not hardware synchronized",
+            "covariance": "received fields unknown=0; unavailable=-1",
+            "reference": "manufacturer native; mounting and sign require validation"
+          }
+        }
+      ]
+    }
+  },
+  "tf_edges": {
+    "map -> odom": 4001,
+    "odom -> laser_frame": 4001
+  },
+  "lookup": {
+    "laser_frame": {
+      "available": true,
+      "stamp_ns": 1792482223995233100
+    },
+    "odom": {
+      "available": true,
+      "stamp_ns": 1792482223995233100
+    },
+    "base_footprint": {
+      "available": false,
+      "reason": "\"base_footprint\" passed to lookupTransform argument source_frame does not exist. "
+    },
+    "base_link": {
+      "available": false,
+      "reason": "\"base_link\" passed to lookupTransform argument source_frame does not exist. "
+    }
+  },
+  "scan_timestamp_tf": true,
+  "graph_nodes": [
+    [
+      "real_sensor_readonly_verification",
+      "/"
+    ],
+    [
+      "_ros2cli_daemon_0_65bd84615a2b4d67b469c5398a65108e",
+      "/"
+    ],
+    [
+      "vehicle_viz_2d_tractor_bridge",
+      "/"
+    ],
+    [
+      "tractor_trailer_2d_visualizer",
+      "/"
+    ],
+    [
+      "ydlidar_ros2_driver_node",
+      "/"
+    ],
+    [
+      "cartographer_node",
+      "/"
+    ],
+    [
+      "transform_listener_impl_58295e87d6e0",
+      "/"
+    ],
+    [
+      "cartographer_occupancy_grid_node",
+      "/"
+    ]
+  ],
+  "graph_topics": [
+    [
+      "/constraint_list",
+      [
+        "visualization_msgs/msg/MarkerArray"
+      ]
+    ],
+    [
+      "/landmark_poses_list",
+      [
+        "visualization_msgs/msg/MarkerArray"
+      ]
+    ],
+    [
+      "/map",
+      [
+        "nav_msgs/msg/OccupancyGrid"
+      ]
+    ],
+    [
+      "/parameter_events",
+      [
+        "rcl_interfaces/msg/ParameterEvent"
+      ]
+    ],
+    [
+      "/parking/status",
+      [
+        "std_msgs/msg/String"
+      ]
+    ],
+    [
+      "/point_cloud",
+      [
+        "sensor_msgs/msg/PointCloud"
+      ]
+    ],
+    [
+      "/rosout",
+      [
+        "rcl_interfaces/msg/Log"
+      ]
+    ],
+    [
+      "/scan",
+      [
+        "sensor_msgs/msg/LaserScan"
+      ]
+    ],
+    [
+      "/scan_matched_points2",
+      [
+        "sensor_msgs/msg/PointCloud2"
+      ]
+    ],
+    [
+      "/submap_list",
+      [
+        "cartographer_ros_msgs/msg/SubmapList"
+      ]
+    ],
+    [
+      "/tf",
+      [
+        "tf2_msgs/msg/TFMessage"
+      ]
+    ],
+    [
+      "/tf_static",
+      [
+        "tf2_msgs/msg/TFMessage"
+      ]
+    ],
+    [
+      "/trajectory_node_list",
+      [
+        "visualization_msgs/msg/MarkerArray"
+      ]
+    ],
+    [
+      "/vehicle_viz_2d/model",
+      [
+        "visualization_msgs/msg/MarkerArray"
+      ]
+    ],
+    [
+      "/vehicle_viz_2d/status",
+      [
+        "std_msgs/msg/String"
+      ]
+    ],
+    [
+      "/vehicle_viz_2d/tractor/diagnostics",
+      [
+        "diagnostic_msgs/msg/DiagnosticArray"
+      ]
+    ],
+    [
+      "/vehicle_viz_2d/tractor/imu/data",
+      [
+        "sensor_msgs/msg/Imu"
+      ]
+    ],
+    [
+      "/vehicle_viz_2d/trailer/diagnostics",
+      [
+        "diagnostic_msgs/msg/DiagnosticArray"
+      ]
+    ],
+    [
+      "/vehicle_viz_2d/trailer/imu/data",
+      [
+        "sensor_msgs/msg/Imu"
+      ]
+    ]
+  ]
+}

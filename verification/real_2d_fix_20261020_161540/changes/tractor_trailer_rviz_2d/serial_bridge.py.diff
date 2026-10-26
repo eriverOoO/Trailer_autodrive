@@ -1,0 +1,41 @@
+--- before/tractor_trailer_rviz_2d/serial_bridge.py
++++ after/tractor_trailer_rviz_2d/serial_bridge.py
+@@ -10,6 +10,7 @@
+ from sensor_msgs.msg import Imu
+ from diagnostic_msgs.msg import DiagnosticArray,DiagnosticStatus,KeyValue
+ from .serial_protocol import Parser,open_serial
++from .timestamp_guard import SensorTimestampGuard
+ 
+ 
+ class Bridge(Node):
+@@ -37,6 +38,8 @@
+         self.count=self.bytes=0
+         self.started=time.monotonic();self.last=None
+         self.error='';self.previous_sensor_ms=None;self.parser_fault=False
++        self.sensor_rollovers=0
++        self.sensor_clock=SensorTimestampGuard()
+         self.create_timer(.002,self.poll);self.create_timer(.2,self.health)
+         self.get_logger().info('REAL_UART_ONLY; TX=0; role='+self.role+'; port='+v['port'])
+ 
+@@ -52,8 +55,9 @@
+             for sample in samples:
+                 self.parser_fault=False
+                 sensor_ms=sample['sensor_ms']
+-                if sensor_ms is not None and self.previous_sensor_ms is not None and sensor_ms<=self.previous_sensor_ms:
+-                    raise ValueError('sensor timestamp reset/repeated; restart bridge and realign')
++                if sensor_ms is not None:
++                    self.sensor_clock.observe(sensor_ms,time.monotonic())
++                    self.sensor_rollovers=self.sensor_clock.rollovers
+                 self.previous_sensor_ms=sensor_ms
+                 stamp=self.get_clock().now().nanoseconds
+                 m=Imu();m.header.frame_id=self.frame
+@@ -74,7 +78,8 @@
+         d.hardware_id=self.ser.port;d.message=state+':'+self.error
+         d.level=DiagnosticStatus.OK if state=='LIVE' else DiagnosticStatus.ERROR
+         values=dict(rx_bytes=self.bytes,tx_bytes=0,parsed=self.parser.accepted,
+-                    rejected=self.parser.rejected,published=self.count,
++                    rejected=self.parser.rejected,published=self.count,sensor_rollovers=self.sensor_rollovers,
++                    estimated_missing=self.sensor_clock.missing_packets,sensor_clock_event=self.sensor_clock.event,
+                     timestamp='host receipt, not hardware synchronized',
+                     covariance='received fields unknown=0; unavailable=-1',
+                     reference='manufacturer native; mounting and sign require validation')

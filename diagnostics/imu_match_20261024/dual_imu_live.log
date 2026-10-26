@@ -1,0 +1,28 @@
+[INFO] [launch]: All log files can be found below /home/venezuelachocolatemilk/.ros/log/2026-10-24-15-40-12-468502-venezuelachocolatemilk-Legion-Pro-5-16IAX10H-50184
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [launch.user]: Matching IMU profiles; raw sensor frames. Trailer yaw +pi is in mount TF only. Absolute sensor-axis alignment remains unverified.
+[INFO] [ebimu_node-1]: process started with pid [50197]
+[INFO] [ebimu_node-2]: process started with pid [50199]
+[INFO] [sensor_tf-3]: process started with pid [50201]
+[ebimu_node-1] [WARN] [1792824012.710579062] [tractor_imu]: No valid EBIMU data; rejected frames=0
+[ebimu_node-2] [WARN] [1792824012.718495383] [trailer_imu]: No valid EBIMU data; rejected frames=0
+[WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+[INFO] [sensor_tf-3]: sending signal 'SIGINT' to process[sensor_tf-3]
+[INFO] [ebimu_node-2]: sending signal 'SIGINT' to process[ebimu_node-2]
+[INFO] [ebimu_node-1]: sending signal 'SIGINT' to process[ebimu_node-1]
+[ebimu_node-1] Traceback (most recent call last):
+[ebimu_node-1]   File "/home/venezuelachocolatemilk/mvsim_slam_real/install/ebimu_driver/lib/ebimu_driver/ebimu_node", line 33, in <module>
+[ebimu_node-1]     sys.exit(load_entry_point('ebimu-driver', 'console_scripts', 'ebimu_node')())
+[ebimu_node-1]   File "/home/venezuelachocolatemilk/mvsim_slam_real/build/ebimu_driver/ebimu_driver/node.py", line 75, in main
+[ebimu_node-1]     if node:node.destroy_node()
+[ebimu_node-1]   File "/home/venezuelachocolatemilk/mvsim_slam_real/build/ebimu_driver/ebimu_driver/node.py", line 67, in destroy_node
+[ebimu_node-1]     if self.serial:self.serial.close()
+[ebimu_node-1]   File "/usr/local/lib/python3.10/dist-packages/serial/serialposix.py", line 533, in close
+[ebimu_node-1]     os.close(self.fd)
+[ebimu_node-1] KeyboardInterrupt
+[ERROR] [ebimu_node-1]: process has died [pid 50197, exit code -2, cmd '/home/venezuelachocolatemilk/mvsim_slam_real/install/ebimu_driver/lib/ebimu_driver/ebimu_node --ros-args -r __node:=tractor_imu --params-file /home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/imu.yaml --params-file /tmp/launch_params_g8fl8ams'].
+[INFO] [launch]: process[ebimu_node-1] was required: shutting down launched system
+[INFO] [ebimu_node-2]: process has finished cleanly [pid 50199]
+[INFO] [launch]: process[ebimu_node-2] was required: shutting down launched system
+[INFO] [sensor_tf-3]: process has finished cleanly [pid 50201]
+[INFO] [launch]: process[sensor_tf-3] was required: shutting down launched system

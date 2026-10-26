@@ -1,0 +1,3 @@
+set -o pipefail
+source /home/venezuelachocolatemilk/mvsim_slam_real/verification/real_g6_tractor_imu_20261020_153135/environment.bash
+ros2 launch tractor_trailer_rviz_2d imu_bridges.launch.py start_tractor:=true start_trailer:=false ports_confirmed:=true tractor_port:=/dev/serial/by-path/pci-0000:80:14.0-usb-0:8:1.0-port0 lidar_port:=/dev/serial/by-path/pci-0000:80:14.0-usb-0:7:1.0-port0 tractor_baud:=115200 tractor_orientation:=quaternion tractor_gyro:=true tractor_accel:=true tractor_timestamp:=true output_directory:=/home/venezuelachocolatemilk/mvsim_slam_real/verification/real_g6_tractor_imu_20261020_153135/imu_reconnected/bridge 2>&1 | tee /home/venezuelachocolatemilk/mvsim_slam_real/verification/real_g6_tractor_imu_20261020_153135/imu_reconnected/bridge.log

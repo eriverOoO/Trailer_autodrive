@@ -1,0 +1,12 @@
+{
+  "original_config_not_modified": true,
+  "runtime_saved_as": "rviz_runtime_initial.rviz",
+  "camera_and_colors_changed": false,
+  "captures": {
+    "01_original_combined": "Grid/scan/map/TF/Axes on",
+    "02_scan_only": "only LaserScan enabled",
+    "03_map_only": "only Map enabled",
+    "04_scan_map_only": "only LaserScan and Map enabled",
+    "05_restored_original_displays": "all initial displays re-enabled"
+  }
+}

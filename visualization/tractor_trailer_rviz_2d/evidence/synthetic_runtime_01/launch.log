@@ -1,0 +1,29 @@
+[INFO] [launch]: All log files can be found below /home/venezuelachocolatemilk/mvsim_slam_real/visualization/tractor_trailer_rviz_2d/evidence/ros_test_logs/2026-10-19-21-02-26-864918-venezuelachocolatemilk-Legion-Pro-5-16IAX10H-86623
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [tt2d_visualizer-1]: process started with pid [86628]
+[INFO] [tt2d_test_source-2]: process started with pid [86630]
+[INFO] [rviz2-3]: process started with pid [86632]
+[tt2d_visualizer-1] [INFO] [1792411347.134417190] [tractor_trailer_2d_visualizer]: NOT ALIGNED: confirm stationary straight alignment
+[rviz2-3] [INFO] [1792411347.251459065] [rviz2]: Stereo is NOT SUPPORTED
+[rviz2-3] [INFO] [1792411347.251514277] [rviz2]: OpenGl version: 4.6 (GLSL 4.6)
+[rviz2-3] [INFO] [1792411347.260033731] [rviz2]: Stereo is NOT SUPPORTED
+[tt2d_visualizer-1] [WARN] [1792411347.286837403] [tractor_trailer_2d_visualizer]: New subscription discovered on topic '/vehicle_viz_2d_test/model', requesting incompatible QoS. No messages will be sent to it. Last incompatible policy: DURABILITY
+[rviz2-3] [WARN] [1792411347.335478234] [vehicle_viz_2d_TEST_rviz]: New publisher discovered on topic '/vehicle_viz_2d_test/model', offering incompatible QoS. No messages will be sent to it. Last incompatible policy: DURABILITY_QOS_POLICY
+[rviz2-3] [INFO] [1792411347.344881225] [rviz2]: Trying to create a map of size 120 x 120 using 1 swatches
+[tt2d_visualizer-1] [INFO] [1792411348.077424829] [tractor_trailer_2d_visualizer]: OK
+[tt2d_visualizer-1] [INFO] [1792411365.126910922] [tractor_trailer_2d_visualizer]: IMU timestamps not paired
+[tt2d_visualizer-1] [INFO] [1792411365.576862668] [tractor_trailer_2d_visualizer]: both IMUs must be LIVE
+[tt2d_visualizer-1] [INFO] [1792411367.077014567] [tractor_trailer_2d_visualizer]: ALIGNMENT LOST: discontinuity; realign both sensors
+[tt2d_visualizer-1] [INFO] [1792411368.078286511] [tractor_trailer_2d_visualizer]: OK
+[tt2d_visualizer-1] [INFO] [1792411369.077052547] [tractor_trailer_2d_visualizer]: both IMUs must be LIVE
+[tt2d_visualizer-1] [INFO] [1792411370.077523299] [tractor_trailer_2d_visualizer]: ALIGNMENT LOST: discontinuity; realign both sensors
+[tt2d_visualizer-1] [INFO] [1792411371.077470650] [tractor_trailer_2d_visualizer]: OK
+[WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+[INFO] [rviz2-3]: sending signal 'SIGINT' to process[rviz2-3]
+[INFO] [tt2d_test_source-2]: sending signal 'SIGINT' to process[tt2d_test_source-2]
+[INFO] [tt2d_visualizer-1]: sending signal 'SIGINT' to process[tt2d_visualizer-1]
+[rviz2-3] [INFO] [1792411377.729922497] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[rviz2-3] [INFO] [1792411377.730950426] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[INFO] [tt2d_visualizer-1]: process has finished cleanly [pid 86628]
+[INFO] [tt2d_test_source-2]: process has finished cleanly [pid 86630]
+[INFO] [rviz2-3]: process has finished cleanly [pid 86632]

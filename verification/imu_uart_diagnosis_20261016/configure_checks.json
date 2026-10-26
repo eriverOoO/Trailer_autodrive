@@ -1,0 +1,28 @@
+[
+  {
+    "action": "configuration",
+    "read_error_injected": false,
+    "PASS": true,
+    "tx": [
+      "<cfg>",
+      ">"
+    ]
+  },
+  {
+    "action": "configuration",
+    "read_error_injected": true,
+    "PASS": true,
+    "tx": [
+      "<cfg>",
+      ">"
+    ]
+  },
+  {
+    "action": "version",
+    "read_error_injected": false,
+    "PASS": true,
+    "tx": [
+      "<ver>"
+    ]
+  }
+]

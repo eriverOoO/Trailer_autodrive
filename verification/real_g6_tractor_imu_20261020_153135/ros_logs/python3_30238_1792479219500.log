@@ -1,0 +1,2 @@
+[INFO] [1792479219.585308101] [vehicle_viz_2d_tractor_bridge]: REAL_UART_ONLY; TX=0; role=tractor; port=/dev/serial/by-path/pci-0000:80:14.0-usb-0:8:1.0-port0
+[ERROR] [1792479266.549672674] [vehicle_viz_2d_tractor_bridge]: sensor timestamp reset/repeated; restart bridge and realign

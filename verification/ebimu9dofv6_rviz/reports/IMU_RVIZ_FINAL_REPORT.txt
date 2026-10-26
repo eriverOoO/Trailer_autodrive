@@ -1,0 +1,152 @@
+EBIMU-9DOFV6 실제 UART / RViz 검증 중간 최종 보고서
+작성: 2026-10-19T20:15:55.725178+09:00
+
+진행률: 10% (환경·제조사 조사 완료; 20% 물리 장치 확정 단계에서 대기)
+분석/구현: 독립 진단 도구·RViz 구성·실행 문서 작성 완료.
+실제 필수 하드웨어 검증: 미완료. 100% 성공으로 보고하지 않음.
+
+1. 실제 IMU 연결 성공 여부
+이번 작업에서 미검증. 현재 CP2102가 EBIMU인지 사용자에게 확인 요청함.
+10월16일 RX=0 사실을 무시하지 않았고 기존 10회 시험을 재반복하지 않았음.
+반면 10월19일 15:32의 별도 실제 캡처가 존재함. 과거와 현재를 구분함.
+
+2. USB-UART
+/dev/ttyUSB0
+/dev/serial/by-id/usb-Silicon_Labs_CP2102_USB_to_UART_Bridge_Controller_0001-if00-port0
+VID/PID 10c4:ea60; 제조사 Silicon Labs; serial 0001; cp210x.
+by-path pci-0000:80:14.0-usb-0:7:1.0-port0.
+권한 root:dialout 0660; 현재 사용자 dialout 포함.
+장치 열거 시 USB-UART 한 개. 실제 센서 한 개라고 확정하지 않았음.
+초기 fuser 점유 없음; YDLIDAR/Cartographer/EBIMU 실행 프로세스 없음.
+ModemManager 실행은 확인, 설정/중지는 하지 않음.
+G6도 같은 계열일 수 있어 물리 연결 확인 전에 포트를 열지 않음.
+
+3. 실제 UART 바이트
+현재 작업: 포트 open 안 함, RX 미측정(NULL). 0바이트 측정 실패와 다름.
+TX: 이번 진단 도구에서 0바이트. 센서 명령 송신 없음.
+과거 2026-10-16: 10회, RX=0, host TX accepted=69. 당시 하드웨어 수신 미해결.
+과거 2026-10-19 15:32: RX=29,086, TX=0, 완전 패킷 399, 약99.64Hz.
+이 과거 기록으로 현재 수신 성공을 주장하지 않음.
+
+4. 패킷 파싱
+현재 실시간 패킷 미검증.
+과거 실제 raw 파일을 7byte씩 나눠 오프라인 처리: 399개 accepted, 0 rejected.
+기존 AsciiParser의 모든 Quaternion과 1e-12 이내 일치.
+실제 과거 wire: qz,qy,qx,qw,gx,gy,gz,ax,ay,az,timestamp_ms, *...CRLF.
+ASCII checksum은 제조사 정의가 없어 N/A. Binary 파싱은 미구현, raw 저장만 가능.
+형식이 다른 실제 입력은 거절하며 필드를 추측해 붙이지 않음.
+
+5. 실제 출력 주파수
+현재 미측정. 과거 UART99.64Hz와 과거 ROS100Hz는 이번 실측값이 아님.
+새 probe가 초당 RX, 패킷 길이, 유효 패킷 Hz와 오류를 기록하도록 준비됨.
+
+6. ROS 2 IMU
+이번 하드웨어 발행 미검증. 과거 별도 로그에는 실제 메시지958개가 있음.
+새 독립 Publisher의 --help, Python 구문/ROS import만 확인.
+/ebimu_diag/tractor/imu/data, /ebimu_diag/tractor/diagnostics 사용.
+기존 /tractor/imu/data, /scan, 모터·조향·브레이크 토픽으로 발행하지 않음.
+ROS_DOMAIN_ID86, ROS_LOCALHOST_ONLY1을 진단 프로세스 환경에만 적용.
+기존 overlay 빌드 또는 colcon 실행 없음.
+
+7. Quaternion·단위·시각
+z,y,x,w -> x,y,z,w, norm 오차0.05 초과 입력 거절, 유효값 정규화.
+과거 실측 raw norm 범위0.9999414532861411~1.0000224497480044.
+deg/s -> rad/s. soa1의 body 중력 포함 g -> m/s²(9.80665).
+공분산 미계측 항목은0(unknown), 미수신 gyro/accel은 covariance[0]=-1.
+orientation 없는 패킷은 정상 Quaternion을 임의 생성하지 않고 거절함.
+header는 호스트 parse/publication 시간이며 센서 동기 시각으로 주장하지 않음.
+미래/오래된/역행 호스트 stamp, 잘못된 frame/Quaternion은 시각화 입력에서 거절.
+센서 ms 역행/reset과 설정주기 대비 누락 추정은 별도 집계.
+센서 내부 지연과 절대 자세 정확도는 미측정.
+
+8. Roll/Pitch/Yaw
+모두 실제 시험 미검증. 사용자가 센서를 움직인 적 없으므로 합격 기록 없음.
+imu_orientation_test_results.csv에 정지/roll/pitch/yaw/복귀/중단 모두 NOT_TESTED.
+record_motion.py로 RPY span/stddev/왕복잔차·gyro stddev·topic Hz 기록 가능.
+기준 각도 계측 없이 절대 정확도 합격을 주장하지 않음.
+
+9. RViz 모델 연동
+실제 자세 연동 미검증. 직육면체·RGB 축·텍스트 코드는 작성 완료.
+입력 없는 실제 RViz 창에서 Status:NO_DATA와 데이터 없음 표시를 눈으로 확인.
+최종 코드 MarkerArray77개/상태77개 모두 NO_DATA, Cube/Arrow 없음.
+최종 GUI 사진 evidence/rviz_window_no_data_final.png.
+합성 ROS Imu Publisher나 로그 replay Publisher는 사용하지 않음.
+과거 실제 raw 재파싱도 ROS로 재발행하지 않음.
+
+10. 정지 안정성
+실제 현재 정지 시험 미수행. 과거 raw 수치를 이번 정지 시험으로 대체하지 않음.
+
+11. 회전 방향 / 기준 좌표
+Fixed Frame ebimu_diag_reference, sensor ebimu_diag_tractor_sensor.
+제조사 native AHRS Quaternion을 ROS Quaternion 수학식으로 그리는 진단 기준.
+map/odom/지리 ENU/실제 차량 장착축과 일치한다고 주장하지 않음.
+공식 PDF9쪽 Euler 축과10쪽 gyro/accel 축 도면의 방향이 다름을 확인함.
+active/passive Quaternion 의미와 실제 축/부호는 손 회전으로 검증해야 함.
+Euler RPY는 Quaternion에서 계산했으며 센서 Euler 동시 출력과 대조하지 못함.
+영점 변경, yaw 적분, 센서 offset 변경, 임의 ENU 보정을 하지 않음.
+
+12. 통신 중단
+입력 없는 NO_DATA는 실물 GUI 확인 완료.
+실제 데이터 이후 LIVE -> STALE 시험은 미검증.
+독립 visualizer가 마지막 유효 수신 경과0.5초 초과시 STALE 표시하도록 구현.
+오래된 마지막 본체는 회색, 축은 흐리게, LAST_POSE_-_NOT_LIVE 표시.
+Publisher Ctrl+C로 수신을 중단하고 visualizer/RViz를 유지하는 시험을 준비.
+visualizer도 종료되면 Marker1초 수명 만료. 최종 코드 NO_DATA GUI만 시험함.
+
+13. 하드웨어 미검증 항목
+실제 포트 물리 정체, 센서 수, 현재 전원·배선·레벨, RX, 현재 cfg/버전,
+현재 packet Hz, 실제 ROS 메시지, 정지 안정성, 축/부호, 절대 yaw,
+Roll/Pitch/Yaw 복귀, 실제 LIVE/STALE 전환, 실제 센서 지연·손실.
+두 번째 IMU 및 articulation/jackknife 모두 미검증.
+
+14. 문제 및 원인
+- 물리 포트 식별: CP2102 정보만으로 G6와 IMU 구분 불가. 사용자 확인 대기.
+- 과거0바이트 원인은 이번에 규명하지 못함. 전원/GND/TX 신호/장치 식별/
+  출력모드/baud/점유/설정/하드웨어 순으로 실제 증거 확인이 필요함.
+  센서 고장 또는 기존 코드 버그로 확정하지 않음.
+- UART 레벨은 센서 VCC와 연동됨. CP2102 보드 VIO 허용치는 실물 미확인.
+  배선 변경 또는 분리 작업을 수행·지시하지 않았음.
+- RViz 글자 간격: Ogre가 공백을 과도하게 넓게 그려 문구가 화면 밖으로 벗어남.
+  새 진단 코드에서 공백을 underscore로 바꿔 최종 GUI에서 정상 가독성 확인.
+- 중간 GUI 반복시험에서 공백뿐인 Text Marker가 Ogre Vertex Buffer 오류를 유발.
+  빈 줄은 DELETE로 변경, 최종 재시험에서 오류 없이 두 프로세스 생존 확인.
+- RViz에는 TF 없음 경고 가능. Marker는 Fixed Frame 자체 좌표로 표시하며 TF 발행 없음.
+- 원본 source_baseline.json은 src_example104개 경로가 현재 없어 불완전.
+  원본 폴더 mtime16:12는 이번 작업 시작19:59보다 앞섬. 경로를 복원하지 않음.
+
+15. 파일
+README.md: 정확한 환경·포트·Publisher·RViz·시험·종료 명령.
+scripts/imu_common.py: 독립 파서, 변환, 포트 식별·점유 검사.
+scripts/serial_probe.py: 최대60초, 수신전용 raw/hex/통계 저장.
+scripts/imu_publisher.py: 실제 패킷만 Imu/diagnostics 발행.
+scripts/imu_visualizer.py: 독립 freshness 감시, Cube/RGB Arrow/Text.
+scripts/record_motion.py: 실제 토픽 동작 구간 측정.
+imu_rviz_live.rviz: 독립 Fixed Frame 구성.
+imu_serial_diagnostics.txt, imu_raw_rx_samples.log, imu_ros2_validation.txt.
+imu_orientation_test_results.csv, verification_status.json.
+reports/manufacturer_findings.md: 공식 조사 내용·출처.
+evidence/: 환경·보존 해시·공식 PDF/축 도면·오프라인 결과·GUI 및 로그.
+최종 파일 목록은 reports/generated_files.txt.
+
+16. 기존 프로젝트 보호
+모든 명시적 파일 쓰기는 verification/ebimu9dofv6_rviz/ 내부.
+기존 실차 src/tools/tests/references274개 시작 해시와 일치.
+원본 보존 목록174개 중 존재70개 일치, 없음104개, 존재 파일 hash 불일치0.
+원본 전체 보존 목록 PASS라고 주장하지 않음. 원본에 쓰기 작업은 하지 않음.
+LiDAR 포트 open 없음, /scan/Cartographer/기존 launch/IMU/제어/Arduino 수정 없음.
+map/odom/laser_frame TF 발행·변경 없음. 차량 구동·모터 제어 메시지 없음.
+Git commit/push/pull 없음, 시스템·USB 드라이버·셸 설정 변경 없음.
+실행한 진단/RViz 프로세스는 종료함. 기존 프로세스 강제 종료 없음.
+
+17. 두 센서 확장
+현재 실제 두 센서 확인 안 됨. 두 번째 데이터를 생성하지 않음.
+추후 각 CP2102 포트 물리 식별·출력 형식·각 장착축을 독립 검증한 후
+namespace/frame을 tractor/trailer로 분리하고 공통 yaw 기준 검증 필요.
+그 뒤 wrapped yaw 차이의 articulation 해석을 검토할 수 있음.
+
+다음 필수 입력
+현재 CP2102 serial0001이 EBIMU에 연결됐는지 사용자 확인.
+그 후 20%장치 확정 -> 35%실제 RX -> 50%실제ROS -> 65%실제RViz ->
+80%실제축회전 -> 90%갱신/정확도/중단 -> 100%최종 실측 보고 순으로 진행.
+현재 단계는 실패 또는 성공으로 추정하지 않고 미검증으로 유지.
+실행 명령은 README.md에 저장. 장치가 확정되기 전 Publisher/probe를 실행하지 말 것.

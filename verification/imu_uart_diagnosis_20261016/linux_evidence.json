@@ -1,0 +1,69 @@
+[
+  {
+    "command": [
+      "systemctl",
+      "status",
+      "ModemManager.service",
+      "--no-pager"
+    ],
+    "exit_code": 0,
+    "stdout": "\u25cf ModemManager.service - Modem Manager\n     Loaded: loaded (/lib/systemd/system/ModemManager.service; enabled; vendor preset: enabled)\n     Active: active (running) since Fri 2026-10-16 22:20:12 KST; 1h 10min ago\n   Main PID: 1068 (ModemManager)\n      Tasks: 3 (limit: 37589)\n     Memory: 8.0M\n        CPU: 40ms\n     CGroup: /system.slice/ModemManager.service\n             \u2514\u25001068 /usr/sbin/ModemManager\n\nOct 16 22:20:12 venezuelachocolatemilk-Legion-Pro-5-16IAX10H systemd[1]: Starting Modem Manager...\nOct 16 22:20:12 venezuelachocolatemilk-Legion-Pro-5-16IAX10H ModemManager[1068]: <info>  ModemManager (version 1.20.0) starting in system bus...\nOct 16 22:20:12 venezuelachocolatemilk-Legion-Pro-5-16IAX10H systemd[1]: Started Modem Manager.\nOct 16 22:20:15 venezuelachocolatemilk-Legion-Pro-5-16IAX10H ModemManager[1068]: <info>  [base-manager] couldn't check support for device '/sys/devices/pci0000:80/0000:80:1c.0/0000:81:00.0': not supported by any plugin\nOct 16 22:20:15 venezuelachocolatemilk-Legion-Pro-5-16IAX10H ModemManager[1068]: <info>  [base-manager] couldn't check support for device '/sys/devices/pci0000:80/0000:80:1c.7/0000:82:00.0': not supported by any plugin\nOct 16 22:50:12 venezuelachocolatemilk-Legion-Pro-5-16IAX10H ModemManager[1068]: <info>  [base-manager] couldn't check support for device '/sys/devices/pci0000:80/0000:80:14.0/usb3/3-10': not supported by any plugin\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "journalctl",
+      "-b",
+      "-u",
+      "ModemManager.service",
+      "--no-pager"
+    ],
+    "exit_code": 0,
+    "stdout": "Oct 16 22:20:12 venezuelachocolatemilk-Legion-Pro-5-16IAX10H systemd[1]: Starting Modem Manager...\nOct 16 22:20:12 venezuelachocolatemilk-Legion-Pro-5-16IAX10H ModemManager[1068]: <info>  ModemManager (version 1.20.0) starting in system bus...\nOct 16 22:20:12 venezuelachocolatemilk-Legion-Pro-5-16IAX10H systemd[1]: Started Modem Manager.\nOct 16 22:20:15 venezuelachocolatemilk-Legion-Pro-5-16IAX10H ModemManager[1068]: <info>  [base-manager] couldn't check support for device '/sys/devices/pci0000:80/0000:80:1c.0/0000:81:00.0': not supported by any plugin\nOct 16 22:20:15 venezuelachocolatemilk-Legion-Pro-5-16IAX10H ModemManager[1068]: <info>  [base-manager] couldn't check support for device '/sys/devices/pci0000:80/0000:80:1c.7/0000:82:00.0': not supported by any plugin\nOct 16 22:50:12 venezuelachocolatemilk-Legion-Pro-5-16IAX10H ModemManager[1068]: <info>  [base-manager] couldn't check support for device '/sys/devices/pci0000:80/0000:80:14.0/usb3/3-10': not supported by any plugin\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "journalctl",
+      "-b",
+      "-k",
+      "--no-pager",
+      "--grep=cp210|ttyUSB|usb 3-10"
+    ],
+    "exit_code": 0,
+    "stdout": "Oct 16 22:50:09 venezuelachocolatemilk-Legion-Pro-5-16IAX10H kernel: usb 3-10: new full-speed USB device number 8 using xhci_hcd\nOct 16 22:50:09 venezuelachocolatemilk-Legion-Pro-5-16IAX10H kernel: usb 3-10: New USB device found, idVendor=10c4, idProduct=ea60, bcdDevice= 1.00\nOct 16 22:50:09 venezuelachocolatemilk-Legion-Pro-5-16IAX10H kernel: usb 3-10: New USB device strings: Mfr=1, Product=2, SerialNumber=3\nOct 16 22:50:09 venezuelachocolatemilk-Legion-Pro-5-16IAX10H kernel: usb 3-10: Product: CP2102 USB to UART Bridge Controller\nOct 16 22:50:09 venezuelachocolatemilk-Legion-Pro-5-16IAX10H kernel: usb 3-10: Manufacturer: Silicon Labs\nOct 16 22:50:09 venezuelachocolatemilk-Legion-Pro-5-16IAX10H kernel: usb 3-10: SerialNumber: 0001\nOct 16 22:50:09 venezuelachocolatemilk-Legion-Pro-5-16IAX10H kernel: usbcore: registered new interface driver cp210x\nOct 16 22:50:09 venezuelachocolatemilk-Legion-Pro-5-16IAX10H kernel: usbserial: USB Serial support registered for cp210x\nOct 16 22:50:09 venezuelachocolatemilk-Legion-Pro-5-16IAX10H kernel: cp210x 3-10:1.0: cp210x converter detected\nOct 16 22:50:09 venezuelachocolatemilk-Legion-Pro-5-16IAX10H kernel: usb 3-10: cp210x converter now attached to ttyUSB0\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "systemctl",
+      "is-active",
+      "serial-getty@ttyUSB0.service",
+      "brltty.service",
+      "gpsd.service"
+    ],
+    "exit_code": 3,
+    "stdout": "inactive\ninactive\ninactive\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "fuser",
+      "-v",
+      "/dev/ttyUSB0"
+    ],
+    "exit_code": 0,
+    "stdout": " 51375",
+    "stderr": "                     \uc0ac\uc6a9\uc790      PID \uc811\uadfc \uba85\ub839\n/dev/ttyUSB0:        venezuelachocolatemilk  F.... python3\n"
+  },
+  {
+    "command": [
+      "ps",
+      "-eo",
+      "pid,user,args"
+    ],
+    "exit_code": 0,
+    "stdout": "   1068 root     /usr/sbin/ModemManager\n   6073 venezue+ /usr/libexec/gsd-screensaver-proxy\n   6272 venezue+ /usr/bin/gjs /usr/share/gnome-shell/org.gnome.ScreenSaver\n  51371 venezue+ /bin/bash -lc python3 - <<'PY' import subprocess,sys,json from pathlib import Path root=Path('verification/imu_uart_diagnosis_20261016') port='/dev/serial/by-id/usb-Silicon_Labs_CP2102_USB_to_UART_Bridge_Controller_0001-if00-port0' for baud in (9600,19200,38400,57600,230400,460800,921600):  cmd=[sys.executable,'tools/diagnose_ebimu.py','--port',port,'--baud',str(baud),'--dtr','high','--rts','high','--init-wait','.6','--duration','1.1','--finish-config','--query','version','--query','poll','--log-prefix',str(root/f'03_query_baud_{baud}')]  r=subprocess.run(cmd,text=True,capture_output=True,timeout=10)  records=[json.loads(s) for s in r.stdout.splitlines()]  print(json.dumps({'baud':baud,'exit_code':r.returncode,'summary':records[-1] if records else {},'stderr':r.stderr}),flush=True)  if r.returncode!=2:   print('Stopped scan for observed data or unexpected error',flush=True)   break PY\n  51375 venezue+ /usr/bin/python3 tools/diagnose_ebimu.py --port /dev/serial/by-id/usb-Silicon_Labs_CP2102_USB_to_UART_Bridge_Controller_0001-if00-port0 --baud 9600 --dtr high --rts high --init-wait .6 --duration 1.1 --finish-config --query version --query poll --log-prefix verification/imu_uart_diagnosis_20261016/03_query_baud_9600\n  51384 venezue+ /bin/bash -lc python3 - <<'PY' import subprocess,json from pathlib import Path commands=[['systemctl','status','ModemManager.service','--no-pager'],['journalctl','-b','-u','ModemManager.service','--no-pager'],['journalctl','-b','-k','--no-pager','--grep=cp210|ttyUSB|usb 3-10'],['systemctl','is-active','serial-getty@ttyUSB0.service','brltty.service','gpsd.service'],['fuser','-v','/dev/ttyUSB0'],['ps','-eo','pid,user,args']] records=[] for cmd in commands:  r=subprocess.run(cmd,capture_output=True,text=True)  out=r.stdout  if cmd[0]=='ps':out='\\n'.join(s for s in out.splitlines() if any(t in s.lower() for t in ['modemmanager','brltty','gpsd','ebimu','serial-getty','screen','minicom']))  records.append({'command':cmd,'exit_code':r.returncode,'stdout':out,'stderr':r.stderr}) p=Path('verification/imu_uart_diagnosis_20261016/linux_evidence.json');p.write_text(json.dumps(records,indent=2)+'\\n') print(json.dumps(records,indent=2)) PY",
+    "stderr": ""
+  }
+]

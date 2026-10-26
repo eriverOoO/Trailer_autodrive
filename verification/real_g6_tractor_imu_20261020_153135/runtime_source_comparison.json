@@ -1,0 +1,177 @@
+[
+  {
+    "source": "/home/venezuelachocolatemilk/mvsim_slam_real/src/mvsim_slam_real_bringup/config/map_builder.lua",
+    "runtime": "/home/venezuelachocolatemilk/mvsim_slam_real/build/mvsim_slam_real_bringup/config/map_builder.lua",
+    "equal": true
+  },
+  {
+    "source": "/home/venezuelachocolatemilk/mvsim_slam_real/src/mvsim_slam_real_bringup/config/slam.yaml",
+    "runtime": "/home/venezuelachocolatemilk/mvsim_slam_real/build/mvsim_slam_real_bringup/config/slam.yaml",
+    "equal": true
+  },
+  {
+    "source": "/home/venezuelachocolatemilk/mvsim_slam_real/src/mvsim_slam_real_bringup/config/lidar.yaml",
+    "runtime": "/home/venezuelachocolatemilk/mvsim_slam_real/build/mvsim_slam_real_bringup/config/lidar.yaml",
+    "equal": true
+  },
+  {
+    "source": "/home/venezuelachocolatemilk/mvsim_slam_real/src/mvsim_slam_real_bringup/config/g6.yaml",
+    "runtime": "/home/venezuelachocolatemilk/mvsim_slam_real/build/mvsim_slam_real_bringup/config/g6.yaml",
+    "equal": true
+  },
+  {
+    "source": "/home/venezuelachocolatemilk/mvsim_slam_real/src/mvsim_slam_real_bringup/config/g6_mount.yaml",
+    "runtime": "/home/venezuelachocolatemilk/mvsim_slam_real/build/mvsim_slam_real_bringup/config/g6_mount.yaml",
+    "equal": true
+  },
+  {
+    "source": "/home/venezuelachocolatemilk/mvsim_slam_real/src/mvsim_slam_real_bringup/config/g6_imu_mount.yaml",
+    "runtime": "/home/venezuelachocolatemilk/mvsim_slam_real/build/mvsim_slam_real_bringup/config/g6_imu_mount.yaml",
+    "equal": true
+  },
+  {
+    "source": "/home/venezuelachocolatemilk/mvsim_slam_real/src/mvsim_slam_real_bringup/config/g6_lidar_only.lua",
+    "runtime": "/home/venezuelachocolatemilk/mvsim_slam_real/build/mvsim_slam_real_bringup/config/g6_lidar_only.lua",
+    "equal": true
+  },
+  {
+    "source": "/home/venezuelachocolatemilk/mvsim_slam_real/src/mvsim_slam_real_bringup/config/g6_sensor_imu.lua",
+    "runtime": "/home/venezuelachocolatemilk/mvsim_slam_real/build/mvsim_slam_real_bringup/config/g6_sensor_imu.lua",
+    "equal": true
+  },
+  {
+    "source": "/home/venezuelachocolatemilk/mvsim_slam_real/src/mvsim_slam_real_bringup/config/trajectory_builder_3d.lua",
+    "runtime": "/home/venezuelachocolatemilk/mvsim_slam_real/build/mvsim_slam_real_bringup/config/trajectory_builder_3d.lua",
+    "equal": true
+  },
+  {
+    "source": "/home/venezuelachocolatemilk/mvsim_slam_real/src/mvsim_slam_real_bringup/config/imu.yaml",
+    "runtime": "/home/venezuelachocolatemilk/mvsim_slam_real/build/mvsim_slam_real_bringup/config/imu.yaml",
+    "equal": true
+  },
+  {
+    "source": "/home/venezuelachocolatemilk/mvsim_slam_real/src/mvsim_slam_real_bringup/config/controller.yaml",
+    "runtime": "/home/venezuelachocolatemilk/mvsim_slam_real/build/mvsim_slam_real_bringup/config/controller.yaml",
+    "equal": true
+  },
+  {
+    "source": "/home/venezuelachocolatemilk/mvsim_slam_real/src/mvsim_slam_real_bringup/config/parking.yaml",
+    "runtime": "/home/venezuelachocolatemilk/mvsim_slam_real/build/mvsim_slam_real_bringup/config/parking.yaml",
+    "equal": true
+  },
+  {
+    "source": "/home/venezuelachocolatemilk/mvsim_slam_real/src/mvsim_slam_real_bringup/config/vehicle_geometry.yaml",
+    "runtime": "/home/venezuelachocolatemilk/mvsim_slam_real/build/mvsim_slam_real_bringup/config/vehicle_geometry.yaml",
+    "equal": true
+  },
+  {
+    "source": "/home/venezuelachocolatemilk/mvsim_slam_real/src/mvsim_slam_real_bringup/config/reference_lidar_only.lua",
+    "runtime": "/home/venezuelachocolatemilk/mvsim_slam_real/build/mvsim_slam_real_bringup/config/reference_lidar_only.lua",
+    "equal": true
+  },
+  {
+    "source": "/home/venezuelachocolatemilk/mvsim_slam_real/src/mvsim_slam_real_bringup/config/reference_imu_optional.lua",
+    "runtime": "/home/venezuelachocolatemilk/mvsim_slam_real/build/mvsim_slam_real_bringup/config/reference_imu_optional.lua",
+    "equal": true
+  },
+  {
+    "source": "/home/venezuelachocolatemilk/mvsim_slam_real/src/mvsim_slam_real_bringup/config/trajectory_builder_2d.lua",
+    "runtime": "/home/venezuelachocolatemilk/mvsim_slam_real/build/mvsim_slam_real_bringup/config/trajectory_builder_2d.lua",
+    "equal": true
+  },
+  {
+    "source": "/home/venezuelachocolatemilk/mvsim_slam_real/src/mvsim_slam_real_bringup/config/hardware.yaml",
+    "runtime": "/home/venezuelachocolatemilk/mvsim_slam_real/build/mvsim_slam_real_bringup/config/hardware.yaml",
+    "equal": true
+  },
+  {
+    "source": "/home/venezuelachocolatemilk/mvsim_slam_real/src/mvsim_slam_real_bringup/config/g6_imu_optional.lua",
+    "runtime": "/home/venezuelachocolatemilk/mvsim_slam_real/build/mvsim_slam_real_bringup/config/g6_imu_optional.lua",
+    "equal": true
+  },
+  {
+    "source": "/home/venezuelachocolatemilk/mvsim_slam_real/src/mvsim_slam_real_bringup/config/trajectory_builder.lua",
+    "runtime": "/home/venezuelachocolatemilk/mvsim_slam_real/build/mvsim_slam_real_bringup/config/trajectory_builder.lua",
+    "equal": true
+  },
+  {
+    "source": "/home/venezuelachocolatemilk/mvsim_slam_real/src/mvsim_slam_real_bringup/config/ebimu_slam.yaml",
+    "runtime": "/home/venezuelachocolatemilk/mvsim_slam_real/build/mvsim_slam_real_bringup/config/ebimu_slam.yaml",
+    "equal": true
+  },
+  {
+    "source": "/home/venezuelachocolatemilk/mvsim_slam_real/src/mvsim_slam_real_bringup/config/g6_vehicle.lua",
+    "runtime": "/home/venezuelachocolatemilk/mvsim_slam_real/build/mvsim_slam_real_bringup/config/g6_vehicle.lua",
+    "equal": true
+  },
+  {
+    "source": "/home/venezuelachocolatemilk/mvsim_slam_real/src/mvsim_slam_real_bringup/config/pose_graph.lua",
+    "runtime": "/home/venezuelachocolatemilk/mvsim_slam_real/build/mvsim_slam_real_bringup/config/pose_graph.lua",
+    "equal": true
+  },
+  {
+    "source": "/home/venezuelachocolatemilk/mvsim_slam_real/src/mvsim_slam_real_bringup/mvsim_slam_real_bringup/g6_launch.py",
+    "runtime": "/home/venezuelachocolatemilk/mvsim_slam_real/build/mvsim_slam_real_bringup/mvsim_slam_real_bringup/g6_launch.py",
+    "equal": true
+  },
+  {
+    "source": "/home/venezuelachocolatemilk/mvsim_slam_real/src/mvsim_slam_real_bringup/mvsim_slam_real_bringup/__init__.py",
+    "runtime": "/home/venezuelachocolatemilk/mvsim_slam_real/build/mvsim_slam_real_bringup/mvsim_slam_real_bringup/__init__.py",
+    "equal": true
+  },
+  {
+    "source": "/home/venezuelachocolatemilk/mvsim_slam_real/visualization/tractor_trailer_rviz_2d/tractor_trailer_rviz_2d/reference_renderer.py",
+    "runtime": "/home/venezuelachocolatemilk/mvsim_slam_real/visualization/tractor_trailer_rviz_2d/build/tractor_trailer_rviz_2d/tractor_trailer_rviz_2d/reference_renderer.py",
+    "equal": true
+  },
+  {
+    "source": "/home/venezuelachocolatemilk/mvsim_slam_real/visualization/tractor_trailer_rviz_2d/tractor_trailer_rviz_2d/serial_protocol.py",
+    "runtime": "/home/venezuelachocolatemilk/mvsim_slam_real/visualization/tractor_trailer_rviz_2d/build/tractor_trailer_rviz_2d/tractor_trailer_rviz_2d/serial_protocol.py",
+    "equal": true
+  },
+  {
+    "source": "/home/venezuelachocolatemilk/mvsim_slam_real/visualization/tractor_trailer_rviz_2d/tractor_trailer_rviz_2d/reference_math.py",
+    "runtime": "/home/venezuelachocolatemilk/mvsim_slam_real/visualization/tractor_trailer_rviz_2d/build/tractor_trailer_rviz_2d/tractor_trailer_rviz_2d/reference_math.py",
+    "equal": true
+  },
+  {
+    "source": "/home/venezuelachocolatemilk/mvsim_slam_real/visualization/tractor_trailer_rviz_2d/tractor_trailer_rviz_2d/render_adapter.py",
+    "runtime": "/home/venezuelachocolatemilk/mvsim_slam_real/visualization/tractor_trailer_rviz_2d/build/tractor_trailer_rviz_2d/tractor_trailer_rviz_2d/render_adapter.py",
+    "equal": true
+  },
+  {
+    "source": "/home/venezuelachocolatemilk/mvsim_slam_real/visualization/tractor_trailer_rviz_2d/tractor_trailer_rviz_2d/visualizer.py",
+    "runtime": "/home/venezuelachocolatemilk/mvsim_slam_real/visualization/tractor_trailer_rviz_2d/build/tractor_trailer_rviz_2d/tractor_trailer_rviz_2d/visualizer.py",
+    "equal": true
+  },
+  {
+    "source": "/home/venezuelachocolatemilk/mvsim_slam_real/visualization/tractor_trailer_rviz_2d/tractor_trailer_rviz_2d/core.py",
+    "runtime": "/home/venezuelachocolatemilk/mvsim_slam_real/visualization/tractor_trailer_rviz_2d/build/tractor_trailer_rviz_2d/tractor_trailer_rviz_2d/core.py",
+    "equal": true
+  },
+  {
+    "source": "/home/venezuelachocolatemilk/mvsim_slam_real/visualization/tractor_trailer_rviz_2d/tractor_trailer_rviz_2d/reference_geometry.py",
+    "runtime": "/home/venezuelachocolatemilk/mvsim_slam_real/visualization/tractor_trailer_rviz_2d/build/tractor_trailer_rviz_2d/tractor_trailer_rviz_2d/reference_geometry.py",
+    "equal": true
+  },
+  {
+    "source": "/home/venezuelachocolatemilk/mvsim_slam_real/visualization/tractor_trailer_rviz_2d/tractor_trailer_rviz_2d/runtime.py",
+    "runtime": "/home/venezuelachocolatemilk/mvsim_slam_real/visualization/tractor_trailer_rviz_2d/build/tractor_trailer_rviz_2d/tractor_trailer_rviz_2d/runtime.py",
+    "equal": true
+  },
+  {
+    "source": "/home/venezuelachocolatemilk/mvsim_slam_real/visualization/tractor_trailer_rviz_2d/tractor_trailer_rviz_2d/serial_bridge.py",
+    "runtime": "/home/venezuelachocolatemilk/mvsim_slam_real/visualization/tractor_trailer_rviz_2d/build/tractor_trailer_rviz_2d/tractor_trailer_rviz_2d/serial_bridge.py",
+    "equal": true
+  },
+  {
+    "source": "/home/venezuelachocolatemilk/mvsim_slam_real/visualization/tractor_trailer_rviz_2d/tractor_trailer_rviz_2d/test_source.py",
+    "runtime": "/home/venezuelachocolatemilk/mvsim_slam_real/visualization/tractor_trailer_rviz_2d/build/tractor_trailer_rviz_2d/tractor_trailer_rviz_2d/test_source.py",
+    "equal": true
+  },
+  {
+    "source": "/home/venezuelachocolatemilk/mvsim_slam_real/visualization/tractor_trailer_rviz_2d/tractor_trailer_rviz_2d/__init__.py",
+    "runtime": "/home/venezuelachocolatemilk/mvsim_slam_real/visualization/tractor_trailer_rviz_2d/build/tractor_trailer_rviz_2d/tractor_trailer_rviz_2d/__init__.py",
+    "equal": true
+  }
+]

@@ -1,0 +1,1 @@
+{"scan_pass": true, "slam_pass": true, "scan_count": 436, "continuous_scan_span_s": 44.95606576099999, "measured_scan_hz": 9.676113615292566, "map_count": 46, "distinct_map_contents": 46, "matched_cloud_count": 436, "scan_time_tf_lookup_successes": 449}

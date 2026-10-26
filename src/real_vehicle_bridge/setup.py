@@ -1,0 +1,3 @@
+from setuptools import setup,find_packages
+from glob import glob
+setup(name='real_vehicle_bridge',version='0.1.0',packages=find_packages(),data_files=[('share/ament_index/resource_index/packages',['resource/real_vehicle_bridge']),('share/real_vehicle_bridge',['package.xml'])]+[('share/real_vehicle_bridge/'+d,glob(d+'/*')) for d in ['config','launch','rviz']],install_requires=['setuptools'],entry_points={'console_scripts':['lidar_gateway = real_vehicle_bridge.lidar:main', 'rplidar_source = real_vehicle_bridge.rplidar_source:main', 'state_estimator = real_vehicle_bridge.estimator:main', 'sensor_tf = real_vehicle_bridge.sensor_tf:main', 'control_adapter = real_vehicle_bridge.adapter:main']})

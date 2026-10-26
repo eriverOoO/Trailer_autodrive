@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/home/venezuelachocolatemilk/mvsim_slam_real/verification/imu_persistent_device_names/scripts/install_rule.py", line 97, in <module>
+    if __name__=='__main__':main()
+  File "/home/venezuelachocolatemilk/mvsim_slam_real/verification/imu_persistent_device_names/scripts/install_rule.py", line 29, in main
+    raise RuntimeError('Socket reservation is pending. Do not install before confirming G6 uses another socket.')
+RuntimeError: Socket reservation is pending. Do not install before confirming G6 uses another socket.

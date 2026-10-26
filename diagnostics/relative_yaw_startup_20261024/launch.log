@@ -1,0 +1,184 @@
+[INFO] [launch]: All log files can be found below /home/venezuelachocolatemilk/.ros/log/2026-10-24-15-53-11-638837-venezuelachocolatemilk-Legion-Pro-5-16IAX10H-57145
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [launch.user]: Keep both vehicles stationary and straight until READY. No vehicle control is started.
+[INFO] [launch.user]: Vehicle SLAM: run only one Cartographer and one publisher per TF edge
+[INFO] [launch.user]: Using EXTERNAL measured sensor TF; do not run duplicate publishers
+[INFO] [launch.user]: Matching IMU profiles; raw sensor frames. Trailer yaw +pi is in mount TF only. Absolute sensor-axis alignment remains unverified.
+[INFO] [ydlidar_ros2_driver_node-1]: process started with pid [57159]
+[INFO] [cartographer_node-2]: process started with pid [57161]
+[INFO] [cartographer_occupancy_grid_node-3]: process started with pid [57163]
+[INFO] [ebimu_node-4]: process started with pid [57165]
+[INFO] [ebimu_node-5]: process started with pid [57167]
+[INFO] [sensor_tf-6]: process started with pid [57169]
+[INFO] [tt2d_visualizer-7]: process started with pid [57171]
+[ydlidar_ros2_driver_node-1] [INFO] [1792824791.768235908] [ydlidar_ros2_driver_node]: [YDLIDAR INFO] Current ROS Driver Version: 1.0.1
+[ydlidar_ros2_driver_node-1] 
+[ydlidar_ros2_driver_node-1] [2026-10-24 15:53:11][info] SDK initializing
+[ydlidar_ros2_driver_node-1] [2026-10-24 15:53:11][info] SDK has been initialized
+[ydlidar_ros2_driver_node-1] [2026-10-24 15:53:11][info] SDK Version: 1.2.20
+[ydlidar_ros2_driver_node-1] [2026-10-24 15:53:11][info] Connect elapsed time 3 ms
+[ydlidar_ros2_driver_node-1] [2026-10-24 15:53:11][info] Lidar successfully connected [/dev/lidar_g6:512000]
+[cartographer_node-2] [INFO] [1792824791.780452026] [cartographer logger]: I1024 15:53:11.000000 57161 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/g6_vehicle.lua' for 'g6_vehicle.lua'.
+[cartographer_node-2] [INFO] [1792824791.780593312] [cartographer logger]: I1024 15:53:11.000000 57161 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/g6_lidar_only.lua' for 'g6_lidar_only.lua'.
+[cartographer_node-2] [INFO] [1792824791.780604532] [cartographer logger]: I1024 15:53:11.000000 57161 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/g6_lidar_only.lua' for 'g6_lidar_only.lua'.
+[cartographer_node-2] [INFO] [1792824791.780629906] [cartographer logger]: I1024 15:53:11.000000 57161 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/reference_lidar_only.lua' for 'reference_lidar_only.lua'.
+[cartographer_node-2] [INFO] [1792824791.780636454] [cartographer logger]: I1024 15:53:11.000000 57161 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/reference_lidar_only.lua' for 'reference_lidar_only.lua'.
+[cartographer_node-2] [INFO] [1792824791.780681559] [cartographer logger]: I1024 15:53:11.000000 57161 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/map_builder.lua' for 'map_builder.lua'.
+[cartographer_node-2] [INFO] [1792824791.780688101] [cartographer logger]: I1024 15:53:11.000000 57161 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/map_builder.lua' for 'map_builder.lua'.
+[cartographer_node-2] [INFO] [1792824791.780711795] [cartographer logger]: I1024 15:53:11.000000 57161 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/pose_graph.lua' for 'pose_graph.lua'.
+[cartographer_node-2] [INFO] [1792824791.780717908] [cartographer logger]: I1024 15:53:11.000000 57161 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/pose_graph.lua' for 'pose_graph.lua'.
+[cartographer_node-2] [INFO] [1792824791.780787708] [cartographer logger]: I1024 15:53:11.000000 57161 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/trajectory_builder.lua' for 'trajectory_builder.lua'.
+[cartographer_node-2] [INFO] [1792824791.780794080] [cartographer logger]: I1024 15:53:11.000000 57161 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/trajectory_builder.lua' for 'trajectory_builder.lua'.
+[cartographer_node-2] [INFO] [1792824791.780811823] [cartographer logger]: I1024 15:53:11.000000 57161 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/trajectory_builder_2d.lua' for 'trajectory_builder_2d.lua'.
+[cartographer_node-2] [INFO] [1792824791.780817528] [cartographer logger]: I1024 15:53:11.000000 57161 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/trajectory_builder_2d.lua' for 'trajectory_builder_2d.lua'.
+[cartographer_node-2] [INFO] [1792824791.780883328] [cartographer logger]: I1024 15:53:11.000000 57161 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/trajectory_builder_3d.lua' for 'trajectory_builder_3d.lua'.
+[cartographer_node-2] [INFO] [1792824791.780888924] [cartographer logger]: I1024 15:53:11.000000 57161 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/trajectory_builder_3d.lua' for 'trajectory_builder_3d.lua'.
+[cartographer_node-2] [INFO] [1792824791.785066669] [cartographer logger]: I1024 15:53:11.000000 57161 map_builder_bridge.cpp:136] Added trajectory with ID '0'.
+[ebimu_node-4] [WARN] [1792824791.929308277] [tractor_imu]: No valid EBIMU data; rejected frames=0
+[ebimu_node-5] [WARN] [1792824791.937140884] [trailer_imu]: No valid EBIMU data; rejected frames=0
+[tt2d_visualizer-7] [INFO] [1792824791.966967791] [tractor_trailer_2d_visualizer]: Display dimensions loaded from /home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/vehicle_geometry.yaml: tractor (0.9449999999999998, 0.475) m, trailer (0.9449999999999998, 0.475) m
+[tt2d_visualizer-7] [INFO] [1792824792.017649992] [tractor_trailer_2d_visualizer]: Could not find a connection between 'map' and 'base_footprint' because they are not part of the same tree.Tf has two or more unconnected trees.
+[ydlidar_ros2_driver_node-1] [2026-10-24 15:53:12][info] Lidar running correctly! The health status good
+[ydlidar_ros2_driver_node-1] [2026-10-24 15:53:12][info] Current Lidar Model Code 13
+[ydlidar_ros2_driver_node-1] [2026-10-24 15:53:12][info] Baseplate device info
+[ydlidar_ros2_driver_node-1] Firmware version: 3.2
+[ydlidar_ros2_driver_node-1] Hardware version: 3
+[ydlidar_ros2_driver_node-1] Model: G6
+[ydlidar_ros2_driver_node-1] Serial: 2022061000071139
+[ydlidar_ros2_driver_node-1] [2026-10-24 15:53:12][info] Current scan frequency: 12.00Hz
+[ydlidar_ros2_driver_node-1] [2026-10-24 15:53:12][info] Current scan frequency: 12.00Hz
+[ydlidar_ros2_driver_node-1] [2026-10-24 15:53:12][info] Check status, Elapsed time 514 ms
+[ydlidar_ros2_driver_node-1] [2026-10-24 15:53:12][info] Lidar init success, elapsed time [517]ms
+[ydlidar_ros2_driver_node-1] [2026-10-24 15:53:14][info] [YDLIDAR] Create thread 0x77FFF640
+[ydlidar_ros2_driver_node-1] [2026-10-24 15:53:14][info] Successed to start the lidar, elapsed time 2278 ms
+[ydlidar_ros2_driver_node-1] [2026-10-24 15:53:14][info] Scan Frequency: 12.00Hz
+[ydlidar_ros2_driver_node-1] [2026-10-24 15:53:14][info] Fixed Size: 1525
+[ydlidar_ros2_driver_node-1] [2026-10-24 15:53:14][info] Sample Rate: 18.00K
+[ydlidar_ros2_driver_node-1] [2026-10-24 15:53:14][info] Successed to check the lidar, elapsed time 0 ms
+[ydlidar_ros2_driver_node-1] [2026-10-24 15:53:14][info] Lidar has started!
+[cartographer_node-2] [INFO] [1792824794.565556116] [cartographer logger]: I1024 15:53:14.000000 57161 ordered_multi_queue.cc:172] All sensor data for trajectory 0 is available starting at '639284215945639220'.
+[cartographer_node-2] [WARN] [1792824794.565909500] [cartographer logger]: W1024 15:53:14.000000 57161 pose_extrapolator.cc:168] Queue too short for velocity estimation. Queue duration: 0 s
+[cartographer_node-2] [INFO] [1792824794.566255641] [cartographer logger]: I1024 15:53:14.000000 57161 pose_graph_2d.cc:148] Inserted submap (0, 0).
+[tt2d_visualizer-7] [INFO] [1792824794.617588175] [tractor_trailer_2d_visualizer]: waiting for fresh LiDAR scans
+[tt2d_visualizer-7] [INFO] [1792824794.917723790] [tractor_trailer_2d_visualizer]: waiting for fresh SLAM map
+[tt2d_visualizer-7] [INFO] [1792824795.817843247] [tractor_trailer_2d_visualizer]: hold still: 0.0/5.0s
+[tt2d_visualizer-7] [INFO] [1792824795.917794867] [tractor_trailer_2d_visualizer]: hold still: 0.1/5.0s
+[tt2d_visualizer-7] [INFO] [1792824796.017891766] [tractor_trailer_2d_visualizer]: hold still: 0.2/5.0s
+[tt2d_visualizer-7] [INFO] [1792824796.117740710] [tractor_trailer_2d_visualizer]: hold still: 0.3/5.0s
+[tt2d_visualizer-7] [INFO] [1792824796.217754045] [tractor_trailer_2d_visualizer]: hold still: 0.4/5.0s
+[tt2d_visualizer-7] [INFO] [1792824796.318075862] [tractor_trailer_2d_visualizer]: hold still: 0.5/5.0s
+[tt2d_visualizer-7] [INFO] [1792824796.417752288] [tractor_trailer_2d_visualizer]: hold still: 0.6/5.0s
+[tt2d_visualizer-7] [INFO] [1792824796.467837275] [tractor_trailer_2d_visualizer]: hold still: 0.7/5.0s
+[tt2d_visualizer-7] [INFO] [1792824796.617922751] [tractor_trailer_2d_visualizer]: hold still: 0.8/5.0s
+[tt2d_visualizer-7] [INFO] [1792824796.717896710] [tractor_trailer_2d_visualizer]: hold still: 0.9/5.0s
+[tt2d_visualizer-7] [INFO] [1792824796.817773526] [tractor_trailer_2d_visualizer]: hold still: 1.0/5.0s
+[tt2d_visualizer-7] [INFO] [1792824796.917784026] [tractor_trailer_2d_visualizer]: hold still: 1.1/5.0s
+[tt2d_visualizer-7] [INFO] [1792824797.017898311] [tractor_trailer_2d_visualizer]: hold still: 1.2/5.0s
+[tt2d_visualizer-7] [INFO] [1792824797.117792436] [tractor_trailer_2d_visualizer]: hold still: 1.3/5.0s
+[tt2d_visualizer-7] [INFO] [1792824797.217832978] [tractor_trailer_2d_visualizer]: hold still: 1.4/5.0s
+[tt2d_visualizer-7] [INFO] [1792824797.317855593] [tractor_trailer_2d_visualizer]: hold still: 1.5/5.0s
+[tt2d_visualizer-7] [INFO] [1792824797.417957264] [tractor_trailer_2d_visualizer]: hold still: 1.6/5.0s
+[tt2d_visualizer-7] [INFO] [1792824797.517677897] [tractor_trailer_2d_visualizer]: hold still: 1.7/5.0s
+[tt2d_visualizer-7] [INFO] [1792824797.617884445] [tractor_trailer_2d_visualizer]: hold still: 1.8/5.0s
+[tt2d_visualizer-7] [INFO] [1792824797.717826508] [tractor_trailer_2d_visualizer]: hold still: 1.9/5.0s
+[tt2d_visualizer-7] [INFO] [1792824797.817684075] [tractor_trailer_2d_visualizer]: hold still: 2.0/5.0s
+[tt2d_visualizer-7] [INFO] [1792824797.917752471] [tractor_trailer_2d_visualizer]: hold still: 2.1/5.0s
+[tt2d_visualizer-7] [INFO] [1792824798.018178124] [tractor_trailer_2d_visualizer]: hold still: 2.2/5.0s
+[tt2d_visualizer-7] [INFO] [1792824798.117963957] [tractor_trailer_2d_visualizer]: hold still: 2.3/5.0s
+[tt2d_visualizer-7] [INFO] [1792824798.218170007] [tractor_trailer_2d_visualizer]: hold still: 2.4/5.0s
+[tt2d_visualizer-7] [INFO] [1792824798.317762976] [tractor_trailer_2d_visualizer]: hold still: 2.5/5.0s
+[tt2d_visualizer-7] [INFO] [1792824798.417782387] [tractor_trailer_2d_visualizer]: hold still: 2.6/5.0s
+[tt2d_visualizer-7] [INFO] [1792824798.517831032] [tractor_trailer_2d_visualizer]: hold still: 2.7/5.0s
+[tt2d_visualizer-7] [INFO] [1792824798.567823659] [tractor_trailer_2d_visualizer]: hold still: 2.8/5.0s
+[tt2d_visualizer-7] [INFO] [1792824798.717852582] [tractor_trailer_2d_visualizer]: hold still: 2.9/5.0s
+[tt2d_visualizer-7] [INFO] [1792824798.817665979] [tractor_trailer_2d_visualizer]: hold still: 3.0/5.0s
+[tt2d_visualizer-7] [INFO] [1792824798.917671297] [tractor_trailer_2d_visualizer]: hold still: 3.1/5.0s
+[tt2d_visualizer-7] [INFO] [1792824799.017769795] [tractor_trailer_2d_visualizer]: hold still: 3.2/5.0s
+[tt2d_visualizer-7] [INFO] [1792824799.117830388] [tractor_trailer_2d_visualizer]: hold still: 3.3/5.0s
+[tt2d_visualizer-7] [INFO] [1792824799.217670285] [tractor_trailer_2d_visualizer]: hold still: 3.4/5.0s
+[tt2d_visualizer-7] [INFO] [1792824799.317701009] [tractor_trailer_2d_visualizer]: hold still: 3.5/5.0s
+[tt2d_visualizer-7] [INFO] [1792824799.417680920] [tractor_trailer_2d_visualizer]: hold still: 3.6/5.0s
+[tt2d_visualizer-7] [INFO] [1792824799.517665769] [tractor_trailer_2d_visualizer]: hold still: 3.7/5.0s
+[tt2d_visualizer-7] [INFO] [1792824799.617698096] [tractor_trailer_2d_visualizer]: hold still: 3.8/5.0s
+[tt2d_visualizer-7] [INFO] [1792824799.717757062] [tractor_trailer_2d_visualizer]: hold still: 3.9/5.0s
+[tt2d_visualizer-7] [INFO] [1792824799.817707157] [tractor_trailer_2d_visualizer]: hold still: 4.0/5.0s
+[tt2d_visualizer-7] [INFO] [1792824799.917850777] [tractor_trailer_2d_visualizer]: hold still: 4.1/5.0s
+[tt2d_visualizer-7] [INFO] [1792824800.017834055] [tractor_trailer_2d_visualizer]: hold still: 4.2/5.0s
+[tt2d_visualizer-7] [INFO] [1792824800.117875467] [tractor_trailer_2d_visualizer]: hold still: 4.3/5.0s
+[tt2d_visualizer-7] [INFO] [1792824800.217706110] [tractor_trailer_2d_visualizer]: hold still: 4.4/5.0s
+[tt2d_visualizer-7] [INFO] [1792824800.317694927] [tractor_trailer_2d_visualizer]: hold still: 4.5/5.0s
+[tt2d_visualizer-7] [INFO] [1792824800.417739271] [tractor_trailer_2d_visualizer]: hold still: 4.6/5.0s
+[tt2d_visualizer-7] [INFO] [1792824800.517768325] [tractor_trailer_2d_visualizer]: hold still: 4.7/5.0s
+[tt2d_visualizer-7] [INFO] [1792824800.617881499] [tractor_trailer_2d_visualizer]: hold still: 4.8/5.0s
+[tt2d_visualizer-7] [INFO] [1792824800.717887415] [tractor_trailer_2d_visualizer]: hold still: 4.9/5.0s
+[tt2d_visualizer-7] [INFO] [1792824800.817842879] [tractor_trailer_2d_visualizer]: hold still: 5.0/5.0s
+[tt2d_visualizer-7] [INFO] [1792824800.868507070] [tractor_trailer_2d_visualizer]: OK
+[WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+[INFO] [tt2d_visualizer-7]: sending signal 'SIGINT' to process[tt2d_visualizer-7]
+[INFO] [sensor_tf-6]: sending signal 'SIGINT' to process[sensor_tf-6]
+[INFO] [ebimu_node-5]: sending signal 'SIGINT' to process[ebimu_node-5]
+[INFO] [ebimu_node-4]: sending signal 'SIGINT' to process[ebimu_node-4]
+[INFO] [cartographer_occupancy_grid_node-3]: sending signal 'SIGINT' to process[cartographer_occupancy_grid_node-3]
+[INFO] [cartographer_node-2]: sending signal 'SIGINT' to process[cartographer_node-2]
+[INFO] [ydlidar_ros2_driver_node-1]: sending signal 'SIGINT' to process[ydlidar_ros2_driver_node-1]
+[ydlidar_ros2_driver_node-1] [INFO] [1792824803.871411459] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[cartographer_node-2] [INFO] [1792824803.871411264] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[cartographer_node-2] [INFO] [1792824803.871912005] [cartographer logger]: I1024 15:53:23.000000 57161 node.cpp:569] Shutdown the subscriber of [scan]
+[cartographer_node-2] [INFO] [1792824803.871921139] [cartographer logger]: I1024 15:53:23.000000 57161 map_builder_bridge.cpp:152] Finishing trajectory with ID '0'...
+[cartographer_node-2] [WARN] [1792824803.871965669] [cartographer logger]: W1024 15:53:23.000000 57161 node.cpp:773] Can't run final optimization if there are one or more active trajectories. Trying to finish trajectory with ID 0 now.
+[cartographer_node-2] [INFO] [1792824803.871977822] [cartographer logger]: I1024 15:53:23.000000 57161 node.cpp:551] Trajectory 0 already pending to finish.
+[cartographer_node-2] [INFO] [1792824803.871980469] [cartographer logger]: I1024 15:53:23.000000 57161 map_builder_bridge.cpp:161] Running final trajectory optimization...
+[cartographer_node-2] [INFO] [1792824803.872064009] [cartographer logger]: I1024 15:53:23.000000 57204 pose_graph_2d.cc:538] Remaining work items in queue: 2
+[cartographer_node-2] [INFO] [1792824803.872093260] [cartographer logger]: I1024 15:53:23.000000 57204 constraint_builder_2d.cc:290] 0 computations resulted in 0 additional constraints.
+[cartographer_node-2] [INFO] [1792824803.872101236] [cartographer logger]: I1024 15:53:23.000000 57204 constraint_builder_2d.cc:292] Score histogram:
+[cartographer_node-2] Count: 0
+[cartographer_occupancy_grid_node-3] [INFO] [1792824803.871568864] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[cartographer_node-2] [INFO] [1792824803.873938460] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[ydlidar_ros2_driver_node-1] [INFO] [1792824803.874472648] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[cartographer_node-2] [INFO] [1792824803.875047764] [cartographer logger]: I1024 15:53:23.000000 57204 pose_graph_2d.cc:538] Remaining work items in queue: 1
+[cartographer_node-2] [INFO] [1792824803.875059760] [cartographer logger]: I1024 15:53:23.000000 57204 constraint_builder_2d.cc:290] 0 computations resulted in 0 additional constraints.
+[cartographer_node-2] [INFO] [1792824803.875062797] [cartographer logger]: I1024 15:53:23.000000 57204 constraint_builder_2d.cc:292] Score histogram:
+[cartographer_node-2] Count: 0
+[ERROR] [cartographer_occupancy_grid_node-3]: process has died [pid 57163, exit code -2, cmd '/opt/ros/humble/lib/cartographer_ros/cartographer_occupancy_grid_node -resolution 0.05 -publish_period_sec 1.0 --ros-args -r __node:=cartographer_occupancy_grid_node --params-file /tmp/launch_params_ryiuirje'].
+[INFO] [launch]: process[cartographer_occupancy_grid_node-3] was required: shutting down launched system
+[cartographer_node-2] [INFO] [1792824803.875978112] [cartographer logger]: I1024 15:53:23.000000 57207 constraint_builder_2d.cc:290] 0 computations resulted in 0 additional constraints.
+[cartographer_node-2] [INFO] [1792824803.875989000] [cartographer logger]: I1024 15:53:23.000000 57207 constraint_builder_2d.cc:292] Score histogram:
+[cartographer_node-2] Count: 0
+[cartographer_node-2] [KOptimizing: Done.     
+[ebimu_node-5] Traceback (most recent call last):
+[ebimu_node-5]   File "/home/venezuelachocolatemilk/mvsim_slam_real/install/ebimu_driver/lib/ebimu_driver/ebimu_node", line 33, in <module>
+[ebimu_node-5]     sys.exit(load_entry_point('ebimu-driver', 'console_scripts', 'ebimu_node')())
+[ebimu_node-5]   File "/home/venezuelachocolatemilk/mvsim_slam_real/build/ebimu_driver/ebimu_driver/node.py", line 75, in main
+[ebimu_node-5]     if node:node.destroy_node()
+[ebimu_node-5]   File "/home/venezuelachocolatemilk/mvsim_slam_real/build/ebimu_driver/ebimu_driver/node.py", line 67, in destroy_node
+[ebimu_node-5]     if self.serial:self.serial.close()
+[ebimu_node-5]   File "/usr/local/lib/python3.10/dist-packages/serial/serialposix.py", line 533, in close
+[ebimu_node-5]     os.close(self.fd)
+[ebimu_node-5] KeyboardInterrupt
+[cartographer_node-2] [INFO] [1792824803.877443916] [cartographer logger]: I1024 15:53:23.000000 57205 constraint_builder_2d.cc:290] 0 computations resulted in 0 additional constraints.
+[cartographer_node-2] [INFO] [1792824803.877458361] [cartographer logger]: I1024 15:53:23.000000 57205 constraint_builder_2d.cc:292] Score histogram:
+[cartographer_node-2] Count: 0
+[cartographer_node-2] [KOptimizing: Done.     
+[ebimu_node-4] Traceback (most recent call last):
+[ebimu_node-4]   File "/home/venezuelachocolatemilk/mvsim_slam_real/install/ebimu_driver/lib/ebimu_driver/ebimu_node", line 33, in <module>
+[ebimu_node-4]     sys.exit(load_entry_point('ebimu-driver', 'console_scripts', 'ebimu_node')())
+[ebimu_node-4]   File "/home/venezuelachocolatemilk/mvsim_slam_real/build/ebimu_driver/ebimu_driver/node.py", line 75, in main
+[ebimu_node-4]     if node:node.destroy_node()
+[ebimu_node-4]   File "/home/venezuelachocolatemilk/mvsim_slam_real/build/ebimu_driver/ebimu_driver/node.py", line 67, in destroy_node
+[ebimu_node-4]     if self.serial:self.serial.close()
+[ebimu_node-4]   File "/usr/local/lib/python3.10/dist-packages/serial/serialposix.py", line 533, in close
+[ebimu_node-4]     os.close(self.fd)
+[ebimu_node-4] KeyboardInterrupt
+[ydlidar_ros2_driver_node-1] [INFO] [1792824803.898658979] [ydlidar_ros2_driver_node]: [YDLIDAR INFO] Now YDLIDAR is stopping .......
+[ydlidar_ros2_driver_node-1] [2026-10-24 15:53:23][info] Lidar has stopped!
+[ERROR] [ebimu_node-5]: process has died [pid 57167, exit code -2, cmd '/home/venezuelachocolatemilk/mvsim_slam_real/install/ebimu_driver/lib/ebimu_driver/ebimu_node --ros-args -r __node:=trailer_imu --params-file /home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/imu.yaml --params-file /tmp/launch_params_d3g8b9nw'].
+[INFO] [launch]: process[ebimu_node-5] was required: shutting down launched system
+[ERROR] [ebimu_node-4]: process has died [pid 57165, exit code -2, cmd '/home/venezuelachocolatemilk/mvsim_slam_real/install/ebimu_driver/lib/ebimu_driver/ebimu_node --ros-args -r __node:=tractor_imu --params-file /home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/imu.yaml --params-file /tmp/launch_params_bl_fx2_o'].
+[INFO] [launch]: process[ebimu_node-4] was required: shutting down launched system
+[INFO] [cartographer_node-2]: process has finished cleanly [pid 57161]
+[INFO] [launch]: process[cartographer_node-2] was required: shutting down launched system
+[INFO] [tt2d_visualizer-7]: process has finished cleanly [pid 57171]
+[INFO] [sensor_tf-6]: process has finished cleanly [pid 57169]
+[INFO] [launch]: process[sensor_tf-6] was required: shutting down launched system
+[INFO] [ydlidar_ros2_driver_node-1]: process has finished cleanly [pid 57159]
+[INFO] [launch]: process[ydlidar_ros2_driver_node-1] was required: shutting down launched system

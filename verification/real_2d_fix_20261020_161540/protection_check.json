@@ -1,0 +1,29 @@
+{
+  "checked": 766,
+  "changed": [
+    "/home/venezuelachocolatemilk/mvsim_slam_real/visualization/tractor_trailer_rviz_2d/README.md",
+    "/home/venezuelachocolatemilk/mvsim_slam_real/visualization/tractor_trailer_rviz_2d/launch/visualization.launch.py",
+    "/home/venezuelachocolatemilk/mvsim_slam_real/visualization/tractor_trailer_rviz_2d/tractor_trailer_rviz_2d/render_adapter.py",
+    "/home/venezuelachocolatemilk/mvsim_slam_real/visualization/tractor_trailer_rviz_2d/tractor_trailer_rviz_2d/visualizer.py",
+    "/home/venezuelachocolatemilk/mvsim_slam_real/visualization/tractor_trailer_rviz_2d/tractor_trailer_rviz_2d/serial_bridge.py"
+  ],
+  "unexpected_changes": [],
+  "preserved_pids": {
+    "21573": {
+      "alive": true,
+      "same_start": true
+    },
+    "21575": {
+      "alive": true,
+      "same_start": true
+    },
+    "21577": {
+      "alive": true,
+      "same_start": true
+    },
+    "22858": {
+      "alive": true,
+      "same_start": true
+    }
+  }
+}

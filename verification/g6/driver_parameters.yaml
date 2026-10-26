@@ -1,0 +1,37 @@
+/ydlidar_ros2_driver_node:
+  ros__parameters:
+    abnormal_check_count: 4
+    angle_max: 180.0
+    angle_min: -180.0
+    auto_reconnect: true
+    baudrate: 512000
+    debug: false
+    device_type: 0
+    fixed_resolution: false
+    frame_id: laser_frame
+    frequency: 10.0
+    ignore_array: ''
+    intensity: false
+    intensity_bit: 0
+    invalid_range_is_inf: false
+    inverted: true
+    isSingleChannel: false
+    lidar_type: 1
+    m1_mode: 0
+    m2_mode: 0
+    m3_mode: 1
+    port: /dev/serial/by-id/usb-Silicon_Labs_CP2102_USB_to_UART_Bridge_Controller_0001-if00-port0
+    qos_overrides:
+      /parameter_events:
+        publisher:
+          depth: 1000
+          durability: volatile
+          history: keep_last
+          reliability: reliable
+    range_max: 16.0
+    range_min: 0.28
+    reversion: false
+    sample_rate: 18
+    support_motor_dtr: false
+    use_sim_time: false
+

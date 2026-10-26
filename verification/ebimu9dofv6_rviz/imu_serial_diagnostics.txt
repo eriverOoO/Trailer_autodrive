@@ -1,0 +1,14 @@
+CURRENT TASK: no UART open; physical sensor identity unconfirmed.
+RX bytes: NOT MEASURED (not zero).
+TX bytes from task diagnostic tools: 0.
+CP2102 10c4:ea60 serial=0001 at /dev/ttyUSB0
+/dev/serial/by-id/usb-Silicon_Labs_CP2102_USB_to_UART_Bridge_Controller_0001-if00-port0
+USB path pci-0000:80:14.0-usb-0:7:1.0-port0
+Access rw-rw---- root:dialout; user is dialout member.
+Initial fuser: no owner. No YDLIDAR/Cartographer/EBIMU process found.
+Physical IMU count: unconfirmed; one CP2102 adapter enumerated.
+ModemManager running; no occupancy observed at check, not reconfigured.
+History 2026-10-16: 10 runs, RX=0, TX accepted=69; unresolved at that time.
+History 2026-10-19 15:32: RX=29086, 399 complete packets, 99.64Hz, TX=0.
+Historical capture replay in this task: 399 accepted / 0 rejected, matches existing parser.
+See evidence/environment_before.txt and offline_parser_validation.json.

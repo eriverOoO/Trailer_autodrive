@@ -1,0 +1,5 @@
+1792482854.5296710 [INFO] [launch]: All log files can be found below /home/venezuelachocolatemilk/mvsim_slam_real/verification/imu_yaw_g6_range_20261020_164031/ros_logs/2026-10-20-16-54-14-529059-venezuelachocolatemilk-Legion-Pro-5-16IAX10H-66522
+1792482854.5297623 [INFO] [launch]: Default logging verbosity is set to INFO
+1792482854.5507858 [INFO] [tt2d_visualizer-1]: process started with pid [66524]
+1792483677.4016180 [WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+1792483677.5340180 [INFO] [tt2d_visualizer-1]: process has finished cleanly [pid 66524]

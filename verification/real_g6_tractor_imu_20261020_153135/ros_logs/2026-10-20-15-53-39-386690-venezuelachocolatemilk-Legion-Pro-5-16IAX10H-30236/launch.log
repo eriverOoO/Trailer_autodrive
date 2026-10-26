@@ -1,0 +1,5 @@
+1792479219.3872919 [INFO] [launch]: All log files can be found below /home/venezuelachocolatemilk/mvsim_slam_real/verification/real_g6_tractor_imu_20261020_153135/ros_logs/2026-10-20-15-53-39-386690-venezuelachocolatemilk-Legion-Pro-5-16IAX10H-30236
+1792479219.3873906 [INFO] [launch]: Default logging verbosity is set to INFO
+1792479219.4101231 [INFO] [tt2d_serial_bridge-1]: process started with pid [30238]
+1792480609.1016808 [WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+1792480609.2235873 [INFO] [tt2d_serial_bridge-1]: process has finished cleanly [pid 30238]

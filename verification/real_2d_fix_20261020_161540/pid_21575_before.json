@@ -1,0 +1,5 @@
+{
+  "pid": 21575,
+  "stat": "21575 (cartographer_no) S 21569 21523 21523 34817 21523 4194304 136247 0 62 0 11567 770 0 0 20 0 27 0 142615 1541427200 56355 18446744073709551615 107152828481536 107152830822313 140737378881376 0 0 0 0 3145728 16386 0 0 0 17 15 0 0 0 0 0 107152831617080 107152831715928 107153377251328 140737378888239 140737378888598 140737378888598 140737378897857 0\n",
+  "cmdline": "/opt/ros/humble/lib/cartographer_ros/cartographer_node -configuration_directory /home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config -configuration_basename g6_lidar_only.lua --ros-args -r __node:=cartographer_node --params-file /tmp/launch_params_v9ftqk4z -r scan:=/scan -r imu:=/tractor/imu/data "
+}

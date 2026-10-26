@@ -1,0 +1,48 @@
+Type: sensor_msgs/msg/LaserScan
+
+Publisher count: 1
+
+Node name: ydlidar_ros2_driver_node
+Node namespace: /
+Topic type: sensor_msgs/msg/LaserScan
+Endpoint type: PUBLISHER
+GID: 01.0f.51.dd.45.54.bf.6a.00.00.00.00.00.00.12.03.00.00.00.00.00.00.00.00
+QoS profile:
+  Reliability: BEST_EFFORT
+  History (Depth): UNKNOWN
+  Durability: VOLATILE
+  Lifespan: Infinite
+  Deadline: Infinite
+  Liveliness: AUTOMATIC
+  Liveliness lease duration: Infinite
+
+Subscription count: 2
+
+Node name: cartographer_node
+Node namespace: /
+Topic type: sensor_msgs/msg/LaserScan
+Endpoint type: SUBSCRIPTION
+GID: 01.0f.51.dd.47.54.8c.6e.00.00.00.00.00.00.2c.04.00.00.00.00.00.00.00.00
+QoS profile:
+  Reliability: BEST_EFFORT
+  History (Depth): UNKNOWN
+  Durability: VOLATILE
+  Lifespan: Infinite
+  Deadline: Infinite
+  Liveliness: AUTOMATIC
+  Liveliness lease duration: Infinite
+
+Node name: tractor_trailer_rviz_2d
+Node namespace: /
+Topic type: sensor_msgs/msg/LaserScan
+Endpoint type: SUBSCRIPTION
+GID: 01.0f.51.dd.4a.59.b0.1f.00.00.00.00.00.00.1b.04.00.00.00.00.00.00.00.00
+QoS profile:
+  Reliability: BEST_EFFORT
+  History (Depth): UNKNOWN
+  Durability: VOLATILE
+  Lifespan: Infinite
+  Deadline: Infinite
+  Liveliness: AUTOMATIC
+  Liveliness lease duration: Infinite
+

@@ -1,0 +1,262 @@
+[INFO] [1792236614.340142172] [cartographer logger]: I1017 20:30:14.000000 23447 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/g6_lidar_only.lua' for 'g6_lidar_only.lua'.
+[INFO] [1792236614.340265907] [cartographer logger]: I1017 20:30:14.000000 23447 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/reference_lidar_only.lua' for 'reference_lidar_only.lua'.
+[INFO] [1792236614.340274586] [cartographer logger]: I1017 20:30:14.000000 23447 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/reference_lidar_only.lua' for 'reference_lidar_only.lua'.
+[INFO] [1792236614.340354211] [cartographer logger]: I1017 20:30:14.000000 23447 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/map_builder.lua' for 'map_builder.lua'.
+[INFO] [1792236614.340370976] [cartographer logger]: I1017 20:30:14.000000 23447 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/map_builder.lua' for 'map_builder.lua'.
+[INFO] [1792236614.340396555] [cartographer logger]: I1017 20:30:14.000000 23447 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/pose_graph.lua' for 'pose_graph.lua'.
+[INFO] [1792236614.340401949] [cartographer logger]: I1017 20:30:14.000000 23447 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/pose_graph.lua' for 'pose_graph.lua'.
+[INFO] [1792236614.340462221] [cartographer logger]: I1017 20:30:14.000000 23447 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/trajectory_builder.lua' for 'trajectory_builder.lua'.
+[INFO] [1792236614.340467498] [cartographer logger]: I1017 20:30:14.000000 23447 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/trajectory_builder.lua' for 'trajectory_builder.lua'.
+[INFO] [1792236614.340482927] [cartographer logger]: I1017 20:30:14.000000 23447 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/trajectory_builder_2d.lua' for 'trajectory_builder_2d.lua'.
+[INFO] [1792236614.340488099] [cartographer logger]: I1017 20:30:14.000000 23447 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/trajectory_builder_2d.lua' for 'trajectory_builder_2d.lua'.
+[INFO] [1792236614.340543428] [cartographer logger]: I1017 20:30:14.000000 23447 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/trajectory_builder_3d.lua' for 'trajectory_builder_3d.lua'.
+[INFO] [1792236614.340548377] [cartographer logger]: I1017 20:30:14.000000 23447 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/trajectory_builder_3d.lua' for 'trajectory_builder_3d.lua'.
+[INFO] [1792236614.352120664] [cartographer logger]: I1017 20:30:14.000000 23447 map_builder_bridge.cpp:136] Added trajectory with ID '0'.
+[INFO] [1792236617.172564969] [cartographer logger]: I1017 20:30:17.000000 23447 ordered_multi_queue.cc:172] All sensor data for trajectory 0 is available starting at '639278334170808970'.
+[WARN] [1792236617.172872984] [cartographer logger]: W1017 20:30:17.000000 23447 pose_extrapolator.cc:168] Queue too short for velocity estimation. Queue duration: 0 s
+[INFO] [1792236617.175686812] [cartographer logger]: I1017 20:30:17.000000 23447 pose_graph_2d.cc:148] Inserted submap (0, 0).
+[WARN] [1792236629.054152710] [cartographer logger]: W1017 20:30:29.000000 23447 range_data_collator.cc:82] Dropped 2 earlier points.
+[INFO] [1792236629.364500215] [cartographer logger]: I1017 20:30:29.000000 23447 collated_trajectory_builder.cc:81] scan rate: 9.61 Hz 1.04e-01 s +/- 8.35e-03 s (pulsed at 100.75% real time)
+[WARN] [1792236633.189091585] [cartographer logger]: W1017 20:30:33.000000 23447 range_data_collator.cc:82] Dropped 3 earlier points.
+[INFO] [1792236633.193597394] [cartographer logger]: I1017 20:30:33.000000 23447 pose_graph_2d.cc:148] Inserted submap (0, 1).
+[INFO] [1792236633.193838517] [cartographer logger]: I1017 20:30:33.000000 23484 pose_graph_2d.cc:538] Remaining work items in queue: 0
+[INFO] [1792236633.193857430] [cartographer logger]: I1017 20:30:33.000000 23484 constraint_builder_2d.cc:290] 0 computations resulted in 0 additional constraints.
+[INFO] [1792236633.193861458] [cartographer logger]: I1017 20:30:33.000000 23484 constraint_builder_2d.cc:292] Score histogram:
+Count: 0
+[INFO] [1792236644.461777160] [cartographer logger]: I1017 20:30:44.000000 23447 collated_trajectory_builder.cc:81] scan rate: 9.67 Hz 1.03e-01 s +/- 5.96e-04 s (pulsed at 100.00% real time)
+[INFO] [1792236648.496514922] [cartographer logger]: I1017 20:30:48.000000 23447 pose_graph_2d.cc:148] Inserted submap (0, 2).
+[INFO] [1792236648.504667353] [cartographer logger]: I1017 20:30:48.000000 23485 constraint_builder_2d.cc:275] Node (0, 180) with 210 points on submap (0, 0) differs by translation 0.01 rotation 0.002 with score 89.4%.
+[INFO] [1792236648.598243102] [cartographer logger]: I1017 20:30:48.000000 23484 pose_graph_2d.cc:538] Remaining work items in queue: 0
+[INFO] [1792236648.598279948] [cartographer logger]: I1017 20:30:48.000000 23484 constraint_builder_2d.cc:290] 1 computations resulted in 1 additional constraints.
+[INFO] [1792236648.598300175] [cartographer logger]: I1017 20:30:48.000000 23484 constraint_builder_2d.cc:292] Score histogram:
+Count: 1  Min: 0.893935  Max: 0.893935  Mean: 0.893935
+[INFO] [1792236648.809121592] [cartographer logger]: I1017 20:30:48.000000 23485 constraint_builder_2d.cc:275] Node (0, 183) with 200 points on submap (0, 0) differs by translation 0.00 rotation 0.001 with score 88.7%.
+[INFO] [1792236649.118498222] [cartographer logger]: I1017 20:30:49.000000 23486 constraint_builder_2d.cc:275] Node (0, 186) with 212 points on submap (0, 0) differs by translation 0.01 rotation 0.003 with score 87.3%.
+[INFO] [1792236649.737624156] [cartographer logger]: I1017 20:30:49.000000 23486 constraint_builder_2d.cc:275] Node (0, 190) with 203 points on submap (0, 0) differs by translation 0.01 rotation 0.002 with score 88.2%.
+[INFO] [1792236650.255007219] [cartographer logger]: I1017 20:30:50.000000 23484 constraint_builder_2d.cc:275] Node (0, 193) with 214 points on submap (0, 0) differs by translation 0.01 rotation 0.000 with score 88.5%.
+[INFO] [1792236650.873718576] [cartographer logger]: I1017 20:30:50.000000 23487 constraint_builder_2d.cc:275] Node (0, 196) with 210 points on submap (0, 0) differs by translation 0.01 rotation 0.000 with score 88.2%.
+[INFO] [1792236651.596364571] [cartographer logger]: I1017 20:30:51.000000 23484 constraint_builder_2d.cc:275] Node (0, 200) with 209 points on submap (0, 0) differs by translation 0.01 rotation 0.001 with score 89.2%.
+[INFO] [1792236651.906110212] [cartographer logger]: I1017 20:30:51.000000 23485 constraint_builder_2d.cc:275] Node (0, 203) with 209 points on submap (0, 0) differs by translation 0.01 rotation 0.001 with score 88.6%.
+[INFO] [1792236652.216569819] [cartographer logger]: I1017 20:30:52.000000 23486 constraint_builder_2d.cc:275] Node (0, 206) with 215 points on submap (0, 0) differs by translation 0.00 rotation 0.001 with score 88.9%.
+[INFO] [1792236652.632115874] [cartographer logger]: I1017 20:30:52.000000 23486 constraint_builder_2d.cc:275] Node (0, 210) with 209 points on submap (0, 0) differs by translation 0.01 rotation 0.000 with score 86.0%.
+[INFO] [1792236653.042820340] [cartographer logger]: I1017 20:30:53.000000 23487 constraint_builder_2d.cc:275] Node (0, 213) with 207 points on submap (0, 0) differs by translation 0.00 rotation 0.002 with score 88.4%.
+[INFO] [1792236653.561025530] [cartographer logger]: I1017 20:30:53.000000 23484 constraint_builder_2d.cc:275] Node (0, 216) with 201 points on submap (0, 0) differs by translation 0.00 rotation 0.000 with score 87.4%.
+[INFO] [1792236654.385779335] [cartographer logger]: I1017 20:30:54.000000 23484 constraint_builder_2d.cc:275] Node (0, 220) with 207 points on submap (0, 0) differs by translation 0.01 rotation 0.001 with score 86.2%.
+[INFO] [1792236655.728647566] [cartographer logger]: I1017 20:30:55.000000 23485 constraint_builder_2d.cc:275] Node (0, 223) with 200 points on submap (0, 0) differs by translation 0.01 rotation 0.002 with score 87.9%.
+[INFO] [1792236656.142193145] [cartographer logger]: I1017 20:30:56.000000 23486 constraint_builder_2d.cc:275] Node (0, 226) with 202 points on submap (0, 0) differs by translation 0.00 rotation 0.001 with score 85.6%.
+[WARN] [1792236656.239246377] [cartographer logger]: W1017 20:30:56.000000 23447 range_data_collator.cc:82] Dropped 2 earlier points.
+[INFO] [1792236656.865674746] [cartographer logger]: I1017 20:30:56.000000 23486 constraint_builder_2d.cc:275] Node (0, 230) with 203 points on submap (0, 0) differs by translation 0.00 rotation 0.001 with score 86.6%.
+[INFO] [1792236657.381590584] [cartographer logger]: I1017 20:30:57.000000 23487 constraint_builder_2d.cc:275] Node (0, 233) with 205 points on submap (0, 0) differs by translation 0.00 rotation 0.002 with score 87.6%.
+[INFO] [1792236657.691234933] [cartographer logger]: I1017 20:30:57.000000 23484 constraint_builder_2d.cc:275] Node (0, 236) with 202 points on submap (0, 0) differs by translation 0.00 rotation 0.001 with score 85.7%.
+[INFO] [1792236658.105204735] [cartographer logger]: I1017 20:30:58.000000 23484 constraint_builder_2d.cc:275] Node (0, 240) with 211 points on submap (0, 0) differs by translation 0.00 rotation 0.000 with score 85.8%.
+[INFO] [1792236658.415270705] [cartographer logger]: I1017 20:30:58.000000 23485 constraint_builder_2d.cc:275] Node (0, 243) with 200 points on submap (0, 0) differs by translation 0.00 rotation 0.001 with score 86.6%.
+[INFO] [1792236658.827188205] [cartographer logger]: I1017 20:30:58.000000 23486 constraint_builder_2d.cc:275] Node (0, 246) with 212 points on submap (0, 0) differs by translation 0.01 rotation 0.001 with score 86.8%.
+[INFO] [1792236659.447036645] [cartographer logger]: I1017 20:30:59.000000 23486 constraint_builder_2d.cc:275] Node (0, 250) with 214 points on submap (0, 0) differs by translation 0.00 rotation 0.001 with score 86.8%.
+[INFO] [1792236659.542017141] [cartographer logger]: I1017 20:30:59.000000 23447 collated_trajectory_builder.cc:81] scan rate: 9.68 Hz 1.03e-01 s +/- 6.15e-04 s (pulsed at 100.00% real time)
+[INFO] [1792236659.858648101] [cartographer logger]: I1017 20:30:59.000000 23487 constraint_builder_2d.cc:275] Node (0, 253) with 211 points on submap (0, 0) differs by translation 0.00 rotation 0.002 with score 86.5%.
+[INFO] [1792236660.273208455] [cartographer logger]: I1017 20:31:00.000000 23484 constraint_builder_2d.cc:275] Node (0, 256) with 220 points on submap (0, 0) differs by translation 0.00 rotation 0.001 with score 84.7%.
+[INFO] [1792236660.996419938] [cartographer logger]: I1017 20:31:00.000000 23487 constraint_builder_2d.cc:275] Node (0, 260) with 208 points on submap (0, 0) differs by translation 0.00 rotation 0.000 with score 87.1%.
+[INFO] [1792236661.513310946] [cartographer logger]: I1017 20:31:01.000000 23485 constraint_builder_2d.cc:275] Node (0, 263) with 206 points on submap (0, 0) differs by translation 0.01 rotation 0.001 with score 88.4%.
+[INFO] [1792236661.823590304] [cartographer logger]: I1017 20:31:01.000000 23486 constraint_builder_2d.cc:275] Node (0, 266) with 200 points on submap (0, 0) differs by translation 0.01 rotation 0.001 with score 86.4%.
+[INFO] [1792236662.136939603] [cartographer logger]: I1017 20:31:02.000000 23487 constraint_builder_2d.cc:275] Node (0, 10) with 202 points on submap (0, 1) differs by translation 0.01 rotation 0.002 with score 86.8%.
+[INFO] [1792236662.137180679] [cartographer logger]: I1017 20:31:02.000000 23486 constraint_builder_2d.cc:275] Node (0, 0) with 217 points on submap (0, 1) differs by translation 0.01 rotation 0.001 with score 87.1%.
+[INFO] [1792236662.137416463] [cartographer logger]: I1017 20:31:02.000000 23484 constraint_builder_2d.cc:275] Node (0, 13) with 213 points on submap (0, 1) differs by translation 0.01 rotation 0.001 with score 85.7%.
+[INFO] [1792236662.137453428] [cartographer logger]: I1017 20:31:02.000000 23485 constraint_builder_2d.cc:275] Node (0, 6) with 209 points on submap (0, 1) differs by translation 0.01 rotation 0.004 with score 85.5%.
+[INFO] [1792236662.140017701] [cartographer logger]: I1017 20:31:02.000000 23486 constraint_builder_2d.cc:275] Node (0, 30) with 213 points on submap (0, 1) differs by translation 0.01 rotation 0.003 with score 82.4%.
+[INFO] [1792236662.140207046] [cartographer logger]: I1017 20:31:02.000000 23487 constraint_builder_2d.cc:275] Node (0, 3) with 203 points on submap (0, 1) differs by translation 0.01 rotation 0.003 with score 86.9%.
+[INFO] [1792236662.140336149] [cartographer logger]: I1017 20:31:02.000000 23484 constraint_builder_2d.cc:275] Node (0, 33) with 218 points on submap (0, 1) differs by translation 0.00 rotation 0.001 with score 85.5%.
+[INFO] [1792236662.140758700] [cartographer logger]: I1017 20:31:02.000000 23485 constraint_builder_2d.cc:275] Node (0, 36) with 215 points on submap (0, 1) differs by translation 0.01 rotation 0.004 with score 85.9%.
+[INFO] [1792236662.143334464] [cartographer logger]: I1017 20:31:02.000000 23484 constraint_builder_2d.cc:275] Node (0, 46) with 218 points on submap (0, 1) differs by translation 0.01 rotation 0.004 with score 83.4%.
+[INFO] [1792236662.143388101] [cartographer logger]: I1017 20:31:02.000000 23486 constraint_builder_2d.cc:275] Node (0, 40) with 208 points on submap (0, 1) differs by translation 0.01 rotation 0.001 with score 81.2%.
+[INFO] [1792236662.144134881] [cartographer logger]: I1017 20:31:02.000000 23487 constraint_builder_2d.cc:275] Node (0, 43) with 202 points on submap (0, 1) differs by translation 0.01 rotation 0.006 with score 83.2%.
+[INFO] [1792236662.144154827] [cartographer logger]: I1017 20:31:02.000000 23485 constraint_builder_2d.cc:275] Node (0, 50) with 205 points on submap (0, 1) differs by translation 0.01 rotation 0.003 with score 83.6%.
+[INFO] [1792236662.146812760] [cartographer logger]: I1017 20:31:02.000000 23486 constraint_builder_2d.cc:275] Node (0, 56) with 206 points on submap (0, 1) differs by translation 0.01 rotation 0.004 with score 85.1%.
+[INFO] [1792236662.147541517] [cartographer logger]: I1017 20:31:02.000000 23485 constraint_builder_2d.cc:275] Node (0, 63) with 212 points on submap (0, 1) differs by translation 0.01 rotation 0.001 with score 83.6%.
+[INFO] [1792236662.147651987] [cartographer logger]: I1017 20:31:02.000000 23487 constraint_builder_2d.cc:275] Node (0, 60) with 215 points on submap (0, 1) differs by translation 0.01 rotation 0.002 with score 83.9%.
+[INFO] [1792236662.148345519] [cartographer logger]: I1017 20:31:02.000000 23484 constraint_builder_2d.cc:275] Node (0, 53) with 214 points on submap (0, 1) differs by translation 0.01 rotation 0.003 with score 82.8%.
+[INFO] [1792236662.150302036] [cartographer logger]: I1017 20:31:02.000000 23486 constraint_builder_2d.cc:275] Node (0, 16) with 207 points on submap (0, 1) differs by translation 0.01 rotation 0.006 with score 85.0%.
+[INFO] [1792236662.151470017] [cartographer logger]: I1017 20:31:02.000000 23487 constraint_builder_2d.cc:275] Node (0, 23) with 200 points on submap (0, 1) differs by translation 0.01 rotation 0.005 with score 80.0%.
+[INFO] [1792236662.152397537] [cartographer logger]: I1017 20:31:02.000000 23484 constraint_builder_2d.cc:275] Node (0, 26) with 206 points on submap (0, 1) differs by translation 0.02 rotation 0.003 with score 81.2%.
+[INFO] [1792236662.152600850] [cartographer logger]: I1017 20:31:02.000000 23485 constraint_builder_2d.cc:275] Node (0, 20) with 209 points on submap (0, 1) differs by translation 0.01 rotation 0.007 with score 80.7%.
+[INFO] [1792236662.153916985] [cartographer logger]: I1017 20:31:02.000000 23486 constraint_builder_2d.cc:275] Node (0, 66) with 209 points on submap (0, 1) differs by translation 0.01 rotation 0.003 with score 82.8%.
+[INFO] [1792236662.156032338] [cartographer logger]: I1017 20:31:02.000000 23487 constraint_builder_2d.cc:275] Node (0, 70) with 208 points on submap (0, 1) differs by translation 0.01 rotation 0.004 with score 85.1%.
+[INFO] [1792236662.156233025] [cartographer logger]: I1017 20:31:02.000000 23484 constraint_builder_2d.cc:275] Node (0, 73) with 218 points on submap (0, 1) differs by translation 0.01 rotation 0.002 with score 84.8%.
+[INFO] [1792236662.156576677] [cartographer logger]: I1017 20:31:02.000000 23485 constraint_builder_2d.cc:275] Node (0, 76) with 203 points on submap (0, 1) differs by translation 0.01 rotation 0.002 with score 82.4%.
+[INFO] [1792236662.157305865] [cartographer logger]: I1017 20:31:02.000000 23486 constraint_builder_2d.cc:275] Node (0, 80) with 214 points on submap (0, 1) differs by translation 0.01 rotation 0.002 with score 82.0%.
+[INFO] [1792236662.160006897] [cartographer logger]: I1017 20:31:02.000000 23484 constraint_builder_2d.cc:275] Node (0, 86) with 200 points on submap (0, 1) differs by translation 0.01 rotation 0.003 with score 81.6%.
+[INFO] [1792236662.160027194] [cartographer logger]: I1017 20:31:02.000000 23487 constraint_builder_2d.cc:275] Node (0, 83) with 208 points on submap (0, 1) differs by translation 0.01 rotation 0.000 with score 81.8%.
+[INFO] [1792236662.234025807] [cartographer logger]: I1017 20:31:02.000000 23447 pose_graph_2d.cc:148] Inserted submap (0, 3).
+[INFO] [1792236662.237451123] [cartographer logger]: I1017 20:31:02.000000 23486 constraint_builder_2d.cc:275] Node (0, 270) with 211 points on submap (0, 0) differs by translation 0.00 rotation 0.001 with score 86.6%.
+[INFO] [1792236662.238192622] [cartographer logger]: I1017 20:31:02.000000 23484 constraint_builder_2d.cc:275] Node (0, 270) with 211 points on submap (0, 1) differs by translation 0.00 rotation 0.001 with score 88.2%.
+[INFO] [1792236662.543647519] [cartographer logger]: I1017 20:31:02.000000 23484 pose_graph_2d.cc:538] Remaining work items in queue: 0
+[INFO] [1792236662.543671366] [cartographer logger]: I1017 20:31:02.000000 23484 constraint_builder_2d.cc:290] 55 computations resulted in 55 additional constraints.
+[INFO] [1792236662.543690676] [cartographer logger]: I1017 20:31:02.000000 23484 constraint_builder_2d.cc:292] Score histogram:
+Count: 56  Min: 0.800361  Max: 0.893935  Mean: 0.855816
+[0.800361, 0.809718)	                   #	Count: 2 (3.57143%)	Total: 2 (3.57143%)
+[0.809718, 0.819076)	                   #	Count: 4 (7.14286%)	Total: 6 (10.7143%)
+[0.819076, 0.828433)	                  ##	Count: 5 (8.92857%)	Total: 11 (19.6429%)
+[0.828433, 0.837790)	                   #	Count: 4 (7.14286%)	Total: 15 (26.7857%)
+[0.837790, 0.847148)	                   #	Count: 2 (3.57143%)	Total: 17 (30.3571%)
+[0.847148, 0.856505)	                 ###	Count: 7 (12.5%)	Total: 24 (42.8571%)
+[0.856505, 0.865862)	                 ###	Count: 9 (16.0714%)	Total: 33 (58.9286%)
+[0.865862, 0.875220)	                ####	Count: 10 (17.8571%)	Total: 43 (76.7857%)
+[0.875220, 0.884577)	                 ###	Count: 7 (12.5%)	Total: 50 (89.2857%)
+[0.884577, 0.893935]	                  ##	Count: 6 (10.7143%)	Total: 56 (100%)
+[INFO] [1792236662.752515733] [cartographer logger]: I1017 20:31:02.000000 23486 constraint_builder_2d.cc:275] Node (0, 273) with 207 points on submap (0, 1) differs by translation 0.01 rotation 0.000 with score 87.0%.
+[INFO] [1792236662.752595689] [cartographer logger]: I1017 20:31:02.000000 23485 constraint_builder_2d.cc:275] Node (0, 273) with 207 points on submap (0, 0) differs by translation 0.00 rotation 0.000 with score 86.8%.
+[INFO] [1792236663.285057951] [cartographer logger]: I1017 20:31:03.000000 23484 constraint_builder_2d.cc:275] Node (0, 276) with 209 points on submap (0, 0) differs by translation 0.01 rotation 0.000 with score 88.3%.
+[INFO] [1792236663.290994477] [cartographer logger]: I1017 20:31:03.000000 23486 constraint_builder_2d.cc:275] Node (0, 276) with 209 points on submap (0, 1) differs by translation 0.01 rotation 0.000 with score 88.4%.
+[INFO] [1792236664.098709928] [cartographer logger]: I1017 20:31:04.000000 23485 constraint_builder_2d.cc:275] Node (0, 280) with 202 points on submap (0, 1) differs by translation 0.01 rotation 0.001 with score 83.3%.
+[INFO] [1792236664.098770130] [cartographer logger]: I1017 20:31:04.000000 23486 constraint_builder_2d.cc:275] Node (0, 280) with 202 points on submap (0, 0) differs by translation 0.01 rotation 0.000 with score 86.5%.
+[INFO] [1792236664.922076253] [cartographer logger]: I1017 20:31:04.000000 23484 constraint_builder_2d.cc:275] Node (0, 283) with 200 points on submap (0, 0) differs by translation 0.01 rotation 0.001 with score 86.2%.
+[INFO] [1792236664.922131695] [cartographer logger]: I1017 20:31:04.000000 23485 constraint_builder_2d.cc:275] Node (0, 283) with 200 points on submap (0, 1) differs by translation 0.01 rotation 0.005 with score 81.5%.
+[INFO] [1792236665.850685816] [cartographer logger]: I1017 20:31:05.000000 23487 constraint_builder_2d.cc:275] Node (0, 286) with 206 points on submap (0, 0) differs by translation 0.01 rotation 0.002 with score 75.6%.
+[INFO] [1792236665.850752427] [cartographer logger]: I1017 20:31:05.000000 23484 constraint_builder_2d.cc:275] Node (0, 286) with 206 points on submap (0, 1) differs by translation 0.01 rotation 0.003 with score 73.6%.
+[INFO] [1792236666.367952670] [cartographer logger]: I1017 20:31:06.000000 23485 constraint_builder_2d.cc:275] Node (0, 290) with 213 points on submap (0, 1) differs by translation 0.01 rotation 0.001 with score 75.2%.
+[INFO] [1792236666.369160106] [cartographer logger]: I1017 20:31:06.000000 23484 constraint_builder_2d.cc:275] Node (0, 290) with 213 points on submap (0, 0) differs by translation 0.00 rotation 0.002 with score 75.7%.
+[INFO] [1792236667.297618530] [cartographer logger]: I1017 20:31:07.000000 23487 constraint_builder_2d.cc:275] Node (0, 293) with 206 points on submap (0, 0) differs by translation 0.01 rotation 0.001 with score 84.3%.
+[INFO] [1792236667.297716908] [cartographer logger]: I1017 20:31:07.000000 23485 constraint_builder_2d.cc:275] Node (0, 293) with 206 points on submap (0, 1) differs by translation 0.01 rotation 0.002 with score 81.8%.
+[INFO] [1792236667.607574665] [cartographer logger]: I1017 20:31:07.000000 23487 constraint_builder_2d.cc:275] Node (0, 296) with 212 points on submap (0, 0) differs by translation 0.01 rotation 0.001 with score 83.2%.
+[INFO] [1792236667.607599670] [cartographer logger]: I1017 20:31:07.000000 23486 constraint_builder_2d.cc:275] Node (0, 296) with 212 points on submap (0, 1) differs by translation 0.01 rotation 0.001 with score 80.6%.
+[INFO] [1792236668.843479276] [cartographer logger]: I1017 20:31:08.000000 23447 motion_filter.cc:42] Motion filter reduced the number of nodes to 60%.
+[INFO] [1792236668.950535677] [cartographer logger]: I1017 20:31:08.000000 23486 constraint_builder_2d.cc:275] Node (0, 300) with 205 points on submap (0, 0) differs by translation 0.01 rotation 0.002 with score 75.8%.
+[INFO] [1792236668.950640478] [cartographer logger]: I1017 20:31:08.000000 23484 constraint_builder_2d.cc:275] Node (0, 300) with 205 points on submap (0, 1) differs by translation 0.01 rotation 0.003 with score 72.9%.
+[INFO] [1792236670.500055981] [cartographer logger]: I1017 20:31:10.000000 23486 constraint_builder_2d.cc:275] Node (0, 303) with 208 points on submap (0, 1) differs by translation 0.02 rotation 0.002 with score 73.5%.
+[INFO] [1792236670.500089364] [cartographer logger]: I1017 20:31:10.000000 23487 constraint_builder_2d.cc:275] Node (0, 303) with 208 points on submap (0, 0) differs by translation 0.01 rotation 0.002 with score 75.7%.
+[INFO] [1792236670.913429118] [cartographer logger]: I1017 20:31:10.000000 23485 constraint_builder_2d.cc:275] Node (0, 306) with 200 points on submap (0, 0) differs by translation 0.00 rotation 0.001 with score 79.7%.
+[INFO] [1792236670.913467980] [cartographer logger]: I1017 20:31:10.000000 23486 constraint_builder_2d.cc:275] Node (0, 306) with 200 points on submap (0, 1) differs by translation 0.01 rotation 0.002 with score 77.9%.
+[INFO] [1792236672.154640209] [cartographer logger]: I1017 20:31:12.000000 23486 constraint_builder_2d.cc:275] Node (0, 310) with 205 points on submap (0, 1) differs by translation 0.01 rotation 0.001 with score 81.0%.
+[INFO] [1792236672.154674879] [cartographer logger]: I1017 20:31:12.000000 23487 constraint_builder_2d.cc:275] Node (0, 310) with 205 points on submap (0, 0) differs by translation 0.01 rotation 0.001 with score 83.3%.
+[INFO] [1792236672.775920471] [cartographer logger]: I1017 20:31:12.000000 23484 constraint_builder_2d.cc:275] Node (0, 313) with 214 points on submap (0, 0) differs by translation 0.00 rotation 0.002 with score 80.3%.
+[INFO] [1792236672.776149601] [cartographer logger]: I1017 20:31:12.000000 23486 constraint_builder_2d.cc:275] Node (0, 313) with 214 points on submap (0, 1) differs by translation 0.01 rotation 0.002 with score 77.8%.
+[INFO] [1792236673.188125162] [cartographer logger]: I1017 20:31:13.000000 23485 constraint_builder_2d.cc:275] Node (0, 316) with 203 points on submap (0, 0) differs by translation 0.00 rotation 0.000 with score 82.1%.
+[INFO] [1792236673.188283825] [cartographer logger]: I1017 20:31:13.000000 23484 constraint_builder_2d.cc:275] Node (0, 316) with 203 points on submap (0, 1) differs by translation 0.01 rotation 0.000 with score 79.3%.
+[INFO] [1792236673.704998934] [cartographer logger]: I1017 20:31:13.000000 23484 constraint_builder_2d.cc:275] Node (0, 320) with 206 points on submap (0, 0) differs by translation 0.00 rotation 0.002 with score 84.8%.
+[INFO] [1792236673.705121493] [cartographer logger]: I1017 20:31:13.000000 23486 constraint_builder_2d.cc:275] Node (0, 320) with 206 points on submap (0, 1) differs by translation 0.00 rotation 0.001 with score 80.7%.
+[INFO] [1792236674.324371550] [cartographer logger]: I1017 20:31:14.000000 23485 constraint_builder_2d.cc:275] Node (0, 323) with 200 points on submap (0, 0) differs by translation 0.01 rotation 0.000 with score 85.3%.
+[INFO] [1792236674.324469284] [cartographer logger]: I1017 20:31:14.000000 23484 constraint_builder_2d.cc:275] Node (0, 323) with 200 points on submap (0, 1) differs by translation 0.01 rotation 0.000 with score 80.6%.
+[INFO] [1792236674.628895805] [cartographer logger]: I1017 20:31:14.000000 23447 collated_trajectory_builder.cc:81] scan rate: 9.68 Hz 1.03e-01 s +/- 5.61e-04 s (pulsed at 100.00% real time)
+[INFO] [1792236675.150669649] [cartographer logger]: I1017 20:31:15.000000 23487 constraint_builder_2d.cc:275] Node (0, 326) with 203 points on submap (0, 0) differs by translation 0.00 rotation 0.001 with score 85.6%.
+[INFO] [1792236675.150801040] [cartographer logger]: I1017 20:31:15.000000 23485 constraint_builder_2d.cc:275] Node (0, 326) with 203 points on submap (0, 1) differs by translation 0.00 rotation 0.000 with score 80.9%.
+[INFO] [1792236676.080862980] [cartographer logger]: I1017 20:31:16.000000 23485 constraint_builder_2d.cc:275] Node (0, 330) with 204 points on submap (0, 0) differs by translation 0.00 rotation 0.000 with score 80.2%.
+[INFO] [1792236676.080972858] [cartographer logger]: I1017 20:31:16.000000 23484 constraint_builder_2d.cc:275] Node (0, 330) with 204 points on submap (0, 1) differs by translation 0.00 rotation 0.001 with score 78.6%.
+[INFO] [1792236676.596414797] [cartographer logger]: I1017 20:31:16.000000 23485 constraint_builder_2d.cc:275] Node (0, 333) with 207 points on submap (0, 0) differs by translation 0.00 rotation 0.001 with score 78.6%.
+[INFO] [1792236676.596580113] [cartographer logger]: I1017 20:31:16.000000 23487 constraint_builder_2d.cc:275] Node (0, 333) with 207 points on submap (0, 1) differs by translation 0.01 rotation 0.001 with score 77.9%.
+[INFO] [1792236677.528003520] [cartographer logger]: I1017 20:31:17.000000 23484 constraint_builder_2d.cc:275] Node (0, 336) with 215 points on submap (0, 0) differs by translation 0.01 rotation 0.004 with score 81.4%.
+[INFO] [1792236677.528029529] [cartographer logger]: I1017 20:31:17.000000 23485 constraint_builder_2d.cc:275] Node (0, 336) with 215 points on submap (0, 1) differs by translation 0.02 rotation 0.004 with score 81.3%.
+[INFO] [1792236677.939764013] [cartographer logger]: I1017 20:31:17.000000 23485 constraint_builder_2d.cc:275] Node (0, 340) with 210 points on submap (0, 0) differs by translation 0.01 rotation 0.001 with score 79.9%.
+[INFO] [1792236677.939857920] [cartographer logger]: I1017 20:31:17.000000 23487 constraint_builder_2d.cc:275] Node (0, 340) with 210 points on submap (0, 1) differs by translation 0.01 rotation 0.001 with score 78.6%.
+[INFO] [1792236678.455389635] [cartographer logger]: I1017 20:31:18.000000 23484 constraint_builder_2d.cc:275] Node (0, 343) with 208 points on submap (0, 0) differs by translation 0.00 rotation 0.003 with score 80.2%.
+[INFO] [1792236678.458137193] [cartographer logger]: I1017 20:31:18.000000 23485 constraint_builder_2d.cc:275] Node (0, 343) with 208 points on submap (0, 1) differs by translation 0.01 rotation 0.004 with score 78.3%.
+[INFO] [1792236679.384879503] [cartographer logger]: I1017 20:31:19.000000 23486 constraint_builder_2d.cc:275] Node (0, 346) with 203 points on submap (0, 0) differs by translation 0.01 rotation 0.001 with score 79.6%.
+[INFO] [1792236679.387240657] [cartographer logger]: I1017 20:31:19.000000 23486 constraint_builder_2d.cc:275] Node (0, 346) with 203 points on submap (0, 1) differs by translation 0.01 rotation 0.001 with score 78.8%.
+[INFO] [1792236680.727581211] [cartographer logger]: I1017 20:31:20.000000 23486 constraint_builder_2d.cc:275] Node (0, 350) with 209 points on submap (0, 0) differs by translation 0.01 rotation 0.003 with score 79.9%.
+[INFO] [1792236680.727757631] [cartographer logger]: I1017 20:31:20.000000 23485 constraint_builder_2d.cc:275] Node (0, 350) with 209 points on submap (0, 1) differs by translation 0.01 rotation 0.005 with score 80.3%.
+[INFO] [1792236681.139762171] [cartographer logger]: I1017 20:31:21.000000 23484 constraint_builder_2d.cc:275] Node (0, 353) with 205 points on submap (0, 0) differs by translation 0.01 rotation 0.000 with score 78.5%.
+[INFO] [1792236681.139989024] [cartographer logger]: I1017 20:31:21.000000 23486 constraint_builder_2d.cc:275] Node (0, 353) with 205 points on submap (0, 1) differs by translation 0.01 rotation 0.001 with score 78.0%.
+[INFO] [1792236681.450039726] [cartographer logger]: I1017 20:31:21.000000 23484 constraint_builder_2d.cc:275] Node (0, 356) with 213 points on submap (0, 1) differs by translation 0.01 rotation 0.000 with score 79.8%.
+[INFO] [1792236681.450301577] [cartographer logger]: I1017 20:31:21.000000 23487 constraint_builder_2d.cc:275] Node (0, 356) with 213 points on submap (0, 0) differs by translation 0.01 rotation 0.000 with score 80.0%.
+[INFO] [1792236681.868497974] [cartographer logger]: I1017 20:31:21.000000 23487 constraint_builder_2d.cc:275] Node (0, 3) with 203 points on submap (0, 2) differs by translation 0.01 rotation 0.003 with score 87.1%.
+[INFO] [1792236681.868738449] [cartographer logger]: I1017 20:31:21.000000 23484 constraint_builder_2d.cc:275] Node (0, 10) with 202 points on submap (0, 2) differs by translation 0.01 rotation 0.002 with score 85.4%.
+[INFO] [1792236681.868967894] [cartographer logger]: I1017 20:31:21.000000 23486 constraint_builder_2d.cc:275] Node (0, 0) with 217 points on submap (0, 2) differs by translation 0.00 rotation 0.000 with score 87.6%.
+[INFO] [1792236681.869048548] [cartographer logger]: I1017 20:31:21.000000 23485 constraint_builder_2d.cc:275] Node (0, 6) with 209 points on submap (0, 2) differs by translation 0.01 rotation 0.004 with score 86.2%.
+[INFO] [1792236681.871590188] [cartographer logger]: I1017 20:31:21.000000 23487 constraint_builder_2d.cc:275] Node (0, 13) with 213 points on submap (0, 2) differs by translation 0.01 rotation 0.003 with score 85.4%.
+[INFO] [1792236681.871805310] [cartographer logger]: I1017 20:31:21.000000 23484 constraint_builder_2d.cc:275] Node (0, 16) with 207 points on submap (0, 2) differs by translation 0.01 rotation 0.003 with score 84.4%.
+[INFO] [1792236681.871858313] [cartographer logger]: I1017 20:31:21.000000 23486 constraint_builder_2d.cc:275] Node (0, 20) with 209 points on submap (0, 2) differs by translation 0.01 rotation 0.005 with score 80.6%.
+[INFO] [1792236681.872660169] [cartographer logger]: I1017 20:31:21.000000 23485 constraint_builder_2d.cc:275] Node (0, 23) with 200 points on submap (0, 2) differs by translation 0.01 rotation 0.004 with score 82.8%.
+[INFO] [1792236681.874577440] [cartographer logger]: I1017 20:31:21.000000 23484 constraint_builder_2d.cc:275] Node (0, 30) with 213 points on submap (0, 2) differs by translation 0.01 rotation 0.001 with score 83.5%.
+[INFO] [1792236681.874671292] [cartographer logger]: I1017 20:31:21.000000 23486 constraint_builder_2d.cc:275] Node (0, 33) with 218 points on submap (0, 2) differs by translation 0.00 rotation 0.000 with score 86.3%.
+[INFO] [1792236681.874875471] [cartographer logger]: I1017 20:31:21.000000 23487 constraint_builder_2d.cc:275] Node (0, 26) with 206 points on submap (0, 2) differs by translation 0.01 rotation 0.001 with score 83.3%.
+[INFO] [1792236681.876240200] [cartographer logger]: I1017 20:31:21.000000 23485 constraint_builder_2d.cc:275] Node (0, 36) with 215 points on submap (0, 2) differs by translation 0.01 rotation 0.003 with score 86.2%.
+[INFO] [1792236681.877733761] [cartographer logger]: I1017 20:31:21.000000 23487 constraint_builder_2d.cc:275] Node (0, 46) with 218 points on submap (0, 2) differs by translation 0.01 rotation 0.002 with score 85.4%.
+[INFO] [1792236681.877821958] [cartographer logger]: I1017 20:31:21.000000 23486 constraint_builder_2d.cc:275] Node (0, 43) with 202 points on submap (0, 2) differs by translation 0.00 rotation 0.004 with score 86.1%.
+[INFO] [1792236681.877959288] [cartographer logger]: I1017 20:31:21.000000 23484 constraint_builder_2d.cc:275] Node (0, 40) with 208 points on submap (0, 2) differs by translation 0.01 rotation 0.001 with score 82.3%.
+[INFO] [1792236681.879924322] [cartographer logger]: I1017 20:31:21.000000 23485 constraint_builder_2d.cc:275] Node (0, 50) with 205 points on submap (0, 2) differs by translation 0.00 rotation 0.002 with score 84.9%.
+[INFO] [1792236681.880993675] [cartographer logger]: I1017 20:31:21.000000 23484 constraint_builder_2d.cc:275] Node (0, 60) with 215 points on submap (0, 2) differs by translation 0.01 rotation 0.002 with score 84.2%.
+[INFO] [1792236681.881102524] [cartographer logger]: I1017 20:31:21.000000 23487 constraint_builder_2d.cc:275] Node (0, 53) with 214 points on submap (0, 2) differs by translation 0.01 rotation 0.002 with score 84.5%.
+[INFO] [1792236681.881170561] [cartographer logger]: I1017 20:31:21.000000 23486 constraint_builder_2d.cc:275] Node (0, 56) with 206 points on submap (0, 2) differs by translation 0.01 rotation 0.003 with score 85.5%.
+[INFO] [1792236681.883504369] [cartographer logger]: I1017 20:31:21.000000 23485 constraint_builder_2d.cc:275] Node (0, 63) with 212 points on submap (0, 2) differs by translation 0.01 rotation 0.002 with score 83.1%.
+[INFO] [1792236681.884459065] [cartographer logger]: I1017 20:31:21.000000 23484 constraint_builder_2d.cc:275] Node (0, 66) with 209 points on submap (0, 2) differs by translation 0.01 rotation 0.001 with score 82.7%.
+[INFO] [1792236681.884643185] [cartographer logger]: I1017 20:31:21.000000 23486 constraint_builder_2d.cc:275] Node (0, 73) with 218 points on submap (0, 2) differs by translation 0.01 rotation 0.003 with score 83.0%.
+[INFO] [1792236681.884652238] [cartographer logger]: I1017 20:31:21.000000 23487 constraint_builder_2d.cc:275] Node (0, 70) with 208 points on submap (0, 2) differs by translation 0.01 rotation 0.002 with score 83.2%.
+[INFO] [1792236681.887467240] [cartographer logger]: I1017 20:31:21.000000 23485 constraint_builder_2d.cc:275] Node (0, 76) with 203 points on submap (0, 2) differs by translation 0.01 rotation 0.003 with score 82.8%.
+[INFO] [1792236681.887608403] [cartographer logger]: I1017 20:31:21.000000 23484 constraint_builder_2d.cc:275] Node (0, 80) with 214 points on submap (0, 2) differs by translation 0.01 rotation 0.002 with score 82.2%.
+[INFO] [1792236681.887807649] [cartographer logger]: I1017 20:31:21.000000 23486 constraint_builder_2d.cc:275] Node (0, 83) with 208 points on submap (0, 2) differs by translation 0.00 rotation 0.000 with score 81.3%.
+[INFO] [1792236681.888025518] [cartographer logger]: I1017 20:31:21.000000 23487 constraint_builder_2d.cc:275] Node (0, 86) with 200 points on submap (0, 2) differs by translation 0.01 rotation 0.003 with score 82.6%.
+[INFO] [1792236681.891042928] [cartographer logger]: I1017 20:31:21.000000 23486 constraint_builder_2d.cc:275] Node (0, 96) with 208 points on submap (0, 2) differs by translation 0.00 rotation 0.002 with score 84.1%.
+[INFO] [1792236681.891301008] [cartographer logger]: I1017 20:31:21.000000 23484 constraint_builder_2d.cc:275] Node (0, 93) with 200 points on submap (0, 2) differs by translation 0.00 rotation 0.002 with score 83.7%.
+[INFO] [1792236681.891579299] [cartographer logger]: I1017 20:31:21.000000 23487 constraint_builder_2d.cc:275] Node (0, 100) with 208 points on submap (0, 2) differs by translation 0.01 rotation 0.003 with score 83.9%.
+[INFO] [1792236681.891906374] [cartographer logger]: I1017 20:31:21.000000 23485 constraint_builder_2d.cc:275] Node (0, 90) with 212 points on submap (0, 2) differs by translation 0.01 rotation 0.001 with score 83.6%.
+[INFO] [1792236681.894811323] [cartographer logger]: I1017 20:31:21.000000 23486 constraint_builder_2d.cc:275] Node (0, 103) with 204 points on submap (0, 2) differs by translation 0.01 rotation 0.001 with score 83.3%.
+[INFO] [1792236681.894830901] [cartographer logger]: I1017 20:31:21.000000 23487 constraint_builder_2d.cc:275] Node (0, 110) with 203 points on submap (0, 2) differs by translation 0.00 rotation 0.001 with score 86.5%.
+[INFO] [1792236681.895188802] [cartographer logger]: I1017 20:31:21.000000 23484 constraint_builder_2d.cc:275] Node (0, 106) with 202 points on submap (0, 2) differs by translation 0.01 rotation 0.003 with score 83.6%.
+[INFO] [1792236681.895561075] [cartographer logger]: I1017 20:31:21.000000 23485 constraint_builder_2d.cc:275] Node (0, 113) with 200 points on submap (0, 2) differs by translation 0.00 rotation 0.005 with score 84.4%.
+[INFO] [1792236681.898533992] [cartographer logger]: I1017 20:31:21.000000 23487 constraint_builder_2d.cc:275] Node (0, 120) with 209 points on submap (0, 2) differs by translation 0.01 rotation 0.000 with score 86.4%.
+[INFO] [1792236681.898615579] [cartographer logger]: I1017 20:31:21.000000 23486 constraint_builder_2d.cc:275] Node (0, 116) with 203 points on submap (0, 2) differs by translation 0.00 rotation 0.005 with score 85.0%.
+[INFO] [1792236681.898676731] [cartographer logger]: I1017 20:31:21.000000 23484 constraint_builder_2d.cc:275] Node (0, 123) with 214 points on submap (0, 2) differs by translation 0.00 rotation 0.004 with score 87.6%.
+[INFO] [1792236681.899379285] [cartographer logger]: I1017 20:31:21.000000 23485 constraint_builder_2d.cc:275] Node (0, 126) with 213 points on submap (0, 2) differs by translation 0.01 rotation 0.004 with score 87.5%.
+[INFO] [1792236681.901984809] [cartographer logger]: I1017 20:31:21.000000 23486 constraint_builder_2d.cc:275] Node (0, 133) with 202 points on submap (0, 2) differs by translation 0.01 rotation 0.003 with score 86.4%.
+[INFO] [1792236681.902057588] [cartographer logger]: I1017 20:31:21.000000 23484 constraint_builder_2d.cc:275] Node (0, 136) with 207 points on submap (0, 2) differs by translation 0.01 rotation 0.003 with score 86.1%.
+[INFO] [1792236681.902202616] [cartographer logger]: I1017 20:31:21.000000 23487 constraint_builder_2d.cc:275] Node (0, 130) with 210 points on submap (0, 2) differs by translation 0.01 rotation 0.003 with score 86.2%.
+[INFO] [1792236681.903108040] [cartographer logger]: I1017 20:31:21.000000 23485 constraint_builder_2d.cc:275] Node (0, 140) with 202 points on submap (0, 2) differs by translation 0.01 rotation 0.003 with score 85.1%.
+[INFO] [1792236681.905370284] [cartographer logger]: I1017 20:31:21.000000 23484 constraint_builder_2d.cc:275] Node (0, 146) with 208 points on submap (0, 2) differs by translation 0.00 rotation 0.006 with score 88.7%.
+[INFO] [1792236681.905884695] [cartographer logger]: I1017 20:31:21.000000 23486 constraint_builder_2d.cc:275] Node (0, 143) with 214 points on submap (0, 2) differs by translation 0.01 rotation 0.002 with score 87.0%.
+[INFO] [1792236681.905896647] [cartographer logger]: I1017 20:31:21.000000 23487 constraint_builder_2d.cc:275] Node (0, 150) with 205 points on submap (0, 2) differs by translation 0.02 rotation 0.001 with score 86.4%.
+[INFO] [1792236681.907348241] [cartographer logger]: I1017 20:31:21.000000 23485 constraint_builder_2d.cc:275] Node (0, 153) with 200 points on submap (0, 2) differs by translation 0.00 rotation 0.004 with score 87.1%.
+[INFO] [1792236681.909284749] [cartographer logger]: I1017 20:31:21.000000 23486 constraint_builder_2d.cc:275] Node (0, 160) with 204 points on submap (0, 2) differs by translation 0.00 rotation 0.004 with score 88.3%.
+[INFO] [1792236681.909325442] [cartographer logger]: I1017 20:31:21.000000 23484 constraint_builder_2d.cc:275] Node (0, 156) with 218 points on submap (0, 2) differs by translation 0.01 rotation 0.003 with score 87.2%.
+[INFO] [1792236681.910025828] [cartographer logger]: I1017 20:31:21.000000 23487 constraint_builder_2d.cc:275] Node (0, 163) with 206 points on submap (0, 2) differs by translation 0.01 rotation 0.005 with score 87.2%.
+[INFO] [1792236681.911349598] [cartographer logger]: I1017 20:31:21.000000 23485 constraint_builder_2d.cc:275] Node (0, 166) with 212 points on submap (0, 2) differs by translation 0.01 rotation 0.003 with score 86.6%.
+[INFO] [1792236681.913070611] [cartographer logger]: I1017 20:31:21.000000 23486 constraint_builder_2d.cc:275] Node (0, 170) with 208 points on submap (0, 2) differs by translation 0.01 rotation 0.004 with score 87.0%.
+[INFO] [1792236681.913150258] [cartographer logger]: I1017 20:31:21.000000 23484 constraint_builder_2d.cc:275] Node (0, 173) with 211 points on submap (0, 2) differs by translation 0.01 rotation 0.007 with score 86.4%.
+[INFO] [1792236681.914269814] [cartographer logger]: I1017 20:31:21.000000 23487 constraint_builder_2d.cc:275] Node (0, 176) with 205 points on submap (0, 2) differs by translation 0.00 rotation 0.005 with score 87.8%.
+[INFO] [1792236681.965308523] [cartographer logger]: I1017 20:31:21.000000 23447 pose_graph_2d.cc:148] Inserted submap (0, 4).
+[INFO] [1792236681.968289320] [cartographer logger]: I1017 20:31:21.000000 23484 constraint_builder_2d.cc:275] Node (0, 360) with 201 points on submap (0, 0) differs by translation 0.00 rotation 0.004 with score 79.6%.
+[INFO] [1792236681.968333660] [cartographer logger]: I1017 20:31:21.000000 23486 constraint_builder_2d.cc:275] Node (0, 360) with 201 points on submap (0, 1) differs by translation 0.01 rotation 0.004 with score 78.9%.
+[INFO] [1792236681.968347404] [cartographer logger]: I1017 20:31:21.000000 23487 constraint_builder_2d.cc:275] Node (0, 360) with 201 points on submap (0, 2) differs by translation 0.00 rotation 0.001 with score 87.8%.
+[WARN] [1792236682.271729270] [cartographer logger]: W1017 20:31:22.000000 23447 range_data_collator.cc:82] Dropped 8 earlier points.
+[INFO] [1792236682.274971815] [cartographer logger]: I1017 20:31:22.000000 23484 pose_graph_2d.cc:538] Remaining work items in queue: 0
+[INFO] [1792236682.277391518] [cartographer logger]: I1017 20:31:22.000000 23484 constraint_builder_2d.cc:275] Node (0, 363) with 200 points on submap (0, 0) differs by translation 0.01 rotation 0.003 with score 80.2%.
+[INFO] [1792236682.277549270] [cartographer logger]: I1017 20:31:22.000000 23487 constraint_builder_2d.cc:275] Node (0, 363) with 200 points on submap (0, 2) differs by translation 0.00 rotation 0.002 with score 88.2%.
+[INFO] [1792236682.277582458] [cartographer logger]: I1017 20:31:22.000000 23486 constraint_builder_2d.cc:275] Node (0, 363) with 200 points on submap (0, 1) differs by translation 0.01 rotation 0.003 with score 79.3%.
+[INFO] [1792236682.277602698] [cartographer logger]: I1017 20:31:22.000000 23486 constraint_builder_2d.cc:290] 112 computations resulted in 112 additional constraints.
+[INFO] [1792236682.277618265] [cartographer logger]: I1017 20:31:22.000000 23486 constraint_builder_2d.cc:292] Score histogram:
+Count: 168  Min: 0.729027  Max: 0.893935  Mean: 0.837358
+[0.729027, 0.745518)	                    	Count: 3 (1.78571%)	Total: 3 (1.78571%)
+[0.745518, 0.762009)	                   #	Count: 5 (2.97619%)	Total: 8 (4.7619%)
+[0.762009, 0.778499)	                    	Count: 1 (0.595238%)	Total: 9 (5.35714%)
+[0.778499, 0.794990)	                   #	Count: 12 (7.14286%)	Total: 21 (12.5%)
+[0.794990, 0.811481)	                  ##	Count: 20 (11.9048%)	Total: 41 (24.4048%)
+[0.811481, 0.827972)	                  ##	Count: 19 (11.3095%)	Total: 60 (35.7143%)
+[0.827972, 0.844462)	                 ###	Count: 24 (14.2857%)	Total: 84 (50%)
+[0.844462, 0.860953)	                 ###	Count: 26 (15.4762%)	Total: 110 (65.4762%)
+[0.860953, 0.877444)	               #####	Count: 39 (23.2143%)	Total: 149 (88.6905%)
+[0.877444, 0.893935]	                  ##	Count: 19 (11.3095%)	Total: 168 (100%)
+[INFO] [1792236682.794258918] [cartographer logger]: I1017 20:31:22.000000 23487 constraint_builder_2d.cc:275] Node (0, 366) with 204 points on submap (0, 1) differs by translation 0.01 rotation 0.003 with score 78.8%.
+[INFO] [1792236682.794390136] [cartographer logger]: I1017 20:31:22.000000 23484 constraint_builder_2d.cc:275] Node (0, 366) with 204 points on submap (0, 0) differs by translation 0.01 rotation 0.002 with score 79.6%.
+[INFO] [1792236682.794537449] [cartographer logger]: I1017 20:31:22.000000 23485 constraint_builder_2d.cc:275] Node (0, 366) with 204 points on submap (0, 2) differs by translation 0.00 rotation 0.000 with score 87.2%.
+[WARN] [1792236682.892988038] [cartographer logger]: W1017 20:31:22.000000 23447 range_data_collator.cc:82] Dropped 11 earlier points.
+[INFO] [1792236683.209318716] [cartographer logger]: I1017 20:31:23.000000 23485 constraint_builder_2d.cc:275] Node (0, 370) with 210 points on submap (0, 0) differs by translation 0.00 rotation 0.001 with score 81.5%.
+[INFO] [1792236683.209365293] [cartographer logger]: I1017 20:31:23.000000 23486 constraint_builder_2d.cc:275] Node (0, 370) with 210 points on submap (0, 1) differs by translation 0.00 rotation 0.002 with score 80.8%.
+[INFO] [1792236683.209515103] [cartographer logger]: I1017 20:31:23.000000 23484 constraint_builder_2d.cc:275] Node (0, 370) with 210 points on submap (0, 2) differs by translation 0.00 rotation 0.001 with score 89.1%.
+[INFO] [1792236683.931766446] [cartographer logger]: I1017 20:31:23.000000 23486 constraint_builder_2d.cc:275] Node (0, 373) with 205 points on submap (0, 1) differs by translation 0.01 rotation 0.000 with score 80.3%.
+[INFO] [1792236683.932117485] [cartographer logger]: I1017 20:31:23.000000 23485 constraint_builder_2d.cc:275] Node (0, 373) with 205 points on submap (0, 0) differs by translation 0.01 rotation 0.001 with score 80.1%.
+[INFO] [1792236683.932886497] [cartographer logger]: I1017 20:31:23.000000 23484 constraint_builder_2d.cc:275] Node (0, 373) with 205 points on submap (0, 2) differs by translation 0.01 rotation 0.000 with score 88.5%.
+[WARN] [1792236684.235807414] [cartographer logger]: W1017 20:31:24.000000 23447 range_data_collator.cc:82] Dropped 2 earlier points.
+[INFO] [1792236684.922249616] [cartographer logger]: I1017 20:31:24.000000 23447 node.cpp:569] Shutdown the subscriber of [scan]
+[INFO] [1792236684.922267226] [cartographer logger]: I1017 20:31:24.000000 23447 map_builder_bridge.cpp:152] Finishing trajectory with ID '0'...
+[INFO] [1792236684.922314657] [cartographer logger]: I1017 20:31:24.000000 23484 pose_graph_2d.cc:538] Remaining work items in queue: 0
+[INFO] [1792236684.922340658] [cartographer logger]: I1017 20:31:24.000000 23484 constraint_builder_2d.cc:290] 9 computations resulted in 9 additional constraints.
+[INFO] [1792236684.922358210] [cartographer logger]: I1017 20:31:24.000000 23484 constraint_builder_2d.cc:292] Score histogram:
+Count: 177  Min: 0.729027  Max: 0.893935  Mean: 0.836919
+[0.729027, 0.745518)	                    	Count: 3 (1.69492%)	Total: 3 (1.69492%)
+[0.745518, 0.762009)	                   #	Count: 5 (2.82486%)	Total: 8 (4.51977%)
+[0.762009, 0.778499)	                    	Count: 1 (0.564972%)	Total: 9 (5.08475%)
+[0.778499, 0.794990)	                   #	Count: 13 (7.34463%)	Total: 22 (12.4294%)
+[0.794990, 0.811481)	                 ###	Count: 24 (13.5593%)	Total: 46 (25.9887%)
+[0.811481, 0.827972)	                  ##	Count: 20 (11.2994%)	Total: 66 (37.2881%)
+[0.827972, 0.844462)	                 ###	Count: 24 (13.5593%)	Total: 90 (50.8475%)
+[0.844462, 0.860953)	                 ###	Count: 26 (14.6893%)	Total: 116 (65.5367%)
+[0.860953, 0.877444)	               #####	Count: 40 (22.5989%)	Total: 156 (88.1356%)
+[0.877444, 0.893935]	                  ##	Count: 21 (11.8644%)	Total: 177 (100%)
+[INFO] [1792236711.553162293] [rclcpp]: signal_handler(SIGINT/SIGTERM)

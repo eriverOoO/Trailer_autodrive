@@ -1,0 +1,73 @@
+Arguments (pass arguments as '<name>:=<value>'):
+
+    'development_mode':
+        no description given
+        (default: 'true')
+
+    'enable_lidar':
+        no description given
+        (default: 'true')
+
+    'lidar_driver':
+        no description given
+        (default: 'external')
+
+    'enable_tractor_imu':
+        no description given
+        (default: 'true')
+
+    'enable_trailer_imu':
+        no description given
+        (default: 'true')
+
+    'enable_slam':
+        no description given
+        (default: 'true')
+
+    'enable_vision':
+        no description given
+        (default: 'false')
+
+    'enable_rviz':
+        no description given
+        (default: 'false')
+
+    'enable_actuation':
+        no description given
+        (default: 'false')
+
+    'enable_imu_fusion':
+        no description given
+        (default: 'false')
+
+    'lidar_port':
+        no description given
+        (default: '')
+
+    'tractor_imu_port':
+        no description given
+        (default: '')
+
+    'trailer_imu_port':
+        no description given
+        (default: '')
+
+    'arduino_port':
+        no description given
+        (default: '')
+
+    'camera_path':
+        no description given
+        (default: '')
+
+    'vision_model':
+        no description given
+        (default: '')
+
+    'geometry_file':
+        no description given
+        (default: '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/vehicle_geometry.yaml')
+
+    'output_directory':
+        no description given
+        (default: '/home/venezuelachocolatemilk/mvsim_slam_real/log/run_20261016_223246_879092')

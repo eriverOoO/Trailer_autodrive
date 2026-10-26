@@ -1,0 +1,7 @@
+[ydlidar_ros2_driver_node-1] [0;31m[2026-10-20 15:40:00][error] Checksum error 0x4A7D != 0x0F81
+[ydlidar_ros2_driver_node-1] [0m[0;31m[2026-10-20 15:40:00][error] Checksum error 0x4A7D != 0x0F81
+[ydlidar_ros2_driver_node-1] [0;31m[2026-10-20 15:40:00][error] Checksum error 0x017D != 0x0F81
+[ydlidar_ros2_driver_node-1] [0m[0;31m[2026-10-20 15:40:01][error] Checksum error 0x017D != 0x0F81
+[ydlidar_ros2_driver_node-1] [0;31m[2026-10-20 15:40:01][error] Checksum error 0x0502 != 0x0D0A
+[ydlidar_ros2_driver_node-1] [0m[0;31m[2026-10-20 15:40:01][error] Checksum error 0x1285 != 0x0F81
+[cartographer_node-2] [WARN] [1792478401.073688093] [cartographer logger]: W1020 15:40:01.000000 21575 pose_extrapolator.cc:168] Queue too short for velocity estimation. Queue duration: 0 s

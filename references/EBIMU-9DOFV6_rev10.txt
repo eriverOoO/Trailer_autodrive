@@ -1,0 +1,1848 @@
+                                9DOF-IMU(AHRS) EBIMU-9DOFV6 SPECIFICATION
+
+
+
+
+            EBIMU-9DOFV6 SPECIFICATION
+            Attitude & Heading Reference System
+            Rev1.0 (F/W v610)
+
+
+
+
+                                                    E2BOX COMPANY
+                                                    http://www.e2box.co.kr
+
+
+
+
+E 2 B O X
+                                                             9DOF-IMU(AHRS) EBIMU-9DOFV6 SPECIFICATION
+
+
+
+
+                                                           IN D E X
+
+
+
+      1. FEATURE ········································································································ 3
+
+      2. HARDWARE INTERFACE ············································································ 4
+
+      3. COMMUNICATION PROTOCOL SEQUENCE ······································· 7
+
+      4. AXIS ASSIGNMENT ····················································································· 9
+
+      5. COMMUNICATION PROTOCOL DESCRIPTIONS ································ 12
+
+      6. COMMUNICATION DETAILS ·································································· 20
+
+      7. ELECTRICAL CHARACTERISTICS ····························································· 35
+
+      8. SENSOR SPECIFICATIONS ······································································· 36
+
+      9. DIMENSIONS ··························································································· 38
+
+      10. 주의사항 ··································································································· 39
+
+      11. Revision History ···················································································· 40
+
+
+
+
+E 2 B O X                                                                                                                     2
+                                              9DOF-IMU(AHRS) EBIMU-9DOFV6 SPECIFICATION
+
+
+
+
+     1. FEATURE
+
+        3축 자이로스코프, 3축 가속도센서, 3축 지자기센서가 내장된 버전6 초소형 AHRS모듈
+        정밀한 3차원 회전 자세 데이터 출력 (Euler angles, Quaternion)
+        향상된 센서 정밀도, 향상된 온도 안정성
+        RHA 보다 향상된 RHA2 (Robust Heading Algorithm) 적용
+        RAA (Robust Attitude Algorithm) 적용
+        AGC (Auto Gyroscope Calibration) 적용
+        AVC(Active Vibration Cancellation) 적용
+        정밀한 보정이 가능한 가속도센서/지자기센서 캘리브레이션 명령어 지원
+        데이터 갱신 및 자세 데이터 출력속도 1000Hz 지원(1000Hz ~ 1Hz 변경 가능)
+        자이로, 가속도, 지자기센서의 Calibrated raw data 출력
+        중력 성분이 제거된 선형 가속도 출력
+        단시간 센서 위치추적(Short-Term Position Tracking)
+            - x,y,z축 Local, Global 위치/속도 데이터 출력
+            - Position Tracking Filter 적용
+        센서 온도 데이터 출력
+        TimeStamp 출력
+        자세 offset 설정 기능
+        지자기센서 활성/비활성 모드
+        데이터 출력 모드
+            - ASCII출력모드, HEX(binary)출력모드, Polling모드
+        사용 환경에 따른 옵션 설정 기능
+            - 가속도 Low Pass Filter : 21Hz ~ 493Hz
+            - 자이로 Sensitivity : 125dps ~ 2000dps
+            - 가속도 Sensitivity : 2g ~ 16g
+            - Sensor Filter Factor : 1 ~ 50
+        간단한 인터페이스 (VCC,GND,TX,RX)
+            - 입력 전압(VCC)에 따르는 전압Level의 TX, RX UART통신 연결
+        초소형 사이즈 (16.3mm x 18.6mm)
+        저전력 - Normal. 15mA @ 5V , PowerDown. 0.5mA @ 5V
+        입력전압 : 3.3V ~ 6V
+        넓은 범위의 통신 속도 지원 : 9600bps ~ 921600bps
+        정밀한 캘리브레이션 작업 후 출고됩니다.
+
+
+
+
+E 2 B O X                                                                                 3
+                                          9DOF-IMU(AHRS) EBIMU-9DOFV6 SPECIFICATION
+
+
+
+
+     2. HARDWARE INTERFACE
+
+        2-1. Pinouts
+
+
+
+                        Pin No.           5           6        7    8
+
+                       Description   nPD/nRST        NC       NC   NC
+
+
+
+
+                        Pin No.       1          2        3        4
+
+                       Description   VCC        GND       TX       RX
+
+
+
+
+E 2 B O X                                                                             4
+                                            9DOF-IMU(AHRS) EBIMU-9DOFV6 SPECIFICATION
+
+
+
+
+        2-2. Pin Description
+
+             NAME            TYPE                          DESCRIPTION
+
+              VCC            PWR         3.3V ~ 6V
+
+              GND            PWR         Ground (0V)
+
+                                         Serial(UART) Data Output
+              TX             OUT
+                                         입력 전압(VCC)과 같은 전압 Level로 동작합니다.
+
+                                         Serial(UART) Data Input
+              RX               IN
+                                         입력 전압(VCC)과 같은 전압 Level로 동작합니다.
+
+                                         PowerDown / Reset
+                                         Low 신호 입력 시 PowerDown모드로 진입합니다.
+            nPD/nRST           IN
+                                         내부에 VCC핀으로 10K 풀업저항이 달려 있습니다.
+                                         사용하지 않을 경우엔 연결하지 않습니다.
+
+              NC               -         연결하지 않습니다.
+
+
+
+
+        2-3. UART Protocol
+
+
+              BAUDRATE : 9600 bps ~ 921600bps (default : 115200bps)
+              PARITYBIT : No Parity
+              DATABIT    : 8 Data bits
+              STOPBIT   : 1 Stop bit
+              No H/W flow controls
+
+
+
+
+E 2 B O X                                                                               5
+                                                9DOF-IMU(AHRS) EBIMU-9DOFV6 SPECIFICATION
+
+
+
+
+        2-4. UART Connection
+
+
+
+
+                                                5V interface
+
+                      Host(5V)                                                EBIMU
+
+
+                           5V                                                VCC
+                         GND                                                 GND
+                           TX                                                TX
+                                  5V level                      5V level
+                           RX                                                RX
+                                                                             nPD/nRST
+
+
+
+
+                                               3.3V interface
+
+                     Host(3.3V)                                               EBIMU
+
+
+                         3.3V                                                VCC
+                         GND                                                 GND
+                           TX                                                TX
+                                  3.3V level                    3.3V level
+                           RX                                                RX
+                                                                             nPD/nRST
+
+
+
+
+                                       nPD/nRST connection
+
+                       Host                                                   EBIMU
+
+
+                         VCC                                                 VCC
+                         GND                                                 GND
+                           TX                                                TX
+                                  Host VCC level            Host VCC level
+                           RX                                                RX
+                                               Host VCC level
+                           IO                                                nPD/nRST
+
+
+
+
+E 2 B O X                                                                                   6
+                                           9DOF-IMU(AHRS) EBIMU-9DOFV6 SPECIFICATION
+
+
+
+
+     3. COMMUNICATION PROTOCOL SEQUENCE
+
+
+        3-1. Data Output
+
+
+            3-1-1. 일반적인 데이타 출력
+
+                                                                        1ms ~ 1s 설정가능
+
+
+                                                          output rate
+
+       EBIMU          DATA               DATA            DATA             DATA
+
+
+
+
+       HOST
+
+
+
+
+            3-1-2. Output Rate를 초과하는 데이터의 출력
+
+
+
+
+                                                데이타출력 후 즉시 다음 데이타출력
+
+
+                           output rate
+
+       EBIMU                   DATA               DATA                  DATA
+
+
+
+
+       HOST
+
+
+
+
+E 2 B O X                                                                               7
+                                               9DOF-IMU(AHRS) EBIMU-9DOFV6 SPECIFICATION
+
+
+
+
+            3-1-3. Polling 모드 (output rate = 0)
+
+
+
+
+                                   즉시 현재 자세데이타 전송
+
+       EBIMU                          DATA                                  DATA
+
+
+
+
+       HOST           '*'                                      '*'
+
+
+
+
+        3-2. Commnd Operations
+
+
+                                                              데이타전송중지
+
+
+
+       EBIMU                DATA             DATA             Comand 수신모드
+
+
+
+
+        HOST                                            '<'          COMMAND
+
+
+                                                                about 500ms
+
+
+
+                              Execution       <Resp.>                DATA          DATA
+
+
+
+
+                        '>'
+
+
+
+
+E 2 B O X                                                                                  8
+                                        9DOF-IMU(AHRS) EBIMU-9DOFV6 SPECIFICATION
+
+
+
+
+     4. AXIS ASSIGNMENT
+
+        4-1. Euler Angles Axis
+
+
+                                                        ROLL
+
+
+
+
+                                                    +
+
+
+
+
+                                                +
+                                                           PITCH
+                                           +
+
+                                    YAW
+
+
+
+
+        4-2. Compass / Heading(Euler Angle)
+
+
+
+                                          YAW
+
+
+
+
+                                                +
+                   East
+                                                          South
+
+
+
+
+                          North                                    West
+
+
+
+
+E 2 B O X                                                                           9
+                                      9DOF-IMU(AHRS) EBIMU-9DOFV6 SPECIFICATION
+
+
+
+        4-3. Gyroscope Axis
+                                          Z
+
+
+                                                      X
+                    Y                 +
+
+                                  +
+                                                  +
+
+
+
+
+        4-4. Accelerometer Axis           Z+
+
+
+                                                      X+
+                    Y+
+
+
+
+
+        4-5. Magnetometer Axis            Z+
+
+
+                                                      X+
+                    Y+
+
+
+
+
+E 2 B O X                                                                         10
+                                     9DOF-IMU(AHRS) EBIMU-9DOFV6 SPECIFICATION
+
+
+
+
+        4-6. Velocity Axis (Local)
+
+
+
+                                      Z+
+
+
+                                                    X+
+                     Y+
+
+
+
+
+        4-7. Distance Axis (Local)
+
+
+                                      Z+
+
+
+                                                    X+
+                     Y+
+
+
+
+
+E 2 B O X                                                                        11
+                                                          9DOF-IMU(AHRS) EBIMU-9DOFV6 SPECIFICATION
+
+
+
+
+     5. COMMUNICATION PROTOCOL DESCRIPTIONS
+
+
+         5-1. ASCII OUTPUT DATA FORMAT
+                 (ASCII 출력 모드는 <soc1> 명령으로 설정할 수 있습니다.)
+
+            SOL           DATA 1          sp           DATA 2        sp   ...   sp          DATA n           EOL
+
+             *          ascii data 1       ,         ascii data 2     ,   ...    ,      ascii data n         CR LF
+
+
+
+
+                 SOL : '*' (2A)hex
+
+
+                 DATA n : n 번째 데이터
+                            DATA 출력순서
+  명령어        sof          sog                  soa                  som               sod              sot           sots
+
+         Euler Angle Gyroscope         Accelerometer          Magnetometer      Distance(local)    Temperature TimeStamp
+           [R][P][Y]  [x][y][z]           [x][y][z]              [x][y][z]          [x][y][z]         [deg]       [ms]
+         Quaternion                Linear Accelerometer                         Distance(Global)
+         [z][y][x][w]                      (Local)                                   [x][y][z]
+                                          [x][y][z]
+
+  DATA                             Linear Accelerometer
+                                          (Global)
+                                          [x][y][z]
+                                       Velocity(Local)
+                                          [x][y][z]
+                                       Velocity(Global)
+                                           [x][y][z]
+
+         자이로,가속도,지자기,거리,온도센서,타임스탬프 출력은 설정에 의해 ON/OFF 할 수 있습니다.
+
+
+
+                 sp : separator ',' (2C)hex
+
+
+
+                 EOL : CR (0D)hex LF(0A)hex
+
+
+
+
+                 ex) EulerAngle출력모드 *-25.46,47.24,-35.77(CR)(LF)
+                      Roll : -25.46도 , Pitch : 47.24도 , Yaw : -35.77도
+
+
+
+
+E 2 B O X                                                                                                                   12
+                                                           9DOF-IMU(AHRS) EBIMU-9DOFV6 SPECIFICATION
+
+
+         5-2. HEX(binary) OUTPUT DATA FORMAT
+                   (Hex 출력 모드는 <soc2> 명령으로 설정할 수 있습니다.)
+
+                        2byte        2byte           2byte                     2byte           2byte
+
+                        SOP         DATA 1           DATA 2         ...       DATA n            CHK
+
+                   ※ 모든항목은 16bit(2byte)이며 2의 보수형식으로 출력됩니다.
+                                      2의 보수                        HEX              Decimal
+                                0111 1111 1111 1111                7FFF              32767
+                                           .                          .                  .
+                                           .                          .                  .
+                                           .                          .                  .
+
+                                0000 0000 0000 0001                0001                  1
+                                0000 0000 0000 0000                0000                  0
+                                1111 1111 1111 1111                FFFF                  -1
+                                           .                          .                  .
+                                           .                          .                  .
+                                           .                          .                  .
+
+                                1000 0000 0000 0000                8000             -32768
+
+               SOP : (5555)hex
+
+               DATA n : n 번째 데이터
+                              DATA 출력순서
+  명령어        sof           sog                 soa                som              sod                 sot    sots
+
+         Euler Angle Gyroscope           Accelerometer        Magnetometer   Distance(local)    Temperature TimeStamp
+           [R][P][Y]  [x][y][z]             [x][y][z]            [x][y][z]       [x][y][z]         [deg]       [ms]
+         Quaternion                 Linear Accelerometer                     Distance(Global)
+         [z][y][x][w]                       (Local)                               [x][y][z]
+                                           [x][y][z]
+
+  DATA                              Linear Accelerometer
+                                           (Global)
+                                           [x][y][z]
+                                         Velocity(Local)
+                                            [x][y][z]
+                                      Velocity(Global)
+                                          [x][y][z]
+
+         자이로,가속도,지자기,거리,온도센서,타임스탬프 출력은 설정에 의해 ON/OFF 할 수 있습니다.
+
+
+
+               CHK : checksum, 모든 byte를 더한 값 (SOP포함, overflow 무시)
+
+
+               ex) EulerAngle출력모드 (55)(55)(FD)(31)(EA)(43)(39)(11)(03)(4F)
+                        (55)(55) : SOP
+                        (FD)(31) : -719
+                        (EA)(43) : -5565
+                        (39)(11) : +14609
+                        (03)(4F) : (55)+(55)+(FD)+(31)+(EA)+(43)+(39)+(11) = 34F
+                        Roll : -7.19도 , Pitch : -55.65도 , Yaw : +146.09도 , CHK : 34F
+
+
+
+
+E 2 B O X                                                                                                               13
+                                             9DOF-IMU(AHRS) EBIMU-9DOFV6 SPECIFICATION
+
+
+
+
+        5-3. COMMAND & RESPONESE FORMAT
+
+                                COMMAND
+                  STX                               DATA           ETX
+                                (RESPONSE)
+
+                   <               CMD              DATA            >
+
+            STX : '<' (3C)hex
+
+            CMD : COMMAND
+
+            DATA : DATA
+
+            ETX : '>' (3E)hex
+
+            DATA 항목은 명령어에 따라 없을 수도 있습니다.
+
+            ex) command : <sb1>      통신 baudrate를 9600bps로 변경
+                 response : <ok>      정상 처리 완료
+
+
+
+
+E 2 B O X                                                                                14
+                                                9DOF-IMU(AHRS) EBIMU-9DOFV6 SPECIFICATION
+
+
+        5-4. COMMAND CODE LIST
+
+                   5-4-1. Output Command
+
+            COMMAND                             DATA                      Description
+
+                                  1 : 9600bps
+                                                                Baudrate설정
+                                  2 : 19200bps
+                                                                Databit, stopbit, paritybit는
+                                  3 : 38400bps
+                                                                변경되지 않습니다.
+                                  4 : 57600bps
+     SET BAUDRATE          sb                                   Stopbit : 1bit
+                                  5 : 115200bps
+                                                                Databit : 8bit
+                                  6 : 230400bps
+                                                                Parity is none
+                                  7 : 460800bps
+                                                                (default : 5)
+                                  8 : 921600bps
+
+                                                                데이터 출력 속도 설정
+                                  1~1000
+    SET OUTPUT RATE        sor                                  출력간격 = 1ms x 설정값
+                                  0 : polling 모드
+                                                                (default : 10)
+
+                                  1 : ASCII 출력 모드               ASCII/HEX 출력모드 설정
+    SET OUTPUT CODE        soc
+                                  2 : HEX(binary) 모드            (default : 1)
+
+      SET OUTPUT                  1 : Euler Angles              자세 데이터 출력 포맷 설정
+                           sof
+        FORMAT                    2 : Quaternion                (default : 1)
+
+                                  0 : 자이로(각속도)데이터
+                                                                자이로(각속도)데이터 출력
+      SET OUTPUT                      출력안함
+                           sog                                  여부 설정
+            GYRO                  1 : 자이로(각속도)데이터
+                                                                (default : 0)
+                                      출력함
+
+                                  0 : 가속도데이터 출력안함
+                                  1 : 가속도데이터 출력
+                                  2 : 중력성분 제거된
+      SET OUTPUT                      가속도 출력(Local)             가속도데이터 출력 여부 설정
+                           soa
+       ACCELERO                   3 : 중력성분 제거된                  (default : 0)
+                                      가속도 출력(Global)
+                                  4 : 속도데이터 출력(Local)
+                                  5 : 속도데이터 출력(Global)
+
+      SET OUTPUT                  0 : 지자기데이터 출력안함               지자기데이터 출력 여부 설정
+                           som
+       MEGNETO                    1 : 지자기데이터 출력함                (default : 0)
+
+                                  0 : 거리데이터 출력안함
+      SET OUTPUT                                                거리데이터 출력 여부 설정
+                           sod    1 : 거리데이터 출력함(Local)
+       DISTANCE                                                 (default : 0)
+                                  2 : 거리데이터 출력함(Global)
+
+      SET OUTPUT                  0 : 온도데이터 출력안함                온도데이터 출력 여부 설정
+                           sot
+     TEMPERATURE                  1 : 온도데이터 출력함                 (default : 0)
+
+      SET OUTPUT                  0 : 타임스탬프 출력안함                타임스탬프 출력 여부 설정
+                           sots
+      TIME STAMP                  1 : 타임스탬프 출력함                 (default : 0)
+
+
+
+
+E 2 B O X                                                                                      15
+                                              9DOF-IMU(AHRS) EBIMU-9DOFV6 SPECIFICATION
+
+
+
+                 5-4-2. Sensor Command
+
+          COMMAND                          DATA                            Description
+
+                                 0 : Magnetometer OFF
+     SET ENABLE                                            Magnetometer On/Off 설정
+                       sem       1 : Magnetometer ON
+     MAGNETO                                               (default : 2)
+                                 2 : Magnetometer ON 2
+
+                                 1 : 125dps
+                                 2 : 250dps
+      SET SENS                                             자이로센서의 감도 설정
+                       ssg       3 : 500dps
+        GYRO                                               (default : 5)
+                                 4 : 1000dps
+                                 5 : 2000dps
+
+                                 1 : 2g
+      SET SENS                   2 : 4g                    가속도센서의 감도 설정
+                       ssa
+     ACCELERO                    3 : 8g                    (default : 4)
+                                 4 : 16g
+
+                                 0 : 21Hz
+                                 1 : 48Hz
+                                 2 : 59Hz
+                                 3 : 97Hz
+         SET                                               가속도센서
+                                 4 : 117Hz
+   Low Pass Filter     lpfa                                Digital Low Pass Filter 설정
+                                 5 : 191Hz
+    Accelerometer                                          (default : 3)
+                                 6 : 230Hz
+                                 7 : 262Hz
+                                 8 : 493Hz
+                                 9 : No LPF
+
+                                                           Sensor Filter Factor 설정
+                                                           sff : 가속도센서, 지자기센서의
+                        sff
+         SET                                                    Filter Factor설정
+                       sffa                1 ~ 50
+     Filter Factor                                         sffa : 가속도센서 Filter Factor설정
+                       sffm
+                                                           sffm : 지자기센서 Filter Factor설정
+                                                           (default : 10)
+
+
+
+
+E 2 B O X                                                                                 16
+                                              9DOF-IMU(AHRS) EBIMU-9DOFV6 SPECIFICATION
+
+
+
+                   5-4-2. Sensor Command (continued)
+
+          COMMAND                          DATA                            Description
+
+   Robust Attitude
+                         raa_l         0.00 ~ 100.00       RAA Level (default : 0.10)
+      Algorithm
+                         raa_t        0 ~ 2000000000       RAA Timeout (default : 20000)
+     Parameters
+
+   Robust Heading
+                         rha_l         0.00 ~ 100.00       RHA Level (default : 0.075)
+      Algorithm
+                         rha_t        0 ~ 2000000000       RHA Timeout (default : 10000)
+     Parameters
+
+         RHA
+                        rha_clr            NONE            자기장 방향으로 heading 재정렬
+    Heading Clear
+
+         RHA                        0 : 자동 재정렬 안함          자동 heading 재정렬
+                        rha_fh
+    Find Heading                      50 : 자동 재정렬          (default : 0)
+
+   Auto Gyroscope        agc_e              0, 1           AGC Enable (default : 1)
+     Calibration         agc_t         0.00 ~ 100.00       AGC Threshold(default : 0.5)
+     Parameters          agc_d          0.00 ~ 10.00       AGC Drift (default : 0.3)
+
+   Active Vibration
+     Cancellation       avca_e              0, 1           AVC ON/OFF 설정 (default : 0)
+     Parameters
+
+    Position Filter
+                        posf_sl       0.0000 ~ 1.0000      (default : 0.02)
+     Parameters
+
+    Position Zero        posz              NONE            누적된 속도, 거리를 0으로 설정
+
+
+
+
+E 2 B O X                                                                                  17
+                                             9DOF-IMU(AHRS) EBIMU-9DOFV6 SPECIFICATION
+
+
+                5-4-3. Calibration Command
+
+         COMMAND                         DATA                         Description
+    CALIBRATION
+                        cg               NONE            자이로센서 캘리브레이션
+       GYRO
+    CALIBRATION
+                        caf              NONE            가속도센서의 XYZ축 정밀 캘리브레이션
+   ACCELERO FREE
+    CALIBRATION
+                       cas               NONE            가속도센서의 XYZ축 캘리브레이션
+  ACCELERO SIMPLE
+    CALIBRATION
+                       cmf               NONE            지자기센서의 XYZ축 캘리브레이션
+   MAGNETO FREE
+                                                         지자기센서의 XY축 캘리브레이션
+    CALIBRATION        cnxy
+                                         NONE            cnxy : 지자기센서 xy축 캘리브레이션
+    MAGNETO XY        +cnxy
+                                                         +cnxy : cmf보정값 사용 + cnxy
+                                                         지자기센서의 Z축 캘리브레이션
+    CALIBRATION        cnz
+                                         NONE            cnz : 지자기세서 z축 캘리브레이션
+    MAGNETO Z          +cnz
+                                                         +cnz : cmf보정값 사용 + cnz
+                       cmo                               roll, pitch, yaw 회전축 offset 설정
+                      cmox                               roll 회전축 offset 설정
+                      cmoy                               pitch 회전축 offset 설정
+        SET
+                      cmoz               NONE            yaw 회전축 offset 설정
+   MOTION OFFSET
+                      cmoxy                              roll, pitch 회전축 offset 설정
+                      cmo2                               roll, pitch, yaw 회전데이터offset 설정
+                      cmoh                               yaw 축 회전데이터 offset 설정
+       CLEAR
+                      cmco               NONE            MOTION OFFSET 제거
+   MOTION OFFSET
+
+
+                5-4-4. ETC Command
+
+        COMMAND                              DATA                       Description
+
+   CONFIGURATION       cfg                   NONE           센서 설정 사항 출력
+
+                               0 : 전원 인가 시 센서 작동안함          전원 인가 시 센서 작동 여부 설정
+  POWER ON START       pons
+                               1 : 전원 인가 시 센서 작동함           (default : 1)
+
+       START           start                 NONE           센서 작동 시작
+
+       STOP            stop                  NONE           센서 작동 멈춤
+
+   LOAD FACTORY
+                        lf                   NONE           초기 설정치 Load
+     SETTINGS
+
+       RESET           reset                 NONE           센서 reset
+
+   VERSION CHECK       ver                   NONE           Version 표시
+
+
+
+
+E 2 B O X                                                                                  18
+                                    9DOF-IMU(AHRS) EBIMU-9DOFV6 SPECIFICATION
+
+
+
+
+        5-5. RESPONSE CODE LIST
+
+
+                     STATUS LIST                    DESCRIPTION
+
+                OK                 ok        정상처리 완료.
+
+               ERROR               er        Error 발생
+
+
+
+
+E 2 B O X                                                                       19
+                                                    9DOF-IMU(AHRS) EBIMU-9DOFV6 SPECIFICATION
+
+
+     6. COMMUNICATION DETAILS
+
+        6-1. OUTPUT COMMAND
+
+            6-1-1. SET BAUDRATE
+             Baudrate를 설정합니다. Databit, stopbit, paritybit는 변경되지 않습니다.
+             Stopbit : 1bit
+             Databit : 8bit
+             Parity is none
+             No H/W flow controls
+             <ok> 응답 이후 설정된 baudrate로 동작합니다.
+             설정된 내용은 내부 비휘발성 메모리에 저장됩니다.
+                   STX         COMMAND               DATA         ETX
+                    '<'              "sb"            data         '>'
+
+                 data :             '8'     921600bps
+                                    '7'     460800bps
+                                    '6'     230400bps
+                                    '5'     115200bps (default)
+                                    '4'     57600bps
+                                    '3'     38400bps
+                                    '2'     19200bps
+                                    '1'     9600bps
+
+
+            6-1-2. SET OUTPUT RATE
+             데이터 출력 속도를 설정합니다.
+             출력속도 = 1ms x 설정값(data)
+             data 범위는 1(1ms, 1000Hz) ~ 1000(1000ms, 1Hz) 까지 지정할 수 있습니다.
+             0으로 설정시 polling 모드로 동작합니다.
+             <ok> 응답 이후 설정된 출력 속도로 동작합니다.
+             설정된 내용은 내부 비휘발성 메모리에 저장됩니다.
+                   STX         COMMAND               DATA         ETX
+                    '<'             "sor"            data         '>'
+                 data : '1' ~ "1000" (default : '10')
+
+
+            6-1-3. SET OUTPUT CODE
+             ASCII출력모드와 HEX(binary)출력모드를 설정합니다.
+             "5-2. HEX(binary) OUTPUT DATA FORMAT"를 참고하십시오.
+             <ok> 응답 이후 설정된 값으로 동작합니다.
+             설정된 내용은 내부 비휘발성 메모리에 저장됩니다.
+                   STX         COMMAND               DATA         ETX
+                    '<'             "soc"            data         '>'
+
+                 data :       '1'     ASCII 출력모드 (default)
+                              '2'     HEX(binary) 출력모드
+
+
+
+
+E 2 B O X                                                                                       20
+                                                9DOF-IMU(AHRS) EBIMU-9DOFV6 SPECIFICATION
+
+
+
+            6-1-4. SET OUTPUT FORMAT
+             자세 데이터 출력 포맷을 설정합니다.
+             각속도센서(gyroscope), 가속도센서, 지자기센서의 데이터를 모두 연산하여 최종 자
+             세 데이터의 출력 포맷을 설정하는 명령어입니다.
+             EulerAngles출력, Quaternion출력으로 설정 할 수 있습니다.
+
+
+             <Euler Angles 출력모드>
+             EulerAngles 출력모드로 설정시 Roll, Pitch, Yaw 순서로 3개의 항목에 대한 값이 출
+             력이 됩니다. 각 항목에 대한 값의 범위는 아래와 같습니다.
+             Roll 값의 범위 : -180도 ~ +180도
+             Pitch 값의 범위 : -90도 ~ +90도
+             Yaw 값의 범위 : -180도 ~ +180도
+             소수점이하 2째자리 까지 출력됩니다.
+             HEX모드의 경우 각 항목에서 100을 나누어야 합니다.
+
+
+             <Quaternion 출력모드>
+             Quaternion 출력모드로 설정시 z,y,x,w 순서로 4개의 항목에 대한 값이 출력이 됩니
+             다.
+             소수점이하 4째자리 까지 출력됩니다.
+             HEX모드의 경우 각 항목에서 10000을 나누어야 합니다.
+
+
+             <ok> 응답 이후 설정된 값으로 동작합니다.
+             설정된 내용은 내부 비휘발성 메모리에 저장됩니다.
+                    STX     COMMAND             DATA       ETX
+                     '<'         "sof"           data      '>'
+
+                  data :   '1'    Euler Angles (default)
+                           '2'    Quaternion
+
+
+
+
+            6-1-5. SET OUTPUT GYRO
+             자이로(각속도)데이터의 출력 여부를 설정 합니다.
+             자이로(각속도)데이터 출력을 설정 하였을 경우 데이터 출력 항목에 자이로(각속도)
+             데이터 x,y,z 항목이 추가 됩니다.
+             출력되는 자이로(각속도)데이터의 단위는 DPS(degree per second) 입니다.
+             소수점이하 2째자리 까지 출력됩니다.
+             HEX모드의 경우 각 항목에서 10을 나누어야 합니다.
+             <ok> 응답 이후 설정된 값으로 동작합니다.
+             설정된 내용은 내부 비휘발성 메모리에 저장됩니다.
+                    STX     COMMAND             DATA       ETX
+                     '<'         "sog"           data      '>'
+
+                  data :   '0'    자이로(각속도)데이터 출력 안함 (default)
+                           '1'    자이로(각속도)데이터 출력
+
+
+
+
+E 2 B O X                                                                                   21
+                                         9DOF-IMU(AHRS) EBIMU-9DOFV6 SPECIFICATION
+
+
+
+
+            6-1-6. SET OUTPUT ACCELERO
+             가속도, 속도 데이터의 출력 여부를 설정 합니다.
+             가속도, 속도 데이터의 출력을 설정 하였을 경우 데이터 출력 항목에 데이터 x,y,z
+             항목이 추가 됩니다.
+             [가속도출력]
+                                                          2
+             가속도의 단위는 중력가속도 단위 g 입니다. 1g 는 9.81m/s 입니다.
+             소수점이하 3째자리 까지 출력됩니다.
+             HEX모드의 경우 각 항목에서 1000을 나누어야 합니다.
+             soa1 : 중력성분이 포함된 가속도 출력 명령입니다. 센서를 움직이지 않더라도 항상
+                    중력방향으로 1g의 값이 출력이 됩니다.
+             soa2 : 중력성분이 제거된 Local 가속도 출력 명령입니다. 센서의 각 x,y,z축 기준의
+                    Local 가속도가 출력됩니다.
+             soa3 : 중력성분이 제거된 Global 가속도 출력 명령입니다. 동,서,남,북,위,아래 기준
+                    의 Global 가속도가 출력됩니다.
+             [속도출력]
+             속도의 단위는 m/s(meter/second) 입니다.
+             소수점이하 3째자리 까지 출력됩니다.
+             HEX모드의 경우 각 항목에서 1000을 나누어야 합니다.
+             soa4 : Local 속도데이터 출력 명령입니다. 센서의 각 x,y,z축 기준의 Local 속도데이
+                    터가 출력됩니다.
+             soa5 : Global 속도데이터 출력 명령입니다. 동,서,남,북,위,아래 기준의 Global 속도
+                    데이터가 출력됩니다.
+
+
+             <ok> 응답 이후 설정된 값으로 동작합니다.
+             설정된 내용은 내부 비휘발성 메모리에 저장됩니다.
+                   STX     COMMAND       DATA     ETX
+                    '<'         "soa"     data     '>'
+
+                 data :   '0'    가속도데이터 출력 안함 (default)
+                          '1'    중력성분 포함된 가속도 출력
+                          '2'    중력성분 제거된 Local 가속도 출력
+                          '3'    중력성분 제거된 Global 가속도 출력
+                          '4'    Local 속도데이터 출력
+                          '5'    Global 속도데이터 출력
+
+
+
+
+E 2 B O X                                                                            22
+                                          9DOF-IMU(AHRS) EBIMU-9DOFV6 SPECIFICATION
+
+
+
+
+            6-1-7. SET OUTPUT MAGNETO
+             지자기데이터의 출력 여부를 설정 합니다.
+             지자기데이터 출력을 설정 하였을 경우 데이터 출력 항목에 지자기데이터 x,y,z 항
+             목이 추가 됩니다.
+             출력되는 자기장의 단위는 uT(micro-Tesla) 입니다. 1uT는 0.01Gauss입니다.
+             최대측정 범위는 ±3000uT 입니다.
+             소수점이하 1째자리 까지 출력됩니다.
+             HEX모드의 경우 각 항목에서 10을 나누어야 합니다.
+             <ok> 응답 이후 설정된 값으로 동작합니다.
+             설정된 내용은 내부 비휘발성 메모리에 저장됩니다.
+                   STX     COMMAND        DATA      ETX
+                    '<'         "som"      data     '>'
+
+                 data :   '0'    지자기센서값 출력 안함 (default)
+                          '1'    지자기센서값 출력
+
+
+
+
+            6-1-8. SET OUTPUT DISTANCE
+             거리(위치)데이터의 출력 여부를 설정 합니다.
+             거리(위치)데이터 출력을 설정 하였을 경우 데이터 출력 항목에 거리(위치)데이터
+             x,y,z 항목이 추가 됩니다.
+             ‘/’(0x2F) 입력시 누적된 거리가 0으로 reset 됩니다.
+             출력되는 거리(위치)데이터의 단위는 m(meter) 입니다.
+             소수점이하 3째자리 까지 출력됩니다.
+             HEX모드의 경우 각 항목에서 1000을 나누어야 합니다.
+             sod1 : Local 거리데이터 출력 명령입니다. 센서의 각 x,y,z축 기준의 Local 거리데이
+                    터가 출력됩니다.
+             sod2 : Global 거리데이터 출력 명령입니다. 동,서,남,북,위,아래 기준의 Global 거리
+                    데이터가 출력됩니다.
+             <ok> 응답 이후 설정된 값으로 동작합니다.
+             설정된 내용은 내부 비휘발성 메모리에 저장됩니다.
+                   STX     COMMAND        DATA      ETX
+                    '<'         "sod"      data     '>'
+
+                 data :   '0'    거리데이터 출력 안함 (default)
+                          '1'    Local 거리데이터 출력
+                          ‘2’    Global 거리데이터 출력
+
+
+
+
+E 2 B O X                                                                             23
+                                            9DOF-IMU(AHRS) EBIMU-9DOFV6 SPECIFICATION
+
+
+
+
+            6-1-9. SET OUTPUT TEMPERATURE
+             온도데이터의 출력 여부를 설정 합니다.
+             온도데이터 출력을 설정 하였을 경우 데이터 출력 항목에 온도센서 항목이 추가 됩
+             니다.
+             출력되는 단위는 섭씨(℃)입니다.
+             소수점이하 1째자리 까지 출력됩니다.
+             HEX모드의 경우 각 항목에서 10을 나누어야 합니다.
+             <ok> 응답 이후 설정된 값으로 동작합니다.
+             설정된 내용은 내부 비휘발성 메모리에 저장됩니다.
+                   STX     COMMAND          DATA     ETX
+                    '<'         "sot"       data      '>'
+
+                 data :   '0'    온도센서값 출력 안함 (default)
+                          '1'    온도센서값 출력
+
+
+
+
+            6-1-10. SET OUTPUT TIME STAMP
+             타임스탬프의 출력 여부를 설정합니다.
+             타임스탬프 출력을 설정하였을 경우 데이터 출력 항목에 타임스탬프 항목이 추가됩니다.
+             출력되는 단위는 ms(milli-second)입니다.
+             0ms ~ 60000ms(1분) 까지 카운트 후 다시 0ms 부터 카운트합니다.
+             <ok> 응답 이후 설정된 값으로 동작합니다.
+             설정된 내용은 내부 비휘발성 메모리에 저장됩니다.
+                   STX     COMMAND          DATA     ETX
+                    '<'         "sots"      data      '>'
+
+                 data :   '0'    타임스탬프 출력 안함 (default)
+                          '1'    타임스탬프 출력
+
+
+
+
+E 2 B O X                                                                               24
+                                               9DOF-IMU(AHRS) EBIMU-9DOFV6 SPECIFICATION
+
+
+
+        6-2. SENSOR COMMAND
+
+
+            6-2-1. SET ENABLE MAGNETO
+             지자기센서의 On/Off를 설정 합니다.
+             지자기센서의 오동작이 큰 환경이나 Roll/Pitch만 사용하려는 경우 지자기센서를
+             OFF 하여 사용할 수 있습니다.
+             지자기센서를 OFF로 설정하면 3축 자이로센서와 3축 가속도센서만으로 Roll/ Pitch/
+             Yaw 자세연산을 합니다.              Yaw축은 시간이 지남에 따라 누적오차가 발생하게 됩니
+             다.
+             sem2 로 설정할 경우 능동적인 자기장 왜곡방지 기능이 활성화됩니다.
+             <ok> 응답 이후 설정된 값으로 동작합니다.
+             설정된 내용은 내부 비휘발성 메모리에 저장됩니다.
+                    STX     COMMAND             DATA     ETX
+                     '<'         "sem"          data     '>'
+
+                  data :   '0'    Magnetometer OFF
+                           '1'    Magnetometer ON
+                           '2'    능동형 Magnetometer ON (default)
+             * 지자기센서 ON 시 오차가 크다면 지자기센서 캘리브레이션을 다시 하는 것이 좋
+             습니다.
+
+
+
+
+            6-2-2. SET SENS GYRO
+             자이로센서의 감도를 설정 합니다.
+             125dps, 250dps, 500dps, 1000dps, 2000dps 로 설정할 수 있습니다.
+             단위는 degree/second 입니다.
+             값이 클수록 빠른 움직임을 놓치지 않고 자세에 반영 할 수 있습니다. 대신 정밀도
+             는 떨어집니다. 반대로 값이 작을수록 정밀도는 좋으나 빠른 움직임 시 drift오차가
+             발생할 수 있습니다. 사용 환경 및 목적에 맞게 설정 하십시오.
+             <ok> 응답 이후 설정된 값으로 동작합니다.
+             설정된 내용은 내부 비휘발성 메모리에 저장됩니다.
+                    STX     COMMAND             DATA     ETX
+                     '<'         "ssg"          data     '>'
+
+                  data :   '1'    125dps
+                           '2'    250dps
+                           '3'    500dps
+                           '4'    1000dps
+                           '5'    2000dps (default)
+
+
+
+
+E 2 B O X                                                                                  25
+                                                  9DOF-IMU(AHRS) EBIMU-9DOFV6 SPECIFICATION
+
+
+
+
+            6-2-3. SET SENS ACCELERO
+              가속도센서의 감도를 설정 합니다.
+              최대로 감지할 수 있는 가속도 값을 의미합니다.
+              단위는 중력가속도 g 입니다.
+              사용 환경 및 목적에 맞게 설정하십시오.
+              <ok> 응답 이후 설정된 값으로 동작합니다.
+              설정된 내용은 내부 비휘발성 메모리에 저장됩니다.
+                    STX    COMMAND                DATA     ETX
+                    '<'         "ssa"              data     '>'
+
+                 data :   '1'     2g
+                          '2'     4g
+                          '3'     8g
+                          '4'     16g (default)
+
+
+
+
+            6-2-4. SET LOW PASS FILTER Accelerometer
+              가속도센서의 Digital Low Pass Filter를 설정합니다.
+              LPF 설정을 통해 진동환경에서도 정밀한 데이터를 출력할 수 있습니다.
+              <ok> 응답 이후 설정된 값으로 동작합니다.
+              설정된 내용은 내부 비휘발성 메모리에 저장됩니다.
+                    STX    COMMAND                DATA     ETX
+                    '<'         “lpfa"             data     '>'
+
+                 data :         '0'      21Hz
+                                '1'      48Hz
+                                '2'      59Hz
+                                '3'      97Hz (default)
+                                '4'      117Hz
+                                '5'      191Hz
+                                '6'      230Hz
+                                '7'      262Hz
+                                '8'      493Hz
+                                '9'      No LPF
+
+
+
+
+E 2 B O X                                                                                     26
+                                                 9DOF-IMU(AHRS) EBIMU-9DOFV6 SPECIFICATION
+
+
+
+            6-2-5. SET FILTER FACTOR
+              Sensor Filter Factor를 설정합니다.
+              센서 측정 범위를 벗어난 동작의 경우 발생한 오차를 다시 보정하는 속도를
+              결정합니다. 값이 클수록 보정속도가 빨라집니다.
+              보정속도가 빨라지면 전체적인 정밀도는 떨어집니다.
+              sff : 가속도센서, 지자기센서의 Filter Factor를 설정합니다.
+              sffa : 가속도센서의 Filter Factor를 설정합니다.
+              sffm : 지자기센서의 Filter Factor를 설정합니다.
+              <ok> 응답 이후 설정된 값으로 동작합니다.
+              설정된 내용은 내부 비휘발성 메모리에 저장됩니다.
+                    STX      COMMAND             DATA       ETX
+                                 "sff"
+                     '<'        “sffa"            data       '>'
+                                "sffm"
+
+                  data : '1' ~ "50" (default : '10')
+
+
+            6-2-6. Robust Attitude Algorithm Timeout
+              RAA는 센서의 가감속에 따른 자세(roll,pitch) 오차를 보정하는 알고리즘입니다.
+              설정된 시간(RAA Timeout) 이상으로 오차 발생시 자세를 재 보정 합니다.
+              RAA Timeout 설정 단위는 ms(milli-second)입니다.
+              RAA Timeout은 센서의 최대 가/감속 시간보다 크게 설정하는 것이 좋습니다.
+              RAA Timeout을 0으로 설정할 경우 RAA는 off 됩니다.
+              <ok> 응답 이후 설정된 값으로 동작합니다.
+              설정된 내용은 내부 비휘발성 메모리에 저장됩니다.
+                    STX      COMMAND             DATA       ETX
+                     '<'       "raa_t"            data       '>'
+
+                  data : '0' ~ "2000000000" (default : '20000' , 20초)
+
+
+            6-2-7. Robust Heading Algorithm Timeout
+              RHA는 센서 사용 환경의 자기장 간섭에 따른 heading(yaw) 오차를 보정하는 알고
+              리즘입니다.
+              설정된 시간(RHA Timeout) 이상으로 오차 발생시 자세를 재 보정 합니다.
+              RHA Timeout 설정 단위는 ms(milli-second)입니다.
+              RHA Timeout은 최대 자기장 간섭 시간보다 크게 설정하는 것이 좋습니다.
+              RHA Timeout을 0으로 설정할 경우 RHA는 off 됩니다.
+              <ok> 응답 이후 설정된 값으로 동작합니다.
+              설정된 내용은 내부 비휘발성 메모리에 저장됩니다.
+                    STX      COMMAND             DATA       ETX
+                     '<'       "rha_t"            data       '>'
+
+                  data : '0' ~ "2000000000" (default : '10000' , 10초)
+
+
+
+
+E 2 B O X                                                                                    27
+                                                    9DOF-IMU(AHRS) EBIMU-9DOFV6 SPECIFICATION
+
+
+
+
+            6-2-8. RHA Clear
+              센서에서 측정되는 자기장 방향으로 heading을 재 정렬합니다.
+              <ok> 응답 이후 설정된 값으로 동작합니다.
+                    STX     COMMAND           ETX
+                     '<'         "rha_clr"    '>'
+
+
+
+
+            6-2-9. RHA Find Heading
+              왜곡 없는 정상적인 자기장이 측정될 경우 heading을 재 정렬 합니다.
+              정상적인 자기장 환경에서 센서의 회전이 발생해야 재 정렬됩니다.
+              <ok> 응답 이후 설정된 값으로 동작합니다.
+              설정된 내용은 내부 비휘발성 메모리에 저장됩니다.
+                    STX     COMMAND                 DATA     ETX
+                     '<'         "rha_fh"           data      '>'
+
+                  data :    '0'     Find Heading OFF
+                           '50'     Find Heading ON
+
+
+
+            6-2-10. Auto Gyroscope Calibration Enable
+              AGC는 실시간으로 자이로센서를 보정하는 기능합니다.
+              AGC Enable은 AGC의 활성/비활성을 설정합니다.
+              <ok> 응답 이후 설정된 값으로 동작합니다.
+              설정된 내용은 내부 비휘발성 메모리에 저장됩니다.
+                    STX     COMMAND                 DATA     ETX
+                     '<'          "agc_e"           data      '>'
+
+                  data :   '0'      AGC OFF
+                           '1'      AGC ON (default)
+
+
+
+
+            6-2-11. Active Vibration Cancellation Enable
+              AVC는 능동적으로 진동성분을 제거하는 기능입니다.
+              AVC는 LPF보다 뛰어난 진동제거 능력을 가지고 있습니다.
+              센서를 진동이 심한 환경에서 사용할 경우 AVC를 활성화하시기 바랍니다.
+              <ok> 응답 이후 설정된 값으로 동작합니다.
+              설정된 내용은 내부 비휘발성 메모리에 저장됩니다.
+                    STX     COMMAND                 DATA     ETX
+                     '<'         "avca_e"           data      '>'
+
+                  data :   '0'      AVC OFF (default)
+                           '1'      AVC ON
+
+
+
+
+E 2 B O X                                                                                       28
+                                                  9DOF-IMU(AHRS) EBIMU-9DOFV6 SPECIFICATION
+
+
+
+
+            6-2-12. POSITION FILTER PARAMETERS
+             센서의 속도, 거리를 연산하는 position filter의 SL parameter를 설정합니다.
+             <ok> 응답 이후 설정된 값으로 동작합니다.
+             설정된 내용은 내부 비휘발성 메모리에 저장됩니다.
+                   STX     COMMAND                DATA       ETX
+                    '<'      "posf_sl"        data_sl         '>'
+
+                 data_sl : "0.0000" ~ "1.0000" (default : "0.02")
+                          0 설정시 position filter 비활성
+
+
+
+
+            6-2-13. POSITION ZERO
+             누적된 속도, 거리(위치)를 0으로 설정합니다.
+             <ok> 응답 이후 설정된 값으로 동작합니다.
+                   STX     COMMAND         ETX
+                    '<'       "posz"        '>'
+
+
+
+
+E 2 B O X                                                                                     29
+                                              9DOF-IMU(AHRS) EBIMU-9DOFV6 SPECIFICATION
+
+
+        6-3. CALIBRATION COMMAND
+
+            6-3-1. CALIBRATION GYRO
+             자이로센서 x,y,z축 캘리브레이션을 합니다.
+             캘리브레이션 시 센서는 반드시 움직임이 없는 정지 상태에 있어야 합니다.
+             [설정순서]
+             (1) 센서를 방향/자세에 상관없이 움직임이 없는 상태로 놓습니다.
+             (2) “<cg>” 명령어 입력 후 <ok>응답까지 (2초정도)대기합니다.
+             <ok> 응답 이후 설정된 값으로 동작합니다.
+             설정된 내용은 내부 비휘발성 메모리에 저장됩니다.
+                   STX    COMMAND       ETX
+                    '<'      "cg"       '>'
+
+
+            6-3-2. CALIBRATION ACCELERO FREE
+             가속도센서의 XYZ축 캘리브레이션을 정밀하게 할 수 있는 명령입니다.
+             [설정순서]
+             (1) “<caf>”명령어를 입력합니다.
+             (2) 센서는 움직임이 없을 경우 ‘.’를 출력하고 해당 자세에 대해 보정합니다.
+             (3) 센서를 조금씩 움직여 여러 회전각도에서 ‘.’가 출력되게 합니다.
+               * 센서를 직육면체로 봤을때 6개의 면과 12개의 모서리, 8개의 꼭지점이 각각 바닥
+                 (중력방향)으로 향하도록 하여 ‘.’가 출력되게 하면 보다 정밀한 보정이 됩니다.
+
+                            꼭지점
+
+                                                  면
+
+
+
+                                      모서리
+             (4) ‘>’ 를 입력 후 <ok>응답까지 (1초정도)대기합니다.
+             <ok> 응답 이후 설정된 값으로 동작합니다.
+             설정된 내용은 내부 비휘발성 메모리에 저장됩니다.
+                   STX    COMMAND       ETX                 ETX
+                    '<'      "caf"      '>'       .......   '>'
+
+
+            6-3-3. CALIBRATION ACCELERO SIMPLE
+             가속도센서 XYZ축 캘리브레이션을 간단히 할 수 있는 명령입니다.
+             센서를 지표면과 수평이 되도록 유지한 정지 상태에서 명령어를 입력합니다.
+             명령어 입력 시 센서의 수평을 정확하게 유지할수록 캘리브레이션 정밀도는 높아집니다.
+             <ok> 응답 이후 설정된 값으로 동작합니다.
+             설정된 내용은 내부 비휘발성 메모리에 저장됩니다.
+                   STX    COMMAND       ETX
+                    '<'      "cas"      '>'
+
+
+
+
+E 2 B O X                                                                                 30
+                                             9DOF-IMU(AHRS) EBIMU-9DOFV6 SPECIFICATION
+
+
+
+            6-3-4. CALIBRATION MAGNETO FREE
+             지자기센서의 XYZ축 캘리브레이션을 한번에 정밀하게 할 수 있는 명령입니다.
+             이 명령으로 지자기센서의 캘리브레이션을 할 경우 다른 지자기 캘리브레이션 명령
+             어(cnxy,cnz)는 실행할 필요가 없습니다.
+
+
+             [설정순서]
+             (1) 센서를 사용할 환경에 센서를 배치합니다. 주변에 자기장의 간섭을 일으킬만한
+                 대상이 있다면 최대한 이격 시켜 배치합니다.
+             (2) “<cmf>”명령 후 센서를 전방위로 자유롭게 회전시킵니다. 회전에 대한 방향이
+                나 시간제약 없이 충분히 회전시킵니다.
+                센서를 특정 장치에 부착하여 사용한다면 해당 장치 전체를 회전시킵니다.
+                (회전되는 동안 센서는 주변의 자기장 데이터를 수집하여 보정 테이블을 생성합
+                니다.)
+             (3) ‘>’ 를 입력 후 <ok> 응답까지 (1초정도)대기합니다.
+
+
+             <ok> 응답 이후 설정된 값으로 동작합니다.
+             설정된 내용은 내부 비휘발성 메모리에 저장됩니다.
+                   STX    COMMAND      ETX                 ETX
+                   '<'      "cmf"      '>'       .......   '>'
+
+
+
+
+            6-3-5. CALIBRATION MAGNETO XY
+             지자기센서의 XY축에 대한 캘리브레이션 합니다.
+             cnxy명령을 사용할 경우 cmf로 설정된 캘리브레이션 데이터는 삭제됩니다.
+             +cnxy명령을 사용할 경우 cmf로 설정된 캘리브레이션 데이터와 함께 적용됩니다.
+             지자기센서의 축방향은 “4-5. Magnetometer Axis”를 참조하시기 바랍니다.
+             [설정순서]
+             (1) 센서를 사용할 환경에 센서를 배치합니다. 주변에 자기장의 간섭을 일으킬만한
+                 대상이 있다면 최대한 이격 시켜 배치합니다.
+             (2) 지자기센서의 z(z+z-상관없음)축이 위쪽(하늘)을 향하도록 위치시킵니다.
+             (3) “<cnxy>”또는“<+cnxy>” 명령 후 1초정도 대기합니다.
+             (4) z축을 고정한 그대로 센서를 가로방향으로 180도 회전 시킵니다.
+             (5) ‘>’전송 후 <ok> 응답이 나올때 까지 기다립니다.
+
+
+             <ok> 응답 이후 설정된 값으로 동작합니다.
+             설정된 내용은 내부 비휘발성 메모리에 저장됩니다.
+                   STX    COMMAND      ETX                 ETX
+                            "cnxy"
+                   '<'                 '>'       .......   '>'
+                           "+cnxy"
+
+
+
+
+E 2 B O X                                                                                31
+                                             9DOF-IMU(AHRS) EBIMU-9DOFV6 SPECIFICATION
+
+
+
+
+            6-3-6. CALIBRATION MAGNETO Z
+             지자기센서의 Z축에 대한 캘리브레이션을 합니다.
+             cnz명령을 사용할 경우 cmf로 설정된 캘리브레이션 데이터는 삭제됩니다.
+             +cnz명령을 사용할 경우 cmf로 설정된 캘리브레이션 데이터와 함께 적용됩니다.
+             지자기센서의 축방향은 “4-5. Magnetometer Axis”를 참조하시기 바랍니다.
+             [설정순서]
+             (1) 센서를 사용할 환경에 센서를 배치합니다. 주변에 자기장의 간섭을 일으킬만한
+                 대상이 있다면 최대한 이격 시켜 배치합니다.
+             (2) 지자기센서의 y(y+y-상관없음)축이 위쪽(하늘)을 향하도록 위치시킵니다.
+             (3) “<cnz>”또는“<+cnz>”명령 후 1초정도 대기합니다.
+             (4) y축을 고정한 그대로 센서를 가로방향으로 180도 회전 시킵니다.
+             (5) ‘>’전송 후 <ok> 응답이 나올때 까지 기다립니다.
+             <ok> 응답 이후 설정된 값으로 동작합니다.
+             설정된 내용은 내부 비휘발성 메모리에 저장됩니다.
+                   STX   COMMAND      ETX                  ETX
+                           "cnz"
+                   '<'                 '>'       .......   '>'
+                            "+cnz"
+
+
+
+
+E 2 B O X                                                                                32
+                                               9DOF-IMU(AHRS) EBIMU-9DOFV6 SPECIFICATION
+
+
+
+
+            6-3-7. SET MOTION OFFSET
+             회전축의 offset 또는 회전 데이터의 offset을 설정합니다.
+
+
+             [회전축 offset 설정]
+                cmo : roll, pitch, yaw 회전축에 offset이 설정됩니다. 회전축이 변하게 됩니다.
+                cmox : roll 회전축에 offset이 설정됩니다. 회전축이 변하게 됩니다.
+                cmoy : pitch 회전축에 offset이 설정됩니다. 회전축이 변하게 됩니다.
+                cmoxy : roll, pitch 회전축에 offset이 설정됩니다. 회전축이 변하게 됩니다.
+             [회전 데이터의 offset 설정]
+                cmo2 : roll, pitch, yaw 회전 데이터에 offset이 설정됩니다.
+                          회전축이 변하지 않습니다.
+                cmoh : yaw 회전 데이터에 offset이 설정됩니다. 회전축이 변하지 않습니다.
+
+
+             <ok> 응답 이후 설정된 값으로 동작합니다.
+             설정된 내용은 내부 비휘발성 메모리에 저장됩니다.
+                   STX     COMMAND       ETX
+                             "cmo"
+                            “cmox"
+                            "cmoy"
+                    '<'     "cmoz"       '>'
+                            "cmoxy"
+                            “cmo2"
+                            "cmoh"
+
+
+
+
+            6-3-8. CLEAR MOTION OFFSET
+             센서의 MOTION OFFSET을 제거 합니다.
+             cmo, cmox, cmoy, cmoz, cmoxy, cmo2, cmoh로 설정된 offset이 제거됩니다.
+             <ok> 응답 이후 설정된 값으로 동작합니다.
+             설정된 내용은 내부 비휘발성 메모리에 저장됩니다.
+                   STX     COMMAND       ETX
+                    '<'     "cmco"       '>'
+
+
+
+
+E 2 B O X                                                                                  33
+                                               9DOF-IMU(AHRS) EBIMU-9DOFV6 SPECIFICATION
+
+
+        6-4. ETC COMMAND
+
+            6-4-1. CONFIGURATION
+              센서의 설정 사항들을 명령어별로 출력합니다.
+              ‘>’ 입력 전 까지 정지상태로 있습니다.
+                  STX     COMMAND        ETX                      ETX
+                   '<'         "cfg"     '>'          .......         '>'
+
+
+            6-4-2. POWER ON START
+              센서의 전원 인가시 작동 여부를 설정합니다.
+                  STX     COMMAND              DATA             ETX
+                   '<'         "pons"          data             '>'
+                data :   '0'     전원 인가 시 센서 작동안함.
+                         '1'     전원 인가 시 센서 작동함.
+
+
+            6-4-3. START
+              센서를 작동 상태로 전환합니다.
+                  STX     COMMAND        ETX
+                   '<'         "start"   '>'
+
+
+            6-4-4. STOP
+              센서를 작동중지 상태로 전환합니다.
+                  STX     COMMAND        ETX
+                   '<'         "stop"    '>'
+
+
+            6-4-5. LOAD FACTORY SETTINGS
+              제품 출하시 설정값으로 모두 복원 합니다.
+              <ok> 응답 이후 설정된 값으로 동작합니다.
+              설정된 내용은 내부 비휘발성 메모리에 저장됩니다.
+                  STX     COMMAND        ETX
+                   '<'          "lf"     '>'
+
+
+            6-4-6. RESET
+              센서를 reset합니다. 전원을 재인가 한 것과 동일한 동작을 합니다.
+                  STX     COMMAND        ETX
+                   '<'         "reset"   '>'
+
+
+            6-4-7. VERSION CHECK
+              Version 정보를 표시합니다.
+              다른 명령과 달리 <ok> 응답을 하지 않습니다.
+                  STX     COMMAND        ETX
+                   '<'         "ver"     '>'
+             응답 예) “<imu9dofv600>”
+
+
+
+
+E 2 B O X                                                                                  34
+                                             9DOF-IMU(AHRS) EBIMU-9DOFV6 SPECIFICATION
+
+
+
+
+     7. ELECTRICAL CHARACTERISTICS
+
+        7-1. Absolute Maximum Ratings
+
+                    Parameter                   Maximum Value           Unit
+
+                  Supply Voltage                 -0.3 to +6.5            V
+
+               Storage Temperature                -40 to +85            ℃
+
+              Operation Temperature               -10 to +75            ℃
+
+                   Acceleration                 10000 for 0.2ms
+                                                                         g
+                (any axis,unpower)              2000 for 1.0ms
+
+                  Free fall shock                       1.8              m
+
+             ESD (human body model)                     2000
+                                                                         V
+               ESD (machine model)                      200
+
+             Input Voltage TX/RX pin             -0.3 to +6.2            V
+
+            Input Voltage nPD/nRST pin           -0.3 to +6.2            V
+
+
+
+
+        7-2. DC Electrical Characteristics
+
+                      Parameter                  Min            Typ     Max       Unit
+
+                    Supply voltage               3.3                     6.0       V
+
+                  Operating Current                             15                mA
+
+                 PownDown Current                               0.5               mA
+
+               Input voltage HIGH(RX)            2.5                  VCC + 0.5    V
+
+                Input voltage LOW(RX)            -0.3                    0.5       V
+
+               Ouput voltage HIGH(TX)         VCC - 0.5                            V
+
+               Ouput voltage LOW(TX)                                     0.4       V
+
+            Input Voltage HIGH(nPD/nRST)         1.5                    VCC        V
+
+            Input Voltage LOW(nPD/nRST)           0                      0.4       V
+
+
+
+
+E 2 B O X                                                                                35
+                                                  9DOF-IMU(AHRS) EBIMU-9DOFV6 SPECIFICATION
+
+
+
+
+     8. SENSOR SPECIFICATIONS
+
+        8-1. Attitude & Heading
+
+                           Parameter                          Value          Unit
+
+               Static accuracy (roll/pitch)                   < 0.1          deg
+
+               Static accuracy (roll/pitch)
+                                                             < 0.02          deg
+                 * Magnetometer OFF
+
+                  Static accuracy (yaw)                       < 0.5          deg
+
+                Dynamic accuracy (RMS)                        < 1.5          deg
+
+                Dynamic accuracy (RMS)
+                                                              < 0.5          deg
+                 * Magnetometer OFF
+
+                   Angular resolution                         0.01           deg
+
+                                         roll             -180 ~ +180
+
+            Output Ragne                pitch              -90 ~ +90         deg
+
+                                         yaw              -180 ~ +180
+
+                    Output data rate                     1Hz ~ 1000Hz         Hz
+
+
+
+        8-2. Gyroscope output
+
+                           Parameter                          Value          Unit
+
+                  Measurement range                      -2000 ~ +2000       dps
+
+                                       125 dps                 3.8
+
+                                       250 dps                 7.6
+
+             Sensitivity               500 dps                15.3           mdps
+
+                                       1000 dps               30.5
+
+                                       2000 dps               61.0
+
+                           Bandwidth                          1000            Hz
+
+                  Sensitivity change vs.
+                                                         -0.005 ~ +0.005     %/℃
+                       Temperature
+
+
+
+
+E 2 B O X                                                                                     36
+                                              9DOF-IMU(AHRS) EBIMU-9DOFV6 SPECIFICATION
+
+
+
+
+        8-3. Accelerometer output
+
+                          Parameter                      Value           Unit
+
+                 Measurement range                     -16 ~ +16          g
+
+                                        2g                0.061
+
+                                        4g                0.122
+            Sensitivity                                                  mg
+                                        8g                0.244
+
+                                        16g               0.488
+
+                          Bandwidth                       1000            Hz
+
+                 Sensitivity change vs.
+                                                      -0.005 +0.005      %/℃
+                      Temperature
+
+
+
+
+        8-4. Magnetometer output
+
+                          Parameter                      Value           Unit
+
+                 Measurement range                   -3000 ~ +3000        uT
+
+                          Sensitivity                     0.097           uT
+
+                          Bandwidth                       100             Hz
+
+
+
+
+E 2 B O X                                                                                 37
+                                         9DOF-IMU(AHRS) EBIMU-9DOFV6 SPECIFICATION
+
+
+
+
+     9. DIMENSIONS
+
+        16.3(W) * 18.6(H) * 3.05(D) mm
+
+
+
+
+                                    16.3mm
+
+
+
+
+                                                            18.6mm
+
+
+
+
+            4.3mm
+                                         2.54mm                      2.0
+
+
+                                                                           1.0
+
+
+
+
+                                                   1.45mm
+                                                                 1.6mm
+
+
+
+
+E 2 B O X                                                                            38
+                                    9DOF-IMU(AHRS) EBIMU-9DOFV6 SPECIFICATION
+
+
+
+
+     10. 주의사항
+
+
+            10-1. 정전기 주의
+            - 회로부가 노출되어 있는 센서 모듈은 정전기에 민감합니다. 정전기는 회로 손상을 일으
+             킬 수 있습니다.
+            - 센서 모듈 접촉 전에 반드시 접지된 금속 등에 먼저 접촉하여 인체 등에 대전되어 있는
+             정전기를 방전시키십시오.
+            - 정전기를 제거하지 않은 상태로 센서모듈을 취급할 경우 파손의 가능성이 있습니다.
+
+
+
+            10-2. 센서모듈 취급주의
+            - 센서모듈의 부품 면에 압력이 가해지면 출고 시 설정된 보정 데이터가 틀어질 수 있습
+             니다. 센서 부품 면에 압력이 가해지지 않도록 닿는 물체가 없어야 합니다.
+            - 센서모듈이 Storage Temperature보다 높은 온도에 노출 되었을 경우 보정 데이터가 틀
+             어질 수 있습니다.
+            - 센서모듈에 Absolute Maximum Ratings에 정의된 Acceleration 보다 큰 충격이 가해질
+             경우 센서가 손상될 수 있습니다.
+
+
+
+
+E 2 B O X                                                                       39
+                        9DOF-IMU(AHRS) EBIMU-9DOFV6 SPECIFICATION
+
+
+
+
+                     Revision History
+
+
+            Rev1.0          Initial release
+
+
+
+
+E 2 B O X                                                           40
+                    9DOF-IMU(AHRS) EBIMU-9DOFV6 SPECIFICATION
+
+
+
+
+                    이투박스
+            homepage : www.e2box.co.kr
+             e-mail : e2b@e2box.co.kr
+
+
+
+
+E 2 B O X                                                       41
+

@@ -1,0 +1,522 @@
+--- a/README.md
++++ b/README.md
+@@ -1,4 +1,50 @@
+ # 최종 B와 같은 2D RViz — 실차 입력 전용
++
++## 트랙터 단독 진단 모드 (2026-10-20)
++
++전체 실차 모드 `FULL_VEHICLE`는 기존 기본값이며 두 IMU, 실측 기하, 장착축,
++일직선 정렬을 계속 요구한다. 트랙터만 표시할 때는 별도 모드를 명시한다.
++
++```bash
++ros2 launch tractor_trailer_rviz_2d visualization.launch.py \
++  config_file:=/home/venezuelachocolatemilk/mvsim_slam_real/visualization/tractor_trailer_rviz_2d/config/tractor_only_diagnostic.yaml \
++  visualization_mode:=TRACTOR_ONLY_DIAGNOSTIC slam_frame:=laser_frame
++```
++
++기존 RViz 창을 재사용할 때 `rviz:=false`를 추가한다. 기존 G6/Cartographer와 같은
++ROS_DOMAIN_ID 및 ROS_LOCALHOST_ONLY 환경을 사용한다. 이 Launch는 센서를 시작하지 않는다.
++IMU 수신에는 기존 `imu_bridges.launch.py`를 실제 확인한 포트로 별도 실행한다.
++
++이 모드는 실제 `map -> laser_frame`과 트랙터 IMU만 사용한다. 원본 트랙터 10개 꼭짓점,
++민트색/0.04m 선, 원본 크기를 그대로 그린다. 트랙터 화살표는 원본 화살표와 같은
++빨강/0.8,0.08,0.18m이며 트랙터 hull의 중심에 표시한다. 트레일러 Marker와 Yaw는
++생성하지 않고 phi는 N/A다. `reference_renderer.py`의 원본 메서드는 변경하지 않았다.
++
++실측 LiDAR→후륜 XY 및 LiDAR→차체 Yaw가 없으면 **센서 기준 미교정 진단 아이콘**이다.
++후륜을 센서 위치와 같다고 측정한 것이 아니다. `SENSOR ANCHOR`, `UNALIGNED`를 표시하고
++상태 JSON에 `position_reference=UNMEASURED_SENSOR_ANCHOR`, `vehicle_pose_valid=false`,
++`heading_alignment_verified=false`를 기록한다. 원본 hull은 디자인이며 실차 실측 치수가 아니다.
++표시 방향은 최초 SLAM 추적축 방향에 실제 IMU의 초기 대비 변화량을 더한다.
++센서 장착/sign과 map 절대 heading은 미검증이며 실제 차체 방향으로 해석하면 안 된다.
++`diagnostic_valid=true`는 신선한 표시 입력을 뜻하고, 전체 상태 `valid`는 false로 유지한다.
++
++실측값을 얻으면 `tractor_diagnostic.extrinsics_confirmed`, `slam_to_rear_axle_xy`,
++`slam_to_body_yaw_rad`와 tractor mounting/sign을 실제 값으로 설정한다. 미측정값을 0으로
++확정하지 않는다. 센서 간극/reset 뒤 진단 기준이 소실되면 시각화에만 다음을 사용한다.
++
++```bash
++ros2 service call /vehicle_viz_2d/reset_diagnostic_reference std_srvs/srv/SetBool '{data: true}'
++```
++
++이는 물리 정렬을 확인하는 서비스가 아니다. 전체 실차의 `align_straight` 조건을 완화하지 않는다.
++이 노드는 Marker/status만 발행하며 차량 제어, 센서 명령 또는 TF를 발행하지 않는다.
++
++IMU 브리지는 EBIMU의 정상 60000ms 카운터 순환을 처리하고, 중복/경계 밖 역행/긴 RX 공백/
++호스트 시간과 불일치하는 점프는 INVALID 처리한다. 진단값 `sensor_rollovers`,
++`estimated_missing`, `sensor_clock_event`를 확인한다. 정상 순환과 정확히 같은 시점/패킷을
++만드는 물리 리셋은 카운터만으로 완전히 구별할 수 없다. ROS header는 기존대로 호스트 수신 시각이다.
++
++아래는 최초 이식 당시의 전체 실차 모드 설명과 시험 기록이다.
+ 
+ 2D 코드·디자인 이식과 소프트웨어 시험을 완료했다. **현재 실제 두 IMU·G6·Cartographer 연동은 미검증이다.**
+ 기본 LIVE 실행은 실제 입력만 기다린다. 가상 지도·Scan·IMU·Ground Truth를 자동으로 공급하지 않는다.
+--- a/launch/visualization.launch.py
++++ b/launch/visualization.launch.py
+@@ -11,7 +11,8 @@
+     out=[Node(package='tractor_trailer_rviz_2d',executable='tt2d_visualizer',output='screen',
+               parameters=[{'config_file':value('config_file'),'tractor_topic':value('tractor_topic'),
+                            'trailer_topic':value('trailer_topic'),'slam_frame':value('slam_frame'),
+-                           'output_directory':value('output_directory'),'use_sim_time':False}])]
++                           'output_directory':value('output_directory'),
++                           'visualization_mode':value('visualization_mode'),'use_sim_time':False}])]
+     if value('rviz').lower()=='true':
+         out.append(Node(package='rviz2',executable='rviz2',name='tractor_trailer_rviz_2d',
+                         arguments=['-d',value('rviz_config')],parameters=[{'use_sim_time':False}],output='screen'))
+@@ -21,5 +22,6 @@
+ def generate_launch_description():
+     share=Path(get_package_share_directory('tractor_trailer_rviz_2d'))
+     defaults={'config_file':str(share/'config/live.yaml'),'tractor_topic':'','trailer_topic':'',
+-              'slam_frame':'','output_directory':'','rviz':'true','rviz_config':str(share/'rviz/live.rviz')}
++              'slam_frame':'','output_directory':'','visualization_mode':'',
++              'rviz':'true','rviz_config':str(share/'rviz/live.rviz')}
+     return LaunchDescription([DeclareLaunchArgument(k,default_value=v) for k,v in defaults.items()]+[OpaqueFunction(function=start)])
+--- a/tractor_trailer_rviz_2d/render_adapter.py
++++ b/tractor_trailer_rviz_2d/render_adapter.py
+@@ -58,6 +58,45 @@
+                 m.lifetime.sec=0;m.lifetime.nanosec=800_000_000
+         return batch
+ 
++    def render_tractor(self,xy,yaw,text,frame):
++        """Reuse the reference LINE_STRIP; no trailer pose is constructed.
++
++        NaN is an internal unavailable slot required by the reference method's
++        four-element state. It suppresses its trailer arrow and is never sent
++        as a pose, orientation, phi, or trailer Marker.
++        """
++        original=self.footprints
++        polygon=original.polygons[0]
++        c,s=math.cos(yaw),math.sin(yaw)
++        points=polygon@np.array([[c,s],[-s,c]])+xy
++        class TractorFootprint:
++            def world(self,state):return [points]
++        try:
++            self.footprints=TractorFootprint()
++            with np.errstate(invalid='ignore'):
++                batch=self.render([*xy,yaw,float('nan')],'TRACTOR_DIAGNOSTIC',frame)
++        finally:
++            self.footprints=original
++        if batch is None:return None
++        for marker in batch.markers:
++            if marker.ns=='articulation':
++                marker.text=text
++                # Keep the original white .4 m text; place diagnostic lines
++                # above the hull so the extra warnings do not hide the body.
++                marker.pose.position.x=float(np.mean(points[:,0]))
++                marker.pose.position.y=float(np.max(points[:,1])+.25+.2*len(text.splitlines()))
++        # Same reference arrow dimensions/color/centroid, on the available body.
++        arrow=Marker();arrow.header.frame_id=frame
++        arrow.header.stamp=self.get_clock().now().to_msg()
++        arrow.ns='tractor_pose_arrow';arrow.id=0;arrow.type=Marker.ARROW
++        arrow.pose=self.pose_msg([*np.mean(points,axis=0),yaw]).pose
++        arrow.pose.position.z=.15
++        arrow.scale.x=.8;arrow.scale.y=.08;arrow.scale.z=.18
++        arrow.color.r=arrow.color.a=1.
++        arrow.lifetime.nanosec=800_000_000
++        batch.markers.append(arrow)
++        return batch
++
+ 
+ def unavailable(node,frame,reason,xy=(10.,0.),held=None,test=False):
+     markers=[]
+--- a/tractor_trailer_rviz_2d/visualizer.py
++++ b/tractor_trailer_rviz_2d/visualizer.py
+@@ -15,7 +15,7 @@
+ from std_srvs.srv import SetBool
+ from tf2_ros import Buffer,TransformListener,TransformException
+ from visualization_msgs.msg import MarkerArray
+-from .core import YawTrack,Alignment,vehicle_poses,validate_geometry,yaw_quat
++from .core import YawTrack,Alignment,vehicle_poses,validate_geometry,yaw_quat,rot2
+ from .render_adapter import Renderer,unavailable
+ 
+ 
+@@ -27,7 +27,7 @@
+     def __init__(self,**kwargs):
+         super().__init__('tractor_trailer_2d_visualizer',**kwargs)
+         share=Path(get_package_share_directory('tractor_trailer_rviz_2d'))
+-        for k,v in dict(config_file=str(share/'config/live.yaml'),tractor_topic='',trailer_topic='',slam_frame='',output_directory='').items():
++        for k,v in dict(config_file=str(share/'config/live.yaml'),tractor_topic='',trailer_topic='',slam_frame='',output_directory='',visualization_mode='').items():
+             self.declare_parameter(k,v)
+         c=self.cfg=yaml.safe_load(Path(self.get_parameter('config_file').value).read_text())
+         self.test=c['mode']=='TEST'
+@@ -38,6 +38,11 @@
+         if not self.test and ('test' in c['namespace'] or c['fixed_frame']!='map'):
+             raise ValueError('LIVE requires map and real input namespace')
+         self.ns,self.frame=c['namespace'],c['fixed_frame']
++        self.visualization_mode=(self.get_parameter('visualization_mode').value
++                                 or c.get('visualization_mode','FULL_VEHICLE'))
++        if self.visualization_mode not in ('FULL_VEHICLE','TRACTOR_ONLY_DIAGNOSTIC'):
++            raise ValueError('unknown visualization_mode')
++        self.diagnostic_anchor=None
+         self.slam_frame=self.get_parameter('slam_frame').value or c['slam_frame']
+         self.geom=c['geometry'];self.geometry_error=''
+         try:
+@@ -62,6 +67,7 @@
+         self.status=self.create_publisher(String,self.ns+'/status',10)
+         self.align=Alignment()
+         self.create_service(SetBool,self.ns+'/align_straight',self.on_align)
++        self.create_service(SetBool,self.ns+'/reset_diagnostic_reference',self.on_diagnostic_reset)
+         self.create_subscription(String,c['state_topic'],self.on_state,10)
+         design=json.loads((share/'models/reference_footprints.json').read_text())
+         self.renderer=Renderer(self,design['polygons'],self.geom['rear_axle_to_hitch_xy'])
+@@ -168,9 +174,72 @@
+             res.success=False;res.message=str(exc)
+         return res
+ 
++    def on_diagnostic_reset(self,req,res):
++        if self.visualization_mode!='TRACTOR_ONLY_DIAGNOSTIC':
++            res.success=False;res.message='diagnostic mode only; full alignment unchanged'
++        else:
++            self.diagnostic_anchor=None;self.last_model=None;self.renderer.last_viz=0.
++            res.success=True
++            res.message='diagnostic first-sample reference cleared; no physical alignment claimed'
++        return res
++
++    def tractor_diagnostic(self,info,now,wall):
++        """A display-only icon; full vehicle validity remains false."""
++        a=self.tracks['tractor']
++        if self.source_fault['tractor'] or a.state(wall,now)!='LIVE':
++            raise ValueError('tractor IMU must be LIVE')
++        if a.source!='orientation':
++            raise ValueError('tractor diagnostic requires measured orientation')
++        p=self.get_slam();common=min(a.last_stamp,stamp_ns(p.header.stamp))
++        if (now-common)/1e9>min(self.cfg['imu_timeout_s'],self.cfg['pose_timeout_s']):
++            raise ValueError('tractor/SLAM sample stale')
++        native=a.at(common)
++        p=self.buffer.lookup_transform(self.frame,self.slam_frame,Time(nanoseconds=common))
++        slam_yaw=yaw_quat(quaternion(p.transform.rotation))
++        cfg=self.cfg.get('tractor_diagnostic',{})
++        measured=cfg.get('extrinsics_confirmed',False) is True
++        offset=cfg.get('slam_to_rear_axle_xy');mount_yaw=cfg.get('slam_to_body_yaw_rad')
++        if measured:
++            if (not isinstance(offset,list) or len(offset)!=2
++                    or not all(type(v) in (int,float) and math.isfinite(v) for v in offset)
++                    or type(mount_yaw) not in (int,float) or not math.isfinite(mount_yaw)):
++                raise ValueError('confirmed tractor extrinsics need measured XY and yaw')
++        elif cfg.get('allow_sensor_anchor') is not True:
++            raise ValueError('measure tractor extrinsics or explicitly select sensor-anchor diagnostic')
++        if self.diagnostic_anchor is None:
++            self.diagnostic_anchor=(native,slam_yaw+(mount_yaw if measured else 0.),a.epoch,common)
++        initial,heading,epoch,reference_stamp=self.diagnostic_anchor
++        if epoch!=a.epoch:raise ValueError('DIAGNOSTIC REFERENCE LOST; reset diagnostic reference')
++        delta=native-initial;display_yaw=heading+delta
++        xy=(p.transform.translation.x,p.transform.translation.y)
++        if measured:
++            lever=rot2(slam_yaw,offset);xy=(xy[0]+lever[0],xy[1]+lever[1])
++        if not all(math.isfinite(v) for v in (*xy,display_yaw)):
++            raise ValueError('diagnostic pose invalid')
++        mounting=self.cfg['tractor']['mounting_and_sign_confirmed'] is True
++        position_reference='MEASURED_REAR_AXLE' if measured else 'UNMEASURED_SENSOR_ANCHOR'
++        text='TRACTOR DIAG\nphi=N/A\n'+('REAR AXLE' if measured else 'SENSOR ANCHOR')
++        if not measured or not mounting:text+='\nUNALIGNED'
++        text+='\nTRAILER NO DATA' if info['imu']['trailer']=='NO DATA' else '\nTRAILER UNUSED'
++        batch=self.renderer.render_tractor(xy,display_yaw,text,self.frame)
++        self.last_model=batch;self.last_xy=xy
++        info.update(valid=False,diagnostic_valid=True,vehicle_pose_valid=measured and mounting,
++                    full_vehicle_valid=False,visualization_mode=self.visualization_mode,
++                    position_reference=position_reference,position_source=self.slam_frame,
++                    mounting_and_sign_confirmed=mounting,extrinsics_confirmed=measured,
++                    heading_reference='INITIAL_SLAM_TRACKING_YAW_PLUS_NATIVE_IMU_DELTA',
++                    heading_alignment_verified=measured and mounting,
++                    display_anchor_xy=xy,display_yaw_rad=display_yaw,
++                    native_imu_delta_rad=delta,reference_stamp_ns=reference_stamp,
++                    values={'tractor_delta':delta,'tractor_yaw':display_yaw if measured and mounting else None,
++                            'trailer_yaw':None,'phi':None},reason='DIAGNOSTIC_ONLY',
++                    paired_stamp_ns=common,paired_age_ms=(now-common)/1e6)
++        return batch
++
+     def tick(self):
+         now,wall=self.get_clock().now().nanoseconds,time.monotonic()
+         info=dict(mode='TEST/SIMULATED' if self.test else 'REAL_INPUT',stamp_ns=now,valid=False,
++                  visualization_mode=self.visualization_mode,diagnostic_valid=False,
+                   imu={r:'INVALID' if self.source_fault[r] else t.state(wall,now) for r,t in self.tracks.items()},
+                   imu_age_s={r:None if t.last_wall is None else wall-t.last_wall for r,t in self.tracks.items()},
+                   imu_reason={r:t.error for r,t in self.tracks.items()},
+@@ -180,17 +249,20 @@
+         except (ValueError,TransformException):info['slam']='STALE' if self.last_slam_stamp is not None else 'NO DATA'
+         batch=None
+         try:
+-            self.require_alignment();common,p=self.coherent()
+-            values=self.align.evaluate(self.tracks['tractor'],self.tracks['trailer'],common)
+-            xy=p.transform.translation
+-            poses=vehicle_poses((xy.x,xy.y),yaw_quat(quaternion(p.transform.rotation)),values['tractor_yaw'],values['trailer_yaw'],self.geom)
+-            state=[*poses['tractor'],values['tractor_yaw'],values['trailer_yaw']]
+-            stage=('TEST/SIMULATED ' if self.test else '')+self.stage()
+-            if self.renderer.stage!=stage:self.renderer.last_viz=0.
+-            batch=self.renderer.render(state,stage,self.frame)
+-            self.last_model=batch;self.last_xy=poses['tractor']
+-            info.update(valid=True,values=values,poses=poses,paired_stamp_ns=common,
+-                        paired_age_ms=(now-common)/1e6,reason='OK',marker_update_period_s=.4)
++            if self.visualization_mode=='TRACTOR_ONLY_DIAGNOSTIC':
++                batch=self.tractor_diagnostic(info,now,wall)
++            else:
++                self.require_alignment();common,p=self.coherent()
++                values=self.align.evaluate(self.tracks['tractor'],self.tracks['trailer'],common)
++                xy=p.transform.translation
++                poses=vehicle_poses((xy.x,xy.y),yaw_quat(quaternion(p.transform.rotation)),values['tractor_yaw'],values['trailer_yaw'],self.geom)
++                state=[*poses['tractor'],values['tractor_yaw'],values['trailer_yaw']]
++                stage=('TEST/SIMULATED ' if self.test else '')+self.stage()
++                if self.renderer.stage!=stage:self.renderer.last_viz=0.
++                batch=self.renderer.render(state,stage,self.frame)
++                self.last_model=batch;self.last_xy=poses['tractor']
++                info.update(valid=True,values=values,poses=poses,paired_stamp_ns=common,
++                            paired_age_ms=(now-common)/1e6,reason='OK',marker_update_period_s=.4)
+         except (ValueError,TransformException) as exc:
+             info['reason']=str(exc)
+             brief='T:'+info['imu']['tractor'].replace(' ','_')+' R:'+info['imu']['trailer'].replace(' ','_')+' SLAM:'+info['slam'].replace(' ','_')
+--- a/tractor_trailer_rviz_2d/serial_bridge.py
++++ b/tractor_trailer_rviz_2d/serial_bridge.py
+@@ -10,6 +10,7 @@
+ from sensor_msgs.msg import Imu
+ from diagnostic_msgs.msg import DiagnosticArray,DiagnosticStatus,KeyValue
+ from .serial_protocol import Parser,open_serial
++from .timestamp_guard import SensorTimestampGuard
+ 
+ 
+ class Bridge(Node):
+@@ -37,6 +38,8 @@
+         self.count=self.bytes=0
+         self.started=time.monotonic();self.last=None
+         self.error='';self.previous_sensor_ms=None;self.parser_fault=False
++        self.sensor_rollovers=0
++        self.sensor_clock=SensorTimestampGuard()
+         self.create_timer(.002,self.poll);self.create_timer(.2,self.health)
+         self.get_logger().info('REAL_UART_ONLY; TX=0; role='+self.role+'; port='+v['port'])
+ 
+@@ -52,8 +55,9 @@
+             for sample in samples:
+                 self.parser_fault=False
+                 sensor_ms=sample['sensor_ms']
+-                if sensor_ms is not None and self.previous_sensor_ms is not None and sensor_ms<=self.previous_sensor_ms:
+-                    raise ValueError('sensor timestamp reset/repeated; restart bridge and realign')
++                if sensor_ms is not None:
++                    self.sensor_clock.observe(sensor_ms,time.monotonic())
++                    self.sensor_rollovers=self.sensor_clock.rollovers
+                 self.previous_sensor_ms=sensor_ms
+                 stamp=self.get_clock().now().nanoseconds
+                 m=Imu();m.header.frame_id=self.frame
+@@ -74,7 +78,8 @@
+         d.hardware_id=self.ser.port;d.message=state+':'+self.error
+         d.level=DiagnosticStatus.OK if state=='LIVE' else DiagnosticStatus.ERROR
+         values=dict(rx_bytes=self.bytes,tx_bytes=0,parsed=self.parser.accepted,
+-                    rejected=self.parser.rejected,published=self.count,
++                    rejected=self.parser.rejected,published=self.count,sensor_rollovers=self.sensor_rollovers,
++                    estimated_missing=self.sensor_clock.missing_packets,sensor_clock_event=self.sensor_clock.event,
+                     timestamp='host receipt, not hardware synchronized',
+                     covariance='received fields unknown=0; unavailable=-1',
+                     reference='manufacturer native; mounting and sign require validation')
+--- /dev/null
++++ b/tractor_trailer_rviz_2d/timestamp_guard.py
+@@ -0,0 +1,39 @@
++"""Validate EBIMU's 60000 ms counter without changing received timestamps."""
++import math
++
++
++class SensorTimestampGuard:
++    def __init__(self, period_ms=10.):
++        self.period_ms = period_ms
++        self.previous = self.wall = self.origin_wall = self.elapsed_ms = None
++        self.rollovers = self.missing_packets = 0
++        self.event = 'NO DATA'
++
++    def observe(self, sensor_ms, wall):
++        if not math.isfinite(sensor_ms) or not 0 <= sensor_ms < 60000 or sensor_ms != int(sensor_ms):
++            raise ValueError('sensor timestamp outside documented counter range')
++        if self.previous is None:
++            self.previous, self.wall, self.origin_wall, self.elapsed_ms = sensor_ms, wall, wall, 0.
++            self.event = 'FIRST_SAMPLE'
++            return
++        host_step = wall - self.wall
++        if not 0 <= host_step <= .5:
++            raise ValueError('sensor RX gap; restart bridge and realign')
++        step = sensor_ms - self.previous
++        rollover = step < 0
++        if step == 0:
++            raise ValueError('sensor timestamp repeated/old packet')
++        if rollover:
++            step += 60000
++            if not (self.previous >= 59000 and sensor_ms < 1000 and 0 < step <= 100):
++                raise ValueError('sensor timestamp reset/backward/old packet')
++        elapsed = self.elapsed_ms + step
++        # Bounded delivery jitter is allowed; backlogs and apparent clock jumps
++        # must not establish a new heading epoch silently.
++        if abs(elapsed - (wall - self.origin_wall) * 1000) > 250:
++            raise ValueError('sensor/host timeline mismatch; possible stale packet or reset')
++        missing = max(0, round(step / self.period_ms) - 1)
++        self.missing_packets += missing
++        self.rollovers += int(rollover)
++        self.event = 'ROLLOVER' if rollover else ('PACKET_GAP' if missing else 'LIVE')
++        self.previous, self.wall, self.elapsed_ms = sensor_ms, wall, elapsed
+--- /dev/null
++++ b/config/tractor_only_diagnostic.yaml
+@@ -0,0 +1,42 @@
++# Display only. A sensor-anchored icon is NOT a measured rear-axle pose.
++mode: LIVE
++visualization_mode: TRACTOR_ONLY_DIAGNOSTIC
++namespace: /vehicle_viz_2d
++fixed_frame: map
++slam_frame: laser_frame
++imu_timeout_s: 0.5
++pose_timeout_s: 0.5
++max_pair_skew_s: 0.05
++geometry:
++  confirmed: false
++  source: UNMEASURED_REAL_VEHICLE
++  slam_to_rear_axle_xy: [null, null]
++  slam_to_body_yaw_rad: null
++  rear_axle_to_hitch_xy: [null, null]
++  trailer_origin_to_hitch_xy: [null, null]
++  trailer_origin_to_axle_xy: [null, null]
++tractor_diagnostic:
++  allow_sensor_anchor: true
++  extrinsics_confirmed: false
++  slam_to_rear_axle_xy: [null, null]
++  slam_to_body_yaw_rad: null
++tractor:
++  topic: /vehicle_viz_2d/tractor/imu/data
++  frame: vehicle_viz_2d_tractor_imu
++  source: orientation
++  sign: 1
++  sensor_to_body_rpy: [0.0, 0.0, 0.0]
++  mounting_and_sign_confirmed: false
++  gyro_bias_rad_s: 0.0
++  gyro_bias_confirmed: false
++trailer:
++  topic: /vehicle_viz_2d/trailer/imu/data
++  frame: vehicle_viz_2d_trailer_imu
++  source: orientation
++  sign: 1
++  sensor_to_body_rpy: [0.0, 0.0, 0.0]
++  mounting_and_sign_confirmed: false
++  gyro_bias_rad_s: 0.0
++  gyro_bias_confirmed: false
++state_topic: /parking/status
++state_timeout_s: 3.0
+--- /dev/null
++++ b/tests/test_timestamp_guard.py
+@@ -0,0 +1,27 @@
++"""Unpublished boundary cases; hardware verification is recorded separately."""
++import pytest
++from tractor_trailer_rviz_2d.timestamp_guard import SensorTimestampGuard
++
++
++def test_observed_rollover_and_missing_packet():
++    g=SensorTimestampGuard()
++    g.observe(59992.,1.)
++    g.observe(2.,1.01)
++    g.observe(32.,1.04)
++    assert g.rollovers==1 and g.missing_packets==2
++    assert g.event=='PACKET_GAP'
++
++
++@pytest.mark.parametrize('first,last,dt',[
++    (12342.,2.,.01),       # reset outside rollover boundary
++    (12342.,12332.,.01),   # reordered old packet
++    (12342.,12342.,.01),   # duplicate packet
++    (59992.,2.,.6),        # long gap at a plausible boundary
++    (59992.,500.,.01),     # implausible boundary step
++    (2.,59992.,.01),       # previous-cycle packet after rollover
++    (12000.,13000.,.01),   # clock advance inconsistent with host time
++])
++def test_faults_do_not_advance_epoch(first,last,dt):
++    g=SensorTimestampGuard();g.observe(first,1.)
++    with pytest.raises(ValueError):g.observe(last,1.+dt)
++    assert g.previous==first and g.rollovers==0
+--- /dev/null
++++ b/tests/test_tractor_only_design.py
+@@ -0,0 +1,38 @@
++"""Rendering-only regression checks. No ROS inputs are published."""
++import json
++import math
++from pathlib import Path
++from types import SimpleNamespace
++import numpy as np
++import pytest
++from rclpy.time import Time
++from visualization_msgs.msg import Marker
++from tractor_trailer_rviz_2d.render_adapter import Renderer
++
++
++@pytest.mark.parametrize('xy,yaw',[([0.,0.],0.),([2.,-3.],1.2)])
++def test_original_tractor_vertices_and_style_without_any_trailer(xy,yaw):
++    root=Path(__file__).resolve().parents[1]
++    design=json.loads((root/'models/reference_footprints.json').read_text())
++    node=SimpleNamespace(get_clock=lambda:SimpleNamespace(now=lambda:Time(nanoseconds=10**9)))
++    renderer=Renderer(node,design['polygons'],[None,None])
++    markers=renderer.render_tractor(xy,yaw,'DIAG phi=N/A\nSENSOR ANCHOR','map').markers
++    assert len(markers)==3
++    body=next(m for m in markers if m.ns=='current_body')
++    assert body.id==0 and len(body.points)==11 and body.type==Marker.LINE_STRIP
++    c,s=math.cos(yaw),math.sin(yaw)
++    expected=np.asarray(design['polygons'][0])@np.array([[c,s],[-s,c]])+xy
++    np.testing.assert_allclose([[p.x,p.y] for p in body.points],np.vstack([expected,expected[0]]))
++    assert [body.color.r,body.color.g,body.color.b,body.color.a]==pytest.approx([0,1,.7,.85])
++    assert body.scale.x==pytest.approx(.04)
++    assert all(p.z==pytest.approx(.08) for p in body.points)
++    arrow=next(m for m in markers if m.ns=='tractor_pose_arrow')
++    assert arrow.type==Marker.ARROW
++    assert [arrow.scale.x,arrow.scale.y,arrow.scale.z]==pytest.approx([.8,.08,.18])
++    assert [arrow.color.r,arrow.color.g,arrow.color.b,arrow.color.a]==[1.,0.,0.,1.]
++    assert [arrow.pose.position.x,arrow.pose.position.y]==pytest.approx(expected.mean(axis=0))
++    assert all(m.header.frame_id=='map' for m in markers)
++    assert not any('trailer' in m.ns or (m.ns=='current_body' and m.id==1) for m in markers)
++    assert all(math.isfinite(v) for m in markers for v in [m.pose.position.x,m.pose.position.y,m.pose.orientation.z,m.pose.orientation.w])
++    text=next(m for m in markers if m.type==Marker.TEXT_VIEW_FACING)
++    assert 'phi=N/A' in text.text and 'nan' not in text.text.lower()
+--- /dev/null
++++ b/tests/test_tractor_only_validity.py
+@@ -0,0 +1,54 @@
++"""Display validity and unknown-extrinsics regressions; publishes nothing."""
++from types import SimpleNamespace as NS
++import pytest
++from tractor_trailer_rviz_2d.core import YawTrack,rpy_quat
++from tractor_trailer_rviz_2d.visualizer import Vehicle2D
++
++
++def case():
++    track=YawTrack()
++    track.push(10**9,1.,10**9,q=rpy_quat(0,0,.5))
++    track.push(1_100_000_000,1.1,1_100_000_000,q=rpy_quat(0,0,.6))
++    p=NS(header=NS(stamp=NS(sec=1,nanosec=100_000_000)),
++         transform=NS(translation=NS(x=3.,y=4.),rotation=NS(x=0.,y=0.,z=0.,w=1.)))
++    obj=NS(tracks={'tractor':track},source_fault={'tractor':''},get_slam=lambda:p,
++           buffer=NS(lookup_transform=lambda *args:p),frame='map',slam_frame='laser_frame',
++           cfg={'imu_timeout_s':.5,'pose_timeout_s':.5,
++                'tractor_diagnostic':{'allow_sensor_anchor':True,'extrinsics_confirmed':False},
++                'tractor':{'mounting_and_sign_confirmed':False}},
++           diagnostic_anchor=None,visualization_mode='TRACTOR_ONLY_DIAGNOSTIC',
++           renderer=NS(render_tractor=lambda *args:NS(markers=[])))
++    return obj,{'imu':{'tractor':'LIVE','trailer':'NO DATA'}}
++
++
++def test_diagnostic_needs_no_trailer_and_never_claims_full_vehicle_validity():
++    obj,info=case()
++    Vehicle2D.tractor_diagnostic(obj,info,1_100_000_000,1.1)
++    assert info['diagnostic_valid'] and not info['valid'] and not info['full_vehicle_valid']
++    assert not info['vehicle_pose_valid'] and not info['heading_alignment_verified']
++    assert info['position_reference']=='UNMEASURED_SENSOR_ANCHOR'
++    assert info['display_anchor_xy']==(3.,4.)
++    assert info['values']['tractor_yaw'] is None
++    assert info['values']['trailer_yaw'] is None and info['values']['phi'] is None
++
++
++def test_unknown_extrinsics_require_explicit_diagnostic_opt_in():
++    obj,info=case();obj.cfg['tractor_diagnostic']['allow_sensor_anchor']=False
++    with pytest.raises(ValueError,match='measure tractor extrinsics'):
++        Vehicle2D.tractor_diagnostic(obj,info,1_100_000_000,1.1)
++
++
++def test_stale_tractor_does_not_create_live_display():
++    obj,info=case()
++    with pytest.raises(ValueError,match='tractor IMU must be LIVE'):
++        Vehicle2D.tractor_diagnostic(obj,info,1_700_000_000,1.7)
++
++
++def test_full_mode_alignment_still_requires_measured_geometry_and_both_mounts():
++    obj=NS(geometry_error='unmeasured geometry')
++    with pytest.raises(ValueError,match='unmeasured geometry'):Vehicle2D.require_alignment(obj)
++    obj.geometry_error=''
++    obj.cfg={'tractor':{'mounting_and_sign_confirmed':True,'source':'orientation'},
++             'trailer':{'mounting_and_sign_confirmed':False,'source':'orientation'}}
++    with pytest.raises(ValueError,match='trailer mounting/sign unverified'):
++        Vehicle2D.require_alignment(obj)

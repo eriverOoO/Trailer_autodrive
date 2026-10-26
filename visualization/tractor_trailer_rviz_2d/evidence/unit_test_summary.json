@@ -1,0 +1,9 @@
+{
+  "kind": "SOFTWARE ONLY",
+  "passed": 13,
+  "warning": "Existing SciPy 1.8.0 / NumPy 1.26.4 compatibility warning during reference-hull test; no global package modification",
+  "tests": [
+    "8 relative yaw/geometry/timestamp tests",
+    "5 exact reference renderer/vertices/styles/unknown/rviz tests"
+  ]
+}

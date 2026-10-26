@@ -1,0 +1,9 @@
+{
+  "laser_scan_display.cpp": "https://raw.githubusercontent.com/ros2/rviz/11.2.25/rviz_default_plugins/src/rviz_default_plugins/displays/laser_scan/laser_scan_display.cpp",
+  "message_filter_display.hpp": "https://raw.githubusercontent.com/ros2/rviz/11.2.25/rviz_common/include/rviz_common/message_filter_display.hpp",
+  "intensity_pc_transformer.cpp": "https://raw.githubusercontent.com/ros2/rviz/11.2.25/rviz_default_plugins/src/rviz_default_plugins/displays/pointcloud/transformers/intensity_pc_transformer.cpp",
+  "fixed_orientation_ortho_view_controller.cpp": "https://raw.githubusercontent.com/ros2/rviz/11.2.25/rviz_default_plugins/src/rviz_default_plugins/view_controllers/ortho/fixed_orientation_ortho_view_controller.cpp",
+  "palette_builder.cpp": "https://raw.githubusercontent.com/ros2/rviz/11.2.25/rviz_default_plugins/src/rviz_default_plugins/displays/map/palette_builder.cpp",
+  "map_display.cpp": "https://raw.githubusercontent.com/ros2/rviz/11.2.25/rviz_default_plugins/src/rviz_default_plugins/displays/map/map_display.cpp",
+  "laser_geometry.cpp": "https://raw.githubusercontent.com/ros-perception/laser_geometry/2.4.1/src/laser_geometry.cpp"
+}

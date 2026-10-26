@@ -1,0 +1,19 @@
+1792377638.5849464 [INFO] [launch]: All log files can be found below /home/venezuelachocolatemilk/mvsim_slam_real/verification/g6_rviz_orientation_recheck/run_20261019_113319/ros/2026-10-19-11-40-38-584346-venezuelachocolatemilk-Legion-Pro-5-16IAX10H-27421
+1792377638.5850272 [INFO] [launch]: Default logging verbosity is set to INFO
+1792377638.7649949 [INFO] [launch.user]: Sensor-origin SLAM: map -> odom -> laser_frame; vehicle pose is unmeasured
+1792377638.7739778 [INFO] [ydlidar_ros2_driver_node-1]: process started with pid [27427]
+1792377638.7740862 [INFO] [cartographer_node-2]: process started with pid [27429]
+1792377638.7741287 [INFO] [cartographer_occupancy_grid_node-3]: process started with pid [27431]
+1792377638.7741663 [INFO] [rviz2-4]: process started with pid [27433]
+1792377909.5244782 [WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+1792377909.5257266 [INFO] [rviz2-4]: sending signal 'SIGINT' to process[rviz2-4]
+1792377909.5258963 [INFO] [cartographer_occupancy_grid_node-3]: sending signal 'SIGINT' to process[cartographer_occupancy_grid_node-3]
+1792377909.5260582 [INFO] [cartographer_node-2]: sending signal 'SIGINT' to process[cartographer_node-2]
+1792377909.5262060 [INFO] [ydlidar_ros2_driver_node-1]: sending signal 'SIGINT' to process[ydlidar_ros2_driver_node-1]
+1792377909.5279334 [ERROR] [cartographer_occupancy_grid_node-3]: process has died [pid 27431, exit code -2, cmd '/opt/ros/humble/lib/cartographer_ros/cartographer_occupancy_grid_node -resolution 0.05 -publish_period_sec 1.0 --ros-args -r __node:=cartographer_occupancy_grid_node --params-file /tmp/launch_params_dlpau34w'].
+1792377909.5280421 [INFO] [launch]: process[cartographer_occupancy_grid_node-3] was required: shutting down launched system
+1792377909.6648555 [INFO] [cartographer_node-2]: process has finished cleanly [pid 27429]
+1792377909.6650631 [INFO] [launch]: process[cartographer_node-2] was required: shutting down launched system
+1792377909.6945996 [INFO] [rviz2-4]: process has finished cleanly [pid 27433]
+1792377910.7273326 [INFO] [ydlidar_ros2_driver_node-1]: process has finished cleanly [pid 27427]
+1792377910.7275550 [INFO] [launch]: process[ydlidar_ros2_driver_node-1] was required: shutting down launched system

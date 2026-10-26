@@ -1,0 +1,193 @@
+markers:
+- header:
+    stamp:
+      sec: 1792481375
+      nanosec: 41814527
+    frame_id: map
+  ns: current_body
+  id: 0
+  type: 4
+  action: 0
+  pose:
+    position:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+    orientation:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+      w: 1.0
+  scale:
+    x: 0.04
+    y: 0.0
+    z: 0.0
+  color:
+    r: 0.0
+    g: 1.0
+    b: 0.699999988079071
+    a: 0.8500000238418579
+  lifetime:
+    sec: 0
+    nanosec: 800000000
+  frame_locked: false
+  points:
+  - x: 0.8079503946664017
+    y: -0.9823464849073454
+    z: 0.08
+  - x: 0.8937278480672028
+    y: -1.0099478395427843
+    z: 0.08
+  - x: 1.1104818290929317
+    y: -0.9401190091215078
+    z: 0.08
+  - x: 1.127747750609808
+    y: -0.9220007803881453
+    z: 0.08
+  - x: 1.441694666549446
+    y: 0.053660280745468
+    z: 0.08
+  - x: 1.4382348393540862
+    y: 0.0784476132772193
+    z: 0.08
+  - x: 1.3028778192914443
+    y: 0.2615782523528992
+    z: 0.08
+  - x: 1.2171003658906432
+    y: 0.2891796069883382
+    z: 0.08
+  - x: -0.15281054669309557
+    y: 0.7164715779822867
+    z: 0.08
+  - x: -0.5540782508446029
+    y: -0.5305585858890524
+    z: 0.08
+  - x: 0.8079503946664017
+    y: -0.9823464849073454
+    z: 0.08
+  colors: []
+  texture_resource: ''
+  texture:
+    header:
+      stamp:
+        sec: 0
+        nanosec: 0
+      frame_id: ''
+    format: ''
+    data: []
+  uv_coordinates: []
+  text: ''
+  mesh_resource: ''
+  mesh_file:
+    filename: ''
+    data: []
+  mesh_use_embedded_materials: false
+- header:
+    stamp:
+      sec: 0
+      nanosec: 0
+    frame_id: map
+  ns: articulation
+  id: 0
+  type: 9
+  action: 0
+  pose:
+    position:
+      x: 0.863225635679097
+      y: 1.9703752302789872
+      z: 1.0
+    orientation:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+      w: 1.0
+  scale:
+    x: 0.0
+    y: 0.0
+    z: 0.4
+  color:
+    r: 1.0
+    g: 1.0
+    b: 1.0
+    a: 1.0
+  lifetime:
+    sec: 0
+    nanosec: 800000000
+  frame_locked: false
+  points: []
+  colors: []
+  texture_resource: ''
+  texture:
+    header:
+      stamp:
+        sec: 0
+        nanosec: 0
+      frame_id: ''
+    format: ''
+    data: []
+  uv_coordinates: []
+  text: 'TRACTOR DIAG
+
+    phi=N/A
+
+    SENSOR ANCHOR
+
+    UNALIGNED
+
+    TRAILER NO DATA'
+  mesh_resource: ''
+  mesh_file:
+    filename: ''
+    data: []
+  mesh_use_embedded_materials: false
+- header:
+    stamp:
+      sec: 1792481375
+      nanosec: 142274110
+    frame_id: map
+  ns: tractor_pose_arrow
+  id: 0
+  type: 0
+  action: 0
+  pose:
+    position:
+      x: 0.863225635679097
+      y: -0.29566362043641825
+      z: 0.15
+    orientation:
+      x: 0.0
+      y: 0.0
+      z: -0.1555181252364057
+      w: 0.9878330388901525
+  scale:
+    x: 0.8
+    y: 0.08
+    z: 0.18
+  color:
+    r: 1.0
+    g: 0.0
+    b: 0.0
+    a: 1.0
+  lifetime:
+    sec: 0
+    nanosec: 800000000
+  frame_locked: false
+  points: []
+  colors: []
+  texture_resource: ''
+  texture:
+    header:
+      stamp:
+        sec: 0
+        nanosec: 0
+      frame_id: ''
+    format: ''
+    data: []
+  uv_coordinates: []
+  text: ''
+  mesh_resource: ''
+  mesh_file:
+    filename: ''
+    data: []
+  mesh_use_embedded_materials: false
+---

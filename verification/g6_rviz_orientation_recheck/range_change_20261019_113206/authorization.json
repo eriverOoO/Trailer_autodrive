@@ -1,0 +1,9 @@
+{
+  "request": "User explicitly requested minimum 0.15 m and maximum 1.0 m; this supersedes the earlier range-preservation constraint for this change.",
+  "driver_and_slam_range_m": [
+    0.15,
+    1.0
+  ],
+  "missing_data_ray_length_m": 1.0,
+  "hardware_started": false
+}

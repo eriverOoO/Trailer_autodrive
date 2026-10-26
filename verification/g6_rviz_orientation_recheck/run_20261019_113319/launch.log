@@ -1,0 +1,487 @@
+[INFO] [launch]: All log files can be found below /home/venezuelachocolatemilk/mvsim_slam_real/verification/g6_rviz_orientation_recheck/run_20261019_113319/ros/2026-10-19-11-40-38-584346-venezuelachocolatemilk-Legion-Pro-5-16IAX10H-27421
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [launch.user]: Sensor-origin SLAM: map -> odom -> laser_frame; vehicle pose is unmeasured
+[INFO] [ydlidar_ros2_driver_node-1]: process started with pid [27427]
+[INFO] [cartographer_node-2]: process started with pid [27429]
+[INFO] [cartographer_occupancy_grid_node-3]: process started with pid [27431]
+[INFO] [rviz2-4]: process started with pid [27433]
+[ydlidar_ros2_driver_node-1] [INFO] [1792377638.814437582] [ydlidar_ros2_driver_node]: [YDLIDAR INFO] Current ROS Driver Version: 1.0.1
+[ydlidar_ros2_driver_node-1] 
+[ydlidar_ros2_driver_node-1] [2026-10-19 11:40:38][info] SDK initializing
+[ydlidar_ros2_driver_node-1] [2026-10-19 11:40:38][info] SDK has been initialized
+[ydlidar_ros2_driver_node-1] [2026-10-19 11:40:38][info] SDK Version: 1.2.20
+[ydlidar_ros2_driver_node-1] [2026-10-19 11:40:38][info] Connect elapsed time 2 ms
+[ydlidar_ros2_driver_node-1] [2026-10-19 11:40:38][info] Lidar successfully connected [/dev/serial/by-id/usb-Silicon_Labs_CP2102_USB_to_UART_Bridge_Controller_0001-if00-port0:512000]
+[cartographer_node-2] [INFO] [1792377638.820399171] [cartographer logger]: I1019 11:40:38.000000 27429 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/g6_lidar_only.lua' for 'g6_lidar_only.lua'.
+[cartographer_node-2] [INFO] [1792377638.820548580] [cartographer logger]: I1019 11:40:38.000000 27429 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/reference_lidar_only.lua' for 'reference_lidar_only.lua'.
+[cartographer_node-2] [INFO] [1792377638.820559804] [cartographer logger]: I1019 11:40:38.000000 27429 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/reference_lidar_only.lua' for 'reference_lidar_only.lua'.
+[cartographer_node-2] [INFO] [1792377638.820606533] [cartographer logger]: I1019 11:40:38.000000 27429 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/map_builder.lua' for 'map_builder.lua'.
+[cartographer_node-2] [INFO] [1792377638.820613041] [cartographer logger]: I1019 11:40:38.000000 27429 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/map_builder.lua' for 'map_builder.lua'.
+[cartographer_node-2] [INFO] [1792377638.820632569] [cartographer logger]: I1019 11:40:38.000000 27429 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/pose_graph.lua' for 'pose_graph.lua'.
+[cartographer_node-2] [INFO] [1792377638.820637711] [cartographer logger]: I1019 11:40:38.000000 27429 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/pose_graph.lua' for 'pose_graph.lua'.
+[cartographer_node-2] [INFO] [1792377638.820696002] [cartographer logger]: I1019 11:40:38.000000 27429 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/trajectory_builder.lua' for 'trajectory_builder.lua'.
+[cartographer_node-2] [INFO] [1792377638.820701479] [cartographer logger]: I1019 11:40:38.000000 27429 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/trajectory_builder.lua' for 'trajectory_builder.lua'.
+[cartographer_node-2] [INFO] [1792377638.820716593] [cartographer logger]: I1019 11:40:38.000000 27429 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/trajectory_builder_2d.lua' for 'trajectory_builder_2d.lua'.
+[cartographer_node-2] [INFO] [1792377638.820721596] [cartographer logger]: I1019 11:40:38.000000 27429 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/trajectory_builder_2d.lua' for 'trajectory_builder_2d.lua'.
+[cartographer_node-2] [INFO] [1792377638.820775950] [cartographer logger]: I1019 11:40:38.000000 27429 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/trajectory_builder_3d.lua' for 'trajectory_builder_3d.lua'.
+[cartographer_node-2] [INFO] [1792377638.820780885] [cartographer logger]: I1019 11:40:38.000000 27429 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/trajectory_builder_3d.lua' for 'trajectory_builder_3d.lua'.
+[cartographer_node-2] [INFO] [1792377638.829979081] [cartographer logger]: I1019 11:40:38.000000 27429 map_builder_bridge.cpp:136] Added trajectory with ID '0'.
+[rviz2-4] [INFO] [1792377639.122887080] [rviz2]: Stereo is NOT SUPPORTED
+[rviz2-4] [INFO] [1792377639.122955081] [rviz2]: OpenGl version: 4.6 (GLSL 4.6)
+[rviz2-4] [INFO] [1792377639.139206285] [rviz2]: Stereo is NOT SUPPORTED
+[ydlidar_ros2_driver_node-1] [2026-10-19 11:40:39][info] Lidar running correctly! The health status good
+[ydlidar_ros2_driver_node-1] [2026-10-19 11:40:39][info] Current Lidar Model Code 13
+[ydlidar_ros2_driver_node-1] [2026-10-19 11:40:39][info] Baseplate device info
+[ydlidar_ros2_driver_node-1] Firmware version: 3.2
+[ydlidar_ros2_driver_node-1] Hardware version: 3
+[ydlidar_ros2_driver_node-1] Model: G6
+[ydlidar_ros2_driver_node-1] Serial: 2022061000071139
+[ydlidar_ros2_driver_node-1] [2026-10-19 11:40:39][info] Current scan frequency: 7.40Hz
+[ydlidar_ros2_driver_node-1] [2026-10-19 11:40:39][info] Current scan frequency: 12.00Hz
+[ydlidar_ros2_driver_node-1] [2026-10-19 11:40:39][info] Check status, Elapsed time 522 ms
+[ydlidar_ros2_driver_node-1] [2026-10-19 11:40:39][info] Lidar init success, elapsed time [524]ms
+[ydlidar_ros2_driver_node-1] [2026-10-19 11:40:41][info] [YDLIDAR] Create thread 0xD4B1A640
+[ydlidar_ros2_driver_node-1] [2026-10-19 11:40:41][info] Successed to start the lidar, elapsed time 2276 ms
+[ydlidar_ros2_driver_node-1] [2026-10-19 11:40:41][info] Scan Frequency: 12.00Hz
+[ydlidar_ros2_driver_node-1] [2026-10-19 11:40:41][info] Fixed Size: 1525
+[ydlidar_ros2_driver_node-1] [2026-10-19 11:40:41][info] Sample Rate: 18.00K
+[ydlidar_ros2_driver_node-1] [2026-10-19 11:40:41][info] Successed to check the lidar, elapsed time 0 ms
+[ydlidar_ros2_driver_node-1] [2026-10-19 11:40:41][info] Lidar has started!
+[cartographer_node-2] [INFO] [1792377641.622061764] [cartographer logger]: I1019 11:40:41.000000 27429 ordered_multi_queue.cc:172] All sensor data for trajectory 0 is available starting at '639279744416156020'.
+[cartographer_node-2] [WARN] [1792377641.622230154] [cartographer logger]: W1019 11:40:41.000000 27429 pose_extrapolator.cc:168] Queue too short for velocity estimation. Queue duration: 0 s
+[cartographer_node-2] [INFO] [1792377641.622396203] [cartographer logger]: I1019 11:40:41.000000 27429 pose_graph_2d.cc:148] Inserted submap (0, 0).
+[rviz2-4] [INFO] [1792377642.842123172] [rviz2]: Trying to create a map of size 25 x 43 using 1 swatches
+[cartographer_node-2] [INFO] [1792377653.870605213] [cartographer logger]: I1019 11:40:53.000000 27429 collated_trajectory_builder.cc:81] scan rate: 11.60 Hz 8.62e-02 s +/- 1.23e-03 s (pulsed at 99.93% real time)
+[rviz2-4] [INFO] [1792377655.834831786] [rviz2]: Trying to create a map of size 26 x 43 using 1 swatches
+[cartographer_node-2] [INFO] [1792377663.405958010] [cartographer logger]: I1019 11:41:03.000000 27429 pose_graph_2d.cc:148] Inserted submap (0, 1).
+[cartographer_node-2] [INFO] [1792377663.406139283] [cartographer logger]: I1019 11:41:03.000000 27466 pose_graph_2d.cc:538] Remaining work items in queue: 0
+[cartographer_node-2] [INFO] [1792377663.406175230] [cartographer logger]: I1019 11:41:03.000000 27466 constraint_builder_2d.cc:290] 0 computations resulted in 0 additional constraints.
+[cartographer_node-2] [INFO] [1792377663.406178713] [cartographer logger]: I1019 11:41:03.000000 27466 constraint_builder_2d.cc:292] Score histogram:
+[cartographer_node-2] Count: 0
+[rviz2-4] [INFO] [1792377663.835034244] [rviz2]: Trying to create a map of size 26 x 44 using 1 swatches
+[cartographer_node-2] [INFO] [1792377668.896928712] [cartographer logger]: I1019 11:41:08.000000 27429 collated_trajectory_builder.cc:81] scan rate: 11.65 Hz 8.59e-02 s +/- 4.80e-04 s (pulsed at 100.01% real time)
+[cartographer_node-2] [INFO] [1792377683.900238126] [cartographer logger]: I1019 11:41:23.000000 27429 collated_trajectory_builder.cc:81] scan rate: 11.66 Hz 8.57e-02 s +/- 4.85e-04 s (pulsed at 100.00% real time)
+[cartographer_node-2] [INFO] [1792377684.585357083] [cartographer logger]: I1019 11:41:24.000000 27429 motion_filter.cc:42] Motion filter reduced the number of nodes to 30.4%.
+[cartographer_node-2] [INFO] [1792377698.978462082] [cartographer logger]: I1019 11:41:38.000000 27429 collated_trajectory_builder.cc:81] scan rate: 11.67 Hz 8.57e-02 s +/- 5.43e-04 s (pulsed at 100.00% real time)
+[cartographer_node-2] [INFO] [1792377711.992316920] [cartographer logger]: I1019 11:41:51.000000 27429 pose_graph_2d.cc:148] Inserted submap (0, 2).
+[cartographer_node-2] [INFO] [1792377711.992627655] [cartographer logger]: I1019 11:41:51.000000 27463 constraint_builder_2d.cc:275] Node (0, 180) with 45 points on submap (0, 0) differs by translation 0.00 rotation 0.003 with score 90.0%.
+[cartographer_node-2] [INFO] [1792377712.421231914] [cartographer logger]: I1019 11:41:52.000000 27465 pose_graph_2d.cc:538] Remaining work items in queue: 0
+[cartographer_node-2] [INFO] [1792377712.421259944] [cartographer logger]: I1019 11:41:52.000000 27465 constraint_builder_2d.cc:290] 1 computations resulted in 1 additional constraints.
+[cartographer_node-2] [INFO] [1792377712.421271428] [cartographer logger]: I1019 11:41:52.000000 27465 constraint_builder_2d.cc:292] Score histogram:
+[cartographer_node-2] Count: 1  Min: 0.899791  Max: 0.899791  Mean: 0.899791
+[cartographer_node-2] [INFO] [1792377714.051337270] [cartographer logger]: I1019 11:41:54.000000 27429 collated_trajectory_builder.cc:81] scan rate: 11.68 Hz 8.56e-02 s +/- 3.80e-04 s (pulsed at 100.00% real time)
+[cartographer_node-2] [INFO] [1792377714.224337110] [cartographer logger]: I1019 11:41:54.000000 27466 constraint_builder_2d.cc:275] Node (0, 183) with 42 points on submap (0, 0) differs by translation 0.00 rotation 0.001 with score 90.0%.
+[cartographer_node-2] [INFO] [1792377716.367462787] [cartographer logger]: I1019 11:41:56.000000 27464 constraint_builder_2d.cc:275] Node (0, 186) with 44 points on submap (0, 0) differs by translation 0.00 rotation 0.006 with score 88.5%.
+[cartographer_node-2] [INFO] [1792377717.909522813] [cartographer logger]: I1019 11:41:57.000000 27464 constraint_builder_2d.cc:275] Node (0, 190) with 45 points on submap (0, 0) differs by translation 0.00 rotation 0.001 with score 88.5%.
+[cartographer_node-2] [INFO] [1792377719.193653000] [cartographer logger]: I1019 11:41:59.000000 27465 constraint_builder_2d.cc:275] Node (0, 193) with 43 points on submap (0, 0) differs by translation 0.00 rotation 0.003 with score 86.6%.
+[cartographer_node-2] [INFO] [1792377720.565460203] [cartographer logger]: I1019 11:42:00.000000 27463 constraint_builder_2d.cc:275] Node (0, 196) with 44 points on submap (0, 0) differs by translation 0.00 rotation 0.000 with score 90.0%.
+[cartographer_node-2] [INFO] [1792377722.277412310] [cartographer logger]: I1019 11:42:02.000000 27463 constraint_builder_2d.cc:275] Node (0, 200) with 41 points on submap (0, 0) differs by translation 0.00 rotation 0.001 with score 86.4%.
+[cartographer_node-2] [INFO] [1792377723.731770711] [cartographer logger]: I1019 11:42:03.000000 27464 constraint_builder_2d.cc:275] Node (0, 203) with 41 points on submap (0, 0) differs by translation 0.00 rotation 0.001 with score 89.9%.
+[cartographer_node-2] [INFO] [1792377725.273789129] [cartographer logger]: I1019 11:42:05.000000 27466 constraint_builder_2d.cc:275] Node (0, 206) with 42 points on submap (0, 0) differs by translation 0.00 rotation 0.000 with score 90.0%.
+[cartographer_node-2] [INFO] [1792377726.986221089] [cartographer logger]: I1019 11:42:06.000000 27466 constraint_builder_2d.cc:275] Node (0, 210) with 44 points on submap (0, 0) differs by translation 0.00 rotation 0.004 with score 90.0%.
+[cartographer_node-2] [INFO] [1792377727.413307719] [cartographer logger]: I1019 11:42:07.000000 27429 motion_filter.cc:42] Motion filter reduced the number of nodes to 21.2%.
+[cartographer_node-2] [INFO] [1792377728.442657764] [cartographer logger]: I1019 11:42:08.000000 27465 constraint_builder_2d.cc:275] Node (0, 213) with 44 points on submap (0, 0) differs by translation 0.00 rotation 0.001 with score 90.0%.
+[cartographer_node-2] [INFO] [1792377729.125596643] [cartographer logger]: I1019 11:42:09.000000 27429 collated_trajectory_builder.cc:81] scan rate: 11.68 Hz 8.57e-02 s +/- 4.41e-04 s (pulsed at 100.00% real time)
+[cartographer_node-2] [INFO] [1792377729.297873359] [cartographer logger]: I1019 11:42:09.000000 27466 constraint_builder_2d.cc:275] Node (0, 216) with 43 points on submap (0, 0) differs by translation 0.00 rotation 0.005 with score 90.0%.
+[cartographer_node-2] [INFO] [1792377730.840693355] [cartographer logger]: I1019 11:42:10.000000 27466 constraint_builder_2d.cc:275] Node (0, 220) with 39 points on submap (0, 0) differs by translation 0.00 rotation 0.001 with score 90.0%.
+[cartographer_node-2] [INFO] [1792377732.122909218] [cartographer logger]: I1019 11:42:12.000000 27464 constraint_builder_2d.cc:275] Node (0, 223) with 41 points on submap (0, 0) differs by translation 0.00 rotation 0.007 with score 89.9%.
+[cartographer_node-2] [INFO] [1792377733.406367587] [cartographer logger]: I1019 11:42:13.000000 27465 constraint_builder_2d.cc:275] Node (0, 226) with 44 points on submap (0, 0) differs by translation 0.00 rotation 0.006 with score 90.0%.
+[cartographer_node-2] [INFO] [1792377735.202551609] [cartographer logger]: I1019 11:42:15.000000 27465 constraint_builder_2d.cc:275] Node (0, 230) with 41 points on submap (0, 0) differs by translation 0.00 rotation 0.000 with score 88.4%.
+[rviz2-4] [INFO] [1792377735.835177559] [rviz2]: Trying to create a map of size 32 x 47 using 1 swatches
+[cartographer_node-2] [INFO] [1792377737.170617305] [cartographer logger]: I1019 11:42:17.000000 27463 constraint_builder_2d.cc:275] Node (0, 233) with 45 points on submap (0, 0) differs by translation 0.00 rotation 0.004 with score 84.6%.
+[rviz2-4] [INFO] [1792377737.854862488] [rviz2]: Trying to create a map of size 40 x 47 using 1 swatches
+[cartographer_node-2] [INFO] [1792377744.192615567] [cartographer logger]: I1019 11:42:24.000000 27429 collated_trajectory_builder.cc:81] scan rate: 11.68 Hz 8.56e-02 s +/- 1.28e-03 s (pulsed at 100.00% real time)
+[cartographer_node-2] [INFO] [1792377748.563054341] [cartographer logger]: I1019 11:42:28.000000 27466 constraint_builder_2d.cc:275] Node (0, 236) with 42 points on submap (0, 0) differs by translation 0.00 rotation 0.003 with score 88.4%.
+[cartographer_node-2] [INFO] [1792377757.479540958] [cartographer logger]: I1019 11:42:37.000000 27466 constraint_builder_2d.cc:275] Node (0, 240) with 44 points on submap (0, 0) differs by translation 0.01 rotation 0.004 with score 88.4%.
+[cartographer_node-2] [INFO] [1792377759.192706295] [cartographer logger]: I1019 11:42:39.000000 27429 collated_trajectory_builder.cc:81] scan rate: 11.67 Hz 8.57e-02 s +/- 6.02e-04 s (pulsed at 100.00% real time)
+[cartographer_node-2] [INFO] [1792377764.506098790] [cartographer logger]: I1019 11:42:44.000000 27464 constraint_builder_2d.cc:275] Node (0, 243) with 46 points on submap (0, 0) differs by translation 0.00 rotation 0.002 with score 89.9%.
+[cartographer_node-2] [INFO] [1792377767.591080123] [cartographer logger]: I1019 11:42:47.000000 27466 constraint_builder_2d.cc:275] Node (0, 246) with 45 points on submap (0, 0) differs by translation 0.01 rotation 0.005 with score 89.9%.
+[cartographer_node-2] [INFO] [1792377770.247450694] [cartographer logger]: I1019 11:42:50.000000 27429 motion_filter.cc:42] Motion filter reduced the number of nodes to 16.6667%.
+[cartographer_node-2] [INFO] [1792377770.418914695] [cartographer logger]: I1019 11:42:50.000000 27466 constraint_builder_2d.cc:275] Node (0, 250) with 49 points on submap (0, 0) differs by translation 0.00 rotation 0.002 with score 89.9%.
+[cartographer_node-2] [INFO] [1792377771.959889005] [cartographer logger]: I1019 11:42:51.000000 27465 constraint_builder_2d.cc:275] Node (0, 253) with 44 points on submap (0, 0) differs by translation 0.01 rotation 0.003 with score 88.4%.
+[cartographer_node-2] [INFO] [1792377773.843817539] [cartographer logger]: I1019 11:42:53.000000 27463 constraint_builder_2d.cc:275] Node (0, 256) with 48 points on submap (0, 0) differs by translation 0.01 rotation 0.006 with score 88.5%.
+[cartographer_node-2] [INFO] [1792377774.272973594] [cartographer logger]: I1019 11:42:54.000000 27429 collated_trajectory_builder.cc:81] scan rate: 11.67 Hz 8.57e-02 s +/- 4.08e-04 s (pulsed at 100.00% real time)
+[cartographer_node-2] [INFO] [1792377777.868906737] [cartographer logger]: I1019 11:42:57.000000 27464 constraint_builder_2d.cc:275] Node (0, 260) with 44 points on submap (0, 0) differs by translation 0.00 rotation 0.005 with score 89.9%.
+[cartographer_node-2] [INFO] [1792377779.668710549] [cartographer logger]: I1019 11:42:59.000000 27465 constraint_builder_2d.cc:275] Node (0, 263) with 44 points on submap (0, 0) differs by translation 0.01 rotation 0.003 with score 88.4%.
+[cartographer_node-2] [INFO] [1792377782.408141535] [cartographer logger]: I1019 11:43:02.000000 27464 constraint_builder_2d.cc:275] Node (0, 266) with 45 points on submap (0, 0) differs by translation 0.01 rotation 0.006 with score 89.3%.
+[cartographer_node-2] [INFO] [1792377784.034337705] [cartographer logger]: I1019 11:43:04.000000 27465 constraint_builder_2d.cc:275] Node (0, 13) with 44 points on submap (0, 1) differs by translation 0.02 rotation 0.004 with score 70.1%.
+[cartographer_node-2] [INFO] [1792377784.034481964] [cartographer logger]: I1019 11:43:04.000000 27465 constraint_builder_2d.cc:275] Node (0, 83) with 43 points on submap (0, 1) differs by translation 0.00 rotation 0.008 with score 89.9%.
+[cartographer_node-2] [INFO] [1792377784.034607108] [cartographer logger]: I1019 11:43:04.000000 27465 constraint_builder_2d.cc:275] Node (0, 86) with 42 points on submap (0, 1) differs by translation 0.01 rotation 0.012 with score 88.1%.
+[cartographer_node-2] [INFO] [1792377784.034748941] [cartographer logger]: I1019 11:43:04.000000 27465 constraint_builder_2d.cc:275] Node (0, 0) with 43 points on submap (0, 1) differs by translation 0.02 rotation 0.012 with score 69.0%.
+[cartographer_node-2] [INFO] [1792377784.035003776] [cartographer logger]: I1019 11:43:04.000000 27465 constraint_builder_2d.cc:275] Node (0, 16) with 45 points on submap (0, 1) differs by translation 0.02 rotation 0.020 with score 72.8%.
+[cartographer_node-2] [INFO] [1792377784.035137341] [cartographer logger]: I1019 11:43:04.000000 27465 constraint_builder_2d.cc:275] Node (0, 20) with 45 points on submap (0, 1) differs by translation 0.02 rotation 0.003 with score 72.8%.
+[cartographer_node-2] [INFO] [1792377784.035260768] [cartographer logger]: I1019 11:43:04.000000 27465 constraint_builder_2d.cc:275] Node (0, 23) with 44 points on submap (0, 1) differs by translation 0.02 rotation 0.001 with score 74.6%.
+[cartographer_node-2] [INFO] [1792377784.035394584] [cartographer logger]: I1019 11:43:04.000000 27465 constraint_builder_2d.cc:275] Node (0, 26) with 46 points on submap (0, 1) differs by translation 0.02 rotation 0.012 with score 70.4%.
+[cartographer_node-2] [INFO] [1792377784.035542601] [cartographer logger]: I1019 11:43:04.000000 27465 constraint_builder_2d.cc:275] Node (0, 30) with 48 points on submap (0, 1) differs by translation 0.01 rotation 0.017 with score 72.8%.
+[cartographer_node-2] [INFO] [1792377784.035662976] [cartographer logger]: I1019 11:43:04.000000 27466 constraint_builder_2d.cc:275] Node (0, 33) with 45 points on submap (0, 1) differs by translation 0.02 rotation 0.011 with score 73.0%.
+[cartographer_node-2] [INFO] [1792377784.035688693] [cartographer logger]: I1019 11:43:04.000000 27465 constraint_builder_2d.cc:275] Node (0, 36) with 50 points on submap (0, 1) differs by translation 0.02 rotation 0.001 with score 78.8%.
+[cartographer_node-2] [INFO] [1792377784.035821749] [cartographer logger]: I1019 11:43:04.000000 27465 constraint_builder_2d.cc:275] Node (0, 46) with 48 points on submap (0, 1) differs by translation 0.01 rotation 0.033 with score 79.4%.
+[cartographer_node-2] [INFO] [1792377784.035824795] [cartographer logger]: I1019 11:43:04.000000 27466 constraint_builder_2d.cc:275] Node (0, 43) with 49 points on submap (0, 1) differs by translation 0.01 rotation 0.031 with score 74.0%.
+[cartographer_node-2] [INFO] [1792377784.035846644] [cartographer logger]: I1019 11:43:04.000000 27464 constraint_builder_2d.cc:275] Node (0, 40) with 51 points on submap (0, 1) differs by translation 0.01 rotation 0.015 with score 78.9%.
+[cartographer_node-2] [INFO] [1792377784.035939267] [cartographer logger]: I1019 11:43:04.000000 27465 constraint_builder_2d.cc:275] Node (0, 50) with 44 points on submap (0, 1) differs by translation 0.01 rotation 0.017 with score 84.9%.
+[cartographer_node-2] [INFO] [1792377784.035974677] [cartographer logger]: I1019 11:43:04.000000 27466 constraint_builder_2d.cc:275] Node (0, 53) with 42 points on submap (0, 1) differs by translation 0.01 rotation 0.008 with score 87.8%.
+[cartographer_node-2] [INFO] [1792377784.035998328] [cartographer logger]: I1019 11:43:04.000000 27464 constraint_builder_2d.cc:275] Node (0, 56) with 43 points on submap (0, 1) differs by translation 0.00 rotation 0.005 with score 85.1%.
+[cartographer_node-2] [INFO] [1792377784.036056432] [cartographer logger]: I1019 11:43:04.000000 27465 constraint_builder_2d.cc:275] Node (0, 60) with 41 points on submap (0, 1) differs by translation 0.01 rotation 0.010 with score 89.2%.
+[cartographer_node-2] [INFO] [1792377784.036107589] [cartographer logger]: I1019 11:43:04.000000 27466 constraint_builder_2d.cc:275] Node (0, 63) with 42 points on submap (0, 1) differs by translation 0.01 rotation 0.024 with score 87.9%.
+[cartographer_node-2] [INFO] [1792377784.036110590] [cartographer logger]: I1019 11:43:04.000000 27464 constraint_builder_2d.cc:275] Node (0, 66) with 43 points on submap (0, 1) differs by translation 0.01 rotation 0.025 with score 84.5%.
+[cartographer_node-2] [INFO] [1792377784.036188083] [cartographer logger]: I1019 11:43:04.000000 27465 constraint_builder_2d.cc:275] Node (0, 73) with 45 points on submap (0, 1) differs by translation 0.00 rotation 0.003 with score 89.9%.
+[cartographer_node-2] [INFO] [1792377784.036214741] [cartographer logger]: I1019 11:43:04.000000 27463 constraint_builder_2d.cc:275] Node (0, 70) with 44 points on submap (0, 1) differs by translation 0.01 rotation 0.020 with score 83.7%.
+[cartographer_node-2] [INFO] [1792377784.036232338] [cartographer logger]: I1019 11:43:04.000000 27466 constraint_builder_2d.cc:275] Node (0, 76) with 44 points on submap (0, 1) differs by translation 0.01 rotation 0.002 with score 89.9%.
+[cartographer_node-2] [INFO] [1792377784.036243563] [cartographer logger]: I1019 11:43:04.000000 27464 constraint_builder_2d.cc:275] Node (0, 80) with 45 points on submap (0, 1) differs by translation 0.00 rotation 0.012 with score 86.8%.
+[cartographer_node-2] [INFO] [1792377784.036328913] [cartographer logger]: I1019 11:43:04.000000 27465 constraint_builder_2d.cc:275] Node (0, 10) with 46 points on submap (0, 1) differs by translation 0.02 rotation 0.010 with score 66.1%.
+[cartographer_node-2] [INFO] [1792377785.403453474] [cartographer logger]: I1019 11:43:05.000000 27429 pose_graph_2d.cc:148] Inserted submap (0, 3).
+[cartographer_node-2] [INFO] [1792377785.403759776] [cartographer logger]: I1019 11:43:05.000000 27466 constraint_builder_2d.cc:275] Node (0, 270) with 46 points on submap (0, 0) differs by translation 0.01 rotation 0.006 with score 89.9%.
+[cartographer_node-2] [INFO] [1792377785.403911189] [cartographer logger]: I1019 11:43:05.000000 27464 constraint_builder_2d.cc:275] Node (0, 270) with 46 points on submap (0, 1) differs by translation 0.00 rotation 0.003 with score 90.0%.
+[cartographer_node-2] [INFO] [1792377786.688830433] [cartographer logger]: I1019 11:43:06.000000 27464 pose_graph_2d.cc:538] Remaining work items in queue: 0
+[cartographer_node-2] [INFO] [1792377786.688881842] [cartographer logger]: I1019 11:43:06.000000 27464 constraint_builder_2d.cc:290] 55 computations resulted in 53 additional constraints.
+[cartographer_node-2] [INFO] [1792377786.688907660] [cartographer logger]: I1019 11:43:06.000000 27464 constraint_builder_2d.cc:292] Score histogram:
+[cartographer_node-2] Count: 54  Min: 0.660546  Max: 0.899864  Mean: 0.84883
+[cartographer_node-2] [0.660546, 0.684477)	                    	Count: 1 (1.85185%)	Total: 1 (1.85185%)
+[cartographer_node-2] [0.684477, 0.708409)	                   #	Count: 3 (5.55556%)	Total: 4 (7.40741%)
+[cartographer_node-2] [0.708409, 0.732341)	                   #	Count: 4 (7.40741%)	Total: 8 (14.8148%)
+[cartographer_node-2] [0.732341, 0.756273)	                   #	Count: 2 (3.7037%)	Total: 10 (18.5185%)
+[cartographer_node-2] [0.756273, 0.780205)	                    	Count: 0 (0%)	Total: 10 (18.5185%)
+[cartographer_node-2] [0.780205, 0.804136)	                   #	Count: 3 (5.55556%)	Total: 13 (24.0741%)
+[cartographer_node-2] [0.804136, 0.828068)	                    	Count: 0 (0%)	Total: 13 (24.0741%)
+[cartographer_node-2] [0.828068, 0.852000)	                  ##	Count: 5 (9.25926%)	Total: 18 (33.3333%)
+[cartographer_node-2] [0.852000, 0.875932)	                   #	Count: 3 (5.55556%)	Total: 21 (38.8889%)
+[cartographer_node-2] [0.875932, 0.899864]	        ############	Count: 33 (61.1111%)	Total: 54 (100%)
+[rviz2-4] [INFO] [1792377786.843131851] [rviz2]: Trying to create a map of size 41 x 47 using 1 swatches
+[cartographer_node-2] [INFO] [1792377786.945494688] [cartographer logger]: I1019 11:43:06.000000 27463 constraint_builder_2d.cc:275] Node (0, 273) with 45 points on submap (0, 0) differs by translation 0.00 rotation 0.001 with score 89.9%.
+[cartographer_node-2] [INFO] [1792377786.945575758] [cartographer logger]: I1019 11:43:06.000000 27465 constraint_builder_2d.cc:275] Node (0, 273) with 45 points on submap (0, 1) differs by translation 0.00 rotation 0.004 with score 86.4%.
+[cartographer_node-2] [INFO] [1792377788.828730354] [cartographer logger]: I1019 11:43:08.000000 27464 constraint_builder_2d.cc:275] Node (0, 276) with 44 points on submap (0, 0) differs by translation 0.00 rotation 0.002 with score 88.4%.
+[cartographer_node-2] [INFO] [1792377788.828762126] [cartographer logger]: I1019 11:43:08.000000 27463 constraint_builder_2d.cc:275] Node (0, 276) with 44 points on submap (0, 1) differs by translation 0.00 rotation 0.004 with score 86.5%.
+[cartographer_node-2] [INFO] [1792377789.342383762] [cartographer logger]: I1019 11:43:09.000000 27429 collated_trajectory_builder.cc:81] scan rate: 11.68 Hz 8.56e-02 s +/- 4.27e-04 s (pulsed at 100.00% real time)
+[cartographer_node-2] [INFO] [1792377797.472446852] [cartographer logger]: I1019 11:43:17.000000 27463 constraint_builder_2d.cc:275] Node (0, 280) with 48 points on submap (0, 0) differs by translation 0.00 rotation 0.000 with score 89.9%.
+[cartographer_node-2] [INFO] [1792377797.472615806] [cartographer logger]: I1019 11:43:17.000000 27465 constraint_builder_2d.cc:275] Node (0, 280) with 48 points on submap (0, 1) differs by translation 0.01 rotation 0.002 with score 88.3%.
+[cartographer_node-2] [INFO] [1792377799.354235929] [cartographer logger]: I1019 11:43:19.000000 27464 constraint_builder_2d.cc:275] Node (0, 283) with 43 points on submap (0, 0) differs by translation 0.00 rotation 0.000 with score 89.9%.
+[cartographer_node-2] [INFO] [1792377799.354397268] [cartographer logger]: I1019 11:43:19.000000 27463 constraint_builder_2d.cc:275] Node (0, 283) with 43 points on submap (0, 1) differs by translation 0.01 rotation 0.003 with score 87.7%.
+[cartographer_node-2] [INFO] [1792377803.549530419] [cartographer logger]: I1019 11:43:23.000000 27466 constraint_builder_2d.cc:275] Node (0, 286) with 42 points on submap (0, 0) differs by translation 0.00 rotation 0.001 with score 89.9%.
+[cartographer_node-2] [INFO] [1792377803.549659760] [cartographer logger]: I1019 11:43:23.000000 27464 constraint_builder_2d.cc:275] Node (0, 286) with 42 points on submap (0, 1) differs by translation 0.00 rotation 0.004 with score 87.7%.
+[cartographer_node-2] [INFO] [1792377804.404731744] [cartographer logger]: I1019 11:43:24.000000 27429 collated_trajectory_builder.cc:81] scan rate: 11.68 Hz 8.56e-02 s +/- 4.50e-04 s (pulsed at 100.00% real time)
+[cartographer_node-2] [INFO] [1792377805.176098027] [cartographer logger]: I1019 11:43:25.000000 27464 constraint_builder_2d.cc:275] Node (0, 290) with 42 points on submap (0, 0) differs by translation 0.00 rotation 0.005 with score 89.9%.
+[cartographer_node-2] [INFO] [1792377805.176218699] [cartographer logger]: I1019 11:43:25.000000 27463 constraint_builder_2d.cc:275] Node (0, 290) with 42 points on submap (0, 1) differs by translation 0.00 rotation 0.004 with score 85.8%.
+[cartographer_node-2] [INFO] [1792377808.517371202] [cartographer logger]: I1019 11:43:28.000000 27466 constraint_builder_2d.cc:275] Node (0, 293) with 45 points on submap (0, 0) differs by translation 0.00 rotation 0.004 with score 89.9%.
+[cartographer_node-2] [INFO] [1792377808.517410978] [cartographer logger]: I1019 11:43:28.000000 27464 constraint_builder_2d.cc:275] Node (0, 293) with 45 points on submap (0, 1) differs by translation 0.01 rotation 0.001 with score 86.4%.
+[rviz2-4] [INFO] [1792377812.954106745] [rviz2]: Trying to create a map of size 41 x 47 using 1 swatches
+[cartographer_node-2] [INFO] [1792377813.057266034] [cartographer logger]: I1019 11:43:33.000000 27429 motion_filter.cc:42] Motion filter reduced the number of nodes to 14.75%.
+[cartographer_node-2] [INFO] [1792377814.000041451] [cartographer logger]: I1019 11:43:34.000000 27466 constraint_builder_2d.cc:275] Node (0, 296) with 43 points on submap (0, 1) differs by translation 0.01 rotation 0.000 with score 86.9%.
+[cartographer_node-2] [INFO] [1792377814.000190252] [cartographer logger]: I1019 11:43:34.000000 27465 constraint_builder_2d.cc:275] Node (0, 296) with 43 points on submap (0, 0) differs by translation 0.00 rotation 0.003 with score 88.4%.
+[cartographer_node-2] [INFO] [1792377815.627007653] [cartographer logger]: I1019 11:43:35.000000 27465 constraint_builder_2d.cc:275] Node (0, 300) with 46 points on submap (0, 0) differs by translation 0.00 rotation 0.004 with score 89.9%.
+[cartographer_node-2] [INFO] [1792377815.627142574] [cartographer logger]: I1019 11:43:35.000000 27464 constraint_builder_2d.cc:275] Node (0, 300) with 46 points on submap (0, 1) differs by translation 0.00 rotation 0.004 with score 88.2%.
+[rviz2-4] [ERROR] [1792377816.575729829] [rviz2]: Lookup would require extrapolation into the future.  Requested time 1792377816.567974 but the latest data is at time 1792377816.567613, when looking up transform from frame [laser_frame] to frame [map]
+[rviz2-4] [ERROR] [1792377816.826940370] [rviz2]: Lookup would require extrapolation into the future.  Requested time 1792377816.825750 but the latest data is at time 1792377816.822714, when looking up transform from frame [laser_frame] to frame [map]
+[rviz2-4] [ERROR] [1792377819.226721482] [rviz2]: Lookup would require extrapolation into the future.  Requested time 1792377819.223783 but the latest data is at time 1792377819.222621, when looking up transform from frame [laser_frame] to frame [map]
+[cartographer_node-2] [INFO] [1792377819.480306276] [cartographer logger]: I1019 11:43:39.000000 27429 collated_trajectory_builder.cc:81] scan rate: 11.67 Hz 8.57e-02 s +/- 4.21e-04 s (pulsed at 100.00% real time)
+[rviz2-4] [ERROR] [1792377819.482679469] [rviz2]: Lookup would require extrapolation into the future.  Requested time 1792377819.479744 but the latest data is at time 1792377819.477610, when looking up transform from frame [laser_frame] to frame [map]
+[rviz2-4] [ERROR] [1792377819.996276615] [rviz2]: Lookup would require extrapolation into the future.  Requested time 1792377819.992734 but the latest data is at time 1792377819.992582, when looking up transform from frame [laser_frame] to frame [map]
+[rviz2-4] [ERROR] [1792377820.250818073] [rviz2]: Lookup would require extrapolation into the future.  Requested time 1792377820.249053 but the latest data is at time 1792377820.247619, when looking up transform from frame [laser_frame] to frame [map]
+[cartographer_node-2] [INFO] [1792377821.535368116] [cartographer logger]: I1019 11:43:41.000000 27466 constraint_builder_2d.cc:275] Node (0, 303) with 42 points on submap (0, 0) differs by translation 0.00 rotation 0.000 with score 88.4%.
+[cartographer_node-2] [INFO] [1792377821.535844466] [cartographer logger]: I1019 11:43:41.000000 27465 constraint_builder_2d.cc:275] Node (0, 303) with 42 points on submap (0, 1) differs by translation 0.01 rotation 0.001 with score 86.4%.
+[rviz2-4] [ERROR] [1792377822.906907068] [rviz2]: Lookup would require extrapolation into the future.  Requested time 1792377822.903120 but the latest data is at time 1792377822.902739, when looking up transform from frame [laser_frame] to frame [map]
+[cartographer_node-2] [INFO] [1792377823.075515375] [cartographer logger]: I1019 11:43:43.000000 27463 constraint_builder_2d.cc:275] Node (0, 306) with 43 points on submap (0, 0) differs by translation 0.00 rotation 0.006 with score 89.9%.
+[cartographer_node-2] [INFO] [1792377823.075549127] [cartographer logger]: I1019 11:43:43.000000 27466 constraint_builder_2d.cc:275] Node (0, 306) with 43 points on submap (0, 1) differs by translation 0.01 rotation 0.006 with score 87.7%.
+[rviz2-4] [ERROR] [1792377823.419296937] [rviz2]: Lookup would require extrapolation into the future.  Requested time 1792377823.417872 but the latest data is at time 1792377823.417756, when looking up transform from frame [laser_frame] to frame [map]
+[rviz2-4] [ERROR] [1792377825.562799198] [rviz2]: Lookup would require extrapolation into the future.  Requested time 1792377825.558791 but the latest data is at time 1792377825.557683, when looking up transform from frame [laser_frame] to frame [map]
+[rviz2-4] [ERROR] [1792377826.074936977] [rviz2]: Lookup would require extrapolation into the future.  Requested time 1792377826.072769 but the latest data is at time 1792377826.072689, when looking up transform from frame [laser_frame] to frame [map]
+[cartographer_node-2] [INFO] [1792377828.983894372] [cartographer logger]: I1019 11:43:48.000000 27466 constraint_builder_2d.cc:275] Node (0, 310) with 44 points on submap (0, 0) differs by translation 0.00 rotation 0.002 with score 89.9%.
+[cartographer_node-2] [INFO] [1792377828.983968632] [cartographer logger]: I1019 11:43:48.000000 27465 constraint_builder_2d.cc:275] Node (0, 310) with 44 points on submap (0, 1) differs by translation 0.00 rotation 0.004 with score 87.8%.
+[rviz2-4] [ERROR] [1792377829.754924189] [rviz2]: Lookup would require extrapolation into the future.  Requested time 1792377829.752831 but the latest data is at time 1792377829.752728, when looking up transform from frame [laser_frame] to frame [map]
+[rviz2-4] [ERROR] [1792377830.011193648] [rviz2]: Lookup would require extrapolation into the future.  Requested time 1792377830.009830 but the latest data is at time 1792377830.007735, when looking up transform from frame [laser_frame] to frame [map]
+[rviz2-4] [ERROR] [1792377832.922606444] [rviz2]: Lookup would require extrapolation into the future.  Requested time 1792377832.919212 but the latest data is at time 1792377832.917918, when looking up transform from frame [laser_frame] to frame [map]
+[cartographer_node-2] [INFO] [1792377833.176662096] [cartographer logger]: I1019 11:43:53.000000 27463 constraint_builder_2d.cc:275] Node (0, 313) with 43 points on submap (0, 0) differs by translation 0.00 rotation 0.003 with score 90.0%.
+[cartographer_node-2] [INFO] [1792377833.176788790] [cartographer logger]: I1019 11:43:53.000000 27466 constraint_builder_2d.cc:275] Node (0, 313) with 43 points on submap (0, 1) differs by translation 0.01 rotation 0.001 with score 88.1%.
+[rviz2-4] [ERROR] [1792377833.436371835] [rviz2]: Lookup would require extrapolation into the future.  Requested time 1792377833.432931 but the latest data is at time 1792377833.432764, when looking up transform from frame [laser_frame] to frame [map]
+[cartographer_node-2] [INFO] [1792377834.545752256] [cartographer logger]: I1019 11:43:54.000000 27429 collated_trajectory_builder.cc:81] scan rate: 11.68 Hz 8.56e-02 s +/- 4.56e-04 s (pulsed at 100.00% real time)
+[rviz2-4] [ERROR] [1792377836.090875505] [rviz2]: Lookup would require extrapolation into the future.  Requested time 1792377836.088003 but the latest data is at time 1792377836.087802, when looking up transform from frame [laser_frame] to frame [map]
+[rviz2-4] [ERROR] [1792377836.347008593] [rviz2]: Lookup would require extrapolation into the future.  Requested time 1792377836.345618 but the latest data is at time 1792377836.342805, when looking up transform from frame [laser_frame] to frame [map]
+[rviz2-4] [ERROR] [1792377836.602544718] [rviz2]: Lookup would require extrapolation into the future.  Requested time 1792377836.601525 but the latest data is at time 1792377836.597810, when looking up transform from frame [laser_frame] to frame [map]
+[cartographer_node-2] [INFO] [1792377837.630488426] [cartographer logger]: I1019 11:43:57.000000 27464 constraint_builder_2d.cc:275] Node (0, 316) with 46 points on submap (0, 0) differs by translation 0.00 rotation 0.001 with score 88.5%.
+[cartographer_node-2] [INFO] [1792377837.630524535] [cartographer logger]: I1019 11:43:57.000000 27463 constraint_builder_2d.cc:275] Node (0, 316) with 46 points on submap (0, 1) differs by translation 0.00 rotation 0.004 with score 86.7%.
+[rviz2-4] [ERROR] [1792377838.747370507] [rviz2]: Lookup would require extrapolation into the future.  Requested time 1792377838.743940 but the latest data is at time 1792377838.742833, when looking up transform from frame [laser_frame] to frame [map]
+[rviz2-4] [ERROR] [1792377839.002353698] [rviz2]: Lookup would require extrapolation into the future.  Requested time 1792377838.999616 but the latest data is at time 1792377838.997840, when looking up transform from frame [laser_frame] to frame [map]
+[cartographer_node-2] [INFO] [1792377841.142059768] [cartographer logger]: I1019 11:44:01.000000 27463 constraint_builder_2d.cc:275] Node (0, 320) with 46 points on submap (0, 0) differs by translation 0.01 rotation 0.001 with score 89.9%.
+[cartographer_node-2] [INFO] [1792377841.142249183] [cartographer logger]: I1019 11:44:01.000000 27466 constraint_builder_2d.cc:275] Node (0, 320) with 46 points on submap (0, 1) differs by translation 0.01 rotation 0.008 with score 86.1%.
+[rviz2-4] [ERROR] [1792377842.170769433] [rviz2]: Lookup would require extrapolation into the future.  Requested time 1792377842.169725 but the latest data is at time 1792377842.167962, when looking up transform from frame [laser_frame] to frame [map]
+[rviz2-4] [ERROR] [1792377842.427042669] [rviz2]: Lookup would require extrapolation into the future.  Requested time 1792377842.425852 but the latest data is at time 1792377842.422868, when looking up transform from frame [laser_frame] to frame [map]
+[cartographer_node-2] [INFO] [1792377844.224123757] [cartographer logger]: I1019 11:44:04.000000 27463 constraint_builder_2d.cc:275] Node (0, 323) with 42 points on submap (0, 0) differs by translation 0.00 rotation 0.001 with score 88.4%.
+[cartographer_node-2] [INFO] [1792377844.224149126] [cartographer logger]: I1019 11:44:04.000000 27464 constraint_builder_2d.cc:275] Node (0, 323) with 42 points on submap (0, 1) differs by translation 0.00 rotation 0.005 with score 84.5%.
+[rviz2-4] [ERROR] [1792377845.082519206] [rviz2]: Lookup would require extrapolation into the future.  Requested time 1792377845.079826 but the latest data is at time 1792377845.078022, when looking up transform from frame [laser_frame] to frame [map]
+[cartographer_node-2] [INFO] [1792377845.423210375] [cartographer logger]: I1019 11:44:05.000000 27466 constraint_builder_2d.cc:275] Node (0, 326) with 45 points on submap (0, 0) differs by translation 0.01 rotation 0.006 with score 88.5%.
+[cartographer_node-2] [INFO] [1792377845.423337735] [cartographer logger]: I1019 11:44:05.000000 27463 constraint_builder_2d.cc:275] Node (0, 326) with 45 points on submap (0, 1) differs by translation 0.01 rotation 0.007 with score 87.5%.
+[cartographer_node-2] [INFO] [1792377847.220910325] [cartographer logger]: I1019 11:44:07.000000 27463 constraint_builder_2d.cc:275] Node (0, 330) with 45 points on submap (0, 0) differs by translation 0.00 rotation 0.003 with score 88.5%.
+[cartographer_node-2] [INFO] [1792377847.221072562] [cartographer logger]: I1019 11:44:07.000000 27463 constraint_builder_2d.cc:275] Node (0, 330) with 45 points on submap (0, 1) differs by translation 0.00 rotation 0.006 with score 85.2%.
+[rviz2-4] [ERROR] [1792377848.251059208] [rviz2]: Lookup would require extrapolation into the future.  Requested time 1792377848.248364 but the latest data is at time 1792377848.248240, when looking up transform from frame [laser_frame] to frame [map]
+[cartographer_node-2] [INFO] [1792377849.107992006] [cartographer logger]: I1019 11:44:09.000000 27465 constraint_builder_2d.cc:275] Node (0, 333) with 43 points on submap (0, 0) differs by translation 0.01 rotation 0.003 with score 88.4%.
+[cartographer_node-2] [INFO] [1792377849.108150990] [cartographer logger]: I1019 11:44:09.000000 27466 constraint_builder_2d.cc:275] Node (0, 333) with 43 points on submap (0, 1) differs by translation 0.00 rotation 0.005 with score 84.6%.
+[cartographer_node-2] [INFO] [1792377849.622448863] [cartographer logger]: I1019 11:44:09.000000 27429 collated_trajectory_builder.cc:81] scan rate: 11.67 Hz 8.57e-02 s +/- 4.22e-04 s (pulsed at 100.00% real time)
+[rviz2-4] [ERROR] [1792377849.882397604] [rviz2]: Lookup would require extrapolation into the future.  Requested time 1792377849.879416 but the latest data is at time 1792377849.878071, when looking up transform from frame [laser_frame] to frame [map]
+[cartographer_node-2] [INFO] [1792377851.766587663] [cartographer logger]: I1019 11:44:11.000000 27464 constraint_builder_2d.cc:275] Node (0, 336) with 45 points on submap (0, 0) differs by translation 0.01 rotation 0.005 with score 89.9%.
+[cartographer_node-2] [INFO] [1792377851.766797558] [cartographer logger]: I1019 11:44:11.000000 27465 constraint_builder_2d.cc:275] Node (0, 336) with 45 points on submap (0, 1) differs by translation 0.01 rotation 0.000 with score 86.1%.
+[rviz2-4] [ERROR] [1792377852.282584259] [rviz2]: Lookup would require extrapolation into the future.  Requested time 1792377852.279701 but the latest data is at time 1792377852.277986, when looking up transform from frame [laser_frame] to frame [map]
+[cartographer_node-2] [INFO] [1792377854.680811879] [cartographer logger]: I1019 11:44:14.000000 27465 constraint_builder_2d.cc:275] Node (0, 340) with 42 points on submap (0, 0) differs by translation 0.00 rotation 0.001 with score 88.1%.
+[cartographer_node-2] [INFO] [1792377854.680963912] [cartographer logger]: I1019 11:44:14.000000 27465 constraint_builder_2d.cc:275] Node (0, 340) with 42 points on submap (0, 1) differs by translation 0.00 rotation 0.009 with score 85.8%.
+[rviz2-4] [ERROR] [1792377854.682572797] [rviz2]: Lookup would require extrapolation into the future.  Requested time 1792377854.679668 but the latest data is at time 1792377854.678114, when looking up transform from frame [laser_frame] to frame [map]
+[cartographer_node-2] [INFO] [1792377855.880011386] [cartographer logger]: I1019 11:44:15.000000 27429 motion_filter.cc:42] Motion filter reduced the number of nodes to 13.72%.
+[cartographer_node-2] [INFO] [1792377856.308190164] [cartographer logger]: I1019 11:44:16.000000 27464 constraint_builder_2d.cc:275] Node (0, 343) with 43 points on submap (0, 1) differs by translation 0.00 rotation 0.004 with score 88.1%.
+[cartographer_node-2] [INFO] [1792377856.308215894] [cartographer logger]: I1019 11:44:16.000000 27463 constraint_builder_2d.cc:275] Node (0, 343) with 43 points on submap (0, 0) differs by translation 0.01 rotation 0.005 with score 89.9%.
+[rviz2-4] [ERROR] [1792377857.082463838] [rviz2]: Lookup would require extrapolation into the future.  Requested time 1792377857.079633 but the latest data is at time 1792377857.078044, when looking up transform from frame [laser_frame] to frame [map]
+[cartographer_node-2] [INFO] [1792377857.853400723] [cartographer logger]: I1019 11:44:17.000000 27466 constraint_builder_2d.cc:275] Node (0, 346) with 43 points on submap (0, 1) differs by translation 0.00 rotation 0.006 with score 85.9%.
+[cartographer_node-2] [INFO] [1792377857.853422088] [cartographer logger]: I1019 11:44:17.000000 27464 constraint_builder_2d.cc:275] Node (0, 346) with 43 points on submap (0, 0) differs by translation 0.00 rotation 0.004 with score 88.1%.
+[rviz2-4] [ERROR] [1792377859.227464287] [rviz2]: Lookup would require extrapolation into the future.  Requested time 1792377859.223135 but the latest data is at time 1792377859.223056, when looking up transform from frame [laser_frame] to frame [map]
+[rviz2-4] [ERROR] [1792377859.483161011] [rviz2]: Lookup would require extrapolation into the future.  Requested time 1792377859.480186 but the latest data is at time 1792377859.478196, when looking up transform from frame [laser_frame] to frame [map]
+[cartographer_node-2] [INFO] [1792377859.910265250] [cartographer logger]: I1019 11:44:19.000000 27464 constraint_builder_2d.cc:275] Node (0, 350) with 43 points on submap (0, 0) differs by translation 0.01 rotation 0.004 with score 88.4%.
+[cartographer_node-2] [INFO] [1792377859.910416445] [cartographer logger]: I1019 11:44:19.000000 27464 constraint_builder_2d.cc:275] Node (0, 350) with 43 points on submap (0, 1) differs by translation 0.00 rotation 0.004 with score 86.5%.
+[cartographer_node-2] [INFO] [1792377861.623602932] [cartographer logger]: I1019 11:44:21.000000 27465 constraint_builder_2d.cc:275] Node (0, 353) with 45 points on submap (0, 0) differs by translation 0.01 rotation 0.004 with score 88.5%.
+[cartographer_node-2] [INFO] [1792377861.623644157] [cartographer logger]: I1019 11:44:21.000000 27466 constraint_builder_2d.cc:275] Node (0, 353) with 45 points on submap (0, 1) differs by translation 0.00 rotation 0.003 with score 86.6%.
+[rviz2-4] [ERROR] [1792377861.882710230] [rviz2]: Lookup would require extrapolation into the future.  Requested time 1792377861.880224 but the latest data is at time 1792377861.878199, when looking up transform from frame [laser_frame] to frame [map]
+[cartographer_node-2] [INFO] [1792377863.508756929] [cartographer logger]: I1019 11:44:23.000000 27463 constraint_builder_2d.cc:275] Node (0, 356) with 43 points on submap (0, 0) differs by translation 0.01 rotation 0.007 with score 88.4%.
+[cartographer_node-2] [INFO] [1792377863.508995038] [cartographer logger]: I1019 11:44:23.000000 27465 constraint_builder_2d.cc:275] Node (0, 356) with 43 points on submap (0, 1) differs by translation 0.00 rotation 0.002 with score 84.6%.
+[rviz2-4] [ERROR] [1792377864.282632127] [rviz2]: Lookup would require extrapolation into the future.  Requested time 1792377864.278378 but the latest data is at time 1792377864.278264, when looking up transform from frame [laser_frame] to frame [map]
+[cartographer_node-2] [INFO] [1792377864.707561405] [cartographer logger]: I1019 11:44:24.000000 27429 collated_trajectory_builder.cc:81] scan rate: 11.67 Hz 8.57e-02 s +/- 4.46e-04 s (pulsed at 100.00% real time)
+[rviz2-4] [ERROR] [1792377865.050693479] [rviz2]: Lookup would require extrapolation into the future.  Requested time 1792377865.048631 but the latest data is at time 1792377865.048190, when looking up transform from frame [laser_frame] to frame [map]
+[cartographer_node-2] [INFO] [1792377866.846580089] [cartographer logger]: I1019 11:44:26.000000 27464 constraint_builder_2d.cc:275] Node (0, 0) with 43 points on submap (0, 2) differs by translation 0.02 rotation 0.012 with score 68.1%.
+[cartographer_node-2] [INFO] [1792377866.846756109] [cartographer logger]: I1019 11:44:26.000000 27464 constraint_builder_2d.cc:275] Node (0, 6) with 44 points on submap (0, 2) differs by translation 0.02 rotation 0.007 with score 68.7%.
+[cartographer_node-2] [INFO] [1792377866.846865918] [cartographer logger]: I1019 11:44:26.000000 27465 constraint_builder_2d.cc:275] Node (0, 10) with 46 points on submap (0, 2) differs by translation 0.02 rotation 0.002 with score 71.4%.
+[cartographer_node-2] [INFO] [1792377866.846911385] [cartographer logger]: I1019 11:44:26.000000 27464 constraint_builder_2d.cc:275] Node (0, 36) with 50 points on submap (0, 2) differs by translation 0.02 rotation 0.005 with score 77.7%.
+[cartographer_node-2] [INFO] [1792377866.847015851] [cartographer logger]: I1019 11:44:26.000000 27465 constraint_builder_2d.cc:275] Node (0, 40) with 51 points on submap (0, 2) differs by translation 0.01 rotation 0.021 with score 78.3%.
+[cartographer_node-2] [INFO] [1792377866.847061021] [cartographer logger]: I1019 11:44:26.000000 27464 constraint_builder_2d.cc:275] Node (0, 43) with 49 points on submap (0, 2) differs by translation 0.01 rotation 0.027 with score 72.9%.
+[cartographer_node-2] [INFO] [1792377866.847154325] [cartographer logger]: I1019 11:44:26.000000 27465 constraint_builder_2d.cc:275] Node (0, 46) with 48 points on submap (0, 2) differs by translation 0.01 rotation 0.028 with score 78.3%.
+[cartographer_node-2] [INFO] [1792377866.847191034] [cartographer logger]: I1019 11:44:26.000000 27464 constraint_builder_2d.cc:275] Node (0, 50) with 44 points on submap (0, 2) differs by translation 0.01 rotation 0.021 with score 86.5%.
+[cartographer_node-2] [INFO] [1792377866.847286276] [cartographer logger]: I1019 11:44:26.000000 27465 constraint_builder_2d.cc:275] Node (0, 53) with 42 points on submap (0, 2) differs by translation 0.01 rotation 0.004 with score 86.4%.
+[cartographer_node-2] [INFO] [1792377866.847353811] [cartographer logger]: I1019 11:44:26.000000 27464 constraint_builder_2d.cc:275] Node (0, 56) with 43 points on submap (0, 2) differs by translation 0.00 rotation 0.001 with score 86.2%.
+[cartographer_node-2] [INFO] [1792377866.847409165] [cartographer logger]: I1019 11:44:26.000000 27465 constraint_builder_2d.cc:275] Node (0, 60) with 41 points on submap (0, 2) differs by translation 0.01 rotation 0.015 with score 88.0%.
+[cartographer_node-2] [INFO] [1792377866.847490502] [cartographer logger]: I1019 11:44:26.000000 27464 constraint_builder_2d.cc:275] Node (0, 63) with 42 points on submap (0, 2) differs by translation 0.01 rotation 0.025 with score 85.1%.
+[cartographer_node-2] [INFO] [1792377866.847524726] [cartographer logger]: I1019 11:44:26.000000 27465 constraint_builder_2d.cc:275] Node (0, 66) with 43 points on submap (0, 2) differs by translation 0.01 rotation 0.026 with score 82.7%.
+[cartographer_node-2] [INFO] [1792377866.847609708] [cartographer logger]: I1019 11:44:26.000000 27464 constraint_builder_2d.cc:275] Node (0, 70) with 44 points on submap (0, 2) differs by translation 0.02 rotation 0.022 with score 84.7%.
+[cartographer_node-2] [INFO] [1792377866.847661132] [cartographer logger]: I1019 11:44:26.000000 27465 constraint_builder_2d.cc:275] Node (0, 73) with 45 points on submap (0, 2) differs by translation 0.00 rotation 0.000 with score 87.6%.
+[cartographer_node-2] [INFO] [1792377866.847732790] [cartographer logger]: I1019 11:44:26.000000 27464 constraint_builder_2d.cc:275] Node (0, 76) with 44 points on submap (0, 2) differs by translation 0.00 rotation 0.004 with score 90.0%.
+[cartographer_node-2] [INFO] [1792377866.847795447] [cartographer logger]: I1019 11:44:26.000000 27465 constraint_builder_2d.cc:275] Node (0, 80) with 45 points on submap (0, 2) differs by translation 0.00 rotation 0.012 with score 88.1%.
+[cartographer_node-2] [INFO] [1792377866.847860759] [cartographer logger]: I1019 11:44:26.000000 27464 constraint_builder_2d.cc:275] Node (0, 83) with 43 points on submap (0, 2) differs by translation 0.00 rotation 0.007 with score 88.1%.
+[cartographer_node-2] [INFO] [1792377866.847916592] [cartographer logger]: I1019 11:44:26.000000 27465 constraint_builder_2d.cc:275] Node (0, 86) with 42 points on submap (0, 2) differs by translation 0.01 rotation 0.014 with score 88.0%.
+[cartographer_node-2] [INFO] [1792377866.847994590] [cartographer logger]: I1019 11:44:26.000000 27464 constraint_builder_2d.cc:275] Node (0, 90) with 43 points on submap (0, 2) differs by translation 0.02 rotation 0.015 with score 87.0%.
+[cartographer_node-2] [INFO] [1792377866.848047057] [cartographer logger]: I1019 11:44:26.000000 27465 constraint_builder_2d.cc:275] Node (0, 93) with 44 points on submap (0, 2) differs by translation 0.02 rotation 0.016 with score 88.9%.
+[cartographer_node-2] [INFO] [1792377866.848132590] [cartographer logger]: I1019 11:44:26.000000 27464 constraint_builder_2d.cc:275] Node (0, 96) with 45 points on submap (0, 2) differs by translation 0.02 rotation 0.009 with score 88.9%.
+[cartographer_node-2] [INFO] [1792377866.848166677] [cartographer logger]: I1019 11:44:26.000000 27465 constraint_builder_2d.cc:275] Node (0, 103) with 43 points on submap (0, 2) differs by translation 0.01 rotation 0.008 with score 90.0%.
+[cartographer_node-2] [INFO] [1792377866.848181961] [cartographer logger]: I1019 11:44:26.000000 27466 constraint_builder_2d.cc:275] Node (0, 100) with 42 points on submap (0, 2) differs by translation 0.01 rotation 0.000 with score 88.0%.
+[cartographer_node-2] [INFO] [1792377866.848259265] [cartographer logger]: I1019 11:44:26.000000 27464 constraint_builder_2d.cc:275] Node (0, 106) with 43 points on submap (0, 2) differs by translation 0.02 rotation 0.015 with score 87.7%.
+[cartographer_node-2] [INFO] [1792377866.848286461] [cartographer logger]: I1019 11:44:26.000000 27465 constraint_builder_2d.cc:275] Node (0, 110) with 41 points on submap (0, 2) differs by translation 0.02 rotation 0.016 with score 88.0%.
+[cartographer_node-2] [INFO] [1792377866.848390677] [cartographer logger]: I1019 11:44:26.000000 27464 constraint_builder_2d.cc:275] Node (0, 116) with 44 points on submap (0, 2) differs by translation 0.00 rotation 0.007 with score 90.0%.
+[cartographer_node-2] [INFO] [1792377866.848405696] [cartographer logger]: I1019 11:44:26.000000 27465 constraint_builder_2d.cc:275] Node (0, 120) with 42 points on submap (0, 2) differs by translation 0.01 rotation 0.008 with score 88.9%.
+[cartographer_node-2] [INFO] [1792377866.848457558] [cartographer logger]: I1019 11:44:26.000000 27463 constraint_builder_2d.cc:275] Node (0, 123) with 44 points on submap (0, 2) differs by translation 0.01 rotation 0.004 with score 81.9%.
+[cartographer_node-2] [INFO] [1792377866.848524504] [cartographer logger]: I1019 11:44:26.000000 27464 constraint_builder_2d.cc:275] Node (0, 126) with 42 points on submap (0, 2) differs by translation 0.02 rotation 0.014 with score 86.2%.
+[cartographer_node-2] [INFO] [1792377866.848539305] [cartographer logger]: I1019 11:44:26.000000 27465 constraint_builder_2d.cc:275] Node (0, 130) with 44 points on submap (0, 2) differs by translation 0.01 rotation 0.004 with score 88.9%.
+[cartographer_node-2] [INFO] [1792377866.848586171] [cartographer logger]: I1019 11:44:26.000000 27463 constraint_builder_2d.cc:275] Node (0, 133) with 42 points on submap (0, 2) differs by translation 0.02 rotation 0.013 with score 88.7%.
+[cartographer_node-2] [INFO] [1792377866.848652258] [cartographer logger]: I1019 11:44:26.000000 27464 constraint_builder_2d.cc:275] Node (0, 136) with 44 points on submap (0, 2) differs by translation 0.02 rotation 0.012 with score 85.9%.
+[cartographer_node-2] [INFO] [1792377866.848660756] [cartographer logger]: I1019 11:44:26.000000 27465 constraint_builder_2d.cc:275] Node (0, 140) with 44 points on submap (0, 2) differs by translation 0.01 rotation 0.002 with score 88.1%.
+[cartographer_node-2] [INFO] [1792377866.848725081] [cartographer logger]: I1019 11:44:26.000000 27463 constraint_builder_2d.cc:275] Node (0, 143) with 44 points on submap (0, 2) differs by translation 0.01 rotation 0.005 with score 88.9%.
+[cartographer_node-2] [INFO] [1792377866.848786126] [cartographer logger]: I1019 11:44:26.000000 27464 constraint_builder_2d.cc:275] Node (0, 146) with 43 points on submap (0, 2) differs by translation 0.02 rotation 0.017 with score 88.1%.
+[cartographer_node-2] [INFO] [1792377866.848792062] [cartographer logger]: I1019 11:44:26.000000 27465 constraint_builder_2d.cc:275] Node (0, 150) with 41 points on submap (0, 2) differs by translation 0.01 rotation 0.005 with score 88.8%.
+[cartographer_node-2] [INFO] [1792377866.848865251] [cartographer logger]: I1019 11:44:26.000000 27463 constraint_builder_2d.cc:275] Node (0, 153) with 47 points on submap (0, 2) differs by translation 0.01 rotation 0.007 with score 89.0%.
+[cartographer_node-2] [INFO] [1792377866.848917001] [cartographer logger]: I1019 11:44:26.000000 27464 constraint_builder_2d.cc:275] Node (0, 156) with 45 points on submap (0, 2) differs by translation 0.02 rotation 0.009 with score 87.2%.
+[cartographer_node-2] [INFO] [1792377866.848923707] [cartographer logger]: I1019 11:44:26.000000 27465 constraint_builder_2d.cc:275] Node (0, 160) with 46 points on submap (0, 2) differs by translation 0.02 rotation 0.010 with score 88.2%.
+[cartographer_node-2] [INFO] [1792377866.848994110] [cartographer logger]: I1019 11:44:26.000000 27463 constraint_builder_2d.cc:275] Node (0, 163) with 47 points on submap (0, 2) differs by translation 0.00 rotation 0.000 with score 90.0%.
+[cartographer_node-2] [INFO] [1792377866.849049296] [cartographer logger]: I1019 11:44:26.000000 27464 constraint_builder_2d.cc:275] Node (0, 166) with 44 points on submap (0, 2) differs by translation 0.01 rotation 0.011 with score 88.9%.
+[cartographer_node-2] [INFO] [1792377866.849053675] [cartographer logger]: I1019 11:44:26.000000 27465 constraint_builder_2d.cc:275] Node (0, 170) with 43 points on submap (0, 2) differs by translation 0.02 rotation 0.013 with score 88.9%.
+[cartographer_node-2] [INFO] [1792377866.849119042] [cartographer logger]: I1019 11:44:26.000000 27463 constraint_builder_2d.cc:275] Node (0, 173) with 46 points on submap (0, 2) differs by translation 0.01 rotation 0.001 with score 89.0%.
+[cartographer_node-2] [INFO] [1792377866.849174040] [cartographer logger]: I1019 11:44:26.000000 27464 constraint_builder_2d.cc:275] Node (0, 176) with 45 points on submap (0, 2) differs by translation 0.02 rotation 0.007 with score 88.2%.
+[cartographer_node-2] [INFO] [1792377866.849180083] [cartographer logger]: I1019 11:44:26.000000 27465 constraint_builder_2d.cc:275] Node (0, 13) with 44 points on submap (0, 2) differs by translation 0.02 rotation 0.005 with score 75.7%.
+[cartographer_node-2] [INFO] [1792377866.849242354] [cartographer logger]: I1019 11:44:26.000000 27463 constraint_builder_2d.cc:275] Node (0, 16) with 45 points on submap (0, 2) differs by translation 0.02 rotation 0.008 with score 75.7%.
+[cartographer_node-2] [INFO] [1792377866.849301164] [cartographer logger]: I1019 11:44:26.000000 27465 constraint_builder_2d.cc:275] Node (0, 23) with 44 points on submap (0, 2) differs by translation 0.02 rotation 0.005 with score 75.7%.
+[cartographer_node-2] [INFO] [1792377866.849305975] [cartographer logger]: I1019 11:44:26.000000 27464 constraint_builder_2d.cc:275] Node (0, 20) with 45 points on submap (0, 2) differs by translation 0.01 rotation 0.004 with score 74.7%.
+[cartographer_node-2] [INFO] [1792377866.849378079] [cartographer logger]: I1019 11:44:26.000000 27463 constraint_builder_2d.cc:275] Node (0, 26) with 46 points on submap (0, 2) differs by translation 0.02 rotation 0.005 with score 71.5%.
+[cartographer_node-2] [INFO] [1792377866.849397248] [cartographer logger]: I1019 11:44:26.000000 27466 constraint_builder_2d.cc:275] Node (0, 113) with 43 points on submap (0, 2) differs by translation 0.02 rotation 0.007 with score 88.9%.
+[cartographer_node-2] [INFO] [1792377866.849448785] [cartographer logger]: I1019 11:44:26.000000 27465 constraint_builder_2d.cc:275] Node (0, 30) with 48 points on submap (0, 2) differs by translation 0.01 rotation 0.011 with score 72.9%.
+[cartographer_node-2] [INFO] [1792377866.849636731] [cartographer logger]: I1019 11:44:26.000000 27464 constraint_builder_2d.cc:275] Node (0, 33) with 45 points on submap (0, 2) differs by translation 0.02 rotation 0.000 with score 73.9%.
+[cartographer_node-2] [INFO] [1792377867.274856826] [cartographer logger]: I1019 11:44:27.000000 27429 pose_graph_2d.cc:148] Inserted submap (0, 4).
+[cartographer_node-2] [INFO] [1792377867.275193422] [cartographer logger]: I1019 11:44:27.000000 27466 constraint_builder_2d.cc:275] Node (0, 360) with 43 points on submap (0, 0) differs by translation 0.00 rotation 0.001 with score 90.0%.
+[cartographer_node-2] [INFO] [1792377867.275320220] [cartographer logger]: I1019 11:44:27.000000 27466 constraint_builder_2d.cc:275] Node (0, 360) with 43 points on submap (0, 2) differs by translation 0.00 rotation 0.005 with score 89.4%.
+[cartographer_node-2] [INFO] [1792377867.275359253] [cartographer logger]: I1019 11:44:27.000000 27465 constraint_builder_2d.cc:275] Node (0, 360) with 43 points on submap (0, 1) differs by translation 0.00 rotation 0.007 with score 85.5%.
+[rviz2-4] [ERROR] [1792377867.963075358] [rviz2]: Lookup would require extrapolation into the future.  Requested time 1792377867.959618 but the latest data is at time 1792377867.958257, when looking up transform from frame [laser_frame] to frame [map]
+[rviz2-4] [ERROR] [1792377870.363287464] [rviz2]: Lookup would require extrapolation into the future.  Requested time 1792377870.359138 but the latest data is at time 1792377870.358277, when looking up transform from frame [laser_frame] to frame [map]
+[rviz2-4] [ERROR] [1792377870.876879075] [rviz2]: Lookup would require extrapolation into the future.  Requested time 1792377870.873350 but the latest data is at time 1792377870.873189, when looking up transform from frame [laser_frame] to frame [map]
+[cartographer_node-2] [INFO] [1792377872.332089598] [cartographer logger]: I1019 11:44:32.000000 27464 pose_graph_2d.cc:538] Remaining work items in queue: 0
+[cartographer_node-2] [INFO] [1792377872.332277600] [cartographer logger]: I1019 11:44:32.000000 27464 constraint_builder_2d.cc:275] Node (0, 363) with 44 points on submap (0, 0) differs by translation 0.01 rotation 0.000 with score 90.0%.
+[cartographer_node-2] [INFO] [1792377872.332405904] [cartographer logger]: I1019 11:44:32.000000 27464 constraint_builder_2d.cc:275] Node (0, 363) with 44 points on submap (0, 2) differs by translation 0.00 rotation 0.006 with score 90.0%.
+[cartographer_node-2] [INFO] [1792377872.332489924] [cartographer logger]: I1019 11:44:32.000000 27466 constraint_builder_2d.cc:275] Node (0, 363) with 44 points on submap (0, 1) differs by translation 0.00 rotation 0.012 with score 84.1%.
+[cartographer_node-2] [INFO] [1792377872.332507631] [cartographer logger]: I1019 11:44:32.000000 27466 constraint_builder_2d.cc:290] 112 computations resulted in 111 additional constraints.
+[cartographer_node-2] [INFO] [1792377872.332522434] [cartographer logger]: I1019 11:44:32.000000 27466 constraint_builder_2d.cc:292] Score histogram:
+[cartographer_node-2] Count: 165  Min: 0.660546  Max: 0.9  Mean: 0.857015
+[cartographer_node-2] [0.660546, 0.684491)	                    	Count: 2 (1.21212%)	Total: 2 (1.21212%)
+[cartographer_node-2] [0.684491, 0.708436)	                    	Count: 4 (2.42424%)	Total: 6 (3.63636%)
+[cartographer_node-2] [0.708436, 0.732382)	                   #	Count: 8 (4.84848%)	Total: 14 (8.48485%)
+[cartographer_node-2] [0.732382, 0.756327)	                    	Count: 4 (2.42424%)	Total: 18 (10.9091%)
+[cartographer_node-2] [0.756327, 0.780273)	                    	Count: 4 (2.42424%)	Total: 22 (13.3333%)
+[cartographer_node-2] [0.780273, 0.804218)	                   #	Count: 5 (3.0303%)	Total: 27 (16.3636%)
+[cartographer_node-2] [0.804218, 0.828164)	                    	Count: 2 (1.21212%)	Total: 29 (17.5758%)
+[cartographer_node-2] [0.828164, 0.852109)	                   #	Count: 12 (7.27273%)	Total: 41 (24.8485%)
+[cartographer_node-2] [0.852109, 0.876055)	                 ###	Count: 25 (15.1515%)	Total: 66 (40%)
+[cartographer_node-2] [0.876055, 0.900000]	        ############	Count: 99 (60%)	Total: 165 (100%)
+[rviz2-4] [ERROR] [1792377872.762494704] [rviz2]: Lookup would require extrapolation into the future.  Requested time 1792377872.758858 but the latest data is at time 1792377872.758307, when looking up transform from frame [laser_frame] to frame [map]
+[cartographer_node-2] [INFO] [1792377874.475382889] [cartographer logger]: I1019 11:44:34.000000 27464 constraint_builder_2d.cc:275] Node (0, 366) with 44 points on submap (0, 0) differs by translation 0.00 rotation 0.000 with score 90.0%.
+[cartographer_node-2] [INFO] [1792377874.475528959] [cartographer logger]: I1019 11:44:34.000000 27464 constraint_builder_2d.cc:275] Node (0, 366) with 44 points on submap (0, 1) differs by translation 0.01 rotation 0.003 with score 88.2%.
+[cartographer_node-2] [INFO] [1792377874.475650968] [cartographer logger]: I1019 11:44:34.000000 27464 constraint_builder_2d.cc:275] Node (0, 366) with 44 points on submap (0, 2) differs by translation 0.01 rotation 0.002 with score 88.0%.
+[rviz2-4] [ERROR] [1792377874.907212835] [rviz2]: Lookup would require extrapolation into the future.  Requested time 1792377874.903418 but the latest data is at time 1792377874.903351, when looking up transform from frame [laser_frame] to frame [map]
+[rviz2-4] [ERROR] [1792377875.163153971] [rviz2]: Lookup would require extrapolation into the future.  Requested time 1792377875.159866 but the latest data is at time 1792377875.158321, when looking up transform from frame [laser_frame] to frame [map]
+[rviz2-4] [ERROR] [1792377875.676667819] [rviz2]: Lookup would require extrapolation into the future.  Requested time 1792377875.673759 but the latest data is at time 1792377875.673311, when looking up transform from frame [laser_frame] to frame [map]
+[rviz2-4] [ERROR] [1792377877.563056562] [rviz2]: Lookup would require extrapolation into the future.  Requested time 1792377877.560655 but the latest data is at time 1792377877.558463, when looking up transform from frame [laser_frame] to frame [map]
+[cartographer_node-2] [INFO] [1792377878.760267962] [cartographer logger]: I1019 11:44:38.000000 27464 constraint_builder_2d.cc:275] Node (0, 370) with 45 points on submap (0, 0) differs by translation 0.00 rotation 0.002 with score 89.9%.
+[cartographer_node-2] [INFO] [1792377878.760414317] [cartographer logger]: I1019 11:44:38.000000 27464 constraint_builder_2d.cc:275] Node (0, 370) with 45 points on submap (0, 1) differs by translation 0.00 rotation 0.004 with score 88.2%.
+[cartographer_node-2] [INFO] [1792377878.760544430] [cartographer logger]: I1019 11:44:38.000000 27464 constraint_builder_2d.cc:275] Node (0, 370) with 45 points on submap (0, 2) differs by translation 0.00 rotation 0.001 with score 88.1%.
+[cartographer_node-2] [INFO] [1792377879.786903176] [cartographer logger]: I1019 11:44:39.000000 27429 collated_trajectory_builder.cc:81] scan rate: 11.67 Hz 8.57e-02 s +/- 4.44e-04 s (pulsed at 100.03% real time)
+[rviz2-4] [INFO] [1792377879.837004426] [rviz2]: Trying to create a map of size 41 x 50 using 1 swatches
+[cartographer_node-2] [INFO] [1792377879.959755029] [cartographer logger]: I1019 11:44:39.000000 27466 constraint_builder_2d.cc:275] Node (0, 373) with 65 points on submap (0, 1) differs by translation 0.00 rotation 0.003 with score 65.3%.
+[rviz2-4] [ERROR] [1792377879.962659667] [rviz2]: Lookup would require extrapolation into the future.  Requested time 1792377879.958441 but the latest data is at time 1792377879.958372, when looking up transform from frame [laser_frame] to frame [map]
+[rviz2-4] [ERROR] [1792377880.986548013] [rviz2]: Lookup would require extrapolation into the future.  Requested time 1792377880.984477 but the latest data is at time 1792377880.983403, when looking up transform from frame [laser_frame] to frame [map]
+[rviz2-4] [ERROR] [1792377881.242819466] [rviz2]: Lookup would require extrapolation into the future.  Requested time 1792377881.241396 but the latest data is at time 1792377881.238511, when looking up transform from frame [laser_frame] to frame [map]
+[cartographer_node-2] [INFO] [1792377882.013144263] [cartographer logger]: I1019 11:44:42.000000 27465 constraint_builder_2d.cc:275] Node (0, 380) with 46 points on submap (0, 0) differs by translation 0.00 rotation 0.002 with score 89.9%.
+[cartographer_node-2] [INFO] [1792377882.013307782] [cartographer logger]: I1019 11:44:42.000000 27463 constraint_builder_2d.cc:275] Node (0, 380) with 46 points on submap (0, 1) differs by translation 0.01 rotation 0.010 with score 87.9%.
+[cartographer_node-2] [INFO] [1792377882.013385106] [cartographer logger]: I1019 11:44:42.000000 27465 constraint_builder_2d.cc:275] Node (0, 380) with 46 points on submap (0, 2) differs by translation 0.02 rotation 0.010 with score 87.4%.
+[cartographer_node-2] [INFO] [1792377882.612183086] [cartographer logger]: I1019 11:44:42.000000 27464 constraint_builder_2d.cc:275] Node (0, 383) with 42 points on submap (0, 0) differs by translation 0.00 rotation 0.002 with score 88.4%.
+[cartographer_node-2] [INFO] [1792377882.612326998] [cartographer logger]: I1019 11:44:42.000000 27464 constraint_builder_2d.cc:275] Node (0, 383) with 42 points on submap (0, 2) differs by translation 0.01 rotation 0.000 with score 86.3%.
+[cartographer_node-2] [INFO] [1792377882.612369953] [cartographer logger]: I1019 11:44:42.000000 27463 constraint_builder_2d.cc:275] Node (0, 383) with 42 points on submap (0, 1) differs by translation 0.00 rotation 0.005 with score 86.4%.
+[rviz2-4] [ERROR] [1792377883.643143311] [rviz2]: Lookup would require extrapolation into the future.  Requested time 1792377883.640168 but the latest data is at time 1792377883.638314, when looking up transform from frame [laser_frame] to frame [map]
+[cartographer_node-2] [INFO] [1792377883.896982305] [cartographer logger]: I1019 11:44:43.000000 27466 constraint_builder_2d.cc:275] Node (0, 386) with 47 points on submap (0, 0) differs by translation 0.01 rotation 0.004 with score 90.0%.
+[cartographer_node-2] [INFO] [1792377883.897153244] [cartographer logger]: I1019 11:44:43.000000 27464 constraint_builder_2d.cc:275] Node (0, 386) with 47 points on submap (0, 1) differs by translation 0.00 rotation 0.001 with score 87.6%.
+[cartographer_node-2] [INFO] [1792377883.897166604] [cartographer logger]: I1019 11:44:43.000000 27466 constraint_builder_2d.cc:275] Node (0, 386) with 47 points on submap (0, 2) differs by translation 0.01 rotation 0.015 with score 86.4%.
+[cartographer_node-2] [INFO] [1792377885.867567906] [cartographer logger]: I1019 11:44:45.000000 27466 constraint_builder_2d.cc:275] Node (0, 390) with 45 points on submap (0, 0) differs by translation 0.00 rotation 0.001 with score 89.9%.
+[cartographer_node-2] [INFO] [1792377885.867644702] [cartographer logger]: I1019 11:44:45.000000 27465 constraint_builder_2d.cc:275] Node (0, 390) with 45 points on submap (0, 1) differs by translation 0.00 rotation 0.002 with score 87.8%.
+[cartographer_node-2] [INFO] [1792377885.867947124] [cartographer logger]: I1019 11:44:45.000000 27463 constraint_builder_2d.cc:275] Node (0, 390) with 45 points on submap (0, 2) differs by translation 0.00 rotation 0.002 with score 88.1%.
+[rviz2-4] [ERROR] [1792377886.810461535] [rviz2]: Lookup would require extrapolation into the future.  Requested time 1792377886.808412 but the latest data is at time 1792377886.808344, when looking up transform from frame [laser_frame] to frame [map]
+[cartographer_node-2] [INFO] [1792377887.237695182] [cartographer logger]: I1019 11:44:47.000000 27466 constraint_builder_2d.cc:275] Node (0, 393) with 42 points on submap (0, 0) differs by translation 0.00 rotation 0.001 with score 86.5%.
+[cartographer_node-2] [INFO] [1792377887.237856277] [cartographer logger]: I1019 11:44:47.000000 27466 constraint_builder_2d.cc:275] Node (0, 393) with 42 points on submap (0, 2) differs by translation 0.01 rotation 0.006 with score 86.9%.
+[cartographer_node-2] [INFO] [1792377887.237881221] [cartographer logger]: I1019 11:44:47.000000 27465 constraint_builder_2d.cc:275] Node (0, 393) with 42 points on submap (0, 1) differs by translation 0.01 rotation 0.003 with score 86.8%.
+[cartographer_node-2] [INFO] [1792377888.009599090] [cartographer logger]: I1019 11:44:48.000000 27466 constraint_builder_2d.cc:275] Node (0, 396) with 43 points on submap (0, 0) differs by translation 0.01 rotation 0.007 with score 89.9%.
+[cartographer_node-2] [INFO] [1792377888.009756440] [cartographer logger]: I1019 11:44:48.000000 27466 constraint_builder_2d.cc:275] Node (0, 396) with 43 points on submap (0, 2) differs by translation 0.00 rotation 0.001 with score 84.5%.
+[cartographer_node-2] [INFO] [1792377888.009892572] [cartographer logger]: I1019 11:44:48.000000 27463 constraint_builder_2d.cc:275] Node (0, 396) with 43 points on submap (0, 1) differs by translation 0.00 rotation 0.004 with score 85.5%.
+[rviz2-4] [ERROR] [1792377889.210752981] [rviz2]: Lookup would require extrapolation into the future.  Requested time 1792377889.209117 but the latest data is at time 1792377889.208363, when looking up transform from frame [laser_frame] to frame [map]
+[cartographer_node-2] [INFO] [1792377889.808337486] [cartographer logger]: I1019 11:44:49.000000 27463 constraint_builder_2d.cc:275] Node (0, 400) with 43 points on submap (0, 0) differs by translation 0.00 rotation 0.000 with score 90.0%.
+[cartographer_node-2] [INFO] [1792377889.808480926] [cartographer logger]: I1019 11:44:49.000000 27463 constraint_builder_2d.cc:275] Node (0, 400) with 43 points on submap (0, 1) differs by translation 0.01 rotation 0.000 with score 87.7%.
+[cartographer_node-2] [INFO] [1792377889.808613504] [cartographer logger]: I1019 11:44:49.000000 27463 constraint_builder_2d.cc:275] Node (0, 400) with 43 points on submap (0, 2) differs by translation 0.00 rotation 0.005 with score 86.5%.
+[cartographer_node-2] [INFO] [1792377891.434481408] [cartographer logger]: I1019 11:44:51.000000 27466 constraint_builder_2d.cc:275] Node (0, 403) with 46 points on submap (0, 0) differs by translation 0.01 rotation 0.009 with score 89.9%.
+[cartographer_node-2] [INFO] [1792377891.434644612] [cartographer logger]: I1019 11:44:51.000000 27466 constraint_builder_2d.cc:275] Node (0, 403) with 46 points on submap (0, 1) differs by translation 0.00 rotation 0.001 with score 87.5%.
+[cartographer_node-2] [INFO] [1792377891.434795577] [cartographer logger]: I1019 11:44:51.000000 27465 constraint_builder_2d.cc:275] Node (0, 403) with 46 points on submap (0, 2) differs by translation 0.00 rotation 0.001 with score 84.6%.
+[cartographer_node-2] [INFO] [1792377892.805006300] [cartographer logger]: I1019 11:44:52.000000 27464 constraint_builder_2d.cc:275] Node (0, 406) with 41 points on submap (0, 0) differs by translation 0.01 rotation 0.012 with score 84.1%.
+[cartographer_node-2] [INFO] [1792377892.805060554] [cartographer logger]: I1019 11:44:52.000000 27466 constraint_builder_2d.cc:275] Node (0, 406) with 41 points on submap (0, 1) differs by translation 0.00 rotation 0.011 with score 84.1%.
+[cartographer_node-2] [INFO] [1792377892.805216742] [cartographer logger]: I1019 11:44:52.000000 27465 constraint_builder_2d.cc:275] Node (0, 406) with 41 points on submap (0, 2) differs by translation 0.00 rotation 0.011 with score 80.1%.
+[rviz2-4] [ERROR] [1792377892.890978288] [rviz2]: Lookup would require extrapolation into the future.  Requested time 1792377892.889345 but the latest data is at time 1792377892.888503, when looking up transform from frame [laser_frame] to frame [map]
+[cartographer_node-2] [INFO] [1792377894.432065547] [cartographer logger]: I1019 11:44:54.000000 27465 constraint_builder_2d.cc:275] Node (0, 410) with 42 points on submap (0, 0) differs by translation 0.01 rotation 0.013 with score 74.7%.
+[cartographer_node-2] [INFO] [1792377894.432238677] [cartographer logger]: I1019 11:44:54.000000 27465 constraint_builder_2d.cc:275] Node (0, 410) with 42 points on submap (0, 2) differs by translation 0.01 rotation 0.006 with score 76.1%.
+[cartographer_node-2] [INFO] [1792377894.432245657] [cartographer logger]: I1019 11:44:54.000000 27463 constraint_builder_2d.cc:275] Node (0, 410) with 42 points on submap (0, 1) differs by translation 0.01 rotation 0.005 with score 78.2%.
+[rviz2-4] [ERROR] [1792377894.778174528] [rviz2]: Lookup would require extrapolation into the future.  Requested time 1792377894.774637 but the latest data is at time 1792377894.773517, when looking up transform from frame [laser_frame] to frame [map]
+[cartographer_node-2] [INFO] [1792377894.860421445] [cartographer logger]: I1019 11:44:54.000000 27429 collated_trajectory_builder.cc:81] scan rate: 11.68 Hz 8.56e-02 s +/- 1.27e-03 s (pulsed at 99.95% real time)
+[cartographer_node-2] [INFO] [1792377895.374495131] [cartographer logger]: I1019 11:44:55.000000 27464 constraint_builder_2d.cc:275] Node (0, 413) with 40 points on submap (0, 0) differs by translation 0.02 rotation 0.025 with score 74.3%.
+[cartographer_node-2] [INFO] [1792377895.374578341] [cartographer logger]: I1019 11:44:55.000000 27463 constraint_builder_2d.cc:275] Node (0, 413) with 40 points on submap (0, 2) differs by translation 0.01 rotation 0.009 with score 70.8%.
+[cartographer_node-2] [INFO] [1792377895.374600981] [cartographer logger]: I1019 11:44:55.000000 27465 constraint_builder_2d.cc:275] Node (0, 413) with 40 points on submap (0, 1) differs by translation 0.01 rotation 0.007 with score 72.2%.
+[rviz2-4] [ERROR] [1792377895.546905655] [rviz2]: Lookup would require extrapolation into the future.  Requested time 1792377895.544724 but the latest data is at time 1792377895.543429, when looking up transform from frame [laser_frame] to frame [map]
+[cartographer_node-2] [INFO] [1792377895.888459373] [cartographer logger]: I1019 11:44:55.000000 27463 constraint_builder_2d.cc:275] Node (0, 416) with 39 points on submap (0, 0) differs by translation 0.01 rotation 0.029 with score 77.7%.
+[cartographer_node-2] [INFO] [1792377895.888516519] [cartographer logger]: I1019 11:44:55.000000 27464 constraint_builder_2d.cc:275] Node (0, 416) with 39 points on submap (0, 1) differs by translation 0.01 rotation 0.017 with score 77.7%.
+[cartographer_node-2] [INFO] [1792377895.888585021] [cartographer logger]: I1019 11:44:55.000000 27465 constraint_builder_2d.cc:275] Node (0, 416) with 39 points on submap (0, 2) differs by translation 0.01 rotation 0.016 with score 74.4%.
+[cartographer_node-2] [INFO] [1792377897.258085948] [cartographer logger]: I1019 11:44:57.000000 27465 constraint_builder_2d.cc:275] Node (0, 420) with 41 points on submap (0, 0) differs by translation 0.01 rotation 0.018 with score 76.3%.
+[cartographer_node-2] [INFO] [1792377897.258218336] [cartographer logger]: I1019 11:44:57.000000 27466 constraint_builder_2d.cc:275] Node (0, 420) with 41 points on submap (0, 1) differs by translation 0.01 rotation 0.012 with score 75.9%.
+[cartographer_node-2] [INFO] [1792377897.258267693] [cartographer logger]: I1019 11:44:57.000000 27463 constraint_builder_2d.cc:275] Node (0, 420) with 41 points on submap (0, 2) differs by translation 0.01 rotation 0.012 with score 72.3%.
+[rviz2-4] [ERROR] [1792377898.202313422] [rviz2]: Lookup would require extrapolation into the future.  Requested time 1792377898.199000 but the latest data is at time 1792377898.198562, when looking up transform from frame [laser_frame] to frame [map]
+[cartographer_node-2] [INFO] [1792377898.628510322] [cartographer logger]: I1019 11:44:58.000000 27465 constraint_builder_2d.cc:275] Node (0, 423) with 41 points on submap (0, 0) differs by translation 0.01 rotation 0.013 with score 78.6%.
+[cartographer_node-2] [INFO] [1792377898.628557221] [cartographer logger]: I1019 11:44:58.000000 27466 constraint_builder_2d.cc:275] Node (0, 423) with 41 points on submap (0, 1) differs by translation 0.01 rotation 0.013 with score 76.5%.
+[cartographer_node-2] [INFO] [1792377898.628711624] [cartographer logger]: I1019 11:44:58.000000 27463 constraint_builder_2d.cc:275] Node (0, 423) with 41 points on submap (0, 2) differs by translation 0.01 rotation 0.013 with score 74.6%.
+[cartographer_node-2] [INFO] [1792377898.714334004] [cartographer logger]: I1019 11:44:58.000000 27429 motion_filter.cc:42] Motion filter reduced the number of nodes to 14.1333%.
+[rviz2-4] [ERROR] [1792377898.716053219] [rviz2]: Lookup would require extrapolation into the future.  Requested time 1792377898.713638 but the latest data is at time 1792377898.713577, when looking up transform from frame [laser_frame] to frame [map]
+[rviz2-4] [INFO] [1792377900.826407860] [rviz2]: Trying to create a map of size 42 x 50 using 1 swatches
+[rviz2-4] [ERROR] [1792377900.859107251] [rviz2]: Lookup would require extrapolation into the future.  Requested time 1792377900.854569 but the latest data is at time 1792377900.853583, when looking up transform from frame [laser_frame] to frame [map]
+[cartographer_node-2] [INFO] [1792377901.539712959] [cartographer logger]: I1019 11:45:01.000000 27465 constraint_builder_2d.cc:275] Node (0, 426) with 42 points on submap (0, 0) differs by translation 0.01 rotation 0.034 with score 74.7%.
+[cartographer_node-2] [INFO] [1792377901.539738296] [cartographer logger]: I1019 11:45:01.000000 27466 constraint_builder_2d.cc:275] Node (0, 426) with 42 points on submap (0, 1) differs by translation 0.01 rotation 0.009 with score 70.5%.
+[cartographer_node-2] [INFO] [1792377901.539925346] [cartographer logger]: I1019 11:45:01.000000 27463 constraint_builder_2d.cc:275] Node (0, 426) with 42 points on submap (0, 2) differs by translation 0.01 rotation 0.011 with score 70.9%.
+[rviz2-4] [ERROR] [1792377901.626668349] [rviz2]: Lookup would require extrapolation into the future.  Requested time 1792377901.624041 but the latest data is at time 1792377901.623605, when looking up transform from frame [laser_frame] to frame [map]
+[rviz2-4] [ERROR] [1792377901.882893319] [rviz2]: Lookup would require extrapolation into the future.  Requested time 1792377901.880820 but the latest data is at time 1792377901.878462, when looking up transform from frame [laser_frame] to frame [map]
+[rviz2-4] [ERROR] [1792377902.138756653] [rviz2]: Lookup would require extrapolation into the future.  Requested time 1792377902.137729 but the latest data is at time 1792377902.133613, when looking up transform from frame [laser_frame] to frame [map]
+[rviz2-4] [ERROR] [1792377904.538021027] [rviz2]: Lookup would require extrapolation into the future.  Requested time 1792377904.533692 but the latest data is at time 1792377904.533670, when looking up transform from frame [laser_frame] to frame [map]
+[rviz2-4] [ERROR] [1792377905.306299345] [rviz2]: Lookup would require extrapolation into the future.  Requested time 1792377905.304254 but the latest data is at time 1792377905.303642, when looking up transform from frame [laser_frame] to frame [map]
+[rviz2-4] [ERROR] [1792377905.562681160] [rviz2]: Lookup would require extrapolation into the future.  Requested time 1792377905.561195 but the latest data is at time 1792377905.558485, when looking up transform from frame [laser_frame] to frame [map]
+[cartographer_node-2] [INFO] [1792377905.990050629] [cartographer logger]: I1019 11:45:05.000000 27463 constraint_builder_2d.cc:275] Node (0, 430) with 42 points on submap (0, 0) differs by translation 0.02 rotation 0.025 with score 74.7%.
+[cartographer_node-2] [INFO] [1792377905.990134264] [cartographer logger]: I1019 11:45:05.000000 27465 constraint_builder_2d.cc:275] Node (0, 430) with 42 points on submap (0, 2) differs by translation 0.01 rotation 0.009 with score 70.4%.
+[cartographer_node-2] [INFO] [1792377905.990267896] [cartographer logger]: I1019 11:45:05.000000 27464 constraint_builder_2d.cc:275] Node (0, 430) with 42 points on submap (0, 1) differs by translation 0.01 rotation 0.008 with score 74.4%.
+[rviz2-4] [ERROR] [1792377906.331052074] [rviz2]: Lookup would require extrapolation into the future.  Requested time 1792377906.330079 but the latest data is at time 1792377906.328619, when looking up transform from frame [laser_frame] to frame [map]
+[rviz2-4] [ERROR] [1792377908.218404272] [rviz2]: Lookup would require extrapolation into the future.  Requested time 1792377908.214798 but the latest data is at time 1792377908.213553, when looking up transform from frame [laser_frame] to frame [map]
+[rviz2-4] [ERROR] [1792377908.730885697] [rviz2]: Lookup would require extrapolation into the future.  Requested time 1792377908.729081 but the latest data is at time 1792377908.728595, when looking up transform from frame [laser_frame] to frame [map]
+[WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+[cartographer_occupancy_grid_node-3] [INFO] [1792377909.524315036] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[INFO] [rviz2-4]: sending signal 'SIGINT' to process[rviz2-4]
+[INFO] [cartographer_occupancy_grid_node-3]: sending signal 'SIGINT' to process[cartographer_occupancy_grid_node-3]
+[INFO] [cartographer_node-2]: sending signal 'SIGINT' to process[cartographer_node-2]
+[INFO] [ydlidar_ros2_driver_node-1]: sending signal 'SIGINT' to process[ydlidar_ros2_driver_node-1]
+[rviz2-4] [INFO] [1792377909.524397839] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[cartographer_node-2] [INFO] [1792377909.524452994] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[cartographer_node-2] [INFO] [1792377909.525224782] [cartographer logger]: I1019 11:45:09.000000 27429 node.cpp:569] Shutdown the subscriber of [scan]
+[cartographer_node-2] [INFO] [1792377909.525232858] [cartographer logger]: I1019 11:45:09.000000 27429 map_builder_bridge.cpp:152] Finishing trajectory with ID '0'...
+[cartographer_node-2] [WARN] [1792377909.525262738] [cartographer logger]: W1019 11:45:09.000000 27429 node.cpp:773] Can't run final optimization if there are one or more active trajectories. Trying to finish trajectory with ID 0 now.
+[cartographer_node-2] [INFO] [1792377909.525266405] [cartographer logger]: I1019 11:45:09.000000 27429 node.cpp:551] Trajectory 0 already pending to finish.
+[cartographer_node-2] [INFO] [1792377909.525269451] [cartographer logger]: I1019 11:45:09.000000 27429 map_builder_bridge.cpp:161] Running final trajectory optimization...
+[cartographer_node-2] [INFO] [1792377909.525277071] [cartographer logger]: I1019 11:45:09.000000 27463 pose_graph_2d.cc:538] Remaining work items in queue: 0
+[cartographer_node-2] [INFO] [1792377909.525303939] [cartographer logger]: I1019 11:45:09.000000 27463 constraint_builder_2d.cc:290] 60 computations resulted in 55 additional constraints.
+[cartographer_node-2] [INFO] [1792377909.525319869] [cartographer logger]: I1019 11:45:09.000000 27463 constraint_builder_2d.cc:292] Score histogram:
+[cartographer_node-2] Count: 220  Min: 0.652784  Max: 0.9  Mean: 0.847959
+[cartographer_node-2] [0.652784, 0.677506)	                    	Count: 2 (0.909091%)	Total: 2 (0.909091%)
+[cartographer_node-2] [0.677506, 0.702227)	                    	Count: 4 (1.81818%)	Total: 6 (2.72727%)
+[cartographer_node-2] [0.702227, 0.726949)	                   #	Count: 9 (4.09091%)	Total: 15 (6.81818%)
+[cartographer_node-2] [0.726949, 0.751671)	                  ##	Count: 17 (7.72727%)	Total: 32 (14.5455%)
+[cartographer_node-2] [0.751671, 0.776392)	                   #	Count: 7 (3.18182%)	Total: 39 (17.7273%)
+[cartographer_node-2] [0.776392, 0.801114)	                   #	Count: 10 (4.54545%)	Total: 49 (22.2727%)
+[cartographer_node-2] [0.801114, 0.825835)	                    	Count: 2 (0.909091%)	Total: 51 (23.1818%)
+[cartographer_node-2] [0.825835, 0.850557)	                   #	Count: 14 (6.36364%)	Total: 65 (29.5455%)
+[cartographer_node-2] [0.850557, 0.875278)	                 ###	Count: 38 (17.2727%)	Total: 103 (46.8182%)
+[cartographer_node-2] [0.875278, 0.900000]	         ###########	Count: 117 (53.1818%)	Total: 220 (100%)
+[ydlidar_ros2_driver_node-1] [INFO] [1792377909.524464858] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[rviz2-4] [INFO] [1792377909.525908912] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[cartographer_node-2] [INFO] [1792377909.526091581] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[ydlidar_ros2_driver_node-1] [INFO] [1792377909.526455843] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[ERROR] [cartographer_occupancy_grid_node-3]: process has died [pid 27431, exit code -2, cmd '/opt/ros/humble/lib/cartographer_ros/cartographer_occupancy_grid_node -resolution 0.05 -publish_period_sec 1.0 --ros-args -r __node:=cartographer_occupancy_grid_node --params-file /tmp/launch_params_dlpau34w'].
+[INFO] [launch]: process[cartographer_occupancy_grid_node-3] was required: shutting down launched system
+[cartographer_node-2] [INFO] [1792377909.539449161] [cartographer logger]: I1019 11:45:09.000000 27463 pose_graph_2d.cc:538] Remaining work items in queue: 1
+[cartographer_node-2] [INFO] [1792377909.539465517] [cartographer logger]: I1019 11:45:09.000000 27463 constraint_builder_2d.cc:290] 0 computations resulted in 0 additional constraints.
+[cartographer_node-2] [INFO] [1792377909.539482472] [cartographer logger]: I1019 11:45:09.000000 27463 constraint_builder_2d.cc:292] Score histogram:
+[cartographer_node-2] Count: 220  Min: 0.652784  Max: 0.9  Mean: 0.847959
+[cartographer_node-2] [0.652784, 0.677506)	                    	Count: 2 (0.909091%)	Total: 2 (0.909091%)
+[cartographer_node-2] [0.677506, 0.702227)	                    	Count: 4 (1.81818%)	Total: 6 (2.72727%)
+[cartographer_node-2] [0.702227, 0.726949)	                   #	Count: 9 (4.09091%)	Total: 15 (6.81818%)
+[cartographer_node-2] [0.726949, 0.751671)	                  ##	Count: 17 (7.72727%)	Total: 32 (14.5455%)
+[cartographer_node-2] [0.751671, 0.776392)	                   #	Count: 7 (3.18182%)	Total: 39 (17.7273%)
+[cartographer_node-2] [0.776392, 0.801114)	                   #	Count: 10 (4.54545%)	Total: 49 (22.2727%)
+[cartographer_node-2] [0.801114, 0.825835)	                    	Count: 2 (0.909091%)	Total: 51 (23.1818%)
+[cartographer_node-2] [0.825835, 0.850557)	                   #	Count: 14 (6.36364%)	Total: 65 (29.5455%)
+[cartographer_node-2] [0.850557, 0.875278)	                 ###	Count: 38 (17.2727%)	Total: 103 (46.8182%)
+[cartographer_node-2] [0.875278, 0.900000]	         ###########	Count: 117 (53.1818%)	Total: 220 (100%)
+[cartographer_node-2] [INFO] [1792377909.542237034] [cartographer logger]: I1019 11:45:09.000000 27466 constraint_builder_2d.cc:290] 0 computations resulted in 0 additional constraints.
+[cartographer_node-2] [INFO] [1792377909.542260378] [cartographer logger]: I1019 11:45:09.000000 27466 constraint_builder_2d.cc:292] Score histogram:
+[cartographer_node-2] Count: 220  Min: 0.652784  Max: 0.9  Mean: 0.847959
+[cartographer_node-2] [0.652784, 0.677506)	                    	Count: 2 (0.909091%)	Total: 2 (0.909091%)
+[cartographer_node-2] [0.677506, 0.702227)	                    	Count: 4 (1.81818%)	Total: 6 (2.72727%)
+[cartographer_node-2] [0.702227, 0.726949)	                   #	Count: 9 (4.09091%)	Total: 15 (6.81818%)
+[cartographer_node-2] [0.726949, 0.751671)	                  ##	Count: 17 (7.72727%)	Total: 32 (14.5455%)
+[cartographer_node-2] [0.751671, 0.776392)	                   #	Count: 7 (3.18182%)	Total: 39 (17.7273%)
+[cartographer_node-2] [0.776392, 0.801114)	                   #	Count: 10 (4.54545%)	Total: 49 (22.2727%)
+[cartographer_node-2] [0.801114, 0.825835)	                    	Count: 2 (0.909091%)	Total: 51 (23.1818%)
+[cartographer_node-2] [0.825835, 0.850557)	                   #	Count: 14 (6.36364%)	Total: 65 (29.5455%)
+[cartographer_node-2] [0.850557, 0.875278)	                 ###	Count: 38 (17.2727%)	Total: 103 (46.8182%)
+[cartographer_node-2] [0.875278, 0.900000]	         ###########	Count: 117 (53.1818%)	Total: 220 (100%)
+[cartographer_node-2] [KOptimizing: Done.     
+[cartographer_node-2] [INFO] [1792377909.543162048] [cartographer logger]: I1019 11:45:09.000000 27465 constraint_builder_2d.cc:290] 0 computations resulted in 0 additional constraints.
+[cartographer_node-2] [INFO] [1792377909.543187197] [cartographer logger]: I1019 11:45:09.000000 27465 constraint_builder_2d.cc:292] Score histogram:
+[cartographer_node-2] Count: 220  Min: 0.652784  Max: 0.9  Mean: 0.847959
+[cartographer_node-2] [0.652784, 0.677506)	                    	Count: 2 (0.909091%)	Total: 2 (0.909091%)
+[cartographer_node-2] [0.677506, 0.702227)	                    	Count: 4 (1.81818%)	Total: 6 (2.72727%)
+[cartographer_node-2] [0.702227, 0.726949)	                   #	Count: 9 (4.09091%)	Total: 15 (6.81818%)
+[cartographer_node-2] [0.726949, 0.751671)	                  ##	Count: 17 (7.72727%)	Total: 32 (14.5455%)
+[cartographer_node-2] [0.751671, 0.776392)	                   #	Count: 7 (3.18182%)	Total: 39 (17.7273%)
+[cartographer_node-2] [0.776392, 0.801114)	                   #	Count: 10 (4.54545%)	Total: 49 (22.2727%)
+[cartographer_node-2] [0.801114, 0.825835)	                    	Count: 2 (0.909091%)	Total: 51 (23.1818%)
+[cartographer_node-2] [0.825835, 0.850557)	                   #	Count: 14 (6.36364%)	Total: 65 (29.5455%)
+[cartographer_node-2] [0.850557, 0.875278)	                 ###	Count: 38 (17.2727%)	Total: 103 (46.8182%)
+[cartographer_node-2] [0.875278, 0.900000]	         ###########	Count: 117 (53.1818%)	Total: 220 (100%)
+[cartographer_node-2] [KOptimizing: Done.     
+[ydlidar_ros2_driver_node-1] [INFO] [1792377909.587255303] [ydlidar_ros2_driver_node]: [YDLIDAR INFO] Now YDLIDAR is stopping .......
+[ydlidar_ros2_driver_node-1] [2026-10-19 11:45:09][info] Lidar has stopped!
+[INFO] [cartographer_node-2]: process has finished cleanly [pid 27429]
+[INFO] [launch]: process[cartographer_node-2] was required: shutting down launched system
+[INFO] [rviz2-4]: process has finished cleanly [pid 27433]
+[INFO] [ydlidar_ros2_driver_node-1]: process has finished cleanly [pid 27427]
+[INFO] [launch]: process[ydlidar_ros2_driver_node-1] was required: shutting down launched system

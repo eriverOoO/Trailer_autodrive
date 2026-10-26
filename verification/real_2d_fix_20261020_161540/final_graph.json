@@ -1,0 +1,472 @@
+{
+  "status": {
+    "mode": "REAL_INPUT",
+    "stamp_ns": 1792481230442292423,
+    "valid": false,
+    "visualization_mode": "TRACTOR_ONLY_DIAGNOSTIC",
+    "diagnostic_valid": true,
+    "imu": {
+      "tractor": "LIVE",
+      "trailer": "NO DATA"
+    },
+    "imu_age_s": {
+      "tractor": 0.005488841999977012,
+      "trailer": null
+    },
+    "imu_reason": {
+      "tractor": "",
+      "trailer": ""
+    },
+    "yaw_source": {
+      "tractor": "orientation",
+      "trailer": "orientation"
+    },
+    "slam": "LIVE",
+    "reason": "DIAGNOSTIC_ONLY",
+    "values": {
+      "tractor_delta": 0.24416342416323011,
+      "tractor_yaw": null,
+      "trailer_yaw": null,
+      "phi": null
+    },
+    "state_machine": "STATE_UNKNOWN",
+    "tf_published": false,
+    "vehicle_pose_valid": false,
+    "full_vehicle_valid": false,
+    "position_reference": "UNMEASURED_SENSOR_ANCHOR",
+    "position_source": "laser_frame",
+    "mounting_and_sign_confirmed": false,
+    "extrinsics_confirmed": false,
+    "heading_reference": "INITIAL_SLAM_TRACKING_YAW_PLUS_NATIVE_IMU_DELTA",
+    "heading_alignment_verified": false,
+    "display_anchor_xy": [
+      -0.013973026610677286,
+      -0.010339575229882575
+    ],
+    "display_yaw_rad": 0.19112825632697492,
+    "native_imu_delta_rad": 0.24416342416323011,
+    "reference_stamp_ns": 1792480825187579500,
+    "paired_stamp_ns": 1792481230436399548,
+    "paired_age_ms": 5.892875
+  },
+  "markers": [
+    {
+      "ns": "current_body",
+      "id": 0,
+      "type": 4,
+      "frame": "map",
+      "rgba": [
+        0.0,
+        1.0,
+        0.699999988079071,
+        0.8500000238418579
+      ],
+      "scale": [
+        0.04,
+        0.0,
+        0.0
+      ],
+      "points": [
+        [
+          1.176328177070601,
+          -0.46022757391131575,
+          0.08
+        ],
+        [
+          1.2647851448700103,
+          -0.44305285011813045,
+          0.08
+        ],
+        [
+          1.4210159572979324,
+          -0.2773715684457073,
+          0.08
+        ],
+        [
+          1.4274071806268283,
+          -0.25317374782852053,
+          0.08
+        ],
+        [
+          1.232056204625723,
+          0.7529649943019044,
+          0.08
+        ],
+        [
+          1.2170742487126278,
+          0.7730130180269362,
+          0.08
+        ],
+        [
+          1.0101948235405047,
+          0.8681931487736286,
+          0.08
+        ],
+        [
+          0.9217378557410957,
+          0.8510184249804433,
+          0.08
+        ],
+        [
+          -0.4844497212859304,
+          0.5648876242847365,
+          0.08
+        ],
+        [
+          -0.23476407806466942,
+          -0.7210972432658833,
+          0.08
+        ],
+        [
+          1.176328177070601,
+          -0.46022757391131575,
+          0.08
+        ]
+      ],
+      "text": "",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "ns": "articulation",
+      "id": 0,
+      "type": 9,
+      "frame": "map",
+      "rgba": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "scale": [
+        0.0,
+        0.0,
+        0.4
+      ],
+      "points": [],
+      "text": "TRACTOR DIAG\nphi=N/A\nSENSOR ANCHOR\nUNALIGNED\nTRAILER NO DATA",
+      "position": [
+        -0.016023156436584696,
+        0.9886050951868627,
+        1.0
+      ],
+      "orientation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "ns": "tractor_pose_arrow",
+      "id": 0,
+      "type": 0,
+      "frame": "map",
+      "rgba": [
+        1.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "scale": [
+        0.8,
+        0.08,
+        0.18
+      ],
+      "points": [],
+      "text": "",
+      "position": [
+        0.8971295086874674,
+        0.16614942385793732,
+        0.15
+      ],
+      "orientation": [
+        0.0,
+        0.0,
+        0.09530288912714191,
+        0.9954483207701039
+      ]
+    }
+  ],
+  "imu_diagnostics": [
+    {
+      "name": "/vehicle_viz_2d/tractor/UART",
+      "message": "LIVE:",
+      "values": {
+        "rx_bytes": "4142113",
+        "tx_bytes": "0",
+        "parsed": "58060",
+        "rejected": "0",
+        "published": "58060",
+        "sensor_rollovers": "9",
+        "estimated_missing": "0",
+        "sensor_clock_event": "LIVE",
+        "timestamp": "host receipt, not hardware synchronized",
+        "covariance": "received fields unknown=0; unavailable=-1",
+        "reference": "manufacturer native; mounting and sign require validation"
+      }
+    }
+  ],
+  "nodes": [
+    [
+      "tractor_trailer_2d_visualizer",
+      "/"
+    ],
+    [
+      "tractor_fix_final_readonly_audit",
+      "/"
+    ],
+    [
+      "ydlidar_ros2_driver_node",
+      "/"
+    ],
+    [
+      "cartographer_node",
+      "/"
+    ],
+    [
+      "transform_listener_impl_617497293560",
+      "/"
+    ],
+    [
+      "cartographer_occupancy_grid_node",
+      "/"
+    ],
+    [
+      "tractor_trailer_rviz_2d",
+      "/"
+    ],
+    [
+      "transform_listener_impl_647a1dc40d00",
+      "/"
+    ],
+    [
+      "_ros2cli_daemon_0_080d3118254248adafbf8d86a1b128b8",
+      "/"
+    ],
+    [
+      "vehicle_viz_2d_tractor_bridge",
+      "/"
+    ]
+  ],
+  "publishers": {
+    "/tractor_trailer_2d_visualizer": [
+      [
+        "/parameter_events",
+        [
+          "rcl_interfaces/msg/ParameterEvent"
+        ]
+      ],
+      [
+        "/rosout",
+        [
+          "rcl_interfaces/msg/Log"
+        ]
+      ],
+      [
+        "/vehicle_viz_2d/model",
+        [
+          "visualization_msgs/msg/MarkerArray"
+        ]
+      ],
+      [
+        "/vehicle_viz_2d/status",
+        [
+          "std_msgs/msg/String"
+        ]
+      ]
+    ],
+    "/ydlidar_ros2_driver_node": [
+      [
+        "/parameter_events",
+        [
+          "rcl_interfaces/msg/ParameterEvent"
+        ]
+      ],
+      [
+        "/point_cloud",
+        [
+          "sensor_msgs/msg/PointCloud"
+        ]
+      ],
+      [
+        "/rosout",
+        [
+          "rcl_interfaces/msg/Log"
+        ]
+      ],
+      [
+        "/scan",
+        [
+          "sensor_msgs/msg/LaserScan"
+        ]
+      ]
+    ],
+    "/cartographer_node": [
+      [
+        "/constraint_list",
+        [
+          "visualization_msgs/msg/MarkerArray"
+        ]
+      ],
+      [
+        "/landmark_poses_list",
+        [
+          "visualization_msgs/msg/MarkerArray"
+        ]
+      ],
+      [
+        "/parameter_events",
+        [
+          "rcl_interfaces/msg/ParameterEvent"
+        ]
+      ],
+      [
+        "/rosout",
+        [
+          "rcl_interfaces/msg/Log"
+        ]
+      ],
+      [
+        "/scan_matched_points2",
+        [
+          "sensor_msgs/msg/PointCloud2"
+        ]
+      ],
+      [
+        "/submap_list",
+        [
+          "cartographer_ros_msgs/msg/SubmapList"
+        ]
+      ],
+      [
+        "/tf",
+        [
+          "tf2_msgs/msg/TFMessage"
+        ]
+      ],
+      [
+        "/trajectory_node_list",
+        [
+          "visualization_msgs/msg/MarkerArray"
+        ]
+      ]
+    ],
+    "/transform_listener_impl_617497293560": [
+      [
+        "/rosout",
+        [
+          "rcl_interfaces/msg/Log"
+        ]
+      ]
+    ],
+    "/cartographer_occupancy_grid_node": [
+      [
+        "/map",
+        [
+          "nav_msgs/msg/OccupancyGrid"
+        ]
+      ],
+      [
+        "/parameter_events",
+        [
+          "rcl_interfaces/msg/ParameterEvent"
+        ]
+      ],
+      [
+        "/rosout",
+        [
+          "rcl_interfaces/msg/Log"
+        ]
+      ]
+    ],
+    "/tractor_trailer_rviz_2d": [
+      [
+        "/parameter_events",
+        [
+          "rcl_interfaces/msg/ParameterEvent"
+        ]
+      ],
+      [
+        "/rosout",
+        [
+          "rcl_interfaces/msg/Log"
+        ]
+      ]
+    ],
+    "/transform_listener_impl_647a1dc40d00": [
+      [
+        "/rosout",
+        [
+          "rcl_interfaces/msg/Log"
+        ]
+      ]
+    ],
+    "/_ros2cli_daemon_0_080d3118254248adafbf8d86a1b128b8": [
+      [
+        "/parameter_events",
+        [
+          "rcl_interfaces/msg/ParameterEvent"
+        ]
+      ],
+      [
+        "/rosout",
+        [
+          "rcl_interfaces/msg/Log"
+        ]
+      ]
+    ],
+    "/vehicle_viz_2d_tractor_bridge": [
+      [
+        "/parameter_events",
+        [
+          "rcl_interfaces/msg/ParameterEvent"
+        ]
+      ],
+      [
+        "/rosout",
+        [
+          "rcl_interfaces/msg/Log"
+        ]
+      ],
+      [
+        "/vehicle_viz_2d/tractor/diagnostics",
+        [
+          "diagnostic_msgs/msg/DiagnosticArray"
+        ]
+      ],
+      [
+        "/vehicle_viz_2d/tractor/imu/data",
+        [
+          "sensor_msgs/msg/Imu"
+        ]
+      ]
+    ]
+  },
+  "topic_publishers": {
+    "/scan": [
+      "ydlidar_ros2_driver_node"
+    ],
+    "/map": [
+      "cartographer_occupancy_grid_node"
+    ],
+    "/tf": [
+      "cartographer_node"
+    ],
+    "/tf_static": [],
+    "/vehicle_viz_2d/model": [
+      "tractor_trailer_2d_visualizer"
+    ],
+    "/vehicle_viz_2d/trailer/imu/data": []
+  },
+  "at": "2026-10-20T16:27:10.444233+09:00"
+}

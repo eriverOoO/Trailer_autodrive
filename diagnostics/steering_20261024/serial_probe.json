@@ -1,0 +1,41 @@
+{
+  "port": "/dev/serial/by-id/usb-Arduino__www.arduino.cc__0042_054433A4937351314608-if00",
+  "baud": 115200,
+  "drive_pwm": 0,
+  "phases": [
+    {
+      "name": "neutral",
+      "steering": 0,
+      "packet": "s0l0r0\n",
+      "start_wall": 1792831086.4113889,
+      "writes": 10,
+      "end_wall": 1792831086.9179943
+    },
+    {
+      "name": "left",
+      "steering": -7,
+      "packet": "s-7l0r0\n",
+      "start_wall": 1792831086.9179976,
+      "writes": 20,
+      "end_wall": 1792831087.9293368
+    },
+    {
+      "name": "right",
+      "steering": 7,
+      "packet": "s7l0r0\n",
+      "start_wall": 1792831087.9293427,
+      "writes": 20,
+      "end_wall": 1792831088.9434245
+    },
+    {
+      "name": "centre_and_drive_stop",
+      "steering": 0,
+      "packet": "s0l0r0\n",
+      "start_wall": 1792831088.9434328,
+      "writes": 14,
+      "end_wall": 1792831089.6533768
+    }
+  ],
+  "board_reply_hex": "",
+  "mechanical_motion_verified": false
+}

@@ -1,0 +1,10 @@
+{
+  "before_toggle_wall_s": 1792325810.6602972,
+  "errors_before_toggle": 1,
+  "before_log": "[INFO] [1792325767.740590382] [rviz2]: Stereo is NOT SUPPORTED\n[INFO] [1792325767.740654083] [rviz2]: OpenGl version: 4.6 (GLSL 4.6)\n[INFO] [1792325767.766734119] [rviz2]: Stereo is NOT SUPPORTED\n[INFO] [1792325767.833685012] [rviz2]: Trying to create a map of size 350 x 219 using 1 swatches\n[ERROR] [1792325767.924464341] [rviz2]: Lookup would require extrapolation into the future.  Requested time 1792325767.920221 but the latest data is at time 1792325767.917104, when looking up transform from frame [laser_frame] to frame [map]\n[INFO] [1792325789.620815657] [rviz2]: Trying to create a map of size 350 x 232 using 1 swatches\n",
+  "seconds_since_rviz_start": 42.919771671295166,
+  "disable_wall_s": 1792325811.0287335,
+  "enable_wall_s": 1792325811.3373625,
+  "errors_after_12s": 14,
+  "errors_added_after_toggle": 13
+}

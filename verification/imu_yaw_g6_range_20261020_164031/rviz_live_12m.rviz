@@ -1,0 +1,109 @@
+Panels:
+- Class: rviz_common/Displays
+  Name: Displays
+Visualization Manager:
+  Class: ''
+  Displays:
+  - Class: rviz_default_plugins/Grid
+    Name: Grid
+    Enabled: true
+    Plane Cell Count: 60
+    Cell Size: 1
+    Plane: XY
+    Color: 100; 100; 100
+  - Class: rviz_default_plugins/Map
+    Name: OccupancyGrid
+    Enabled: true
+    Alpha: 0.8
+    Color Scheme: map
+    Topic:
+      Value: /map
+      Reliability Policy: Reliable
+      Durability Policy: Transient Local
+      History Policy: Keep Last
+      Depth: 1
+  - Class: rviz_default_plugins/LaserScan
+    Name: LiDAR 1081 rays 12m
+    Enabled: true
+    Topic:
+      Value: /scan
+      Reliability Policy: Best Effort
+      Durability Policy: Volatile
+      History Policy: Keep Last
+      Depth: 5
+    Size (Pixels): 3
+    Size (m): 0.03
+    Style: Points
+    Color Transformer: FlatColor
+    Color: 255; 20; 20
+    Decay Time: 0
+  - Class: rviz_default_plugins/TF
+    Name: Cartographer Estimated Pose
+    Enabled: true
+    Show Names: true
+    Show Axes: true
+    Show Arrows: true
+    Marker Scale: 0.5
+  - Class: rviz_default_plugins/MarkerArray
+    Name: Detected Bay and Planner Goal
+    Enabled: true
+    Topic:
+      Value: /parking/target_geometry
+      Reliability Policy: Reliable
+      Durability Policy: Volatile
+      History Policy: Keep Last
+      Depth: 10
+  - Class: rviz_default_plugins/Path
+    Name: Planned Parking Path
+    Enabled: true
+    Topic:
+      Value: /parking/planned_tractor_path
+      Reliability Policy: Reliable
+      Durability Policy: Volatile
+      History Policy: Keep Last
+      Depth: 10
+  - Class: rviz_default_plugins/MarkerArray
+    Name: Tractor Trailer 2D / Independent IMUs
+    Enabled: true
+    Topic:
+      Value: /vehicle_viz_2d/model
+      Reliability Policy: Reliable
+      Durability Policy: Transient Local
+      History Policy: Keep Last
+      Depth: 10
+  - Class: rviz_default_plugins/Path
+    Name: Planned Trailer Path
+    Enabled: true
+    Topic:
+      Value: /parking/planned_trailer_path
+      Reliability Policy: Reliable
+      Durability Policy: Transient Local
+      History Policy: Keep Last
+      Depth: 10
+  - Class: rviz_default_plugins/Path
+    Name: Actual Estimated Tractor Trajectory
+    Enabled: true
+    Topic:
+      Value: /parking/estimated_tractor_trajectory
+      Reliability Policy: Reliable
+      Durability Policy: Volatile
+      History Policy: Keep Last
+      Depth: 10
+  Global Options:
+    Fixed Frame: map
+    Background Color: 35; 35; 35
+    Frame Rate: 20
+  Tools:
+  - Class: rviz_default_plugins/Interact
+  - Class: rviz_default_plugins/MoveCamera
+  Views:
+    Current:
+      Class: rviz_default_plugins/TopDownOrtho
+      Name: Top View
+      Scale: 40
+      X: -0.4
+      Y: 1.5
+      Angle: 0
+Window Geometry:
+  Width: 1100
+  Height: 850

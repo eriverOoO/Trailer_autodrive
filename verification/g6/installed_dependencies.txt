@@ -1,0 +1,7 @@
+cmake	3.22.1-1ubuntu1.22.04.2
+g++	4:11.2.0-1ubuntu1
+psmisc	23.4-2build3
+ros-humble-cartographer-ros	2.0.9002-1jammy.20260915.225849
+ros-humble-nav2-map-server	1.1.20-1jammy.20251228.102023
+ros-humble-rclcpp	16.0.17-1jammy.20251227.170054
+ros-humble-rviz2	11.2.25-1jammy.20251228.130645

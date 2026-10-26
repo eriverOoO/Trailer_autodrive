@@ -1,0 +1,134 @@
+{
+  "source": "Final B worlds/rect.world.xml",
+  "parts": [
+    {
+      "role": "tractor",
+      "name": "tractor_body",
+      "mesh": "tractor_body.fbx",
+      "scale": 0.01,
+      "xyz": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy": [
+        1.5707963267948966,
+        0.0,
+        1.5707963267948966
+      ]
+    },
+    {
+      "role": "tractor",
+      "name": "tractor_rl_wheel",
+      "mesh": "tractor_rear_wheel.fbx",
+      "scale": 0.01,
+      "xyz": [
+        0.0,
+        0.53,
+        0.35
+      ],
+      "rpy": [
+        0.0,
+        0.0,
+        1.5707963267948966
+      ]
+    },
+    {
+      "role": "tractor",
+      "name": "tractor_rr_wheel",
+      "mesh": "tractor_rear_wheel.fbx",
+      "scale": 0.01,
+      "xyz": [
+        0.0,
+        -0.53,
+        0.35
+      ],
+      "rpy": [
+        0.0,
+        0.0,
+        1.5707963267948966
+      ]
+    },
+    {
+      "role": "tractor",
+      "name": "tractor_fl_wheel",
+      "mesh": "tractor_front_wheel.fbx",
+      "scale": 0.01,
+      "xyz": [
+        1.13,
+        0.41,
+        0.23
+      ],
+      "rpy": [
+        0.0,
+        0.0,
+        1.5707963267948966
+      ]
+    },
+    {
+      "role": "tractor",
+      "name": "tractor_fr_wheel",
+      "mesh": "tractor_front_wheel.fbx",
+      "scale": 0.01,
+      "xyz": [
+        1.13,
+        -0.41,
+        0.23
+      ],
+      "rpy": [
+        0.0,
+        0.0,
+        1.5707963267948966
+      ]
+    },
+    {
+      "role": "trailer",
+      "name": "trailer_body",
+      "mesh": "trailer_body.fbx",
+      "scale": 0.01,
+      "xyz": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rpy": [
+        1.5707963267948966,
+        0.0,
+        1.5707963267948966
+      ]
+    },
+    {
+      "role": "trailer",
+      "name": "trailer_l_wheel",
+      "mesh": "trailer_wheel.fbx",
+      "scale": 0.01,
+      "xyz": [
+        -1.33,
+        0.4,
+        0.25
+      ],
+      "rpy": [
+        0.0,
+        0.0,
+        1.5707963267948966
+      ]
+    },
+    {
+      "role": "trailer",
+      "name": "trailer_r_wheel",
+      "mesh": "trailer_wheel.fbx",
+      "scale": 0.01,
+      "xyz": [
+        -1.33,
+        -0.4,
+        0.25
+      ],
+      "rpy": [
+        0.0,
+        0.0,
+        1.5707963267948966
+      ]
+    }
+  ],
+  "wheel_pose": "neutral steering and zero spin; no physical steering measurement"
+}

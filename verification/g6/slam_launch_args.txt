@@ -1,0 +1,37 @@
+Arguments (pass arguments as '<name>:=<value>'):
+
+    'lidar_port':
+        Explicit G6 port; never inferred from ttyUSB numbering
+        (default: '')
+
+    'params_file':
+        G6 driver ROS parameters
+        (default: '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/g6.yaml')
+
+    'scan_topic':
+        Driver output and Cartographer LaserScan input
+        (default: '/scan')
+
+    'enable_rviz':
+        Display actual scans and map in RViz2
+        (default: 'false')
+
+    'start_driver':
+        false subscribes to an already running driver
+        (default: 'true')
+
+    'frame_mode':
+        sensor: LiDAR-origin test; vehicle: measured extrinsics
+        (default: 'sensor')
+
+    'mount_file':
+        Measured LiDAR extrinsics
+        (default: '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/g6_mount.yaml')
+
+    'publish_mount_tf':
+        vehicle only; false uses existing external TF
+        (default: 'true')
+
+    'use_imu':
+        Future fusion; requires externally verified IMU and TF
+        (default: 'false')

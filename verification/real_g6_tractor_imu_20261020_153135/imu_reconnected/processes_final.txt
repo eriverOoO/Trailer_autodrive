@@ -1,0 +1,618 @@
+    PID    PPID                  STARTED COMMAND
+      1       0 Tue Oct 20 15:16:11 2026 /sbin/init splash
+      2       0 Tue Oct 20 15:16:11 2026 [kthreadd]
+      3       2 Tue Oct 20 15:16:11 2026 [pool_workqueue_release]
+      4       2 Tue Oct 20 15:16:11 2026 [kworker/R-rcu_g]
+      5       2 Tue Oct 20 15:16:11 2026 [kworker/R-rcu_p]
+      6       2 Tue Oct 20 15:16:11 2026 [kworker/R-slub_]
+      7       2 Tue Oct 20 15:16:11 2026 [kworker/R-netns]
+      9       2 Tue Oct 20 15:16:11 2026 [kworker/0:0H-events_highpri]
+     12       2 Tue Oct 20 15:16:11 2026 [kworker/R-mm_pe]
+     13       2 Tue Oct 20 15:16:11 2026 [rcu_tasks_kthread]
+     14       2 Tue Oct 20 15:16:11 2026 [rcu_tasks_rude_kthread]
+     15       2 Tue Oct 20 15:16:11 2026 [rcu_tasks_trace_kthread]
+     16       2 Tue Oct 20 15:16:11 2026 [ksoftirqd/0]
+     17       2 Tue Oct 20 15:16:11 2026 [rcu_preempt]
+     18       2 Tue Oct 20 15:16:11 2026 [migration/0]
+     19       2 Tue Oct 20 15:16:11 2026 [idle_inject/0]
+     20       2 Tue Oct 20 15:16:11 2026 [cpuhp/0]
+     21       2 Tue Oct 20 15:16:11 2026 [cpuhp/1]
+     22       2 Tue Oct 20 15:16:11 2026 [idle_inject/1]
+     23       2 Tue Oct 20 15:16:11 2026 [migration/1]
+     24       2 Tue Oct 20 15:16:11 2026 [ksoftirqd/1]
+     26       2 Tue Oct 20 15:16:11 2026 [kworker/1:0H-events_highpri]
+     27       2 Tue Oct 20 15:16:11 2026 [cpuhp/2]
+     28       2 Tue Oct 20 15:16:11 2026 [idle_inject/2]
+     29       2 Tue Oct 20 15:16:11 2026 [migration/2]
+     30       2 Tue Oct 20 15:16:11 2026 [ksoftirqd/2]
+     32       2 Tue Oct 20 15:16:11 2026 [kworker/2:0H-events_highpri]
+     33       2 Tue Oct 20 15:16:11 2026 [cpuhp/3]
+     34       2 Tue Oct 20 15:16:11 2026 [idle_inject/3]
+     35       2 Tue Oct 20 15:16:11 2026 [migration/3]
+     36       2 Tue Oct 20 15:16:11 2026 [ksoftirqd/3]
+     38       2 Tue Oct 20 15:16:11 2026 [kworker/3:0H-events_highpri]
+     39       2 Tue Oct 20 15:16:11 2026 [cpuhp/4]
+     40       2 Tue Oct 20 15:16:11 2026 [idle_inject/4]
+     41       2 Tue Oct 20 15:16:11 2026 [migration/4]
+     42       2 Tue Oct 20 15:16:11 2026 [ksoftirqd/4]
+     44       2 Tue Oct 20 15:16:11 2026 [kworker/4:0H-events_highpri]
+     45       2 Tue Oct 20 15:16:11 2026 [cpuhp/5]
+     46       2 Tue Oct 20 15:16:11 2026 [idle_inject/5]
+     47       2 Tue Oct 20 15:16:11 2026 [migration/5]
+     48       2 Tue Oct 20 15:16:11 2026 [ksoftirqd/5]
+     50       2 Tue Oct 20 15:16:11 2026 [kworker/5:0H-events_highpri]
+     51       2 Tue Oct 20 15:16:11 2026 [cpuhp/6]
+     52       2 Tue Oct 20 15:16:11 2026 [idle_inject/6]
+     53       2 Tue Oct 20 15:16:11 2026 [migration/6]
+     54       2 Tue Oct 20 15:16:11 2026 [ksoftirqd/6]
+     56       2 Tue Oct 20 15:16:11 2026 [kworker/6:0H-events_highpri]
+     57       2 Tue Oct 20 15:16:11 2026 [cpuhp/7]
+     58       2 Tue Oct 20 15:16:11 2026 [idle_inject/7]
+     59       2 Tue Oct 20 15:16:11 2026 [migration/7]
+     60       2 Tue Oct 20 15:16:11 2026 [ksoftirqd/7]
+     62       2 Tue Oct 20 15:16:11 2026 [kworker/7:0H-events_highpri]
+     63       2 Tue Oct 20 15:16:11 2026 [cpuhp/8]
+     64       2 Tue Oct 20 15:16:11 2026 [idle_inject/8]
+     65       2 Tue Oct 20 15:16:11 2026 [migration/8]
+     66       2 Tue Oct 20 15:16:11 2026 [ksoftirqd/8]
+     68       2 Tue Oct 20 15:16:11 2026 [kworker/8:0H-events_highpri]
+     69       2 Tue Oct 20 15:16:11 2026 [cpuhp/9]
+     70       2 Tue Oct 20 15:16:11 2026 [idle_inject/9]
+     71       2 Tue Oct 20 15:16:11 2026 [migration/9]
+     72       2 Tue Oct 20 15:16:11 2026 [ksoftirqd/9]
+     74       2 Tue Oct 20 15:16:11 2026 [kworker/9:0H-events_highpri]
+     75       2 Tue Oct 20 15:16:11 2026 [cpuhp/10]
+     76       2 Tue Oct 20 15:16:11 2026 [idle_inject/10]
+     77       2 Tue Oct 20 15:16:11 2026 [migration/10]
+     78       2 Tue Oct 20 15:16:11 2026 [ksoftirqd/10]
+     80       2 Tue Oct 20 15:16:11 2026 [kworker/10:0H-events_highpri]
+     81       2 Tue Oct 20 15:16:11 2026 [cpuhp/11]
+     82       2 Tue Oct 20 15:16:11 2026 [idle_inject/11]
+     83       2 Tue Oct 20 15:16:11 2026 [migration/11]
+     84       2 Tue Oct 20 15:16:11 2026 [ksoftirqd/11]
+     86       2 Tue Oct 20 15:16:11 2026 [kworker/11:0H-events_highpri]
+     87       2 Tue Oct 20 15:16:11 2026 [cpuhp/12]
+     88       2 Tue Oct 20 15:16:11 2026 [idle_inject/12]
+     89       2 Tue Oct 20 15:16:11 2026 [migration/12]
+     90       2 Tue Oct 20 15:16:11 2026 [ksoftirqd/12]
+     91       2 Tue Oct 20 15:16:11 2026 [kworker/12:0-mm_percpu_wq]
+     92       2 Tue Oct 20 15:16:11 2026 [kworker/12:0H-events_highpri]
+     93       2 Tue Oct 20 15:16:11 2026 [cpuhp/13]
+     94       2 Tue Oct 20 15:16:11 2026 [idle_inject/13]
+     95       2 Tue Oct 20 15:16:11 2026 [migration/13]
+     96       2 Tue Oct 20 15:16:11 2026 [ksoftirqd/13]
+     98       2 Tue Oct 20 15:16:11 2026 [kworker/13:0H-events_highpri]
+     99       2 Tue Oct 20 15:16:11 2026 [cpuhp/14]
+    100       2 Tue Oct 20 15:16:11 2026 [idle_inject/14]
+    101       2 Tue Oct 20 15:16:11 2026 [migration/14]
+    102       2 Tue Oct 20 15:16:11 2026 [ksoftirqd/14]
+    104       2 Tue Oct 20 15:16:11 2026 [kworker/14:0H-events_highpri]
+    105       2 Tue Oct 20 15:16:11 2026 [cpuhp/15]
+    106       2 Tue Oct 20 15:16:11 2026 [idle_inject/15]
+    107       2 Tue Oct 20 15:16:11 2026 [migration/15]
+    108       2 Tue Oct 20 15:16:11 2026 [ksoftirqd/15]
+    110       2 Tue Oct 20 15:16:11 2026 [kworker/15:0H-events_highpri]
+    111       2 Tue Oct 20 15:16:11 2026 [cpuhp/16]
+    112       2 Tue Oct 20 15:16:11 2026 [idle_inject/16]
+    113       2 Tue Oct 20 15:16:11 2026 [migration/16]
+    114       2 Tue Oct 20 15:16:11 2026 [ksoftirqd/16]
+    116       2 Tue Oct 20 15:16:11 2026 [kworker/16:0H-events_highpri]
+    117       2 Tue Oct 20 15:16:11 2026 [cpuhp/17]
+    118       2 Tue Oct 20 15:16:11 2026 [idle_inject/17]
+    119       2 Tue Oct 20 15:16:11 2026 [migration/17]
+    120       2 Tue Oct 20 15:16:11 2026 [ksoftirqd/17]
+    122       2 Tue Oct 20 15:16:11 2026 [kworker/17:0H-events_highpri]
+    123       2 Tue Oct 20 15:16:11 2026 [cpuhp/18]
+    124       2 Tue Oct 20 15:16:11 2026 [idle_inject/18]
+    125       2 Tue Oct 20 15:16:11 2026 [migration/18]
+    126       2 Tue Oct 20 15:16:11 2026 [ksoftirqd/18]
+    128       2 Tue Oct 20 15:16:11 2026 [kworker/18:0H-events_highpri]
+    129       2 Tue Oct 20 15:16:11 2026 [cpuhp/19]
+    130       2 Tue Oct 20 15:16:11 2026 [idle_inject/19]
+    131       2 Tue Oct 20 15:16:11 2026 [migration/19]
+    132       2 Tue Oct 20 15:16:11 2026 [ksoftirqd/19]
+    134       2 Tue Oct 20 15:16:11 2026 [kworker/19:0H-events_highpri]
+    135       2 Tue Oct 20 15:16:11 2026 [cpuhp/20]
+    136       2 Tue Oct 20 15:16:11 2026 [idle_inject/20]
+    137       2 Tue Oct 20 15:16:11 2026 [migration/20]
+    138       2 Tue Oct 20 15:16:11 2026 [ksoftirqd/20]
+    139       2 Tue Oct 20 15:16:11 2026 [kworker/20:0-pm]
+    140       2 Tue Oct 20 15:16:11 2026 [kworker/20:0H-events_highpri]
+    141       2 Tue Oct 20 15:16:11 2026 [cpuhp/21]
+    142       2 Tue Oct 20 15:16:11 2026 [idle_inject/21]
+    143       2 Tue Oct 20 15:16:11 2026 [migration/21]
+    144       2 Tue Oct 20 15:16:11 2026 [ksoftirqd/21]
+    146       2 Tue Oct 20 15:16:11 2026 [kworker/21:0H-events_highpri]
+    147       2 Tue Oct 20 15:16:11 2026 [cpuhp/22]
+    148       2 Tue Oct 20 15:16:11 2026 [idle_inject/22]
+    149       2 Tue Oct 20 15:16:11 2026 [migration/22]
+    150       2 Tue Oct 20 15:16:11 2026 [ksoftirqd/22]
+    152       2 Tue Oct 20 15:16:11 2026 [kworker/22:0H-events_highpri]
+    153       2 Tue Oct 20 15:16:11 2026 [cpuhp/23]
+    154       2 Tue Oct 20 15:16:11 2026 [idle_inject/23]
+    155       2 Tue Oct 20 15:16:11 2026 [migration/23]
+    156       2 Tue Oct 20 15:16:11 2026 [ksoftirqd/23]
+    158       2 Tue Oct 20 15:16:11 2026 [kworker/23:0H-events_highpri]
+    159       2 Tue Oct 20 15:16:11 2026 [kworker/u49:0-events_power_efficient]
+    162       2 Tue Oct 20 15:16:11 2026 [kworker/u52:0-events_unbound]
+    163       2 Tue Oct 20 15:16:11 2026 [kworker/u53:0-writeback]
+    164       2 Tue Oct 20 15:16:11 2026 [kworker/u54:0-events_unbound]
+    167       2 Tue Oct 20 15:16:11 2026 [kworker/u57:0-writeback]
+    168       2 Tue Oct 20 15:16:11 2026 [kworker/u58:0-events_unbound]
+    169       2 Tue Oct 20 15:16:11 2026 [kworker/u59:0-loop13]
+    170       2 Tue Oct 20 15:16:11 2026 [kworker/u60:0-events_unbound]
+    171       2 Tue Oct 20 15:16:11 2026 [kworker/u61:0-events_unbound]
+    172       2 Tue Oct 20 15:16:11 2026 [kworker/u62:0-writeback]
+    173       2 Tue Oct 20 15:16:11 2026 [kworker/u63:0-writeback]
+    174       2 Tue Oct 20 15:16:11 2026 [kworker/u64:0-events_unbound]
+    175       2 Tue Oct 20 15:16:11 2026 [kworker/u65:0-events_unbound]
+    177       2 Tue Oct 20 15:16:11 2026 [kworker/u67:0-events_unbound]
+    178       2 Tue Oct 20 15:16:11 2026 [kworker/u68:0-writeback]
+    181       2 Tue Oct 20 15:16:11 2026 [kworker/u71:0-events_unbound]
+    182       2 Tue Oct 20 15:16:11 2026 [kworker/u72:0-events_unbound]
+    183       2 Tue Oct 20 15:16:11 2026 [kdevtmpfs]
+    184       2 Tue Oct 20 15:16:11 2026 [kworker/R-inet_]
+    185       2 Tue Oct 20 15:16:11 2026 [kauditd]
+    187       2 Tue Oct 20 15:16:11 2026 [khungtaskd]
+    188       2 Tue Oct 20 15:16:11 2026 [oom_reaper]
+    189       2 Tue Oct 20 15:16:11 2026 [kworker/u49:1-writeback]
+    190       2 Tue Oct 20 15:16:11 2026 [kworker/R-write]
+    192       2 Tue Oct 20 15:16:11 2026 [kcompactd0]
+    193       2 Tue Oct 20 15:16:11 2026 [ksmd]
+    196       2 Tue Oct 20 15:16:11 2026 [khugepaged]
+    197       2 Tue Oct 20 15:16:11 2026 [kworker/R-kinte]
+    198       2 Tue Oct 20 15:16:11 2026 [kworker/R-kbloc]
+    199       2 Tue Oct 20 15:16:11 2026 [kworker/R-blkcg]
+    200       2 Tue Oct 20 15:16:11 2026 [irq/9-acpi]
+    203       2 Tue Oct 20 15:16:11 2026 [kworker/R-tpm_d]
+    204       2 Tue Oct 20 15:16:11 2026 [kworker/R-ata_s]
+    205       2 Tue Oct 20 15:16:11 2026 [kworker/R-md]
+    206       2 Tue Oct 20 15:16:11 2026 [kworker/R-md_bi]
+    207       2 Tue Oct 20 15:16:11 2026 [kworker/R-edac-]
+    209       2 Tue Oct 20 15:16:11 2026 [kworker/R-devfr]
+    210       2 Tue Oct 20 15:16:11 2026 [watchdogd]
+    211       2 Tue Oct 20 15:16:11 2026 [kworker/R-quota]
+    213       2 Tue Oct 20 15:16:11 2026 [kworker/10:1-rcu_par_gp]
+    214       2 Tue Oct 20 15:16:11 2026 [kworker/7:1H-events_highpri]
+    215       2 Tue Oct 20 15:16:11 2026 [irq/122-dmar0-perf]
+    216       2 Tue Oct 20 15:16:11 2026 [irq/123-dmar1-perf]
+    217       2 Tue Oct 20 15:16:11 2026 [kswapd0]
+    218       2 Tue Oct 20 15:16:11 2026 [ecryptfs-kthread]
+    219       2 Tue Oct 20 15:16:11 2026 [kworker/R-kthro]
+    220       2 Tue Oct 20 15:16:11 2026 [irq/125-pciehp]
+    221       2 Tue Oct 20 15:16:11 2026 [irq/126-aerdrv]
+    222       2 Tue Oct 20 15:16:11 2026 [irq/126-pciehp]
+    223       2 Tue Oct 20 15:16:11 2026 [kworker/1:1-mm_percpu_wq]
+    224       2 Tue Oct 20 15:16:11 2026 [kworker/R-acpi_]
+    225       2 Tue Oct 20 15:16:11 2026 [kworker/u50:1-events_unbound]
+    226       2 Tue Oct 20 15:16:11 2026 [kworker/u50:2-events_unbound]
+    227       2 Tue Oct 20 15:16:11 2026 [hwrng]
+    230       2 Tue Oct 20 15:16:11 2026 [kworker/R-hfi-u]
+    231       2 Tue Oct 20 15:16:11 2026 [kworker/R-mld]
+    232       2 Tue Oct 20 15:16:11 2026 [kworker/1:1H]
+    233       2 Tue Oct 20 15:16:11 2026 [kworker/R-ipv6_]
+    236       2 Tue Oct 20 15:16:11 2026 [kworker/22:1-mm_percpu_wq]
+    242       2 Tue Oct 20 15:16:11 2026 [kworker/R-kstrp]
+    244       2 Tue Oct 20 15:16:11 2026 [kworker/8:1-mm_percpu_wq]
+    245       2 Tue Oct 20 15:16:11 2026 [kworker/11:1-mm_percpu_wq]
+    246       2 Tue Oct 20 15:16:11 2026 [kworker/16:1-mm_percpu_wq]
+    247       2 Tue Oct 20 15:16:11 2026 [kworker/18:1-rcu_par_gp]
+    249       2 Tue Oct 20 15:16:11 2026 [kworker/21:1-events]
+    250       2 Tue Oct 20 15:16:11 2026 [kworker/23:1-mm_percpu_wq]
+    254       2 Tue Oct 20 15:16:11 2026 [kworker/14:1-mm_percpu_wq]
+    255       2 Tue Oct 20 15:16:11 2026 [kworker/17:1-mm_percpu_wq]
+    256       2 Tue Oct 20 15:16:11 2026 [kworker/19:1-events]
+    258       2 Tue Oct 20 15:16:11 2026 [kworker/u73:0-hci0]
+    275       2 Tue Oct 20 15:16:11 2026 [kworker/u90:0-i915_flip]
+    276       2 Tue Oct 20 15:16:11 2026 [kworker/u91:0-i915_flip]
+    280       2 Tue Oct 20 15:16:11 2026 [kworker/u95:0-i915_flip]
+    282       2 Tue Oct 20 15:16:11 2026 [kworker/u97:0-i915_flip]
+    292       2 Tue Oct 20 15:16:11 2026 [kworker/u68:1-events_unbound]
+    296       2 Tue Oct 20 15:16:12 2026 [kworker/R-charg]
+    316       2 Tue Oct 20 15:16:12 2026 [kworker/4:1H-kblockd]
+    319       2 Tue Oct 20 15:16:12 2026 [kworker/15:1-mm_percpu_wq]
+    326       2 Tue Oct 20 15:16:12 2026 [kworker/3:1H-events_highpri]
+    341       2 Tue Oct 20 15:16:12 2026 [kworker/11:1H-events_highpri]
+    359       2 Tue Oct 20 15:16:12 2026 [kworker/19:1H-events_highpri]
+    360       2 Tue Oct 20 15:16:12 2026 [kworker/2:1H-events_highpri]
+    361       2 Tue Oct 20 15:16:12 2026 [kworker/9:1H]
+    362       2 Tue Oct 20 15:16:12 2026 [kworker/10:1H-events_highpri]
+    363       2 Tue Oct 20 15:16:12 2026 [kworker/22:1H-events_highpri]
+    364       2 Tue Oct 20 15:16:12 2026 [kworker/21:1H-events_highpri]
+    365       2 Tue Oct 20 15:16:12 2026 [kworker/17:1H-events_highpri]
+    366       2 Tue Oct 20 15:16:12 2026 [kworker/8:1H-kblockd]
+    368       2 Tue Oct 20 15:16:12 2026 [kworker/16:1H-events_highpri]
+    369       2 Tue Oct 20 15:16:12 2026 [kworker/18:1H-events_highpri]
+    370       2 Tue Oct 20 15:16:12 2026 [kworker/23:1H]
+    371       2 Tue Oct 20 15:16:12 2026 [kworker/20:1H]
+    372       2 Tue Oct 20 15:16:12 2026 [kworker/6:1H]
+    374       2 Tue Oct 20 15:16:12 2026 [kworker/13:1H-events_highpri]
+    375       2 Tue Oct 20 15:16:12 2026 [kworker/15:1H-events_highpri]
+    376       2 Tue Oct 20 15:16:12 2026 [kworker/14:1H-events_highpri]
+    377       2 Tue Oct 20 15:16:12 2026 [kworker/12:1H-events_highpri]
+    387       2 Tue Oct 20 15:16:12 2026 [kworker/5:1H-events_highpri]
+    388       2 Tue Oct 20 15:16:12 2026 [kworker/0:1H-kblockd]
+    395       2 Tue Oct 20 15:16:12 2026 [kworker/u51:1-flush-259:0]
+    396       2 Tue Oct 20 15:16:12 2026 [kworker/u54:1-writeback]
+    398       2 Tue Oct 20 15:16:12 2026 [kworker/u67:1-events_unbound]
+    400       2 Tue Oct 20 15:16:12 2026 [kworker/R-nvme-]
+    401       2 Tue Oct 20 15:16:12 2026 [kworker/R-nvme-]
+    402       2 Tue Oct 20 15:16:12 2026 [kworker/R-nvme-]
+    403       2 Tue Oct 20 15:16:12 2026 [kworker/R-nvme-]
+    405       2 Tue Oct 20 15:16:12 2026 [kworker/u55:1-writeback]
+    406       2 Tue Oct 20 15:16:12 2026 [kworker/u52:1-flush-259:0]
+    408       2 Tue Oct 20 15:16:12 2026 [kworker/5:1-mm_percpu_wq]
+    425       2 Tue Oct 20 15:16:12 2026 [kworker/3:2-events]
+    437       2 Tue Oct 20 15:16:12 2026 [irq/179-ELAN06FA:00]
+    438       2 Tue Oct 20 15:16:12 2026 [kworker/2:3-mm_percpu_wq]
+    460       2 Tue Oct 20 15:16:12 2026 [jbd2/nvme0n1p5-8]
+    461       2 Tue Oct 20 15:16:12 2026 [kworker/R-ext4-]
+    473       2 Tue Oct 20 15:16:12 2026 [kworker/u62:1-events_unbound]
+    501       1 Tue Oct 20 15:16:12 2026 /lib/systemd/systemd-journald
+    532       2 Tue Oct 20 15:16:12 2026 [kworker/u54:2-events_unbound]
+    544       2 Tue Oct 20 15:16:12 2026 [kworker/u53:2-writeback]
+    558       1 Tue Oct 20 15:16:12 2026 /lib/systemd/systemd-udevd
+    559       2 Tue Oct 20 15:16:12 2026 [kworker/9:2-mm_percpu_wq]
+    560       2 Tue Oct 20 15:16:12 2026 [kworker/u51:3-flush-259:0]
+    627       2 Tue Oct 20 15:16:13 2026 [kworker/u65:1-events_unbound]
+    630       2 Tue Oct 20 15:16:13 2026 [kworker/u65:2-writeback]
+    631       2 Tue Oct 20 15:16:13 2026 [kworker/u57:1-events_unbound]
+    632       2 Tue Oct 20 15:16:13 2026 [kworker/u61:1]
+    633       2 Tue Oct 20 15:16:13 2026 [kworker/u69:1-events_unbound]
+    635       2 Tue Oct 20 15:16:13 2026 [kworker/u64:1-events_unbound]
+    636       2 Tue Oct 20 15:16:13 2026 [kworker/u69:2-events_unbound]
+    637       2 Tue Oct 20 15:16:13 2026 [kworker/u72:1-writeback]
+    638       2 Tue Oct 20 15:16:13 2026 [kworker/u70:1-events_unbound]
+    639       2 Tue Oct 20 15:16:13 2026 [kworker/u59:1-events_unbound]
+    640       2 Tue Oct 20 15:16:13 2026 [kworker/u63:2-events_unbound]
+    642       2 Tue Oct 20 15:16:13 2026 [kworker/u64:2-writeback]
+    644       2 Tue Oct 20 15:16:13 2026 [kworker/u71:2-events_unbound]
+    645       2 Tue Oct 20 15:16:13 2026 [kworker/u70:3-writeback]
+    646       2 Tue Oct 20 15:16:13 2026 [kworker/u69:3-events_unbound]
+    647       2 Tue Oct 20 15:16:13 2026 [kworker/u59:2-writeback]
+    649       2 Tue Oct 20 15:16:13 2026 [kworker/u72:3]
+    650       2 Tue Oct 20 15:16:13 2026 [kworker/u56:3-writeback]
+    651       2 Tue Oct 20 15:16:13 2026 [kworker/u67:2-events_unbound]
+    652       2 Tue Oct 20 15:16:13 2026 [kworker/u70:4-events_unbound]
+    653       2 Tue Oct 20 15:16:13 2026 [kworker/u63:3-writeback]
+    654       2 Tue Oct 20 15:16:13 2026 [kworker/u50:3-events_unbound]
+    657       2 Tue Oct 20 15:16:13 2026 [kworker/u61:2-events_unbound]
+    659       2 Tue Oct 20 15:16:13 2026 [kworker/u55:4-events_unbound]
+    665       2 Tue Oct 20 15:16:13 2026 [kworker/u52:3-events_unbound]
+    667       2 Tue Oct 20 15:16:13 2026 [kworker/22:2]
+    668       2 Tue Oct 20 15:16:13 2026 [irq/180-intel_vpu]
+    674       2 Tue Oct 20 15:16:13 2026 [irq/181-mei_me]
+    679       2 Tue Oct 20 15:16:13 2026 [kworker/14:2-cgroup_free]
+    690       2 Tue Oct 20 15:16:13 2026 [kworker/R-cfg80]
+    695       2 Tue Oct 20 15:16:13 2026 [kworker/u60:1-writeback]
+    699       2 Tue Oct 20 15:16:13 2026 [irq/16-processor_thermal_device_pci]
+    723       2 Tue Oct 20 15:16:13 2026 [kworker/R-crypt]
+    730       2 Tue Oct 20 15:16:13 2026 [kworker/u57:2-events_unbound]
+    767       2 Tue Oct 20 15:16:13 2026 [kworker/R-ttm]
+    768       2 Tue Oct 20 15:16:13 2026 [nv_queue]
+    769       2 Tue Oct 20 15:16:13 2026 [nv_mem_pool_scrubber_queue]
+    770       2 Tue Oct 20 15:16:13 2026 [nv_mem_pool_scrubber_queue]
+    771       2 Tue Oct 20 15:16:13 2026 [nv_mem_pool_scrubber_queue]
+    772       2 Tue Oct 20 15:16:13 2026 [nv_queue]
+    773       2 Tue Oct 20 15:16:13 2026 [nv_open_q]
+    789       2 Tue Oct 20 15:16:13 2026 [card1-crtc0]
+    790       2 Tue Oct 20 15:16:13 2026 [card1-crtc1]
+    791       2 Tue Oct 20 15:16:13 2026 [card1-crtc2]
+    793       2 Tue Oct 20 15:16:13 2026 [card1-crtc3]
+    831       1 Tue Oct 20 15:16:13 2026 /lib/systemd/systemd-oomd
+    832       1 Tue Oct 20 15:16:13 2026 /lib/systemd/systemd-resolved
+    833       1 Tue Oct 20 15:16:13 2026 /lib/systemd/systemd-timesyncd
+    836       2 Tue Oct 20 15:16:13 2026 [nvidia-modeset/kthread_q]
+    837       2 Tue Oct 20 15:16:13 2026 [nvidia-modeset/deferred_close_kthread_q]
+    840       2 Tue Oct 20 15:16:13 2026 [irq/184-nvidia]
+    841       2 Tue Oct 20 15:16:13 2026 [irq/185-nvidia]
+    842       2 Tue Oct 20 15:16:13 2026 [irq/186-nvidia]
+    843       2 Tue Oct 20 15:16:13 2026 [irq/187-nvidia]
+    844       2 Tue Oct 20 15:16:13 2026 [irq/188-nvidia]
+    845       2 Tue Oct 20 15:16:13 2026 [irq/189-nvidia]
+    846       2 Tue Oct 20 15:16:13 2026 [irq/190-nvidia]
+    847       2 Tue Oct 20 15:16:13 2026 [irq/191-nvidia]
+    848       2 Tue Oct 20 15:16:13 2026 [nvidia]
+    849       2 Tue Oct 20 15:16:13 2026 [nv_queue]
+    850       2 Tue Oct 20 15:16:13 2026 [kworker/u58:2-events_unbound]
+    857       2 Tue Oct 20 15:16:13 2026 [napi/phy0-8194]
+    858       2 Tue Oct 20 15:16:13 2026 [napi/phy0-8195]
+    861       2 Tue Oct 20 15:16:13 2026 [kworker/4:2-mm_percpu_wq]
+    922       1 Tue Oct 20 15:16:13 2026 /usr/libexec/accounts-daemon
+    923       2 Tue Oct 20 15:16:13 2026 [kworker/u73:2-hci0]
+    924       1 Tue Oct 20 15:16:13 2026 /usr/sbin/acpid
+    927       1 Tue Oct 20 15:16:13 2026 avahi-daemon: running [venezuelachocolatemilk-Legion-Pro-5-16IAX10H.local]
+    929       1 Tue Oct 20 15:16:13 2026 /usr/sbin/cron -f -P
+    932       1 Tue Oct 20 15:16:13 2026 @dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+    933       1 Tue Oct 20 15:16:13 2026 /usr/sbin/NetworkManager --no-daemon
+    940       1 Tue Oct 20 15:16:13 2026 /usr/sbin/irqbalance --foreground
+    944       2 Tue Oct 20 15:16:13 2026 [kworker/17:2-events]
+    949       1 Tue Oct 20 15:16:13 2026 /usr/bin/python3 /usr/bin/networkd-dispatcher --run-startup-triggers
+    957       1 Tue Oct 20 15:16:13 2026 /usr/bin/nvidia-powerd
+    959       1 Tue Oct 20 15:16:13 2026 /usr/libexec/polkitd --no-debug
+    962       1 Tue Oct 20 15:16:13 2026 /usr/libexec/power-profiles-daemon
+    964       1 Tue Oct 20 15:16:13 2026 /usr/sbin/rsyslogd -n -iNONE
+    965       2 Tue Oct 20 15:16:13 2026 [kworker/23:2-events]
+    969       1 Tue Oct 20 15:16:13 2026 /usr/sbin/smartd -n
+    974       1 Tue Oct 20 15:16:13 2026 /snap/snapd/current/usr/lib/snapd/snapd
+    975       1 Tue Oct 20 15:16:13 2026 /usr/libexec/switcheroo-control
+    976       1 Tue Oct 20 15:16:13 2026 /lib/systemd/systemd-logind
+    980       1 Tue Oct 20 15:16:13 2026 /usr/libexec/udisks2/udisksd
+    981       1 Tue Oct 20 15:16:13 2026 /sbin/wpa_supplicant -u -s -O /run/wpa_supplicant
+    982       2 Tue Oct 20 15:16:13 2026 [kworker/u62:2-events_unbound]
+    997     927 Tue Oct 20 15:16:13 2026 avahi-daemon: chroot helper
+   1084       1 Tue Oct 20 15:16:13 2026 /usr/sbin/ModemManager
+   1089       1 Tue Oct 20 15:16:13 2026 /usr/libexec/boltd
+   1092       2 Tue Oct 20 15:16:13 2026 [kworker/15:2]
+   1102       1 Tue Oct 20 15:16:13 2026 /usr/sbin/cupsd -l
+   1114       1 Tue Oct 20 15:16:13 2026 /usr/bin/containerd
+   1123       1 Tue Oct 20 15:16:13 2026 /usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal
+   1131       1 Tue Oct 20 15:16:13 2026 /usr/bin/rustdesk --service
+   1215       2 Tue Oct 20 15:16:14 2026 [kworker/18:2-mm_percpu_wq]
+   1219       2 Tue Oct 20 15:16:14 2026 [kworker/R-USBC0]
+   1264       2 Tue Oct 20 15:16:14 2026 [mt76-tx phy0]
+   1418       2 Tue Oct 20 15:16:15 2026 [UVM global queue]
+   1419       2 Tue Oct 20 15:16:15 2026 [UVM deferred release queue]
+   1420       2 Tue Oct 20 15:16:15 2026 [UVM Tools Event Queue]
+   1461       1 Tue Oct 20 15:16:15 2026 /usr/bin/nvidia-persistenced --user nvidia-persistenced --no-persistence-mode --verbose
+   1500       1 Tue Oct 20 15:16:15 2026 /usr/sbin/gdm3
+   1580       1 Tue Oct 20 15:16:15 2026 /usr/libexec/rtkit-daemon
+   2306       2 Tue Oct 20 15:16:19 2026 [kworker/R-USBC0]
+   2567       1 Tue Oct 20 15:16:20 2026 /usr/libexec/upowerd
+   2568       2 Tue Oct 20 15:16:20 2026 [kworker/13:2-mm_percpu_wq]
+   2574       1 Tue Oct 20 15:16:20 2026 /usr/libexec/packagekitd
+   2696       1 Tue Oct 20 15:16:20 2026 /usr/libexec/colord
+   2724       2 Tue Oct 20 15:16:20 2026 [kworker/u60:2-events_unbound]
+   2842       2 Tue Oct 20 15:16:20 2026 [kworker/u66:2-writeback]
+   3396       1 Tue Oct 20 15:16:22 2026 /usr/sbin/cups-browsed
+   3408       1 Tue Oct 20 15:16:22 2026 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
+   3410       1 Tue Oct 20 15:16:22 2026 /usr/sbin/kerneloops --test
+   3412       1 Tue Oct 20 15:16:22 2026 /usr/sbin/kerneloops
+   4089    1500 Tue Oct 20 15:16:31 2026 gdm-session-worker [pam/gdm-password]
+   4123       1 Tue Oct 20 15:16:33 2026 /lib/systemd/systemd --user
+   4124    4123 Tue Oct 20 15:16:33 2026 (sd-pam)
+   4131    4123 Tue Oct 20 15:16:33 2026 /usr/bin/pipewire
+   4132    4123 Tue Oct 20 15:16:33 2026 /usr/bin/pipewire-media-session
+   4133    4123 Tue Oct 20 15:16:33 2026 /usr/bin/pulseaudio --daemonize=no --log-target=journal
+   4146       1 Tue Oct 20 15:16:33 2026 /usr/bin/gnome-keyring-daemon --daemonize --login
+   4156    4123 Tue Oct 20 15:16:34 2026 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+   4177    4123 Tue Oct 20 15:16:34 2026 /usr/libexec/xdg-document-portal
+   4180    4123 Tue Oct 20 15:16:34 2026 /usr/libexec/xdg-permission-store
+   4187    4177 Tue Oct 20 15:16:34 2026 fusermount3 -o rw,nosuid,nodev,fsname=portal,auto_unmount,subtype=portal -- /run/user/1000/doc
+   4216    4089 Tue Oct 20 15:16:34 2026 /usr/libexec/gdm-x-session --run-script env GNOME_SHELL_SESSION_MODE=ubuntu /usr/bin/gnome-session --session=ubuntu
+   4218    4216 Tue Oct 20 15:16:34 2026 /usr/lib/xorg/Xorg vt2 -displayfd 3 -auth /run/user/1000/gdm/Xauthority -nolisten tcp -background none -noreset -keeptty -novtswitch -verbose 3
+   4364       2 Tue Oct 20 15:16:34 2026 [nvidia-drm/timeline-23]
+   4941    4216 Tue Oct 20 15:16:37 2026 /usr/libexec/gnome-session-binary --session=ubuntu
+   5080    4123 Tue Oct 20 15:16:37 2026 /usr/libexec/at-spi-bus-launcher
+   5086    5080 Tue Oct 20 15:16:37 2026 /usr/bin/dbus-daemon --config-file=/usr/share/defaults/at-spi2/accessibility.conf --nofork --print-address 11 --address=unix:path=/run/user/1000/at-spi/bus_1
+   5093    4123 Tue Oct 20 15:16:37 2026 /usr/libexec/gnome-session-ctl --monitor
+   5104    4123 Tue Oct 20 15:16:37 2026 /usr/libexec/gvfsd
+   5111    4123 Tue Oct 20 15:16:37 2026 /usr/libexec/gvfsd-fuse /run/user/1000/gvfs -f
+   5114    4123 Tue Oct 20 15:16:37 2026 /usr/libexec/gnome-session-binary --systemd-service --session=ubuntu
+   5141    4123 Tue Oct 20 15:16:37 2026 /usr/bin/gnome-shell
+   5225       2 Tue Oct 20 15:16:37 2026 [nvidia-drm/timeline-29]
+   5238    4123 Tue Oct 20 15:16:38 2026 /usr/libexec/gnome-shell-calendar-server
+   5246    4123 Tue Oct 20 15:16:38 2026 /usr/libexec/evolution-source-registry
+   5283    4123 Tue Oct 20 15:16:38 2026 /usr/libexec/dconf-service
+   5286    4123 Tue Oct 20 15:16:38 2026 /usr/libexec/goa-daemon
+   5300    4123 Tue Oct 20 15:16:38 2026 /usr/libexec/gvfs-udisks2-volume-monitor
+   5327    4123 Tue Oct 20 15:16:38 2026 /usr/libexec/evolution-calendar-factory
+   5343    4123 Tue Oct 20 15:16:38 2026 /usr/libexec/gvfs-goa-volume-monitor
+   5352    4123 Tue Oct 20 15:16:38 2026 /usr/libexec/goa-identity-service
+   5356    4123 Tue Oct 20 15:16:38 2026 /usr/libexec/gvfs-mtp-volume-monitor
+   5367    4123 Tue Oct 20 15:16:38 2026 /usr/libexec/evolution-addressbook-factory
+   5373    4123 Tue Oct 20 15:16:38 2026 /usr/libexec/gvfs-afc-volume-monitor
+   5381    4123 Tue Oct 20 15:16:38 2026 /usr/libexec/gvfs-gphoto2-volume-monitor
+   5393    5104 Tue Oct 20 15:16:38 2026 /usr/libexec/gvfsd-trash --spawner :1.20 /org/gtk/gvfs/exec_spaw/0
+   5402    4123 Tue Oct 20 15:16:38 2026 /usr/bin/gjs /usr/share/gnome-shell/org.gnome.Shell.Notifications
+   5407    4123 Tue Oct 20 15:16:38 2026 /usr/libexec/at-spi2-registryd --use-gnome-session
+   5422    4123 Tue Oct 20 15:16:38 2026 sh -c /usr/bin/ibus-daemon --panel disable $([ "$XDG_SESSION_TYPE" = "x11" ] && echo "--xim")
+   5423    4123 Tue Oct 20 15:16:38 2026 /usr/libexec/gsd-a11y-settings
+   5425    5422 Tue Oct 20 15:16:38 2026 /usr/bin/ibus-daemon --panel disable --xim
+   5426    4123 Tue Oct 20 15:16:38 2026 /usr/libexec/gsd-color
+   5428    4123 Tue Oct 20 15:16:38 2026 /usr/libexec/gsd-datetime
+   5429    4123 Tue Oct 20 15:16:38 2026 /usr/libexec/gsd-housekeeping
+   5431    4123 Tue Oct 20 15:16:38 2026 /usr/libexec/gsd-keyboard
+   5436    4123 Tue Oct 20 15:16:38 2026 /usr/libexec/gsd-media-keys
+   5439    4123 Tue Oct 20 15:16:38 2026 /usr/libexec/gsd-power
+   5441    4123 Tue Oct 20 15:16:38 2026 /usr/libexec/gsd-print-notifications
+   5443    4123 Tue Oct 20 15:16:38 2026 /usr/libexec/gsd-rfkill
+   5448    4123 Tue Oct 20 15:16:38 2026 /usr/libexec/gsd-screensaver-proxy
+   5449    4123 Tue Oct 20 15:16:38 2026 /usr/libexec/gsd-sharing
+   5452    4123 Tue Oct 20 15:16:38 2026 /usr/libexec/gsd-smartcard
+   5456    4123 Tue Oct 20 15:16:38 2026 /usr/libexec/gsd-sound
+   5461    4123 Tue Oct 20 15:16:38 2026 /usr/libexec/gsd-wacom
+   5463    4123 Tue Oct 20 15:16:38 2026 /usr/libexec/gsd-xsettings
+   5477    4123 Tue Oct 20 15:16:38 2026 /usr/libexec/xdg-desktop-portal
+   5486    5114 Tue Oct 20 15:16:38 2026 /usr/libexec/evolution-data-server/evolution-alarm-notify
+   5496    5114 Tue Oct 20 15:16:38 2026 /usr/bin/python3 /usr/bin/blueman-applet
+   5499    5114 Tue Oct 20 15:16:38 2026 /usr/libexec/gsd-disk-utility-notify
+   5504    5425 Tue Oct 20 15:16:38 2026 /usr/libexec/ibus-dconf
+   5506    5425 Tue Oct 20 15:16:38 2026 /usr/libexec/ibus-extension-gtk3
+   5508    4123 Tue Oct 20 15:16:38 2026 /usr/libexec/ibus-x11 --kill-daemon
+   5515    4123 Tue Oct 20 15:16:38 2026 /usr/libexec/ibus-portal
+   5517    4123 Tue Oct 20 15:16:38 2026 /usr/libexec/xdg-desktop-portal-gnome
+   5543       2 Tue Oct 20 15:16:38 2026 [kworker/13:3-inet_frag_wq]
+   5565    4123 Tue Oct 20 15:16:38 2026 /usr/libexec/gsd-printer
+   5674    4123 Tue Oct 20 15:16:38 2026 /usr/bin/gjs /usr/share/gnome-shell/org.gnome.ScreenSaver
+   5709    4123 Tue Oct 20 15:16:38 2026 /usr/lib/bluetooth/obexd
+   5711    4123 Tue Oct 20 15:16:38 2026 /usr/libexec/tracker-miner-fs-3
+   5722    5425 Tue Oct 20 15:16:38 2026 /usr/libexec/ibus-engine-hangul --ibus
+   5737    1131 Tue Oct 20 15:16:39 2026 sudo -E XDG_RUNTIME_DIR=/run/user/1000 -u venezuelachocolatemilk /usr/share/rustdesk/rustdesk --server
+   5738    5737 Tue Oct 20 15:16:39 2026 /usr/share/rustdesk/rustdesk --server
+   5739    4123 Tue Oct 20 15:16:39 2026 /usr/libexec/xdg-desktop-portal-gtk
+   5748    5738 Tue Oct 20 15:16:39 2026 /usr/share/rustdesk/rustdesk --tray
+   5944    5141 Tue Oct 20 15:16:40 2026 gjs /usr/share/gnome-shell/extensions/ding@rastersoft.com/ding.js -E -P /usr/share/gnome-shell/extensions/ding@rastersoft.com -M 0 -D 0:0:2560:1600:1:27:0:70:0:0
+   5965    4123 Tue Oct 20 15:16:40 2026 /usr/libexec/gvfsd-metadata
+   6067    4123 Tue Oct 20 15:16:41 2026 /snap/snapd-desktop-integration/391/usr/bin/user-session-helper /snap/snapd-desktop-integration/391/usr/bin/snapd-desktop-integration
+   6139    6067 Tue Oct 20 15:16:41 2026 /snap/snapd-desktop-integration/391/usr/bin/snapd-desktop-integration
+   6318       2 Tue Oct 20 15:16:50 2026 [kworker/21:2-mm_percpu_wq]
+   6739    5114 Tue Oct 20 15:17:38 2026 update-notifier
+   7019    5141 Tue Oct 20 15:17:44 2026 /opt/google/chrome/chrome
+   7025    7019 Tue Oct 20 15:17:44 2026 cat
+   7026    7019 Tue Oct 20 15:17:44 2026 cat
+   7039    4123 Tue Oct 20 15:17:44 2026 /opt/google/chrome/chrome_crashpad_handler --monitor-self --monitor-self-annotation=ptype=crashpad-handler --database=/home/venezuelachocolatemilk/.config/google-chrome/Crash Reports --url=https://clients2.google.com/cr/report --annotation=channel= --annotation=lsb-release=Ubuntu 22.04.5 LTS --annotation=plat=Linux --
+   7041    4123 Tue Oct 20 15:17:44 2026 /opt/google/chrome/chrome_crashpad_handler --no-periodic-tasks --monitor-self-annotation=ptype=crashpad-handler --database=/home/venezuelachocolatemilk/.config/google-chrome/Crash Reports --url=https://clients2.google.com/cr/report --annotation=channel= --annotation=lsb-release=Ubuntu 22.04.5 LTS --annotation=plat=Lin
+   7048    7019 Tue Oct 20 15:17:44 2026 /opt/google/chrome/chrome --type=zygote --no-zygote-sandbox --crashpad-handler-pid=7039 --enable-crash-reporter=, --change-stack-guard-on-fork=enable
+   7049    7019 Tue Oct 20 15:17:44 2026 /opt/google/chrome/chrome --type=zygote --crashpad-handler-pid=7039 --enable-crash-reporter=, --change-stack-guard-on-fork=enable
+   7053    7049 Tue Oct 20 15:17:44 2026 /opt/google/chrome/chrome --type=zygote --crashpad-handler-pid=7039 --enable-crash-reporter=, --change-stack-guard-on-fork=enable
+   7082    7048 Tue Oct 20 15:17:44 2026 /opt/google/chrome/chrome --type=gpu-process --ozone-platform=x11 --crashpad-handler-pid=7039 --enable-crash-reporter=, --change-stack-guard-on-fork=enable --gpu-preferences=UAAAAAAAAAAgAQAEAAAAAAAAAAAAAGAAAQAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAYAAAAAAAAABgAAAAAAAAAAQAAAAAAAAAIAAAAAAAAAAgAAAAAAAAA --shared-files -
+   7088    7019 Tue Oct 20 15:17:44 2026 /opt/google/chrome/chrome --type=utility --utility-sub-type=network.mojom.NetworkService --lang=ko --service-sandbox-type=none --crashpad-handler-pid=7039 --enable-crash-reporter=, --change-stack-guard-on-fork=enable --shared-files=v8_context_snapshot_data:100 --metrics-shmem-handle=4,i,3781047972061008388,23564920701
+   7102    7053 Tue Oct 20 15:17:44 2026 /opt/google/chrome/chrome --type=utility --utility-sub-type=storage.mojom.StorageService --lang=ko --service-sandbox-type=utility --crashpad-handler-pid=7039 --enable-crash-reporter=, --change-stack-guard-on-fork=enable --shared-files=v8_context_snapshot_data:100 --metrics-shmem-handle=4,i,16878000168605325404,8148250
+   7164       2 Tue Oct 20 15:17:44 2026 [nvidia-drm/timeline-2a]
+   7191    7082 Tue Oct 20 15:17:44 2026 /opt/google/chrome/chrome --type=broker
+   7665    5141 Tue Oct 20 15:17:49 2026 /usr/bin/python3 /usr/bin/terminator
+   7701    7665 Tue Oct 20 15:17:50 2026 /bin/bash
+   7982    4123 Tue Oct 20 15:17:51 2026 /opt/wine-stable/lib/wine/../../bin/wineserver
+   7994    4123 Tue Oct 20 15:17:51 2026 C:\windows\system32\services.exe
+   7999    4123 Tue Oct 20 15:17:51 2026 C:\windows\system32\winedevice.exe
+   8010    4123 Tue Oct 20 15:17:51 2026 C:\windows\system32\plugplay.exe
+   8024    4123 Tue Oct 20 15:17:51 2026 C:\windows\system32\explorer.exe /desktop
+   8026    4123 Tue Oct 20 15:17:51 2026 C:\windows\system32\svchost.exe -k LocalServiceNetworkRestricted
+   8035    4123 Tue Oct 20 15:17:51 2026 C:\windows\system32\winedevice.exe
+   8060    4123 Tue Oct 20 15:17:51 2026 C:\windows\system32\rpcss.exe
+   8082    4123 Tue Oct 20 15:17:51 2026 C:\Program Files\Kakao\KakaoTalk\KakaoTalk.exe
+   8225    7053 Tue Oct 20 15:17:55 2026 /opt/google/chrome/chrome --type=renderer --crashpad-handler-pid=7039 --enable-crash-reporter=, --change-stack-guard-on-fork=enable --ozone-platform=x11 --lang=ko --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=13 --time-ticks-at-unix-epoch=-1792476971683961 --launch-time-ticks=104517
+   8234    7053 Tue Oct 20 15:17:55 2026 /opt/google/chrome/chrome --type=renderer --crashpad-handler-pid=7039 --enable-crash-reporter=, --change-stack-guard-on-fork=enable --ozone-platform=x11 --lang=ko --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=14 --time-ticks-at-unix-epoch=-1792476971683961 --launch-time-ticks=104596
+  10284       2 Tue Oct 20 15:21:45 2026 [kworker/5:0]
+  11141    7701 Tue Oct 20 15:23:20 2026 node /home/venezuelachocolatemilk/.nvm/versions/node/v24.14.0/bin/codex
+  11148   11141 Tue Oct 20 15:23:20 2026 /home/venezuelachocolatemilk/.nvm/versions/node/v24.14.0/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/bin/codex
+  11216   11148 Tue Oct 20 15:23:21 2026 /home/venezuelachocolatemilk/.codex/packages/app-server-daemon/releases/0.163.0-x86_64-unknown-linux-musl/bin/codex app-server --listen unix:// --analytics-default-enabled --managed-daemon
+  11301   11148 Tue Oct 20 15:23:21 2026 /home/venezuelachocolatemilk/.codex/packages/app-server-daemon/releases/0.163.0-x86_64-unknown-linux-musl/bin/codex app-server daemon pid-update-loop
+  11501       2 Tue Oct 20 15:23:27 2026 [kworker/u56:0-writeback]
+  12508    7053 Tue Oct 20 15:25:30 2026 /opt/google/chrome/chrome --type=renderer --crashpad-handler-pid=7039 --enable-crash-reporter=, --change-stack-guard-on-fork=enable --ozone-platform=x11 --lang=ko --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=21 --time-ticks-at-unix-epoch=-1792476971683961 --launch-time-ticks=559756
+  12595       2 Tue Oct 20 15:25:32 2026 [kworker/7:0-mm_percpu_wq]
+  13052       2 Tue Oct 20 15:26:21 2026 [kworker/6:1-mm_percpu_wq]
+  13983   11216 Tue Oct 20 15:27:17 2026 /home/venezuelachocolatemilk/.codex/packages/app-server-daemon/releases/0.163.0-x86_64-unknown-linux-musl/bin/codex-code-mode-host
+  14193       2 Tue Oct 20 15:27:33 2026 [kworker/0:0-rcu_par_gp]
+  14496       2 Tue Oct 20 15:27:50 2026 [kworker/u93:2-i915_flip]
+  14774       2 Tue Oct 20 15:28:17 2026 [kworker/u56:1-events_power_efficient]
+  14797       2 Tue Oct 20 15:28:18 2026 [kworker/u80:0-i915_flip]
+  17480    4123 Tue Oct 20 15:32:39 2026 tmux new-session -d -s real_g6_imu_20261020 -n rviz bash /home/venezuelachocolatemilk/mvsim_slam_real/verification/real_g6_tractor_imu_20261020_153135/run_rviz.bash
+  17481   17480 Tue Oct 20 15:32:39 2026 bash /home/venezuelachocolatemilk/mvsim_slam_real/verification/real_g6_tractor_imu_20261020_153135/run_rviz.bash
+  17519   17481 Tue Oct 20 15:32:39 2026 /usr/bin/python3 /opt/ros/humble/bin/ros2 launch tractor_trailer_rviz_2d visualization.launch.py slam_frame:=laser_frame output_directory:=/home/venezuelachocolatemilk/mvsim_slam_real/verification/real_g6_tractor_imu_20261020_153135/viz_live
+  17520   17481 Tue Oct 20 15:32:39 2026 tee /home/venezuelachocolatemilk/mvsim_slam_real/verification/real_g6_tractor_imu_20261020_153135/rviz.log
+  17521   17519 Tue Oct 20 15:32:39 2026 /usr/bin/python3 /home/venezuelachocolatemilk/mvsim_slam_real/visualization/tractor_trailer_rviz_2d/install/tractor_trailer_rviz_2d/lib/tractor_trailer_rviz_2d/tt2d_visualizer --ros-args --params-file /tmp/launch_params_hu1tdzgv
+  17958       2 Tue Oct 20 15:33:12 2026 [kworker/u74:0-i915_flip]
+  18042    7053 Tue Oct 20 15:33:18 2026 /opt/google/chrome/chrome --type=renderer --crashpad-handler-pid=7039 --enable-crash-reporter=, --change-stack-guard-on-fork=enable --ozone-platform=x11 --lang=ko --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=35 --time-ticks-at-unix-epoch=-1792476971683961 --launch-time-ticks=102702
+  18234       2 Tue Oct 20 15:33:29 2026 [kworker/u66:0-writeback]
+  18344       2 Tue Oct 20 15:33:43 2026 [kworker/u51:0-events_unbound]
+  18357       2 Tue Oct 20 15:33:45 2026 [kworker/u71:3-events_unbound]
+  18524       2 Tue Oct 20 15:34:06 2026 [kworker/u81:1-i915_flip]
+  19961       2 Tue Oct 20 15:37:01 2026 [kworker/u86:1-i915_flip]
+  21056       2 Tue Oct 20 15:39:16 2026 [kworker/12:1-cgroup_free]
+  21163       2 Tue Oct 20 15:39:27 2026 [kworker/0:1-events]
+  21166       2 Tue Oct 20 15:39:27 2026 [kworker/16:0]
+  21175       2 Tue Oct 20 15:39:27 2026 [kworker/6:3-inet_frag_wq]
+  21343    5104 Tue Oct 20 15:39:46 2026 /usr/libexec/gvfsd-http --spawner :1.20 /org/gtk/gvfs/exec_spaw/2
+  21382       2 Tue Oct 20 15:39:46 2026 [kworker/u48:2-mt76]
+  21383       2 Tue Oct 20 15:39:46 2026 [kworker/3:0-inet_frag_wq]
+  21428    7019 Tue Oct 20 15:39:48 2026 /opt/google/chrome/chrome --type=utility --utility-sub-type=audio.mojom.AudioService --lang=ko --service-sandbox-type=none --crashpad-handler-pid=7039 --enable-crash-reporter=, --change-stack-guard-on-fork=enable --shared-files=v8_context_snapshot_data:100 --metrics-shmem-handle=4,i,8036995461650044775,896864458751433
+  21523   17480 Tue Oct 20 15:39:56 2026 bash /home/venezuelachocolatemilk/mvsim_slam_real/verification/real_g6_tractor_imu_20261020_153135/run_g6_slam.bash
+  21569   21523 Tue Oct 20 15:39:56 2026 /usr/bin/python3 /opt/ros/humble/bin/ros2 launch mvsim_slam_real_bringup g6_slam.launch.py lidar_port:=/dev/serial/by-path/pci-0000:80:14.0-usb-0:7:1.0-port0 frame_mode:=sensor use_imu:=false start_imu:=false enable_rviz:=false
+  21570   21523 Tue Oct 20 15:39:56 2026 tee /home/venezuelachocolatemilk/mvsim_slam_real/verification/real_g6_tractor_imu_20261020_153135/g6_slam.log
+  21573   21569 Tue Oct 20 15:39:57 2026 /home/venezuelachocolatemilk/mvsim_slam_real/install/ydlidar_ros2_driver/lib/ydlidar_ros2_driver/ydlidar_ros2_driver_node --ros-args -r __node:=ydlidar_ros2_driver_node --params-file /home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/g6.yaml --params-file 
+  21575   21569 Tue Oct 20 15:39:57 2026 /opt/ros/humble/lib/cartographer_ros/cartographer_node -configuration_directory /home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config -configuration_basename g6_lidar_only.lua --ros-args -r __node:=cartographer_node --params-file /tmp/launch_params_v9ftqk4z -
+  21577   21569 Tue Oct 20 15:39:57 2026 /opt/ros/humble/lib/cartographer_ros/cartographer_occupancy_grid_node -resolution 0.05 -publish_period_sec 1.0 --ros-args -r __node:=cartographer_occupancy_grid_node --params-file /tmp/launch_params_sxa6eih6
+  22772       2 Tue Oct 20 15:41:27 2026 [kworker/u83:0-i915_flip]
+  22806       2 Tue Oct 20 15:41:31 2026 [kworker/u88:1-i915_flip]
+  22823   17480 Tue Oct 20 15:41:32 2026 bash /home/venezuelachocolatemilk/mvsim_slam_real/verification/real_g6_tractor_imu_20261020_153135/run_rviz_map_view.bash
+  22856   22823 Tue Oct 20 15:41:32 2026 /usr/bin/python3 /opt/ros/humble/bin/ros2 run rviz2 rviz2 -d /home/venezuelachocolatemilk/mvsim_slam_real/verification/real_g6_tractor_imu_20261020_153135/rviz_map_origin_view.rviz --ros-args -r __node:=tractor_trailer_rviz_2d -p use_sim_time:=false
+  22857   22823 Tue Oct 20 15:41:32 2026 tee /home/venezuelachocolatemilk/mvsim_slam_real/verification/real_g6_tractor_imu_20261020_153135/rviz_map_view.log
+  22858   22856 Tue Oct 20 15:41:32 2026 /opt/ros/humble/lib/rviz2/rviz2 -d /home/venezuelachocolatemilk/mvsim_slam_real/verification/real_g6_tractor_imu_20261020_153135/rviz_map_origin_view.rviz --ros-args -r __node:=tractor_trailer_rviz_2d -p use_sim_time:=false
+  22877       2 Tue Oct 20 15:41:32 2026 [nvidia-drm/timeline-2f]
+  22907    7053 Tue Oct 20 15:41:34 2026 /opt/google/chrome/chrome --type=renderer --crashpad-handler-pid=7039 --enable-crash-reporter=, --change-stack-guard-on-fork=enable --ozone-platform=x11 --lang=ko --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=53 --time-ticks-at-unix-epoch=-1792476971683961 --launch-time-ticks=152312
+  22942    7053 Tue Oct 20 15:41:35 2026 /opt/google/chrome/chrome --type=renderer --crashpad-handler-pid=7039 --enable-crash-reporter=, --change-stack-guard-on-fork=enable --ozone-platform=x11 --lang=ko --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=54 --time-ticks-at-unix-epoch=-1792476971683961 --launch-time-ticks=152489
+  23386    4123 Tue Oct 20 15:42:14 2026 /usr/bin/python3 -c from ros2cli.daemon.daemonize import main; main() --name ros2-daemon --ros-domain-id 0 --rmw-implementation rmw_fastrtps_cpp
+  23619    7053 Tue Oct 20 15:42:28 2026 /opt/google/chrome/chrome --type=renderer --crashpad-handler-pid=7039 --enable-crash-reporter=, --change-stack-guard-on-fork=enable --ozone-platform=x11 --lang=ko --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=63 --time-ticks-at-unix-epoch=-1792476971683961 --launch-time-ticks=157785
+  23851       2 Tue Oct 20 15:42:44 2026 [kworker/7:2-events]
+  24004       2 Tue Oct 20 15:42:57 2026 [kworker/1:2-rcu_par_gp]
+  24017       2 Tue Oct 20 15:42:57 2026 [kworker/2:1-rcu_par_gp]
+  24021       2 Tue Oct 20 15:42:57 2026 [kworker/8:2-inet_frag_wq]
+  24287       2 Tue Oct 20 15:43:27 2026 [kworker/10:0-mm_percpu_wq]
+  24401       2 Tue Oct 20 15:43:42 2026 [kworker/u49:2-events_unbound]
+  24866       2 Tue Oct 20 15:44:38 2026 [kworker/u94:2-i915_flip]
+  24867       2 Tue Oct 20 15:44:38 2026 [kworker/u78:2-i915_flip]
+  24881       2 Tue Oct 20 15:44:39 2026 [kworker/u76:0-i915_flip]
+  24958       2 Tue Oct 20 15:44:48 2026 [kworker/u75:1-i915_flip]
+  25101       2 Tue Oct 20 15:45:06 2026 [kworker/u82:2-i915_flip]
+  25197       2 Tue Oct 20 15:45:18 2026 [kworker/u79:2-i915_flip]
+  25284       2 Tue Oct 20 15:45:21 2026 [kworker/11:2-cgroup_bpf_destroy]
+  25428       2 Tue Oct 20 15:45:31 2026 [kworker/u85:2-i915_flip]
+  26434       2 Tue Oct 20 15:47:10 2026 [kworker/u96:1-i915_flip]
+  26438       2 Tue Oct 20 15:47:10 2026 [kworker/u92:0-i915_flip]
+  26457    7053 Tue Oct 20 15:47:12 2026 /opt/google/chrome/chrome --type=renderer --crashpad-handler-pid=7039 --enable-crash-reporter=, --change-stack-guard-on-fork=enable --ozone-platform=x11 --lang=ko --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=90 --time-ticks-at-unix-epoch=-1792476971683961 --launch-time-ticks=186161
+  26767    7053 Tue Oct 20 15:47:38 2026 /opt/google/chrome/chrome --type=renderer --crashpad-handler-pid=7039 --enable-crash-reporter=, --change-stack-guard-on-fork=enable --ozone-platform=x11 --lang=ko --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=98 --time-ticks-at-unix-epoch=-1792476971683961 --launch-time-ticks=188787
+  27131       2 Tue Oct 20 15:48:11 2026 [kworker/u55:2-events_unbound]
+  27186       2 Tue Oct 20 15:48:18 2026 [kworker/u89:1-i915_flip]
+  27299       2 Tue Oct 20 15:48:28 2026 [kworker/u86:0-i915_flip]
+  27307       2 Tue Oct 20 15:48:28 2026 [kworker/u53:1-events_power_efficient]
+  28117       2 Tue Oct 20 15:50:08 2026 [kworker/u74:2-i915_flip]
+  28131       2 Tue Oct 20 15:50:09 2026 [kworker/u87:1-i915_flip]
+  28394       2 Tue Oct 20 15:50:41 2026 [kworker/u77:1-i915_flip]
+  28468       2 Tue Oct 20 15:50:50 2026 [kworker/u84:0-i915_flip]
+  28830       2 Tue Oct 20 15:51:28 2026 [kworker/u93:1-i915_flip]
+  29062       2 Tue Oct 20 15:51:54 2026 [kworker/u97:1]
+  29306       2 Tue Oct 20 15:52:25 2026 [kworker/20:1-events]
+  29361       2 Tue Oct 20 15:52:30 2026 [kworker/u92:1-i915_flip]
+  29433       2 Tue Oct 20 15:52:38 2026 [kworker/u68:2-writeback]
+  29594       2 Tue Oct 20 15:52:56 2026 [kworker/9:1]
+  29607       2 Tue Oct 20 15:52:57 2026 [kworker/u83:1-i915_flip]
+  29612       2 Tue Oct 20 15:52:58 2026 [kworker/u96:2-i915_flip]
+  29659       2 Tue Oct 20 15:52:58 2026 [kworker/u90:2-i915_flip]
+  29756       2 Tue Oct 20 15:53:09 2026 [kworker/4:1-events]
+  29861       2 Tue Oct 20 15:53:16 2026 [kworker/u88:2-i915_flip]
+  29914    7053 Tue Oct 20 15:53:17 2026 /opt/google/chrome/chrome --type=renderer --crashpad-handler-pid=7039 --enable-crash-reporter=, --change-stack-guard-on-fork=enable --ozone-platform=x11 --lang=ko --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=117 --time-ticks-at-unix-epoch=-1792476971683961 --launch-time-ticks=22267
+  29982       2 Tue Oct 20 15:53:22 2026 [kworker/19:0]
+  30120       2 Tue Oct 20 15:53:29 2026 [kworker/u91:1-i915_flip]
+  30199   17480 Tue Oct 20 15:53:38 2026 bash /home/venezuelachocolatemilk/mvsim_slam_real/verification/real_g6_tractor_imu_20261020_153135/imu_reconnected/run_tractor_bridge.bash
+  30236   30199 Tue Oct 20 15:53:38 2026 /usr/bin/python3 /opt/ros/humble/bin/ros2 launch tractor_trailer_rviz_2d imu_bridges.launch.py start_tractor:=true start_trailer:=false ports_confirmed:=true tractor_port:=/dev/serial/by-path/pci-0000:80:14.0-usb-0:8:1.0-port0 lidar_port:=/dev/serial/by-path/pci-0000:80:14.0-usb-0:7:1.0-port0 tractor_baud:=115200 trac
+  30237   30199 Tue Oct 20 15:53:38 2026 tee /home/venezuelachocolatemilk/mvsim_slam_real/verification/real_g6_tractor_imu_20261020_153135/imu_reconnected/bridge.log
+  30238   30236 Tue Oct 20 15:53:38 2026 /usr/bin/python3 /home/venezuelachocolatemilk/mvsim_slam_real/visualization/tractor_trailer_rviz_2d/install/tractor_trailer_rviz_2d/lib/tractor_trailer_rviz_2d/tt2d_serial_bridge --ros-args -r __node:=vehicle_viz_2d_tractor_bridge --params-file /tmp/launch_params_it_9898p
+  30367       2 Tue Oct 20 15:53:52 2026 [kworker/u89:2-i915_flip]
+  30665       2 Tue Oct 20 15:54:18 2026 [kworker/u48:1-mt76]
+  30691       2 Tue Oct 20 15:54:21 2026 [kworker/u58:1-events_unbound]
+  31402       2 Tue Oct 20 15:55:35 2026 [kworker/u76:2-i915_flip]
+  31411       2 Tue Oct 20 15:55:36 2026 [kworker/u78:1-i915_flip]
+  31416       2 Tue Oct 20 15:55:36 2026 [kworker/u94:0-i915_flip]
+  31421       2 Tue Oct 20 15:55:37 2026 [kworker/u75:0-i915_flip]
+  31434       2 Tue Oct 20 15:55:38 2026 [kworker/u87:0-i915_flip]
+  31442       2 Tue Oct 20 15:55:39 2026 [kworker/u82:1-i915_flip]
+  31512       2 Tue Oct 20 15:55:41 2026 [kworker/u81:2-i915_flip]
+  31861       2 Tue Oct 20 15:56:08 2026 [kworker/u77:2-i915_flip]
+  31866       2 Tue Oct 20 15:56:08 2026 [kworker/u80:1-i915_flip]
+  31875       2 Tue Oct 20 15:56:09 2026 [kworker/u79:1-i915_flip]
+  31876       2 Tue Oct 20 15:56:09 2026 [kworker/u85:0-i915_flip]
+  31893       2 Tue Oct 20 15:56:11 2026 [kworker/u84:2-i915_flip]
+  32295       2 Tue Oct 20 15:56:51 2026 [kworker/u95:2]
+  32550       2 Tue Oct 20 15:57:17 2026 [kworker/u93:0-i915_flip]
+  32645       2 Tue Oct 20 15:57:29 2026 [kworker/u97:2-i915_flip]
+  32776       2 Tue Oct 20 15:57:46 2026 [kworker/u92:2-i915_flip]
+  33100       2 Tue Oct 20 15:58:25 2026 [kworker/u88:0]
+  33176       2 Tue Oct 20 15:58:29 2026 [kworker/u90:1-i915_flip]
+  33193       2 Tue Oct 20 15:58:32 2026 [kworker/u83:2-i915_flip]
+  33372   17480 Tue Oct 20 15:58:53 2026 bash /home/venezuelachocolatemilk/mvsim_slam_real/verification/real_g6_tractor_imu_20261020_153135/imu_reconnected/run_independent_uart.bash
+  33404   33372 Tue Oct 20 15:58:53 2026 /usr/bin/python3 /home/venezuelachocolatemilk/mvsim_slam_real/verification/ebimu9dofv6_rviz/scripts/imu_publisher.py --port /dev/serial/by-path/pci-0000:80:14.0-usb-0:8:1.0-port0 --confirmed-imu-port --baud 115200 --orientation quaternion --gyro --accel --timestamp --namespace /ebimu_diag/tractor --frame ebimu_diag_tr
+  33405   33372 Tue Oct 20 15:58:53 2026 tee /home/venezuelachocolatemilk/mvsim_slam_real/verification/real_g6_tractor_imu_20261020_153135/imu_reconnected/independent_uart.log
+  33477       2 Tue Oct 20 15:59:01 2026 [kworker/u91:2]
+  33718       2 Tue Oct 20 15:59:25 2026 [kworker/u96:0]
+  33847       2 Tue Oct 20 15:59:36 2026 [kworker/u86:2-i915_flip]
+  33964       2 Tue Oct 20 15:59:50 2026 [kworker/u89:0]
+  34502       2 Tue Oct 20 16:00:54 2026 [kworker/u66:1-events_unbound]
+  34576       2 Tue Oct 20 16:01:03 2026 [kworker/u75:2-i915_flip]
+  34577       2 Tue Oct 20 16:01:03 2026 [kworker/u74:1-i915_flip]
+  34578       2 Tue Oct 20 16:01:03 2026 [kworker/u81:0-i915_flip]
+  34579       2 Tue Oct 20 16:01:03 2026 [kworker/u76:1-i915_flip]
+  34596       2 Tue Oct 20 16:01:06 2026 [kworker/u94:1-i915_flip]
+  34626       2 Tue Oct 20 16:01:08 2026 [kworker/u82:0]
+  34668       2 Tue Oct 20 16:01:11 2026 [kworker/u78:0]
+  34788       2 Tue Oct 20 16:01:18 2026 [kworker/u87:2]
+  34797    7053 Tue Oct 20 16:01:18 2026 /opt/google/chrome/chrome --type=renderer --crashpad-handler-pid=7039 --enable-crash-reporter=, --change-stack-guard-on-fork=enable --ozone-platform=x11 --lang=ko --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=145 --time-ticks-at-unix-epoch=-1792476971683961 --launch-time-ticks=27079
+  34814    7053 Tue Oct 20 16:01:20 2026 /opt/google/chrome/chrome --type=renderer --crashpad-handler-pid=7039 --enable-crash-reporter=, --change-stack-guard-on-fork=enable --ozone-platform=x11 --lang=ko --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=146 --time-ticks-at-unix-epoch=-1792476971683961 --launch-time-ticks=27092
+  34829       2 Tue Oct 20 16:01:20 2026 [kworker/20:2-events]
+  34962       2 Tue Oct 20 16:01:36 2026 [kworker/u80:2-i915_flip]
+  34979       2 Tue Oct 20 16:01:38 2026 [kworker/u84:1]
+  34992       2 Tue Oct 20 16:01:39 2026 [kworker/u77:0]
+  35347   11216 Tue Oct 20 16:02:22 2026 /bin/bash -lc /usr/bin/python3 - <<'PY' from pathlib import Path import json,hashlib,datetime,subprocess,re root=Path('/home/venezuelachocolatemilk/mvsim_slam_real');out=Path((root/'verification/REAL_G6_TRACTOR_IMU_SLAM_TEST_20261020_ARTIFACT_PATH.txt').read_text().strip());q=out/'imu_reconnected' a=json.loads((q/'pas
+  35349   35347 Tue Oct 20 16:02:22 2026 /usr/bin/python3 -
+  35351   35349 Tue Oct 20 16:02:22 2026 ps -eo pid,ppid,lstart,args --width 360

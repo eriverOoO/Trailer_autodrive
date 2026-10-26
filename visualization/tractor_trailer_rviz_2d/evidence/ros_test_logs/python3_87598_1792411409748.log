@@ -1,0 +1,9 @@
+[INFO] [1792411409.842323562] [tractor_trailer_2d_visualizer]: NOT ALIGNED: confirm stationary straight alignment
+[INFO] [1792411410.783135689] [tractor_trailer_2d_visualizer]: OK
+[INFO] [1792411427.832516296] [tractor_trailer_2d_visualizer]: IMU timestamps not paired
+[INFO] [1792411428.282507852] [tractor_trailer_2d_visualizer]: both IMUs must be LIVE
+[INFO] [1792411429.782953819] [tractor_trailer_2d_visualizer]: ALIGNMENT LOST: discontinuity; realign both sensors
+[INFO] [1792411430.783260519] [tractor_trailer_2d_visualizer]: OK
+[INFO] [1792411431.782548635] [tractor_trailer_2d_visualizer]: both IMUs must be LIVE
+[INFO] [1792411432.782633874] [tractor_trailer_2d_visualizer]: ALIGNMENT LOST: discontinuity; realign both sensors
+[INFO] [1792411433.782996809] [tractor_trailer_2d_visualizer]: OK

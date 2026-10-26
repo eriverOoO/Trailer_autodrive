@@ -1,0 +1,3 @@
+set -o pipefail
+source /home/venezuelachocolatemilk/mvsim_slam_real/verification/real_g6_tractor_imu_20261020_153135/environment.bash
+/usr/bin/python3 /home/venezuelachocolatemilk/mvsim_slam_real/verification/ebimu9dofv6_rviz/scripts/imu_publisher.py --port /dev/serial/by-path/pci-0000:80:14.0-usb-0:8:1.0-port0 --confirmed-imu-port --baud 115200 --orientation quaternion --gyro --accel --timestamp --namespace /ebimu_diag/tractor --frame ebimu_diag_tractor_sensor --output /home/venezuelachocolatemilk/mvsim_slam_real/verification/real_g6_tractor_imu_20261020_153135/imu_reconnected/independent_live 2>&1 | tee /home/venezuelachocolatemilk/mvsim_slam_real/verification/real_g6_tractor_imu_20261020_153135/imu_reconnected/independent_uart.log

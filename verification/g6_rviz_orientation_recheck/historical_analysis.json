@@ -1,0 +1,56 @@
+{
+  "source_directory": "/home/venezuelachocolatemilk/mvsim_slam_real/diagnostics/g6_rviz_20261018_210809",
+  "historical_only": true,
+  "stationary_baseline_eligible": false,
+  "reason": "No user-confirmed fixation; user reports possible physical sensor movement.",
+  "initial_map_to_laser_yaw_median_deg": 0.01526091446432518,
+  "later_map_to_laser_yaw_median_deg": -6.641613463912168,
+  "difference_deg": -6.656874378376493,
+  "interpretation": "Actual movement and estimator drift are not identifiable from these records alone. RViz camera stayed at -90 degrees in recorded settings.",
+  "previous_protected_files_checked": 264,
+  "previous_protected_file_changes": [],
+  "prior_display_toggle_tf_error_reproduction": {
+    "before_toggle_wall_s": 1792325810.6602972,
+    "errors_before_toggle": 1,
+    "before_log": "[INFO] [1792325767.740590382] [rviz2]: Stereo is NOT SUPPORTED\n[INFO] [1792325767.740654083] [rviz2]: OpenGl version: 4.6 (GLSL 4.6)\n[INFO] [1792325767.766734119] [rviz2]: Stereo is NOT SUPPORTED\n[INFO] [1792325767.833685012] [rviz2]: Trying to create a map of size 350 x 219 using 1 swatches\n[ERROR] [1792325767.924464341] [rviz2]: Lookup would require extrapolation into the future.  Requested time 1792325767.920221 but the latest data is at time 1792325767.917104, when looking up transform from frame [laser_frame] to frame [map]\n[INFO] [1792325789.620815657] [rviz2]: Trying to create a map of size 350 x 232 using 1 swatches\n",
+    "seconds_since_rviz_start": 42.919771671295166,
+    "disable_wall_s": 1792325811.0287335,
+    "enable_wall_s": 1792325811.3373625,
+    "errors_after_12s": 14,
+    "errors_added_after_toggle": 13
+  },
+  "prior_tf_timing": {
+    "warmup_s": 2,
+    "scans": 268,
+    "checks": {
+      "start_now": {
+        "checked": 268,
+        "failed": 0
+      },
+      "end_now": {
+        "checked": 268,
+        "failed": 241
+      },
+      "end_after_30ms": {
+        "checked": 268,
+        "failed": 0
+      },
+      "end_after_100ms": {
+        "checked": 267,
+        "failed": 0
+      }
+    },
+    "end_minus_latest_common_tf_ms": {
+      "min": -3.065739,
+      "median": 2.007389,
+      "max": 4.800045
+    },
+    "scan_duration_s": {
+      "min": 0.083062068,
+      "median": 0.0855728965,
+      "max": 0.087582199
+    },
+    "raw_scan_frame": "laser_frame",
+    "physical_target_confirmed": false
+  }
+}

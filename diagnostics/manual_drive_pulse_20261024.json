@@ -1,0 +1,44 @@
+{
+  "at": "2026-10-24T16:35:39.501824+09:00",
+  "port": "/dev/ttyACM0",
+  "pwm": 60,
+  "requested_duration_s": 1.0,
+  "events": [
+    {
+      "event": "tx",
+      "monotonic": 8123.672028385,
+      "command": "s0l0r0"
+    },
+    {
+      "event": "tx",
+      "monotonic": 8125.674424734,
+      "command": "s0l0r0"
+    },
+    {
+      "event": "tx",
+      "monotonic": 8125.674678589,
+      "command": "s0l60r60"
+    },
+    {
+      "event": "tx",
+      "monotonic": 8126.676134934,
+      "command": "s0l0r0"
+    },
+    {
+      "event": "tx",
+      "monotonic": 8126.726630399,
+      "command": "s0l0r0"
+    },
+    {
+      "event": "tx",
+      "monotonic": 8126.776964262,
+      "command": "s0l0r0"
+    },
+    {
+      "event": "finished",
+      "monotonic": 8126.827214673,
+      "forward_interval_s": 1.0014563450004061
+    }
+  ],
+  "physical_motion_verified": false
+}

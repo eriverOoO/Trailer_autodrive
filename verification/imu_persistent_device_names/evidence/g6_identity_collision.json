@@ -1,0 +1,38 @@
+{
+  "comparison": {
+    "ID_VENDOR_ID": {
+      "current_tractor": "10c4",
+      "historical_g6": "10c4",
+      "same": true
+    },
+    "ID_MODEL_ID": {
+      "current_tractor": "ea60",
+      "historical_g6": "ea60",
+      "same": true
+    },
+    "ID_SERIAL_SHORT": {
+      "current_tractor": "0001",
+      "historical_g6": "0001",
+      "same": true
+    },
+    "ID_SERIAL": {
+      "current_tractor": "Silicon_Labs_CP2102_USB_to_UART_Bridge_Controller_0001",
+      "historical_g6": "Silicon_Labs_CP2102_USB_to_UART_Bridge_Controller_0001",
+      "same": true
+    },
+    "ID_PATH": {
+      "current_tractor": "pci-0000:80:14.0-usb-0:8:1.0",
+      "historical_g6": "pci-0000:80:14.0-usb-0:8:1.0",
+      "same": true
+    },
+    "ID_USB_INTERFACE_NUM": {
+      "current_tractor": "00",
+      "historical_g6": "00",
+      "same": true
+    }
+  },
+  "serial_only_safe": false,
+  "port_only_intrinsic_device_identity": false,
+  "g6_currently_connected": false,
+  "meaning": "Dedicated socket is an operator-assigned role; the same-ID G6 in that socket would also match. No rule installed pending socket reservation."
+}

@@ -1,0 +1,9 @@
+{
+  "test": "NO INPUT; no synthetic publisher; not real sensor RViz validation",
+  "marker_messages": 156,
+  "all_no_data": true,
+  "processes_alive": [
+    true,
+    true
+  ]
+}

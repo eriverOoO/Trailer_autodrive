@@ -1,0 +1,26 @@
+Starting >>> interfaces_pkg
+Starting >>> lidar_perception_pkg
+Starting >>> ebimu_driver
+Starting >>> ydlidar_ros2_driver
+Finished <<< ydlidar_ros2_driver [0.36s]
+Finished <<< interfaces_pkg [0.39s]
+Starting >>> camera_perception_pkg
+Starting >>> debug_pkg
+Starting >>> serial_communication_pkg
+Starting >>> decision_making_pkg
+Finished <<< lidar_perception_pkg [1.25s]
+Starting >>> real_vehicle_bridge
+Finished <<< ebimu_driver [1.25s]
+Finished <<< debug_pkg [1.10s]
+Finished <<< serial_communication_pkg [1.11s]
+Finished <<< camera_perception_pkg [1.12s]
+Finished <<< decision_making_pkg [1.13s]
+Starting >>> launch_pkg
+Finished <<< launch_pkg [0.07s]
+Finished <<< real_vehicle_bridge [0.61s]
+Starting >>> real_parking
+Finished <<< real_parking [0.26s]
+Starting >>> mvsim_slam_real_bringup
+Finished <<< mvsim_slam_real_bringup [0.51s]
+
+Summary: 12 packages finished [2.78s]

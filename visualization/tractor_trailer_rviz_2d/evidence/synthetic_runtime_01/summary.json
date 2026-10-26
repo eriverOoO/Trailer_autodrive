@@ -1,0 +1,39 @@
+{
+  "kind": "SYNTHETIC SOFTWARE TEST ONLY; no hardware validation",
+  "checks": {
+    "tractor_only": true,
+    "trailer_only": true,
+    "different_rotations": true,
+    "same_angle_zero_articulation": true,
+    "separate_stale": true,
+    "separate_invalid": true,
+    "alignment_lost_after_gap": true,
+    "slam_yaw_does_not_rotate_bodies": true,
+    "hitch_position_invariant": true,
+    "test_label": true,
+    "no_visualizer_tf_publication": true,
+    "expired_state_is_unknown": true,
+    "original_phi_text": true,
+    "original_2d_geometry_and_styles": true,
+    "no_real_sensor_or_control_topics": true
+  },
+  "rows": 612,
+  "valid_rows": 494,
+  "resources": [
+    [
+      "current_body",
+      0,
+      11
+    ],
+    [
+      "current_body",
+      1,
+      10
+    ]
+  ],
+  "marker_violations": [],
+  "screenshots": [
+    "A_TRACTOR_ONLY",
+    "B_TRAILER_ONLY"
+  ]
+}

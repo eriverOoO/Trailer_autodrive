@@ -1,0 +1,82 @@
+{
+  "scan_count": 408,
+  "measured_scan_hz": 11.646920835884863,
+  "first_scan": {
+    "wall": 5183.038133013,
+    "stamp_ns": 1792324398581284000,
+    "frame": "laser_frame",
+    "age_s": 0.085863996,
+    "beams": 1547,
+    "valid": 462,
+    "valid_min_m": 0.33899998664855957,
+    "valid_max_m": 6.291999816894531,
+    "angle_min": -3.1415927410125732,
+    "angle_max": 3.1415927410125732,
+    "angle_increment": 0.004064156208187342,
+    "scan_time": 0.08534500002861023,
+    "time_increment": 5.516806777450256e-05,
+    "range_min": 0.2800000011920929,
+    "range_max": 15.0,
+    "angle_count_error_beams": 3.895638591983303e-06
+  },
+  "map_count": 35,
+  "matched_cloud_count": 408,
+  "scan_time_tf_lookup_successes": 349,
+  "tf_lookup_failures": {
+    "Lookup would require extrapolation into the past.  Requested time 1792324398.581284 but the earliest data is at time 1792324398.644448, when looking up transform from frame [laser_frame] to frame [map]": 1
+  },
+  "dynamic_tf_edges": {
+    "map -> odom": 7000,
+    "odom -> laser_frame": 7000
+  },
+  "static_tf_parents": {},
+  "raw_laser_sectors_plus_minus_5_deg": {
+    "rear_ros_minus_x": {
+      "valid_samples": 16903,
+      "min_m": 0.32100000977516174,
+      "median_m": 5.935500144958496,
+      "max_m": 6.1479997634887695,
+      "fraction_in_0p8_to_1p2m": 0.0
+    },
+    "right_ros_minus_y": {
+      "valid_samples": 244,
+      "min_m": 4.0304999351501465,
+      "median_m": 4.0617499351501465,
+      "max_m": 4.117499828338623,
+      "fraction_in_0p8_to_1p2m": 0.0
+    },
+    "front_ros_x": {
+      "valid_samples": 4773,
+      "min_m": 1.1150000095367432,
+      "median_m": 1.1820000410079956,
+      "max_m": 1.218999981880188,
+      "fraction_in_0p8_to_1p2m": 0.8912633563796355
+    },
+    "left_ros_y": {
+      "valid_samples": 12,
+      "min_m": 0.4399999976158142,
+      "median_m": 0.44200000166893005,
+      "max_m": 0.4429999887943268,
+      "fraction_in_0p8_to_1p2m": 0.0
+    }
+  },
+  "angle_increment_deg": {
+    "min": 0.23285899801102664,
+    "max": 0.23376623923187473
+  },
+  "latest_map_to_laser_pose": {
+    "stamp_ns": 1792324433642612000,
+    "xyz": [
+      0.002409012000971278,
+      -0.014101336880032355,
+      0.0
+    ],
+    "xyzw": [
+      0.0,
+      0.0,
+      -0.0018103965591401321,
+      0.9999983612308065
+    ]
+  },
+  "physical_target_position_confirmed": false
+}

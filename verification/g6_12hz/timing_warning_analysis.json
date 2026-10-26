@@ -1,0 +1,44 @@
+[
+  {
+    "warning_points": 1,
+    "warning_stamp_s": 1792237680.8799417,
+    "nearest_scan_index": 37,
+    "receipt_minus_warning_s": 6.222724914550781e-05,
+    "previous_scan_end_overlap_s": 8.392333984375e-05
+  },
+  {
+    "warning_points": 36,
+    "warning_stamp_s": 1792237681.5658855,
+    "nearest_scan_index": 45,
+    "receipt_minus_warning_s": 0.00013375282287597656,
+    "previous_scan_end_overlap_s": 0.0020051002502441406
+  },
+  {
+    "warning_points": 12,
+    "warning_stamp_s": 1792237707.9160914,
+    "nearest_scan_index": 352,
+    "receipt_minus_warning_s": 5.602836608886719e-05,
+    "previous_scan_end_overlap_s": 0.0007181167602539062
+  },
+  {
+    "warning_points": 1,
+    "warning_stamp_s": 1792237710.3219383,
+    "nearest_scan_index": 380,
+    "receipt_minus_warning_s": 0.0001266002655029297,
+    "previous_scan_end_overlap_s": 8.869171142578125e-05
+  },
+  {
+    "warning_points": 1,
+    "warning_stamp_s": 1792237721.8221977,
+    "nearest_scan_index": 514,
+    "receipt_minus_warning_s": 0.0003657341003417969,
+    "previous_scan_end_overlap_s": 0.00010061264038085938
+  },
+  {
+    "warning_points": 16,
+    "warning_stamp_s": 1792237729.372053,
+    "nearest_scan_index": 602,
+    "receipt_minus_warning_s": 0.0002856254577636719,
+    "previous_scan_end_overlap_s": 0.0009174346923828125
+  }
+]

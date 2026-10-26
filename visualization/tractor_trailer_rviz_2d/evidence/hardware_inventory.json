@@ -1,0 +1,21 @@
+{
+  "at": "2026-10-19T21:04:02.977047+09:00",
+  "usb_serial_devices": [
+    {
+      "device": "/dev/ttyUSB0",
+      "description": "CP2102 USB to UART Bridge Controller - CP2102 USB to UART Bridge Controller",
+      "manufacturer": "Silicon Labs",
+      "vid": 4292,
+      "pid": 60000,
+      "serial": "0001",
+      "location": "3-7",
+      "access_rw": true,
+      "fuser_exit": 1,
+      "owners": "",
+      "physically_identified": false,
+      "uart_opened": false
+    }
+  ],
+  "actual_sensor_roles": "UNCONFIRMED",
+  "actual_dual_imu_rx": "NOT_TESTED"
+}

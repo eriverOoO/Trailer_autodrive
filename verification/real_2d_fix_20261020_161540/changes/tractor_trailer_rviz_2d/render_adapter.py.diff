@@ -1,0 +1,43 @@
+--- before/tractor_trailer_rviz_2d/render_adapter.py
++++ after/tractor_trailer_rviz_2d/render_adapter.py
+@@ -58,6 +58,40 @@
+                 m.lifetime.sec=0;m.lifetime.nanosec=800_000_000
+         return batch
+ 
++    def render_tractor(self,xy,yaw,text,frame):
++        """Reuse the reference LINE_STRIP; no trailer pose is constructed.
++
++        NaN is an internal unavailable slot required by the reference method's
++        four-element state. It suppresses its trailer arrow and is never sent
++        as a pose, orientation, phi, or trailer Marker.
++        """
++        original=self.footprints
++        polygon=original.polygons[0]
++        c,s=math.cos(yaw),math.sin(yaw)
++        points=polygon@np.array([[c,s],[-s,c]])+xy
++        class TractorFootprint:
++            def world(self,state):return [points]
++        try:
++            self.footprints=TractorFootprint()
++            with np.errstate(invalid='ignore'):
++                batch=self.render([*xy,yaw,float('nan')],'TRACTOR_DIAGNOSTIC',frame)
++        finally:
++            self.footprints=original
++        if batch is None:return None
++        for marker in batch.markers:
++            if marker.ns=='articulation':marker.text=text
++        # Same reference arrow dimensions/color/centroid, on the available body.
++        arrow=Marker();arrow.header.frame_id=frame
++        arrow.header.stamp=self.get_clock().now().to_msg()
++        arrow.ns='tractor_pose_arrow';arrow.id=0;arrow.type=Marker.ARROW
++        arrow.pose=self.pose_msg([*np.mean(points,axis=0),yaw]).pose
++        arrow.pose.position.z=.15
++        arrow.scale.x=.8;arrow.scale.y=.08;arrow.scale.z=.18
++        arrow.color.r=arrow.color.a=1.
++        arrow.lifetime.nanosec=800_000_000
++        batch.markers.append(arrow)
++        return batch
++
+ 
+ def unavailable(node,frame,reason,xy=(10.,0.),held=None,test=False):
+     markers=[]

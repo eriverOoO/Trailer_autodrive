@@ -1,0 +1,26 @@
+{
+  "note": "Runtime-only Draw Behind toggle; restored to false. Different live scans in each image, not an exact synchronized pixel comparison.",
+  "red_pixel_counts": {
+    "false_before": [
+      1320,
+      1335,
+      1315,
+      1334,
+      1320
+    ],
+    "true_test": [
+      1359,
+      1378,
+      1460,
+      1338,
+      1342
+    ],
+    "false_restored": [
+      1316,
+      1349,
+      1365,
+      1333,
+      1415
+    ]
+  }
+}

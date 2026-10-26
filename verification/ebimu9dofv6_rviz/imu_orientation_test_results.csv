@@ -1,0 +1,7 @@
+test,status,real_samples,measured_rate_hz,roll_span_deg,pitch_span_deg,yaw_span_deg,axis_sign_match,rviz_match,reason
+stationary,NOT_TESTED,,,,,,,,Physical CP2102-to-IMU identity confirmation pending
+roll,NOT_TESTED,,,,,,,,Physical CP2102-to-IMU identity confirmation pending
+pitch,NOT_TESTED,,,,,,,,Physical CP2102-to-IMU identity confirmation pending
+yaw,NOT_TESTED,,,,,,,,Physical CP2102-to-IMU identity confirmation pending
+return,NOT_TESTED,,,,,,,,Physical CP2102-to-IMU identity confirmation pending
+live_to_stale,NOT_TESTED,,,,,,,,Physical CP2102-to-IMU identity confirmation pending

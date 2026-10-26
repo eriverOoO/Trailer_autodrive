@@ -1,0 +1,224 @@
+{
+  "stages": [
+    100,
+    100,
+    100,
+    100,
+    100,
+    100
+  ],
+  "history": [
+    {
+      "time": "2026-10-16T22:24:06.594948",
+      "stage": 1,
+      "percent": 100,
+      "note": "Stage 1 complete: verified package names, protocol, active B path and porting map. Starting independent workspace."
+    },
+    {
+      "time": "2026-10-16T22:24:36.412585",
+      "stage": 2,
+      "percent": 20,
+      "note": "Independent workspace created outside original; copying complete, source manifests recorded."
+    },
+    {
+      "time": "2026-10-16T22:24:47.949036",
+      "stage": 2,
+      "percent": 40,
+      "note": "All 7 original ROS packages, vision resources and four firmware sketches copied without caches."
+    },
+    {
+      "time": "2026-10-16T22:24:48.021630",
+      "stage": 2,
+      "percent": 60,
+      "note": "Four new ROS packages scaffolded; real_parking compiles copied native clearance source; protected hashes PASS."
+    },
+    {
+      "time": "2026-10-16T22:25:21.296763",
+      "stage": 2,
+      "percent": 80,
+      "note": "YAML geometry, sensor, parking, controller, hardware and SLAM configs written. Architecture documented; all dimensions except supplied outer size PROVISIONAL."
+    },
+    {
+      "time": "2026-10-16T22:25:27.546092",
+      "stage": 2,
+      "percent": 100,
+      "note": "colcon discovers 11 distinct ROS packages; preserved 7 and new 4. Stage 2 structure/dependencies documented."
+    },
+    {
+      "time": "2026-10-16T22:25:27.559220",
+      "stage": 3,
+      "percent": 0,
+      "note": "Implementing LiDAR standard gateway, EBIMU protocol and external Arduino adapter."
+    },
+    {
+      "time": "2026-10-16T22:26:00.264154",
+      "stage": 3,
+      "percent": 20,
+      "note": "Standard LaserScan gateway and optional RPLidar source implemented outside original package; no port opened; timestamps/QoS/errors handled."
+    },
+    {
+      "time": "2026-10-16T22:26:42.797190",
+      "stage": 3,
+      "percent": 40,
+      "note": "Manufacturer six-field ASCII parser implemented; rejects corrupt/partial/nonfinite frames; Euler and DPS converted. Settings/calibration separate explicit CLI, preview default."
+    },
+    {
+      "time": "2026-10-16T22:27:27.854007",
+      "stage": 3,
+      "percent": 60,
+      "note": "Two parameterized EBIMU nodes implemented with independent ports/topics, axis rotation, covariance and no startup writes; no hardware opened."
+    },
+    {
+      "time": "2026-10-16T22:27:27.870128",
+      "stage": 3,
+      "percent": 80,
+      "note": "External Arduino adapter implemented: original Twist yaw-rate -> steering steps \u00b17, signed PWM \u00b1255, rate/range/finiteness/freshness/latched E-stop gates, preview topic and actuation disabled by default."
+    },
+    {
+      "time": "2026-10-16T22:27:55.639664",
+      "stage": 3,
+      "percent": 100,
+      "note": "IMU parser tests 3 PASS; manufacturer protocol and hardware limits documented in HARDWARE_INTERFACES.md. Stage 3 implemented; ROS/custom-message adapter tests deferred until build."
+    },
+    {
+      "time": "2026-10-16T22:27:55.653653",
+      "stage": 4,
+      "percent": 0,
+      "note": "Porting Cartographer, static/dynamic TF, real rear-axle state and aligned trailer gyro integration."
+    },
+    {
+      "time": "2026-10-16T22:29:01.225381",
+      "stage": 4,
+      "percent": 20,
+      "note": "Final B LiDAR-only Lua ported intact; optional IMU Lua separate. No default fusion change."
+    },
+    {
+      "time": "2026-10-16T22:29:16.355026",
+      "stage": 4,
+      "percent": 40,
+      "note": "Implemented SLAM scan/map/matching freshness bridge; separate detection/planning map and TF-at-scan free-ray augmentation."
+    },
+    {
+      "time": "2026-10-16T22:29:16.368434",
+      "stage": 4,
+      "percent": 60,
+      "note": "Static sensor TF and map/local_map ownership implemented; body-center SLAM pose converted to rear axle; articulated trailer body TF dynamic."
+    },
+    {
+      "time": "2026-10-16T22:29:26.781409",
+      "stage": 4,
+      "percent": 80,
+      "note": "Preserved GyroYaw with explicit supplied bias and articulated anchor; coherent timestamp pairing and freshness gates implemented; 6 parser/geometry/gyro tests PASS."
+    },
+    {
+      "time": "2026-10-16T22:29:26.794776",
+      "stage": 4,
+      "percent": 100,
+      "note": "Stage 4 ROS state/TF/map interfaces complete. Tractor IMU freshness required, trailer uses gyro-only integration; initial calibration acknowledgments default false."
+    },
+    {
+      "time": "2026-10-16T22:29:26.808895",
+      "stage": 5,
+      "percent": 0,
+      "note": "Connecting unchanged Final B AutoParking, native optimizer, steering-priority/CDE, independent algorithm entries and external adapter."
+    },
+    {
+      "time": "2026-10-16T22:30:34.667324",
+      "stage": 5,
+      "percent": 20,
+      "note": "Unchanged active OccupancyGrid U-gap detector connected in AutoParking plus independent gap_detector diagnostic node. Original observation stability and target checks retained."
+    },
+    {
+      "time": "2026-10-16T22:30:50.183261",
+      "stage": 5,
+      "percent": 40,
+      "note": "Preserved off-axle articulated model and Hybrid A* installed; YAML-to-model/footprints input factory added outside vendor; independent planner request/result implemented."
+    },
+    {
+      "time": "2026-10-16T22:30:50.199200",
+      "stage": 5,
+      "percent": 60,
+      "note": "B bootstrap applies exact active native clearance+shot+resume20, steering_priority and CDE candidate_scheduler_online. No algorithm source modified."
+    },
+    {
+      "time": "2026-10-16T22:31:00.656213",
+      "stage": 5,
+      "percent": 80,
+      "note": "Original Controller/LQR connected through unchanged AutoParking.send yaw-rate convention to new adapter; independent lqr outputs isolated topic; terminal/sensor/failure guards retained."
+    },
+    {
+      "time": "2026-10-16T22:31:00.709148",
+      "stage": 5,
+      "percent": 100,
+      "note": "Full Final B state-machine algorithm graph implemented with separate hardware inputs/output; 43 Python modules syntax checked, algorithm sources 20/20 identical. Runtime validation scheduled in Stage 6."
+    },
+    {
+      "time": "2026-10-16T22:31:00.722784",
+      "stage": 6,
+      "percent": 0,
+      "note": "Creating individual/integrated/development launch, RViz; next full colcon build and ROS hardware-free tests."
+    },
+    {
+      "time": "2026-10-16T22:32:02.449942",
+      "stage": 6,
+      "percent": 20,
+      "note": "Individual ros2 entries (LiDAR/IMUs/SLAM/state/detector/planner/LQR/adapter) provided; original sender and vision entries preserved."
+    },
+    {
+      "time": "2026-10-16T22:32:27.666505",
+      "stage": 6,
+      "percent": 40,
+      "note": "Integrated development-safe launch, optional sensor/SLAM/vision/RViz flags and RViz config implemented. Reliable scan output resolves preserved AutoParking QoS; IMU fusion is explicitly optional with documented soa1 mode."
+    },
+    {
+      "time": "2026-10-16T22:32:46.967018",
+      "stage": 6,
+      "percent": 60,
+      "note": "Full colcon build --symlink-install PASS: all 11 packages. Launch arguments discovered; checking installed B runtime/native library and custom message."
+    },
+    {
+      "time": "2026-10-16T22:32:53.625671",
+      "stage": 6,
+      "percent": 40,
+      "note": "Build succeeds for 11 packages, but installed runtime probe FAILED: symlink-install resolves native.py into source while libnative.so is installed elsewhere. Stage 6 completion corrected; fixing external bootstrap/CMake without editing preserved source. Existing system SciPy/NumPy warning also recorded."
+    },
+    {
+      "time": "2026-10-16T22:33:13.296507",
+      "stage": 6,
+      "percent": 60,
+      "note": "Native symlink runtime path resolved in new bootstrap; preserved optimizer unchanged. Installed B profile and MotionCommand introspection PASS. All 11 packages build. Tracking Path RViz added."
+    },
+    {
+      "time": "2026-10-16T22:37:53.853229",
+      "stage": 6,
+      "percent": 60,
+      "note": "17 tests PASS including native model/clearance, B forward/reverse planning, CDE scheduler, LQR, detector, two IMUs, adapter and real state. Default ROS no-hardware smoke PASS. Synthetic Cartographer integration FAIL (map exists but state invalid), investigating with trace capture; do not mark Stage 6 complete."
+    },
+    {
+      "time": "2026-10-16T22:38:27.037212",
+      "stage": 6,
+      "percent": 60,
+      "note": "Investigation: synthetic gyro/SLAM pairing missing; adding diagnostic lags. Original source unchanged. Initial colcon list had created a new log directory in original cwd; verified exact tool-owned contents, copied evidence to verification/initial_colcon_discovery.log and removed only session-created artifacts to restore initial original directory."
+    },
+    {
+      "time": "2026-10-16T22:39:46.778349",
+      "stage": 6,
+      "percent": 80,
+      "note": "18 tests PASS. Default ROS graph smoke PASS; synthetic LaserScan -> real Cartographer map/TF -> gyro state -> original SEARCH_FORWARD -> adapter preview PASS. 278 valid states, 18 maps, 278 tracking paths; stopping synthetic input produces EMERGENCY_STOP and zero preview; hardware commands 0. TF buffering bug fixed externally without relaxing original 30ms pairing."
+    },
+    {
+      "time": "2026-10-16T22:42:47.606621",
+      "stage": 6,
+      "percent": 80,
+      "note": "20 unit tests PASS. Integration functionality PASS, but expanded shutdown checks found static-only sensor_tf waits indefinitely without ROS signal wakeup. New common runner now uses bounded spin_once(.1s); rerunning affected launch/shutdown tests. No preservation changes."
+    },
+    {
+      "time": "2026-10-16T22:45:20.092445",
+      "stage": 6,
+      "percent": 100,
+      "note": "Software deliverables complete: all 11 packages build; 20 tests PASS; default/synthetic/optional-IMU config launches and shutdown PASS; independent algorithm entries PASS; forbidden actuation rejected. Source baseline174/protected103 and algorithm20 hashes identical. README/VERIFICATION/porting/architecture/hardware docs complete. Hardware, real fusion, RViz GUI and optional YOLO runtime explicitly unverified; torch missing. No pending software code edits."
+    }
+  ],
+  "stage": 6,
+  "overall": 100.0
+}

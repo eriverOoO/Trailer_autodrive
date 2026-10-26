@@ -1,0 +1,32 @@
+{
+  "outcome": "C",
+  "diagnosis_complete": true,
+  "timestamp_correction_applied": false,
+  "warning_resolved": false,
+  "direct_cropping_condition_verified": true,
+  "physical_per_ray_time_reconstruction_verified": false,
+  "before": {
+    "seconds": 64.88700532099983,
+    "overlaps": 18,
+    "maximum_overlap_ns": 918412,
+    "warnings": 13,
+    "dropped_points": 95,
+    "warnings_per_s": 0.2003482813806591,
+    "points_per_s": 1.4640835947048165
+  },
+  "unchanged_configuration_diagnostic_run": {
+    "seconds": 124.8649181970004,
+    "strict_overlaps": 34,
+    "over_1us_overlaps": 30,
+    "maximum_overlap_ns": 836203,
+    "warnings": 18,
+    "dropped_points": 85,
+    "warnings_per_s": 0.14415578258419431,
+    "points_per_s": 0.6807356399809177
+  },
+  "warning_rate_variation_percent": -28.04740744928067,
+  "dropped_points_rate_variation_percent": -53.504318848804175,
+  "note": "No behavioral change was applied. Different warning rates are not evidence of a fix.",
+  "before_hz": 11.66643453885838,
+  "current_hz": 11.66860973473173
+}

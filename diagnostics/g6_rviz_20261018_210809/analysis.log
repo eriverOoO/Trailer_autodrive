@@ -1,0 +1,170 @@
+{
+  "alignment": {
+    "method": "Last scan, nearest observed scan-start map-to-laser pose; no per-beam motion compensation. Last map snapshot. Diagnostic association, not ground truth or a calibrated mounting angle.",
+    "scan_stamp_ns": 1792325424502801000,
+    "map_stamp_ns": 1792325424308694065,
+    "scan_minus_map_stamp_s": 0.194106935,
+    "pose_receipt_time_difference_s": -0.08894370800044271,
+    "pose_yaw_deg": 0.04570639562837343,
+    "valid_points": 1028,
+    "points_inside_map": 1028,
+    "nearest_occupied_ge65_m": {
+      "min": 0.0,
+      "median": 0.0,
+      "p95": 0.05000000074505806,
+      "max": 0.05000000074505806
+    },
+    "fraction_within_0p10m_of_occupied_ge65": 1.0,
+    "fraction_within_0p20m_of_occupied_ge65": 1.0,
+    "endpoint_unknown_fraction": 0.0,
+    "map_resolution_m": 0.05000000074505806
+  },
+  "orientation": {
+    "baseline": {
+      "dynamic_edges": {
+        "map -> odom": {
+          "rpy_deg_min": [
+            0.0,
+            0.0,
+            -0.11284674082736992
+          ],
+          "rpy_deg_median": [
+            0.0,
+            0.0,
+            0.0775412057294291
+          ],
+          "rpy_deg_max": [
+            0.0,
+            0.0,
+            0.09631642480020622
+          ],
+          "rpy_deg_last": [
+            0.0,
+            0.0,
+            0.0663610531245109
+          ],
+          "xyz_last": [
+            0.02547133425862256,
+            0.002247181114371722,
+            0.0
+          ]
+        },
+        "odom -> laser_frame": {
+          "rpy_deg_min": [
+            0.0,
+            0.0,
+            -0.614380821185559
+          ],
+          "rpy_deg_median": [
+            0.0,
+            0.0,
+            0.00632232665395132
+          ],
+          "rpy_deg_max": [
+            0.0,
+            0.0,
+            0.6642614558819411
+          ],
+          "rpy_deg_last": [
+            0.0,
+            0.0,
+            -0.26294305817695407
+          ],
+          "xyz_last": [
+            -0.026502794895686955,
+            -0.006375534524039927,
+            0.0
+          ]
+        }
+      },
+      "map_to_laser_yaw_deg": {
+        "min": -0.6058922381959351,
+        "median": 0.01526091446432518,
+        "mean": 0.022973839308733472,
+        "max": 0.548922128597574
+      },
+      "camera_angle_deg": -90,
+      "laser_x_screen_deviation_from_up_deg": {
+        "min": -0.6058922381959351,
+        "median": 0.01526091446432518,
+        "mean": 0.022973839308733472,
+        "max": 0.548922128597574
+      },
+      "physical_cable_offset_deg": null,
+      "physical_left_right_verified": false
+    },
+    "late_observation": {
+      "dynamic_edges": {
+        "map -> odom": {
+          "rpy_deg_min": [
+            0.0,
+            0.0,
+            -0.0448477211969057
+          ],
+          "rpy_deg_median": [
+            0.0,
+            0.0,
+            0.03110231896142338
+          ],
+          "rpy_deg_max": [
+            0.0,
+            0.0,
+            0.03110231896142338
+          ],
+          "rpy_deg_last": [
+            0.0,
+            0.0,
+            0.03110231896142338
+          ],
+          "xyz_last": [
+            0.1043324789828525,
+            0.009836416815843043,
+            0.0
+          ]
+        },
+        "odom -> laser_frame": {
+          "rpy_deg_min": [
+            0.0,
+            0.0,
+            -7.254759805651245
+          ],
+          "rpy_deg_median": [
+            0.0,
+            0.0,
+            -6.65675166376702
+          ],
+          "rpy_deg_max": [
+            0.0,
+            0.0,
+            -6.07307265795594
+          ],
+          "rpy_deg_last": [
+            0.0,
+            0.0,
+            -6.895786750080895
+          ],
+          "xyz_last": [
+            -0.03997767191780773,
+            -0.015166217309882466,
+            0.0
+          ]
+        }
+      },
+      "map_to_laser_yaw_deg": {
+        "min": -7.384404671817512,
+        "median": -6.641613463912168,
+        "mean": -6.6446793075896595,
+        "max": -6.122934167311013
+      },
+      "camera_angle_deg": -90,
+      "laser_x_screen_deviation_from_up_deg": {
+        "min": -7.384404671817512,
+        "median": -6.641613463912168,
+        "mean": -6.6446793075896595,
+        "max": -6.122934167311013
+      },
+      "physical_cable_offset_deg": null,
+      "physical_left_right_verified": false
+    }
+  }
+}

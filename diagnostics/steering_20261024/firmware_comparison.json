@@ -1,0 +1,23 @@
+{
+  "flash_size": 261406,
+  "program_size": 3956,
+  "compiled_256_program_matches_flash": true,
+  "flash_sha256": "13ad349309a1daf7ff93cdf5532af5170a7cb17292ba754fba147517a447c40f",
+  "program_sha256": "01bf7fbd176c59667cae8a4011421bf516c062412cc9bcb3127d2db5bd233106",
+  "fixed_source_steering_pwm": 128,
+  "fixed_build_passed": true,
+  "fixed_firmware_uploaded": false,
+  "preserved_hardware_configuration": {
+    "steering_pins": [
+      2,
+      3
+    ],
+    "pot": "A5",
+    "pot_left": 330,
+    "pot_right": 404,
+    "left_motor_pins": [
+      7,
+      6
+    ]
+  }
+}

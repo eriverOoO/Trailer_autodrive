@@ -1,0 +1,631 @@
+{
+  "source": "LIVE_HARDWARE_ONLY; observer publishes no scans or commands",
+  "test_scope": "stationary sensor-origin SLAM; no vehicle motion",
+  "requested_duration_s": 45.0,
+  "scan_pass": true,
+  "slam_pass": true,
+  "scan_count": 436,
+  "continuous_scan_span_s": 44.95606576099999,
+  "measured_scan_hz": 9.676113615292566,
+  "receipt_gap_s": {
+    "min": 0.09912190600016402,
+    "median": 0.10338611199995285,
+    "p95": 0.10451018499998099,
+    "max": 0.10722066499988614
+  },
+  "stamp_gap_s": {
+    "min": 0.101156,
+    "median": 0.103361,
+    "p95": 0.104266,
+    "max": 0.105098
+  },
+  "timestamp_age_s": {
+    "min": 0.101873817,
+    "median": 0.1040178265,
+    "p95": 0.105179198,
+    "max": 0.107801578
+  },
+  "valid_beams": {
+    "min": 835,
+    "median": 902.0,
+    "p95": 956,
+    "max": 1085
+  },
+  "beam_count": {
+    "min": 1853,
+    "median": 1859.0,
+    "p95": 1863,
+    "max": 1867
+  },
+  "first_scan": {
+    "wall": 1437.746175331,
+    "stamp_ns": 1792236618718637000,
+    "frame": "laser_frame",
+    "age_s": 0.1056529,
+    "beams": 1857,
+    "valid": 876,
+    "valid_min_m": 0.4544999897480011,
+    "valid_max_m": 9.599499702453613,
+    "angle_min": -3.1415927410125732,
+    "angle_max": 3.1415927410125732,
+    "angle_increment": 0.003385336836799979,
+    "scan_time": 0.10398600250482559,
+    "time_increment": 5.5996770242927596e-05,
+    "range_min": 0.2800000011920929,
+    "range_max": 16.0,
+    "angle_count_error_beams": 9.243522879885579e-05
+  },
+  "last_scan": {
+    "wall": 1482.702241092,
+    "stamp_ns": 1792236663676805000,
+    "frame": "laser_frame",
+    "age_s": 0.103552333,
+    "beams": 1857,
+    "valid": 945,
+    "valid_min_m": 0.40149998664855957,
+    "valid_max_m": 10.869999885559082,
+    "angle_min": -3.1415927410125732,
+    "angle_max": 3.1415927410125732,
+    "angle_increment": 0.003385336836799979,
+    "scan_time": 0.10296700149774551,
+    "time_increment": 5.544803570955992e-05,
+    "range_min": 0.2800000011920929,
+    "range_max": 16.0,
+    "angle_count_error_beams": 9.243522879885579e-05
+  },
+  "map_count": 46,
+  "distinct_map_contents": 46,
+  "maps": [
+    {
+      "stamp_ns": 1792236618251906758,
+      "frame": "map",
+      "width": 199,
+      "height": 353,
+      "resolution": 0.05000000074505806,
+      "occupied": 489,
+      "known": 15362,
+      "sha256": "a03e2cd42cb4e5e9e9c119f1e872913ccdd6d521a0d0627daca65b7691e697b6"
+    },
+    {
+      "stamp_ns": 1792236619151894320,
+      "frame": "map",
+      "width": 199,
+      "height": 353,
+      "resolution": 0.05000000074505806,
+      "occupied": 505,
+      "known": 15518,
+      "sha256": "ba132cd85154b0c3ab2e5cdd78ca55008ef031f3e241bc5d67c40a8d4258dec6"
+    },
+    {
+      "stamp_ns": 1792236620051890870,
+      "frame": "map",
+      "width": 201,
+      "height": 353,
+      "resolution": 0.05000000074505806,
+      "occupied": 529,
+      "known": 15640,
+      "sha256": "0ad20b635c3e25c82df226d2da6f7349b07d52640872b7b555d272e9920d395a"
+    },
+    {
+      "stamp_ns": 1792236621251988980,
+      "frame": "map",
+      "width": 201,
+      "height": 353,
+      "resolution": 0.05000000074505806,
+      "occupied": 545,
+      "known": 15733,
+      "sha256": "03b3ea918b0176e05cc311342341340ff4e2b934e7c10ca9b8e3264b6e7b1186"
+    },
+    {
+      "stamp_ns": 1792236622151886262,
+      "frame": "map",
+      "width": 201,
+      "height": 353,
+      "resolution": 0.05000000074505806,
+      "occupied": 597,
+      "known": 16446,
+      "sha256": "bed9105453403dfda44fc9ea5036dd265069c85213610b6ac7773da575addbc4"
+    },
+    {
+      "stamp_ns": 1792236623051891896,
+      "frame": "map",
+      "width": 201,
+      "height": 353,
+      "resolution": 0.05000000074505806,
+      "occupied": 626,
+      "known": 16720,
+      "sha256": "9aca3064675d2baeb7044a1662fb296983c88ec849077949eb33a0b5995e0b77"
+    },
+    {
+      "stamp_ns": 1792236624252065543,
+      "frame": "map",
+      "width": 202,
+      "height": 354,
+      "resolution": 0.05000000074505806,
+      "occupied": 653,
+      "known": 16932,
+      "sha256": "519f0d0dc70b5dd3d7fc3cd1eb08360aea21d6d0643c200e46523ea27cff1c51"
+    },
+    {
+      "stamp_ns": 1792236625151892290,
+      "frame": "map",
+      "width": 202,
+      "height": 354,
+      "resolution": 0.05000000074505806,
+      "occupied": 667,
+      "known": 17013,
+      "sha256": "fcbc22091c3d67ae0acd5404c0ee3686d6168a8826b8b2719ee78f6c751086ce"
+    },
+    {
+      "stamp_ns": 1792236626051890031,
+      "frame": "map",
+      "width": 202,
+      "height": 354,
+      "resolution": 0.05000000074505806,
+      "occupied": 672,
+      "known": 17036,
+      "sha256": "ee2e966f783547be2861ec3902604c9751f82bdfaf5b1566722a988ba0a442e6"
+    },
+    {
+      "stamp_ns": 1792236627251895667,
+      "frame": "map",
+      "width": 202,
+      "height": 354,
+      "resolution": 0.05000000074505806,
+      "occupied": 679,
+      "known": 17063,
+      "sha256": "eaef12f241a6c6c3881846cf62a8c4061384c32c5cea39235e0abd46d81606a3"
+    },
+    {
+      "stamp_ns": 1792236628151915976,
+      "frame": "map",
+      "width": 202,
+      "height": 354,
+      "resolution": 0.05000000074505806,
+      "occupied": 677,
+      "known": 17063,
+      "sha256": "588d15db3128c2fee9bef70a41a8c38c7a7335fdaaa5984420ac84e176d2cf9e"
+    },
+    {
+      "stamp_ns": 1792236629051899795,
+      "frame": "map",
+      "width": 202,
+      "height": 354,
+      "resolution": 0.05000000074505806,
+      "occupied": 682,
+      "known": 17089,
+      "sha256": "a2e49a142e0d8d9e90230973ffd96db218c49703e7cfb4cef404d1304d301f3c"
+    },
+    {
+      "stamp_ns": 1792236630251886318,
+      "frame": "map",
+      "width": 202,
+      "height": 354,
+      "resolution": 0.05000000074505806,
+      "occupied": 699,
+      "known": 17354,
+      "sha256": "bcefd1265a1c1ea4bd2bdc2c851b185fc92cb48f1d6dcedbd39c9f7936fc6dab"
+    },
+    {
+      "stamp_ns": 1792236631151989692,
+      "frame": "map",
+      "width": 202,
+      "height": 354,
+      "resolution": 0.05000000074505806,
+      "occupied": 708,
+      "known": 17396,
+      "sha256": "156651676ef02f462702c2d8cb9370e9c7cb9e46954ed9a30f44bfb136fd52b2"
+    },
+    {
+      "stamp_ns": 1792236632051972985,
+      "frame": "map",
+      "width": 202,
+      "height": 354,
+      "resolution": 0.05000000074505806,
+      "occupied": 711,
+      "known": 17400,
+      "sha256": "32ce2899b78595339c06e94dd85f98ab078d27524fe5608521601bf9df0fe01c"
+    },
+    {
+      "stamp_ns": 1792236633251889889,
+      "frame": "map",
+      "width": 202,
+      "height": 354,
+      "resolution": 0.05000000074505806,
+      "occupied": 1147,
+      "known": 17907,
+      "sha256": "92bd0344f9daf5f267187c0217e9aaa9db7ce1ce370eddef40ee5c7176bfc5dc"
+    },
+    {
+      "stamp_ns": 1792236634151901582,
+      "frame": "map",
+      "width": 202,
+      "height": 354,
+      "resolution": 0.05000000074505806,
+      "occupied": 1417,
+      "known": 18315,
+      "sha256": "db3738b965d8045a5e70cc9727ffced19f63876e05323de4013db9d6ca76c086"
+    },
+    {
+      "stamp_ns": 1792236635053107786,
+      "frame": "map",
+      "width": 202,
+      "height": 355,
+      "resolution": 0.05000000074505806,
+      "occupied": 1458,
+      "known": 18526,
+      "sha256": "5e808060d3ad1f32a4650f86c080bf2d1c4a4f0063e267559d0ffd05e220d430"
+    },
+    {
+      "stamp_ns": 1792236636251889167,
+      "frame": "map",
+      "width": 202,
+      "height": 355,
+      "resolution": 0.05000000074505806,
+      "occupied": 1588,
+      "known": 18859,
+      "sha256": "9c29d9d7d0eb825cd3d5add12254fc2042068b264b40586993337a6aaf9f93b6"
+    },
+    {
+      "stamp_ns": 1792236637151982696,
+      "frame": "map",
+      "width": 202,
+      "height": 355,
+      "resolution": 0.05000000074505806,
+      "occupied": 1615,
+      "known": 18907,
+      "sha256": "dc7497037ecc24e5b2b5648d7b9cd5a149423f6ae6df0e2dee31bd459a33a674"
+    },
+    {
+      "stamp_ns": 1792236638053500509,
+      "frame": "map",
+      "width": 202,
+      "height": 355,
+      "resolution": 0.05000000074505806,
+      "occupied": 1646,
+      "known": 18957,
+      "sha256": "2bcdc5cf8b2f4b275b80492fc8ce87ba36308c3d9e24ce46e5c63e8fc7f95e6d"
+    },
+    {
+      "stamp_ns": 1792236639252028376,
+      "frame": "map",
+      "width": 202,
+      "height": 355,
+      "resolution": 0.05000000074505806,
+      "occupied": 1617,
+      "known": 18997,
+      "sha256": "f5df44d335224e55620a68dd4f727ae25afdbd8581c8413f75f5a3e395c06102"
+    },
+    {
+      "stamp_ns": 1792236640152002332,
+      "frame": "map",
+      "width": 202,
+      "height": 355,
+      "resolution": 0.05000000074505806,
+      "occupied": 1605,
+      "known": 19000,
+      "sha256": "defc6feae09c62b3274ee07fce82051de659dc3fe2556f63584cfd350bcee1ca"
+    },
+    {
+      "stamp_ns": 1792236641052351617,
+      "frame": "map",
+      "width": 202,
+      "height": 355,
+      "resolution": 0.05000000074505806,
+      "occupied": 1605,
+      "known": 19001,
+      "sha256": "7fdb05c6ff6f5bcbb56f343c1753a2169b303ee49e28c6d885e7aea57f75df10"
+    },
+    {
+      "stamp_ns": 1792236642252027486,
+      "frame": "map",
+      "width": 202,
+      "height": 355,
+      "resolution": 0.05000000074505806,
+      "occupied": 1708,
+      "known": 19162,
+      "sha256": "882952afce1ebdc10fb8e07c5c3daab6e167cfcf010dc8e4e8cad57a0eee4d3a"
+    },
+    {
+      "stamp_ns": 1792236643151995112,
+      "frame": "map",
+      "width": 202,
+      "height": 355,
+      "resolution": 0.05000000074505806,
+      "occupied": 1747,
+      "known": 19314,
+      "sha256": "c8ba5acfe852f9d54fba7fb939a843b0a72cae8e8297903f95f5e1481c36946f"
+    },
+    {
+      "stamp_ns": 1792236644051886317,
+      "frame": "map",
+      "width": 202,
+      "height": 355,
+      "resolution": 0.05000000074505806,
+      "occupied": 1749,
+      "known": 19340,
+      "sha256": "edb1c36efdec128616ecc4e705af5a626a9873045f2e8641cb94265e2be55c13"
+    },
+    {
+      "stamp_ns": 1792236645251903206,
+      "frame": "map",
+      "width": 202,
+      "height": 355,
+      "resolution": 0.05000000074505806,
+      "occupied": 1746,
+      "known": 19347,
+      "sha256": "e51a835b2a3c2053f4638288b35209c492be642fa1d35f474e08fffa85fd6840"
+    },
+    {
+      "stamp_ns": 1792236646151901141,
+      "frame": "map",
+      "width": 202,
+      "height": 355,
+      "resolution": 0.05000000074505806,
+      "occupied": 1753,
+      "known": 19373,
+      "sha256": "56486c1d59ab99a4f5969387898f00cde2100680e17c6236a0472b86aa181400"
+    },
+    {
+      "stamp_ns": 1792236647052017719,
+      "frame": "map",
+      "width": 202,
+      "height": 355,
+      "resolution": 0.05000000074505806,
+      "occupied": 1805,
+      "known": 19459,
+      "sha256": "d4face0466633948581663aec4232179ec11833f14e1db7a8f66bec04b81b034"
+    },
+    {
+      "stamp_ns": 1792236648251908245,
+      "frame": "map",
+      "width": 202,
+      "height": 355,
+      "resolution": 0.05000000074505806,
+      "occupied": 1820,
+      "known": 19500,
+      "sha256": "a9547d12a8378e0eade0d2904aa96b285054952f0721d3bc1a62ab502e938296"
+    },
+    {
+      "stamp_ns": 1792236649151902141,
+      "frame": "map",
+      "width": 203,
+      "height": 355,
+      "resolution": 0.05000000074505806,
+      "occupied": 1767,
+      "known": 19881,
+      "sha256": "ed229a6bbf54538d073693137eef73725911c2033c8b6da23ca563292f910ccd"
+    },
+    {
+      "stamp_ns": 1792236650051972874,
+      "frame": "map",
+      "width": 203,
+      "height": 355,
+      "resolution": 0.05000000074505806,
+      "occupied": 1766,
+      "known": 19898,
+      "sha256": "48f9a8bcded3b3bf2b99bba638217a1c0e48e790ebb30f0404cbdb7caf3b0732"
+    },
+    {
+      "stamp_ns": 1792236651251904896,
+      "frame": "map",
+      "width": 203,
+      "height": 355,
+      "resolution": 0.05000000074505806,
+      "occupied": 1756,
+      "known": 19906,
+      "sha256": "c59ac435bc474c81cbb47dc49258551a2af603a58b322eddf3776820ede46599"
+    },
+    {
+      "stamp_ns": 1792236652151904745,
+      "frame": "map",
+      "width": 203,
+      "height": 355,
+      "resolution": 0.05000000074505806,
+      "occupied": 1799,
+      "known": 19988,
+      "sha256": "9c82ae71a40832f00d4af7f8e0105ca3314a7f6f656885708275a17ccfd1ea72"
+    },
+    {
+      "stamp_ns": 1792236653052022737,
+      "frame": "map",
+      "width": 203,
+      "height": 355,
+      "resolution": 0.05000000074505806,
+      "occupied": 1788,
+      "known": 20011,
+      "sha256": "697ced95e4b94f3bc9eab4da609344bdd5d81a5e22963c6d45476ba85836c640"
+    },
+    {
+      "stamp_ns": 1792236654251922165,
+      "frame": "map",
+      "width": 203,
+      "height": 355,
+      "resolution": 0.05000000074505806,
+      "occupied": 1968,
+      "known": 20287,
+      "sha256": "12f623f8438a86061447d1806cb5f9dea9848c6ff85ce2201482f41cabca5560"
+    },
+    {
+      "stamp_ns": 1792236655151921943,
+      "frame": "map",
+      "width": 203,
+      "height": 355,
+      "resolution": 0.05000000074505806,
+      "occupied": 1970,
+      "known": 20288,
+      "sha256": "d3fd53bbc779b4ecf17580ca688d285ab5b802a261e1d6b05078afcadbcff631"
+    },
+    {
+      "stamp_ns": 1792236656052031182,
+      "frame": "map",
+      "width": 203,
+      "height": 355,
+      "resolution": 0.05000000074505806,
+      "occupied": 1959,
+      "known": 20306,
+      "sha256": "d0aebc28f1b2a5dc113864c4e3d6a2263ce1dc2cedcaa259b73442e371f1b671"
+    },
+    {
+      "stamp_ns": 1792236657251920101,
+      "frame": "map",
+      "width": 203,
+      "height": 355,
+      "resolution": 0.05000000074505806,
+      "occupied": 1957,
+      "known": 20321,
+      "sha256": "42dbbdd9f6023c7e74d08455e533be052575447ddf3717ee8cbd50c7b8f15317"
+    },
+    {
+      "stamp_ns": 1792236658151922782,
+      "frame": "map",
+      "width": 203,
+      "height": 355,
+      "resolution": 0.05000000074505806,
+      "occupied": 1954,
+      "known": 20365,
+      "sha256": "418b07646ad6973249dcefe28db9f34f57af4138f3c1dbcebf64bfe562ad17b1"
+    },
+    {
+      "stamp_ns": 1792236659052006966,
+      "frame": "map",
+      "width": 203,
+      "height": 355,
+      "resolution": 0.05000000074505806,
+      "occupied": 1945,
+      "known": 20366,
+      "sha256": "b26cacc013315875c70bb22bdef439529e736ba804e73f21568d8bfe2cf6d061"
+    },
+    {
+      "stamp_ns": 1792236660251927396,
+      "frame": "map",
+      "width": 204,
+      "height": 355,
+      "resolution": 0.05000000074505806,
+      "occupied": 1945,
+      "known": 20394,
+      "sha256": "9e0c97291257a9e103f747b9bd5d35d9b6cc273ea2259c7ece677791c93a259b"
+    },
+    {
+      "stamp_ns": 1792236661152082704,
+      "frame": "map",
+      "width": 204,
+      "height": 355,
+      "resolution": 0.05000000074505806,
+      "occupied": 1915,
+      "known": 20397,
+      "sha256": "23074cf20ca298f44f32a6227278ac666dbf174c007aff06dba1132ae0829ece"
+    },
+    {
+      "stamp_ns": 1792236662051932030,
+      "frame": "map",
+      "width": 204,
+      "height": 355,
+      "resolution": 0.05000000074505806,
+      "occupied": 1914,
+      "known": 20419,
+      "sha256": "e487ef1a9e5a78bed739f0d7f21e0b809c2d88e1e25169bc180be1eeb452c858"
+    },
+    {
+      "stamp_ns": 1792236663251967432,
+      "frame": "map",
+      "width": 204,
+      "height": 355,
+      "resolution": 0.05000000074505806,
+      "occupied": 1810,
+      "known": 20297,
+      "sha256": "bbd89d6c76517cab33538e0be8f510393bc727569f4b3077db1bcd24c8cdec9a"
+    }
+  ],
+  "matched_cloud_count": 436,
+  "last_matched_cloud": {
+    "stamp_ns": 1792236663779716500,
+    "points": 502,
+    "frame": "map"
+  },
+  "dynamic_tf_edges": {
+    "map -> odom": 8997,
+    "odom -> laser_frame": 8997
+  },
+  "static_tf_parents": {},
+  "scan_time_tf_lookup_successes": 449,
+  "tf_lookup_failures": {
+    "Lookup would require extrapolation into the past.  Requested time 1792236618.718637 but the earliest data is at time 1792236618.811912, when looking up transform from frame [laser_frame] to frame [map]": 1
+  },
+  "latest_map_to_laser_pose": {
+    "stamp_ns": 1792236663807111300,
+    "xyz": [
+      -0.0014808328245094282,
+      -0.006895722686499985,
+      0.0
+    ],
+    "xyzw": [
+      0.0,
+      0.0,
+      -0.0019846208628201286,
+      0.9999980306380762
+    ]
+  },
+  "publishers": {
+    "/scan": [
+      {
+        "name": "ydlidar_ros2_driver_node",
+        "namespace": "/",
+        "type": "sensor_msgs/msg/LaserScan",
+        "reliability": "ReliabilityPolicy.BEST_EFFORT"
+      }
+    ],
+    "/map": [
+      {
+        "name": "cartographer_occupancy_grid_node",
+        "namespace": "/",
+        "type": "nav_msgs/msg/OccupancyGrid",
+        "reliability": "ReliabilityPolicy.RELIABLE"
+      }
+    ],
+    "/tf": [
+      {
+        "name": "cartographer_node",
+        "namespace": "/",
+        "type": "tf2_msgs/msg/TFMessage",
+        "reliability": "ReliabilityPolicy.RELIABLE"
+      }
+    ],
+    "/tf_static": [],
+    "/scan_matched_points2": [
+      {
+        "name": "cartographer_node",
+        "namespace": "/",
+        "type": "sensor_msgs/msg/PointCloud2",
+        "reliability": "ReliabilityPolicy.RELIABLE"
+      }
+    ]
+  },
+  "scan_subscribers": [
+    {
+      "name": "g6_real_data_probe",
+      "type": "sensor_msgs/msg/LaserScan"
+    },
+    {
+      "name": "cartographer_node",
+      "type": "sensor_msgs/msg/LaserScan"
+    },
+    {
+      "name": "g6_rviz",
+      "type": "sensor_msgs/msg/LaserScan"
+    }
+  ],
+  "nodes": [
+    "g6_real_data_probe",
+    "_ros2cli_daemon_232_fc7786c78c3d426cb7bb6861950a3746",
+    "ydlidar_ros2_driver_node",
+    "cartographer_node",
+    "transform_listener_impl_616cd63bd4a0",
+    "cartographer_occupancy_grid_node",
+    "g6_rviz",
+    "transform_listener_impl_576bcd75a2c0"
+  ],
+  "vehicle_extrinsics_verified": false,
+  "moving_slam_verified": false,
+  "physical_direction_verified": false
+}

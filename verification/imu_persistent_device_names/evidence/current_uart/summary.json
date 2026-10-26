@@ -1,0 +1,38 @@
+{
+  "at": "2026-10-19T21:34:09.453031+09:00",
+  "port": "/dev/serial/by-id/usb-Silicon_Labs_CP2102_USB_to_UART_Bridge_Controller_0001-if00-port0",
+  "baud": 115200,
+  "opened": true,
+  "rx_bytes": 37481,
+  "tx_bytes": 0,
+  "duration_s": 5.0009868039996945,
+  "bytes_per_second": 7494.720835900508,
+  "per_second_bytes": {
+    "0": 7481,
+    "1": 7500,
+    "2": 7500,
+    "3": 7500,
+    "4": 7500,
+    "5": 0
+  },
+  "packets": 499,
+  "rejected": 0,
+  "discarded": 56,
+  "packet_lengths": {
+    "75": 499
+  },
+  "packet_rate_hz": 99.99485996300015,
+  "checksum": "ASCII: not defined by manufacturer; not applicable",
+  "layout": {
+    "port": "/dev/serial/by-id/usb-Silicon_Labs_CP2102_USB_to_UART_Bridge_Controller_0001-if00-port0",
+    "confirmed_imu_port": true,
+    "baud": 115200,
+    "orientation": "quaternion",
+    "gyro": true,
+    "accel": true,
+    "timestamp": true,
+    "seconds": 5.0,
+    "output": "verification/imu_persistent_device_names/evidence/current_uart"
+  },
+  "error": null
+}

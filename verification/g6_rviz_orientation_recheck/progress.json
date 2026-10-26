@@ -1,0 +1,17 @@
+{
+  "progress_percent": 55,
+  "current_run": "verification/g6_rviz_orientation_recheck/run_20261019_113319",
+  "completed": [
+    "User confirmed sensor fixation",
+    "Fresh trajectory 0 without loading saved state",
+    "70 second baseline; 64.92 second steady span",
+    "Scan-only / Map-only / combined runtime screenshots"
+  ],
+  "current": "Awaiting 30 cm cable-forward target placement confirmation",
+  "next": "Record raw scan with user-confirmed target, then removal phase",
+  "physical_cable_offset_verified": false,
+  "range_m": [
+    0.15,
+    1.0
+  ]
+}

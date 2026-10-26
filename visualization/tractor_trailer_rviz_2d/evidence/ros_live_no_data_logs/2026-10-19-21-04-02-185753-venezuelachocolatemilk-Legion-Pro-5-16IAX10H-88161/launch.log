@@ -1,0 +1,9 @@
+1792411442.1861672 [INFO] [launch]: All log files can be found below /home/venezuelachocolatemilk/mvsim_slam_real/visualization/tractor_trailer_rviz_2d/evidence/ros_live_no_data_logs/2026-10-19-21-04-02-185753-venezuelachocolatemilk-Legion-Pro-5-16IAX10H-88161
+1792411442.1862259 [INFO] [launch]: Default logging verbosity is set to INFO
+1792411442.2061543 [INFO] [tt2d_visualizer-1]: process started with pid [88162]
+1792411442.2062180 [INFO] [rviz2-2]: process started with pid [88164]
+1792411446.1392963 [WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+1792411446.1401291 [INFO] [rviz2-2]: sending signal 'SIGINT' to process[rviz2-2]
+1792411446.1402869 [INFO] [tt2d_visualizer-1]: sending signal 'SIGINT' to process[tt2d_visualizer-1]
+1792411446.2705061 [INFO] [tt2d_visualizer-1]: process has finished cleanly [pid 88162]
+1792411446.3881252 [INFO] [rviz2-2]: process has finished cleanly [pid 88164]

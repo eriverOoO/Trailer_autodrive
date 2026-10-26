@@ -1,0 +1,30 @@
+{
+  "kind": "SYNTHETIC SOFTWARE TEST ONLY; no hardware validation",
+  "checks": {
+    "tractor_only": true,
+    "trailer_only": true,
+    "different_rotations": true,
+    "same_angle_zero_articulation": true,
+    "separate_stale": true,
+    "separate_invalid": true,
+    "alignment_lost_after_gap": true,
+    "slam_yaw_does_not_rotate_bodies": true,
+    "hitch_position_invariant": true,
+    "test_label": true,
+    "all_five_original_mesh_resources": true,
+    "no_real_sensor_or_control_topics": true
+  },
+  "rows": 612,
+  "valid_rows": 492,
+  "resources": [
+    "file:///home/venezuelachocolatemilk/mvsim_slam_real/visualization/tractor_trailer_rviz/install/tractor_trailer_rviz/share/tractor_trailer_rviz/models/tractor-trailer-kidbi/tractor_body.fbx",
+    "file:///home/venezuelachocolatemilk/mvsim_slam_real/visualization/tractor_trailer_rviz/install/tractor_trailer_rviz/share/tractor_trailer_rviz/models/tractor-trailer-kidbi/tractor_front_wheel.fbx",
+    "file:///home/venezuelachocolatemilk/mvsim_slam_real/visualization/tractor_trailer_rviz/install/tractor_trailer_rviz/share/tractor_trailer_rviz/models/tractor-trailer-kidbi/tractor_rear_wheel.fbx",
+    "file:///home/venezuelachocolatemilk/mvsim_slam_real/visualization/tractor_trailer_rviz/install/tractor_trailer_rviz/share/tractor_trailer_rviz/models/tractor-trailer-kidbi/trailer_body.fbx",
+    "file:///home/venezuelachocolatemilk/mvsim_slam_real/visualization/tractor_trailer_rviz/install/tractor_trailer_rviz/share/tractor_trailer_rviz/models/tractor-trailer-kidbi/trailer_wheel.fbx"
+  ],
+  "screenshots": [
+    "A_TRACTOR_ONLY",
+    "B_TRAILER_ONLY"
+  ]
+}

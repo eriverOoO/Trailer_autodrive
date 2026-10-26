@@ -1,0 +1,13 @@
+1792482174.2549701 [INFO] [launch]: All log files can be found below /home/venezuelachocolatemilk/mvsim_slam_real/verification/imu_yaw_g6_range_20261020_164031/ros_logs/2026-10-20-16-42-54-254363-venezuelachocolatemilk-Legion-Pro-5-16IAX10H-59361
+1792482174.2550528 [INFO] [launch]: Default logging verbosity is set to INFO
+1792482174.3194408 [INFO] [launch.user]: Sensor-origin SLAM: map -> odom -> laser_frame; vehicle pose is unmeasured
+1792482174.3229568 [INFO] [ydlidar_ros2_driver_node-1]: process started with pid [59368]
+1792482174.3230379 [INFO] [cartographer_node-2]: process started with pid [59370]
+1792482174.3230753 [INFO] [cartographer_occupancy_grid_node-3]: process started with pid [59372]
+1792483677.4048550 [WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+1792483677.5161970 [INFO] [cartographer_occupancy_grid_node-3]: process has finished cleanly [pid 59372]
+1792483677.5164385 [INFO] [launch]: process[cartographer_occupancy_grid_node-3] was required: shutting down launched system
+1792483678.4606729 [INFO] [cartographer_node-2]: process has finished cleanly [pid 59370]
+1792483678.4609058 [INFO] [launch]: process[cartographer_node-2] was required: shutting down launched system
+1792483678.5976794 [INFO] [ydlidar_ros2_driver_node-1]: process has finished cleanly [pid 59368]
+1792483678.5978847 [INFO] [launch]: process[ydlidar_ros2_driver_node-1] was required: shutting down launched system

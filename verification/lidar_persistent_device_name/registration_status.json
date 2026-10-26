@@ -1,0 +1,9 @@
+{
+  "checked_at": "2026-10-24T15:27:12.029805+09:00",
+  "alias": "/dev/lidar_g6",
+  "target": "/dev/ttyUSB0",
+  "rule_matches": true,
+  "read_write_access": true,
+  "reconnect_tested": false,
+  "scope": "Dedicated physical USB socket, not unique device identity"
+}

@@ -1,0 +1,3 @@
+#!/usr/bin/python3
+from real_parking.nodes import auto_parking_main
+auto_parking_main()

@@ -1,0 +1,79 @@
+{
+  "summary": {
+    "at": "2026-10-20T15:53:10.388920+09:00",
+    "elapsed_s": 11.005805,
+    "event": "summary",
+    "status": "RX_OBSERVED",
+    "rx_bytes": 79198,
+    "tx_bytes": 0,
+    "exit_code": 0
+  },
+  "accepted": 1100,
+  "rejected": 0,
+  "discarded_bytes": 0,
+  "trailing_partial_bytes": 0,
+  "host_hz": 99.99988171078597,
+  "sensor_hz": 100.0,
+  "sensor_timestamp_nonincreasing": 0,
+  "first": {
+    "host_elapsed_s": 0.013099,
+    "host_iso": "2026-10-20T15:52:59.396213+09:00",
+    "q": [
+      0.07710289642470733,
+      0.18770705134782834,
+      0.01060039821143836,
+      0.9791367819640847
+    ],
+    "gyro": [
+      -0.0033161255787892262,
+      -0.002617993877991494,
+      -0.0033161255787892262
+    ],
+    "accel": [
+      3.5598139499999997,
+      1.5298374,
+      8.99269805
+    ],
+    "sensor_ms": 32852.0,
+    "raw_norm": 0.9999624342944088,
+    "rpy_deg": [
+      9.585461745038788,
+      21.4658813173133,
+      3.0615469541717575
+    ]
+  },
+  "last": {
+    "host_elapsed_s": 11.003112,
+    "host_iso": "2026-10-20T15:53:10.386218+09:00",
+    "q": [
+      0.07699730937603497,
+      0.18759344466161246,
+      0.010699626108098366,
+      0.9791657836495251
+    ],
+    "gyro": [
+      -0.0022689280275926286,
+      -0.003665191429188092,
+      -0.0022689280275926286
+    ],
+    "accel": [
+      3.5500073,
+      1.5200307499999999,
+      8.97308475
+    ],
+    "sensor_ms": 43842.0,
+    "raw_norm": 1.0000349443894447,
+    "rpy_deg": [
+      9.574087722232559,
+      21.45205209562618,
+      3.0697515485108435
+    ]
+  },
+  "yaw_initial_deg": 3.0615469541717575,
+  "yaw_min_deg": 2.999736291027932,
+  "yaw_max_deg": 3.153403656776838,
+  "yaw_delta_last_deg": 0.008204594339207283,
+  "unique_yaw_values": 59,
+  "reference": "First received sample is an analysis-only delta reference in native sensor coordinates. Map/body alignment not performed.",
+  "format": "qz,qy,qx,qw,gx,gy,gz,ax,ay,az,timestamp_ms"
+}

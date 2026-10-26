@@ -1,0 +1,31 @@
+[INFO] [launch]: All log files can be found below /home/venezuelachocolatemilk/mvsim_slam_real/visualization/tractor_trailer_rviz/evidence/ros_test_logs/2026-10-19-20-49-10-797446-venezuelachocolatemilk-Legion-Pro-5-16IAX10H-76166
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [tt_visualizer-1]: process started with pid [76169]
+[INFO] [tt_test_source-2]: process started with pid [76171]
+[INFO] [rviz2-3]: process started with pid [76173]
+[tt_visualizer-1] [INFO] [1792410551.085166069] [tractor_trailer_visualizer]: both IMUs must be LIVE
+[tt_visualizer-1] [INFO] [1792410551.126142096] [tractor_trailer_visualizer]: NOT ALIGNED: confirm stationary straight alignment
+[rviz2-3] [INFO] [1792410551.182726584] [rviz2]: Stereo is NOT SUPPORTED
+[rviz2-3] [INFO] [1792410551.182791135] [rviz2]: OpenGl version: 4.6 (GLSL 4.6)
+[rviz2-3] [INFO] [1792410551.194035245] [rviz2]: Stereo is NOT SUPPORTED
+[rviz2-3] [INFO] [1792410551.279154555] [rviz2]: Trying to create a map of size 120 x 120 using 1 swatches
+[tt_visualizer-1] [INFO] [1792410552.027045142] [tractor_trailer_visualizer]: Straight alignment accepted at 1792410552025206000; later body yaw increments come ONLY from each IMU
+[tt_visualizer-1] [INFO] [1792410552.074132188] [tractor_trailer_visualizer]: TEST/SIMULATED
+[tt_visualizer-1] [INFO] [1792410569.073893361] [tractor_trailer_visualizer]: IMU latest timestamps exceed pair skew limit
+[tt_visualizer-1] [INFO] [1792410569.524084025] [tractor_trailer_visualizer]: both IMUs must be LIVE
+[tt_visualizer-1] [INFO] [1792410571.074187791] [tractor_trailer_visualizer]: ALIGNMENT LOST: discontinuity; realign both sensors
+[tt_visualizer-1] [INFO] [1792410572.026685569] [tractor_trailer_visualizer]: Straight alignment accepted at 1792410572025340849; later body yaw increments come ONLY from each IMU
+[tt_visualizer-1] [INFO] [1792410572.074377709] [tractor_trailer_visualizer]: TEST/SIMULATED
+[tt_visualizer-1] [INFO] [1792410573.073988100] [tractor_trailer_visualizer]: both IMUs must be LIVE
+[tt_visualizer-1] [INFO] [1792410574.074112374] [tractor_trailer_visualizer]: ALIGNMENT LOST: discontinuity; realign both sensors
+[tt_visualizer-1] [INFO] [1792410575.027405579] [tractor_trailer_visualizer]: Straight alignment accepted at 1792410575025378402; later body yaw increments come ONLY from each IMU
+[tt_visualizer-1] [INFO] [1792410575.074058487] [tractor_trailer_visualizer]: TEST/SIMULATED
+[WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+[rviz2-3] [INFO] [1792410581.670781494] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[INFO] [rviz2-3]: sending signal 'SIGINT' to process[rviz2-3]
+[INFO] [tt_test_source-2]: sending signal 'SIGINT' to process[tt_test_source-2]
+[INFO] [tt_visualizer-1]: sending signal 'SIGINT' to process[tt_visualizer-1]
+[rviz2-3] [INFO] [1792410581.671980560] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[INFO] [tt_test_source-2]: process has finished cleanly [pid 76171]
+[INFO] [tt_visualizer-1]: process has finished cleanly [pid 76169]
+[INFO] [rviz2-3]: process has finished cleanly [pid 76173]

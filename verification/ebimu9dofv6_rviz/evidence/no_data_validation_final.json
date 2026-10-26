@@ -1,0 +1,11 @@
+{
+  "test": "NO INPUT; no synthetic publisher; not actual hardware verification",
+  "marker_arrays": 77,
+  "status_samples": 77,
+  "all_no_data": true,
+  "no_cube_or_arrows": true,
+  "alive": [
+    true,
+    true
+  ]
+}

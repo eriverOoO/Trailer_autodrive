@@ -1,0 +1,24 @@
+"""Offline command preview by default. Explicit separate tool for future hardware setup."""
+import argparse,time
+from .protocol import CONFIG_COMMANDS,QUERY_COMMANDS,GYRO_CALIBRATION
+
+def main():
+    p=argparse.ArgumentParser();p.add_argument('action',choices=['configuration','version','configure','calibrate_gyro']);p.add_argument('--accelerometer',action='store_true',help='Optional soa1 raw gravity-inclusive acceleration for Cartographer');p.add_argument('--port',default='');p.add_argument('--send',action='store_true');p.add_argument('--stationary-confirmed',action='store_true');a=p.parse_args()
+    commands=CONFIG_COMMANDS if a.action=='configure' else (GYRO_CALIBRATION,) if a.action=='calibrate_gyro' else (QUERY_COMMANDS[a.action],)
+    if a.action=='configure' and a.accelerometer:commands=tuple('<soa1>' if c=='<soa0>' else c for c in commands)
+    if not a.send:
+        print('OFFLINE PREVIEW: '+' '.join(commands));return
+    if not a.port:p.error('--send requires explicit --port')
+    if a.action=='calibrate_gyro' and not a.stationary_confirmed:p.error('gyro calibration requires --stationary-confirmed')
+    import serial
+    with serial.Serial(a.port,115200,bytesize=8,parity='N',stopbits=1,timeout=.2,rtscts=False,dsrdtr=False) as ser:
+        for command in commands:
+            ser.write(command.encode('ascii'));ser.flush();deadline=time.monotonic()+3.;response=bytearray()
+            while time.monotonic()<deadline:
+                line=ser.readline();response.extend(line)
+                if a.action in ['configuration','version']:
+                    if response and not line:break
+                elif b'<ok>' in response.lower():break
+                elif b'<err' in response.lower():raise RuntimeError(response.decode('ascii',errors='replace'))
+            print(response.decode('ascii',errors='replace'))
+            if a.action not in ['configuration','version'] and b'<ok>' not in response.lower():raise RuntimeError('No configuration acknowledgment; stopping command sequence')

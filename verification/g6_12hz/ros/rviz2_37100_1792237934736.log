@@ -1,0 +1,15 @@
+[INFO] [1792237935.022667302] [rviz2]: Stereo is NOT SUPPORTED
+[INFO] [1792237935.022720394] [rviz2]: OpenGl version: 4.6 (GLSL 4.6)
+[INFO] [1792237935.031495024] [rviz2]: Stereo is NOT SUPPORTED
+[INFO] [1792237938.705625258] [rviz2]: Trying to create a map of size 296 x 155 using 1 swatches
+[INFO] [1792237941.712873201] [rviz2]: Trying to create a map of size 298 x 155 using 1 swatches
+[INFO] [1792237946.705716121] [rviz2]: Trying to create a map of size 300 x 155 using 1 swatches
+[INFO] [1792237947.696992670] [rviz2]: Trying to create a map of size 300 x 156 using 1 swatches
+[INFO] [1792237951.700374348] [rviz2]: Trying to create a map of size 302 x 156 using 1 swatches
+[INFO] [1792237967.700660564] [rviz2]: Trying to create a map of size 303 x 156 using 1 swatches
+[INFO] [1792237978.706286688] [rviz2]: Trying to create a map of size 304 x 157 using 1 swatches
+[INFO] [1792237980.720962763] [rviz2]: Trying to create a map of size 305 x 157 using 1 swatches
+[INFO] [1792237984.720940576] [rviz2]: Trying to create a map of size 306 x 157 using 1 swatches
+[INFO] [1792238006.705106263] [rviz2]: Trying to create a map of size 307 x 157 using 1 swatches
+[INFO] [1792238022.224285085] [g6_rviz]: Message Filter dropping message: frame 'laser_frame' at time 1792237937.513 for reason 'discarding message because the queue is full'
+[INFO] [1792238022.504843624] [rclcpp]: signal_handler(SIGINT/SIGTERM)

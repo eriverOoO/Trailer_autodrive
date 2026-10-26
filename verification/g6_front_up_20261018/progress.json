@@ -1,0 +1,29 @@
+{
+  "progress_percent": 80,
+  "status": "awaiting_physical_target_placement_confirmation",
+  "updated_at": "2026-10-18T20:55:16.225700+09:00",
+  "completed": [
+    "original RViz and launch/config backups",
+    "manufacturer and SDK angle convention inspection",
+    "original 12 Hz / 18K / 0.28-15 m configuration restored",
+    "camera-only RViz config and optional launch argument",
+    "live 35 second scan / map / TF observation",
+    "protected source hash comparison"
+  ],
+  "pending": [
+    "user-confirmed cable-forward target position",
+    "rear, physical left, physical right target tests",
+    "physical direction and handedness verdict"
+  ],
+  "physical_cable_to_ros_x_verified": false,
+  "physical_left_right_verified": false,
+  "sensor_rotation_offset_applied_rad": 0,
+  "rviz_camera_angle_rad": -1.5707963267948966,
+  "protected_files_checked": 244,
+  "unexpected_protected_changes": [],
+  "live_scan_hz": 11.646920835884863,
+  "scan_count": 408,
+  "map_count": 35,
+  "continuous_tf_failures_observed": false,
+  "startup_tf_errors_observed": true
+}

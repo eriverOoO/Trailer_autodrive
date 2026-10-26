@@ -1,0 +1,27 @@
+[INFO] [launch]: All log files can be found below /home/venezuelachocolatemilk/mvsim_slam_real/visualization/tractor_trailer_rviz_2d/evidence/ros_test_logs/2026-10-19-21-03-29-569098-venezuelachocolatemilk-Legion-Pro-5-16IAX10H-87591
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [tt2d_visualizer-1]: process started with pid [87598]
+[INFO] [tt2d_test_source-2]: process started with pid [87600]
+[INFO] [rviz2-3]: process started with pid [87602]
+[tt2d_visualizer-1] [INFO] [1792411409.842323562] [tractor_trailer_2d_visualizer]: NOT ALIGNED: confirm stationary straight alignment
+[rviz2-3] [INFO] [1792411409.955818336] [rviz2]: Stereo is NOT SUPPORTED
+[rviz2-3] [INFO] [1792411409.955872557] [rviz2]: OpenGl version: 4.6 (GLSL 4.6)
+[rviz2-3] [INFO] [1792411409.964936273] [rviz2]: Stereo is NOT SUPPORTED
+[rviz2-3] [INFO] [1792411410.044450653] [rviz2]: Trying to create a map of size 120 x 120 using 1 swatches
+[tt2d_visualizer-1] [INFO] [1792411410.783135689] [tractor_trailer_2d_visualizer]: OK
+[tt2d_visualizer-1] [INFO] [1792411427.832516296] [tractor_trailer_2d_visualizer]: IMU timestamps not paired
+[tt2d_visualizer-1] [INFO] [1792411428.282507852] [tractor_trailer_2d_visualizer]: both IMUs must be LIVE
+[tt2d_visualizer-1] [INFO] [1792411429.782953819] [tractor_trailer_2d_visualizer]: ALIGNMENT LOST: discontinuity; realign both sensors
+[tt2d_visualizer-1] [INFO] [1792411430.783260519] [tractor_trailer_2d_visualizer]: OK
+[tt2d_visualizer-1] [INFO] [1792411431.782548635] [tractor_trailer_2d_visualizer]: both IMUs must be LIVE
+[tt2d_visualizer-1] [INFO] [1792411432.782633874] [tractor_trailer_2d_visualizer]: ALIGNMENT LOST: discontinuity; realign both sensors
+[tt2d_visualizer-1] [INFO] [1792411433.782996809] [tractor_trailer_2d_visualizer]: OK
+[WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+[INFO] [rviz2-3]: sending signal 'SIGINT' to process[rviz2-3]
+[INFO] [tt2d_test_source-2]: sending signal 'SIGINT' to process[tt2d_test_source-2]
+[INFO] [tt2d_visualizer-1]: sending signal 'SIGINT' to process[tt2d_visualizer-1]
+[rviz2-3] [INFO] [1792411440.430478997] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[rviz2-3] [INFO] [1792411440.431406353] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[INFO] [tt2d_test_source-2]: process has finished cleanly [pid 87600]
+[INFO] [tt2d_visualizer-1]: process has finished cleanly [pid 87598]
+[INFO] [rviz2-3]: process has finished cleanly [pid 87602]

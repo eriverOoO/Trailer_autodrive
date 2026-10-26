@@ -1,0 +1,3 @@
+#!/usr/bin/python3
+from real_parking.nodes import lqr_main
+lqr_main()

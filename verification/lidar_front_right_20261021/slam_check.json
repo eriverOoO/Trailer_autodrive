@@ -1,0 +1,10 @@
+{
+  "scan_received": true,
+  "map_received": true,
+  "range_min": 0.15000000596046448,
+  "range_max": 12.0,
+  "scan_frame": "laser_frame",
+  "map_frame": "map",
+  "map_width": 171,
+  "map_height": 277
+}

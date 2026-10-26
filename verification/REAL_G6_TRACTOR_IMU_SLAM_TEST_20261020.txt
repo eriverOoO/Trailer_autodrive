@@ -1,0 +1,233 @@
+REAL_G6_TRACTOR_IMU_SLAM_TEST_20261020
+최종 검증 기록 갱신: 2026-10-20T16:02:23.607173+09:00
+결론: 실제 G6 정지 SLAM PASS, 트랙터 IMU UART/Yaw PASS.
+기존 2D 시각화용 IMU 브리지는 정상 60초 카운터 순환을 리셋으로 오판하여 FAIL.
+기존 2D 차량 윤곽선/지도 위 실제 차량 위치는 미표시. 전체 목표 100% 성공이 아님.
+실행 중 G6/Cartographer/2D visualizer/RViz는 이번 재연결 작업에서 종료·재시작하지 않음.
+
+진행률 단계 보고
+70%: 현재 트랙터 IMU 물리 포트 및 UART/정상패킷/주파수/Yaw 갱신 검증 완료.
+85%: 부분 완료. 기존 시각화에 실제 IMU 수신 및 일시 LIVE 확인.
+     지속 수신은 카운터 순환 버그로 FAIL, 차량 윤곽선은 실측/두 IMU 조건으로 미표시.
+95%: 현재 포트점유, TF 중복, Domain/시간, 오류 원인 및 INVALID 표시 점검 완료.
+     물리 회전 방향/차체축/지도 방향 정렬은 미검증으로 남김.
+100% 단계: 결과 보고 작성 완료. 전체 기능 달성률 100% 또는 윤곽선 표시 성공으로 보고하지 않음.
+
+1. 실제 USB 장치별 포트
+G6: /dev/ttyUSB0, USB3-7
+ /dev/serial/by-path/pci-0000:80:14.0-usb-0:7:1.0-port0
+트랙터 IMU: 현재 /dev/ttyUSB1, USB3-8
+ /dev/serial/by-path/pci-0000:80:14.0-usb-0:8:1.0-port0
+사용자가 IMU만 분리한 뒤 ttyUSB1/3-8만 사라지는 것을 대조하여 역할 확정.
+동일 소켓 재연결을 사용자 확인하고 현재 udev DEVPATH/ID_PATH/tty도 재확인.
+양 변환기 VID10c4/PIDea60/Serial0001 동일. by-id는 두 센서 역할 고유값이 아님.
+/dev/imu_tractor 없음. udev 규칙 설치/변경, USB serial 변경 없음.
+증거: physical_roles_confirmed.json, imu_reconnected/roles.json, imu_udev.txt.
+
+2. G6 LiDAR 설정과 실행 결과
+기존 src/mvsim_slam_real_bringup/launch/g6_slam.launch.py 그대로 사용.
+기존 g6.yaml: baud512000, 목표12Hz, sample_rate18(18K), frame laser_frame,
+range_min0.15m/range_max1.0m, use_sim_time=false.
+기존 g6_lidar_only.lua: max_range1.0m/missing_data_ray_length1.0m,
+use_imu_data=false. frame_mode=sensor, map->odom->laser_frame.
+사용자 참고값15m와 달리 현재 실제 설정은1m이며 변경하지 않음.
+SDK 응답 G6 serial2022061000071139, firmware3.2/hardware3, health good, scan start 성공.
+실제센서 전원/스캔은 연속Scan 및 SDK 응답으로 확인; 회전모터 영상 관찰은 아님.
+LiDAR 자체 스캔 모터 외 차량 모터/조향 사용 없음.
+
+3. 실제 Scan 주파수/값
+처음 정지30초: 349개, 11.65771Hz; header역행/중복0.
+실제 rays 약1541~1545, 유효거리점491~567개/Scan, 관측 약0.4005~1m.
+IMU 동시수신20초: 234개, 11.67270Hz,
+header역행/중복 0개, 실제유효점503~552개.
+frame laser_frame, 해당 Scan timestamp에서 map<-laser_frame lookup성공.
+G6 드라이버 시작시15:40:00~01 checksum오류6회와 intensity자동탐지16->8->0 로그.
+현재 전체 g6_slam.log checksum오류6회; 시작 이후 추가오류 관측없음.
+초기오류원인은 확정하지 않음. 오류가 전혀없었다고 보고하지 않음.
+
+4. Cartographer/실제 지도 생성
+LiDAR-only Cartographer21575, grid21577 정상실행 유지.
+/scan 실제Subscriber이며 IMU Subscriber없음. IMU새주입없음.
+trajectory0 active, 읽기전용 trajectory_query 조회당시110개 trajectory nodes.
+초기30초 scan_matched_points2 349개, 약11.66Hz, map frame.
+Submap0 version36->77 및 이후 추가submap생성/constraint처리로그 관측.
+초기/map48x49 cells/0.05m, 지도내용29회변경.
+IMU동시관측/map 25개, header약1.00000Hz,
+50x51 cells, 지도내용12개고유hash, known888/occupied최종178/free524.
+현재실제Scan으로지도생성/갱신과Scan Matching 흐름확인.
+정지조건시험이며 이동중SLAM/위치정확도/루프폐합성능 PASS로확대하지 않음.
+현장벽/장애물실제형상과의통제된대조, 1m밖환경은미검증.
+
+5. Map 및 TF
+map->odom->laser_frame 연결, 약200Hz, 중복Publisher없음.
+최종 /scan Publisher1, /map Publisher1, /tf Publisher Cartographer1, /tf_static Publisher0.
+base_footprint/base_link 없음은 기존sensor모드와미실측mount에따른현재구성.
+g6_mount.yaml measured=false/xyz,rpy=null. 실제차량기준점이라고위장한TF발행없음.
+ROS_DOMAIN_ID0/ROS_LOCALHOST_ONLY0은기존실제환경에서확인하고동일하게유지.
+RViz Fixed Frame map, actual Scan timestamp TF lookup성공.
+
+6. 트랙터 IMU UART 현재 시험 (기존진단코드, TX0)
+기존 tools/diagnose_ebimu.py를 확인된3-8포트에115200/8N1로실행.
+query/설정/초기화/보정명령없음, DTR/RTS low, 흐름제어없음.
+첫11초수신: RX79198bytes, 정상1100패킷,
+파싱오류0, 프레임전부분조각버림0bytes,
+host99.99988Hz/sensor100.00000Hz, timestamp역행/중복0.
+현재실제형식: qz,qy,qx,qw,gx,gy,gz,ax,ay,az,timestamp_ms (11필드).
+Yaw초기3.061547deg, 범위2.999736~3.153404deg,
+초기대비끝변화0.008205deg, 실제서로다른Yaw값59개.
+첫샘플은네이티브센서변화량분석기준이며map/차체정렬기준이아님.
+
+추가61초 연속수신(정상카운터순환조사):
+RX435587bytes, 정상6099패킷, 파싱오류0,
+host99.99973Hz, 정상순환반영sensor100.00000Hz,
+TX0bytes.
+open직후불완전선행조각51bytes를버리고완전패킷6099개수신; 이를파싱오류0과구분.
+15:57:26.546 정상59992->2ms순환을host약9.815ms간격으로관측.
+이구간센서Yaw수치범위폭약0.704139deg.
+정지yaw변동/드리프트/장착기울기영향과실제움직임을분리정량검증한것은아님.
+
+7. 2D IMU 연결과 발견한 실제 실패
+기존 imu_bridges.launch.py로start_tractor=true/start_trailer=false실행.
+/vehicle_viz_2d/tractor/imu/data 실제Publisher1과기존visualizerSubscriber확인.
+동시20초관측: ROS Imu1973개, 관측수신약98.61162Hz,
+header역행/중복0, 수신시age약0.3~0.6ms.
+UART100Hz와ROS BestEffort관측98.61Hz를동일시하지않음; 관측상일부샘플미수신있음.
+해당기간브리지진단parsed2621->4601, rejected0, TX0.
+기존2Dstatus T:LIVE/R:NO_DATA/SLAM:LIVE확인. 이후상태변화를별도로기록:
+15:54:26.549 기존2D serial_bridge.py가센서timestamp59992->2를reset/repeated로오판.
+정상parse4698/발행4697/rejected0/RX338234bytes에서UART닫고INVALID발행.
+기존visualizer도tractor INVALID, 마지막데이터age증가를표시; 오래된값을LIVE로위장하지않음.
+이오류는사용자가IMU를건드렸다고알린것보다이전로그에기록되어있음.
+현재기존2D입력의지속연결은FAIL. 처음LIVE확인을최종LIVE로보고하지않음.
+
+원인근거:
+references/EBIMU-9DOFV6_rev10.txt 6-1-10(1098~1102행),
+제조사설명은0~60000ms카운트후0부터다시카운트하는정상동작.
+기존serial_bridge.py는sensor_ms<=previous_sensor_ms이면모두오류로처리.
+실제raw마지막패킷59992->2및추가61초시험에서같은순환재현.
+기기고장/USB충돌/사용자움직임때문의센서리셋으로판정하지않음.
+
+8. 현재 독립 IMU 수신 및 Yaw 변화량 사용 가능 범위
+기존 verification/ebimu9dofv6_rviz/scripts/imu_publisher.py를수정없이별도진단namespace로실행.
+/ebimu_diag/tractor/imu/data, frame ebimu_diag_tractor_sensor.
+이기존진단수신기는sensor역행카운트를기록하지만host단조timestamp로실제값수신을계속함.
+최종진단LIVE, 예시RX274115/3841messages/파싱오류0/TX0/센서missing추정0.
+진단 sensor_resets=1은이프로그램이정상60초순환도같이세는항목이며,
+이번실험에서물리센서재부팅1회를뜻한다고보고하지않음.
+G6/Cartographer/기존2D토픽으로remap하거나가상데이터를주입하지않음.
+독립진단Topic은현재실제UART측정값만발행하며계속실행중.
+
+기존2D core.YawTrack을읽기전용구독진단에서실제독립IMU값에적용:
+8초간accepted801/rejected0, NO DATA->LIVE,
+기준Yaw1.378888deg, 끝delta-0.045304deg,
+관측delta범위-0.126971~0.115862deg.
+새관측기는구독/파일저장만하며센서/TF/Marker를발행하지않음.
+따라서실제Quaternion에서기존계산코드로상대Yaw를계산할수있음.
+그러나현재실행중기존2D브리지가INVALID이고렌더조건도미충족이라차량회전에는사용불가.
+차체mounting/sign과map초기heading이확인되기전네이티브delta를실차정렬완료로해석하지않음.
+
+9. 사용자가 IMU를 약간 건드린 일에 대한 관찰
+브리지중단후다시UART수신을시작한첫RPY를직전마지막정상RPY와대조.
+이전=[9.556609,21.475542,3.091985]deg,
+이후=[5.392953,10.403909,1.827627]deg.
+차이Roll-4.163656/Pitch-11.071632/Yaw-1.264358deg.
+두측정사이130.25015초공백이있어방금행동의연속궤적/정확한물리회전량은미검증.
+관측된센서자세값이달라진것만확인. 정해진방향/각도시험이아니므로회전부호검증아님.
+
+10. 2D RViz 실제 상태
+기존RViz22858/visualizer17521종료·재시작없음, 기존지도/빨간Scan표시유지.
+TopDownOrtho/FixedFrame map/Grid원본값/Map alpha0.8/Scan RGB255,20,20.
+이전단계에서verification안카메라복사본으로원점확대,이번단계카메라/설정변경없음.
+현재차량윤곽선미표시, Marker는상태텍스트뿐, values=null/STATE_UNKNOWN.
+실측geometry와mounting/sign미확인, 양IMU LIVE 및align_straight요구가별도장벽.
+트레일러IMU없음, /vehicle_viz_2d/trailer/imu/data Publisher0.
+트레일러방향/phi/초기일직선데이터를임의생성하지않음. 3D모델실행없음.
+빨간화살표는원본코드의트레일러용하나이며별도트랙터화살표는현재구현없음.
+
+11. 충돌/신선도/보호 점검
+G6 ttyUSB0은PID21573만점유, IMU ttyUSB1은현재독립진단PID33404만점유.
+기존2D브리지는실패후UART를닫고INVALID진단만발행하므로포트중복점유없음.
+G6/Cartographer/grid/visualizer/RViz PID[21573,21575,21577,17521,22858]그대로생존.
+최종TF Publisher1, trailerIMU Publisher0, 제어명령Publisher관측0개.
+IMU절대Yaw를지도절대Yaw로가정하지않음. 새로운TF발행없음.
+소스/config보호해시765개내용비교변경0개.
+기존src/SLAM설정/시뮬레이터/udev/차량제어코드수정없음.
+기존센서/SLAM노드중단/재시작없음. Hybrid A*/LQR/Arduino/자율주차실행없음.
+
+12. 검증 표
+| 검증 항목 | 상태 |
+| G6 USB 인식 | PASS: ttyUSB0/3-7 |
+| G6 실제 Scan 수신 | PASS |
+| Scan 주파수 | 초기11.66Hz, IMU동시11.67Hz 실측 |
+| Cartographer 실행 | PASS: LiDAR-only 유지 |
+| 실제 Occupancy Grid 생성 | PASS: 실제내용갱신 |
+| Map 및 TF 연결 | PASS: map->odom->laser_frame |
+| 정지 상태 SLAM | PASS: 실제Scan Matching/지도흐름,정확도미검증 |
+| 이동 중 SLAM | NOT TESTED |
+| 트랙터 IMU UART 수신 | PASS: 61초6099패킷/100Hz/parse오류0 |
+| 트랙터 IMU Yaw | PASS: 네이티브수치갱신/상대delta계산,물리방향미검증 |
+| 트랙터 모델 2D 표시 | FAIL: 필수실측/양IMU조건미충족,미표시 |
+| 지도 위 차량 위치 표시 | N/A: 센서pose확인,차량기준점실측없음 |
+| 트레일러 IMU | NOT CONNECTED |
+| 차량 제어 미실행 | PASS |
+| 기존 소스 무변경 | PASS: 765개보호해시변경0개 |
+추가: 기존2D RViz GUI/지도/빨간Scan PASS.
+추가: 기존2D IMU브리지의1분이상지속수신 FAIL (정상rollover처리오류).
+추가: 기존독립진단수신기의실제IMU LIVE PASS (별도Topic).
+
+13. 실행한 정확한 명령
+전체증거명령: /home/venezuelachocolatemilk/mvsim_slam_real/verification/real_g6_tractor_imu_20261020_153135/commands_executed.txt
+각터미널환경: source /home/venezuelachocolatemilk/mvsim_slam_real/verification/real_g6_tractor_imu_20261020_153135/environment.bash
+환경은ROS Humble+실차install+2Dinstall, domain0/localhost0/use_sim_time=false.
+G6기존실행:
+ros2 launch mvsim_slam_real_bringup g6_slam.launch.py lidar_port:=/dev/serial/by-path/pci-0000:80:14.0-usb-0:7:1.0-port0 frame_mode:=sensor use_imu:=false start_imu:=false enable_rviz:=false
+첫IMU진단:
+/usr/bin/python3 /home/venezuelachocolatemilk/mvsim_slam_real/tools/diagnose_ebimu.py --port /dev/serial/by-path/pci-0000:80:14.0-usb-0:8:1.0-port0 --baud 115200 --init-wait 1 --duration 10 --log-prefix /home/venezuelachocolatemilk/mvsim_slam_real/verification/real_g6_tractor_imu_20261020_153135/imu_reconnected/passive_uart
+추가61초진단:
+/usr/bin/python3 /home/venezuelachocolatemilk/mvsim_slam_real/tools/diagnose_ebimu.py --port /dev/serial/by-path/pci-0000:80:14.0-usb-0:8:1.0-port0 --baud 115200 --init-wait 1 --duration 60 --log-prefix /home/venezuelachocolatemilk/mvsim_slam_real/verification/real_g6_tractor_imu_20261020_153135/imu_reconnected/rollover_uart
+현재독립진단:
+/usr/bin/python3 /home/venezuelachocolatemilk/mvsim_slam_real/verification/ebimu9dofv6_rviz/scripts/imu_publisher.py --port /dev/serial/by-path/pci-0000:80:14.0-usb-0:8:1.0-port0 --confirmed-imu-port --baud 115200 --orientation quaternion --gyro --accel --timestamp --namespace /ebimu_diag/tractor --frame ebimu_diag_tractor_sensor --output /home/venezuelachocolatemilk/mvsim_slam_real/verification/real_g6_tractor_imu_20261020_153135/imu_reconnected/independent_live
+기존브리지명령/GUI명령은commands_executed.txt, run_tractor_bridge.bash, run_rviz_map_view.bash참조.
+
+14. 실행중 ROS 노드와 tmux
+세션 real_g6_imu_20261020
+real_g6_imu_20261020:rviz pid=17481 dead=0 cmd=bash
+real_g6_imu_20261020:g6_slam pid=21523 dead=0 cmd=bash
+real_g6_imu_20261020:rviz_map pid=22823 dead=0 cmd=bash
+real_g6_imu_20261020:tractor_imu pid=30199 dead=0 cmd=bash
+real_g6_imu_20261020:imu_uart_live pid=33372 dead=0 cmd=bash
+
+G6driver21573/Cartographer21575/grid21577/visualizer17521/RViz22858 유지.
+실패한2Dbridge30238은INVALID진단만발행, 독립UARTreceiver33404는실제수신중.
+전체nodes/publishers/PIDstartticks: imu_reconnected/final_graph_audit.json.
+프로세스/최근로그: processes_final.txt, g6_slam.log, bridge.log, independent_uart.log,
+independent_live/rx.bin 및 samples.jsonl (실행동안계속증가).
+
+15. 종료 방법 (이번작업에서는 기존노드종료명령실행안함)
+세션보기: tmux attach -t real_g6_imu_20261020
+독립IMU수신기만종료: tmux send-keys -t real_g6_imu_20261020:imu_uart_live C-c
+실패한2D브리지만종료: tmux send-keys -t real_g6_imu_20261020:tractor_imu C-c
+사용자가전체종료원할때만각각:
+tmux send-keys -t real_g6_imu_20261020:g6_slam C-c
+tmux send-keys -t real_g6_imu_20261020:rviz_map C-c
+tmux send-keys -t real_g6_imu_20261020:rviz C-c
+관련없는프로세스종료금지. G6정상종료경로사용.
+
+16. 필요한 수정 제안 / 미검증 / 다음 실험
+검토용미적용패치: imu_reconnected/PROPOSED_NOT_APPLIED_timestamp_rollover.patch
+정상60초경계의짧은연속RX만허용하고중복/다른역행/긴공백은계속INVALID로처리하는제안.
+새sensor_rollovers진단항목을추가하는내용. 기존코드에적용하지않음.
+제안텍스트AST문법검사만수행했으며수정본실행검증을수행했다고보고하지않음.
+기존코드무승인수정금지조건때문에승인전기존시스템에는미적용.
+적용승인시2D브리지만수정/검증하고G6·SLAM설정과차량제어는수정하지않아야함.
+현재독립수신기와브리지는동일IMU포트를함께열수없으므로향후수신기전환시단독점유유지필요.
+이패치만으로트랙터단독윤곽선/기하실측/초기heading/장착축/두IMU정렬조건은해결되지않음.
+물리센서reset이정상카운터경계와겹친경우counter만으로완전구별불가.
+현재미검증: 물리좌우회전부호, ENU/차체장착축, 실차rear axle오프셋,
+map초기heading정렬, 통제각도실험, 차량이동SLAM, 실측장애물형상대조.
+트레일러센서없이가상방향/phi를만드는방법으로해결하지않음.
+
+증거디렉터리: /home/venezuelachocolatemilk/mvsim_slam_real/verification/real_g6_tractor_imu_20261020_153135
+이전단계중간기록: initial_pending_report.txt, g6_only_intermediate_report.txt.
+신규산출물은verification내보고서/진단스크립트/로그/캡처/미적용제안파일뿐.
+대용량데이터셋/모든역사로그전체를해시한것은아님.

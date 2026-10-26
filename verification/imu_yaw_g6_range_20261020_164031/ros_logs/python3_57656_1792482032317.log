@@ -1,0 +1,5 @@
+[INFO] [1792482032.402906899] [tractor_trailer_2d_visualizer]: "map" passed to lookupTransform argument target_frame does not exist. 
+[INFO] [1792482035.044742470] [tractor_trailer_2d_visualizer]: Lookup would require extrapolation at time 1792482035.039103, but only time 1792482035.041691 is in the buffer, when looking up transform from frame [laser_frame] to frame [map]
+[INFO] [1792482035.095209173] [tractor_trailer_2d_visualizer]: DIAGNOSTIC_ONLY
+[INFO] [1792482155.995050161] [tractor_trailer_2d_visualizer]: SLAM pose stale
+[INFO] [1792482177.195550891] [tractor_trailer_2d_visualizer]: DIAGNOSTIC_ONLY

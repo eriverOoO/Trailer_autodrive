@@ -1,0 +1,26 @@
+{
+  "existing_rviz_file_saved": false,
+  "baseline_collected_before_ui_intervention": true,
+  "events": [
+    {
+      "phase": "05_zoomed_combined",
+      "wall_s": 1792377810.353336
+    },
+    {
+      "phase": "06_scan_only",
+      "wall_s": 1792377812.6195035
+    },
+    {
+      "phase": "07_map_only",
+      "wall_s": 1792377814.282949
+    },
+    {
+      "phase": "08_scan_map",
+      "wall_s": 1792377815.6345727
+    },
+    {
+      "phase": "09_original_displays_restored",
+      "wall_s": 1792377817.6013668
+    }
+  ]
+}

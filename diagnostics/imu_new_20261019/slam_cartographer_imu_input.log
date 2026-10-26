@@ -1,0 +1,46 @@
+[INFO] [1792391949.908452561] [cartographer logger]: I1019 15:39:09.000000 28907 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/g6_sensor_imu.lua' for 'g6_sensor_imu.lua'.
+[INFO] [1792391949.908571644] [cartographer logger]: I1019 15:39:09.000000 28907 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/g6_lidar_only.lua' for 'g6_lidar_only.lua'.
+[INFO] [1792391949.908579944] [cartographer logger]: I1019 15:39:09.000000 28907 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/g6_lidar_only.lua' for 'g6_lidar_only.lua'.
+[INFO] [1792391949.908599556] [cartographer logger]: I1019 15:39:09.000000 28907 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/reference_lidar_only.lua' for 'reference_lidar_only.lua'.
+[INFO] [1792391949.908604424] [cartographer logger]: I1019 15:39:09.000000 28907 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/reference_lidar_only.lua' for 'reference_lidar_only.lua'.
+[INFO] [1792391949.908641325] [cartographer logger]: I1019 15:39:09.000000 28907 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/map_builder.lua' for 'map_builder.lua'.
+[INFO] [1792391949.908645919] [cartographer logger]: I1019 15:39:09.000000 28907 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/map_builder.lua' for 'map_builder.lua'.
+[INFO] [1792391949.908659829] [cartographer logger]: I1019 15:39:09.000000 28907 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/pose_graph.lua' for 'pose_graph.lua'.
+[INFO] [1792391949.908664081] [cartographer logger]: I1019 15:39:09.000000 28907 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/pose_graph.lua' for 'pose_graph.lua'.
+[INFO] [1792391949.908719615] [cartographer logger]: I1019 15:39:09.000000 28907 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/trajectory_builder.lua' for 'trajectory_builder.lua'.
+[INFO] [1792391949.908724305] [cartographer logger]: I1019 15:39:09.000000 28907 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/trajectory_builder.lua' for 'trajectory_builder.lua'.
+[INFO] [1792391949.908738854] [cartographer logger]: I1019 15:39:09.000000 28907 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/trajectory_builder_2d.lua' for 'trajectory_builder_2d.lua'.
+[INFO] [1792391949.908743013] [cartographer logger]: I1019 15:39:09.000000 28907 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/trajectory_builder_2d.lua' for 'trajectory_builder_2d.lua'.
+[INFO] [1792391949.908788123] [cartographer logger]: I1019 15:39:09.000000 28907 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/trajectory_builder_3d.lua' for 'trajectory_builder_3d.lua'.
+[INFO] [1792391949.908792470] [cartographer logger]: I1019 15:39:09.000000 28907 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/trajectory_builder_3d.lua' for 'trajectory_builder_3d.lua'.
+[INFO] [1792391949.922127797] [cartographer logger]: I1019 15:39:09.000000 28907 map_builder_bridge.cpp:136] Added trajectory with ID '0'.
+[WARN] [1792391955.293561832] [cartographer logger]: W1019 15:39:15.000000 28907 ordered_multi_queue.cc:155] Queue waiting for data: (0, scan)
+[WARN] [1792391955.893480683] [cartographer logger]: W1019 15:39:15.000000 28907 ordered_multi_queue.cc:155] Queue waiting for data: (0, scan)
+[WARN] [1792391956.493497220] [cartographer logger]: W1019 15:39:16.000000 28907 ordered_multi_queue.cc:155] Queue waiting for data: (0, scan)
+[WARN] [1792391957.093462322] [cartographer logger]: W1019 15:39:17.000000 28907 ordered_multi_queue.cc:155] Queue waiting for data: (0, scan)
+[WARN] [1792391957.693689800] [cartographer logger]: W1019 15:39:17.000000 28907 ordered_multi_queue.cc:155] Queue waiting for data: (0, scan)
+[WARN] [1792391958.293507571] [cartographer logger]: W1019 15:39:18.000000 28907 ordered_multi_queue.cc:155] Queue waiting for data: (0, scan)
+[WARN] [1792391958.893379458] [cartographer logger]: W1019 15:39:18.000000 28907 ordered_multi_queue.cc:155] Queue waiting for data: (0, scan)
+[WARN] [1792391959.493301851] [cartographer logger]: W1019 15:39:19.000000 28907 ordered_multi_queue.cc:155] Queue waiting for data: (0, scan)
+[INFO] [1792391959.863786552] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[INFO] [1792391959.864395346] [cartographer logger]: I1019 15:39:19.000000 28907 node.cpp:569] Shutdown the subscriber of [scan]
+[INFO] [1792391959.864721664] [cartographer logger]: I1019 15:39:19.000000 28907 node.cpp:569] Shutdown the subscriber of [imu]
+[INFO] [1792391959.864729027] [cartographer logger]: I1019 15:39:19.000000 28907 map_builder_bridge.cpp:152] Finishing trajectory with ID '0'...
+[INFO] [1792391959.864737823] [cartographer logger]: I1019 15:39:19.000000 28907 ordered_multi_queue.cc:172] All sensor data for trajectory 0 is available starting at '639279887502931693'.
+[INFO] [1792391959.865512431] [cartographer logger]: I1019 15:39:19.000000 28907 map_builder_bridge.cpp:161] Running final trajectory optimization...
+[INFO] [1792391959.865558506] [cartographer logger]: I1019 15:39:19.000000 28919 pose_graph_2d.cc:538] Remaining work items in queue: 2
+[INFO] [1792391959.865579046] [cartographer logger]: I1019 15:39:19.000000 28919 constraint_builder_2d.cc:290] 0 computations resulted in 0 additional constraints.
+[INFO] [1792391959.865583866] [cartographer logger]: I1019 15:39:19.000000 28919 constraint_builder_2d.cc:292] Score histogram:
+Count: 0
+[INFO] [1792391959.865589709] [cartographer logger]: I1019 15:39:19.000000 28919 pose_graph_2d.cc:538] Remaining work items in queue: 1
+[INFO] [1792391959.865593916] [cartographer logger]: I1019 15:39:19.000000 28919 constraint_builder_2d.cc:290] 0 computations resulted in 0 additional constraints.
+[INFO] [1792391959.865597184] [cartographer logger]: I1019 15:39:19.000000 28919 constraint_builder_2d.cc:292] Score histogram:
+Count: 0
+[INFO] [1792391959.865648935] [cartographer logger]: I1019 15:39:19.000000 28920 constraint_builder_2d.cc:290] 0 computations resulted in 0 additional constraints.
+[INFO] [1792391959.865662948] [cartographer logger]: I1019 15:39:19.000000 28920 constraint_builder_2d.cc:292] Score histogram:
+Count: 0
+[KOptimizing: Done.     
+[INFO] [1792391959.866808427] [cartographer logger]: I1019 15:39:19.000000 28921 constraint_builder_2d.cc:290] 0 computations resulted in 0 additional constraints.
+[INFO] [1792391959.866832373] [cartographer logger]: I1019 15:39:19.000000 28921 constraint_builder_2d.cc:292] Score histogram:
+Count: 0
+[KOptimizing: Done.     

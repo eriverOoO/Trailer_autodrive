@@ -1,0 +1,18 @@
+{
+  "01_original_combined": {
+    "red_pixels_in_render_panel": 1389,
+    "render_panel_pixels": 508270
+  },
+  "02_scan_only": {
+    "red_pixels_in_render_panel": 1351,
+    "render_panel_pixels": 508270
+  },
+  "03_map_only": {
+    "red_pixels_in_render_panel": 0,
+    "render_panel_pixels": 508270
+  },
+  "04_scan_map_only": {
+    "red_pixels_in_render_panel": 1225,
+    "render_panel_pixels": 508270
+  }
+}

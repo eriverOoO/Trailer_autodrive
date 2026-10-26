@@ -1,0 +1,73 @@
+[INFO] [launch]: All log files can be found below /home/venezuelachocolatemilk/mvsim_slam_real/verification/ros/2026-10-16-22-43-47-739860-venezuelachocolatemilk-Legion-Pro-5-16IAX10H-25084
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [launch.user]: Development mode=True; actuation=False; absent sensors remain unavailable
+[INFO] [sensor_tf-1]: process started with pid [25098]
+[INFO] [state_estimator-2]: process started with pid [25100]
+[INFO] [control_adapter-3]: process started with pid [25102]
+[INFO] [lidar_gateway-4]: process started with pid [25104]
+[INFO] [ebimu_node-5]: process started with pid [25106]
+[INFO] [ebimu_node-6]: process started with pid [25108]
+[INFO] [cartographer_node-7]: process started with pid [25110]
+[INFO] [cartographer_occupancy_grid_node-8]: process started with pid [25112]
+[INFO] [auto_parking-9]: process started with pid [25114]
+[cartographer_node-7] [INFO] [1792158227.793097057] [cartographer logger]: I1016 22:43:47.000000 25110 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/reference_imu_optional.lua' for 'reference_imu_optional.lua'.
+[cartographer_node-7] [INFO] [1792158227.793322750] [cartographer logger]: I1016 22:43:47.000000 25110 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/map_builder.lua' for 'map_builder.lua'.
+[cartographer_node-7] [INFO] [1792158227.793335866] [cartographer logger]: I1016 22:43:47.000000 25110 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/map_builder.lua' for 'map_builder.lua'.
+[cartographer_node-7] [INFO] [1792158227.793364110] [cartographer logger]: I1016 22:43:47.000000 25110 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/pose_graph.lua' for 'pose_graph.lua'.
+[cartographer_node-7] [INFO] [1792158227.793371233] [cartographer logger]: I1016 22:43:47.000000 25110 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/pose_graph.lua' for 'pose_graph.lua'.
+[cartographer_node-7] [INFO] [1792158227.793454397] [cartographer logger]: I1016 22:43:47.000000 25110 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/trajectory_builder.lua' for 'trajectory_builder.lua'.
+[cartographer_node-7] [INFO] [1792158227.793461847] [cartographer logger]: I1016 22:43:47.000000 25110 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/trajectory_builder.lua' for 'trajectory_builder.lua'.
+[cartographer_node-7] [INFO] [1792158227.793482849] [cartographer logger]: I1016 22:43:47.000000 25110 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/trajectory_builder_2d.lua' for 'trajectory_builder_2d.lua'.
+[cartographer_node-7] [INFO] [1792158227.793489630] [cartographer logger]: I1016 22:43:47.000000 25110 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/trajectory_builder_2d.lua' for 'trajectory_builder_2d.lua'.
+[cartographer_node-7] [INFO] [1792158227.793567287] [cartographer logger]: I1016 22:43:47.000000 25110 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/trajectory_builder_3d.lua' for 'trajectory_builder_3d.lua'.
+[cartographer_node-7] [INFO] [1792158227.793574203] [cartographer logger]: I1016 22:43:47.000000 25110 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/trajectory_builder_3d.lua' for 'trajectory_builder_3d.lua'.
+[cartographer_node-7] [INFO] [1792158227.801619986] [cartographer logger]: I1016 22:43:47.000000 25110 map_builder_bridge.cpp:136] Added trajectory with ID '0'.
+[ebimu_node-5] [WARN] [1792158227.959464140] [tractor_imu]: IMU hardware disabled; no samples will be fabricated
+[ebimu_node-6] [WARN] [1792158227.976926142] [trailer_imu]: IMU hardware disabled; no samples will be fabricated
+[auto_parking-9] [INFO] [1792158228.034583397] [tractor_parallel_parking_auto]: POSE FRESHNESS SAFETY STOP: ENABLED
+[auto_parking-9] [INFO] [1792158228.034758084] [tractor_parallel_parking_auto]: [Parking] WAIT_FOR_LOCALIZATION auto_execute=True
+[auto_parking-9] [INFO] [1792158228.036264878] [tractor_parallel_parking_auto]: Chassis+wheel envelope size=[2.05999995 0.58499998], center=[-0.255  0.   ]
+[auto_parking-9] [INFO] [1792158228.122298193] [tractor_parallel_parking_auto]: [Parking] {"stamp_ns": 1792158228122045213, "physical_parking_speed_factor": 1.755, "state": "WAIT_FOR_LOCALIZATION", "pose": null, "goal": null, "v": 0.0, "steering_deg": 0.0, "omega": 0.0, "progress": 0, "path_states": 0, "replans": 0, "max_articulation_deg": 0.0, "collisions": 0, "planning_seconds": 0.0, "planned_length": 0.0, "gear_changes": 0, "planned_max_articulation_deg": null, "planning_articulation_limit_deg": 30.0, "speed_from_slam": 0.0, "failure": "", "estimator": "initial articulated alignment and trailer bias not confirmed", "first_obstacle": false, "gap_seen": false, "second_obstacle": false, "search_distance": 0.0, "max_tracking_error": 0.0, "gap_center": null, "gap_confidence": null, "gap_yaw": null, "gap_length": null, "gap_width": null, "target_source": "observe_gap(Cartographer OccupancyGrid)", "goal_shift_m": 0.0, "parking_stop_policy": "legacy", "legacy_stop_evidence": null, "legacy_stop_completed": null, "goal_lateral_shift_m": 0.0, "planning_map_stamp_ns": null, "map_age_s": 1419.497876624, "lidar_age_s": 1419.497876624, "tractor_imu_age_s": null, "trailer_imu_age_s": 1419.497876624, "localization_status_age_s": 1419.497876624, "independent_observation_hits": 0, "reference_state": null, "pose_freshness_stop_enabled": true, "pose_freshness_threshold_s": 0.8, "max_pose_age_s": 0.0, "pose_freshness_exceed_count": 0, "pose_age_samples": 0}
+[auto_parking-9] [INFO] [1792158230.222324420] [tractor_parallel_parking_auto]: [Parking] {"stamp_ns": 1792158230222006253, "physical_parking_speed_factor": 1.755, "state": "WAIT_FOR_LOCALIZATION", "pose": null, "goal": null, "v": 0.0, "steering_deg": 0.0, "omega": 0.0, "progress": 0, "path_states": 0, "replans": 0, "max_articulation_deg": 0.0, "collisions": 0, "planning_seconds": 0.0, "planned_length": 0.0, "gear_changes": 0, "planned_max_articulation_deg": null, "planning_articulation_limit_deg": 30.0, "speed_from_slam": 0.0, "failure": "", "estimator": "initial articulated alignment and trailer bias not confirmed", "first_obstacle": false, "gap_seen": false, "second_obstacle": false, "search_distance": 0.0, "max_tracking_error": 0.0, "gap_center": null, "gap_confidence": null, "gap_yaw": null, "gap_length": null, "gap_width": null, "target_source": "observe_gap(Cartographer OccupancyGrid)", "goal_shift_m": 0.0, "parking_stop_policy": "legacy", "legacy_stop_evidence": null, "legacy_stop_completed": null, "goal_lateral_shift_m": 0.0, "planning_map_stamp_ns": null, "map_age_s": 1421.597836474, "lidar_age_s": 1421.597836474, "tractor_imu_age_s": null, "trailer_imu_age_s": 1421.597836474, "localization_status_age_s": 1421.597836474, "independent_observation_hits": 0, "reference_state": null, "pose_freshness_stop_enabled": true, "pose_freshness_threshold_s": 0.8, "max_pose_age_s": 0.0, "pose_freshness_exceed_count": 0, "pose_age_samples": 0}
+[auto_parking-9] [INFO] [1792158232.322120180] [tractor_parallel_parking_auto]: [Parking] {"stamp_ns": 1792158232321828999, "physical_parking_speed_factor": 1.755, "state": "WAIT_FOR_LOCALIZATION", "pose": null, "goal": null, "v": 0.0, "steering_deg": 0.0, "omega": 0.0, "progress": 0, "path_states": 0, "replans": 0, "max_articulation_deg": 0.0, "collisions": 0, "planning_seconds": 0.0, "planned_length": 0.0, "gear_changes": 0, "planned_max_articulation_deg": null, "planning_articulation_limit_deg": 30.0, "speed_from_slam": 0.0, "failure": "", "estimator": "initial articulated alignment and trailer bias not confirmed", "first_obstacle": false, "gap_seen": false, "second_obstacle": false, "search_distance": 0.0, "max_tracking_error": 0.0, "gap_center": null, "gap_confidence": null, "gap_yaw": null, "gap_length": null, "gap_width": null, "target_source": "observe_gap(Cartographer OccupancyGrid)", "goal_shift_m": 0.0, "parking_stop_policy": "legacy", "legacy_stop_evidence": null, "legacy_stop_completed": null, "goal_lateral_shift_m": 0.0, "planning_map_stamp_ns": null, "map_age_s": 1423.697660172, "lidar_age_s": 1423.697660172, "tractor_imu_age_s": null, "trailer_imu_age_s": 1423.697660172, "localization_status_age_s": 1423.697660172, "independent_observation_hits": 0, "reference_state": null, "pose_freshness_stop_enabled": true, "pose_freshness_threshold_s": 0.8, "max_pose_age_s": 0.0, "pose_freshness_exceed_count": 0, "pose_age_samples": 0}
+[WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+[INFO] [auto_parking-9]: sending signal 'SIGINT' to process[auto_parking-9]
+[INFO] [cartographer_occupancy_grid_node-8]: sending signal 'SIGINT' to process[cartographer_occupancy_grid_node-8]
+[INFO] [cartographer_node-7]: sending signal 'SIGINT' to process[cartographer_node-7]
+[INFO] [ebimu_node-6]: sending signal 'SIGINT' to process[ebimu_node-6]
+[INFO] [ebimu_node-5]: sending signal 'SIGINT' to process[ebimu_node-5]
+[INFO] [lidar_gateway-4]: sending signal 'SIGINT' to process[lidar_gateway-4]
+[INFO] [control_adapter-3]: sending signal 'SIGINT' to process[control_adapter-3]
+[INFO] [state_estimator-2]: sending signal 'SIGINT' to process[state_estimator-2]
+[INFO] [sensor_tf-1]: sending signal 'SIGINT' to process[sensor_tf-1]
+[cartographer_occupancy_grid_node-8] [INFO] [1792158232.664455770] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[cartographer_node-7] [INFO] [1792158232.664595804] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[cartographer_node-7] [INFO] [1792158232.665149913] [cartographer logger]: I1016 22:43:52.000000 25110 node.cpp:569] Shutdown the subscriber of [scan]
+[cartographer_node-7] [INFO] [1792158232.665326163] [cartographer logger]: I1016 22:43:52.000000 25110 node.cpp:569] Shutdown the subscriber of [imu]
+[cartographer_node-7] [INFO] [1792158232.665330540] [cartographer logger]: I1016 22:43:52.000000 25110 map_builder_bridge.cpp:152] Finishing trajectory with ID '0'...
+[cartographer_node-7] [INFO] [1792158232.665354458] [cartographer logger]: I1016 22:43:52.000000 25110 map_builder_bridge.cpp:161] Running final trajectory optimization...
+[cartographer_node-7] [INFO] [1792158232.665470470] [cartographer logger]: I1016 22:43:52.000000 25138 pose_graph_2d.cc:538] Remaining work items in queue: 2
+[cartographer_node-7] [INFO] [1792158232.665501099] [cartographer logger]: I1016 22:43:52.000000 25138 constraint_builder_2d.cc:290] 0 computations resulted in 0 additional constraints.
+[cartographer_node-7] [INFO] [1792158232.665508676] [cartographer logger]: I1016 22:43:52.000000 25138 constraint_builder_2d.cc:292] Score histogram:
+[cartographer_node-7] Count: 0
+[cartographer_node-7] [INFO] [1792158232.665517743] [cartographer logger]: I1016 22:43:52.000000 25138 pose_graph_2d.cc:538] Remaining work items in queue: 1
+[cartographer_node-7] [INFO] [1792158232.665524483] [cartographer logger]: I1016 22:43:52.000000 25138 constraint_builder_2d.cc:290] 0 computations resulted in 0 additional constraints.
+[cartographer_node-7] [INFO] [1792158232.665529430] [cartographer logger]: I1016 22:43:52.000000 25138 constraint_builder_2d.cc:292] Score histogram:
+[cartographer_node-7] Count: 0
+[cartographer_node-7] [INFO] [1792158232.665690501] [cartographer logger]: I1016 22:43:52.000000 25140 constraint_builder_2d.cc:290] 0 computations resulted in 0 additional constraints.
+[cartographer_node-7] [INFO] [1792158232.665707001] [cartographer logger]: I1016 22:43:52.000000 25140 constraint_builder_2d.cc:292] Score histogram:
+[cartographer_node-7] Count: 0
+[cartographer_node-7] [KOptimizing: Done.     
+[cartographer_node-7] [INFO] [1792158232.668414044] [cartographer logger]: I1016 22:43:52.000000 25139 constraint_builder_2d.cc:290] 0 computations resulted in 0 additional constraints.
+[cartographer_node-7] [INFO] [1792158232.668431647] [cartographer logger]: I1016 22:43:52.000000 25139 constraint_builder_2d.cc:292] Score histogram:
+[cartographer_node-7] Count: 0
+[cartographer_node-7] [KOptimizing: Done.     
+[INFO] [cartographer_occupancy_grid_node-8]: process has finished cleanly [pid 25112]
+[INFO] [cartographer_node-7]: process has finished cleanly [pid 25110]
+[INFO] [ebimu_node-5]: process has finished cleanly [pid 25106]
+[INFO] [ebimu_node-6]: process has finished cleanly [pid 25108]
+[INFO] [control_adapter-3]: process has finished cleanly [pid 25102]
+[INFO] [sensor_tf-1]: process has finished cleanly [pid 25098]
+[INFO] [lidar_gateway-4]: process has finished cleanly [pid 25104]
+[INFO] [state_estimator-2]: process has finished cleanly [pid 25100]
+[INFO] [auto_parking-9]: process has finished cleanly [pid 25114]

@@ -1,0 +1,34 @@
+{
+  "warmup_s": 2,
+  "scans": 268,
+  "checks": {
+    "start_now": {
+      "checked": 268,
+      "failed": 0
+    },
+    "end_now": {
+      "checked": 268,
+      "failed": 241
+    },
+    "end_after_30ms": {
+      "checked": 268,
+      "failed": 0
+    },
+    "end_after_100ms": {
+      "checked": 267,
+      "failed": 0
+    }
+  },
+  "end_minus_latest_common_tf_ms": {
+    "min": -3.065739,
+    "median": 2.007389,
+    "max": 4.800045
+  },
+  "scan_duration_s": {
+    "min": 0.083062068,
+    "median": 0.0855728965,
+    "max": 0.087582199
+  },
+  "raw_scan_frame": "laser_frame",
+  "physical_target_confirmed": false
+}

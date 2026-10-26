@@ -1,0 +1,93 @@
+[
+  {
+    "file": "visualization/tractor_trailer_rviz/models/tractor-trailer-kidbi/tractor_body.fbx",
+    "vertices": 25254,
+    "triangles": 13334,
+    "min": [
+      -0.548567,
+      -0.57815,
+      0.12445
+    ],
+    "max": [
+      1.23918,
+      0.574855,
+      1.38174
+    ],
+    "textures": [
+      "tractor/ImphenziaPalette01-256-Gradient.png",
+      "tractor/ImphenziaPalette01-256-Gradient.png"
+    ]
+  },
+  {
+    "file": "visualization/tractor_trailer_rviz/models/tractor-trailer-kidbi/tractor_front_wheel.fbx",
+    "vertices": 3152,
+    "triangles": 1582,
+    "min": [
+      -0.257835,
+      -0.0700262,
+      -0.256529
+    ],
+    "max": [
+      0.255458,
+      0.0701786,
+      0.256765
+    ],
+    "textures": [
+      "tractor/ImphenziaPalette01-256-Gradient.png"
+    ]
+  },
+  {
+    "file": "visualization/tractor_trailer_rviz/models/tractor-trailer-kidbi/tractor_rear_wheel.fbx",
+    "vertices": 4880,
+    "triangles": 2446,
+    "min": [
+      -0.383953,
+      -0.111742,
+      -0.38676
+    ],
+    "max": [
+      0.380135,
+      0.117303,
+      0.383277
+    ],
+    "textures": [
+      "tractor/ImphenziaPalette01-256-Gradient.png"
+    ]
+  },
+  {
+    "file": "visualization/tractor_trailer_rviz/models/tractor-trailer-kidbi/trailer_body.fbx",
+    "vertices": 1792,
+    "triangles": 896,
+    "min": [
+      -2.16086,
+      -0.622485,
+      0.194512
+    ],
+    "max": [
+      0.0211641,
+      0.620857,
+      1.15532
+    ],
+    "textures": [
+      "tractor/ImphenziaPalette01-256-Gradient.png"
+    ]
+  },
+  {
+    "file": "visualization/tractor_trailer_rviz/models/tractor-trailer-kidbi/trailer_wheel.fbx",
+    "vertices": 3152,
+    "triangles": 1582,
+    "min": [
+      -0.257638,
+      -0.069494,
+      -0.25764
+    ],
+    "max": [
+      0.255656,
+      0.0707107,
+      0.255654
+    ],
+    "textures": [
+      "tractor/ImphenziaPalette01-256-Gradient.png"
+    ]
+  }
+]

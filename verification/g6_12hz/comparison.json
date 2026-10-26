@@ -1,0 +1,79 @@
+{
+  "scan_rate_increase_percent": 20.454040049572697,
+  "median_bins_change_percent": -16.99838622915546,
+  "checksum_full_driver_run": 6,
+  "driver_scan_failures": 0,
+  "driver_successful_connections": 1,
+  "driver_reconnect_log_entries": 0,
+  "earlier_point_warnings_full_run": 10,
+  "earlier_points_full_run": 74,
+  "earlier_point_warnings_during_probe": 6,
+  "earlier_points_during_probe": 67,
+  "cpu_mean_one_core_percent": {
+    "driver": 0.5538708000761579,
+    "cartographer": 8.445968808089262,
+    "occupancy_grid": 0.46150643616945425,
+    "rviz": 5.876857100819231
+  },
+  "maximum_observed_valid_return_m": 10.933500289916992,
+  "cartographer_fatal_or_error_log_entries": 0,
+  "matching_messages_before_first_scan_stamp": 1,
+  "warnings": [
+    {
+      "stamp_s": 1792237671.5439022,
+      "points": 2,
+      "within_probe": false
+    },
+    {
+      "stamp_s": 1792237673.7717211,
+      "points": 2,
+      "within_probe": false
+    },
+    {
+      "stamp_s": 1792237680.8799417,
+      "points": 1,
+      "within_probe": true
+    },
+    {
+      "stamp_s": 1792237681.5658855,
+      "points": 36,
+      "within_probe": true
+    },
+    {
+      "stamp_s": 1792237707.9160914,
+      "points": 12,
+      "within_probe": true
+    },
+    {
+      "stamp_s": 1792237710.3219383,
+      "points": 1,
+      "within_probe": true
+    },
+    {
+      "stamp_s": 1792237721.8221977,
+      "points": 1,
+      "within_probe": true
+    },
+    {
+      "stamp_s": 1792237729.372053,
+      "points": 16,
+      "within_probe": true
+    },
+    {
+      "stamp_s": 1792237762.8775258,
+      "points": 1,
+      "within_probe": false
+    },
+    {
+      "stamp_s": 1792237763.563527,
+      "points": 2,
+      "within_probe": false
+    }
+  ],
+  "driver_clean_exit": true,
+  "slam_clean_exit_count": 3,
+  "final_setting": "12Hz / 18K / 15m; stationary SLAM verified; timing warnings retained",
+  "earlier_points_per_second_previous": 0.15570757541850108,
+  "earlier_points_per_second_new": 1.0329405748019131,
+  "earlier_points_vs_observed_valid_scan_returns_percent": 0.011744557624584338
+}

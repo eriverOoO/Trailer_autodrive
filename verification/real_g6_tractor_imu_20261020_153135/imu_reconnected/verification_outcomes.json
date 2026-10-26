@@ -1,0 +1,45 @@
+{
+  "at": "2026-10-20T16:02:23.607173+09:00",
+  "progress": {
+    "70": "UART 검증 완료",
+    "85": "부분 완료: 실제 IMU 입력 수신 확인, 지속브리지FAIL/윤곽선미표시",
+    "95": "현재 포트/TF/신선도/오류원인 점검 완료, 물리회전방향 미검증",
+    "100": "결과 보고 작성 완료; 전체 기능 100% 성공은 아님"
+  },
+  "source_files_checked": 765,
+  "source_changed": [],
+  "control_publishers_observed": [],
+  "g6_checksum_errors": 6,
+  "preserved_pids": {
+    "21573": {
+      "alive": true,
+      "start_ticks": "142615",
+      "cmdline": "/home/venezuelachocolatemilk/mvsim_slam_real/install/ydlidar_ros2_driver/lib/ydlidar_ros2_driver/ydlidar_ros2_driver_node --ros-args -r __node:=ydlidar_ros2_driver_node --params-file /home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/g6.yaml --params-file /tmp/launch_params_6bra79cs -r scan:=/scan "
+    },
+    "21575": {
+      "alive": true,
+      "start_ticks": "142615",
+      "cmdline": "/opt/ros/humble/lib/cartographer_ros/cartographer_node -configuration_directory /home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config -configuration_basename g6_lidar_only.lua --ros-args -r __node:=cartographer_node --params-file /tmp/launch_params_v9ftqk4z -r scan:=/scan -r imu:=/tractor/imu/data "
+    },
+    "21577": {
+      "alive": true,
+      "start_ticks": "142615",
+      "cmdline": "/opt/ros/humble/lib/cartographer_ros/cartographer_occupancy_grid_node -resolution 0.05 -publish_period_sec 1.0 --ros-args -r __node:=cartographer_occupancy_grid_node --params-file /tmp/launch_params_sxa6eih6 "
+    },
+    "17521": {
+      "alive": true,
+      "start_ticks": "98890",
+      "cmdline": "/usr/bin/python3 /home/venezuelachocolatemilk/mvsim_slam_real/visualization/tractor_trailer_rviz_2d/install/tractor_trailer_rviz_2d/lib/tractor_trailer_rviz_2d/tt2d_visualizer --ros-args --params-file /tmp/launch_params_hu1tdzgv "
+    },
+    "22858": {
+      "alive": true,
+      "start_ticks": "152174",
+      "cmdline": "/opt/ros/humble/lib/rviz2/rviz2 -d /home/venezuelachocolatemilk/mvsim_slam_real/verification/real_g6_tractor_imu_20261020_153135/rviz_map_origin_view.rviz --ros-args -r __node:=tractor_trailer_rviz_2d -p use_sim_time:=false "
+    }
+  },
+  "current_independent_imu": "LIVE",
+  "current_existing_visualization_imu": "INVALID",
+  "trailer_imu": "NOT CONNECTED",
+  "rollover_bug_confirmed": true,
+  "proposal_applied": false
+}

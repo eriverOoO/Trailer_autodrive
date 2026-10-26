@@ -1,0 +1,15 @@
+1792237671.3663771 [INFO] [launch]: All log files can be found below /home/venezuelachocolatemilk/mvsim_slam_real/verification/g6_12hz/ros/2026-10-17-20-47-51-365914-venezuelachocolatemilk-Legion-Pro-5-16IAX10H-34454
+1792237671.3664446 [INFO] [launch]: Default logging verbosity is set to INFO
+1792237671.3808479 [INFO] [launch.user]: Sensor-origin SLAM: map -> odom -> laser_frame; vehicle pose is unmeasured
+1792237671.3845794 [INFO] [cartographer_node-1]: process started with pid [34455]
+1792237671.3846428 [INFO] [cartographer_occupancy_grid_node-2]: process started with pid [34457]
+1792237671.3846750 [INFO] [rviz2-3]: process started with pid [34459]
+1792237768.0253000 [WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+1792237768.0260735 [INFO] [rviz2-3]: sending signal 'SIGINT' to process[rviz2-3]
+1792237768.0262282 [INFO] [cartographer_occupancy_grid_node-2]: sending signal 'SIGINT' to process[cartographer_occupancy_grid_node-2]
+1792237768.0263560 [INFO] [cartographer_node-1]: sending signal 'SIGINT' to process[cartographer_node-1]
+1792237768.1318705 [INFO] [cartographer_occupancy_grid_node-2]: process has finished cleanly [pid 34457]
+1792237768.1320868 [INFO] [launch]: process[cartographer_occupancy_grid_node-2] was required: shutting down launched system
+1792237768.1398420 [INFO] [cartographer_node-1]: process has finished cleanly [pid 34455]
+1792237768.1399567 [INFO] [launch]: process[cartographer_node-1] was required: shutting down launched system
+1792237768.2538512 [INFO] [rviz2-3]: process has finished cleanly [pid 34459]

@@ -1,0 +1,127 @@
+[
+  {
+    "file": "gazebo_ros_ray_sensor.cpp",
+    "url": "https://raw.githubusercontent.com/ros2-gbp/gazebo_ros_pkgs-release/release/humble/gazebo_plugins/3.9.0-1/src/gazebo_ros_ray_sensor.cpp",
+    "sha256": "1f30dcb23669dd35035c60252b8c81e2650f61cccf9a9054be54f751db5e4699",
+    "status": "downloaded",
+    "ref": "release/humble/gazebo_plugins/3.9.0-1"
+  },
+  {
+    "file": "gazebo_ros_init.cpp",
+    "url": "https://raw.githubusercontent.com/ros2-gbp/gazebo_ros_pkgs-release/release/humble/gazebo_ros/3.9.0-1/src/gazebo_ros_init.cpp",
+    "sha256": "96c341f4dd6f6e276131d1e57f90c345804fe927480a50ec519f7efa19cf028f",
+    "status": "downloaded",
+    "ref": "release/humble/gazebo_ros/3.9.0-1"
+  },
+  {
+    "file": "gazebo_ros_diff_drive.cpp",
+    "url": "https://raw.githubusercontent.com/ros2-gbp/gazebo_ros_pkgs-release/release/humble/gazebo_plugins/3.9.0-1/src/gazebo_ros_diff_drive.cpp",
+    "sha256": "7a6ef5eb9b48292f1b4f3d9a16907815d5d5a751e0a5635a1cac84315b95b498",
+    "status": "downloaded",
+    "ref": "release/humble/gazebo_plugins/3.9.0-1"
+  },
+  {
+    "file": "sensor_bridge.cc",
+    "url": "https://raw.githubusercontent.com/ros2-gbp/cartographer_ros-release/release/humble/cartographer_ros/2.0.9002-1/src/sensor_bridge.cpp",
+    "status": "downloaded",
+    "sha256": "ea04ea945e4844d2168d92d0e08014e7fbf55d93d87148781e2ce30363a71905"
+  },
+  {
+    "file": "msg_conversion.cc",
+    "url": "https://raw.githubusercontent.com/ros2-gbp/cartographer_ros-release/release/humble/cartographer_ros/2.0.9002-1/src/msg_conversion.cpp",
+    "status": "downloaded",
+    "sha256": "3108fe09368035c4f09fdc05493f8d6a23e182076211c961124e8f64d760e791"
+  },
+  {
+    "file": "node.cc",
+    "url": "https://raw.githubusercontent.com/ros2-gbp/cartographer_ros-release/release/humble/cartographer_ros/2.0.9002-1/src/node.cpp",
+    "status": "downloaded",
+    "sha256": "11d7e91cf9119edd787ff3b623e24bb31bf47b3a56bf4d147ca9eeb74caf0d35"
+  },
+  {
+    "file": "tf_bridge.cc",
+    "url": "https://raw.githubusercontent.com/ros2-gbp/cartographer_ros-release/release/humble/cartographer_ros/2.0.9002-1/src/tf_bridge.cpp",
+    "status": "downloaded",
+    "sha256": "3fc1a57b2d813eb903eb4e6f40e500e35a397664d4598a38b281c3a9773f4ada"
+  },
+  {
+    "file": "map_builder_bridge.cc",
+    "url": "https://raw.githubusercontent.com/ros2-gbp/cartographer_ros-release/release/humble/cartographer_ros/2.0.9002-1/src/map_builder_bridge.cpp",
+    "status": "downloaded",
+    "sha256": "3419f2ec72dd4c1ac86b7437104727ac0527b47d82034b3cc4b48ae6cf257180"
+  },
+  {
+    "file": "trajectory_options.cc",
+    "url": "https://raw.githubusercontent.com/ros2-gbp/cartographer_ros-release/release/humble/cartographer_ros/2.0.9002-1/src/trajectory_options.cpp",
+    "status": "downloaded",
+    "sha256": "cf6ceabf2713e49aed4a7ccdbd6cc67b40b3d6c8d7784537aff5fba4a13f10a1"
+  },
+  {
+    "file": "node_options.cc",
+    "url": "https://raw.githubusercontent.com/ros2-gbp/cartographer_ros-release/release/humble/cartographer_ros/2.0.9002-1/src/node_options.cpp",
+    "status": "downloaded",
+    "sha256": "f917487f6e3f0d088cbd1df474713819de603a8ab80c70b7c1c37130a05fedad"
+  },
+  {
+    "file": "local_trajectory_builder_2d.cc",
+    "url": "https://raw.githubusercontent.com/ros2-gbp/cartographer-release/release/humble/cartographer/2.0.9004-1/cartographer/mapping/internal/2d/local_trajectory_builder_2d.cc",
+    "sha256": "e84c0ff6de04af97c9bb03047913eba54718f7b3db8c1bf1a8bd9fd2fc4ba0c8",
+    "status": "downloaded",
+    "ref": "release/humble/cartographer/2.0.9004-1"
+  },
+  {
+    "file": "range_data_collator.cc",
+    "url": "https://raw.githubusercontent.com/ros2-gbp/cartographer-release/release/humble/cartographer/2.0.9004-1/cartographer/mapping/internal/range_data_collator.cc",
+    "status": "downloaded",
+    "sha256": "134f3aa5577df23e3b2bf9cfa4928f5b297437001837fe1c1bce1e76ceeb0ff6"
+  },
+  {
+    "file": "pose_extrapolator.cc",
+    "url": "https://raw.githubusercontent.com/ros2-gbp/cartographer-release/release/humble/cartographer/2.0.9004-1/cartographer/mapping/pose_extrapolator.cc",
+    "sha256": "b8956d24e3bf1ab33d0aef097e6e50b4d61cf820b8750569c058084c4ddbb1a4",
+    "status": "downloaded",
+    "ref": "release/humble/cartographer/2.0.9004-1"
+  },
+  {
+    "file": "lua_parameter_dictionary.cc",
+    "url": "https://raw.githubusercontent.com/ros2-gbp/cartographer-release/release/humble/cartographer/2.0.9004-1/cartographer/common/lua_parameter_dictionary.cc",
+    "sha256": "c130ca2a2710f5bed36410b8ea51d65c30851160e189b080da7cb683393050f6",
+    "status": "downloaded",
+    "ref": "release/humble/cartographer/2.0.9004-1"
+  },
+  {
+    "file": "RaySensor.cc",
+    "url": "https://raw.githubusercontent.com/gazebosim/gazebo-classic/gazebo11_11.10.2/gazebo/sensors/RaySensor.cc",
+    "sha256": "f36a4ee9fb2f9e9425aa61539056d179c460e4ba0de660c2ee577ab1f02b25dc",
+    "status": "downloaded",
+    "ref": "gazebo11_11.10.2"
+  },
+  {
+    "file": "GaussianNoiseModel.cc",
+    "url": "https://raw.githubusercontent.com/gazebosim/gazebo-classic/gazebo11_11.10.2/gazebo/sensors/GaussianNoiseModel.cc",
+    "sha256": "9c3aee1d1d5f1a3e85fd2be7f3314734bc4f60c1e3cb6508282546eeaae54884",
+    "status": "downloaded",
+    "ref": "gazebo11_11.10.2"
+  },
+  {
+    "file": "MultiRayShape.cc",
+    "url": "https://raw.githubusercontent.com/gazebosim/gazebo-classic/gazebo11_11.10.2/gazebo/physics/MultiRayShape.cc",
+    "sha256": "460347804b13d34d6ca5a1d1d28d8da3d568fc6abaf94c1ebcaedeefea8cd7cf",
+    "status": "downloaded",
+    "ref": "gazebo11_11.10.2"
+  },
+  {
+    "file": "ODEMultiRayShape.cc",
+    "url": "https://raw.githubusercontent.com/gazebosim/gazebo-classic/gazebo11_11.10.2/gazebo/physics/ode/ODEMultiRayShape.cc",
+    "sha256": "17bd950d390ee88f82a6014e0510bb0b0f275fa4e947be4f645117b0a69bb04f",
+    "status": "downloaded",
+    "ref": "gazebo11_11.10.2"
+  },
+  {
+    "file": "ODERayShape.cc",
+    "url": "https://raw.githubusercontent.com/gazebosim/gazebo-classic/gazebo11_11.10.2/gazebo/physics/ode/ODERayShape.cc",
+    "sha256": "7e23a58d28781b3d8357dc12c15ebca63e2f2bcdb9f8d419a785c5f2d5bf47bf",
+    "status": "downloaded",
+    "ref": "gazebo11_11.10.2"
+  }
+]

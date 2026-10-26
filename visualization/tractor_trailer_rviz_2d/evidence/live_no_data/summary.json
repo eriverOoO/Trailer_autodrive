@@ -1,0 +1,14 @@
+{
+  "kind": "LIVE mode with no sources; not a hardware test",
+  "statuses": 74,
+  "all_no_data": true,
+  "only_unknown_text": true,
+  "no_tf_publishers": true,
+  "no_imu_publishers": true,
+  "nodes": [
+    "two_d_live_no_data_observer",
+    "tractor_trailer_2d_visualizer",
+    "tractor_trailer_rviz_2d",
+    "transform_listener_impl_5b09fe836030"
+  ]
+}

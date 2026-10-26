@@ -1,0 +1,11 @@
+Bus 004 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 003 Device 011: ID 10c4:ea60 Silicon Labs CP210x UART Bridge
+Bus 003 Device 008: ID 10c4:ea60 Silicon Labs CP210x UART Bridge
+Bus 003 Device 003: ID 048d:c195 Integrated Technology Express, Inc. ITE Device(8258)
+Bus 003 Device 002: ID 17ef:f006 Lenovo Idea5003
+Bus 003 Device 005: ID 0489:e111 Foxconn / Hon Hai Wireless_Device
+Bus 003 Device 004: ID 30c9:00f8 Luxvisions Innotech Limited Integrated Camera
+Bus 003 Device 009: ID 25a7:fa61 Areson Technology Corp Elecom Co., Ltd MR-K013 Multicard Reader
+Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub

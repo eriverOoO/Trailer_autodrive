@@ -1,0 +1,63 @@
+{
+  "at": "2026-10-19T21:39:04.768948+09:00",
+  "progress_percent": 30,
+  "completed_stages": [
+    "device investigation",
+    "actual tractor identity via user confirmation and current UART packets",
+    "USB identity collision analysis"
+  ],
+  "method_selection": "AWAITING_DEDICATED_SOCKET_DECISION",
+  "candidate_prepared": true,
+  "installed": false,
+  "alias_exists": false,
+  "alias_target": null,
+  "current_uart_rx": {
+    "at": "2026-10-19T21:34:09.453031+09:00",
+    "port": "/dev/serial/by-id/usb-Silicon_Labs_CP2102_USB_to_UART_Bridge_Controller_0001-if00-port0",
+    "baud": 115200,
+    "opened": true,
+    "rx_bytes": 37481,
+    "tx_bytes": 0,
+    "duration_s": 5.0009868039996945,
+    "bytes_per_second": 7494.720835900508,
+    "per_second_bytes": {
+      "0": 7481,
+      "1": 7500,
+      "2": 7500,
+      "3": 7500,
+      "4": 7500,
+      "5": 0
+    },
+    "packets": 499,
+    "rejected": 0,
+    "discarded": 56,
+    "packet_lengths": {
+      "75": 499
+    },
+    "packet_rate_hz": 99.99485996300015,
+    "checksum": "ASCII: not defined by manufacturer; not applicable",
+    "layout": {
+      "port": "/dev/serial/by-id/usb-Silicon_Labs_CP2102_USB_to_UART_Bridge_Controller_0001-if00-port0",
+      "confirmed_imu_port": true,
+      "baud": 115200,
+      "orientation": "quaternion",
+      "gyro": true,
+      "accel": true,
+      "timestamp": true,
+      "seconds": 5.0,
+      "output": "verification/imu_persistent_device_names/evidence/current_uart"
+    },
+    "error": null
+  },
+  "alias_uart_test": "NOT_TESTED_NO_ALIAS",
+  "replug_test": "NOT_TESTED",
+  "other_socket_test": "NOT_TESTED",
+  "g6_simultaneous_test": "NOT_TESTED_G6_NOT_CONNECTED",
+  "port_independent_identification": false,
+  "tractor_reserved_socket_confirmed": "PENDING",
+  "trailer_alias_created": false,
+  "protected_files": 411,
+  "protected_changes": [],
+  "existing_rules": 120,
+  "existing_rule_changes": []
+}

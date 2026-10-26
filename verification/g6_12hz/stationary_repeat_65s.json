@@ -1,0 +1,975 @@
+{
+  "source": "ROS_TOPIC_OBSERVATION; confirm live G6 identity in accompanying driver log",
+  "test_scope": "stationary sensor-origin SLAM; no vehicle motion",
+  "requested_duration_s": 65.0,
+  "scan_pass": true,
+  "slam_pass": true,
+  "scan_count": 758,
+  "continuous_scan_span_s": 64.88700532099983,
+  "measured_scan_hz": 11.66643453885838,
+  "receipt_gap_s": {
+    "min": 0.08201695600018866,
+    "median": 0.0857246909999958,
+    "p95": 0.08681953199993586,
+    "max": 0.08902407300001869
+  },
+  "stamp_gap_s": {
+    "min": 0.08394,
+    "median": 0.085709,
+    "p95": 0.086587,
+    "max": 0.087728
+  },
+  "timestamp_age_s": {
+    "min": 0.084526311,
+    "median": 0.086342794,
+    "p95": 0.087392361,
+    "max": 0.089767726
+  },
+  "valid_beams": {
+    "min": 755,
+    "median": 781.0,
+    "p95": 795,
+    "max": 805
+  },
+  "beam_count": {
+    "min": 1537,
+    "median": 1541.0,
+    "p95": 1545,
+    "max": 1547
+  },
+  "first_scan": {
+    "wall": 2765.033651826,
+    "stamp_ns": 1792237946026733000,
+    "frame": "laser_frame",
+    "age_s": 0.085034264,
+    "beams": 1543,
+    "valid": 760,
+    "valid_min_m": 0.3100000023841858,
+    "valid_max_m": 9.192999839782715,
+    "angle_min": -3.1415927410125732,
+    "angle_max": 3.1415927410125732,
+    "angle_increment": 0.004074698779731989,
+    "scan_time": 0.08451700210571289,
+    "time_increment": 5.4774467571405694e-05,
+    "range_min": 0.2800000011920929,
+    "range_max": 15.0,
+    "angle_count_error_beams": 8.913930175813558e-06,
+    "finite_over_15m": 0,
+    "zero_bins": 783,
+    "nan_bins": 0,
+    "infinite_bins": 0,
+    "below_min_positive_bins": 0
+  },
+  "last_scan": {
+    "wall": 2829.920657147,
+    "stamp_ns": 1792238010912477000,
+    "frame": "laser_frame",
+    "age_s": 0.086295365,
+    "beams": 1539,
+    "valid": 786,
+    "valid_min_m": 0.3100000023841858,
+    "valid_max_m": 9.09850025177002,
+    "angle_min": -3.1415927410125732,
+    "angle_max": 3.1415927410125732,
+    "angle_increment": 0.004085295833647251,
+    "scan_time": 0.08555199950933456,
+    "time_increment": 5.5589342082384974e-05,
+    "range_min": 0.2800000011920929,
+    "range_max": 15.0,
+    "angle_count_error_beams": 0.00011991192172988678,
+    "finite_over_15m": 0,
+    "zero_bins": 753,
+    "nan_bins": 0,
+    "infinite_bins": 0,
+    "below_min_positive_bins": 0
+  },
+  "map_count": 66,
+  "distinct_map_contents": 62,
+  "maps": [
+    {
+      "stamp_ns": 1792237945495268509,
+      "frame": "map",
+      "width": 298,
+      "height": 155,
+      "resolution": 0.05000000074505806,
+      "occupied": 523,
+      "known": 13144,
+      "sha256": "9301a493c4b790e9620a61332d3bb4cf4a539bf01e12d405dbf93425d2dd28a9"
+    },
+    {
+      "stamp_ns": 1792237946395269602,
+      "frame": "map",
+      "width": 300,
+      "height": 155,
+      "resolution": 0.05000000074505806,
+      "occupied": 537,
+      "known": 13324,
+      "sha256": "f27b3b180f037dddfa7882cab0a954df5e3f422c8a813b9616525f464867e912"
+    },
+    {
+      "stamp_ns": 1792237947595303930,
+      "frame": "map",
+      "width": 300,
+      "height": 156,
+      "resolution": 0.05000000074505806,
+      "occupied": 547,
+      "known": 13358,
+      "sha256": "7bba46df42dfc773e1897141bea1e7b73a22af2795a01f6d43d5928a4175f037"
+    },
+    {
+      "stamp_ns": 1792237948495306791,
+      "frame": "map",
+      "width": 300,
+      "height": 156,
+      "resolution": 0.05000000074505806,
+      "occupied": 545,
+      "known": 13361,
+      "sha256": "edfe09ab2424700a91c0e2235da37dbf73fa584baef61f6be5a5f20b48200409"
+    },
+    {
+      "stamp_ns": 1792237949395323259,
+      "frame": "map",
+      "width": 300,
+      "height": 156,
+      "resolution": 0.05000000074505806,
+      "occupied": 547,
+      "known": 13363,
+      "sha256": "a94b7c42a7184c08509846975420f90429269b686a263fa533455510ae7b28c9"
+    },
+    {
+      "stamp_ns": 1792237950595348703,
+      "frame": "map",
+      "width": 300,
+      "height": 156,
+      "resolution": 0.05000000074505806,
+      "occupied": 552,
+      "known": 13393,
+      "sha256": "9011e30c31f74cb43cff0d3d0629f59c74876c254c4b166b9b8a7ce6adf9bd80"
+    },
+    {
+      "stamp_ns": 1792237951495362660,
+      "frame": "map",
+      "width": 302,
+      "height": 156,
+      "resolution": 0.05000000074505806,
+      "occupied": 1172,
+      "known": 14151,
+      "sha256": "f66138d4d05045b8b7e3a28078d92c1cef62f641abe103c0f743e86061140103"
+    },
+    {
+      "stamp_ns": 1792237952395375403,
+      "frame": "map",
+      "width": 302,
+      "height": 156,
+      "resolution": 0.05000000074505806,
+      "occupied": 1216,
+      "known": 14389,
+      "sha256": "0a3985efd07e70e37ab1dbf2451e80ea6d0ce39801cb6d20de09f41a7fb44f50"
+    },
+    {
+      "stamp_ns": 1792237953595384829,
+      "frame": "map",
+      "width": 302,
+      "height": 156,
+      "resolution": 0.05000000074505806,
+      "occupied": 1250,
+      "known": 14491,
+      "sha256": "53759a79658e19d1cb85b316b7bfda4aab36bbaafad7f48b6f4d83b561011d30"
+    },
+    {
+      "stamp_ns": 1792237954495524350,
+      "frame": "map",
+      "width": 302,
+      "height": 156,
+      "resolution": 0.05000000074505806,
+      "occupied": 1292,
+      "known": 14614,
+      "sha256": "b1a2b56d5a7c1bd43f700c4c518c54a53bd30d6e21b7a26543fb90de4cdcb7a2"
+    },
+    {
+      "stamp_ns": 1792237955395439711,
+      "frame": "map",
+      "width": 302,
+      "height": 156,
+      "resolution": 0.05000000074505806,
+      "occupied": 1279,
+      "known": 14628,
+      "sha256": "8e95bba364c49d09d65f2b40a0c5ed893fb32ffed259eba2d32321c021914de6"
+    },
+    {
+      "stamp_ns": 1792237956595454583,
+      "frame": "map",
+      "width": 302,
+      "height": 156,
+      "resolution": 0.05000000074505806,
+      "occupied": 1258,
+      "known": 14634,
+      "sha256": "1a30ffacc8e9695aa1a55f8291525d189f02c23a71da3c88349b49e700105c00"
+    },
+    {
+      "stamp_ns": 1792237957495478690,
+      "frame": "map",
+      "width": 302,
+      "height": 156,
+      "resolution": 0.05000000074505806,
+      "occupied": 1265,
+      "known": 14785,
+      "sha256": "1c8dcaee888c1e58a9c3902b16183ba4a6f83dcb6d5968a207907a07e2a90dbc"
+    },
+    {
+      "stamp_ns": 1792237958395498381,
+      "frame": "map",
+      "width": 302,
+      "height": 156,
+      "resolution": 0.05000000074505806,
+      "occupied": 1262,
+      "known": 14796,
+      "sha256": "94f1594f83304f85b22d5e3f60f97d299a9505c14c706b8e36e86aa987129371"
+    },
+    {
+      "stamp_ns": 1792237959595509465,
+      "frame": "map",
+      "width": 302,
+      "height": 156,
+      "resolution": 0.05000000074505806,
+      "occupied": 1219,
+      "known": 14856,
+      "sha256": "ca24b7f1de960ff9cc2a06362b74db7a315dc1a1d5b90ca59a1ea39a99f95b50"
+    },
+    {
+      "stamp_ns": 1792237960495530375,
+      "frame": "map",
+      "width": 302,
+      "height": 156,
+      "resolution": 0.05000000074505806,
+      "occupied": 1297,
+      "known": 15019,
+      "sha256": "12a6299b585528249feb1cd902037c6b110949d188c78196e4659b74e66fd67e"
+    },
+    {
+      "stamp_ns": 1792237961395544517,
+      "frame": "map",
+      "width": 302,
+      "height": 156,
+      "resolution": 0.05000000074505806,
+      "occupied": 1248,
+      "known": 15026,
+      "sha256": "c126c8aa4c9415ad134f2baf65e205f4d09f4c56b582c45d9282670a9e24e97d"
+    },
+    {
+      "stamp_ns": 1792237962595567483,
+      "frame": "map",
+      "width": 302,
+      "height": 156,
+      "resolution": 0.05000000074505806,
+      "occupied": 1251,
+      "known": 15051,
+      "sha256": "793c48717742bfad2b8b247166917d37425bf80a800b2da50616101f718c7e3d"
+    },
+    {
+      "stamp_ns": 1792237963495587071,
+      "frame": "map",
+      "width": 302,
+      "height": 156,
+      "resolution": 0.05000000074505806,
+      "occupied": 1254,
+      "known": 15061,
+      "sha256": "845b6c00b1d33db73f0ac7fefa4f485bfe27e1b22b2b149b9363343b7da3d938"
+    },
+    {
+      "stamp_ns": 1792237964395600540,
+      "frame": "map",
+      "width": 302,
+      "height": 156,
+      "resolution": 0.05000000074505806,
+      "occupied": 1254,
+      "known": 15061,
+      "sha256": "845b6c00b1d33db73f0ac7fefa4f485bfe27e1b22b2b149b9363343b7da3d938"
+    },
+    {
+      "stamp_ns": 1792237965595624386,
+      "frame": "map",
+      "width": 302,
+      "height": 156,
+      "resolution": 0.05000000074505806,
+      "occupied": 1212,
+      "known": 15074,
+      "sha256": "0cb8a38334a88bc43104db83200ea5458f48710c9b8ba8046efeb65c7b3ea5c7"
+    },
+    {
+      "stamp_ns": 1792237966495764458,
+      "frame": "map",
+      "width": 302,
+      "height": 156,
+      "resolution": 0.05000000074505806,
+      "occupied": 1204,
+      "known": 15086,
+      "sha256": "5a0dd6ba0723f1a5f2298de5be8f7e8a5f9728d773faab9f870f461fd0db3dca"
+    },
+    {
+      "stamp_ns": 1792237967398298593,
+      "frame": "map",
+      "width": 303,
+      "height": 156,
+      "resolution": 0.05000000074505806,
+      "occupied": 1185,
+      "known": 15096,
+      "sha256": "9b283c28bafd39a611c7d3353bed5a2c31b855187c42200636218e97755017a5"
+    },
+    {
+      "stamp_ns": 1792237968597759646,
+      "frame": "map",
+      "width": 303,
+      "height": 156,
+      "resolution": 0.05000000074505806,
+      "occupied": 1192,
+      "known": 15151,
+      "sha256": "95ab1524e930558a9fb4519eed0171d149a064bc3ed3bd3c8e9b358654b6b97d"
+    },
+    {
+      "stamp_ns": 1792237969495695718,
+      "frame": "map",
+      "width": 303,
+      "height": 156,
+      "resolution": 0.05000000074505806,
+      "occupied": 1192,
+      "known": 15154,
+      "sha256": "f18213af62e2a94fa274a4c0bb023751dcc4c96eff9ef23787bb9a2e59b72480"
+    },
+    {
+      "stamp_ns": 1792237970398453223,
+      "frame": "map",
+      "width": 303,
+      "height": 156,
+      "resolution": 0.05000000074505806,
+      "occupied": 1185,
+      "known": 15164,
+      "sha256": "193b1850e57820d272507b5201e69b4bc0c6f84b8e187bdf7cf6d2ff55206649"
+    },
+    {
+      "stamp_ns": 1792237971597311686,
+      "frame": "map",
+      "width": 303,
+      "height": 156,
+      "resolution": 0.05000000074505806,
+      "occupied": 1177,
+      "known": 15191,
+      "sha256": "042e0460aedf9191c4272eeddcfe794543f5976d42e69c241ba6ac392cf6c3e4"
+    },
+    {
+      "stamp_ns": 1792237972495753194,
+      "frame": "map",
+      "width": 303,
+      "height": 156,
+      "resolution": 0.05000000074505806,
+      "occupied": 1194,
+      "known": 15210,
+      "sha256": "bfbb502faca2661c097e81598f98b95e1c155c5950302b6f83902e9cf8f8fb99"
+    },
+    {
+      "stamp_ns": 1792237973398199847,
+      "frame": "map",
+      "width": 303,
+      "height": 156,
+      "resolution": 0.05000000074505806,
+      "occupied": 1182,
+      "known": 15211,
+      "sha256": "010aaad5de6212ec73143ed3792da541e6866548d206af046ceb62d49c9a3b39"
+    },
+    {
+      "stamp_ns": 1792237974597155409,
+      "frame": "map",
+      "width": 303,
+      "height": 156,
+      "resolution": 0.05000000074505806,
+      "occupied": 1187,
+      "known": 15258,
+      "sha256": "015ab37f055ad2e08c4303a68c97c4f97f8b36e7dbdf3c56cde6fd3ac2d02244"
+    },
+    {
+      "stamp_ns": 1792237975495811649,
+      "frame": "map",
+      "width": 303,
+      "height": 156,
+      "resolution": 0.05000000074505806,
+      "occupied": 1179,
+      "known": 15262,
+      "sha256": "68a224884d1d9ef1caa4f0f56d9518d4b5885333b5dc9f7c764859d022f3c431"
+    },
+    {
+      "stamp_ns": 1792237976397808389,
+      "frame": "map",
+      "width": 303,
+      "height": 156,
+      "resolution": 0.05000000074505806,
+      "occupied": 1162,
+      "known": 15266,
+      "sha256": "cd9d1a4d212fdcd63dbfc2102ff8a968428f2d1146a66a7e0076748fa6bee831"
+    },
+    {
+      "stamp_ns": 1792237977597048159,
+      "frame": "map",
+      "width": 303,
+      "height": 156,
+      "resolution": 0.05000000074505806,
+      "occupied": 1161,
+      "known": 15266,
+      "sha256": "02617a10c80690819023491f6f04ac7145c383c221bfe1323defee79776d731b"
+    },
+    {
+      "stamp_ns": 1792237978495957803,
+      "frame": "map",
+      "width": 304,
+      "height": 157,
+      "resolution": 0.05000000074505806,
+      "occupied": 1337,
+      "known": 15537,
+      "sha256": "9eb32565403cf3308a94bab137e3917b5c06115bc377f38e8228e3900fe0ab1a"
+    },
+    {
+      "stamp_ns": 1792237979396020018,
+      "frame": "map",
+      "width": 304,
+      "height": 157,
+      "resolution": 0.05000000074505806,
+      "occupied": 1331,
+      "known": 15568,
+      "sha256": "74f45839fdb250e3de6a8d0ea4dfbe01e0a060a346a714feb9409fff477131a7"
+    },
+    {
+      "stamp_ns": 1792237980596080997,
+      "frame": "map",
+      "width": 305,
+      "height": 157,
+      "resolution": 0.05000000074505806,
+      "occupied": 1299,
+      "known": 15607,
+      "sha256": "72eba4326bbfca74e6b56afaee9a69fd1adb27b51f544a415485032a3073fd51"
+    },
+    {
+      "stamp_ns": 1792237981495938709,
+      "frame": "map",
+      "width": 305,
+      "height": 157,
+      "resolution": 0.05000000074505806,
+      "occupied": 1299,
+      "known": 15607,
+      "sha256": "72eba4326bbfca74e6b56afaee9a69fd1adb27b51f544a415485032a3073fd51"
+    },
+    {
+      "stamp_ns": 1792237982395942715,
+      "frame": "map",
+      "width": 305,
+      "height": 157,
+      "resolution": 0.05000000074505806,
+      "occupied": 1299,
+      "known": 15607,
+      "sha256": "72eba4326bbfca74e6b56afaee9a69fd1adb27b51f544a415485032a3073fd51"
+    },
+    {
+      "stamp_ns": 1792237983595963833,
+      "frame": "map",
+      "width": 305,
+      "height": 157,
+      "resolution": 0.05000000074505806,
+      "occupied": 1299,
+      "known": 15609,
+      "sha256": "806f64743e286992bdeea796ce9e7a92be64eb9018f261b712714c5ee417e41d"
+    },
+    {
+      "stamp_ns": 1792237984496118131,
+      "frame": "map",
+      "width": 306,
+      "height": 157,
+      "resolution": 0.05000000074505806,
+      "occupied": 1301,
+      "known": 15657,
+      "sha256": "4d717b262c0d92a3cdc2409a1030c5e73ab1a22756db041e71f117a24e54ebd5"
+    },
+    {
+      "stamp_ns": 1792237985396118285,
+      "frame": "map",
+      "width": 306,
+      "height": 157,
+      "resolution": 0.05000000074505806,
+      "occupied": 1300,
+      "known": 15658,
+      "sha256": "5abb3c547c760a1db4191a4c2a0bffcf10dc45b53ce1aaa98772c3f91d9d3aef"
+    },
+    {
+      "stamp_ns": 1792237986598874623,
+      "frame": "map",
+      "width": 306,
+      "height": 157,
+      "resolution": 0.05000000074505806,
+      "occupied": 1305,
+      "known": 15703,
+      "sha256": "df8583ebb17a0d61ae102c2d64d1d99b0aa60696929f3f942fac64e3bbda88a8"
+    },
+    {
+      "stamp_ns": 1792237987496040831,
+      "frame": "map",
+      "width": 306,
+      "height": 157,
+      "resolution": 0.05000000074505806,
+      "occupied": 1308,
+      "known": 15712,
+      "sha256": "2ee481475b41e9183164e3868f1b0c6d2f66e661c98f294dec92352280c3d871"
+    },
+    {
+      "stamp_ns": 1792237988398388245,
+      "frame": "map",
+      "width": 306,
+      "height": 157,
+      "resolution": 0.05000000074505806,
+      "occupied": 1305,
+      "known": 15714,
+      "sha256": "ab01f4c7dde41559466bb597b94b51e39e4342d8817c38de4d71e582a1401232"
+    },
+    {
+      "stamp_ns": 1792237989596092706,
+      "frame": "map",
+      "width": 306,
+      "height": 157,
+      "resolution": 0.05000000074505806,
+      "occupied": 1305,
+      "known": 15717,
+      "sha256": "08ba7784e39994c4373b85e163aae81386a995b36c777757b495b008ad11efc3"
+    },
+    {
+      "stamp_ns": 1792237990496310689,
+      "frame": "map",
+      "width": 306,
+      "height": 157,
+      "resolution": 0.05000000074505806,
+      "occupied": 1436,
+      "known": 15925,
+      "sha256": "1a6d7bbbe3b9f12402135fc19c9cf3646bef5233e4f25f851cc99d4a4dfeb587"
+    },
+    {
+      "stamp_ns": 1792237991397703814,
+      "frame": "map",
+      "width": 306,
+      "height": 157,
+      "resolution": 0.05000000074505806,
+      "occupied": 1436,
+      "known": 15929,
+      "sha256": "837a7b5286cde7ec8da8d479f56e1c3d16ff260ba31c52bf0a399ec4c3c31ba4"
+    },
+    {
+      "stamp_ns": 1792237992596131185,
+      "frame": "map",
+      "width": 306,
+      "height": 157,
+      "resolution": 0.05000000074505806,
+      "occupied": 1434,
+      "known": 15929,
+      "sha256": "90f55f52b5557e45e170e123dd3a6232d38ff37e6022c454a77e24c286b077c2"
+    },
+    {
+      "stamp_ns": 1792237993496378270,
+      "frame": "map",
+      "width": 306,
+      "height": 157,
+      "resolution": 0.05000000074505806,
+      "occupied": 1434,
+      "known": 15929,
+      "sha256": "aaa73f1103cc8baf28645d1dbcd544ced16c86861732c37d4a969e99b3bbc68f"
+    },
+    {
+      "stamp_ns": 1792237994396140100,
+      "frame": "map",
+      "width": 306,
+      "height": 157,
+      "resolution": 0.05000000074505806,
+      "occupied": 1435,
+      "known": 15930,
+      "sha256": "2d83d9e1bc943e0113487b0abef8d00bb21731e998141e7f2b7afba3e9918c5d"
+    },
+    {
+      "stamp_ns": 1792237995599141632,
+      "frame": "map",
+      "width": 306,
+      "height": 157,
+      "resolution": 0.05000000074505806,
+      "occupied": 1432,
+      "known": 15930,
+      "sha256": "8729ba5c749ca66d3feacd49bfccb111f3adef02098101dbfacdaf6a3866a6fe"
+    },
+    {
+      "stamp_ns": 1792237996496266414,
+      "frame": "map",
+      "width": 306,
+      "height": 157,
+      "resolution": 0.05000000074505806,
+      "occupied": 1432,
+      "known": 15930,
+      "sha256": "bacb0cd83a75caf81c15514554a86160d83e934ddec7bff55d5895eeebfb7ea3"
+    },
+    {
+      "stamp_ns": 1792237997396224014,
+      "frame": "map",
+      "width": 306,
+      "height": 157,
+      "resolution": 0.05000000074505806,
+      "occupied": 1419,
+      "known": 15930,
+      "sha256": "c5cc4e653fe0e9971cc4fbdc68a378f7a6a623e8039005383f91a610c057c905"
+    },
+    {
+      "stamp_ns": 1792237998596261704,
+      "frame": "map",
+      "width": 306,
+      "height": 157,
+      "resolution": 0.05000000074505806,
+      "occupied": 1421,
+      "known": 15938,
+      "sha256": "cad0472aaea4fad3249629d0aa31208c2d714fcd4a9b66e71c172322a7816a08"
+    },
+    {
+      "stamp_ns": 1792237999496360583,
+      "frame": "map",
+      "width": 306,
+      "height": 157,
+      "resolution": 0.05000000074505806,
+      "occupied": 1432,
+      "known": 15944,
+      "sha256": "77db61fbd187eef47aaf47cad22acdc526420d6f409add4a5d4e80831b50dc81"
+    },
+    {
+      "stamp_ns": 1792238000396267684,
+      "frame": "map",
+      "width": 306,
+      "height": 157,
+      "resolution": 0.05000000074505806,
+      "occupied": 1437,
+      "known": 15958,
+      "sha256": "d405585f197548e11055d74c291d9d0e3d6ff3eb51207cb1eb5c35c91928bed5"
+    },
+    {
+      "stamp_ns": 1792238001596408254,
+      "frame": "map",
+      "width": 306,
+      "height": 157,
+      "resolution": 0.05000000074505806,
+      "occupied": 1437,
+      "known": 15959,
+      "sha256": "38f1a38fa58cb1a41a3f177eab0a04ed199d25a2461ed618287398cffbbbb7cb"
+    },
+    {
+      "stamp_ns": 1792238002496437745,
+      "frame": "map",
+      "width": 306,
+      "height": 157,
+      "resolution": 0.05000000074505806,
+      "occupied": 1434,
+      "known": 15962,
+      "sha256": "5d44e32b82f49f2e4bd0cce6d27adaa89507c6d1d24ab631eca3f90f5925ce81"
+    },
+    {
+      "stamp_ns": 1792238003396340013,
+      "frame": "map",
+      "width": 306,
+      "height": 157,
+      "resolution": 0.05000000074505806,
+      "occupied": 1433,
+      "known": 15962,
+      "sha256": "b7e7ddacf2ad667158b31511af1ab115a354013807f83471bf7e2378896f2ddd"
+    },
+    {
+      "stamp_ns": 1792238004596404576,
+      "frame": "map",
+      "width": 306,
+      "height": 157,
+      "resolution": 0.05000000074505806,
+      "occupied": 1430,
+      "known": 15963,
+      "sha256": "69dfe2f60b35524b683a90aba1ebb276cf891604498e6d5d07b46d57bbe4130d"
+    },
+    {
+      "stamp_ns": 1792238005496379075,
+      "frame": "map",
+      "width": 306,
+      "height": 157,
+      "resolution": 0.05000000074505806,
+      "occupied": 1429,
+      "known": 15963,
+      "sha256": "3749b441ebf5d88dbc8ed42c21c6879d2a12909a45ccc268d907049dbd464268"
+    },
+    {
+      "stamp_ns": 1792238006396413266,
+      "frame": "map",
+      "width": 307,
+      "height": 157,
+      "resolution": 0.05000000074505806,
+      "occupied": 1299,
+      "known": 15776,
+      "sha256": "fad397dacd03ace3cbff7c33a4f11ba362ce7c47ad013abb2ac1d7a675c484a5"
+    },
+    {
+      "stamp_ns": 1792238007596418164,
+      "frame": "map",
+      "width": 307,
+      "height": 157,
+      "resolution": 0.05000000074505806,
+      "occupied": 1315,
+      "known": 15800,
+      "sha256": "0fe69c2eb7dbeeb5af386bd1ec1f1eaee97a7baef42d06c59ec7fdca0e5af161"
+    },
+    {
+      "stamp_ns": 1792238008496436693,
+      "frame": "map",
+      "width": 307,
+      "height": 157,
+      "resolution": 0.05000000074505806,
+      "occupied": 1334,
+      "known": 15830,
+      "sha256": "d1051d35d7e5afb9e6942d1bcc071e4b2750cdfa2ddd0d28afd9f311ae1ff3ee"
+    },
+    {
+      "stamp_ns": 1792238009396452851,
+      "frame": "map",
+      "width": 307,
+      "height": 157,
+      "resolution": 0.05000000074505806,
+      "occupied": 1333,
+      "known": 15847,
+      "sha256": "90478ca69c047d4877328cb4b9bf9dec2f8c0dc07134c18c0e4c027f08c28e49"
+    },
+    {
+      "stamp_ns": 1792238010596474830,
+      "frame": "map",
+      "width": 307,
+      "height": 157,
+      "resolution": 0.05000000074505806,
+      "occupied": 1333,
+      "known": 15847,
+      "sha256": "90478ca69c047d4877328cb4b9bf9dec2f8c0dc07134c18c0e4c027f08c28e49"
+    }
+  ],
+  "matched_cloud_count": 758,
+  "last_matched_cloud": {
+    "stamp_ns": 1792238010997973400,
+    "points": 397,
+    "frame": "map"
+  },
+  "dynamic_tf_edges": {
+    "map -> odom": 13000,
+    "odom -> laser_frame": 13000
+  },
+  "static_tf_parents": {},
+  "scan_time_tf_lookup_successes": 649,
+  "tf_lookup_failures": {
+    "Lookup would require extrapolation into the past.  Requested time 1792237946.026733 but the earliest data is at time 1792237946.060262, when looking up transform from frame [laser_frame] to frame [map]": 1
+  },
+  "latest_map_to_laser_pose": {
+    "stamp_ns": 1792238011056511500,
+    "xyz": [
+      0.009957777109451357,
+      -0.014945401533640894,
+      0.0
+    ],
+    "xyzw": [
+      0.0,
+      0.0,
+      -0.002721844990069077,
+      0.9999962957730644
+    ]
+  },
+  "publishers": {
+    "/scan": [
+      {
+        "name": "ydlidar_ros2_driver_node",
+        "namespace": "/",
+        "type": "sensor_msgs/msg/LaserScan",
+        "reliability": "ReliabilityPolicy.BEST_EFFORT"
+      }
+    ],
+    "/map": [
+      {
+        "name": "cartographer_occupancy_grid_node",
+        "namespace": "/",
+        "type": "nav_msgs/msg/OccupancyGrid",
+        "reliability": "ReliabilityPolicy.RELIABLE"
+      }
+    ],
+    "/tf": [
+      {
+        "name": "cartographer_node",
+        "namespace": "/",
+        "type": "tf2_msgs/msg/TFMessage",
+        "reliability": "ReliabilityPolicy.RELIABLE"
+      }
+    ],
+    "/tf_static": [],
+    "/scan_matched_points2": [
+      {
+        "name": "cartographer_node",
+        "namespace": "/",
+        "type": "sensor_msgs/msg/PointCloud2",
+        "reliability": "ReliabilityPolicy.RELIABLE"
+      }
+    ]
+  },
+  "scan_subscribers": [
+    {
+      "name": "g6_real_data_probe",
+      "type": "sensor_msgs/msg/LaserScan"
+    },
+    {
+      "name": "cartographer_node",
+      "type": "sensor_msgs/msg/LaserScan"
+    },
+    {
+      "name": "g6_rviz",
+      "type": "sensor_msgs/msg/LaserScan"
+    }
+  ],
+  "nodes": [
+    "g6_real_data_probe",
+    "_ros2cli_daemon_220_a56127d6a3864dbfa7ee1e21c37197d0",
+    "ydlidar_ros2_driver_node",
+    "cartographer_node",
+    "transform_listener_impl_574dd3069280",
+    "cartographer_occupancy_grid_node",
+    "g6_rviz",
+    "transform_listener_impl_6499d19a71d0"
+  ],
+  "vehicle_extrinsics_verified": false,
+  "moving_slam_verified": false,
+  "physical_direction_verified": false,
+  "performance_pass": true,
+  "instantaneous_stamp_hz": {
+    "min": 11.398869232172169,
+    "median": 11.667386155479589,
+    "p95": 11.783143035573309,
+    "max": 11.913271384322135
+  },
+  "instantaneous_receipt_hz": {
+    "min": 11.232916741517657,
+    "median": 11.665250563575073,
+    "p95": 11.815176842769786,
+    "max": 12.192600759258852
+  },
+  "total_scan_bins": 1168608,
+  "total_valid_scan_returns": 591525,
+  "valid_scan_return_ratio": 0.5061791464716997,
+  "valid_ratio_per_scan": {
+    "min": 0.48930654569021387,
+    "median": 0.5061568373298768,
+    "p95": 0.5158781594296824,
+    "max": 0.5223880597014925
+  },
+  "estimated_scan_bins_per_second": 17986.112846886073,
+  "estimated_valid_returns_per_second": 9104.519419218852,
+  "positive_returns_over_15m": 0,
+  "zero_scan_bins": 577083,
+  "nan_scan_bins": 0,
+  "infinite_scan_bins": 0,
+  "range_bin_note": "LaserScan angular bins include invalid zero slots; they are not independent physical measurements. fixed_resolution remains false.",
+  "filtered_sdk_point_cloud_count": 758,
+  "filtered_sdk_points_per_cloud": {
+    "min": 767,
+    "median": 795.5,
+    "p95": 810,
+    "max": 823
+  },
+  "estimated_filtered_sdk_points_per_second": 9282.40610108083,
+  "filtered_sdk_points_over_15m": 0,
+  "positive_scan_time_overlap_count": 18,
+  "scan_time_overlap_s": {
+    "min": -0.001028299331665039,
+    "median": -5.53131103515625e-05,
+    "p95": -2.5272369384765625e-05,
+    "max": 0.0009186267852783203
+  },
+  "matching_messages_per_scan": 1.0,
+  "process_cpu": {
+    "driver": {
+      "cpu_percent_one_core": {
+        "min": 0.0,
+        "median": 0.0,
+        "p95": 1.999960410783981,
+        "max": 2.000077266985516
+      },
+      "rss_mib": {
+        "min": 22.5,
+        "median": 22.5,
+        "p95": 22.6875,
+        "max": 22.6875
+      },
+      "process_missing_samples": 0
+    },
+    "cartographer": {
+      "cpu_percent_one_core": {
+        "min": 4.99967941555658,
+        "median": 6.00049874945518,
+        "p95": 9.000210829935575,
+        "max": 25.956639174699735
+      },
+      "rss_mib": {
+        "min": 39.453125,
+        "median": 46.52734375,
+        "p95": 48.0390625,
+        "max": 48.2421875
+      },
+      "process_missing_samples": 0
+    },
+    "occupancy_grid": {
+      "cpu_percent_one_core": {
+        "min": 0.0,
+        "median": 0.0,
+        "p95": 1.000018059326146,
+        "max": 2.000902987509235
+      },
+      "rss_mib": {
+        "min": 31.125,
+        "median": 32.0625,
+        "p95": 32.4375,
+        "max": 32.4375
+      },
+      "process_missing_samples": 0
+    },
+    "rviz": {
+      "cpu_percent_one_core": {
+        "min": 3.9997777203534395,
+        "median": 5.000257408250727,
+        "p95": 6.996545714424323,
+        "max": 7.000016961043172
+      },
+      "rss_mib": {
+        "min": 180.96484375,
+        "median": 181.40625,
+        "p95": 181.40625,
+        "max": 181.40625
+      },
+      "process_missing_samples": 0
+    }
+  },
+  "pose_stability": {
+    "samples": 649,
+    "first_pose": {
+      "stamp_ns": 1792237946255300000,
+      "xyz": [
+        0.0018379064402037158,
+        -0.007962516601248725,
+        0.0
+      ],
+      "xyzw": [
+        0.0,
+        0.0,
+        -0.003617020187283096,
+        0.9999934585610872
+      ]
+    },
+    "max_xy_displacement_from_first_m": 0.018306603385233045,
+    "yaw_change_from_first_degrees": {
+      "min": -0.41653100196051185,
+      "median": 0.1283202780398833,
+      "p95": 0.4713017437524684,
+      "max": 0.6905800550042025
+    },
+    "last_yaw_change_from_first_degrees": 0.10258004010056801,
+    "note": "Estimated pose stability; does not prove physical immobility or absolute accuracy."
+  }
+}

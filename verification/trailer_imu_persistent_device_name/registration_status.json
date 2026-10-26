@@ -1,0 +1,34 @@
+{
+  "checked_at": "2026-10-24T15:34:18.839530+09:00",
+  "devices": [
+    {
+      "alias": "/dev/lidar_g6",
+      "target": "/dev/ttyUSB0",
+      "is_symlink": true,
+      "read_write_access": true,
+      "rule_matches": true,
+      "socket_matches": true,
+      "port_free": true
+    },
+    {
+      "alias": "/dev/imu_tractor",
+      "target": "/dev/ttyUSB1",
+      "is_symlink": true,
+      "read_write_access": true,
+      "rule_matches": true,
+      "socket_matches": true,
+      "port_free": true
+    },
+    {
+      "alias": "/dev/imu_trailer",
+      "target": "/dev/ttyUSB2",
+      "is_symlink": true,
+      "read_write_access": true,
+      "rule_matches": true,
+      "socket_matches": true,
+      "port_free": true
+    }
+  ],
+  "distinct_devices": true,
+  "reconnect_tested": false
+}

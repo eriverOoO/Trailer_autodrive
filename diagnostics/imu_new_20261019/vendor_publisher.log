@@ -1,0 +1,38 @@
+EBIMU Port: /dev/ttyBaudrate: Starting ebimu_publisher..
+Traceback (most recent call last):
+  File "/home/venezuelachocolatemilk/mvsim_slam_real/diagnostics/imu_new_20261019/vendor_package/src/ebimu_pkg/ebimu_pkg/ebimu_publisher.py", line 51, in main
+    rclpy.spin(node)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/__init__.py", line 229, in spin
+    executor.spin_once()
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 773, in spin_once
+    self._spin_once_impl(timeout_sec)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 768, in _spin_once_impl
+    handler()
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/task.py", line 254, in __call__
+    self._handler.send(None)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 463, in handler
+    await call_coroutine(entity, arg)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 371, in _execute_timer
+    await await_or_execute(tmr.callback)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 107, in await_or_execute
+    return callback(*args)
+  File "/home/venezuelachocolatemilk/mvsim_slam_real/diagnostics/imu_new_20261019/vendor_package/src/ebimu_pkg/ebimu_pkg/ebimu_publisher.py", line 37, in timer_callback
+    ser_data = ser.readline()
+  File "/home/venezuelachocolatemilk/.local/lib/python3.10/site-packages/serial/serialposix.py", line 565, in read
+    ready, _, _ = select.select([self.fd, self.pipe_abort_read_r], [], [], timeout.time_left())
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/venezuelachocolatemilk/mvsim_slam_real/diagnostics/imu_new_20261019/vendor_package/src/ebimu_pkg/ebimu_pkg/ebimu_publisher.py", line 59, in <module>
+    main()
+  File "/home/venezuelachocolatemilk/mvsim_slam_real/diagnostics/imu_new_20261019/vendor_package/src/ebimu_pkg/ebimu_pkg/ebimu_publisher.py", line 55, in main
+    rclpy.shutdown()
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/__init__.py", line 130, in shutdown
+    _shutdown(context=context)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/utilities.py", line 58, in shutdown
+    return context.shutdown()
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/context.py", line 102, in shutdown
+    self.__context.shutdown()
+rclpy._rclpy_pybind11.RCLError: failed to shutdown: rcl_shutdown already called on the given context, at ./src/rcl/init.c:241

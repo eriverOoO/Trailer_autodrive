@@ -1,0 +1,13 @@
+{
+  "publishes_nothing": true,
+  "source": "real tractor Imu topic",
+  "initial_state": "NO DATA",
+  "final_state": "NO DATA",
+  "accepted": 0,
+  "rejected": 0,
+  "first": null,
+  "last": null,
+  "delta_min_deg": null,
+  "delta_max_deg": null,
+  "reference": "First received real sample; native sensor delta only. Mounting/sign and map alignment unverified."
+}

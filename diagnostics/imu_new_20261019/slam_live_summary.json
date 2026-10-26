@@ -1,0 +1,33 @@
+{
+  "real_hardware": true,
+  "synthetic_samples": false,
+  "received_messages": 958,
+  "receive_rate_hz": 100.0,
+  "frame_ids": [
+    "tractor_imu_link"
+  ],
+  "strictly_increasing_host_timestamps": true,
+  "acceleration_norm_m_s2_range": [
+    9.646543948952397,
+    9.921814831458835
+  ],
+  "quaternion_norm_range": [
+    0.9999999999999999,
+    1.0000000000000002
+  ],
+  "gravity_acceleration_available": true,
+  "cartographer_subscribed_to_real_imu": true,
+  "processes_alive_during_test": true,
+  "mapping_tested": false,
+  "limitation": "LiDAR not currently connected; IMU-LiDAR extrinsics unmeasured; no scan or map test performed",
+  "device_query_version": "imu9dofv612b",
+  "device_query_settings": {
+    "sof": 2,
+    "sog": 1,
+    "soa": 1,
+    "sots": 1,
+    "sor": 10
+  },
+  "sensor_writes_during_driver_test": 0,
+  "status": "PASS"
+}

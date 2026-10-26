@@ -1,0 +1,11 @@
+camera_perception_pkg
+debug_pkg
+decision_making_pkg
+ebimu_driver
+interfaces_pkg
+launch_pkg
+lidar_perception_pkg
+mvsim_slam_real_bringup
+real_parking
+real_vehicle_bridge
+serial_communication_pkg

@@ -1,0 +1,374 @@
+REAL_IMU_YAW_AND_G6_RANGE_FIX_20261020
+작성: 2026-10-20T17:02:29.647977+09:00
+현재 상태: 실제 G6 거리 검증 완료. 사용자 CCW 시험으로 시각화 역방향을 확인하여 진단 sign=-1 적용. 수정 후 실제 CW/CCW 검증 진행중. 전체 성공/100% 완료 아님.
+
+1. 중단 상태와 NameError 조사
+작업 시작 시 이전 종료 요청대로 G6/Cartographer/IMU/RViz/tmux 모두 중단 상태였음. USB 두 포트 점유 없음.
+기존 timestamp_guard.py/트랙터 단독 모드/백업/27개 검사 및 캡처는 보존됨. 초기화/재구현하지 않음.
+이전 NameError: name 'base' is not defined는 마지막 보고서 f-string의 임시 inline Python 명령에서 base 경로 변수를 정의하지 않은 오류다.
+파일 쓰기 전에 발생하여 최종 보고서만 생성되지 않았다. 실행 중 SLAM/IMU 모듈 오류가 아니므로 해당 코드를 고쳐 해결하지 않음.
+이번 생성기는 독립 write_report.py로 저장하고 ROOT/OUT/BASE/TARGET을 먼저 명시한다. ROS/UART를 사용하지 않음.
+
+2. 기존 Yaw 반전 원인 조사
+현재 경로: serial_protocol.Parser (제조사 z,y,x,w -> ROS x,y,z,w) -> serial_bridge 실제 Imu Quaternion -> visualizer.YawTrack -> render_adapter.
+제조사 EBIMU 매뉴얼 Quaternion 순서와 파서 매핑 일치. 공용 IMU 메시지는 변경하지 않음.
+수정 전 트랙터 설정 sign=1이 시각화 내부 Yaw에 한 번 적용됐음. 초기 기준은 상수 offset이며 이후 delta의 부호를 바꾸지 않음.
+row-vector 변환 p @ [[cos,sin],[-sin,cos]]와 Marker Quaternion sin(yaw/2)/cos(yaw/2)는 ROS +Yaw(CCW)와 일치.
+카메라 TopDownOrtho/Angle0이며 지도·Scan·카메라 반전은 하지 않음.
+사용자가 실제 장착 상태의 CCW 수동 회전을 완료했다고 확인함. 기록상 raw Yaw와 화면 Yaw가 함께 감소하여 역방향 재현. sign=+1이 네이티브 회전 방향을 그대로 통과시킨 것이 시각화 원인.
+첫 CCW 기록을 근거로 진단 sign=-1을 적용했으나, 이후 CW 복귀 기록과 일치하지 않아 이 부호의 물리적 최종 판정은 보류한다.
+CW 복귀 구간 raw=-9.350도, arrow=+9.354도, hull=+9.377도로 기록되었고 Pitch가 약-5도에서-28도로 변했다. 수평 회전과 기울기 변화가 섞여 재시험 요청.
+센서 축/장착 기울기 또는 제조사 자세 기준의 물리적 세부 원인은 미교정이며, 각도 크기 정확도를 확정하지 않음.
+
+3. 수정 전후 Yaw 계산 및 실제 좌우 시험
+기존 계산: visual_yaw = initial_SLAM_heading + (YawTrack.value - initial_value).
+YawTrack.value = unwrap(sign * yaw(q * inverse(sensor_to_body_mount))).
+현재 실제 시각화 sign=-1. 실제 CCW 반전 재현 후 이 진단 설정 한 항목만 변경함.
+진단 config의 tractor.sign만 +1에서-1로 변경. 공용 raw/Quaternion/Cartographer TF/알고리즘을 바꾸지 않음. sign은 시각화 YawTrack 내부에 한 번만 적용. 초기 reference도 새 sign으로 다시 기록하므로 상수 heading 자체는 반전하지 않음.
+±180도 경계 및 양·음 변화량/진단 설정만 반전 확인 포함 총34개 검사 PASS. 실제 수정후 방향 PASS와 구분. 실제 CCW 전후 값: /home/venezuelachocolatemilk/mvsim_slam_real/verification/imu_yaw_g6_range_20261020_164031/before_fix_actual_ccw.json
+{
+  "before_fix_left": {
+    "status": "CONFIRMED_REVERSED",
+    "physical_direction": "CCW user confirmed",
+    "raw_delta_deg": -33.761380925058965,
+    "visual_delta_deg": -33.76203126354736,
+    "physical_angle_accuracy": "NOT TESTED; approximate physical angle differs from native Euler change and pitch changed"
+  },
+  "after_fix_left": "NOT TESTED",
+  "after_fix_right": {
+    "physical_direction": "CW",
+    "user_confirmed": true,
+    "start_ns": 1792482920272250381,
+    "end_ns": 1792483104364236200,
+    "status": "FAIL_OR_INCONCLUSIVE",
+    "note": "Direction evidence only; exact physical angle/mounting remains uncalibrated.",
+    "raw_imu": {
+      "pre_samples": 500,
+      "post_samples": 300,
+      "delta_deg": -9.350148577415924,
+      "post_span_deg": 0.25307851527941727
+    },
+    "arrow": {
+      "pre_samples": 100,
+      "post_samples": 60,
+      "delta_deg": 9.353941486490358,
+      "post_span_deg": 0.22791157883552826
+    },
+    "body": {
+      "pre_samples": 103,
+      "post_samples": 61,
+      "delta_deg": 9.376672892915026,
+      "post_span_deg": 0.2279115788355028
+    },
+    "sensor_anchor_shift_m": 0.0040872698783120925,
+    "latest_state": {
+      "imu": {
+        "tractor": "LIVE",
+        "trailer": "NO DATA"
+      },
+      "slam": "LIVE",
+      "diagnostic_valid": true,
+      "paired_age_ms": 9.977475,
+      "position_reference": "UNMEASURED_SENSOR_ANCHOR",
+      "heading_alignment_verified": false
+    },
+    "correction_error_arrow_deg": 0.003792909074434192,
+    "correction_error_body_deg": 0.026524315499102613
+  },
+  "mounting_axis": "NOT TESTED",
+  "angle_accuracy": "NOT TESTED"
+}
+
+4. 정상 IMU timestamp 수정 유지
+기존 SensorTimestampGuard와 serial_bridge.py/serial_protocol.py를 변경하지 않음.
+기존 정상 60000ms 경계 허용, 중복/비정상 역행/긴 수신 간극/호스트 시간 불일치 차단 유지.
+이번 실제 수신 중 약100Hz/LIVE/파싱오류0/여러 정상순환 확인. 상세 after observation 및 imu/tractor 로그.
+{
+  "at": "2026-10-20T17:01:56.009010+09:00",
+  "packets": 128360,
+  "host_hz": 100.00048202306216,
+  "rollovers": 21,
+  "nonboundary_backwards": 0,
+  "last_rpy_deg": [
+    6.535242800966536,
+    -28.144308433866826,
+    0.09949952805330309
+  ],
+  "age_s": 0.107759008,
+  "source": "real UART, public quaternion unchanged",
+  "physical_direction": "FIRST_CW_INCONCLUSIVE_LEVEL_CW_RETEST_PENDING"
+}
+트레일러 IMU를 시작하지 않으며 phi/trailer_yaw는 null, 화면 N/A 유지.
+
+5. 기존 거리 1m 제한 원인
+기존 src/mvsim_slam_real_bringup/config/g6.yaml range_max=1.0이 SDK LidarPropMaxRange -> m_MaxRange로 전달됨.
+SDK isRangeValid가 범위 밖을 0으로 처리하고 드라이버 LaserScan은 SDK min/max를 그대로 사용함.
+active g6_lidar_only.lua는 reference_lidar_only.lua를 include한 뒤 max_range=1.0으로 최종 override.
+RViz 시점 문제가 아니라 실제 드라이버/Cartographer 양쪽 제한이었음. baseline runtime dump/scan 기록으로 확인.
+
+6. 거리 설정 전후 및 경계
+변경 전: G6 0.15~1.0m, Cartographer 0.15~1.0m. 실제 baseline Scan 11.62900585067365Hz.
+변경 후: G6 range_min=0.15, range_max=12.0m; Cartographer min_range=.15/max_range=12.0.
+SDK 경계는 reading>=m_MinRange && reading<=m_MaxRange, Cartographer도 range>=min && range<=max로 양 끝 포함.
+float32 LaserScan range_min 표시는 약0.15000000596m. 최소 field와 실제 장치 정확도는 별개.
+missing_data_ray_length=1.0m는 그대로 유지: 유효 hit의 최대 거리와 별개인 초과 hit의 free-space miss 길이. 무조건12m로 늘려 빈 공간을 길게 지우지 않음.
+현재 드라이버가 12m 초과를 SDK에서0으로 버리므로 가짜12m 장애물을 생성하지 않음. Cartographer min_range가0도 배제.
+보존: 512000baud/18K/12Hz/laser_frame/inverted=true/reversion=false/장치by-path/기타센서파라미터.
+거리 외 Cartographer 알고리즘/LiDAR-only 모드 변경 없음.
+
+7. 실제 거리 및 SLAM 재실행 결과
+{
+  "range_min": 0.15000000596046448,
+  "range_max": 12.0,
+  "valid": 998,
+  "over_1m": 495,
+  "over_2m": 309,
+  "maximum": 7.97599983215332,
+  "out_of_range_nonzero": 0,
+  "invalid_zero": 547
+}
+Cartographer가 실제 받은 Scan Matching 점군의 센서 기준 거리:
+{
+  "source": "REAL Cartographer /scan_matched_points2",
+  "published_nothing": true,
+  "stamp_ns": 1792482351098674300,
+  "frame": "map",
+  "points": 477,
+  "above_1m": 381,
+  "above_2m": 304,
+  "maximum_m": 7.963582536473409
+}
+12m 관측 대상 및 실측 기준물이 없어12m 정확도 NOT TESTED. 0.15m 최소 정확도도 NOT TESTED.
+제조사 일반 G6 제품 표기는0.12~16m지만 공식 legacy SDK에는18/16/8K별0.28/0.26/0.1m 최소 표기도 있어, 선택한18K에서0.15m 신뢰성은 보장하지 않음.
+설정 허용과 하드웨어 근거리 정확도를 구분하며 요청한 소프트웨어0.15m 하한은 그대로 적용.
+제조사 제품: https://www.ydlidar.com/products/view/4.html (검색 색인 본문 확인; 원본 경로 현재404)
+제조사 SDK: https://github.com/YDLIDAR/sdk (모드별 표기). 근거리 현장 실측 필요.
+
+8. Scan/Map/TF 전후 비교
+before Scan:
+{
+  "count": 140,
+  "receipt_hz": 11.62900585067365,
+  "stamp_hz": 11.629264080926292,
+  "nonincreasing_stamps": 0,
+  "first": {
+    "receipt": 5086.081478613,
+    "stamp_ns": 1792482057678501000,
+    "frame": "laser_frame",
+    "rays": 1549,
+    "valid": 479,
+    "minimum": 0.3919999897480011,
+    "maximum": 0.9984999895095825,
+    "range_min": 0.15000000596046448,
+    "range_max": 1.0,
+    "scan_time": 0.0861859992146492,
+    "time_increment": 5.563976810663007e-05,
+    "age_s": 0.086929838
+  },
+  "last": {
+    "receipt": 5098.034349029,
+    "stamp_ns": 1792482069631106000,
+    "frame": "laser_frame",
+    "rays": 1547,
+    "valid": 486,
+    "minimum": 0.3944999873638153,
+    "maximum": 1.0,
+    "range_min": 0.15000000596046448,
+    "range_max": 1.0,
+    "scan_time": 0.08659499883651733,
+    "time_increment": 5.5976081057451665e-05,
+    "age_s": 0.087192584
+  },
+  "valid_min": 471,
+  "valid_max": 499
+}
+after Scan:
+{
+  "count": 233,
+  "receipt_hz": 11.641930605834538,
+  "stamp_hz": 11.642042909559292,
+  "nonincreasing_stamps": 0,
+  "first": {
+    "receipt": 5232.323508311,
+    "stamp_ns": 1792482203921117000,
+    "frame": "laser_frame",
+    "rays": 1545,
+    "valid": 1002,
+    "minimum": 0.46149998903274536,
+    "maximum": 7.994500160217285,
+    "range_min": 0.15000000596046448,
+    "range_max": 12.0,
+    "scan_time": 0.08569499850273132,
+    "time_increment": 5.546601823880337e-05,
+    "age_s": 0.086338289
+  },
+  "last": {
+    "receipt": 5252.251474544,
+    "stamp_ns": 1792482223848891000,
+    "frame": "laser_frame",
+    "rays": 1545,
+    "valid": 977,
+    "minimum": 0.4724999964237213,
+    "maximum": 8.02299976348877,
+    "range_min": 0.15000000596046448,
+    "range_max": 12.0,
+    "scan_time": 0.08579400181770325,
+    "time_increment": 5.5530097597511485e-05,
+    "age_s": 0.086536713
+  },
+  "valid_min": 949,
+  "valid_max": 1022
+}
+after Map:
+{
+  "count": 25,
+  "receipt_hz": 1.241743776466114,
+  "stamp_hz": 0.9999930582565215,
+  "nonincreasing_stamps": 0,
+  "first": {
+    "receipt": 5232.33428654,
+    "stamp_ns": 1792482199255010731,
+    "frame": "map",
+    "width": 285,
+    "height": 247,
+    "resolution": 0.05000000074505806,
+    "known": 13878,
+    "occupied": 351,
+    "free": 10309,
+    "digest": "73d94e680bd1df50ba777550ab062b587a458dee3b09f57f6ee00bb89b42f793",
+    "origin": [
+      -7.5,
+      -4.6000000000000005
+    ]
+  },
+  "last": {
+    "receipt": 5251.661945317,
+    "stamp_ns": 1792482223255177334,
+    "frame": "map",
+    "width": 285,
+    "height": 249,
+    "resolution": 0.05000000074505806,
+    "known": 14168,
+    "occupied": 406,
+    "free": 11603,
+    "digest": "1e361b1972cb848830791e26d80239c372f7d03d33ba0e89d050ff57e165e723",
+    "origin": [
+      -7.5,
+      -4.6000000000000005
+    ]
+  },
+  "unique_grids": 15
+}
+after TF lookup:
+{
+  "laser_frame": {
+    "available": true,
+    "stamp_ns": 1792482223995233100
+  },
+  "odom": {
+    "available": true,
+    "stamp_ns": 1792482223995233100
+  },
+  "base_footprint": {
+    "available": false,
+    "reason": "\"base_footprint\" passed to lookupTransform argument source_frame does not exist. "
+  },
+  "base_link": {
+    "available": false,
+    "reason": "\"base_link\" passed to lookupTransform argument source_frame does not exist. "
+  }
+}
+Scan timestamp TF 변환: True
+정지/센서 수동 조작 조건이다. 주행/동적 SLAM 정확도는 NOT TESTED.
+초기 SDK checksum 자동탐지 오류와 Cartographer 시작 queue 짧음/earlier points 경고는 로그에 보존. 이후 지속 여부를 별도로 점검해야 함.
+
+9. 재시작과 지도 보존
+처음 모든 노드가 중단되어 직전 메모리 지도는 없었다. 이전 파일/로그는 보존.
+변경 전 기존1m 설정을 실제 실행하여 baseline 관측 및 map_before.yaml/driver_before.yaml을 저장.
+설정 적용을 위해 이 작업의 slam_before만 Ctrl+C 후 포트가 비는 것을 확인하고 slam_after 실행.
+이는 새 trajectory/새 지도이며 이전 trajectory와 연속된 지도라고 하지 않음. IMU 수신은 이 재시작 동안 유지.
+활성 installed config는 source symlink이며 원본과내용일치 확인. build/driver/SDK 소스 수정 없음.
+
+10. RViz 및 위치/회전 제한
+실제12m 지도/Scan/기존 원본 민트 hull/빨간 tractor arrow를 기존 진단 모드로 표시.
+별도 RViz 설정 rviz_live_12m.rviz는 Angle0/TopDownOrtho/원본Grid·Map·Scan 유지, 시야만 넓힘.
+실차 후륜 오프셋/장착 heading은 미측정: SENSOR ANCHOR/UNALIGNED 표기, full vehicle valid=false.
+실제 RViz 캡처에서 민트색 트랙터 외곽선/빨간 화살표/빨간 Scan/지도 및 TRAILER NO DATA 문구를 확인함. Global Status OK. /home/venezuelachocolatemilk/mvsim_slam_real/verification/imu_yaw_g6_range_20261020_164031/RVIZ_SIGN_MINUS1_RETEST_PENDING.png
+지도 형상 정확도 및 실제 벽 위치 대응은 별도 미검증. 최종 좌우 방향 판정 전 화면을 최종 수정 성공으로 보고하지 않음.
+
+11. 회귀 검사
+기존27개와 시각화 전용 부호/±180도/양음delta/설정범위 7개, 총34개 PASS (tests.log).
+unmodified SDK isRangeValid 소스 자체를 별도 C++ harness에 복사하여 최소/최대/범위초과/0/NaN/Inf 등9개 경계 검사 PASS.
+검사 입력은 메모리/실행파일 내부에서만 사용하며 ROS 가상 Scan/IMU/SLAM 데이터로 발행하지 않음.
+실제 Map 갱신과 Scan/IMU 신선도는 하드웨어 관측으로 별도 확인.
+
+12. 보호 및 변경·백업 파일
+허용 대상: 실제 G6 yaml/LiDAR-only Lua, 물리 측정 후 트랙터 진단 sign 설정, 검증자료.
+원본backup은 /home/venezuelachocolatemilk/mvsim_slam_real/verification/imu_yaw_g6_range_20261020_164031/backups
+보호 결과:
+{
+  "at": "2026-10-20T17:01:19.744298+09:00",
+  "checked": 890,
+  "changed": [
+    "/home/venezuelachocolatemilk/mvsim_slam_real/src/mvsim_slam_real_bringup/config/g6.yaml",
+    "/home/venezuelachocolatemilk/mvsim_slam_real/src/mvsim_slam_real_bringup/config/g6_lidar_only.lua",
+    "/home/venezuelachocolatemilk/mvsim_slam_real/visualization/tractor_trailer_rviz_2d/config/tractor_only_diagnostic.yaml"
+  ],
+  "unexpected": [],
+  "timestamp_guard_preserved": true,
+  "parser_and_public_imu_bridge_preserved": true
+}
+금지 경로/차량 제어/udev/SDK/기존 rollover와 트랙터 단독 구현 변경하지 않음. commit/push 없음.
+
+13. 실행 명령 및 세션
+환경: source /home/venezuelachocolatemilk/mvsim_slam_real/verification/imu_yaw_g6_range_20261020_164031/environment.bash
+ROS_DOMAIN_ID0/ROS_LOCALHOST_ONLY0은 실제 기존 환경값. use_sim_time=false.
+ros2 launch tractor_trailer_rviz_2d imu_bridges.launch.py start_tractor:=true start_trailer:=false ports_confirmed:=true tractor_port:=/dev/serial/by-path/pci-0000:80:14.0-usb-0:8:1.0-port0 lidar_port:=/dev/serial/by-path/pci-0000:80:14.0-usb-0:7:1.0-port0 output_directory:=/home/venezuelachocolatemilk/mvsim_slam_real/verification/imu_yaw_g6_range_20261020_164031/imu
+ros2 launch mvsim_slam_real_bringup g6_slam.launch.py lidar_port:=/dev/serial/by-path/pci-0000:80:14.0-usb-0:7:1.0-port0 frame_mode:=sensor use_imu:=false start_imu:=false enable_rviz:=false
+ros2 launch tractor_trailer_rviz_2d visualization.launch.py rviz:=false config_file:=/home/venezuelachocolatemilk/mvsim_slam_real/visualization/tractor_trailer_rviz_2d/config/tractor_only_diagnostic.yaml visualization_mode:=TRACTOR_ONLY_DIAGNOSTIC slam_frame:=laser_frame output_directory:=/home/venezuelachocolatemilk/mvsim_slam_real/verification/imu_yaw_g6_range_20261020_164031/viz_before
+# range_max=12 in existing symlinked active config/Lua
+ros2 launch mvsim_slam_real_bringup g6_slam.launch.py lidar_port:=/dev/serial/by-path/pci-0000:80:14.0-usb-0:7:1.0-port0 frame_mode:=sensor use_imu:=false start_imu:=false enable_rviz:=false
+ros2 run rviz2 rviz2 -d /home/venezuelachocolatemilk/mvsim_slam_real/verification/imu_yaw_g6_range_20261020_164031/rviz_live_12m.rviz --ros-args -r __node:=tractor_trailer_rviz_2d -p use_sim_time:=false
+# Visualization sign -1; G6/Cartographer/IMU/RViz untouched
+ros2 launch tractor_trailer_rviz_2d visualization.launch.py rviz:=false config_file:=/home/venezuelachocolatemilk/mvsim_slam_real/visualization/tractor_trailer_rviz_2d/config/tractor_only_diagnostic.yaml visualization_mode:=TRACTOR_ONLY_DIAGNOSTIC slam_frame:=laser_frame output_directory:=/home/venezuelachocolatemilk/mvsim_slam_real/verification/imu_yaw_g6_range_20261020_164031/viz_after
+
+세션 real_yaw_range_20261020, 세부 run_*.bash/프로세스 기록 참조.
+output_directory는 기존 폴더를 덮어쓰지 않으므로 재실행은 새 경로 사용.
+
+14. 종료 방법
+현재 RViz만: tmux send-keys -t real_yaw_range_20261020:rviz C-c
+SLAM만: tmux send-keys -t real_yaw_range_20261020:slam_after C-c
+IMU만: tmux send-keys -t real_yaw_range_20261020:imu C-c
+현재 진단 visualizer: tmux send-keys -t real_yaw_range_20261020:viz_after C-c
+수정후시각화창이추가되면그이름의창에도Ctrl+C. 다른프로젝트프로세스를무차별종료하지않음.
+
+15. 원복 방법
+이 작업의G6/Cartographer와진단시각화만정상종료하고, backups 아래3개파일을동일상대경로에복원.
+원래0.15~1m와원래시각화sign로돌아간다. 다른파일/기존timestamp수정/트랙터단독구현을초기화하지않음.
+활성설정은source symlink이므로기존Launch를다시시작하면복원내용을읽는다. udev/시뮬레이터원복작업불필요.
+
+16. 실패·미검증 및 다음 단계
+수정 전 실제 CCW 회전 확인으로 sign=-1을 적용함. 첫 수정후 CW 복귀 시험은 FAIL_OR_INCONCLUSIVE이며 성공으로 보고하지 않는다.
+기울기 변화가 섞인 기록이므로 Pitch/Roll을 유지한 CW 수동 회전 재시험을 요청한 상태. G6/Cartographer/IMU/RViz는 유지.
+raw/Marker arrow/Marker hull의 실제 변화량을 동시 구독 기록하며, 수정후 CW와 CCW 방향을 각각 검증해야 한다. 물리 각도 정확도는 별도 미검증.
+실제물리장착축/초기mapheading/후륜위치/각도정확도/12m정확도/0.15m근거리신뢰성/주행정확도는미검증.
+진행중결과이며두기능전체PASS/100%완료라고보고하지않음.
+
+17. 현재 검증 판정
+G6 USB/실제Scan: PASS
+거리설정0.15~12.0m: PASS
+실제1m초과/2m초과측정: PASS
+Cartographer실제원거리점사용/지도/TF: PASS
+IMU실제UART/100Hz/rollover유지: PASS
+수정전 실제CCW 역방향 재현: CONFIRMED_REVERSED
+Yaw방향수정: APPLIED (diagnostic tractor.sign=-1)
+수정후실제우회전/RViz일치: FAIL_OR_INCONCLUSIVE (기울기 변화 동반, 재시험 대기)
+수정후실제좌회전: NOT TESTED
+트레일러가상데이터미사용: PASS
+차량제어미실행: PASS
+보호대상예상밖변경: 없음
+현재진행은Yaw원인25%/최소수정40% 및거리75%검증완료. 수정후 실제좌우/통합85%항목대기. 전체100%아님.
+
+18. 사용자 요청으로 실행 종료 (2026-10-20T17:08:14.231435+09:00)
+G6/Cartographer/OccupancyGrid/IMU/2D 시각화/RViz/진단 기록 종료 확인. tmux 세션 종료. ttyUSB0/ttyUSB1 점유 프로세스 없음.
+위 본문의 실행중/시험대기 표기는 종료 전 이력이다. 현재 실행 노드 없음. 추가 회전 시험은 중단되었으며 방향 판정은 INCONCLUSIVE로 유지. 소스/설정은 원복하지 않음.

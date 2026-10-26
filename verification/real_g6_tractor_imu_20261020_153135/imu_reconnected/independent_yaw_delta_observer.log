@@ -1,0 +1,23 @@
+{
+  "publishes_nothing": true,
+  "source": "real independent diagnostic tractor Imu topic",
+  "initial_state": "NO DATA",
+  "final_state": "LIVE",
+  "accepted": 801,
+  "rejected": 0,
+  "first": {
+    "stamp_ns": 1792479555238358490,
+    "yaw_deg": 1.3788877505504258,
+    "delta_deg": 0.0,
+    "state": "LIVE"
+  },
+  "last": {
+    "stamp_ns": 1792479563238366519,
+    "yaw_deg": 1.3335841316825747,
+    "delta_deg": -0.04530361886785107,
+    "state": "LIVE"
+  },
+  "delta_min_deg": -0.12697148570929864,
+  "delta_max_deg": 0.1158619819552546,
+  "reference": "First received real sample; native sensor delta only. Mounting/sign and map alignment unverified."
+}

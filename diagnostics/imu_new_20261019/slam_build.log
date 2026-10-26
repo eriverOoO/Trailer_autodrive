@@ -1,0 +1,6 @@
+Starting >>> ebimu_driver
+Finished <<< ebimu_driver [0.70s]
+Starting >>> mvsim_slam_real_bringup
+Finished <<< mvsim_slam_real_bringup [0.61s]
+
+Summary: 2 packages finished [1.68s]

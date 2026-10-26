@@ -1,0 +1,32 @@
+[
+  {
+    "test": "PTY passive no TX",
+    "PASS": true,
+    "tx_hex": "",
+    "summary": {
+      "at": "2026-10-16T23:29:34.878378+09:00",
+      "elapsed_s": 0.200699,
+      "event": "summary",
+      "status": "UNRESOLVED_ZERO_RX",
+      "rx_bytes": 0,
+      "tx_bytes": 0,
+      "exit_code": 2
+    },
+    "note": "synthetic transport only; not real sensor evidence"
+  },
+  {
+    "test": "PTY query framing/cleanup",
+    "PASS": true,
+    "tx_hex": "3e 3c 76 65 72 3e 3c 63 66 67 3e 3e 2a",
+    "summary": {
+      "at": "2026-10-16T23:29:35.623535+09:00",
+      "elapsed_s": 0.702344,
+      "event": "summary",
+      "status": "RX_OBSERVED",
+      "rx_bytes": 15,
+      "tx_bytes": 13,
+      "exit_code": 0
+    },
+    "note": "synthetic transport only; not real sensor evidence"
+  }
+]

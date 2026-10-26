@@ -1,0 +1,122 @@
+[
+  {
+    "file": "src/real_parking/real_parking/vendor/tractor_trailer_model.py",
+    "source": "/home/venezuelachocolatemilk/mvsim_slam/mvsim_slam_final/src/parking_system/vendor/tractor_trailer_model.py",
+    "sha256": "bb637f5a1ad919137445befe9dd98e9a88c814dea5a8eea42202c1df695c8f68",
+    "identical": true
+  },
+  {
+    "file": "src/real_parking/real_parking/vendor/tractor_parking_blocked_debug.py",
+    "source": "/home/venezuelachocolatemilk/mvsim_slam/mvsim_slam_final/src/parking_system/vendor/tractor_parking_blocked_debug.py",
+    "sha256": "527f65074d3bef9a3468e2ffd6d668ed2ebd36caa3f8fc259766a032a3ae77ff",
+    "identical": true
+  },
+  {
+    "file": "src/real_parking/real_parking/vendor/tractor_parking_perception.py",
+    "source": "/home/venezuelachocolatemilk/mvsim_slam/mvsim_slam_final/src/parking_system/vendor/tractor_parking_perception.py",
+    "sha256": "4cc899f6aac9fc9aa6be60c924788aaa21b3a0c61169e81b4b5dc88a8fefff72",
+    "identical": true
+  },
+  {
+    "file": "src/real_parking/real_parking/vendor/tractor_parking_map_safety.py",
+    "source": "/home/venezuelachocolatemilk/mvsim_slam/mvsim_slam_final/src/parking_system/vendor/tractor_parking_map_safety.py",
+    "sha256": "44d1557d3c99a991a4cfb5b081987bf07d10bc5ede871475b2751792530d1fe8",
+    "identical": true
+  },
+  {
+    "file": "src/real_parking/real_parking/vendor/tractor_slam_parking_adapter.py",
+    "source": "/home/venezuelachocolatemilk/mvsim_slam/mvsim_slam_final/src/parking_system/vendor/tractor_slam_parking_adapter.py",
+    "sha256": "563b2deb847e5c23a979e2827988a4acd4c00875804168879409efdd54d17d38",
+    "identical": true
+  },
+  {
+    "file": "src/real_parking/real_parking/vendor/tractor_parking_articulation_safety.py",
+    "source": "/home/venezuelachocolatemilk/mvsim_slam/mvsim_slam_final/src/parking_system/vendor/tractor_parking_articulation_safety.py",
+    "sha256": "2868511070a68da5974b6d8741b4d55c1c557b56100f9c522d5af70b324126a5",
+    "identical": true
+  },
+  {
+    "file": "src/real_parking/real_parking/vendor/tractor_parking_clearance.py",
+    "source": "/home/venezuelachocolatemilk/mvsim_slam/mvsim_slam_final/src/parking_system/vendor/tractor_parking_clearance.py",
+    "sha256": "73127a0e6702862452a856b68bd5cb7ecee8f4beed0808f961b680b229c0d2ba",
+    "identical": true
+  },
+  {
+    "file": "src/real_parking/real_parking/vendor/tractor_parking_controller.py",
+    "source": "/home/venezuelachocolatemilk/mvsim_slam/mvsim_slam_final/src/parking_system/vendor/tractor_parking_controller.py",
+    "sha256": "ea798f7476894db4e50fab2355afca8e7f73a7f7bba468b984f7a999e3a2a64f",
+    "identical": true
+  },
+  {
+    "file": "src/real_parking/real_parking/vendor/observed_stop.py",
+    "source": "/home/venezuelachocolatemilk/mvsim_slam/mvsim_slam_final/src/parking_system/vendor/observed_stop.py",
+    "sha256": "82f5e7a64d424d8c179066e77f64ff7cbd55968058fea6ae2778cf06ad4b1d8c",
+    "identical": true
+  },
+  {
+    "file": "src/real_parking/real_parking/vendor/tractor_trailer_hybrid_astar.py",
+    "source": "/home/venezuelachocolatemilk/mvsim_slam/mvsim_slam_final/src/parking_system/vendor/tractor_trailer_hybrid_astar.py",
+    "sha256": "bdde45fb06d9922bff2ec5dea8c1bf3b603783dc3548c18b4c2d2e33a3c17ca7",
+    "identical": true
+  },
+  {
+    "file": "src/real_parking/real_parking/vendor/tractor_local_parking_gap_detector.py",
+    "source": "/home/venezuelachocolatemilk/mvsim_slam/mvsim_slam_final/src/parking_system/vendor/tractor_local_parking_gap_detector.py",
+    "sha256": "2502886a0e86d8cec8660b0795025d35aadc11f888ea3e46b77c61e61599a383",
+    "identical": true
+  },
+  {
+    "file": "src/real_parking/real_parking/vendor/tractor_parallel_parking_auto.py",
+    "source": "/home/venezuelachocolatemilk/mvsim_slam/mvsim_slam_final/src/parking_system/vendor/tractor_parallel_parking_auto.py",
+    "sha256": "085d268b51440a469b2ed4c366cba8e6d736c49e38b94bed3635408593463d02",
+    "identical": true
+  },
+  {
+    "file": "src/real_parking/real_parking/vendor/tractor_trailer_state_estimator.py",
+    "source": "/home/venezuelachocolatemilk/mvsim_slam/mvsim_slam_final/src/parking_system/vendor/tractor_trailer_state_estimator.py",
+    "sha256": "ed352b1892e26e443e9d54f93847f1c5849db65f036503de9dc8a84e6b3e5ce5",
+    "identical": true
+  },
+  {
+    "file": "src/real_parking/real_parking/vendor/raw_reject_event_capture/raw_reject_capture.py",
+    "source": "/home/venezuelachocolatemilk/mvsim_slam/mvsim_slam_final/src/parking_system/vendor/raw_reject_event_capture/raw_reject_capture.py",
+    "sha256": "ca22b37dc4bbafd0f35d2fab5ffeae0618adb881d41277025f466f78bfa23e8c",
+    "identical": true
+  },
+  {
+    "file": "src/real_parking/real_parking/optimizer/priority_schedule.py",
+    "source": "/home/venezuelachocolatemilk/mvsim_slam/mvsim_slam_final/src/optimizer/priority_schedule.py",
+    "sha256": "a68d00222be30da99fd35fd64998977e02edadc7b52c4b65629f4afb1ed31dcf",
+    "identical": true
+  },
+  {
+    "file": "src/real_parking/real_parking/optimizer/steering_priority.py",
+    "source": "/home/venezuelachocolatemilk/mvsim_slam/mvsim_slam_final/src/optimizer/steering_priority.py",
+    "sha256": "728ec352bf09440f2984812e29368cc2e55aa403fd919dfcd93fc1c249f3cef6",
+    "identical": true
+  },
+  {
+    "file": "src/real_parking/real_parking/optimizer/native.py",
+    "source": "/home/venezuelachocolatemilk/mvsim_slam/mvsim_slam_final/src/optimizer/native.py",
+    "sha256": "2319320cfd0bcf822901e216cc8d5a7265137bbb8bcfbee46e50fd37b7cc93c3",
+    "identical": true
+  },
+  {
+    "file": "src/real_parking/real_parking/optimizer/native.cpp",
+    "source": "/home/venezuelachocolatemilk/mvsim_slam/mvsim_slam_final/src/optimizer/native.cpp",
+    "sha256": "d724ceafd4c19f17b85d8954ae2ac78c5c08eb46122cd8b8980904c3c8cf53c3",
+    "identical": true
+  },
+  {
+    "file": "src/real_parking/real_parking/optimizer/resumable.py",
+    "source": "/home/venezuelachocolatemilk/mvsim_slam/mvsim_slam_final/src/optimizer/resumable.py",
+    "sha256": "80c706266567c664b1d8be8c0b16830ae34f8b2ec232dcb1e551b879b302d127",
+    "identical": true
+  },
+  {
+    "file": "src/real_parking/real_parking/optimizer/variants.py",
+    "source": "/home/venezuelachocolatemilk/mvsim_slam/mvsim_slam_final/src/optimizer/variants.py",
+    "sha256": "cb6c653f84daebc538885dd77086084118b4a9b4f03031ab7880d29f58519946",
+    "identical": true
+  }
+]

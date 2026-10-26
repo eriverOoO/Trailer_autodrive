@@ -1,0 +1,15 @@
+{
+  "at": "2026-10-20T17:01:56.009010+09:00",
+  "packets": 128360,
+  "host_hz": 100.00048202306216,
+  "rollovers": 21,
+  "nonboundary_backwards": 0,
+  "last_rpy_deg": [
+    6.535242800966536,
+    -28.144308433866826,
+    0.09949952805330309
+  ],
+  "age_s": 0.107759008,
+  "source": "real UART, public quaternion unchanged",
+  "physical_direction": "FIRST_CW_INCONCLUSIVE_LEVEL_CW_RETEST_PENDING"
+}

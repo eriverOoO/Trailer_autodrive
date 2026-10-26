@@ -1,0 +1,10 @@
+CURRENT HARDWARE ROS IMU: NOT_TESTED.
+No synthetic ROS Imu publisher or replay publisher used.
+Existing historical result: 958 messages, 100Hz, normalized quaternion; not retested now.
+NO DATA test (final code): 77 MarkerArray messages, all 77 status lines NO DATA, no cubes/arrows, RViz and visualizer alive.
+Current Imu topic, frame and conversions are implemented but not validated with live UART.
+Topic /ebimu_diag/tractor/imu/data; frame ebimu_diag_tractor_sensor.
+Fixed frame ebimu_diag_reference, manufacturer native reference, no ENU claim.
+LIVE-to-STALE requires actual first valid sensor packet and remains NOT_TESTED.
+Final GUI: NO_DATA text visible in actual RViz window; see evidence/rviz_window_no_data_final.png.
+ASCII spaces replaced with underscores to avoid excessive Ogre spacing on this host.

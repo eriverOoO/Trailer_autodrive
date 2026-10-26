@@ -1,0 +1,11 @@
+prefix=/home/venezuelachocolatemilk/mvsim_slam_real/third_party/ydlidar_sdk_install
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: YDLIDAR_SDK
+Description: 
+Version: 1.2.20
+Cflags:   -I/home/venezuelachocolatemilk/mvsim_slam_real/third_party/ydlidar_sdk_install/include/src -I/home/venezuelachocolatemilk/mvsim_slam_real/third_party/ydlidar_sdk_install/include
+Libs: -L${libdir}  -lpthread -lrt -lydlidar_sdk
+

@@ -1,0 +1,8 @@
+{
+  "PROGRESS.md": "23a4ee80cf91fc0ecc4e6e09f5783594c02ec405475b4def203103731d39e56a",
+  "src/ebimu_driver/ebimu_driver/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "src/ebimu_driver/ebimu_driver/configure.py": "70170d39bb14f9e8b5fa79480f48ac590c55ccb9180cc5396c5e35b28ed31c86",
+  "src/ebimu_driver/ebimu_driver/node.py": "d1d743ecd9b4770ce96938ea682403561121b40af3fb0fdd0f8252a62b848d36",
+  "src/ebimu_driver/ebimu_driver/protocol.py": "cee99d247a4dae3720b4ed1fdf2668d6567a748956588bfddcaef5ded810b98c",
+  "src/ebimu_driver/setup.py": "722a68d96569021dbc018ca6f444191396a2cfc29f65f2314a03f758c1904781"
+}

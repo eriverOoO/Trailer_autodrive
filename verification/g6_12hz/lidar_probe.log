@@ -1,0 +1,1 @@
+{"performance_pass": true, "slam_pass": null, "continuous_scan_span_s": 64.84439562800026, "scan_count": 757, "measured_scan_hz": 11.658679099070113, "beam_count": {"min": 1537, "median": 1543, "p95": 1547, "max": 1549}, "valid_scan_return_ratio": 0.4541592777895277, "estimated_scan_bins_per_second": 17986.319229358018, "map_count": 0, "matched_cloud_count": 0}

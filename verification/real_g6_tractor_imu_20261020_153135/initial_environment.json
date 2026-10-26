@@ -1,0 +1,9 @@
+{
+  "ROS_DOMAIN_ID": "0",
+  "ROS_LOCALHOST_ONLY": "0",
+  "DISPLAY": ":1",
+  "graph_initial": "no existing nodes; /parameter_events and /rosout only",
+  "port_identity": "PENDING user IMU-only disconnect; no serial opened",
+  "g6_range_max_m": 1.0,
+  "cartographer_max_range_m": 1.0
+}

@@ -1,0 +1,1 @@
+{"performance_pass": true, "slam_pass": true, "continuous_scan_span_s": 124.8649181970004, "scan_count": 1458, "measured_scan_hz": 11.66860973473173, "positive_scan_time_overlap_count": 30, "predicted_crop_warning_count": 18, "predicted_crop_point_count": 85, "map_count": 126}

@@ -1,0 +1,13 @@
+control_adapter:
+  ros__parameters:
+    enable_actuation: false
+    motor_scale_pwm_per_m_s: 1000.0
+    motor_scale_confirmed: false
+    steering_sign: -1.0
+    left_motor_sign: 1.0
+    right_motor_sign: 1.0
+    polarity_confirmed: false
+    command_timeout: 0.25
+    state_timeout: 0.25
+    require_tractor_imu: true
+    max_pwm: 255

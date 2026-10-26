@@ -1,0 +1,22 @@
+[
+  {
+    "file": "sensor_bridge.cc",
+    "url": "https://raw.githubusercontent.com/ros2-gbp/cartographer_ros-release/release/humble/cartographer_ros/2.0.9002-1/src/sensor_bridge.cpp",
+    "sha256_matches": true
+  },
+  {
+    "file": "msg_conversion.cc",
+    "url": "https://raw.githubusercontent.com/ros2-gbp/cartographer_ros-release/release/humble/cartographer_ros/2.0.9002-1/src/msg_conversion.cpp",
+    "sha256_matches": true
+  },
+  {
+    "file": "local_trajectory_builder_2d.cc",
+    "url": "https://raw.githubusercontent.com/ros2-gbp/cartographer-release/release/humble/cartographer/2.0.9004-1/cartographer/mapping/internal/2d/local_trajectory_builder_2d.cc",
+    "sha256_matches": true
+  },
+  {
+    "file": "range_data_collator.cc",
+    "url": "https://raw.githubusercontent.com/ros2-gbp/cartographer-release/release/humble/cartographer/2.0.9004-1/cartographer/mapping/internal/range_data_collator.cc",
+    "sha256_matches": true
+  }
+]

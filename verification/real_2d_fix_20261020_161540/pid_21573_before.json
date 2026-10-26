@@ -1,0 +1,5 @@
+{
+  "pid": 21573,
+  "stat": "21573 (ydlidar_ros2_dr) S 21569 21523 21523 34817 21523 4194304 5687 0 7 0 850 457 0 0 20 0 11 0 142615 657326080 6031 18446744073709551615 98667425972224 98667426490493 140728676993056 0 0 0 0 3145728 16386 0 0 0 17 6 0 0 0 0 0 98667426734080 98667426746984 98668451201024 140728676997609 140728676997971 140728676997971 140728677007230 0\n",
+  "cmdline": "/home/venezuelachocolatemilk/mvsim_slam_real/install/ydlidar_ros2_driver/lib/ydlidar_ros2_driver/ydlidar_ros2_driver_node --ros-args -r __node:=ydlidar_ros2_driver_node --params-file /home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/g6.yaml --params-file /tmp/launch_params_6bra79cs -r scan:=/scan "
+}

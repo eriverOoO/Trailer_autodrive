@@ -1,0 +1,41 @@
+Panels:
+- Class: rviz_common/Displays
+  Name: Displays
+Visualization Manager:
+  Class: ''
+  Global Options:
+    Fixed Frame: map
+    Background Color: 35; 35; 35
+  Displays:
+  - Class: rviz_default_plugins/Grid
+    Name: Grid
+    Enabled: true
+    Plane Cell Count: 40
+  - Class: rviz_default_plugins/LaserScan
+    Name: G6 scan
+    Enabled: true
+    Size (m): 0.03
+    Topic:
+      Value: /scan
+      Depth: 10
+      Reliability Policy: Best Effort
+      Durability Policy: Volatile
+  - Class: rviz_default_plugins/Map
+    Name: Cartographer map
+    Enabled: true
+    Topic:
+      Value: /map
+      Depth: 1
+      Reliability Policy: Reliable
+      Durability Policy: Transient Local
+  - Class: rviz_default_plugins/TF
+    Name: TF
+    Enabled: true
+  Views:
+    Current:
+      Class: rviz_default_plugins/TopDownOrtho
+      Scale: 70
+      Angle: 0
+Window Geometry:
+  Width: 1200
+  Height: 850

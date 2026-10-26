@@ -1,0 +1,22 @@
+.F...                                                                    [100%]
+=================================== FAILURES ===================================
+__________ test_gap_boundary_measurement_and_internal_obstacle_reject __________
+
+    def test_gap_boundary_measurement_and_internal_obstacle_reject():
+        res=.05;a=np.zeros((200,300),dtype=int);origin=[-2.,-7.,0.]
+        def rect(x0,x1,y0,y1):
+            i0,i1=int((x0+2)/res),int((x1+2)/res);j0,j1=int((y0+7)/res),int((y1+7)/res);a[j0:j1,i0:i1]=100
+        rect(0,2,-4.2,-2);rect(8,10,-4.2,-2);rect(0,10,-4.4,-4.2)
+        obs=observe_gap(planning_grid(a,res,origin),np.array([0.,0.,0.]),6.2,2.1)
+        assert obs.target is not None,obs.reason
+>       assert 5.7<obs.target.length<6.2 and 2.0<obs.target.width<2.4
+E       AssertionError: assert (6.195180588014425 < 6.2 and 2.0 < 1.508926263907107)
+E        +  where 6.195180588014425 = Target(center=array([ 4.99777142, -3.54286968]), heading=-0.008726646259971648, length=6.195180588014425, width=1.508926263907107, confidence='U map faces; free=1.000, back coverage=0.94, size=6.20x1.51').length
+E        +    where Target(center=array([ 4.99777142, -3.54286968]), heading=-0.008726646259971648, length=6.195180588014425, width=1.508926263907107, confidence='U map faces; free=1.000, back coverage=0.94, size=6.20x1.51') = GapObservation(first_obstacle=True, gap_seen=True, second_obstacle=True, target=Target(center=array([ 4.99777142, -3.5...), obstacle_intervals=((0.05, 2.0500000000000003), (8.0, 10.05)), reason='three observed U boundaries and free cavity').target
+E        +  and   1.508926263907107 = Target(center=array([ 4.99777142, -3.54286968]), heading=-0.008726646259971648, length=6.195180588014425, width=1.508926263907107, confidence='U map faces; free=1.000, back coverage=0.94, size=6.20x1.51').width
+E        +    where Target(center=array([ 4.99777142, -3.54286968]), heading=-0.008726646259971648, length=6.195180588014425, width=1.508926263907107, confidence='U map faces; free=1.000, back coverage=0.94, size=6.20x1.51') = GapObservation(first_obstacle=True, gap_seen=True, second_obstacle=True, target=Target(center=array([ 4.99777142, -3.5...), obstacle_intervals=((0.05, 2.0500000000000003), (8.0, 10.05)), reason='three observed U boundaries and free cavity').target
+
+tests/test_algorithms.py:37: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_algorithms.py::test_gap_boundary_measurement_and_internal_obstacle_reject
+1 failed, 4 passed in 0.45s

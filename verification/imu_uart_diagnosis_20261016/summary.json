@@ -1,0 +1,989 @@
+{
+  "at": "2026-10-16T23:32:07.641009+09:00",
+  "status": "UNRESOLVED",
+  "diagnostic_progress_percent": 100,
+  "real_sensor_rx_bytes": 0,
+  "host_write_accepted_bytes": 69,
+  "run_count": 10,
+  "runs": [
+    {
+      "log": "verification/imu_uart_diagnosis_20261016/01_passive_low.jsonl",
+      "raw": "verification/imu_uart_diagnosis_20261016/01_passive_low.rx.bin",
+      "baud": 115200,
+      "dtr": false,
+      "rts": false,
+      "settings": {
+        "baudrate": 115200,
+        "bytesize": 8,
+        "parity": "N",
+        "stopbits": 1,
+        "xonxoff": false,
+        "dsrdtr": false,
+        "rtscts": false,
+        "timeout": 0.05,
+        "write_timeout": 1.0,
+        "inter_byte_timeout": null
+      },
+      "summary": {
+        "at": "2026-10-16T23:29:40.682549+09:00",
+        "elapsed_s": 5.003361,
+        "event": "summary",
+        "status": "UNRESOLVED_ZERO_RX",
+        "rx_bytes": 0,
+        "tx_bytes": 0,
+        "exit_code": 2
+      },
+      "phases": [
+        {
+          "at": "2026-10-16T23:29:38.681127+09:00",
+          "elapsed_s": 3.001973,
+          "event": "phase_end",
+          "phase": "initialization_capture",
+          "rx_bytes": 0,
+          "total_rx_bytes": 0
+        },
+        {
+          "at": "2026-10-16T23:29:40.681445+09:00",
+          "elapsed_s": 5.002289,
+          "event": "phase_end",
+          "phase": "passive",
+          "rx_bytes": 0,
+          "total_rx_bytes": 0
+        }
+      ],
+      "transmitted": []
+    },
+    {
+      "log": "verification/imu_uart_diagnosis_20261016/02_queries_low_115200.jsonl",
+      "raw": "verification/imu_uart_diagnosis_20261016/02_queries_low_115200.rx.bin",
+      "baud": 115200,
+      "dtr": false,
+      "rts": false,
+      "settings": {
+        "baudrate": 115200,
+        "bytesize": 8,
+        "parity": "N",
+        "stopbits": 1,
+        "xonxoff": false,
+        "dsrdtr": false,
+        "rtscts": false,
+        "timeout": 0.05,
+        "write_timeout": 1.0,
+        "inter_byte_timeout": null
+      },
+      "summary": {
+        "at": "2026-10-16T23:29:58.943208+09:00",
+        "elapsed_s": 10.004679,
+        "event": "summary",
+        "status": "UNRESOLVED_ZERO_RX",
+        "rx_bytes": 0,
+        "tx_bytes": 13,
+        "exit_code": 2
+      },
+      "phases": [
+        {
+          "at": "2026-10-16T23:29:49.940370+09:00",
+          "elapsed_s": 1.001865,
+          "event": "phase_end",
+          "phase": "initialization_capture",
+          "rx_bytes": 0,
+          "total_rx_bytes": 0
+        },
+        {
+          "at": "2026-10-16T23:29:51.440578+09:00",
+          "elapsed_s": 2.502067,
+          "event": "phase_end",
+          "phase": "passive",
+          "rx_bytes": 0,
+          "total_rx_bytes": 0
+        },
+        {
+          "at": "2026-10-16T23:29:52.940807+09:00",
+          "elapsed_s": 4.002295,
+          "event": "phase_end",
+          "phase": "after_finish_previous_configuration",
+          "rx_bytes": 0,
+          "total_rx_bytes": 0
+        },
+        {
+          "at": "2026-10-16T23:29:54.441129+09:00",
+          "elapsed_s": 5.502629,
+          "event": "phase_end",
+          "phase": "version",
+          "rx_bytes": 0,
+          "total_rx_bytes": 0
+        },
+        {
+          "at": "2026-10-16T23:29:55.941392+09:00",
+          "elapsed_s": 7.002902,
+          "event": "phase_end",
+          "phase": "configuration",
+          "rx_bytes": 0,
+          "total_rx_bytes": 0
+        },
+        {
+          "at": "2026-10-16T23:29:57.441685+09:00",
+          "elapsed_s": 8.503173,
+          "event": "phase_end",
+          "phase": "after_configuration",
+          "rx_bytes": 0,
+          "total_rx_bytes": 0
+        },
+        {
+          "at": "2026-10-16T23:29:58.941927+09:00",
+          "elapsed_s": 10.003417,
+          "event": "phase_end",
+          "phase": "poll",
+          "rx_bytes": 0,
+          "total_rx_bytes": 0
+        }
+      ],
+      "transmitted": [
+        {
+          "at": "2026-10-16T23:29:51.440691+09:00",
+          "elapsed_s": 2.502162,
+          "event": "tx",
+          "phase": "finish_previous_configuration",
+          "bytes": 1,
+          "ascii": "b'>'",
+          "hex": "3e"
+        },
+        {
+          "at": "2026-10-16T23:29:52.940908+09:00",
+          "elapsed_s": 4.00238,
+          "event": "tx",
+          "phase": "version",
+          "bytes": 5,
+          "ascii": "b'<ver>'",
+          "hex": "3c 76 65 72 3e"
+        },
+        {
+          "at": "2026-10-16T23:29:54.441253+09:00",
+          "elapsed_s": 5.502724,
+          "event": "tx",
+          "phase": "configuration",
+          "bytes": 5,
+          "ascii": "b'<cfg>'",
+          "hex": "3c 63 66 67 3e"
+        },
+        {
+          "at": "2026-10-16T23:29:55.941546+09:00",
+          "elapsed_s": 7.003018,
+          "event": "tx",
+          "phase": "finish_configuration",
+          "bytes": 1,
+          "ascii": "b'>'",
+          "hex": "3e"
+        },
+        {
+          "at": "2026-10-16T23:29:57.441791+09:00",
+          "elapsed_s": 8.503263,
+          "event": "tx",
+          "phase": "poll",
+          "bytes": 1,
+          "ascii": "b'*'",
+          "hex": "2a"
+        }
+      ]
+    },
+    {
+      "log": "verification/imu_uart_diagnosis_20261016/03_query_baud_19200.jsonl",
+      "raw": "verification/imu_uart_diagnosis_20261016/03_query_baud_19200.rx.bin",
+      "baud": 19200,
+      "dtr": true,
+      "rts": true,
+      "settings": {
+        "baudrate": 19200,
+        "bytesize": 8,
+        "parity": "N",
+        "stopbits": 1,
+        "xonxoff": false,
+        "dsrdtr": false,
+        "rtscts": false,
+        "timeout": 0.05,
+        "write_timeout": 1.0,
+        "inter_byte_timeout": null
+      },
+      "summary": {
+        "at": "2026-10-16T23:30:35.693398+09:00",
+        "elapsed_s": 5.004249,
+        "event": "summary",
+        "status": "UNRESOLVED_ZERO_RX",
+        "rx_bytes": 0,
+        "tx_bytes": 7,
+        "exit_code": 2
+      },
+      "phases": [
+        {
+          "at": "2026-10-16T23:30:31.291194+09:00",
+          "elapsed_s": 0.602076,
+          "event": "phase_end",
+          "phase": "initialization_capture",
+          "rx_bytes": 0,
+          "total_rx_bytes": 0
+        },
+        {
+          "at": "2026-10-16T23:30:32.391479+09:00",
+          "elapsed_s": 1.702363,
+          "event": "phase_end",
+          "phase": "passive",
+          "rx_bytes": 0,
+          "total_rx_bytes": 0
+        },
+        {
+          "at": "2026-10-16T23:30:33.491813+09:00",
+          "elapsed_s": 2.80269,
+          "event": "phase_end",
+          "phase": "after_finish_previous_configuration",
+          "rx_bytes": 0,
+          "total_rx_bytes": 0
+        },
+        {
+          "at": "2026-10-16T23:30:34.592135+09:00",
+          "elapsed_s": 3.903027,
+          "event": "phase_end",
+          "phase": "version",
+          "rx_bytes": 0,
+          "total_rx_bytes": 0
+        },
+        {
+          "at": "2026-10-16T23:30:35.692406+09:00",
+          "elapsed_s": 5.003276,
+          "event": "phase_end",
+          "phase": "poll",
+          "rx_bytes": 0,
+          "total_rx_bytes": 0
+        }
+      ],
+      "transmitted": [
+        {
+          "at": "2026-10-16T23:30:32.391637+09:00",
+          "elapsed_s": 1.702489,
+          "event": "tx",
+          "phase": "finish_previous_configuration",
+          "bytes": 1,
+          "ascii": "b'>'",
+          "hex": "3e"
+        },
+        {
+          "at": "2026-10-16T23:30:33.491934+09:00",
+          "elapsed_s": 2.802786,
+          "event": "tx",
+          "phase": "version",
+          "bytes": 5,
+          "ascii": "b'<ver>'",
+          "hex": "3c 76 65 72 3e"
+        },
+        {
+          "at": "2026-10-16T23:30:34.592270+09:00",
+          "elapsed_s": 3.903122,
+          "event": "tx",
+          "phase": "poll",
+          "bytes": 1,
+          "ascii": "b'*'",
+          "hex": "2a"
+        }
+      ]
+    },
+    {
+      "log": "verification/imu_uart_diagnosis_20261016/03_query_baud_230400.jsonl",
+      "raw": "verification/imu_uart_diagnosis_20261016/03_query_baud_230400.rx.bin",
+      "baud": 230400,
+      "dtr": true,
+      "rts": true,
+      "settings": {
+        "baudrate": 230400,
+        "bytesize": 8,
+        "parity": "N",
+        "stopbits": 1,
+        "xonxoff": false,
+        "dsrdtr": false,
+        "rtscts": false,
+        "timeout": 0.05,
+        "write_timeout": 1.0,
+        "inter_byte_timeout": null
+      },
+      "summary": {
+        "at": "2026-10-16T23:30:50.767440+09:00",
+        "elapsed_s": 5.006181,
+        "event": "summary",
+        "status": "UNRESOLVED_ZERO_RX",
+        "rx_bytes": 0,
+        "tx_bytes": 7,
+        "exit_code": 2
+      },
+      "phases": [
+        {
+          "at": "2026-10-16T23:30:46.363728+09:00",
+          "elapsed_s": 0.602488,
+          "event": "phase_end",
+          "phase": "initialization_capture",
+          "rx_bytes": 0,
+          "total_rx_bytes": 0
+        },
+        {
+          "at": "2026-10-16T23:30:47.463985+09:00",
+          "elapsed_s": 1.702758,
+          "event": "phase_end",
+          "phase": "passive",
+          "rx_bytes": 0,
+          "total_rx_bytes": 0
+        },
+        {
+          "at": "2026-10-16T23:30:48.564463+09:00",
+          "elapsed_s": 2.803231,
+          "event": "phase_end",
+          "phase": "after_finish_previous_configuration",
+          "rx_bytes": 0,
+          "total_rx_bytes": 0
+        },
+        {
+          "at": "2026-10-16T23:30:49.664889+09:00",
+          "elapsed_s": 3.90366,
+          "event": "phase_end",
+          "phase": "version",
+          "rx_bytes": 0,
+          "total_rx_bytes": 0
+        },
+        {
+          "at": "2026-10-16T23:30:50.765309+09:00",
+          "elapsed_s": 5.004091,
+          "event": "phase_end",
+          "phase": "poll",
+          "rx_bytes": 0,
+          "total_rx_bytes": 0
+        }
+      ],
+      "transmitted": [
+        {
+          "at": "2026-10-16T23:30:47.464183+09:00",
+          "elapsed_s": 1.702928,
+          "event": "tx",
+          "phase": "finish_previous_configuration",
+          "bytes": 1,
+          "ascii": "b'>'",
+          "hex": "3e"
+        },
+        {
+          "at": "2026-10-16T23:30:48.564578+09:00",
+          "elapsed_s": 2.803321,
+          "event": "tx",
+          "phase": "version",
+          "bytes": 5,
+          "ascii": "b'<ver>'",
+          "hex": "3c 76 65 72 3e"
+        },
+        {
+          "at": "2026-10-16T23:30:49.665038+09:00",
+          "elapsed_s": 3.903781,
+          "event": "tx",
+          "phase": "poll",
+          "bytes": 1,
+          "ascii": "b'*'",
+          "hex": "2a"
+        }
+      ]
+    },
+    {
+      "log": "verification/imu_uart_diagnosis_20261016/03_query_baud_38400.jsonl",
+      "raw": "verification/imu_uart_diagnosis_20261016/03_query_baud_38400.rx.bin",
+      "baud": 38400,
+      "dtr": true,
+      "rts": true,
+      "settings": {
+        "baudrate": 38400,
+        "bytesize": 8,
+        "parity": "N",
+        "stopbits": 1,
+        "xonxoff": false,
+        "dsrdtr": false,
+        "rtscts": false,
+        "timeout": 0.05,
+        "write_timeout": 1.0,
+        "inter_byte_timeout": null
+      },
+      "summary": {
+        "at": "2026-10-16T23:30:40.717426+09:00",
+        "elapsed_s": 5.005198,
+        "event": "summary",
+        "status": "UNRESOLVED_ZERO_RX",
+        "rx_bytes": 0,
+        "tx_bytes": 7,
+        "exit_code": 2
+      },
+      "phases": [
+        {
+          "at": "2026-10-16T23:30:36.314510+09:00",
+          "elapsed_s": 0.602301,
+          "event": "phase_end",
+          "phase": "initialization_capture",
+          "rx_bytes": 0,
+          "total_rx_bytes": 0
+        },
+        {
+          "at": "2026-10-16T23:30:37.414707+09:00",
+          "elapsed_s": 1.702495,
+          "event": "phase_end",
+          "phase": "passive",
+          "rx_bytes": 0,
+          "total_rx_bytes": 0
+        },
+        {
+          "at": "2026-10-16T23:30:38.514958+09:00",
+          "elapsed_s": 2.802759,
+          "event": "phase_end",
+          "phase": "after_finish_previous_configuration",
+          "rx_bytes": 0,
+          "total_rx_bytes": 0
+        },
+        {
+          "at": "2026-10-16T23:30:39.615386+09:00",
+          "elapsed_s": 3.9032,
+          "event": "phase_end",
+          "phase": "version",
+          "rx_bytes": 0,
+          "total_rx_bytes": 0
+        },
+        {
+          "at": "2026-10-16T23:30:40.715990+09:00",
+          "elapsed_s": 5.003798,
+          "event": "phase_end",
+          "phase": "poll",
+          "rx_bytes": 0,
+          "total_rx_bytes": 0
+        }
+      ],
+      "transmitted": [
+        {
+          "at": "2026-10-16T23:30:37.414812+09:00",
+          "elapsed_s": 1.702584,
+          "event": "tx",
+          "phase": "finish_previous_configuration",
+          "bytes": 1,
+          "ascii": "b'>'",
+          "hex": "3e"
+        },
+        {
+          "at": "2026-10-16T23:30:38.515082+09:00",
+          "elapsed_s": 2.802855,
+          "event": "tx",
+          "phase": "version",
+          "bytes": 5,
+          "ascii": "b'<ver>'",
+          "hex": "3c 76 65 72 3e"
+        },
+        {
+          "at": "2026-10-16T23:30:39.615722+09:00",
+          "elapsed_s": 3.903496,
+          "event": "tx",
+          "phase": "poll",
+          "bytes": 1,
+          "ascii": "b'*'",
+          "hex": "2a"
+        }
+      ]
+    },
+    {
+      "log": "verification/imu_uart_diagnosis_20261016/03_query_baud_460800.jsonl",
+      "raw": "verification/imu_uart_diagnosis_20261016/03_query_baud_460800.rx.bin",
+      "baud": 460800,
+      "dtr": true,
+      "rts": true,
+      "settings": {
+        "baudrate": 460800,
+        "bytesize": 8,
+        "parity": "N",
+        "stopbits": 1,
+        "xonxoff": false,
+        "dsrdtr": false,
+        "rtscts": false,
+        "timeout": 0.05,
+        "write_timeout": 1.0,
+        "inter_byte_timeout": null
+      },
+      "summary": {
+        "at": "2026-10-16T23:30:55.791055+09:00",
+        "elapsed_s": 5.004266,
+        "event": "summary",
+        "status": "UNRESOLVED_ZERO_RX",
+        "rx_bytes": 0,
+        "tx_bytes": 7,
+        "exit_code": 2
+      },
+      "phases": [
+        {
+          "at": "2026-10-16T23:30:51.388871+09:00",
+          "elapsed_s": 0.602101,
+          "event": "phase_end",
+          "phase": "initialization_capture",
+          "rx_bytes": 0,
+          "total_rx_bytes": 0
+        },
+        {
+          "at": "2026-10-16T23:30:52.489180+09:00",
+          "elapsed_s": 1.702421,
+          "event": "phase_end",
+          "phase": "passive",
+          "rx_bytes": 0,
+          "total_rx_bytes": 0
+        },
+        {
+          "at": "2026-10-16T23:30:53.589473+09:00",
+          "elapsed_s": 2.802699,
+          "event": "phase_end",
+          "phase": "after_finish_previous_configuration",
+          "rx_bytes": 0,
+          "total_rx_bytes": 0
+        },
+        {
+          "at": "2026-10-16T23:30:54.689782+09:00",
+          "elapsed_s": 3.903025,
+          "event": "phase_end",
+          "phase": "version",
+          "rx_bytes": 0,
+          "total_rx_bytes": 0
+        },
+        {
+          "at": "2026-10-16T23:30:55.790076+09:00",
+          "elapsed_s": 5.003313,
+          "event": "phase_end",
+          "phase": "poll",
+          "rx_bytes": 0,
+          "total_rx_bytes": 0
+        }
+      ],
+      "transmitted": [
+        {
+          "at": "2026-10-16T23:30:52.489358+09:00",
+          "elapsed_s": 1.702569,
+          "event": "tx",
+          "phase": "finish_previous_configuration",
+          "bytes": 1,
+          "ascii": "b'>'",
+          "hex": "3e"
+        },
+        {
+          "at": "2026-10-16T23:30:53.589611+09:00",
+          "elapsed_s": 2.802822,
+          "event": "tx",
+          "phase": "version",
+          "bytes": 5,
+          "ascii": "b'<ver>'",
+          "hex": "3c 76 65 72 3e"
+        },
+        {
+          "at": "2026-10-16T23:30:54.689941+09:00",
+          "elapsed_s": 3.903155,
+          "event": "tx",
+          "phase": "poll",
+          "bytes": 1,
+          "ascii": "b'*'",
+          "hex": "2a"
+        }
+      ]
+    },
+    {
+      "log": "verification/imu_uart_diagnosis_20261016/03_query_baud_57600.jsonl",
+      "raw": "verification/imu_uart_diagnosis_20261016/03_query_baud_57600.rx.bin",
+      "baud": 57600,
+      "dtr": true,
+      "rts": true,
+      "settings": {
+        "baudrate": 57600,
+        "bytesize": 8,
+        "parity": "N",
+        "stopbits": 1,
+        "xonxoff": false,
+        "dsrdtr": false,
+        "rtscts": false,
+        "timeout": 0.05,
+        "write_timeout": 1.0,
+        "inter_byte_timeout": null
+      },
+      "summary": {
+        "at": "2026-10-16T23:30:45.741020+09:00",
+        "elapsed_s": 5.005191,
+        "event": "summary",
+        "status": "UNRESOLVED_ZERO_RX",
+        "rx_bytes": 0,
+        "tx_bytes": 7,
+        "exit_code": 2
+      },
+      "phases": [
+        {
+          "at": "2026-10-16T23:30:41.338286+09:00",
+          "elapsed_s": 0.602488,
+          "event": "phase_end",
+          "phase": "initialization_capture",
+          "rx_bytes": 0,
+          "total_rx_bytes": 0
+        },
+        {
+          "at": "2026-10-16T23:30:42.438545+09:00",
+          "elapsed_s": 1.702737,
+          "event": "phase_end",
+          "phase": "passive",
+          "rx_bytes": 0,
+          "total_rx_bytes": 0
+        },
+        {
+          "at": "2026-10-16T23:30:43.538890+09:00",
+          "elapsed_s": 2.803075,
+          "event": "phase_end",
+          "phase": "after_finish_previous_configuration",
+          "rx_bytes": 0,
+          "total_rx_bytes": 0
+        },
+        {
+          "at": "2026-10-16T23:30:44.639236+09:00",
+          "elapsed_s": 3.903426,
+          "event": "phase_end",
+          "phase": "version",
+          "rx_bytes": 0,
+          "total_rx_bytes": 0
+        },
+        {
+          "at": "2026-10-16T23:30:45.739565+09:00",
+          "elapsed_s": 5.003753,
+          "event": "phase_end",
+          "phase": "poll",
+          "rx_bytes": 0,
+          "total_rx_bytes": 0
+        }
+      ],
+      "transmitted": [
+        {
+          "at": "2026-10-16T23:30:42.438759+09:00",
+          "elapsed_s": 1.702934,
+          "event": "tx",
+          "phase": "finish_previous_configuration",
+          "bytes": 1,
+          "ascii": "b'>'",
+          "hex": "3e"
+        },
+        {
+          "at": "2026-10-16T23:30:43.539021+09:00",
+          "elapsed_s": 2.803193,
+          "event": "tx",
+          "phase": "version",
+          "bytes": 5,
+          "ascii": "b'<ver>'",
+          "hex": "3c 76 65 72 3e"
+        },
+        {
+          "at": "2026-10-16T23:30:44.639386+09:00",
+          "elapsed_s": 3.90356,
+          "event": "tx",
+          "phase": "poll",
+          "bytes": 1,
+          "ascii": "b'*'",
+          "hex": "2a"
+        }
+      ]
+    },
+    {
+      "log": "verification/imu_uart_diagnosis_20261016/03_query_baud_921600.jsonl",
+      "raw": "verification/imu_uart_diagnosis_20261016/03_query_baud_921600.rx.bin",
+      "baud": 921600,
+      "dtr": true,
+      "rts": true,
+      "settings": {
+        "baudrate": 921600,
+        "bytesize": 8,
+        "parity": "N",
+        "stopbits": 1,
+        "xonxoff": false,
+        "dsrdtr": false,
+        "rtscts": false,
+        "timeout": 0.05,
+        "write_timeout": 1.0,
+        "inter_byte_timeout": null
+      },
+      "summary": {
+        "at": "2026-10-16T23:31:00.815850+09:00",
+        "elapsed_s": 5.005355,
+        "event": "summary",
+        "status": "UNRESOLVED_ZERO_RX",
+        "rx_bytes": 0,
+        "tx_bytes": 7,
+        "exit_code": 2
+      },
+      "phases": [
+        {
+          "at": "2026-10-16T23:30:56.412968+09:00",
+          "elapsed_s": 0.602495,
+          "event": "phase_end",
+          "phase": "initialization_capture",
+          "rx_bytes": 0,
+          "total_rx_bytes": 0
+        },
+        {
+          "at": "2026-10-16T23:30:57.513187+09:00",
+          "elapsed_s": 1.702725,
+          "event": "phase_end",
+          "phase": "passive",
+          "rx_bytes": 0,
+          "total_rx_bytes": 0
+        },
+        {
+          "at": "2026-10-16T23:30:58.613492+09:00",
+          "elapsed_s": 2.803019,
+          "event": "phase_end",
+          "phase": "after_finish_previous_configuration",
+          "rx_bytes": 0,
+          "total_rx_bytes": 0
+        },
+        {
+          "at": "2026-10-16T23:30:59.713814+09:00",
+          "elapsed_s": 3.90335,
+          "event": "phase_end",
+          "phase": "version",
+          "rx_bytes": 0,
+          "total_rx_bytes": 0
+        },
+        {
+          "at": "2026-10-16T23:31:00.814230+09:00",
+          "elapsed_s": 5.003776,
+          "event": "phase_end",
+          "phase": "poll",
+          "rx_bytes": 0,
+          "total_rx_bytes": 0
+        }
+      ],
+      "transmitted": [
+        {
+          "at": "2026-10-16T23:30:57.513335+09:00",
+          "elapsed_s": 1.702841,
+          "event": "tx",
+          "phase": "finish_previous_configuration",
+          "bytes": 1,
+          "ascii": "b'>'",
+          "hex": "3e"
+        },
+        {
+          "at": "2026-10-16T23:30:58.613615+09:00",
+          "elapsed_s": 2.803121,
+          "event": "tx",
+          "phase": "version",
+          "bytes": 5,
+          "ascii": "b'<ver>'",
+          "hex": "3c 76 65 72 3e"
+        },
+        {
+          "at": "2026-10-16T23:30:59.713935+09:00",
+          "elapsed_s": 3.903441,
+          "event": "tx",
+          "phase": "poll",
+          "bytes": 1,
+          "ascii": "b'*'",
+          "hex": "2a"
+        }
+      ]
+    },
+    {
+      "log": "verification/imu_uart_diagnosis_20261016/03_query_baud_9600.jsonl",
+      "raw": "verification/imu_uart_diagnosis_20261016/03_query_baud_9600.rx.bin",
+      "baud": 9600,
+      "dtr": true,
+      "rts": true,
+      "settings": {
+        "baudrate": 9600,
+        "bytesize": 8,
+        "parity": "N",
+        "stopbits": 1,
+        "xonxoff": false,
+        "dsrdtr": false,
+        "rtscts": false,
+        "timeout": 0.05,
+        "write_timeout": 1.0,
+        "inter_byte_timeout": null
+      },
+      "summary": {
+        "at": "2026-10-16T23:30:30.669866+09:00",
+        "elapsed_s": 5.005133,
+        "event": "summary",
+        "status": "UNRESOLVED_ZERO_RX",
+        "rx_bytes": 0,
+        "tx_bytes": 7,
+        "exit_code": 2
+      },
+      "phases": [
+        {
+          "at": "2026-10-16T23:30:26.266497+09:00",
+          "elapsed_s": 0.601792,
+          "event": "phase_end",
+          "phase": "initialization_capture",
+          "rx_bytes": 0,
+          "total_rx_bytes": 0
+        },
+        {
+          "at": "2026-10-16T23:30:27.366858+09:00",
+          "elapsed_s": 1.702162,
+          "event": "phase_end",
+          "phase": "passive",
+          "rx_bytes": 0,
+          "total_rx_bytes": 0
+        },
+        {
+          "at": "2026-10-16T23:30:28.467202+09:00",
+          "elapsed_s": 2.802505,
+          "event": "phase_end",
+          "phase": "after_finish_previous_configuration",
+          "rx_bytes": 0,
+          "total_rx_bytes": 0
+        },
+        {
+          "at": "2026-10-16T23:30:29.567502+09:00",
+          "elapsed_s": 3.902794,
+          "event": "phase_end",
+          "phase": "version",
+          "rx_bytes": 0,
+          "total_rx_bytes": 0
+        },
+        {
+          "at": "2026-10-16T23:30:30.668026+09:00",
+          "elapsed_s": 5.00333,
+          "event": "phase_end",
+          "phase": "poll",
+          "rx_bytes": 0,
+          "total_rx_bytes": 0
+        }
+      ],
+      "transmitted": [
+        {
+          "at": "2026-10-16T23:30:27.366998+09:00",
+          "elapsed_s": 1.702266,
+          "event": "tx",
+          "phase": "finish_previous_configuration",
+          "bytes": 1,
+          "ascii": "b'>'",
+          "hex": "3e"
+        },
+        {
+          "at": "2026-10-16T23:30:28.467327+09:00",
+          "elapsed_s": 2.802595,
+          "event": "tx",
+          "phase": "version",
+          "bytes": 5,
+          "ascii": "b'<ver>'",
+          "hex": "3c 76 65 72 3e"
+        },
+        {
+          "at": "2026-10-16T23:30:29.567630+09:00",
+          "elapsed_s": 3.902897,
+          "event": "tx",
+          "phase": "poll",
+          "bytes": 1,
+          "ascii": "b'*'",
+          "hex": "2a"
+        }
+      ]
+    },
+    {
+      "log": "verification/imu_uart_diagnosis_20261016/04_queries_high_115200.jsonl",
+      "raw": "verification/imu_uart_diagnosis_20261016/04_queries_high_115200.rx.bin",
+      "baud": 115200,
+      "dtr": true,
+      "rts": true,
+      "settings": {
+        "baudrate": 115200,
+        "bytesize": 8,
+        "parity": "N",
+        "stopbits": 1,
+        "xonxoff": false,
+        "dsrdtr": false,
+        "rtscts": false,
+        "timeout": 0.05,
+        "write_timeout": 1.0,
+        "inter_byte_timeout": null
+      },
+      "summary": {
+        "at": "2026-10-16T23:31:19.164150+09:00",
+        "elapsed_s": 5.004212,
+        "event": "summary",
+        "status": "UNRESOLVED_ZERO_RX",
+        "rx_bytes": 0,
+        "tx_bytes": 7,
+        "exit_code": 2
+      },
+      "phases": [
+        {
+          "at": "2026-10-16T23:31:14.761876+09:00",
+          "elapsed_s": 0.601959,
+          "event": "phase_end",
+          "phase": "initialization_capture",
+          "rx_bytes": 0,
+          "total_rx_bytes": 0
+        },
+        {
+          "at": "2026-10-16T23:31:15.862058+09:00",
+          "elapsed_s": 1.702143,
+          "event": "phase_end",
+          "phase": "passive",
+          "rx_bytes": 0,
+          "total_rx_bytes": 0
+        },
+        {
+          "at": "2026-10-16T23:31:16.962511+09:00",
+          "elapsed_s": 2.802605,
+          "event": "phase_end",
+          "phase": "after_finish_previous_configuration",
+          "rx_bytes": 0,
+          "total_rx_bytes": 0
+        },
+        {
+          "at": "2026-10-16T23:31:18.062825+09:00",
+          "elapsed_s": 3.902904,
+          "event": "phase_end",
+          "phase": "version",
+          "rx_bytes": 0,
+          "total_rx_bytes": 0
+        },
+        {
+          "at": "2026-10-16T23:31:19.163064+09:00",
+          "elapsed_s": 5.003147,
+          "event": "phase_end",
+          "phase": "poll",
+          "rx_bytes": 0,
+          "total_rx_bytes": 0
+        }
+      ],
+      "transmitted": [
+        {
+          "at": "2026-10-16T23:31:15.862182+09:00",
+          "elapsed_s": 1.702245,
+          "event": "tx",
+          "phase": "finish_previous_configuration",
+          "bytes": 1,
+          "ascii": "b'>'",
+          "hex": "3e"
+        },
+        {
+          "at": "2026-10-16T23:31:16.962636+09:00",
+          "elapsed_s": 2.802699,
+          "event": "tx",
+          "phase": "version",
+          "bytes": 5,
+          "ascii": "b'<ver>'",
+          "hex": "3c 76 65 72 3e"
+        },
+        {
+          "at": "2026-10-16T23:31:18.062919+09:00",
+          "elapsed_s": 3.902982,
+          "event": "tx",
+          "phase": "poll",
+          "bytes": 1,
+          "ascii": "b'*'",
+          "hex": "2a"
+        }
+      ]
+    }
+  ],
+  "post_diagnosis_fuser": {
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": ""
+  },
+  "ros_real_sensor_validation": "NOT_RUN_NO_RAW_DATA",
+  "settings_changing_commands_sent": []
+}

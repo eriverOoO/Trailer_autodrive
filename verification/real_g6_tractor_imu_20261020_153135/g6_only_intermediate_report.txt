@@ -1,0 +1,201 @@
+REAL_G6_TRACTOR_IMU_SLAM_TEST_20261020
+갱신: 2026-10-20T15:44:06.877811+09:00
+진행률: 55% 완료. G6+Cartographer 실제 정지 SLAM 검증 완료.
+70% 트랙터 IMU 단계는 사용자 재연결 확인 대기. 전체 시험 100%가 아님.
+2D RViz GUI 및 실제 Map/빨간 Scan은 확인했으나 차량 윤곽선은 미표시.
+
+1. USB 장치 역할 확정
+사용자가 트랙터 IMU USB만 분리하고 G6는 유지했다고 명시.
+전후 목록 대조: /dev/ttyUSB1 및 USB 3-8 by-path가 사라지고,
+/dev/ttyUSB0 및 USB 3-7 by-path는 유지됨.
+따라서 현재 물리 구성에서 다음과 같이 확정:
+G6: /dev/ttyUSB0
+  /dev/serial/by-path/pci-0000:80:14.0-usb-0:7:1.0-port0
+  ID_PATH=pci-0000:80:14.0-usb-0:7:1.0, DEVPATH USB3/3-7.
+트랙터 IMU: 분리 직전 /dev/ttyUSB1, USB 3-8.
+  /dev/serial/by-path/pci-0000:80:14.0-usb-0:8:1.0-port0
+  사용자에게 같은 USB 소켓으로 재연결 후 알려 달라고 안내. 현재 아직 분리 상태.
+재연결 후 tty 번호는 반드시 다시 확인하며 이전 번호를 보장하지 않음.
+양 변환기 VID10c4/PIDea60/serial0001 동일. by-id는 역할 고유 식별자로 쓰지 않음.
+IMU 분리 뒤 by-id가 ttyUSB0으로 바뀐 것도 실제 확인됨.
+/dev/imu_tractor 없음. udev 설치/변경, USB serial 변경 없음.
+G6 명령은 물리 역할 확인 후 3-7 by-path로만 송신.
+증거: usb_initial.txt, udev_usb*_initial.txt, usb_imu_disconnected.txt,
+g6_udev_confirmed.txt, physical_roles_confirmed.json.
+
+2. G6 실행 구성/설정 (기존 그대로)
+Launch: /home/venezuelachocolatemilk/mvsim_slam_real/src/mvsim_slam_real_bringup/launch/g6_slam.launch.py
+구현: src/mvsim_slam_real_bringup/mvsim_slam_real_bringup/g6_launch.py
+설정: src/mvsim_slam_real_bringup/config/g6.yaml
+Cartographer: g6_lidar_only.lua -> reference_lidar_only.lua
+baudrate512000, 목표12Hz, sample_rate18(18K), frame_id=laser_frame,
+range_min0.15m, range_max1.0m, inverted=true, reversion=false,
+fixed_resolution=false, use_sim_time=false.
+Cartographer min_range0.15/max_range1.0/missing_data_ray_length1.0m.
+주의: 현재 실제 파일은 1m이며 사용자 참고값15m와 다름. 변경하지 않음.
+원거리 벽/장애물 검증은 현재 범위 밖이므로 미검증.
+SDK 장치 응답: Model G6, serial2022061000071139, firmware3.2, hardware3.
+드라이버 health good, scan start 성공, SDK sampling18K/scan12Hz 응답.
+회전은 SDK 및 연속 실제 Scan으로 간접 확인했으며 모터를 카메라로 관찰한 것은 아님.
+LiDAR 자체 스캔 모터만 사용. 차량 모터/조향 실행 없음.
+런타임 param dump: driver_runtime.yaml.
+소스/실제 빌드 주요 Python/config35개 내용 비교 일치. 빌드/설정 수정 없음.
+
+3. 실제 Scan 실측
+관측 구간30초, 수신 349개.
+수신 시각 기준 11.65771Hz, header timestamp 기준 11.65807Hz.
+별도 ros2 topic hz 마지막 평균 약11.650Hz (scan_hz.txt).
+header stamp 역행/중복 0개.
+첫/마지막 rays 1545/1541개.
+실제 유효 거리점은 scan당 491~567개.
+관측 첫 Scan 유효 거리 약0.4005~0.9995m, 마지막 약0.4055~1.0m.
+frame_id=laser_frame. 최신 수신 당시 scan age 약86~87ms.
+Scan timestamp에서 map<-laser_frame TF lookup 성공.
+실제 값 증거: scan_snapshot.yaml, g6_stationary_observation/scan_first.json.
+
+4. Cartographer 결과
+기존 g6_slam.launch.py로 실제 driver+cartographer+occupancy_grid 실행.
+frame_mode=sensor, use_imu=false, start_imu=false, enable_rviz=false.
+Cartographer 실제 /scan Subscriber 확인, IMU Subscriber 없음.
+trajectory0 active, get_trajectory_states 응답 status code0.
+trajectory_query 응답 status code0, 조회 당시110개 trajectory nodes.
+실제 /scan_matched_points2 349개, 약11.65789Hz,
+frame=map, 첫/마지막 점군 122/113점.
+Submap0 version 36 -> 77 증가.
+후속 로그에서 submap(0,1) 생성 및 motion filter 처리 확인.
+따라서 단순 TF 연결/GUI 열림 외에 실제 Scan Matching 및 지도 삽입 흐름 확인.
+정확도/지도 축의 물리 회전 부호/루프 폐합 성능까지 검증한 것은 아님.
+
+5. Occupancy Grid / TF
+/map Publisher는 cartographer_occupancy_grid_node 1개.
+관측 35개, header 기준 약1.0029Hz,
+고유 지도내용 hash 29개.
+관측 지도 48x49 cells, 해상도0.05m.
+관측 내 known cells 504 -> 544,
+마지막 occupied>=65 75개, free<=25 362개.
+그 후 GUI에서는49x50칸으로 확장 관측.
+TF: map -> odom -> laser_frame, 각 약200Hz, stamp 역행/중복0.
+TF Publisher는 cartographer_node 1개. 중복 TF Publisher 없음.
+base_footprint/base_link는 현재 sensor 모드에서 없음; 미실측 mount를 임의 생성하지 않음.
+g6_mount.yaml measured=false, xyz/rpy=null.
+실제 차량 rear axle/body center 위치와 SLAM 센서 원점을 같은 것으로 취급하지 않음.
+
+6. IMU 상태
+트랙터 IMU는 포트 식별을 위해 사용자 분리 상태. 현재 재연결 대기.
+이번 실행 UART RX/패킷/오류/Hz/Yaw는 미측정, 과거499패킷/99.99Hz로 대체하지 않음.
+기존 수신 진단 tools/diagnose_ebimu.py 검토 완료; 기본 query없음/TX0.
+2D serial bridge는 기본115200 baud 및11필드 quaternion+gyro+accel+timestamp,
+현재 재연결 후 raw 형식부터 확인해야 함.
+Yaw timestamp/초기기준/센서-to-body 장착축/물리 sign/지도 heading 정렬은 미검증.
+트레일러 IMU는 NOT CONNECTED. ROS trailer IMU Publisher 없음.
+트레일러 yaw/접힘각/가상 IMU 생성 없음.
+IMU를 Cartographer에 추가하지 않음.
+
+7. 2D RViz 실제 실행
+기존 2D visualizer 실행 유지. slam_frame:=laser_frame 런타임 인자로 실제 sensor TF 구독.
+처음 GUI는 사용 중 정상 종료된 것을 로그로 확인하여 새 GUI만 실행함.
+시각화 노드를 중복 실행하지 않음. 3D 모델/시뮬레이터/주차 프로그램 실행 없음.
+기존 rviz/live.rviz는 camera X10/Y0/Scale25여서 원점의1m 지도는 화면 밖이었음.
+기존 파일을 수정하지 않고 verification 안의 rviz_map_origin_view.rviz 복사본에서
+카메라 X0/Y0/Angle0/Scale200만 변경하여 원점 지도 확대.
+Grid60칸/1m, 배경35/35/35, Map alpha0.8, Scan FlatColor255/20/20 유지.
+현재 Fixed Frame=map, TopDownOrtho. GUI Global Status: Ok 실제 캡처 확인.
+rviz_g6_live_map_origin.png에서 Occupancy Grid와 빨간 실시간 Scan의 중첩 표시 확인.
+실시간 Scan decay0; 누적 지도와 별개 Display/Topic.
+실제 벽/장애물의 물리 형상과 화면 대응은 현장 설명/통제된 물체 시험을 하지 않아 미검증.
+시각화 상태는 REAL_INPUT, SLAM LIVE, tractor/trailer NO DATA,
+valid=false, values=null, STATE_UNKNOWN, tf_published=false.
+현재 Marker는 상태 텍스트만이며 차량 외곽선/방향/phi는 없음.
+상태 텍스트의 기존 위치x10은 지도 원점 확대 화면 밖일 수 있음; status Topic에서 확인 가능.
+
+8. 미표시 원인 및 변경 필요사항 (승인/수정 미실행)
+현재 2D visualizer require_alignment/coherent는 양 IMU LIVE, 양 mounting/sign확인,
+모든 실측 geometry, align_straight 기준을 모두 요구함.
+따라서 현재 트레일러 센서가 없으면 트랙터 IMU가 연결되어도 트랙터 윤곽선이 나오지 않음.
+원본 빨간 화살표도 트레일러용 하나이며 별도 트랙터 화살표는 구현되어 있지 않음.
+트랙터 단독 시각화를 원하면 별도 승인된 코드 변경이 필요.
+그 경우 tractor IMU+SLAM 실데이터만 쓰고 trailer/phi를 숨기는 모드가 가능하나,
+실측 없는 위치 오프셋/장착 heading을 0으로 가정하거나 confirmed=true로 위장하면 안 됨.
+기존 코드/설정은 수정하지 않았으며 이 제약을 우회하지 않음.
+
+9. 오류/통신 및 충돌 점검
+G6 드라이버 시작15:40:00~01에 checksum error6회.
+동시에 SDK intensity 자동탐지16->8->0bit 로그 관측.
+이후 보고 시각까지 추가 checksum오류 없이11.6Hz수신과 지도 갱신 지속.
+초기 오류 원인은 확정하지 않음; 프로토콜 자동탐지 로그와 시간상 겹친다는 관찰만 기록.
+Cartographer 시작시 Queue too short for velocity estimation 경고1회,
+이후 Scan Matching/Submap/TF 정상 지속. fatal/crash 관측 없음.
+초기 오류가 전혀 없었다고 보고하지 않음.
+/dev/ttyUSB0 점유는 G6 PID21573 한 프로세스. IMU 미연결, 포트 중복점유 없음.
+ROS_DOMAIN_ID=0, ROS_LOCALHOST_ONLY=0은 최초 실제환경에서 확인했고 모두 동일하게 적용.
+Scan frame->map 변환 성공, TF Publisher1개, RViz Fixed Frame 오류 없음.
+
+10. 정확한 실행 명령/환경
+source /home/venezuelachocolatemilk/mvsim_slam_real/verification/real_g6_tractor_imu_20261020_153135/environment.bash
+# 환경 파일은 /opt/ros/humble, 실차 install, 2D install만 source.
+# ROS_DOMAIN_ID=0 ROS_LOCALHOST_ONLY=0 use_sim_time=false.
+ros2 launch mvsim_slam_real_bringup g6_slam.launch.py lidar_port:=/dev/serial/by-path/pci-0000:80:14.0-usb-0:7:1.0-port0 frame_mode:=sensor use_imu:=false start_imu:=false enable_rviz:=false
+ros2 launch tractor_trailer_rviz_2d visualization.launch.py slam_frame:=laser_frame output_directory:=/home/venezuelachocolatemilk/mvsim_slam_real/verification/real_g6_tractor_imu_20261020_153135/viz_live
+# 위 launch의 최초 GUI가 종료된 뒤 현재 별도 GUI:
+ros2 run rviz2 rviz2 -d /home/venezuelachocolatemilk/mvsim_slam_real/verification/real_g6_tractor_imu_20261020_153135/rviz_map_origin_view.rviz --ros-args -r __node:=tractor_trailer_rviz_2d -p use_sim_time:=false
+진단: observe_real.py 실제 Topic읽기30초, ros2 topic hz /scan,
+ros2 param dump /ydlidar_ros2_driver_node, ros2 topic info /scan,/map,/tf -v,
+ros2 node info /cartographer_node, get_trajectory_states, trajectory_query.
+상세 명령 파일: commands_executed.txt (환경/실행/진단 명령 추가 기록).
+
+11. 실행 유지 노드/PID/tmux
+세션 real_g6_imu_20261020
+real_g6_imu_20261020:rviz pid=17481 dead=0 cmd=bash
+real_g6_imu_20261020:g6_slam pid=21523 dead=0 cmd=bash
+real_g6_imu_20261020:rviz_map pid=22823 dead=0 cmd=bash
+
+G6 launch21569, driver21573, Cartographer21575, occupancy_grid21577.
+기존2D visualizer17521, 새 map view RViz22858.
+최신 전체 프로세스 목록 processes_current.txt; 창 재시작 시 PID는 달라질 수 있음.
+관련 로그 g6_slam.log, rviz.log, rviz_map_view.log, ros_logs/.
+진단은 bounded프로세스로 종료되며 실제센서와SLAM/GUI는 계속 실행.
+IMU receiver는 재연결 전이라 아직 없음.
+
+12. 종료 방법
+상태 보기: tmux attach -t real_g6_imu_20261020
+센서/SLAM 종료: tmux send-keys -t real_g6_imu_20261020:g6_slam C-c
+RViz GUI 종료: tmux send-keys -t real_g6_imu_20261020:rviz_map C-c
+2D visualizer 종료: tmux send-keys -t real_g6_imu_20261020:rviz C-c
+관련 없는 프로세스 kill금지. G6 드라이버 정상종료 경로 사용.
+
+13. 현재 검증 표
+| 검증 항목 | 상태 |
+| G6 USB 인식 | PASS: 사용자 IMU분리 대조+G6자체응답 |
+| G6 실제 Scan 수신 | PASS |
+| Scan 주파수 | 11.66Hz 실측 |
+| Cartographer 실행 | PASS: LiDAR-only |
+| 실제 Occupancy Grid 생성 | PASS: 내용29회변경 |
+| Map 및 TF 연결 | PASS: map->odom->laser_frame, sensor모드 |
+| 정지 상태 SLAM | PASS: 정지 조건 지도/Scan Matching 흐름, 정확도미검증 |
+| 이동 중 SLAM | NOT TESTED |
+| 트랙터 IMU UART 수신 | N/A: 재연결대기 |
+| 트랙터 IMU Yaw | N/A: 재연결대기 |
+| 트랙터 모델 2D 표시 | N/A: 기존코드 필수입력/기하 미충족, 미표시 |
+| 지도 위 차량 위치 표시 | N/A: 센서위치TF만 확인, 차량실측없음 |
+| 트레일러 IMU | NOT CONNECTED |
+| 차량 제어 미실행 | PASS |
+| 기존 소스 무변경 | PASS: 보호파일765개 해시변경0개 |
+추가: 실제 RViz지도/빨간Scan 표시 PASS. 차량윤곽선과 구분.
+
+14. 미검증/다음 실험
+트랙터 IMU를 같은3-8 USB소켓으로 재연결한 뒤 사용자가 알려주면 by-path/tty를 재확인.
+그다음 수신전용 기존진단으로 UART raw/패킷/Yaw/timestamp/Hz를 확인하고,
+필요시 기존2D IMU브리지만 실행. Cartographer에 새 IMU입력 없음.
+G6+IMU동시USB충돌 검증은 재연결 및 동시수신 후에만 완료 처리.
+Yaw초기기준, sensor 장착/sign, 물리좌우회전, 지도절대heading 일치는 미검증.
+실제벽형상 현장대조, 1m밖 환경, 동적SLAM/루프폐합/위치정확도 미검증.
+차량이동/자동주차/모터/조향 명령을 사용해 시험하지 않음.
+트랙터 단독2D표시는 승인된수정 및 필요한실측값 확보 후 별도 검증 필요.
+
+15. 보호 및 산출물
+기존 mvsim_slam/mvsim_slam_final은 읽기만 함. 기존 실차/시각화 소스,드라이버,Lua,udev무변경.
+검증한 보호파일765개(실차src,원본참고src,2D source/config등), 변경0개.
+대용량 데이터셋/역사로그전체를 해시한 것은 아님.
+신규파일은 verification 내 보고서/증거/환경/실행스크립트/읽기전용관측기/카메라복사본.
+가상Scan/Map/IMU/GT발행없음, Hybrid A*/LQR/Arduino/시뮬레이터실행없음.
+증거디렉터리: /home/venezuelachocolatemilk/mvsim_slam_real/verification/real_g6_tractor_imu_20261020_153135

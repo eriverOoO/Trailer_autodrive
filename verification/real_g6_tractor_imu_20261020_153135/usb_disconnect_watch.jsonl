@@ -1,0 +1,1 @@
+{"at": "2026-10-20T15:32:50.123123+09:00", "ports": {"/dev/serial/by-path/pci-0000:80:14.0-usb-0:8:1.0-port0": "/dev/ttyUSB1", "/dev/serial/by-path/pci-0000:80:14.0-usb-0:7:1.0-port0": "/dev/ttyUSB0"}}

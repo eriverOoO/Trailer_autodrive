@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-16T22:56:35.413451+09:00",
+  "port": "/dev/serial/by-id/usb-Silicon_Labs_CP2102_USB_to_UART_Bridge_Controller_0001-if00-port0",
+  "realpath": "/dev/ttyUSB0",
+  "baud": 115200,
+  "serial": "8N1, no flow control",
+  "commands": [
+    "<ver>",
+    "<cfg>"
+  ],
+  "records": [
+    {
+      "phase": "passive",
+      "command": null,
+      "bytes": 0,
+      "chunks": []
+    },
+    {
+      "phase": "version",
+      "command": "<ver>",
+      "bytes": 0,
+      "chunks": []
+    },
+    {
+      "phase": "configuration",
+      "command": "<cfg>",
+      "bytes": 0,
+      "chunks": []
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "progress_percent": 85,
+  "implementation": "COMPLETE_2D_PORT",
+  "software_tests": "PASS",
+  "unit_checks": 13,
+  "runtime_checks": 16,
+  "current_uart_rx": "NOT_TESTED",
+  "actual_dual_imu": "NOT_TESTED",
+  "actual_g6_map": "NOT_TESTED",
+  "actual_slam_pose": "NOT_TESTED",
+  "actual_physical_yaw_direction": "NOT_TESTED",
+  "live_no_input": "PASS",
+  "original_files": "UNCHANGED_IN_PROTECTED_BASELINE",
+  "original_protected_count": 585,
+  "new_tf_publishers": 0,
+  "actuation_messages": 0
+}

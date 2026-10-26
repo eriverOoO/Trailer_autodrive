@@ -1,0 +1,62 @@
+Type: tf2_msgs/msg/TFMessage
+
+Publisher count: 1
+
+Node name: cartographer_node
+Node namespace: /
+Topic type: tf2_msgs/msg/TFMessage
+Endpoint type: PUBLISHER
+GID: 01.0f.51.dd.47.54.8c.6e.00.00.00.00.00.00.18.03.00.00.00.00.00.00.00.00
+QoS profile:
+  Reliability: RELIABLE
+  History (Depth): UNKNOWN
+  Durability: VOLATILE
+  Lifespan: Infinite
+  Deadline: Infinite
+  Liveliness: AUTOMATIC
+  Liveliness lease duration: Infinite
+
+Subscription count: 3
+
+Node name: tractor_trailer_2d_visualizer
+Node namespace: /
+Topic type: tf2_msgs/msg/TFMessage
+Endpoint type: SUBSCRIPTION
+GID: 01.0f.51.dd.05.b1.9c.e2.00.00.00.00.00.00.15.04.00.00.00.00.00.00.00.00
+QoS profile:
+  Reliability: RELIABLE
+  History (Depth): UNKNOWN
+  Durability: VOLATILE
+  Lifespan: Infinite
+  Deadline: Infinite
+  Liveliness: AUTOMATIC
+  Liveliness lease duration: Infinite
+
+Node name: transform_listener_impl_617497293560
+Node namespace: /
+Topic type: tf2_msgs/msg/TFMessage
+Endpoint type: SUBSCRIPTION
+GID: 01.0f.51.dd.47.54.8c.6e.00.00.00.00.00.00.16.04.00.00.00.00.00.00.00.00
+QoS profile:
+  Reliability: RELIABLE
+  History (Depth): UNKNOWN
+  Durability: VOLATILE
+  Lifespan: Infinite
+  Deadline: Infinite
+  Liveliness: AUTOMATIC
+  Liveliness lease duration: Infinite
+
+Node name: transform_listener_impl_647a1dc40d00
+Node namespace: /
+Topic type: tf2_msgs/msg/TFMessage
+Endpoint type: SUBSCRIPTION
+GID: 01.0f.51.dd.4a.59.b0.1f.00.00.00.00.00.00.14.04.00.00.00.00.00.00.00.00
+QoS profile:
+  Reliability: RELIABLE
+  History (Depth): UNKNOWN
+  Durability: VOLATILE
+  Lifespan: Infinite
+  Deadline: Infinite
+  Liveliness: AUTOMATIC
+  Liveliness lease duration: Infinite
+

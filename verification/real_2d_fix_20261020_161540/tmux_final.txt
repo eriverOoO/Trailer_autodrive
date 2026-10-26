@@ -1,0 +1,4 @@
+real_g6_imu_20261020:tractor_2d pid=50247 dead=0 cmd=bash
+real_g6_imu_20261020:g6_slam pid=21523 dead=0 cmd=bash
+real_g6_imu_20261020:rviz_map pid=22823 dead=0 cmd=bash
+real_g6_imu_20261020:imu_patched pid=43639 dead=0 cmd=bash

@@ -1,0 +1,53 @@
+{
+  "real_hardware": true,
+  "synthetic_samples": false,
+  "status_count": 893,
+  "ready_count": 0,
+  "ready_reached": false,
+  "last_status": {
+    "mode": "REAL_INPUT",
+    "stamp_ns": 1792824766445914084,
+    "valid": false,
+    "visualization_mode": "FULL_VEHICLE",
+    "diagnostic_valid": false,
+    "imu": {
+      "tractor": "NO DATA",
+      "trailer": "NO DATA"
+    },
+    "imu_age_s": {
+      "tractor": null,
+      "trailer": null
+    },
+    "imu_reason": {
+      "tractor": "",
+      "trailer": ""
+    },
+    "yaw_source": {
+      "tractor": "orientation",
+      "trailer": "orientation"
+    },
+    "slam": "LIVE",
+    "reason": "both IMUs must be LIVE",
+    "values": null,
+    "state_machine": "STATE_UNKNOWN",
+    "tf_published": false,
+    "ready": false,
+    "reference_recorded": false,
+    "startup_progress": 0.0,
+    "heading_reference": "INDEPENDENT_AVERAGED_STARTUP_YAW_DELTAS",
+    "heading_alignment_verified": false,
+    "sign_convention": "left/CCW positive; inherited tractor native-yaw sign -1",
+    "control_authorized": false
+  },
+  "imu_subscribers": {
+    "/tractor/imu/data": [
+      "tractor_trailer_2d_visualizer"
+    ],
+    "/trailer/imu/data": [
+      "tractor_trailer_2d_visualizer"
+    ]
+  },
+  "marker_batches": 892,
+  "physical_turn_accuracy_verified": false,
+  "status": "NOT_READY"
+}

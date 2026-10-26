@@ -1,0 +1,31 @@
+1792157813.6840808 [INFO] [launch]: All log files can be found below /home/venezuelachocolatemilk/mvsim_slam_real/verification/ros/2026-10-16-22-36-53-683650-venezuelachocolatemilk-Legion-Pro-5-16IAX10H-19745
+1792157813.6841431 [INFO] [launch]: Default logging verbosity is set to INFO
+1792157813.7013710 [INFO] [launch.user]: Development mode=True; actuation=False; absent sensors remain unavailable
+1792157813.7134142 [INFO] [sensor_tf-1]: process started with pid [19755]
+1792157813.7134905 [INFO] [state_estimator-2]: process started with pid [19757]
+1792157813.7135236 [INFO] [control_adapter-3]: process started with pid [19759]
+1792157813.7135508 [INFO] [lidar_gateway-4]: process started with pid [19761]
+1792157813.7135756 [INFO] [ebimu_node-5]: process started with pid [19763]
+1792157813.7135968 [INFO] [ebimu_node-6]: process started with pid [19765]
+1792157813.7136168 [INFO] [cartographer_node-7]: process started with pid [19767]
+1792157813.7136371 [INFO] [cartographer_occupancy_grid_node-8]: process started with pid [19769]
+1792157813.7136576 [INFO] [auto_parking-9]: process started with pid [19771]
+1792157834.6197896 [WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+1792157834.6215618 [INFO] [auto_parking-9]: sending signal 'SIGINT' to process[auto_parking-9]
+1792157834.6219018 [INFO] [cartographer_occupancy_grid_node-8]: sending signal 'SIGINT' to process[cartographer_occupancy_grid_node-8]
+1792157834.6221888 [INFO] [cartographer_node-7]: sending signal 'SIGINT' to process[cartographer_node-7]
+1792157834.6225770 [INFO] [ebimu_node-6]: sending signal 'SIGINT' to process[ebimu_node-6]
+1792157834.6230471 [INFO] [ebimu_node-5]: sending signal 'SIGINT' to process[ebimu_node-5]
+1792157834.6237059 [INFO] [lidar_gateway-4]: sending signal 'SIGINT' to process[lidar_gateway-4]
+1792157834.6245112 [INFO] [control_adapter-3]: sending signal 'SIGINT' to process[control_adapter-3]
+1792157834.6251681 [INFO] [state_estimator-2]: sending signal 'SIGINT' to process[state_estimator-2]
+1792157834.6256967 [INFO] [sensor_tf-1]: sending signal 'SIGINT' to process[sensor_tf-1]
+1792157834.7330139 [INFO] [cartographer_occupancy_grid_node-8]: process has finished cleanly [pid 19769]
+1792157834.7373922 [INFO] [cartographer_node-7]: process has finished cleanly [pid 19767]
+1792157834.7504683 [INFO] [lidar_gateway-4]: process has finished cleanly [pid 19761]
+1792157834.7578044 [INFO] [control_adapter-3]: process has finished cleanly [pid 19759]
+1792157834.7620320 [INFO] [ebimu_node-5]: process has finished cleanly [pid 19763]
+1792157834.7630749 [INFO] [ebimu_node-6]: process has finished cleanly [pid 19765]
+1792157834.7668004 [INFO] [state_estimator-2]: process has finished cleanly [pid 19757]
+1792157834.7699468 [INFO] [sensor_tf-1]: process has finished cleanly [pid 19755]
+1792157834.7871895 [ERROR] [auto_parking-9]: process has died [pid 19771, exit code 1, cmd '/home/venezuelachocolatemilk/mvsim_slam_real/install/real_parking/lib/real_parking/auto_parking --ros-args --params-file /home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/parking.yaml --params-file /tmp/launch_params_y4bkipsf'].

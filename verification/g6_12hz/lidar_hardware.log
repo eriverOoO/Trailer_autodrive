@@ -1,0 +1,44 @@
+[INFO] [launch]: All log files can be found below /home/venezuelachocolatemilk/mvsim_slam_real/verification/g6_12hz/ros/2026-10-17-20-46-17-771497-venezuelachocolatemilk-Legion-Pro-5-16IAX10H-33488
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [ydlidar_ros2_driver_node-1]: process started with pid [33490]
+[ydlidar_ros2_driver_node-1] [INFO] [1792237577.849344567] [ydlidar_ros2_driver_node]: [YDLIDAR INFO] Current ROS Driver Version: 1.0.1
+[ydlidar_ros2_driver_node-1] 
+[ydlidar_ros2_driver_node-1] [2026-10-17 20:46:17][info] SDK initializing
+[ydlidar_ros2_driver_node-1] [2026-10-17 20:46:17][info] SDK has been initialized
+[ydlidar_ros2_driver_node-1] [2026-10-17 20:46:17][info] SDK Version: 1.2.20
+[ydlidar_ros2_driver_node-1] [2026-10-17 20:46:17][info] Connect elapsed time 1 ms
+[ydlidar_ros2_driver_node-1] [2026-10-17 20:46:17][info] Lidar successfully connected [/dev/serial/by-id/usb-Silicon_Labs_CP2102_USB_to_UART_Bridge_Controller_0001-if00-port0:512000]
+[ydlidar_ros2_driver_node-1] [2026-10-17 20:46:18][info] Lidar running correctly! The health status good
+[ydlidar_ros2_driver_node-1] [2026-10-17 20:46:18][info] Current Lidar Model Code 13
+[ydlidar_ros2_driver_node-1] [2026-10-17 20:46:18][info] Baseplate device info
+[ydlidar_ros2_driver_node-1] Firmware version: 3.2
+[ydlidar_ros2_driver_node-1] Hardware version: 3
+[ydlidar_ros2_driver_node-1] Model: G6
+[ydlidar_ros2_driver_node-1] Serial: 2022061000071139
+[ydlidar_ros2_driver_node-1] [2026-10-17 20:46:18][info] Current scan frequency: 10.00Hz
+[ydlidar_ros2_driver_node-1] [2026-10-17 20:46:18][info] Current scan frequency: 12.00Hz
+[ydlidar_ros2_driver_node-1] [2026-10-17 20:46:18][info] Check status, Elapsed time 515 ms
+[ydlidar_ros2_driver_node-1] [2026-10-17 20:46:18][info] Lidar init success, elapsed time [516]ms
+[ydlidar_ros2_driver_node-1] [2026-10-17 20:46:20][info] [YDLIDAR] Create thread 0xEA3F5640
+[ydlidar_ros2_driver_node-1] [2026-10-17 20:46:20][info] Successed to start the lidar, elapsed time 2457 ms
+[ydlidar_ros2_driver_node-1] [2026-10-17 20:46:20][info] Scan Frequency: 12.00Hz
+[ydlidar_ros2_driver_node-1] [2026-10-17 20:46:20][info] Fixed Size: 1525
+[ydlidar_ros2_driver_node-1] [2026-10-17 20:46:20][info] Sample Rate: 18.00K
+[ydlidar_ros2_driver_node-1] [2026-10-17 20:46:20][info] Successed to check the lidar, elapsed time 0 ms
+[ydlidar_ros2_driver_node-1] [2026-10-17 20:46:20][info] Lidar has started!
+[ydlidar_ros2_driver_node-1] [0;31m[2026-10-17 20:46:20][error] Checksum error 0xF322 != 0x0B85
+[ydlidar_ros2_driver_node-1] [0m[0;31m[2026-10-17 20:46:20][error] Checksum error 0xF322 != 0x0B85
+[ydlidar_ros2_driver_node-1] [0m[2026-10-17 20:46:20][info] The intensity has been automatically adjusted to[16]bit
+[ydlidar_ros2_driver_node-1] [0;31m[2026-10-17 20:46:20][error] Checksum error 0xCE07 != 0x0B85
+[ydlidar_ros2_driver_node-1] [0m[0;31m[2026-10-17 20:46:20][error] Checksum error 0xCE07 != 0x0B85
+[ydlidar_ros2_driver_node-1] [0m[2026-10-17 20:46:20][info] The intensity has been automatically adjusted to[8]bit
+[ydlidar_ros2_driver_node-1] [0;31m[2026-10-17 20:46:20][error] Checksum error 0x49BD != 0x5CD2
+[ydlidar_ros2_driver_node-1] [0m[0;31m[2026-10-17 20:46:20][error] Checksum error 0x17A3 != 0x0B85
+[ydlidar_ros2_driver_node-1] [0m[2026-10-17 20:46:20][info] The intensity has been automatically adjusted to[0]bit
+[WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+[INFO] [ydlidar_ros2_driver_node-1]: sending signal 'SIGINT' to process[ydlidar_ros2_driver_node-1]
+[ydlidar_ros2_driver_node-1] [INFO] [1792237782.595989981] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[ydlidar_ros2_driver_node-1] [INFO] [1792237782.662064469] [ydlidar_ros2_driver_node]: [YDLIDAR INFO] Now YDLIDAR is stopping .......
+[ydlidar_ros2_driver_node-1] [2026-10-17 20:49:42][info] Lidar has stopped!
+[INFO] [ydlidar_ros2_driver_node-1]: process has finished cleanly [pid 33490]
+[INFO] [launch]: process[ydlidar_ros2_driver_node-1] was required: shutting down launched system

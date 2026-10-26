@@ -1,0 +1,22 @@
+{
+  "progress_percent": 95,
+  "diagnostics_and_report_complete": true,
+  "outcome": "C",
+  "warning_resolved": false,
+  "direct_warning_condition_verified": true,
+  "physical_per_ray_time_preserving_fix_verified": false,
+  "behavior_changes_applied": false,
+  "existing_source_sdk_and_tool_hashes_unchanged": 425,
+  "previous_reports_and_evidence_files_preserved": 153,
+  "original_files": 174,
+  "protected_files": 103,
+  "failures": [],
+  "hardware_scan_hz": 11.66860973473173,
+  "observed_warning_count": 18,
+  "observed_discarded_points": 85,
+  "predictions_match_individually": true,
+  "packages_built": 12,
+  "tests_passed": 20,
+  "all_processes_stopped_and_port_released": true,
+  "report": "G6_TIMESTAMP_DIAGNOSTICS_REPORT.md"
+}

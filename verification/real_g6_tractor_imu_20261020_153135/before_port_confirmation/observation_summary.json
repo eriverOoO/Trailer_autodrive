@@ -1,0 +1,259 @@
+{
+  "viz_status": {
+    "count": 160,
+    "receipt_hz": 19.999060074363832,
+    "stamp_hz": 19.9990663379279,
+    "nonincreasing_stamps": 0,
+    "first": {
+      "receipt": 1036.612714317,
+      "stamp_ns": 1792478008296646129,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478008295981205,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    "last": {
+      "receipt": 1044.563087955,
+      "stamp_ns": 1792478016247017277,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478016246239450,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    }
+  },
+  "markers": {
+    "count": 161,
+    "receipt_hz": 20.00119483387663,
+    "stamp_hz": 20.001194851379225,
+    "nonincreasing_stamps": 0,
+    "first": {
+      "receipt": 1036.612931472,
+      "stamp_ns": 1792478008296883634,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    "last": {
+      "receipt": 1044.612453567,
+      "stamp_ns": 1792478016296405722,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    }
+  },
+  "tf_edges": {},
+  "lookup": {
+    "laser_frame": {
+      "available": false,
+      "reason": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+    },
+    "odom": {
+      "available": false,
+      "reason": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+    },
+    "base_footprint": {
+      "available": false,
+      "reason": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+    },
+    "base_link": {
+      "available": false,
+      "reason": "\"map\" passed to lookupTransform argument target_frame does not exist. "
+    }
+  },
+  "graph_nodes": [
+    [
+      "real_sensor_readonly_verification",
+      "/"
+    ],
+    [
+      "tractor_trailer_2d_visualizer",
+      "/"
+    ],
+    [
+      "tractor_trailer_rviz_2d",
+      "/"
+    ],
+    [
+      "transform_listener_impl_572f30d5e760",
+      "/"
+    ]
+  ],
+  "graph_topics": [
+    [
+      "/map",
+      [
+        "nav_msgs/msg/OccupancyGrid"
+      ]
+    ],
+    [
+      "/map_updates",
+      [
+        "map_msgs/msg/OccupancyGridUpdate"
+      ]
+    ],
+    [
+      "/parameter_events",
+      [
+        "rcl_interfaces/msg/ParameterEvent"
+      ]
+    ],
+    [
+      "/parking/estimated_tractor_trajectory",
+      [
+        "nav_msgs/msg/Path"
+      ]
+    ],
+    [
+      "/parking/planned_tractor_path",
+      [
+        "nav_msgs/msg/Path"
+      ]
+    ],
+    [
+      "/parking/planned_trailer_path",
+      [
+        "nav_msgs/msg/Path"
+      ]
+    ],
+    [
+      "/parking/status",
+      [
+        "std_msgs/msg/String"
+      ]
+    ],
+    [
+      "/parking/target_geometry",
+      [
+        "visualization_msgs/msg/MarkerArray"
+      ]
+    ],
+    [
+      "/rosout",
+      [
+        "rcl_interfaces/msg/Log"
+      ]
+    ],
+    [
+      "/scan",
+      [
+        "sensor_msgs/msg/LaserScan"
+      ]
+    ],
+    [
+      "/scan_matched_points2",
+      [
+        "sensor_msgs/msg/PointCloud2"
+      ]
+    ],
+    [
+      "/submap_list",
+      [
+        "cartographer_ros_msgs/msg/SubmapList"
+      ]
+    ],
+    [
+      "/tf",
+      [
+        "tf2_msgs/msg/TFMessage"
+      ]
+    ],
+    [
+      "/tf_static",
+      [
+        "tf2_msgs/msg/TFMessage"
+      ]
+    ],
+    [
+      "/vehicle_viz_2d/model",
+      [
+        "visualization_msgs/msg/MarkerArray"
+      ]
+    ],
+    [
+      "/vehicle_viz_2d/status",
+      [
+        "std_msgs/msg/String"
+      ]
+    ],
+    [
+      "/vehicle_viz_2d/tractor/diagnostics",
+      [
+        "diagnostic_msgs/msg/DiagnosticArray"
+      ]
+    ],
+    [
+      "/vehicle_viz_2d/tractor/imu/data",
+      [
+        "sensor_msgs/msg/Imu"
+      ]
+    ],
+    [
+      "/vehicle_viz_2d/trailer/diagnostics",
+      [
+        "diagnostic_msgs/msg/DiagnosticArray"
+      ]
+    ],
+    [
+      "/vehicle_viz_2d/trailer/imu/data",
+      [
+        "sensor_msgs/msg/Imu"
+      ]
+    ]
+  ]
+}

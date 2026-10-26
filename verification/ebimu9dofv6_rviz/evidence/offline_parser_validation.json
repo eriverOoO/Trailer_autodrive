@@ -1,0 +1,13 @@
+{
+  "test_kind": "OFFLINE REAL CAPTURE REPLAY; no ROS publication; not current UART or physical motion validation",
+  "source": "diagnostics/imu_new_20261019/passive_115200.rx.bin",
+  "rx_bytes": 29086,
+  "accepted": 399,
+  "rejected": 0,
+  "matching_existing_parser": 399,
+  "raw_norm_range": [
+    0.9999414532861411,
+    1.0000224497480044
+  ],
+  "parser_synthetic_unit_checks": "PASS; not hardware evidence"
+}

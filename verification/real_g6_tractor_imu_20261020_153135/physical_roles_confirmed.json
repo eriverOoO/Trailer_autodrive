@@ -1,0 +1,16 @@
+{
+  "at": "2026-10-20T15:39:57.298408+09:00",
+  "evidence": "User disconnected only tractor IMU; ttyUSB1 and USB 3-8 disappeared; G6 kept connected.",
+  "g6": {
+    "tty": "/dev/ttyUSB0",
+    "by_path": "/dev/serial/by-path/pci-0000:80:14.0-usb-0:7:1.0-port0",
+    "usb_path": "3-7"
+  },
+  "tractor_imu": {
+    "tty_before_disconnect": "/dev/ttyUSB1",
+    "by_path": "/dev/serial/by-path/pci-0000:80:14.0-usb-0:8:1.0-port0",
+    "usb_path": "3-8",
+    "state": "awaiting reconnection"
+  },
+  "trailer_imu": "NOT CONNECTED"
+}

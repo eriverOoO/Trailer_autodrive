@@ -1,0 +1,13 @@
+[INFO] [1792410551.085166069] [tractor_trailer_visualizer]: both IMUs must be LIVE
+[INFO] [1792410551.126142096] [tractor_trailer_visualizer]: NOT ALIGNED: confirm stationary straight alignment
+[INFO] [1792410552.027045142] [tractor_trailer_visualizer]: Straight alignment accepted at 1792410552025206000; later body yaw increments come ONLY from each IMU
+[INFO] [1792410552.074132188] [tractor_trailer_visualizer]: TEST/SIMULATED
+[INFO] [1792410569.073893361] [tractor_trailer_visualizer]: IMU latest timestamps exceed pair skew limit
+[INFO] [1792410569.524084025] [tractor_trailer_visualizer]: both IMUs must be LIVE
+[INFO] [1792410571.074187791] [tractor_trailer_visualizer]: ALIGNMENT LOST: discontinuity; realign both sensors
+[INFO] [1792410572.026685569] [tractor_trailer_visualizer]: Straight alignment accepted at 1792410572025340849; later body yaw increments come ONLY from each IMU
+[INFO] [1792410572.074377709] [tractor_trailer_visualizer]: TEST/SIMULATED
+[INFO] [1792410573.073988100] [tractor_trailer_visualizer]: both IMUs must be LIVE
+[INFO] [1792410574.074112374] [tractor_trailer_visualizer]: ALIGNMENT LOST: discontinuity; realign both sensors
+[INFO] [1792410575.027405579] [tractor_trailer_visualizer]: Straight alignment accepted at 1792410575025378402; later body yaw increments come ONLY from each IMU
+[INFO] [1792410575.074058487] [tractor_trailer_visualizer]: TEST/SIMULATED

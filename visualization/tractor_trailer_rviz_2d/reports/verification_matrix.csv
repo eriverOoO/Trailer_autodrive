@@ -1,0 +1,13 @@
+criterion,software_result,actual_hardware_result,evidence
+Original 10/9 vertex hull,PASS,N/A,tests/test_reference_design.py
+Mint RGB/alpha/width and red arrow,PASS,N/A,synthetic_runtime_02 screenshots
+Original white state and phi text,PASS,Physical state source absent,reference_renderer.py
+Original map/scan/camera parameters,PASS,NOT_TESTED,rviz/live.rviz
+No 3D mesh in new launch,PASS,N/A,live_no_data/summary.json
+Independent tractor/trailer rotation,PASS_SYNTHETIC,NOT_TESTED,synthetic_runtime_02/summary.json
+phi=trailer-tractor,PASS_SYNTHETIC,NOT_TESTED,tests and runtime
+STALE/INVALID and no invented state,PASS_SYNTHETIC,NOT_TESTED,runtime and live_no_data
+No TF publication,PASS,No existing SLAM currently running,live_no_data/summary.json
+Current real UART,NOT_RUN,NOT_TESTED,hardware_inventory.json
+Real map and scan,Interface configured,NOT_TESTED,live_graph_inventory.json
+Existing source preservation,PASS,N/A,preservation_after.json

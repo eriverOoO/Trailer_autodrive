@@ -1,0 +1,63 @@
+{
+  "prior_scan_setting_hz": 10,
+  "prior_sample_rate_k": 18,
+  "prior_driver_range_max_m": 16,
+  "prior_cartographer_range_max_m": 12,
+  "scan_hz": 9.676113615292566,
+  "scan_count": 436,
+  "scan_span_s": 44.95606576099999,
+  "scan_bin_count": {
+    "min": 1853,
+    "median": 1859.0,
+    "p95": 1863,
+    "max": 1867
+  },
+  "valid_bin_count": {
+    "min": 835,
+    "median": 902.0,
+    "p95": 956,
+    "max": 1085
+  },
+  "map_count": 46,
+  "matching_count": 436,
+  "checksum_full_run_log_count": 6,
+  "earlier_point_warnings_full_run": 6,
+  "earlier_points_full_run": 28,
+  "earlier_point_warnings_during_probe": 3,
+  "earlier_points_during_probe": 7,
+  "cpu_baseline": null,
+  "aggregate_valid_ratio_baseline": null,
+  "filtered_sdk_points_baseline": null,
+  "warnings": [
+    {
+      "stamp_s": 1792236629.0541527,
+      "points": 2,
+      "within_probe": true
+    },
+    {
+      "stamp_s": 1792236633.1890917,
+      "points": 3,
+      "within_probe": true
+    },
+    {
+      "stamp_s": 1792236656.2392464,
+      "points": 2,
+      "within_probe": true
+    },
+    {
+      "stamp_s": 1792236682.2717292,
+      "points": 8,
+      "within_probe": false
+    },
+    {
+      "stamp_s": 1792236682.892988,
+      "points": 11,
+      "within_probe": false
+    },
+    {
+      "stamp_s": 1792236684.2358074,
+      "points": 2,
+      "within_probe": false
+    }
+  ]
+}

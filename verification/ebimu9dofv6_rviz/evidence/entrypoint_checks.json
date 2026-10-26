@@ -1,0 +1,22 @@
+[
+  {
+    "script": "serial_probe.py",
+    "help_exit": 0,
+    "stderr": ""
+  },
+  {
+    "script": "imu_publisher.py",
+    "help_exit": 0,
+    "stderr": ""
+  },
+  {
+    "script": "imu_visualizer.py",
+    "help_exit": 0,
+    "stderr": ""
+  },
+  {
+    "script": "record_motion.py",
+    "help_exit": 0,
+    "stderr": ""
+  }
+]

@@ -1,0 +1,28 @@
+[INFO] [1792237881.797689934] [cartographer logger]: I1017 20:51:21.000000 36580 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/g6_lidar_only.lua' for 'g6_lidar_only.lua'.
+[INFO] [1792237881.797803116] [cartographer logger]: I1017 20:51:21.000000 36580 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/reference_lidar_only.lua' for 'reference_lidar_only.lua'.
+[INFO] [1792237881.797811094] [cartographer logger]: I1017 20:51:21.000000 36580 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/reference_lidar_only.lua' for 'reference_lidar_only.lua'.
+[INFO] [1792237881.797845381] [cartographer logger]: I1017 20:51:21.000000 36580 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/map_builder.lua' for 'map_builder.lua'.
+[INFO] [1792237881.797850192] [cartographer logger]: I1017 20:51:21.000000 36580 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/map_builder.lua' for 'map_builder.lua'.
+[INFO] [1792237881.797867550] [cartographer logger]: I1017 20:51:21.000000 36580 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/pose_graph.lua' for 'pose_graph.lua'.
+[INFO] [1792237881.797871938] [cartographer logger]: I1017 20:51:21.000000 36580 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/pose_graph.lua' for 'pose_graph.lua'.
+[INFO] [1792237881.797927443] [cartographer logger]: I1017 20:51:21.000000 36580 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/trajectory_builder.lua' for 'trajectory_builder.lua'.
+[INFO] [1792237881.797935815] [cartographer logger]: I1017 20:51:21.000000 36580 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/trajectory_builder.lua' for 'trajectory_builder.lua'.
+[INFO] [1792237881.797948823] [cartographer logger]: I1017 20:51:21.000000 36580 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/trajectory_builder_2d.lua' for 'trajectory_builder_2d.lua'.
+[INFO] [1792237881.797952971] [cartographer logger]: I1017 20:51:21.000000 36580 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/trajectory_builder_2d.lua' for 'trajectory_builder_2d.lua'.
+[INFO] [1792237881.797997892] [cartographer logger]: I1017 20:51:21.000000 36580 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/trajectory_builder_3d.lua' for 'trajectory_builder_3d.lua'.
+[INFO] [1792237881.798001999] [cartographer logger]: I1017 20:51:21.000000 36580 configuration_file_resolver.cc:41] Found '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/trajectory_builder_3d.lua' for 'trajectory_builder_3d.lua'.
+[INFO] [1792237881.800361302] [cartographer logger]: I1017 20:51:21.000000 36580 map_builder_bridge.cpp:117] Loading saved state '/home/venezuelachocolatemilk/mvsim_slam_real/verification/g6_12hz/maps/g6_12hz_stationary.pbstream'...
+[INFO] [1792237945.767576516] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[INFO] [1792237945.767772272] [cartographer logger]: I1017 20:52:25.000000 36580 map_builder_bridge.cpp:161] Running final trajectory optimization...
+[INFO] [1792237945.767909611] [cartographer logger]: I1017 20:52:25.000000 36593 pose_graph_2d.cc:538] Remaining work items in queue: 1
+[INFO] [1792237945.767931945] [cartographer logger]: I1017 20:52:25.000000 36593 constraint_builder_2d.cc:290] 0 computations resulted in 0 additional constraints.
+[INFO] [1792237945.767938054] [cartographer logger]: I1017 20:52:25.000000 36593 constraint_builder_2d.cc:292] Score histogram:
+Count: 0
+[INFO] [1792237945.769025394] [cartographer logger]: I1017 20:52:25.000000 36595 constraint_builder_2d.cc:290] 0 computations resulted in 0 additional constraints.
+[INFO] [1792237945.769039534] [cartographer logger]: I1017 20:52:25.000000 36595 constraint_builder_2d.cc:292] Score histogram:
+Count: 0
+[KOptimizing: Done.     
+[INFO] [1792237945.769814825] [cartographer logger]: I1017 20:52:25.000000 36594 constraint_builder_2d.cc:290] 0 computations resulted in 0 additional constraints.
+[INFO] [1792237945.769829409] [cartographer logger]: I1017 20:52:25.000000 36594 constraint_builder_2d.cc:292] Score histogram:
+Count: 0
+[KOptimizing: Done.     

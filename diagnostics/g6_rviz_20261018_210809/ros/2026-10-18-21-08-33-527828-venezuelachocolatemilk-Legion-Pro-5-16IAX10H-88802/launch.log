@@ -1,0 +1,19 @@
+1792325313.5282929 [INFO] [launch]: All log files can be found below /home/venezuelachocolatemilk/mvsim_slam_real/diagnostics/g6_rviz_20261018_210809/ros/2026-10-18-21-08-33-527828-venezuelachocolatemilk-Legion-Pro-5-16IAX10H-88802
+1792325313.5283597 [INFO] [launch]: Default logging verbosity is set to INFO
+1792325313.5772381 [INFO] [launch.user]: Sensor-origin SLAM: map -> odom -> laser_frame; vehicle pose is unmeasured
+1792325313.5808814 [INFO] [ydlidar_ros2_driver_node-1]: process started with pid [88804]
+1792325313.5809522 [INFO] [cartographer_node-2]: process started with pid [88806]
+1792325313.5809858 [INFO] [cartographer_occupancy_grid_node-3]: process started with pid [88808]
+1792325313.5810175 [INFO] [rviz2-4]: process started with pid [88810]
+1792325925.7988870 [WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+1792325925.8006232 [INFO] [rviz2-4]: sending signal 'SIGINT' to process[rviz2-4]
+1792325925.8009455 [INFO] [cartographer_occupancy_grid_node-3]: sending signal 'SIGINT' to process[cartographer_occupancy_grid_node-3]
+1792325925.8011742 [INFO] [cartographer_node-2]: sending signal 'SIGINT' to process[cartographer_node-2]
+1792325925.8013933 [INFO] [ydlidar_ros2_driver_node-1]: sending signal 'SIGINT' to process[ydlidar_ros2_driver_node-1]
+1792325925.8049910 [ERROR] [cartographer_occupancy_grid_node-3]: process has died [pid 88808, exit code -2, cmd '/opt/ros/humble/lib/cartographer_ros/cartographer_occupancy_grid_node -resolution 0.05 -publish_period_sec 1.0 --ros-args -r __node:=cartographer_occupancy_grid_node --params-file /tmp/launch_params_ck7bnjut'].
+1792325925.8051755 [INFO] [launch]: process[cartographer_occupancy_grid_node-3] was required: shutting down launched system
+1792325925.9943230 [INFO] [rviz2-4]: process has finished cleanly [pid 88810]
+1792325926.9572666 [INFO] [ydlidar_ros2_driver_node-1]: process has finished cleanly [pid 88804]
+1792325926.9575284 [INFO] [launch]: process[ydlidar_ros2_driver_node-1] was required: shutting down launched system
+1792325927.5677977 [INFO] [cartographer_node-2]: process has finished cleanly [pid 88806]
+1792325927.5680201 [INFO] [launch]: process[cartographer_node-2] was required: shutting down launched system

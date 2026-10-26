@@ -1,0 +1,12 @@
+# Measured relative to base_footprint: body centre in XY, ground level in Z.
+# Translation: metres. Rotation: radians, fixed-axis roll/pitch/yaw.
+# User-confirmed position/tilt; front alignment was previously calibrated.
+measured: true
+parent_frame: base_footprint
+child_frame: laser_frame
+# Measured x: 0.895m behind tractor front; y: body width centre.
+# Measured scan-plane height above ground: 0.687m.
+xyz: [-0.4, 0.0, 0.687]
+# No lateral tilt. Nose-down 1.397 degrees is positive ROS pitch.
+# Existing driver front alignment (reversion: true) already makes +X forward.
+rpy: [0.0, 0.024382249650360784, 0.0]

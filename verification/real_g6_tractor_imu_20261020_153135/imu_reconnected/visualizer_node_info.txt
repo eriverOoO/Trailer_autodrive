@@ -1,0 +1,28 @@
+/tractor_trailer_2d_visualizer
+  Subscribers:
+    /parking/status: std_msgs/msg/String
+    /tf: tf2_msgs/msg/TFMessage
+    /tf_static: tf2_msgs/msg/TFMessage
+    /vehicle_viz_2d/tractor/diagnostics: diagnostic_msgs/msg/DiagnosticArray
+    /vehicle_viz_2d/tractor/imu/data: sensor_msgs/msg/Imu
+    /vehicle_viz_2d/trailer/diagnostics: diagnostic_msgs/msg/DiagnosticArray
+    /vehicle_viz_2d/trailer/imu/data: sensor_msgs/msg/Imu
+  Publishers:
+    /parameter_events: rcl_interfaces/msg/ParameterEvent
+    /rosout: rcl_interfaces/msg/Log
+    /vehicle_viz_2d/model: visualization_msgs/msg/MarkerArray
+    /vehicle_viz_2d/status: std_msgs/msg/String
+  Service Servers:
+    /tractor_trailer_2d_visualizer/describe_parameters: rcl_interfaces/srv/DescribeParameters
+    /tractor_trailer_2d_visualizer/get_parameter_types: rcl_interfaces/srv/GetParameterTypes
+    /tractor_trailer_2d_visualizer/get_parameters: rcl_interfaces/srv/GetParameters
+    /tractor_trailer_2d_visualizer/list_parameters: rcl_interfaces/srv/ListParameters
+    /tractor_trailer_2d_visualizer/set_parameters: rcl_interfaces/srv/SetParameters
+    /tractor_trailer_2d_visualizer/set_parameters_atomically: rcl_interfaces/srv/SetParametersAtomically
+    /vehicle_viz_2d/align_straight: std_srvs/srv/SetBool
+  Service Clients:
+
+  Action Servers:
+
+  Action Clients:
+

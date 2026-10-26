@@ -1,0 +1,10 @@
+[INFO] [1792411347.134417190] [tractor_trailer_2d_visualizer]: NOT ALIGNED: confirm stationary straight alignment
+[WARN] [1792411347.286837403] [tractor_trailer_2d_visualizer]: New subscription discovered on topic '/vehicle_viz_2d_test/model', requesting incompatible QoS. No messages will be sent to it. Last incompatible policy: DURABILITY
+[INFO] [1792411348.077424829] [tractor_trailer_2d_visualizer]: OK
+[INFO] [1792411365.126910922] [tractor_trailer_2d_visualizer]: IMU timestamps not paired
+[INFO] [1792411365.576862668] [tractor_trailer_2d_visualizer]: both IMUs must be LIVE
+[INFO] [1792411367.077014567] [tractor_trailer_2d_visualizer]: ALIGNMENT LOST: discontinuity; realign both sensors
+[INFO] [1792411368.078286511] [tractor_trailer_2d_visualizer]: OK
+[INFO] [1792411369.077052547] [tractor_trailer_2d_visualizer]: both IMUs must be LIVE
+[INFO] [1792411370.077523299] [tractor_trailer_2d_visualizer]: ALIGNMENT LOST: discontinuity; realign both sensors
+[INFO] [1792411371.077470650] [tractor_trailer_2d_visualizer]: OK

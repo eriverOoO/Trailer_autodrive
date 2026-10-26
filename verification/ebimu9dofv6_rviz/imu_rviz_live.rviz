@@ -1,0 +1,39 @@
+Panels:
+  - Class: rviz_common/Displays
+    Name: Displays
+  - Class: rviz_common/Views
+    Name: Views
+Visualization Manager:
+  Class: ""
+  Global Options:
+    Background Color: 35; 35; 40
+    Fixed Frame: ebimu_diag_reference
+    Frame Rate: 30
+  Displays:
+    - Class: rviz_default_plugins/Grid
+      Name: Reference Grid
+      Enabled: true
+      Cell Size: 0.1
+      Plane Cell Count: 20
+    - Class: rviz_default_plugins/MarkerArray
+      Name: EBIMU REAL HARDWARE - LIVE STALE NO DATA
+      Enabled: true
+      Topic:
+        Value: /ebimu_diag/tractor/markers
+        Reliability Policy: Reliable
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Depth: 1
+  Views:
+    Current:
+      Class: rviz_default_plugins/Orbit
+      Distance: 2.0
+      Pitch: 0.35
+      Yaw: 0.8
+      Focal Point:
+        X: 0
+        Y: 0
+        Z: 0.3
+Window Geometry:
+  Width: 1280
+  Height: 900

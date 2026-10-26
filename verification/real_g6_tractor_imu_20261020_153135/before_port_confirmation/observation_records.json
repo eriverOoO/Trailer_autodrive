@@ -1,0 +1,6899 @@
+{
+  "viz_status": [
+    {
+      "receipt": 1036.612714317,
+      "stamp_ns": 1792478008296646129,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478008295981205,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1036.662719756,
+      "stamp_ns": 1792478008346657913,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478008345945756,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1036.712666776,
+      "stamp_ns": 1792478008396610942,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478008396093205,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1036.762971338,
+      "stamp_ns": 1792478008446913050,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478008446109879,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1036.812653155,
+      "stamp_ns": 1792478008496592609,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478008496026000,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1036.862506051,
+      "stamp_ns": 1792478008546453110,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478008545926933,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1036.912429163,
+      "stamp_ns": 1792478008596372938,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478008595929923,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1036.9624181,
+      "stamp_ns": 1792478008646353745,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478008646037983,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1037.012488535,
+      "stamp_ns": 1792478008696432841,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478008696096863,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1037.06307299,
+      "stamp_ns": 1792478008747014978,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478008746105993,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1037.112463963,
+      "stamp_ns": 1792478008796408267,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478008796079564,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1037.162464764,
+      "stamp_ns": 1792478008846408611,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478008846106518,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1037.21240393,
+      "stamp_ns": 1792478008896342410,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478008896045181,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1037.262302554,
+      "stamp_ns": 1792478008946248349,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478008945954683,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1037.312554909,
+      "stamp_ns": 1792478008996503448,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478008995947867,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1037.362971147,
+      "stamp_ns": 1792478009046915594,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478009046038660,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1037.412384327,
+      "stamp_ns": 1792478009096328207,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478009096057605,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1037.462283591,
+      "stamp_ns": 1792478009146228112,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478009145956255,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1037.512673297,
+      "stamp_ns": 1792478009196603624,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478009196020924,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1037.563340299,
+      "stamp_ns": 1792478009247275694,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478009246833178,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1037.612549972,
+      "stamp_ns": 1792478009296492107,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478009296118377,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1037.662659985,
+      "stamp_ns": 1792478009346590828,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478009346039352,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1037.712573886,
+      "stamp_ns": 1792478009396513570,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478009396078830,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1037.762637201,
+      "stamp_ns": 1792478009446574807,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478009446143916,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1037.812736614,
+      "stamp_ns": 1792478009496673634,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478009496131051,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1037.86263539,
+      "stamp_ns": 1792478009546565426,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478009546070584,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1037.912480042,
+      "stamp_ns": 1792478009596424040,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478009596108370,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1037.962851291,
+      "stamp_ns": 1792478009646772858,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478009646194568,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1038.012579542,
+      "stamp_ns": 1792478009696514517,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478009696029870,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1038.062475399,
+      "stamp_ns": 1792478009746416499,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478009746072412,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1038.11537275,
+      "stamp_ns": 1792478009799298976,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478009796048899,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1038.162848617,
+      "stamp_ns": 1792478009846773960,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478009846047423,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1038.212710557,
+      "stamp_ns": 1792478009896634761,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478009896032010,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1038.262730008,
+      "stamp_ns": 1792478009946672263,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478009946179992,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1038.312869268,
+      "stamp_ns": 1792478009996801820,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478009996160792,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1038.362594438,
+      "stamp_ns": 1792478010046538339,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478010046073986,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1038.412803731,
+      "stamp_ns": 1792478010096736707,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478010096107105,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1038.462626162,
+      "stamp_ns": 1792478010146559585,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478010146134845,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1038.513023661,
+      "stamp_ns": 1792478010196948377,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478010196181640,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1038.562561996,
+      "stamp_ns": 1792478010246490926,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478010246060799,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1038.613344004,
+      "stamp_ns": 1792478010297276179,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478010296208863,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1038.662922445,
+      "stamp_ns": 1792478010346852386,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478010346159105,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1038.712737215,
+      "stamp_ns": 1792478010396665196,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478010396156079,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1038.762606682,
+      "stamp_ns": 1792478010446542045,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478010446028878,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1038.812704746,
+      "stamp_ns": 1792478010496635449,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478010496045304,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1038.862639856,
+      "stamp_ns": 1792478010546573160,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478010546003240,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1038.912351566,
+      "stamp_ns": 1792478010596289936,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478010595934213,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1038.962776221,
+      "stamp_ns": 1792478010646710012,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478010646016847,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1039.012736127,
+      "stamp_ns": 1792478010696676019,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478010696142966,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1039.062919494,
+      "stamp_ns": 1792478010746849590,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478010746036582,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1039.114808568,
+      "stamp_ns": 1792478010798720345,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478010796059470,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1039.16367452,
+      "stamp_ns": 1792478010847600321,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478010846439694,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1039.21297518,
+      "stamp_ns": 1792478010896903114,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478010896159332,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1039.262975514,
+      "stamp_ns": 1792478010946896862,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478010946200257,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1039.313072697,
+      "stamp_ns": 1792478010997002977,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478010996217563,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1039.362893053,
+      "stamp_ns": 1792478011046837270,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478011046127007,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1039.41320182,
+      "stamp_ns": 1792478011097142381,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478011096197670,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1039.463264732,
+      "stamp_ns": 1792478011147205632,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478011146205175,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1039.51289469,
+      "stamp_ns": 1792478011196822226,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478011196132865,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1039.562955277,
+      "stamp_ns": 1792478011246900935,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478011246061744,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1039.613062554,
+      "stamp_ns": 1792478011297000738,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478011296117739,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1039.662650604,
+      "stamp_ns": 1792478011346580071,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478011346045352,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1039.714252156,
+      "stamp_ns": 1792478011398180983,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478011397160572,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1039.76339339,
+      "stamp_ns": 1792478011447319953,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478011446053142,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1039.813045359,
+      "stamp_ns": 1792478011496977873,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478011496105580,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1039.862858108,
+      "stamp_ns": 1792478011546769347,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478011546056479,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1039.912540854,
+      "stamp_ns": 1792478011596481018,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478011595983208,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1039.962542455,
+      "stamp_ns": 1792478011646481792,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478011645993158,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1040.012659471,
+      "stamp_ns": 1792478011696589122,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478011696035440,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1040.062963329,
+      "stamp_ns": 1792478011746891110,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478011746077373,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1040.112681578,
+      "stamp_ns": 1792478011796620630,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478011795968977,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1040.163008733,
+      "stamp_ns": 1792478011846929901,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478011846062918,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1040.213121504,
+      "stamp_ns": 1792478011897046188,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478011896134590,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1040.262960713,
+      "stamp_ns": 1792478011946889490,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478011946166792,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1040.31303737,
+      "stamp_ns": 1792478011996969706,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478011996152976,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1040.362767998,
+      "stamp_ns": 1792478012046704309,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478012046179397,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1040.412776718,
+      "stamp_ns": 1792478012096708017,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478012096012366,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1040.462864534,
+      "stamp_ns": 1792478012146790368,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478012146162399,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1040.51244021,
+      "stamp_ns": 1792478012196380271,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478012195928201,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1040.56280586,
+      "stamp_ns": 1792478012246740625,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478012246092142,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1040.612778895,
+      "stamp_ns": 1792478012296707094,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478012296035221,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1040.662448118,
+      "stamp_ns": 1792478012346390576,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478012345959268,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1040.71283865,
+      "stamp_ns": 1792478012396764784,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478012396062426,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1040.762739801,
+      "stamp_ns": 1792478012446659348,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478012446013977,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1040.812604233,
+      "stamp_ns": 1792478012496544610,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478012496098943,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1040.862780967,
+      "stamp_ns": 1792478012546713991,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478012546099803,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1040.912970281,
+      "stamp_ns": 1792478012596914967,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478012596108967,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1040.962977424,
+      "stamp_ns": 1792478012646908049,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478012646327376,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1041.012848747,
+      "stamp_ns": 1792478012696785436,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478012696101646,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1041.06264889,
+      "stamp_ns": 1792478012746586770,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478012745971586,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1041.112542444,
+      "stamp_ns": 1792478012796479136,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478012795946466,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1041.162390771,
+      "stamp_ns": 1792478012846336620,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478012845920265,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1041.212780512,
+      "stamp_ns": 1792478012896721872,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478012895942675,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1041.262884869,
+      "stamp_ns": 1792478012946815010,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478012946035738,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1041.312746061,
+      "stamp_ns": 1792478012996681352,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478012996052492,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1041.362483471,
+      "stamp_ns": 1792478013046427118,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478013046026017,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1041.412864183,
+      "stamp_ns": 1792478013096788998,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478013096041429,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1041.46255993,
+      "stamp_ns": 1792478013146500378,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478013145998373,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1041.512605442,
+      "stamp_ns": 1792478013196546625,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478013195995570,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1041.562968732,
+      "stamp_ns": 1792478013246902685,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478013246247985,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1041.612695932,
+      "stamp_ns": 1792478013296639388,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478013296043939,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1041.662636369,
+      "stamp_ns": 1792478013346573480,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478013346019240,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1041.712882419,
+      "stamp_ns": 1792478013396812452,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478013396011781,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1041.762926501,
+      "stamp_ns": 1792478013446860806,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478013446061033,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1041.812665074,
+      "stamp_ns": 1792478013496598842,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478013495998545,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1041.863697517,
+      "stamp_ns": 1792478013547622159,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478013546060021,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1041.912901702,
+      "stamp_ns": 1792478013596826694,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478013596037804,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1041.963030475,
+      "stamp_ns": 1792478013646967147,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478013645989823,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1042.012774738,
+      "stamp_ns": 1792478013696716037,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478013695947457,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1042.062443327,
+      "stamp_ns": 1792478013746387608,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478013745967263,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1042.11281393,
+      "stamp_ns": 1792478013796745711,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478013796172649,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1042.162816026,
+      "stamp_ns": 1792478013846747318,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478013846128001,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1042.212796986,
+      "stamp_ns": 1792478013896730790,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478013896113174,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1042.26276836,
+      "stamp_ns": 1792478013946690540,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478013946015194,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1042.312928395,
+      "stamp_ns": 1792478013996867809,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478013996045760,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1042.362781179,
+      "stamp_ns": 1792478014046723303,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478014046083322,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1042.412856808,
+      "stamp_ns": 1792478014096801681,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478014096003097,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1042.463423185,
+      "stamp_ns": 1792478014147364650,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478014146133736,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1042.512934604,
+      "stamp_ns": 1792478014196862483,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478014196035574,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1042.562876444,
+      "stamp_ns": 1792478014246812860,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478014246058985,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1042.612922317,
+      "stamp_ns": 1792478014296841020,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478014296056693,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1042.662748666,
+      "stamp_ns": 1792478014346687794,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478014346078360,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1042.712997464,
+      "stamp_ns": 1792478014396925318,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478014396046544,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1042.763109044,
+      "stamp_ns": 1792478014447049850,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478014446025304,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1042.813040363,
+      "stamp_ns": 1792478014496957835,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478014496172424,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1042.862790433,
+      "stamp_ns": 1792478014546732563,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478014546113863,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1042.91253633,
+      "stamp_ns": 1792478014596478351,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478014596037846,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1042.963096549,
+      "stamp_ns": 1792478014647030803,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478014646019445,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1043.012668752,
+      "stamp_ns": 1792478014696599987,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478014696035336,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1043.063071362,
+      "stamp_ns": 1792478014746996604,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478014746113878,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1043.112640512,
+      "stamp_ns": 1792478014796578201,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478014796059809,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1043.163132288,
+      "stamp_ns": 1792478014847075624,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478014846171206,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1043.212899782,
+      "stamp_ns": 1792478014896836412,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478014896062576,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1043.263723539,
+      "stamp_ns": 1792478014947637080,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478014946119884,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1043.313068083,
+      "stamp_ns": 1792478014996993765,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478014996127054,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1043.363135151,
+      "stamp_ns": 1792478015047067422,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478015046095895,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1043.412882892,
+      "stamp_ns": 1792478015096812148,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478015096045354,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1043.463188642,
+      "stamp_ns": 1792478015147124751,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478015146031389,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1043.512847307,
+      "stamp_ns": 1792478015196774127,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478015196066610,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1043.564119403,
+      "stamp_ns": 1792478015248048695,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478015247313116,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1043.612754855,
+      "stamp_ns": 1792478015296687712,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478015296138179,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1043.662991119,
+      "stamp_ns": 1792478015346914622,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478015346227650,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1043.712602171,
+      "stamp_ns": 1792478015396541677,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478015396102160,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1043.762721714,
+      "stamp_ns": 1792478015446663518,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478015446116847,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1043.812692478,
+      "stamp_ns": 1792478015496628207,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478015496140187,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1043.862938643,
+      "stamp_ns": 1792478015546870142,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478015546153456,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1043.912802794,
+      "stamp_ns": 1792478015596738124,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478015596162402,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1043.962747158,
+      "stamp_ns": 1792478015646684744,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478015646163110,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1044.012957169,
+      "stamp_ns": 1792478015696891688,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478015696208208,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1044.062549135,
+      "stamp_ns": 1792478015746492741,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478015746039016,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1044.112639158,
+      "stamp_ns": 1792478015796587382,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478015795982615,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1044.162865884,
+      "stamp_ns": 1792478015846794295,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478015846134491,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1044.212605427,
+      "stamp_ns": 1792478015896547275,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478015896046933,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1044.262798391,
+      "stamp_ns": 1792478015946730847,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478015946011151,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1044.312981512,
+      "stamp_ns": 1792478015996907568,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478015996065848,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1044.36308494,
+      "stamp_ns": 1792478016047015664,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478016046162140,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1044.412574757,
+      "stamp_ns": 1792478016096514676,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478016096082430,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1044.462800445,
+      "stamp_ns": 1792478016146735140,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478016146152160,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1044.512791643,
+      "stamp_ns": 1792478016196724014,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478016196099002,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    },
+    {
+      "receipt": 1044.563087955,
+      "stamp_ns": 1792478016247017277,
+      "value": {
+        "mode": "REAL_INPUT",
+        "stamp_ns": 1792478016246239450,
+        "valid": false,
+        "imu": {
+          "tractor": "NO DATA",
+          "trailer": "NO DATA"
+        },
+        "imu_age_s": {
+          "tractor": null,
+          "trailer": null
+        },
+        "imu_reason": {
+          "tractor": "",
+          "trailer": ""
+        },
+        "yaw_source": {
+          "tractor": "orientation",
+          "trailer": "orientation"
+        },
+        "slam": "NO DATA",
+        "reason": "measured finite geometry required: slam_to_rear_axle_xy",
+        "values": null,
+        "state_machine": "STATE_UNKNOWN",
+        "tf_published": false
+      }
+    }
+  ],
+  "markers": [
+    {
+      "receipt": 1036.612931472,
+      "stamp_ns": 1792478008296883634,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1036.662894874,
+      "stamp_ns": 1792478008346848438,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1036.712800889,
+      "stamp_ns": 1792478008396755925,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1036.762820017,
+      "stamp_ns": 1792478008446772195,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1036.8127821,
+      "stamp_ns": 1792478008496737840,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1036.862352516,
+      "stamp_ns": 1792478008546304333,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1036.912557418,
+      "stamp_ns": 1792478008596512753,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1036.962566799,
+      "stamp_ns": 1792478008646521594,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1037.012625648,
+      "stamp_ns": 1792478008696580795,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1037.062870748,
+      "stamp_ns": 1792478008746816626,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1037.112604552,
+      "stamp_ns": 1792478008796559722,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1037.16259921,
+      "stamp_ns": 1792478008846554365,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1037.212552208,
+      "stamp_ns": 1792478008896506682,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1037.262422639,
+      "stamp_ns": 1792478008946378255,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1037.31233669,
+      "stamp_ns": 1792478008996290019,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1037.362672313,
+      "stamp_ns": 1792478009046620378,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1037.412538441,
+      "stamp_ns": 1792478009096493427,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1037.462420574,
+      "stamp_ns": 1792478009146375796,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1037.512937575,
+      "stamp_ns": 1792478009196889927,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1037.563512917,
+      "stamp_ns": 1792478009247467595,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1037.612702017,
+      "stamp_ns": 1792478009296656830,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1037.662878558,
+      "stamp_ns": 1792478009346831951,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1037.712754731,
+      "stamp_ns": 1792478009396708520,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1037.762810425,
+      "stamp_ns": 1792478009446764183,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1037.812918813,
+      "stamp_ns": 1792478009496872587,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1037.86285144,
+      "stamp_ns": 1792478009546804440,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1037.912621712,
+      "stamp_ns": 1792478009596576373,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1037.96309377,
+      "stamp_ns": 1792478009647046493,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1038.012811381,
+      "stamp_ns": 1792478009696764007,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1038.062644711,
+      "stamp_ns": 1792478009746598991,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1038.115676985,
+      "stamp_ns": 1792478009799626948,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1038.163113558,
+      "stamp_ns": 1792478009847065933,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1038.212938251,
+      "stamp_ns": 1792478009896890692,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1038.262920902,
+      "stamp_ns": 1792478009946875744,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1038.313086606,
+      "stamp_ns": 1792478009997039105,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1038.362730886,
+      "stamp_ns": 1792478010046685686,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1038.413024629,
+      "stamp_ns": 1792478010096977499,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1038.462814696,
+      "stamp_ns": 1792478010146769240,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1038.513253577,
+      "stamp_ns": 1792478010197206626,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1038.562752782,
+      "stamp_ns": 1792478010246706507,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1038.613104419,
+      "stamp_ns": 1792478010297046029,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1038.663175377,
+      "stamp_ns": 1792478010347126347,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1038.71294601,
+      "stamp_ns": 1792478010396899665,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1038.762815964,
+      "stamp_ns": 1792478010446769510,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1038.812944812,
+      "stamp_ns": 1792478010496896846,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1038.862871336,
+      "stamp_ns": 1792478010546823694,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1038.912606205,
+      "stamp_ns": 1792478010596550923,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1038.962981158,
+      "stamp_ns": 1792478010646934999,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1039.012917696,
+      "stamp_ns": 1792478010696872103,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1039.063163787,
+      "stamp_ns": 1792478010747115235,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1039.115222615,
+      "stamp_ns": 1792478010799166218,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1039.163935024,
+      "stamp_ns": 1792478010847887160,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1039.213366102,
+      "stamp_ns": 1792478010897316589,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1039.263231457,
+      "stamp_ns": 1792478010947182922,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1039.313298297,
+      "stamp_ns": 1792478010997250848,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1039.362729482,
+      "stamp_ns": 1792478011046679695,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1039.41298535,
+      "stamp_ns": 1792478011096929584,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1039.463063421,
+      "stamp_ns": 1792478011147008240,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1039.513171385,
+      "stamp_ns": 1792478011197122867,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1039.562800641,
+      "stamp_ns": 1792478011246752411,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1039.612852782,
+      "stamp_ns": 1792478011296797937,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1039.662880399,
+      "stamp_ns": 1792478011346833346,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1039.714502132,
+      "stamp_ns": 1792478011398453911,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1039.763088788,
+      "stamp_ns": 1792478011447030542,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1039.813271785,
+      "stamp_ns": 1792478011497224990,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1039.863281521,
+      "stamp_ns": 1792478011547210403,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1039.912700988,
+      "stamp_ns": 1792478011596655430,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1039.962710647,
+      "stamp_ns": 1792478011646664609,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1040.012888489,
+      "stamp_ns": 1792478011696841535,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1040.063204006,
+      "stamp_ns": 1792478011747156149,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1040.112839943,
+      "stamp_ns": 1792478011796795265,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1040.163241057,
+      "stamp_ns": 1792478011847194153,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1040.213346699,
+      "stamp_ns": 1792478011897300314,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1040.263178466,
+      "stamp_ns": 1792478011947131238,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1040.313345305,
+      "stamp_ns": 1792478011997295671,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1040.362956089,
+      "stamp_ns": 1792478012046908841,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1040.413007524,
+      "stamp_ns": 1792478012096957379,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1040.463084697,
+      "stamp_ns": 1792478012147038376,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1040.512576644,
+      "stamp_ns": 1792478012196530695,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1040.563005924,
+      "stamp_ns": 1792478012246954810,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1040.613014882,
+      "stamp_ns": 1792478012296967278,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1040.662581767,
+      "stamp_ns": 1792478012346537299,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1040.713103838,
+      "stamp_ns": 1792478012397055343,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1040.762967996,
+      "stamp_ns": 1792478012446921077,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1040.812772437,
+      "stamp_ns": 1792478012496726346,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1040.86298846,
+      "stamp_ns": 1792478012546942264,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1040.912801331,
+      "stamp_ns": 1792478012596750711,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1040.963222692,
+      "stamp_ns": 1792478012647174192,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1041.013048217,
+      "stamp_ns": 1792478012697002084,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1041.062846126,
+      "stamp_ns": 1792478012746798788,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1041.1127082,
+      "stamp_ns": 1792478012796662265,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1041.16252076,
+      "stamp_ns": 1792478012846475328,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1041.212940436,
+      "stamp_ns": 1792478012896895008,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1041.263129851,
+      "stamp_ns": 1792478012947080981,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1041.312921623,
+      "stamp_ns": 1792478012996876253,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1041.362614578,
+      "stamp_ns": 1792478013046569479,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1041.413080774,
+      "stamp_ns": 1792478013097033839,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1041.462710666,
+      "stamp_ns": 1792478013146665758,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1041.512753732,
+      "stamp_ns": 1792478013196708922,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1041.563196034,
+      "stamp_ns": 1792478013247148854,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1041.612845745,
+      "stamp_ns": 1792478013296800288,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1041.662776997,
+      "stamp_ns": 1792478013346732111,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1041.713112875,
+      "stamp_ns": 1792478013397066122,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1041.763136751,
+      "stamp_ns": 1792478013447090225,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1041.812868233,
+      "stamp_ns": 1792478013496822184,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1041.863993102,
+      "stamp_ns": 1792478013547943106,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1041.913210457,
+      "stamp_ns": 1792478013597162877,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1041.963231249,
+      "stamp_ns": 1792478013647184221,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1042.012621634,
+      "stamp_ns": 1792478013696574378,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1042.062580515,
+      "stamp_ns": 1792478013746535500,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1042.113036359,
+      "stamp_ns": 1792478013796989906,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1042.163046279,
+      "stamp_ns": 1792478013846999349,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1042.213007504,
+      "stamp_ns": 1792478013896958823,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1042.263023047,
+      "stamp_ns": 1792478013946974247,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1042.312762584,
+      "stamp_ns": 1792478013996711465,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1042.362932081,
+      "stamp_ns": 1792478014046887161,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1042.412695695,
+      "stamp_ns": 1792478014096645447,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1042.463155284,
+      "stamp_ns": 1792478014147094775,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1042.513171879,
+      "stamp_ns": 1792478014197124175,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1042.563036869,
+      "stamp_ns": 1792478014246991631,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1042.613171972,
+      "stamp_ns": 1792478014297124509,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1042.662932733,
+      "stamp_ns": 1792478014346885990,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1042.713238353,
+      "stamp_ns": 1792478014397191719,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1042.762902669,
+      "stamp_ns": 1792478014446847008,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1042.813270962,
+      "stamp_ns": 1792478014497223081,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1042.862936909,
+      "stamp_ns": 1792478014546891856,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1042.91267889,
+      "stamp_ns": 1792478014596633985,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1042.962876146,
+      "stamp_ns": 1792478014646820521,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1043.01291709,
+      "stamp_ns": 1792478014696868310,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1043.063294573,
+      "stamp_ns": 1792478014747247759,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1043.1127794,
+      "stamp_ns": 1792478014796734474,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1043.16294062,
+      "stamp_ns": 1792478014846888317,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1043.213094888,
+      "stamp_ns": 1792478014897048914,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1043.264015374,
+      "stamp_ns": 1792478014947967182,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1043.31332556,
+      "stamp_ns": 1792478014997276780,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1043.363439275,
+      "stamp_ns": 1792478015047391551,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1043.413128209,
+      "stamp_ns": 1792478015097080450,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1043.462947657,
+      "stamp_ns": 1792478015146893009,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1043.51310577,
+      "stamp_ns": 1792478015197057167,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1043.56437097,
+      "stamp_ns": 1792478015248321911,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1043.612975912,
+      "stamp_ns": 1792478015296929052,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1043.663252361,
+      "stamp_ns": 1792478015347204574,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1043.712732333,
+      "stamp_ns": 1792478015396686871,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1043.762872543,
+      "stamp_ns": 1792478015446827267,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1043.812847509,
+      "stamp_ns": 1792478015496802402,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1043.863177313,
+      "stamp_ns": 1792478015547129378,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1043.913009151,
+      "stamp_ns": 1792478015596959129,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1043.962927208,
+      "stamp_ns": 1792478015646880884,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1044.013169011,
+      "stamp_ns": 1792478015697122135,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1044.062688526,
+      "stamp_ns": 1792478015746643623,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1044.112505912,
+      "stamp_ns": 1792478015796458897,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1044.163081057,
+      "stamp_ns": 1792478015847034386,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1044.212759217,
+      "stamp_ns": 1792478015896713908,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1044.263019992,
+      "stamp_ns": 1792478015946973172,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1044.313261779,
+      "stamp_ns": 1792478015997211538,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1044.363311756,
+      "stamp_ns": 1792478016047264629,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1044.412731398,
+      "stamp_ns": 1792478016096685240,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1044.462953359,
+      "stamp_ns": 1792478016146908274,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1044.513009212,
+      "stamp_ns": 1792478016196959869,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1044.563307792,
+      "stamp_ns": 1792478016247261699,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    },
+    {
+      "receipt": 1044.612453567,
+      "stamp_ns": 1792478016296405722,
+      "items": [
+        {
+          "ns": "articulation",
+          "type": 9,
+          "points": 0,
+          "text": "T:NO_DATA R:NO_DATA SLAM:NO_DATA",
+          "frame": "map"
+        }
+      ]
+    }
+  ]
+}

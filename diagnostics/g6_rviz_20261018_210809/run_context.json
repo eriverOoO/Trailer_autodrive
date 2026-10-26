@@ -1,0 +1,8 @@
+{
+  "created_at": "2026-10-18T21:08:09.508171+09:00",
+  "initial_processes": "G6 driver, Cartographer and RViz stopped",
+  "device": "/dev/serial/by-id/usb-Silicon_Labs_CP2102_USB_to_UART_Bridge_Controller_0001-if00-port0",
+  "physical_cable_direction_confirmed": false,
+  "physical_target_placement_confirmed": false,
+  "existing_files_modified": false
+}

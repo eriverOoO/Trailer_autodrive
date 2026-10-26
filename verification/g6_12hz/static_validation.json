@@ -1,0 +1,18 @@
+{
+  "parameter_changes": {
+    "frequency": {
+      "old": 10.0,
+      "new": 12.0
+    },
+    "range_max": {
+      "old": 16.0,
+      "new": 15.0
+    }
+  },
+  "launch_unchanged": true,
+  "driver_yaml": "/home/venezuelachocolatemilk/mvsim_slam_real/src/mvsim_slam_real_bringup/config/g6.yaml",
+  "lua": "/home/venezuelachocolatemilk/mvsim_slam_real/src/mvsim_slam_real_bringup/config/g6_lidar_only.lua",
+  "missing_data_ray_length": 12,
+  "IMU": false,
+  "odometry": false
+}

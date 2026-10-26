@@ -1,0 +1,14 @@
+{
+  "package": "ebimu_pkg",
+  "entry": "ebimu_publisher",
+  "port": "/dev/ttyUSB0",
+  "baud": 115200,
+  "topic": "/ebimu_data",
+  "message_type": "std_msgs/msg/String",
+  "received_messages": 796,
+  "valid_11_field_messages": 795,
+  "measured_rate_hz": 100.98,
+  "first_message": ",0.105,0.042,0.990,45402\r\n",
+  "last_message": "*-0.7068,0.0246,0.0521,0.7050,-0.32,-0.14,-0.13,0.106,0.041,0.990,53352\r\n",
+  "publisher_stopped_after_test": true
+}

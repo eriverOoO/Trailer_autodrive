@@ -1,0 +1,12 @@
+{
+  "at": "2026-10-20T17:01:19.744298+09:00",
+  "checked": 890,
+  "changed": [
+    "/home/venezuelachocolatemilk/mvsim_slam_real/src/mvsim_slam_real_bringup/config/g6.yaml",
+    "/home/venezuelachocolatemilk/mvsim_slam_real/src/mvsim_slam_real_bringup/config/g6_lidar_only.lua",
+    "/home/venezuelachocolatemilk/mvsim_slam_real/visualization/tractor_trailer_rviz_2d/config/tractor_only_diagnostic.yaml"
+  ],
+  "unexpected": [],
+  "timestamp_guard_preserved": true,
+  "parser_and_public_imu_bridge_preserved": true
+}

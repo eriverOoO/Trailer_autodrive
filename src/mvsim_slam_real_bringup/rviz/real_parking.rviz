@@ -1,0 +1,86 @@
+Panels:
+- Class: rviz_common/Displays
+  Name: Displays
+Visualization Manager:
+  Class: ''
+  Global Options:
+    Fixed Frame: map
+  Displays:
+  - Class: rviz_default_plugins/LaserScan
+    Name: LaserScan
+    Enabled: true
+    Topic:
+      Value: /scan
+      Depth: 10
+      Reliability Policy: Reliable
+      Durability Policy: Volatile
+  - Class: rviz_default_plugins/Map
+    Name: SLAM map
+    Enabled: true
+    Topic:
+      Value: /map
+      Depth: 10
+      Reliability Policy: Reliable
+      Durability Policy: Transient Local
+  - Class: rviz_default_plugins/Pose
+    Name: Tractor rear axle
+    Enabled: true
+    Topic:
+      Value: /parking/tractor_slam_pose
+      Depth: 10
+      Reliability Policy: Reliable
+      Durability Policy: Volatile
+  - Class: rviz_default_plugins/Pose
+    Name: Trailer body center
+    Enabled: true
+    Topic:
+      Value: /parking/trailer_pose
+      Depth: 10
+      Reliability Policy: Reliable
+      Durability Policy: Volatile
+  - Class: rviz_default_plugins/TF
+    Name: TF
+    Enabled: true
+  - Class: rviz_default_plugins/Pose
+    Name: Measured target
+    Enabled: true
+    Topic:
+      Value: /parking/target
+      Depth: 10
+      Reliability Policy: Reliable
+      Durability Policy: Volatile
+  - Class: rviz_default_plugins/Path
+    Name: Hybrid A star tractor
+    Enabled: true
+    Topic:
+      Value: /parking/planned_tractor_path
+      Depth: 10
+      Reliability Policy: Reliable
+      Durability Policy: Transient Local
+  - Class: rviz_default_plugins/Path
+    Name: Hybrid A star trailer
+    Enabled: true
+    Topic:
+      Value: /parking/planned_trailer_path
+      Depth: 10
+      Reliability Policy: Reliable
+      Durability Policy: Transient Local
+  - Class: rviz_default_plugins/MarkerArray
+    Name: Footprints tracking and parking state
+    Enabled: true
+    Topic:
+      Value: /parking/debug_markers
+      Depth: 10
+      Reliability Policy: Reliable
+      Durability Policy: Transient Local
+  - Class: rviz_default_plugins/Path
+    Name: Actual tracking path
+    Enabled: true
+    Topic:
+      Value: /parking/tracking_path
+      Reliability Policy: Reliable
+      Durability Policy: Volatile
+      Depth: 10
+Window Geometry:
+  Width: 1200
+  Height: 800

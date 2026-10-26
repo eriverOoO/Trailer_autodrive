@@ -1,0 +1,36 @@
+mode: LIVE
+namespace: /vehicle_viz_2d
+fixed_frame: map
+slam_frame: base_footprint
+imu_timeout_s: 0.5
+pose_timeout_s: 0.5
+max_pair_skew_s: 0.05
+# Physical measurements are required; keep defaults unconfirmed.
+geometry:
+  confirmed: false
+  source: UNMEASURED_REAL_VEHICLE
+  slam_to_rear_axle_xy: [null, null]
+  slam_to_body_yaw_rad: null
+  rear_axle_to_hitch_xy: [null, null]
+  trailer_origin_to_hitch_xy: [null, null]
+  trailer_origin_to_axle_xy: [null, null]
+tractor:
+  topic: /vehicle_viz_2d/tractor/imu/data
+  frame: vehicle_viz_2d_tractor_imu
+  source: orientation
+  sign: 1
+  sensor_to_body_rpy: [0.0, 0.0, 0.0]
+  mounting_and_sign_confirmed: false
+  gyro_bias_rad_s: 0.0
+  gyro_bias_confirmed: false
+trailer:
+  topic: /vehicle_viz_2d/trailer/imu/data
+  frame: vehicle_viz_2d_trailer_imu
+  source: orientation
+  sign: 1
+  sensor_to_body_rpy: [0.0, 0.0, 0.0]
+  mounting_and_sign_confirmed: false
+  gyro_bias_rad_s: 0.0
+  gyro_bias_confirmed: false
+state_topic: /parking/status
+state_timeout_s: 3.0

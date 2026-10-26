@@ -1,0 +1,6 @@
+[INFO] [1792411347.251459065] [rviz2]: Stereo is NOT SUPPORTED
+[INFO] [1792411347.251514277] [rviz2]: OpenGl version: 4.6 (GLSL 4.6)
+[INFO] [1792411347.260033731] [rviz2]: Stereo is NOT SUPPORTED
+[WARN] [1792411347.335478234] [vehicle_viz_2d_TEST_rviz]: New publisher discovered on topic '/vehicle_viz_2d_test/model', offering incompatible QoS. No messages will be sent to it. Last incompatible policy: DURABILITY_QOS_POLICY
+[INFO] [1792411347.344881225] [rviz2]: Trying to create a map of size 120 x 120 using 1 swatches
+[INFO] [1792411377.729922497] [rclcpp]: signal_handler(SIGINT/SIGTERM)

@@ -1,0 +1,182 @@
+Starting >>> ydlidar_ros2_driver
+--- stderr: ydlidar_ros2_driver
+In file included from /home/venezuelachocolatemilk/mvsim_slam_real/third_party/ydlidar_sdk_install/include/core/base/v8stdint.h:142,
+                 from /home/venezuelachocolatemilk/mvsim_slam_real/third_party/ydlidar_sdk_install/include/core/common/DriverInterface.h:4,
+                 from /home/venezuelachocolatemilk/mvsim_slam_real/third_party/ydlidar_sdk_install/include/src/CYdLidar.h:48,
+                 from /home/venezuelachocolatemilk/mvsim_slam_real/src/ydlidar_ros2_driver/src/ydlidar_ros2_driver_node.cpp:16:
+/home/venezuelachocolatemilk/mvsim_slam_real/third_party/ydlidar_sdk_install/include/core/base/ydlidar.h: In function ‘bool ydlidar::core::base::fileExists(const string&)’:
+/home/venezuelachocolatemilk/mvsim_slam_real/third_party/ydlidar_sdk_install/include/core/base/ydlidar.h:183:24: warning: missing initializer for member ‘stat::st_ino’ [-Wmissing-field-initializers]
+  183 |   struct stat info = {0};
+      |                        ^
+/home/venezuelachocolatemilk/mvsim_slam_real/third_party/ydlidar_sdk_install/include/core/base/ydlidar.h:183:24: warning: missing initializer for member ‘stat::st_nlink’ [-Wmissing-field-initializers]
+/home/venezuelachocolatemilk/mvsim_slam_real/third_party/ydlidar_sdk_install/include/core/base/ydlidar.h:183:24: warning: missing initializer for member ‘stat::st_mode’ [-Wmissing-field-initializers]
+/home/venezuelachocolatemilk/mvsim_slam_real/third_party/ydlidar_sdk_install/include/core/base/ydlidar.h:183:24: warning: missing initializer for member ‘stat::st_uid’ [-Wmissing-field-initializers]
+/home/venezuelachocolatemilk/mvsim_slam_real/third_party/ydlidar_sdk_install/include/core/base/ydlidar.h:183:24: warning: missing initializer for member ‘stat::st_gid’ [-Wmissing-field-initializers]
+/home/venezuelachocolatemilk/mvsim_slam_real/third_party/ydlidar_sdk_install/include/core/base/ydlidar.h:183:24: warning: missing initializer for member ‘stat::__pad0’ [-Wmissing-field-initializers]
+/home/venezuelachocolatemilk/mvsim_slam_real/third_party/ydlidar_sdk_install/include/core/base/ydlidar.h:183:24: warning: missing initializer for member ‘stat::st_rdev’ [-Wmissing-field-initializers]
+/home/venezuelachocolatemilk/mvsim_slam_real/third_party/ydlidar_sdk_install/include/core/base/ydlidar.h:183:24: warning: missing initializer for member ‘stat::st_size’ [-Wmissing-field-initializers]
+/home/venezuelachocolatemilk/mvsim_slam_real/third_party/ydlidar_sdk_install/include/core/base/ydlidar.h:183:24: warning: missing initializer for member ‘stat::st_blksize’ [-Wmissing-field-initializers]
+/home/venezuelachocolatemilk/mvsim_slam_real/third_party/ydlidar_sdk_install/include/core/base/ydlidar.h:183:24: warning: missing initializer for member ‘stat::st_blocks’ [-Wmissing-field-initializers]
+/home/venezuelachocolatemilk/mvsim_slam_real/third_party/ydlidar_sdk_install/include/core/base/ydlidar.h:183:24: warning: missing initializer for member ‘stat::st_atim’ [-Wmissing-field-initializers]
+/home/venezuelachocolatemilk/mvsim_slam_real/third_party/ydlidar_sdk_install/include/core/base/ydlidar.h:183:24: warning: missing initializer for member ‘stat::st_mtim’ [-Wmissing-field-initializers]
+/home/venezuelachocolatemilk/mvsim_slam_real/third_party/ydlidar_sdk_install/include/core/base/ydlidar.h:183:24: warning: missing initializer for member ‘stat::st_ctim’ [-Wmissing-field-initializers]
+/home/venezuelachocolatemilk/mvsim_slam_real/third_party/ydlidar_sdk_install/include/core/base/ydlidar.h:183:24: warning: missing initializer for member ‘stat::__glibc_reserved’ [-Wmissing-field-initializers]
+In file included from /home/venezuelachocolatemilk/mvsim_slam_real/third_party/ydlidar_sdk_install/include/core/common/DriverInterface.h:5,
+                 from /home/venezuelachocolatemilk/mvsim_slam_real/third_party/ydlidar_sdk_install/include/src/CYdLidar.h:48,
+                 from /home/venezuelachocolatemilk/mvsim_slam_real/src/ydlidar_ros2_driver/src/ydlidar_ros2_driver_node.cpp:16:
+/home/venezuelachocolatemilk/mvsim_slam_real/third_party/ydlidar_sdk_install/include/core/base/thread.h: In static member function ‘static ydlidar::core::base::Thread ydlidar::core::base::Thread::createThread(thread_proc_t, void*)’:
+/home/venezuelachocolatemilk/mvsim_slam_real/third_party/ydlidar_sdk_install/include/core/base/thread.h:54:42: warning: cast between incompatible function types from ‘thread_proc_t’ {aka ‘long unsigned int (*)(void*)’} to ‘void* (*)(void*)’ [-Wcast-function-type]
+   54 |                                    NULL, (void *(*)(void *))proc,
+      |                                          ^~~~~~~~~~~~~~~~~~~~~~~
+/home/venezuelachocolatemilk/mvsim_slam_real/third_party/ydlidar_sdk_install/include/core/base/thread.h: In member function ‘int ydlidar::core::base::Thread::join(long unsigned int)’:
+/home/venezuelachocolatemilk/mvsim_slam_real/third_party/ydlidar_sdk_install/include/core/base/thread.h:135:46: warning: format ‘%X’ expects argument of type ‘unsigned int’, but argument 2 has type ‘_size_t’ {aka ‘long unsigned int’} [-Wformat=]
+  135 |           printf("[YDLIDAR DEBUG] Thread [0x%X] ready to cancel[%d]\n", _handle, s);
+      |                                             ~^                          ~~~~~~~
+      |                                              |                          |
+      |                                              unsigned int               _size_t {aka long unsigned int}
+      |                                             %lX
+/home/venezuelachocolatemilk/mvsim_slam_real/third_party/ydlidar_sdk_install/include/core/base/thread.h:137:46: warning: format ‘%X’ expects argument of type ‘unsigned int’, but argument 2 has type ‘_size_t’ {aka ‘long unsigned int’} [-Wformat=]
+  137 |           printf("[YDLIDAR DEBUG] Thread [0x%X] ready to cancel[%d] time[%u]\n",
+      |                                             ~^
+      |                                              |
+      |                                              unsigned int
+      |                                             %lX
+  138 |             _handle, s, getms() - t);
+      |             ~~~~~~~                           
+      |             |
+      |             _size_t {aka long unsigned int}
+/home/venezuelachocolatemilk/mvsim_slam_real/third_party/ydlidar_sdk_install/include/core/base/thread.h:141:42: warning: format ‘%X’ expects argument of type ‘unsigned int’, but argument 2 has type ‘_size_t’ {aka ‘long unsigned int’} [-Wformat=]
+  141 |             printf("[YDLIDAR] Thread [0x%X] has been canceled in other thread\n", _handle);
+      |                                         ~^                                        ~~~~~~~
+      |                                          |                                        |
+      |                                          unsigned int                             _size_t {aka long unsigned int}
+      |                                         %lX
+/home/venezuelachocolatemilk/mvsim_slam_real/third_party/ydlidar_sdk_install/include/core/base/thread.h:146:74: warning: format ‘%X’ expects argument of type ‘unsigned int’, but argument 3 has type ‘_size_t’ {aka ‘long unsigned int’} [-Wformat=]
+  146 |             fprintf(stderr, "[YDLIDAR] An error occurred while thread[0x%X] cancelled!\n", _handle);
+      |                                                                         ~^                 ~~~~~~~
+      |                                                                          |                 |
+      |                                                                          unsigned int      _size_t {aka long unsigned int}
+      |                                                                         %lX
+/home/venezuelachocolatemilk/mvsim_slam_real/third_party/ydlidar_sdk_install/include/core/base/thread.h:150:40: warning: format ‘%X’ expects argument of type ‘unsigned int’, but argument 2 has type ‘_size_t’ {aka ‘long unsigned int’} [-Wformat=]
+  150 |           printf("[YDLIDAR] Thread [0x%X] has been canceled\n", _handle);
+      |                                       ~^                        ~~~~~~~
+      |                                        |                        |
+      |                                        unsigned int             _size_t {aka long unsigned int}
+      |                                       %lX
+In file included from /home/venezuelachocolatemilk/mvsim_slam_real/third_party/ydlidar_sdk_install/include/core/common/DriverInterface.h:8,
+                 from /home/venezuelachocolatemilk/mvsim_slam_real/third_party/ydlidar_sdk_install/include/src/CYdLidar.h:48,
+                 from /home/venezuelachocolatemilk/mvsim_slam_real/src/ydlidar_ros2_driver/src/ydlidar_ros2_driver_node.cpp:16:
+/home/venezuelachocolatemilk/mvsim_slam_real/third_party/ydlidar_sdk_install/include/core/common/ydlidar_protocol.h: At global scope:
+/home/venezuelachocolatemilk/mvsim_slam_real/third_party/ydlidar_sdk_install/include/core/common/ydlidar_protocol.h:301:22: warning: missing initializer for member ‘device_info::firmware_version’ [-Wmissing-field-initializers]
+  301 |   device_info di = {0};
+      |                      ^
+/home/venezuelachocolatemilk/mvsim_slam_real/third_party/ydlidar_sdk_install/include/core/common/ydlidar_protocol.h:301:22: warning: missing initializer for member ‘device_info::hardware_version’ [-Wmissing-field-initializers]
+/home/venezuelachocolatemilk/mvsim_slam_real/third_party/ydlidar_sdk_install/include/core/common/ydlidar_protocol.h:301:22: warning: missing initializer for member ‘device_info::serialnum’ [-Wmissing-field-initializers]
+In file included from /home/venezuelachocolatemilk/mvsim_slam_real/third_party/ydlidar_sdk_install/include/src/CYdLidar.h:48,
+                 from /home/venezuelachocolatemilk/mvsim_slam_real/src/ydlidar_ros2_driver/src/ydlidar_ros2_driver_node.cpp:16:
+/home/venezuelachocolatemilk/mvsim_slam_real/third_party/ydlidar_sdk_install/include/core/common/DriverInterface.h: In member function ‘virtual bool ydlidar::core::common::DriverInterface::getDeviceInfoEx(device_info&, int)’:
+/home/venezuelachocolatemilk/mvsim_slam_real/third_party/ydlidar_sdk_install/include/core/common/DriverInterface.h:285:59: warning: unused parameter ‘type’ [-Wunused-parameter]
+  285 |         virtual bool getDeviceInfoEx(device_info &di, int type=EPT_Module)
+      |                                                       ~~~~^~~~~~~~~~~~~~~
+/home/venezuelachocolatemilk/mvsim_slam_real/third_party/ydlidar_sdk_install/include/core/common/DriverInterface.h: In member function ‘virtual result_t ydlidar::core::common::DriverInterface::getScanFrequency(scan_frequency&, uint32_t)’:
+/home/venezuelachocolatemilk/mvsim_slam_real/third_party/ydlidar_sdk_install/include/core/common/DriverInterface.h:340:59: warning: unused parameter ‘frequency’ [-Wunused-parameter]
+  340 |         virtual result_t getScanFrequency(scan_frequency &frequency,
+      |                                           ~~~~~~~~~~~~~~~~^~~~~~~~~
+/home/venezuelachocolatemilk/mvsim_slam_real/third_party/ydlidar_sdk_install/include/core/common/DriverInterface.h:341:52: warning: unused parameter ‘timeout’ [-Wunused-parameter]
+  341 |                                           uint32_t timeout = DEFAULT_TIMEOUT)
+      |                                           ~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/venezuelachocolatemilk/mvsim_slam_real/third_party/ydlidar_sdk_install/include/core/common/DriverInterface.h: In member function ‘virtual result_t ydlidar::core::common::DriverInterface::setScanFrequencyAdd(scan_frequency&, uint32_t)’:
+/home/venezuelachocolatemilk/mvsim_slam_real/third_party/ydlidar_sdk_install/include/core/common/DriverInterface.h:355:62: warning: unused parameter ‘frequency’ [-Wunused-parameter]
+  355 |         virtual result_t setScanFrequencyAdd(scan_frequency &frequency,
+      |                                              ~~~~~~~~~~~~~~~~^~~~~~~~~
+/home/venezuelachocolatemilk/mvsim_slam_real/third_party/ydlidar_sdk_install/include/core/common/DriverInterface.h:356:55: warning: unused parameter ‘timeout’ [-Wunused-parameter]
+  356 |                                              uint32_t timeout = DEFAULT_TIMEOUT)
+      |                                              ~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/venezuelachocolatemilk/mvsim_slam_real/third_party/ydlidar_sdk_install/include/core/common/DriverInterface.h: In member function ‘virtual result_t ydlidar::core::common::DriverInterface::setScanFrequencyDis(scan_frequency&, uint32_t)’:
+/home/venezuelachocolatemilk/mvsim_slam_real/third_party/ydlidar_sdk_install/include/core/common/DriverInterface.h:370:62: warning: unused parameter ‘frequency’ [-Wunused-parameter]
+  370 |         virtual result_t setScanFrequencyDis(scan_frequency &frequency,
+      |                                              ~~~~~~~~~~~~~~~~^~~~~~~~~
+/home/venezuelachocolatemilk/mvsim_slam_real/third_party/ydlidar_sdk_install/include/core/common/DriverInterface.h:371:55: warning: unused parameter ‘timeout’ [-Wunused-parameter]
+  371 |                                              uint32_t timeout = DEFAULT_TIMEOUT)
+      |                                              ~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/venezuelachocolatemilk/mvsim_slam_real/third_party/ydlidar_sdk_install/include/core/common/DriverInterface.h: In member function ‘virtual result_t ydlidar::core::common::DriverInterface::setScanFrequencyAddMic(scan_frequency&, uint32_t)’:
+/home/venezuelachocolatemilk/mvsim_slam_real/third_party/ydlidar_sdk_install/include/core/common/DriverInterface.h:385:65: warning: unused parameter ‘frequency’ [-Wunused-parameter]
+  385 |         virtual result_t setScanFrequencyAddMic(scan_frequency &frequency,
+      |                                                 ~~~~~~~~~~~~~~~~^~~~~~~~~
+/home/venezuelachocolatemilk/mvsim_slam_real/third_party/ydlidar_sdk_install/include/core/common/DriverInterface.h:386:58: warning: unused parameter ‘timeout’ [-Wunused-parameter]
+  386 |                                                 uint32_t timeout = DEFAULT_TIMEOUT)
+      |                                                 ~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/venezuelachocolatemilk/mvsim_slam_real/third_party/ydlidar_sdk_install/include/core/common/DriverInterface.h: In member function ‘virtual result_t ydlidar::core::common::DriverInterface::setScanFrequencyDisMic(scan_frequency&, uint32_t)’:
+/home/venezuelachocolatemilk/mvsim_slam_real/third_party/ydlidar_sdk_install/include/core/common/DriverInterface.h:400:65: warning: unused parameter ‘frequency’ [-Wunused-parameter]
+  400 |         virtual result_t setScanFrequencyDisMic(scan_frequency &frequency,
+      |                                                 ~~~~~~~~~~~~~~~~^~~~~~~~~
+/home/venezuelachocolatemilk/mvsim_slam_real/third_party/ydlidar_sdk_install/include/core/common/DriverInterface.h:401:58: warning: unused parameter ‘timeout’ [-Wunused-parameter]
+  401 |                                                 uint32_t timeout = DEFAULT_TIMEOUT)
+      |                                                 ~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/venezuelachocolatemilk/mvsim_slam_real/third_party/ydlidar_sdk_install/include/core/common/DriverInterface.h: In member function ‘virtual result_t ydlidar::core::common::DriverInterface::getSamplingRate(sampling_rate&, uint32_t)’:
+/home/venezuelachocolatemilk/mvsim_slam_real/third_party/ydlidar_sdk_install/include/core/common/DriverInterface.h:415:57: warning: unused parameter ‘rate’ [-Wunused-parameter]
+  415 |         virtual result_t getSamplingRate(sampling_rate &rate,
+      |                                          ~~~~~~~~~~~~~~~^~~~
+/home/venezuelachocolatemilk/mvsim_slam_real/third_party/ydlidar_sdk_install/include/core/common/DriverInterface.h:416:51: warning: unused parameter ‘timeout’ [-Wunused-parameter]
+  416 |                                          uint32_t timeout = DEFAULT_TIMEOUT)
+      |                                          ~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/venezuelachocolatemilk/mvsim_slam_real/third_party/ydlidar_sdk_install/include/core/common/DriverInterface.h: In member function ‘virtual result_t ydlidar::core::common::DriverInterface::setSamplingRate(sampling_rate&, uint32_t)’:
+/home/venezuelachocolatemilk/mvsim_slam_real/third_party/ydlidar_sdk_install/include/core/common/DriverInterface.h:430:57: warning: unused parameter ‘rate’ [-Wunused-parameter]
+  430 |         virtual result_t setSamplingRate(sampling_rate &rate,
+      |                                          ~~~~~~~~~~~~~~~^~~~
+/home/venezuelachocolatemilk/mvsim_slam_real/third_party/ydlidar_sdk_install/include/core/common/DriverInterface.h:431:51: warning: unused parameter ‘timeout’ [-Wunused-parameter]
+  431 |                                          uint32_t timeout = DEFAULT_TIMEOUT)
+      |                                          ~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/venezuelachocolatemilk/mvsim_slam_real/third_party/ydlidar_sdk_install/include/core/common/DriverInterface.h: In member function ‘virtual result_t ydlidar::core::common::DriverInterface::getZeroOffsetAngle(offset_angle&, uint32_t)’:
+/home/venezuelachocolatemilk/mvsim_slam_real/third_party/ydlidar_sdk_install/include/core/common/DriverInterface.h:445:59: warning: unused parameter ‘angle’ [-Wunused-parameter]
+  445 |         virtual result_t getZeroOffsetAngle(offset_angle &angle,
+      |                                             ~~~~~~~~~~~~~~^~~~~
+/home/venezuelachocolatemilk/mvsim_slam_real/third_party/ydlidar_sdk_install/include/core/common/DriverInterface.h:446:54: warning: unused parameter ‘timeout’ [-Wunused-parameter]
+  446 |                                             uint32_t timeout = DEFAULT_TIMEOUT)
+      |                                             ~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/venezuelachocolatemilk/mvsim_slam_real/third_party/ydlidar_sdk_install/include/core/common/DriverInterface.h: In member function ‘virtual result_t ydlidar::core::common::DriverInterface::setScanHeartbeat(scan_heart_beat&, uint32_t)’:
+/home/venezuelachocolatemilk/mvsim_slam_real/third_party/ydlidar_sdk_install/include/core/common/DriverInterface.h:461:60: warning: unused parameter ‘beat’ [-Wunused-parameter]
+  461 |         virtual result_t setScanHeartbeat(scan_heart_beat &beat,
+      |                                           ~~~~~~~~~~~~~~~~~^~~~
+/home/venezuelachocolatemilk/mvsim_slam_real/third_party/ydlidar_sdk_install/include/core/common/DriverInterface.h:462:52: warning: unused parameter ‘timeout’ [-Wunused-parameter]
+  462 |                                           uint32_t timeout = DEFAULT_TIMEOUT)
+      |                                           ~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/venezuelachocolatemilk/mvsim_slam_real/third_party/ydlidar_sdk_install/include/core/common/DriverInterface.h: In member function ‘virtual result_t ydlidar::core::common::DriverInterface::setWorkMode(int, uint8_t)’:
+/home/venezuelachocolatemilk/mvsim_slam_real/third_party/ydlidar_sdk_install/include/core/common/DriverInterface.h:493:42: warning: unused parameter ‘mode’ [-Wunused-parameter]
+  493 |         virtual result_t setWorkMode(int mode = 0, uint8_t addr = 0x00) {
+      |                                      ~~~~^~~~~~~~
+/home/venezuelachocolatemilk/mvsim_slam_real/third_party/ydlidar_sdk_install/include/core/common/DriverInterface.h:493:60: warning: unused parameter ‘addr’ [-Wunused-parameter]
+  493 |         virtual result_t setWorkMode(int mode = 0, uint8_t addr = 0x00) {
+      |                                                    ~~~~~~~~^~~~~~~~~~~
+/home/venezuelachocolatemilk/mvsim_slam_real/src/ydlidar_ros2_driver/src/ydlidar_ros2_driver_node.cpp: In lambda function:
+/home/venezuelachocolatemilk/mvsim_slam_real/src/ydlidar_ros2_driver/src/ydlidar_ros2_driver_node.cpp:191:54: warning: unused parameter ‘request_header’ [-Wunused-parameter]
+  191 |     [&laser](const std::shared_ptr<rmw_request_id_t> request_header,
+      |              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/home/venezuelachocolatemilk/mvsim_slam_real/src/ydlidar_ros2_driver/src/ydlidar_ros2_driver_node.cpp:192:56: warning: unused parameter ‘req’ [-Wunused-parameter]
+  192 |   const std::shared_ptr<std_srvs::srv::Empty::Request> req,
+      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+/home/venezuelachocolatemilk/mvsim_slam_real/src/ydlidar_ros2_driver/src/ydlidar_ros2_driver_node.cpp:193:51: warning: unused parameter ‘response’ [-Wunused-parameter]
+  193 |   std::shared_ptr<std_srvs::srv::Empty::Response> response) -> bool
+      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+/home/venezuelachocolatemilk/mvsim_slam_real/src/ydlidar_ros2_driver/src/ydlidar_ros2_driver_node.cpp: In lambda function:
+/home/venezuelachocolatemilk/mvsim_slam_real/src/ydlidar_ros2_driver/src/ydlidar_ros2_driver_node.cpp:201:54: warning: unused parameter ‘request_header’ [-Wunused-parameter]
+  201 |     [&laser](const std::shared_ptr<rmw_request_id_t> request_header,
+      |              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/home/venezuelachocolatemilk/mvsim_slam_real/src/ydlidar_ros2_driver/src/ydlidar_ros2_driver_node.cpp:202:56: warning: unused parameter ‘req’ [-Wunused-parameter]
+  202 |   const std::shared_ptr<std_srvs::srv::Empty::Request> req,
+      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+/home/venezuelachocolatemilk/mvsim_slam_real/src/ydlidar_ros2_driver/src/ydlidar_ros2_driver_node.cpp:203:51: warning: unused parameter ‘response’ [-Wunused-parameter]
+  203 |   std::shared_ptr<std_srvs::srv::Empty::Response> response) -> bool
+      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+/usr/bin/ld: cannot find -lydlidar_sdk: 그런 파일이나 디렉터리가 없습니다
+collect2: error: ld returned 1 exit status
+gmake[2]: *** [CMakeFiles/ydlidar_ros2_driver_node.dir/build.make:191: ydlidar_ros2_driver_node] 오류 1
+gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/ydlidar_ros2_driver_node.dir/all] 오류 2
+gmake[1]: *** 끝나지 않은 작업을 기다리고 있습니다....
+gmake: *** [Makefile:146: all] 오류 2
+---
+Failed   <<< ydlidar_ros2_driver [4.66s, exited with code 2]
+
+Summary: 0 packages finished [4.81s]
+  1 package failed: ydlidar_ros2_driver
+  1 package had stderr output: ydlidar_ros2_driver

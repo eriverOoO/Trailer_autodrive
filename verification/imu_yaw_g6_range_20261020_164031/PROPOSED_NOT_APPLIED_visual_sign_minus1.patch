@@ -1,0 +1,11 @@
+--- a/visualization/tractor_trailer_rviz_2d/config/tractor_only_diagnostic.yaml
++++ b/visualization/tractor_trailer_rviz_2d/config/tractor_only_diagnostic.yaml
+@@ -24,7 +24,7 @@
+   topic: /vehicle_viz_2d/tractor/imu/data
+   frame: vehicle_viz_2d_tractor_imu
+   source: orientation
+-  sign: 1
++  sign: -1
+   sensor_to_body_rpy: [0.0, 0.0, 0.0]
+   mounting_and_sign_confirmed: false
+   gyro_bias_rad_s: 0.0

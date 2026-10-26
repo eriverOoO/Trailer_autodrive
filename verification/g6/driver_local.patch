@@ -1,0 +1,21 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index af4e2b2..1e9271d 100755
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -23,6 +23,16 @@ find_package(std_srvs REQUIRED)
+ ############## YDLIDAR SDK START#####################################
+ #find ydlidar_sdk package
+ find_package(ydlidar_sdk REQUIRED)
++# SDK 1.2.20 exports a bare library name and an empty LIBRARY_DIRS.
++# Resolve it against its own prefix so a local SDK needs no /usr/local install.
++if(NOT TARGET ydlidar_sdk)
++  find_library(YDLIDAR_SDK_LIBRARY NAMES ydlidar_sdk
++    HINTS ${YDLIDAR_SDK_LIBRARY_DIRS} "${ydlidar_sdk_DIR}/../.."
++    REQUIRED)
++  add_library(ydlidar_sdk UNKNOWN IMPORTED)
++  set_target_properties(ydlidar_sdk PROPERTIES
++    IMPORTED_LOCATION "${YDLIDAR_SDK_LIBRARY}")
++endif()
+ ############## YDLIDAR SDK END#####################################
+ 
+ #Include directories

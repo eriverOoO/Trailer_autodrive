@@ -1,0 +1,21 @@
+
+# ROS 2 build artifacts
+build/
+install/
+log/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# ROS bags and recorded data
+*.bag
+*.db3
+*.mcap
+
+# Credentials
+.env
+.env.*
+*.pem
+

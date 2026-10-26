@@ -1,0 +1,97 @@
+{
+  "scan_rate_increase_percent": 20.56942490237219,
+  "median_bins_change_percent": -17.105970952124792,
+  "checksum_full_run": 6,
+  "driver_scan_failures": 0,
+  "driver_successful_connections": 1,
+  "driver_reconnect_log_entries": 0,
+  "earlier_point_warnings_full_run": 14,
+  "earlier_points_full_run": 97,
+  "earlier_point_warnings_during_probe": 13,
+  "earlier_points_during_probe": 95,
+  "cpu_mean_one_core_percent": {
+    "driver": 0.5691959567510289,
+    "cartographer": 7.276496593055496,
+    "occupancy_grid": 0.3692095659493648,
+    "rviz": 5.461492027122555
+  },
+  "maximum_observed_valid_return_m": 9.420499801635742,
+  "cartographer_fatal_or_error_log_entries": 0,
+  "warnings": [
+    {
+      "stamp_s": 1792237953.0678089,
+      "points": 11,
+      "within_probe": true
+    },
+    {
+      "stamp_s": 1792237960.1898766,
+      "points": 1,
+      "within_probe": true
+    },
+    {
+      "stamp_s": 1792237962.7619412,
+      "points": 12,
+      "within_probe": true
+    },
+    {
+      "stamp_s": 1792237966.7932665,
+      "points": 1,
+      "within_probe": true
+    },
+    {
+      "stamp_s": 1792237981.368039,
+      "points": 2,
+      "within_probe": true
+    },
+    {
+      "stamp_s": 1792237983.2551413,
+      "points": 16,
+      "within_probe": true
+    },
+    {
+      "stamp_s": 1792237984.9686737,
+      "points": 5,
+      "within_probe": true
+    },
+    {
+      "stamp_s": 1792237990.109403,
+      "points": 1,
+      "within_probe": true
+    },
+    {
+      "stamp_s": 1792237996.5314512,
+      "points": 8,
+      "within_probe": true
+    },
+    {
+      "stamp_s": 1792237998.2437139,
+      "points": 9,
+      "within_probe": true
+    },
+    {
+      "stamp_s": 1792237999.1859267,
+      "points": 10,
+      "within_probe": true
+    },
+    {
+      "stamp_s": 1792238006.5456223,
+      "points": 13,
+      "within_probe": true
+    },
+    {
+      "stamp_s": 1792238007.8280098,
+      "points": 6,
+      "within_probe": true
+    },
+    {
+      "stamp_s": 1792238012.626854,
+      "points": 2,
+      "within_probe": false
+    }
+  ],
+  "clean_exit_count": 4,
+  "final_setting": "12Hz / 18K / 15m; stationary repeat verified; original 10Hz recoverable",
+  "earlier_points_per_second_previous": 0.15570757541850108,
+  "earlier_points_per_second_new": 1.4640835947048165,
+  "earlier_points_vs_observed_valid_scan_returns_percent": 0.01606018342420016
+}

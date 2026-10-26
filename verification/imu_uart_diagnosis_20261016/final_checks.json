@@ -1,0 +1,21 @@
+{
+  "unchanged:src/ebimu_driver/ebimu_driver/__init__.py": true,
+  "unchanged:src/ebimu_driver/ebimu_driver/node.py": true,
+  "unchanged:src/ebimu_driver/ebimu_driver/protocol.py": true,
+  "unchanged:src/ebimu_driver/setup.py": true,
+  "previous_PROGRESS_preserved": true,
+  "syntax:tools/diagnose_ebimu.py": true,
+  "syntax:src/ebimu_driver/ebimu_driver/configure.py": true,
+  "actual_TTY:03_query_baud_38400": true,
+  "actual_TTY:02_queries_low_115200": true,
+  "actual_TTY:03_query_baud_9600": true,
+  "actual_TTY:03_query_baud_57600": true,
+  "actual_TTY:03_query_baud_230400": true,
+  "actual_TTY:03_query_baud_19200": true,
+  "actual_TTY:03_query_baud_460800": true,
+  "actual_TTY:04_queries_high_115200": true,
+  "actual_TTY:03_query_baud_921600": true,
+  "actual_TTY:01_passive_low": true,
+  "missing_port_error_handled": true,
+  "configure_modified_as_reported": true
+}

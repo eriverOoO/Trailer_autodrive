@@ -1,0 +1,34 @@
+header:
+  stamp:
+    sec: 1792481376
+    nanosec: 868456091
+  frame_id: ''
+status:
+- level: "\0"
+  name: /vehicle_viz_2d/tractor/UART
+  message: 'LIVE:'
+  hardware_id: /dev/serial/by-path/pci-0000:80:14.0-usb-0:8:1.0-port0
+  values:
+  - key: rx_bytes
+    value: '5186205'
+  - key: tx_bytes
+    value: '0'
+  - key: parsed
+    value: '72720'
+  - key: rejected
+    value: '0'
+  - key: published
+    value: '72720'
+  - key: sensor_rollovers
+    value: '12'
+  - key: estimated_missing
+    value: '0'
+  - key: sensor_clock_event
+    value: LIVE
+  - key: timestamp
+    value: host receipt, not hardware synchronized
+  - key: covariance
+    value: received fields unknown=0; unavailable=-1
+  - key: reference
+    value: manufacturer native; mounting and sign require validation
+---

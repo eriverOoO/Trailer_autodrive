@@ -1,0 +1,145 @@
+--- before/tractor_trailer_rviz_2d/visualizer.py
++++ after/tractor_trailer_rviz_2d/visualizer.py
+@@ -15,7 +15,7 @@
+ from std_srvs.srv import SetBool
+ from tf2_ros import Buffer,TransformListener,TransformException
+ from visualization_msgs.msg import MarkerArray
+-from .core import YawTrack,Alignment,vehicle_poses,validate_geometry,yaw_quat
++from .core import YawTrack,Alignment,vehicle_poses,validate_geometry,yaw_quat,rot2
+ from .render_adapter import Renderer,unavailable
+ 
+ 
+@@ -27,7 +27,7 @@
+     def __init__(self,**kwargs):
+         super().__init__('tractor_trailer_2d_visualizer',**kwargs)
+         share=Path(get_package_share_directory('tractor_trailer_rviz_2d'))
+-        for k,v in dict(config_file=str(share/'config/live.yaml'),tractor_topic='',trailer_topic='',slam_frame='',output_directory='').items():
++        for k,v in dict(config_file=str(share/'config/live.yaml'),tractor_topic='',trailer_topic='',slam_frame='',output_directory='',visualization_mode='').items():
+             self.declare_parameter(k,v)
+         c=self.cfg=yaml.safe_load(Path(self.get_parameter('config_file').value).read_text())
+         self.test=c['mode']=='TEST'
+@@ -38,6 +38,11 @@
+         if not self.test and ('test' in c['namespace'] or c['fixed_frame']!='map'):
+             raise ValueError('LIVE requires map and real input namespace')
+         self.ns,self.frame=c['namespace'],c['fixed_frame']
++        self.visualization_mode=(self.get_parameter('visualization_mode').value
++                                 or c.get('visualization_mode','FULL_VEHICLE'))
++        if self.visualization_mode not in ('FULL_VEHICLE','TRACTOR_ONLY_DIAGNOSTIC'):
++            raise ValueError('unknown visualization_mode')
++        self.diagnostic_anchor=None
+         self.slam_frame=self.get_parameter('slam_frame').value or c['slam_frame']
+         self.geom=c['geometry'];self.geometry_error=''
+         try:
+@@ -62,6 +67,7 @@
+         self.status=self.create_publisher(String,self.ns+'/status',10)
+         self.align=Alignment()
+         self.create_service(SetBool,self.ns+'/align_straight',self.on_align)
++        self.create_service(SetBool,self.ns+'/reset_diagnostic_reference',self.on_diagnostic_reset)
+         self.create_subscription(String,c['state_topic'],self.on_state,10)
+         design=json.loads((share/'models/reference_footprints.json').read_text())
+         self.renderer=Renderer(self,design['polygons'],self.geom['rear_axle_to_hitch_xy'])
+@@ -168,9 +174,72 @@
+             res.success=False;res.message=str(exc)
+         return res
+ 
++    def on_diagnostic_reset(self,req,res):
++        if self.visualization_mode!='TRACTOR_ONLY_DIAGNOSTIC':
++            res.success=False;res.message='diagnostic mode only; full alignment unchanged'
++        else:
++            self.diagnostic_anchor=None;self.last_model=None;self.renderer.last_viz=0.
++            res.success=True
++            res.message='diagnostic first-sample reference cleared; no physical alignment claimed'
++        return res
++
++    def tractor_diagnostic(self,info,now,wall):
++        """A display-only icon; full vehicle validity remains false."""
++        a=self.tracks['tractor']
++        if self.source_fault['tractor'] or a.state(wall,now)!='LIVE':
++            raise ValueError('tractor IMU must be LIVE')
++        if a.source!='orientation':
++            raise ValueError('tractor diagnostic requires measured orientation')
++        p=self.get_slam();common=min(a.last_stamp,stamp_ns(p.header.stamp))
++        if (now-common)/1e9>min(self.cfg['imu_timeout_s'],self.cfg['pose_timeout_s']):
++            raise ValueError('tractor/SLAM sample stale')
++        native=a.at(common)
++        p=self.buffer.lookup_transform(self.frame,self.slam_frame,Time(nanoseconds=common))
++        slam_yaw=yaw_quat(quaternion(p.transform.rotation))
++        cfg=self.cfg.get('tractor_diagnostic',{})
++        measured=cfg.get('extrinsics_confirmed',False) is True
++        offset=cfg.get('slam_to_rear_axle_xy');mount_yaw=cfg.get('slam_to_body_yaw_rad')
++        if measured:
++            if (not isinstance(offset,list) or len(offset)!=2
++                    or not all(type(v) in (int,float) and math.isfinite(v) for v in offset)
++                    or type(mount_yaw) not in (int,float) or not math.isfinite(mount_yaw)):
++                raise ValueError('confirmed tractor extrinsics need measured XY and yaw')
++        elif cfg.get('allow_sensor_anchor') is not True:
++            raise ValueError('measure tractor extrinsics or explicitly select sensor-anchor diagnostic')
++        if self.diagnostic_anchor is None:
++            self.diagnostic_anchor=(native,slam_yaw+(mount_yaw if measured else 0.),a.epoch,common)
++        initial,heading,epoch,reference_stamp=self.diagnostic_anchor
++        if epoch!=a.epoch:raise ValueError('DIAGNOSTIC REFERENCE LOST; reset diagnostic reference')
++        delta=native-initial;display_yaw=heading+delta
++        xy=(p.transform.translation.x,p.transform.translation.y)
++        if measured:
++            lever=rot2(slam_yaw,offset);xy=(xy[0]+lever[0],xy[1]+lever[1])
++        if not all(math.isfinite(v) for v in (*xy,display_yaw)):
++            raise ValueError('diagnostic pose invalid')
++        mounting=self.cfg['tractor']['mounting_and_sign_confirmed'] is True
++        position_reference='MEASURED_REAR_AXLE' if measured else 'UNMEASURED_SENSOR_ANCHOR'
++        text='TRACTOR DIAG\nphi=N/A\n'+('REAR AXLE' if measured else 'SENSOR ANCHOR')
++        if not measured or not mounting:text+='\nUNALIGNED'
++        text+='\nTRAILER NO DATA' if info['imu']['trailer']=='NO DATA' else '\nTRAILER UNUSED'
++        batch=self.renderer.render_tractor(xy,display_yaw,text,self.frame)
++        self.last_model=batch;self.last_xy=xy
++        info.update(valid=False,diagnostic_valid=True,vehicle_pose_valid=measured and mounting,
++                    full_vehicle_valid=False,visualization_mode=self.visualization_mode,
++                    position_reference=position_reference,position_source=self.slam_frame,
++                    mounting_and_sign_confirmed=mounting,extrinsics_confirmed=measured,
++                    heading_reference='INITIAL_SLAM_TRACKING_YAW_PLUS_NATIVE_IMU_DELTA',
++                    heading_alignment_verified=measured and mounting,
++                    display_anchor_xy=xy,display_yaw_rad=display_yaw,
++                    native_imu_delta_rad=delta,reference_stamp_ns=reference_stamp,
++                    values={'tractor_delta':delta,'tractor_yaw':display_yaw if measured and mounting else None,
++                            'trailer_yaw':None,'phi':None},reason='DIAGNOSTIC_ONLY',
++                    paired_stamp_ns=common,paired_age_ms=(now-common)/1e6)
++        return batch
++
+     def tick(self):
+         now,wall=self.get_clock().now().nanoseconds,time.monotonic()
+         info=dict(mode='TEST/SIMULATED' if self.test else 'REAL_INPUT',stamp_ns=now,valid=False,
++                  visualization_mode=self.visualization_mode,diagnostic_valid=False,
+                   imu={r:'INVALID' if self.source_fault[r] else t.state(wall,now) for r,t in self.tracks.items()},
+                   imu_age_s={r:None if t.last_wall is None else wall-t.last_wall for r,t in self.tracks.items()},
+                   imu_reason={r:t.error for r,t in self.tracks.items()},
+@@ -180,17 +249,20 @@
+         except (ValueError,TransformException):info['slam']='STALE' if self.last_slam_stamp is not None else 'NO DATA'
+         batch=None
+         try:
+-            self.require_alignment();common,p=self.coherent()
+-            values=self.align.evaluate(self.tracks['tractor'],self.tracks['trailer'],common)
+-            xy=p.transform.translation
+-            poses=vehicle_poses((xy.x,xy.y),yaw_quat(quaternion(p.transform.rotation)),values['tractor_yaw'],values['trailer_yaw'],self.geom)
+-            state=[*poses['tractor'],values['tractor_yaw'],values['trailer_yaw']]
+-            stage=('TEST/SIMULATED ' if self.test else '')+self.stage()
+-            if self.renderer.stage!=stage:self.renderer.last_viz=0.
+-            batch=self.renderer.render(state,stage,self.frame)
+-            self.last_model=batch;self.last_xy=poses['tractor']
+-            info.update(valid=True,values=values,poses=poses,paired_stamp_ns=common,
+-                        paired_age_ms=(now-common)/1e6,reason='OK',marker_update_period_s=.4)
++            if self.visualization_mode=='TRACTOR_ONLY_DIAGNOSTIC':
++                batch=self.tractor_diagnostic(info,now,wall)
++            else:
++                self.require_alignment();common,p=self.coherent()
++                values=self.align.evaluate(self.tracks['tractor'],self.tracks['trailer'],common)
++                xy=p.transform.translation
++                poses=vehicle_poses((xy.x,xy.y),yaw_quat(quaternion(p.transform.rotation)),values['tractor_yaw'],values['trailer_yaw'],self.geom)
++                state=[*poses['tractor'],values['tractor_yaw'],values['trailer_yaw']]
++                stage=('TEST/SIMULATED ' if self.test else '')+self.stage()
++                if self.renderer.stage!=stage:self.renderer.last_viz=0.
++                batch=self.renderer.render(state,stage,self.frame)
++                self.last_model=batch;self.last_xy=poses['tractor']
++                info.update(valid=True,values=values,poses=poses,paired_stamp_ns=common,
++                            paired_age_ms=(now-common)/1e6,reason='OK',marker_update_period_s=.4)
+         except (ValueError,TransformException) as exc:
+             info['reason']=str(exc)
+             brief='T:'+info['imu']['tractor'].replace(' ','_')+' R:'+info['imu']['trailer'].replace(' ','_')+' SLAM:'+info['slam'].replace(' ','_')

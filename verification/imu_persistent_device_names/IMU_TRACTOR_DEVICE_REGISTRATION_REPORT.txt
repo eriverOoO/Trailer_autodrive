@@ -1,0 +1,148 @@
+IMU_TRACTOR_DEVICE_REGISTRATION_REPORT
+작성: 2026-10-19T21:40:28.809781+09:00
+
+진행률: 30% (실제 장치 식별·USB 식별자 중복 분석 완료)
+후보 규칙·안전 설치 도구·실행 및 원복 안내는 작성 완료.
+실제 등록 목표는 미완료. /dev/imu_tractor는 아직 생성되지 않았으며 100% 성공으로 보고하지 않음.
+전용 USB 소켓 지정에 대한 사용자 선택 대기. sudo 비밀번호 입력도 정상 사용자 터미널이 필요함.
+
+1. 실제 트랙터 IMU USB 정보
+사용자가 현재 트랙터용 EBIMU 한 개가 연결됐다고 명시했고, 현재 실제 ASCII 패킷 수신으로 교차 확인.
+현재 CP2102 한 개. Device /dev/ttyUSB0 (관측값이며 규칙의 고정 번호로 사용하지 않음).
+VID/PID10c4:ea60, manufacturer Silicon Labs, product CP2102 USB to UART Bridge Controller.
+USB serial0001, interface00, revision0100, driver cp210x.
+ID_SERIAL=Silicon_Labs_CP2102_USB_to_UART_Bridge_Controller_0001
+ID_PATH=pci-0000:80:14.0-usb-0:8:1.0
+by-id=/dev/serial/by-id/usb-Silicon_Labs_CP2102_USB_to_UART_Bridge_Controller_0001-if00-port0
+by-path=/dev/serial/by-path/pci-0000:80:14.0-usb-0:8:1.0-port0
+현재 root:dialout 0660, 사용자 dialout 그룹, R/W 접근 가능, fuser 점유 없음.
+기존 LiDAR/Cartographer/IMU 드라이버 실행은 조사 시 확인되지 않음. ModemManager는 실행 중이며 변경하지 않음.
+
+2. 식별 방법 분석 / 설치 보류 이유
+과거 실제 G6 성공 기록 verification/g6_12hz/udev.txt와 lidar_hardware.log를 조사.
+G6에도 VID/PID, serial0001, ID_SERIAL, interface00, revision0100이 동일하며 당시 ID_PATH까지 현재와 동일.
+단순 serial 또는 전체 제품명으로 두 역할을 구분할 수 없음.
+현재 연결 장치는 사용자 확인과 실제 EBIMU 패킷으로 식별했지만, 그 USB 정보 자체가 역할 고유값은 아님.
+EEPROM이나 USB serial을 변경하지 않고, G6 UART를 자동 점유하는 udev PROGRAM도 사용하지 않음.
+대안 후보는 ID_PATH를 포함한 '전용 USB 소켓' 규칙.
+이것도 센서 고유 식별이 아니며 지정 소켓에 G6를 꽂으면 G6도 매칭함.
+따라서 현재 소켓을 트랙터 전용으로 사용할지, 다른 소켓을 지정할지, 설치 보류할지 사용자에게 질문한 상태.
+이 선택을 받기 전에는 안전 조건이 확정되지 않아 /etc에 설치하지 않음.
+
+3. USB 포트 변경 시
+현재 정보로 USB 소켓과 무관한 안전한 역할 자동 식별은 불가능.
+후보는 현재 USB 소켓에서 ttyUSB 번호가 달라져도 /dev/imu_tractor를 만드는 역할 매핑.
+다른 소켓으로 옮기면 후보의 ID_PATH와 달라져 별칭이 만들어지지 않음.
+'어느 USB 포트에서도 같은 이름으로 인식'을 달성했다고 주장하지 않음.
+아직 연결하지 않은 트레일러 IMU의 serial 고유성도 미검증.
+
+4. 조건부 후보 규칙의 정확한 내용
+파일: /home/venezuelachocolatemilk/mvsim_slam_real/verification/imu_persistent_device_names/99-ebimu-tractor.rules.candidate
+설치 예정 경로: /etc/udev/rules.d/99-ebimu-tractor.rules
+
+# Dedicated tractor USB socket only. Serial 0001 is NOT globally unique.
+# Other sockets are not matched. Never connect G6/another CP2102 here.
+ACTION=="add|change", SUBSYSTEM=="tty", KERNEL=="ttyUSB[0-9]*", ENV{ID_BUS}=="usb", ATTRS{idVendor}=="10c4", ATTRS{idProduct}=="ea60", ATTRS{serial}=="0001", ENV{ID_USB_INTERFACE_NUM}=="00", ENV{ID_PATH}=="pci-0000:80:14.0-usb-0:8:1.0", SYMLINK+="imu_tractor"
+
+SYMLINK만 추가. /dev/ttyUSB 노드 이름, 장치 MODE/GROUP/OWNER는 변경하지 않음.
+현재 설치된 60-serial.rules가 먼저 usb_id/path_id/ID_USB_INTERFACE_NUM을 제공하는 것을 확인.
+설치 전 기존 rule 이름과 imu_tractor 별칭 규칙을 다시 검사하도록 구성.
+근거: 설치된 systemd249와 공식 udev249 문서
+https://www.freedesktop.org/software/systemd/man/249/udev.html
+
+5. 실제 설치 여부
+미설치. /etc/udev/rules.d/99-ebimu-tractor.rules는 없음.
+기존 같은 이름의 규칙/imu_tractor 별칭 관련 규칙은 조사 시 발견되지 않았음.
+기존 udev 규칙120개 해시 변경0.
+현재 sudo -n true는 '암호가 필요합니다'로 실패. 비밀번호를 요청·기록하거나 우회하지 않았음.
+scripts/install_rule.py는 전용 소켓 확인 상태가 PENDING이면 root 설치 전에 거절함을 시험.
+설치 준비는 되었으나 실제 udev test/reload/trigger/설치는 아직 수행하지 않음.
+후보가 실제 udev event로 검증됐다고 주장하지 않음.
+
+6. /dev/imu_tractor 생성
+아직 없음. 수동 ln -s로 임시 성공을 꾸미지 않았음.
+udev로 생성된 실제 별칭을 확인하는 시험 A는 미수행.
+
+7. 실제 UART 수신 시험
+시각: 2026-10-19T21:34:09.453031+09:00
+포트: /dev/serial/by-id/usb-Silicon_Labs_CP2102_USB_to_UART_Bridge_Controller_0001-if00-port0
+115200bps 8N1, no flow control, passive RX only, TX0.
+Open 성공. Duration 5.000987s.
+RX bytes 37481, bytes/s 7494.720836.
+정상 패킷 499, 오류 패킷 0, 약 99.994860Hz.
+정상 패킷 길이75byte. 시작 시 걸친 부분56byte를 버리고 *...CRLF 프레임으로 재동기화.
+출력은11필드 Quaternion(qz,qy,qx,qw), gyro, acceleration, sensor timestamp.
+Quaternion norm·유한값·필드 수·프레임 경계를 독립 진단 파서로 검증.
+ASCII에는 제조사 정의 checksum 필드가 없어 checksum 검증은 N/A.
+증거: evidence/current_uart/rx.bin, rx_chunks.jsonl, samples.jsonl, summary.json.
+이 결과는 이번 새 실제 측정이며 과거29086byte/399패킷/99.64Hz를 복사한 것이 아님.
+단, /dev/imu_tractor를 통한 시험 D는 별칭 미생성으로 미수행.
+
+8. 재연결 / 다른 USB 소켓 시험
+B 같은 소켓 분리·재연결: 미수행. 사용자에게 실제 재연결 확인을 받아야 함.
+C 다른 소켓: 미수행. 후보 방식 자체가 소켓 종속이며 전 포트 동일 역할 유지 조건을 충족하지 않음.
+실제로 하지 않은 연결 시험을 PASS로 기록하지 않음.
+
+9. G6 충돌
+현재 G6는 연결/실행된 것으로 확인되지 않음. 실제 동시 연결 시험 E는 미수행.
+과거 G6의 USB 식별자가 동일함을 근거로 serial-only 규칙은 배제.
+ID_PATH 방식은 지정 소켓 외의 G6를 매칭하지 않지만, 지정 소켓에 꽂힌 G6는 구분하지 못함.
+따라서 'G6와 충돌 없음'을 무조건 PASS로 보고하지 않음.
+별칭 자체보다 역할 식별이 우선이라는 요청에 따라 전용 소켓 결정 전 설치하지 않음.
+
+10. 기존 코드와 시스템 보호
+기존 실차 코드 및 원본 final B source/config/assets 보호 해시 411개 변경0.
+Cartographer/G6/LQR/Hybrid A*/Arduino/Serial Sender/IMU/RViz/차량제어 수정 없음.
+원본 ~/mvsim_slam 및 과거 records에 쓰기 작업 없음(전체 대용량 기록을 해시한 것은 아님).
+기존 udev 규칙 삭제/덮어쓰기 없음. 규칙120개 내용 변경0.
+CP2102 EEPROM/serial 변경0, 센서 설정 TX0, 모터/조향 명령0.
+Git commit/push/pull 및 원격 작업 없음. 진단 파일은 지정된 새 디렉터리에 생성.
+
+11. 설치/검증/ROS 연결/원복
+소켓 선택이 확정된 뒤 device_selection.json의 확인 상태를 갱신하고, 장치 인스턴스·패킷을 재확인.
+그 뒤 사용자의 정상 터미널에서:
+cd /home/venezuelachocolatemilk/mvsim_slam_real/verification/imu_persistent_device_names
+cat 99-ebimu-tractor.rules.candidate
+sudo /usr/bin/python3 scripts/install_rule.py --dedicated-port-confirmed
+비밀번호는 터미널의 sudo 입력란에만 입력. 코드·대화·로그에 적지 말 것.
+
+설치 도구는 기존 규칙/별칭을 덮어쓰지 않고 새 파일을 O_EXCL로 생성.
+udev reload 후 해당 tty 한 개만 change trigger. 전체 USB trigger/드라이버 재시작 없음.
+성공/실패 기록은 evidence/installation_result.json.
+현재는 PENDING이므로 위 명령도 설치를 거절함. 먼저 전용 포트 지정이 필요.
+
+별칭 생성 후:
+ls -l /dev/imu_tractor
+readlink -f /dev/imu_tractor
+udevadm info -q property -n /dev/imu_tractor
+
+별칭으로 UART 재시험:
+cd /home/venezuelachocolatemilk/mvsim_slam_real
+PYTHONDONTWRITEBYTECODE=1 /usr/bin/python3 verification/ebimu9dofv6_rviz/scripts/serial_probe.py --port /dev/imu_tractor --confirmed-imu-port --seconds 5 --output "verification/imu_persistent_device_names/evidence/alias_uart_$(date +%Y%m%d_%H%M%S)"
+
+기존 실제 launch의 imu_port 인자를 source와 installed 파일에서 확인했고 --show-args도 확인:
+source /opt/ros/humble/setup.bash
+source /home/venezuelachocolatemilk/mvsim_slam_real/install/setup.bash
+ros2 launch mvsim_slam_real_bringup ebimu.launch.py imu_port:=/dev/imu_tractor
+현재는 별칭이 없으므로 이 실제 드라이버를 실행하지 않았음.
+기존 /tractor/imu/data를 발행하므로 raw 진단과 동시에 실행하지 않음.
+
+원복은 실제로 이번 규칙을 설치했을 때만 필요함. 현재는 미설치라 원복할 시스템 변경 없음.
+이번 설치 기록과 후보 파일의 일치를 확인한 다음에만 아래 명령 사용:
+sudo cmp -- 99-ebimu-tractor.rules.candidate /etc/udev/rules.d/99-ebimu-tractor.rules
+비교 성공 및 이번 생성 파일임을 확인했을 때만:
+sudo rm -- /etc/udev/rules.d/99-ebimu-tractor.rules
+sudo udevadm control --reload-rules
+사용자가 트랙터 USB만 재연결하면 별칭 제거됨. 다른 기존 규칙이나 ttyUSB 노드는 삭제하지 않음.
+비교 실패/다른 파일이면 삭제하지 말 것.
+
+12. 향후 트레일러 등록
+/dev/imu_trailer는 이름만 예약. 실제 규칙·별칭은 만들지 않음.
+두 번째 센서 연결 후 실제 VID/PID/serial/interface/ID_PATH와 UART 패킷을 새로 측정.
+serial0001 중복 여부 및 G6까지 포함한 역할 구분을 다시 검사.
+전용 소켓 방식을 쓰면 세 역할이 서로 다른 소켓을 사용해야 하며 바꿔 꽂으면 자동 구분되지 않음.
+고유 USB serial이 없는 상태에서 포트 무관 자동 식별을 달성했다고 주장하지 말 것.
+
+현재 남은 필수 입력
+현재 소켓을 트랙터 전용으로 예약할지 / 다른 소켓을 지정할지 / 설치 보류할지 사용자 선택.
+확정 후에만 등록, 별칭 UART 수신 및 재연결 검증을 이어갈 수 있음.

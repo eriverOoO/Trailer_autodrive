@@ -1,0 +1,17 @@
+lidar_gateway:
+  ros__parameters:
+    input_topic: /lidar_raw
+    output_topic: /scan
+    frame_id: laser_frame
+    angle_offset: 0.0
+    reverse_direction: false
+    timeout: 0.5
+rplidar_source:
+  ros__parameters:
+    port: ''
+    enable_device: false
+    frame_id: laser_frame
+    bins: 720
+    range_min: 0.15
+    range_max: 12.0
+    clockwise: true

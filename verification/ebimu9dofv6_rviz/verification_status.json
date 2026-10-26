@@ -1,0 +1,36 @@
+{
+  "current_task_progress_percent": 10,
+  "physical_port_identity": "AWAITING_USER_CONFIRMATION",
+  "current_uart_opened": false,
+  "current_rx_bytes": null,
+  "current_packet_rate_hz": null,
+  "current_ros_imu": "NOT_TESTED",
+  "current_real_rviz": "NOT_TESTED",
+  "roll": "NOT_TESTED",
+  "pitch": "NOT_TESTED",
+  "yaw": "NOT_TESTED",
+  "stationary": "NOT_TESTED",
+  "live_to_stale": "NOT_TESTED",
+  "mock_ros_publisher_used": false,
+  "history": {
+    "zero_rx_date": "2026-10-16",
+    "zero_rx_bytes": 0,
+    "successful_capture_date": "2026-10-19 15:32 KST",
+    "successful_capture_bytes": 29086,
+    "successful_capture_packets": 399,
+    "successful_capture_rate_hz": 99.64,
+    "historical_ros_messages": 958
+  },
+  "no_data_software": {
+    "test": "NO INPUT; no synthetic publisher; not actual hardware verification",
+    "marker_arrays": 77,
+    "status_samples": 77,
+    "all_no_data": true,
+    "no_cube_or_arrows": true,
+    "alive": [
+      true,
+      true
+    ]
+  },
+  "no_data_gui": "CONFIRMED_NO_DATA_TEXT_ONLY; screenshot rviz_window_no_data_final.png"
+}

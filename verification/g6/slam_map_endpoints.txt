@@ -1,0 +1,48 @@
+Type: nav_msgs/msg/OccupancyGrid
+
+Publisher count: 1
+
+Node name: cartographer_occupancy_grid_node
+Node namespace: /
+Topic type: nav_msgs/msg/OccupancyGrid
+Endpoint type: PUBLISHER
+GID: 01.0f.6e.b5.a3.5b.c7.3f.00.00.00.00.00.00.14.03.00.00.00.00.00.00.00.00
+QoS profile:
+  Reliability: RELIABLE
+  History (Depth): UNKNOWN
+  Durability: TRANSIENT_LOCAL
+  Lifespan: Infinite
+  Deadline: Infinite
+  Liveliness: AUTOMATIC
+  Liveliness lease duration: Infinite
+
+Subscription count: 2
+
+Node name: g6_real_data_probe
+Node namespace: /
+Topic type: nav_msgs/msg/OccupancyGrid
+Endpoint type: SUBSCRIPTION
+GID: 01.0f.6e.b5.0b.5c.3a.c9.00.00.00.00.00.00.15.04.00.00.00.00.00.00.00.00
+QoS profile:
+  Reliability: RELIABLE
+  History (Depth): UNKNOWN
+  Durability: TRANSIENT_LOCAL
+  Lifespan: Infinite
+  Deadline: Infinite
+  Liveliness: AUTOMATIC
+  Liveliness lease duration: Infinite
+
+Node name: g6_rviz
+Node namespace: /
+Topic type: nav_msgs/msg/OccupancyGrid
+Endpoint type: SUBSCRIPTION
+GID: 01.0f.6e.b5.a5.5b.56.05.00.00.00.00.00.00.17.04.00.00.00.00.00.00.00.00
+QoS profile:
+  Reliability: RELIABLE
+  History (Depth): UNKNOWN
+  Durability: TRANSIENT_LOCAL
+  Lifespan: Infinite
+  Deadline: Infinite
+  Liveliness: AUTOMATIC
+  Liveliness lease duration: Infinite
+

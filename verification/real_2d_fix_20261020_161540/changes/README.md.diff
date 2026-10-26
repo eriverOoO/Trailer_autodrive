@@ -1,0 +1,53 @@
+--- before/README.md
++++ after/README.md
+@@ -1,4 +1,50 @@
+ # 최종 B와 같은 2D RViz — 실차 입력 전용
++
++## 트랙터 단독 진단 모드 (2026-10-20)
++
++전체 실차 모드 `FULL_VEHICLE`는 기존 기본값이며 두 IMU, 실측 기하, 장착축,
++일직선 정렬을 계속 요구한다. 트랙터만 표시할 때는 별도 모드를 명시한다.
++
++```bash
++ros2 launch tractor_trailer_rviz_2d visualization.launch.py \
++  config_file:=/home/venezuelachocolatemilk/mvsim_slam_real/visualization/tractor_trailer_rviz_2d/config/tractor_only_diagnostic.yaml \
++  visualization_mode:=TRACTOR_ONLY_DIAGNOSTIC slam_frame:=laser_frame
++```
++
++기존 RViz 창을 재사용할 때 `rviz:=false`를 추가한다. 기존 G6/Cartographer와 같은
++ROS_DOMAIN_ID 및 ROS_LOCALHOST_ONLY 환경을 사용한다. 이 Launch는 센서를 시작하지 않는다.
++IMU 수신에는 기존 `imu_bridges.launch.py`를 실제 확인한 포트로 별도 실행한다.
++
++이 모드는 실제 `map -> laser_frame`과 트랙터 IMU만 사용한다. 원본 트랙터 10개 꼭짓점,
++민트색/0.04m 선, 원본 크기를 그대로 그린다. 트랙터 화살표는 원본 화살표와 같은
++빨강/0.8,0.08,0.18m이며 트랙터 hull의 중심에 표시한다. 트레일러 Marker와 Yaw는
++생성하지 않고 phi는 N/A다. `reference_renderer.py`의 원본 메서드는 변경하지 않았다.
++
++실측 LiDAR→후륜 XY 및 LiDAR→차체 Yaw가 없으면 **센서 기준 미교정 진단 아이콘**이다.
++후륜을 센서 위치와 같다고 측정한 것이 아니다. `SENSOR ANCHOR`, `UNALIGNED`를 표시하고
++상태 JSON에 `position_reference=UNMEASURED_SENSOR_ANCHOR`, `vehicle_pose_valid=false`,
++`heading_alignment_verified=false`를 기록한다. 원본 hull은 디자인이며 실차 실측 치수가 아니다.
++표시 방향은 최초 SLAM 추적축 방향에 실제 IMU의 초기 대비 변화량을 더한다.
++센서 장착/sign과 map 절대 heading은 미검증이며 실제 차체 방향으로 해석하면 안 된다.
++`diagnostic_valid=true`는 신선한 표시 입력을 뜻하고, 전체 상태 `valid`는 false로 유지한다.
++
++실측값을 얻으면 `tractor_diagnostic.extrinsics_confirmed`, `slam_to_rear_axle_xy`,
++`slam_to_body_yaw_rad`와 tractor mounting/sign을 실제 값으로 설정한다. 미측정값을 0으로
++확정하지 않는다. 센서 간극/reset 뒤 진단 기준이 소실되면 시각화에만 다음을 사용한다.
++
++```bash
++ros2 service call /vehicle_viz_2d/reset_diagnostic_reference std_srvs/srv/SetBool '{data: true}'
++```
++
++이는 물리 정렬을 확인하는 서비스가 아니다. 전체 실차의 `align_straight` 조건을 완화하지 않는다.
++이 노드는 Marker/status만 발행하며 차량 제어, 센서 명령 또는 TF를 발행하지 않는다.
++
++IMU 브리지는 EBIMU의 정상 60000ms 카운터 순환을 처리하고, 중복/경계 밖 역행/긴 RX 공백/
++호스트 시간과 불일치하는 점프는 INVALID 처리한다. 진단값 `sensor_rollovers`,
++`estimated_missing`, `sensor_clock_event`를 확인한다. 정상 순환과 정확히 같은 시점/패킷을
++만드는 물리 리셋은 카운터만으로 완전히 구별할 수 없다. ROS header는 기존대로 호스트 수신 시각이다.
++
++아래는 최초 이식 당시의 전체 실차 모드 설명과 시험 기록이다.
+ 
+ 2D 코드·디자인 이식과 소프트웨어 시험을 완료했다. **현재 실제 두 IMU·G6·Cartographer 연동은 미검증이다.**
+ 기본 LIVE 실행은 실제 입력만 기다린다. 가상 지도·Scan·IMU·Ground Truth를 자동으로 공급하지 않는다.

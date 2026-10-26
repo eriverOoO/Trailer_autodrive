@@ -1,0 +1,7 @@
+1792237577.7721043 [INFO] [launch]: All log files can be found below /home/venezuelachocolatemilk/mvsim_slam_real/verification/g6_12hz/ros/2026-10-17-20-46-17-771497-venezuelachocolatemilk-Legion-Pro-5-16IAX10H-33488
+1792237577.7721853 [INFO] [launch]: Default logging verbosity is set to INFO
+1792237577.8394282 [INFO] [ydlidar_ros2_driver_node-1]: process started with pid [33490]
+1792237782.5951509 [WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+1792237782.5956731 [INFO] [ydlidar_ros2_driver_node-1]: sending signal 'SIGINT' to process[ydlidar_ros2_driver_node-1]
+1792237783.8032479 [INFO] [ydlidar_ros2_driver_node-1]: process has finished cleanly [pid 33490]
+1792237783.8034599 [INFO] [launch]: process[ydlidar_ros2_driver_node-1] was required: shutting down launched system

@@ -1,0 +1,28 @@
+# Official G6: 512000 baud, 18 kHz ranging, 12 Hz rotation.
+# Explicit port is required by g6_lidar.launch.py / g6_slam.launch.py.
+ydlidar_ros2_driver_node:
+  ros__parameters:
+    port: ''
+    frame_id: laser_frame
+    baudrate: 512000
+    lidar_type: 1
+    device_type: 0
+    sample_rate: 18
+    frequency: 12.0
+    isSingleChannel: false
+    intensity: false
+    intensity_bit: 0
+    support_motor_dtr: false
+    abnormal_check_count: 4
+    fixed_resolution: false
+    reversion: false
+    inverted: true
+    auto_reconnect: true
+    angle_min: -180.0
+    angle_max: 180.0
+    range_min: 0.28
+    range_max: 15.0
+    ignore_array: ''
+    invalid_range_is_inf: false
+    debug: false
+    use_sim_time: false

@@ -1,0 +1,18 @@
+{
+  "driver_process_pid": 33490,
+  "cartographer_pid": 34455,
+  "occupancy_grid_pid": 34457,
+  "rviz_pid": 34459,
+  "driver_launch_pid": 33488,
+  "slam_launch_pid": 34454,
+  "port": "/dev/serial/by-id/usb-Silicon_Labs_CP2102_USB_to_UART_Bridge_Controller_0001-if00-port0",
+  "ROS_DOMAIN_ID": 220,
+  "ROS_LOCALHOST_ONLY": 1,
+  "backup": "/home/venezuelachocolatemilk/mvsim_slam_real/backups/g6_10hz_before_12hz_20261017_204438",
+  "mode": "stationary_sensor_frame_no_IMU_no_odometry",
+  "performance_observer": "tools/g6_performance_probe.py",
+  "SDK_G6_sampling_readback_supported": false,
+  "SDK_sampling_readback_evidence": "third_party/YDLidar-SDK/core/common/ydlidar_help.h:434 hasSampleRate excludes G6; SDK uses default model rate and scan-derived verification",
+  "driver_fixed_resolution": false,
+  "physical_15m_target_test": false
+}

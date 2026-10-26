@@ -1,0 +1,31 @@
+1792157990.1949234 [INFO] [launch]: All log files can be found below /home/venezuelachocolatemilk/mvsim_slam_real/verification/ros/2026-10-16-22-39-50-194542-venezuelachocolatemilk-Legion-Pro-5-16IAX10H-22218
+1792157990.1949875 [INFO] [launch]: Default logging verbosity is set to INFO
+1792157990.2121463 [INFO] [launch.user]: Development mode=True; actuation=False; absent sensors remain unavailable
+1792157990.2260077 [INFO] [sensor_tf-1]: process started with pid [22219]
+1792157990.2260923 [INFO] [state_estimator-2]: process started with pid [22221]
+1792157990.2261293 [INFO] [control_adapter-3]: process started with pid [22223]
+1792157990.2261591 [INFO] [lidar_gateway-4]: process started with pid [22225]
+1792157990.2261913 [INFO] [ebimu_node-5]: process started with pid [22227]
+1792157990.2262158 [INFO] [ebimu_node-6]: process started with pid [22229]
+1792157990.2262390 [INFO] [cartographer_node-7]: process started with pid [22231]
+1792157990.2262619 [INFO] [cartographer_occupancy_grid_node-8]: process started with pid [22233]
+1792157990.2262864 [INFO] [auto_parking-9]: process started with pid [22235]
+1792157994.0994513 [WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+1792157994.1010849 [INFO] [auto_parking-9]: sending signal 'SIGINT' to process[auto_parking-9]
+1792157994.1014185 [INFO] [cartographer_occupancy_grid_node-8]: sending signal 'SIGINT' to process[cartographer_occupancy_grid_node-8]
+1792157994.1017194 [INFO] [cartographer_node-7]: sending signal 'SIGINT' to process[cartographer_node-7]
+1792157994.1019940 [INFO] [ebimu_node-6]: sending signal 'SIGINT' to process[ebimu_node-6]
+1792157994.1022954 [INFO] [ebimu_node-5]: sending signal 'SIGINT' to process[ebimu_node-5]
+1792157994.1026013 [INFO] [lidar_gateway-4]: sending signal 'SIGINT' to process[lidar_gateway-4]
+1792157994.1028755 [INFO] [control_adapter-3]: sending signal 'SIGINT' to process[control_adapter-3]
+1792157994.1031485 [INFO] [state_estimator-2]: sending signal 'SIGINT' to process[state_estimator-2]
+1792157994.1034384 [INFO] [sensor_tf-1]: sending signal 'SIGINT' to process[sensor_tf-1]
+1792157994.1066654 [ERROR] [cartographer_occupancy_grid_node-8]: process has died [pid 22233, exit code -2, cmd '/opt/ros/humble/lib/cartographer_ros/cartographer_occupancy_grid_node -resolution 0.05 -publish_period_sec 1.0 --ros-args -r __node:=cartographer_occupancy_grid_node --params-file /home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/slam.yaml'].
+1792157994.1275337 [ERROR] [lidar_gateway-4]: process has died [pid 22225, exit code -2, cmd '/home/venezuelachocolatemilk/mvsim_slam_real/install/real_vehicle_bridge/lib/real_vehicle_bridge/lidar_gateway --ros-args --params-file /home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/lidar.yaml'].
+1792157994.1339326 [ERROR] [control_adapter-3]: process has died [pid 22223, exit code -2, cmd '/home/venezuelachocolatemilk/mvsim_slam_real/install/real_vehicle_bridge/lib/real_vehicle_bridge/control_adapter --ros-args --params-file /home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/controller.yaml --params-file /tmp/launch_params_5txg_axc'].
+1792157994.1349435 [ERROR] [ebimu_node-5]: process has died [pid 22227, exit code -2, cmd '/home/venezuelachocolatemilk/mvsim_slam_real/install/ebimu_driver/lib/ebimu_driver/ebimu_node --ros-args -r __node:=tractor_imu --params-file /home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/imu.yaml --params-file /tmp/launch_params_6elr8sty'].
+1792157994.1386728 [ERROR] [ebimu_node-6]: process has died [pid 22229, exit code -2, cmd '/home/venezuelachocolatemilk/mvsim_slam_real/install/ebimu_driver/lib/ebimu_driver/ebimu_node --ros-args -r __node:=trailer_imu --params-file /home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/imu.yaml --params-file /tmp/launch_params__xywf4ci'].
+1792157994.1421242 [ERROR] [state_estimator-2]: process has died [pid 22221, exit code -2, cmd '/home/venezuelachocolatemilk/mvsim_slam_real/install/real_vehicle_bridge/lib/real_vehicle_bridge/state_estimator --ros-args --params-file /tmp/launch_params_96x53gb4'].
+1792157994.1444228 [ERROR] [sensor_tf-1]: process has died [pid 22219, exit code -2, cmd '/home/venezuelachocolatemilk/mvsim_slam_real/install/real_vehicle_bridge/lib/real_vehicle_bridge/sensor_tf --ros-args --params-file /tmp/launch_params_faf7yro_'].
+1792157994.2097423 [INFO] [cartographer_node-7]: process has finished cleanly [pid 22231]
+1792157994.2490640 [ERROR] [auto_parking-9]: process has died [pid 22235, exit code 1, cmd '/home/venezuelachocolatemilk/mvsim_slam_real/install/real_parking/lib/real_parking/auto_parking --ros-args --params-file /home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/parking.yaml --params-file /tmp/launch_params_0w5s3lx4'].

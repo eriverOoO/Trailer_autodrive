@@ -1,0 +1,31 @@
+{
+  "physical_direction": "CCW",
+  "approx_physical_angle_deg": [
+    10,
+    20
+  ],
+  "before_window_end_ns": 1792482072567782957,
+  "after_window_end_ns": 1792482800358335866,
+  "pre_samples": 500,
+  "post_samples": 300,
+  "raw_yaw_before_mean_deg": 32.328845718300805,
+  "raw_yaw_after_mean_deg": -1.4325352067581612,
+  "raw_yaw_delta_deg": -33.761380925058965,
+  "pre_rpy_mean_deg": [
+    8.737574118594553,
+    11.363175157192183,
+    32.32884571830093
+  ],
+  "post_rpy_mean_deg": [
+    10.143081026754583,
+    -6.189128441863748,
+    -0.16026200988186146
+  ],
+  "post_yaw_span_deg": 2.440088509802562,
+  "last_data_age_s": 0.003219717,
+  "note": "Prompt-to-response interval exceeds 11 minutes; native yaw difference does not establish physical angle accuracy. Pitch changed; physical mounting calibration remains unverified.",
+  "visual_yaw_before_mean_deg": 0.1509789282535782,
+  "visual_yaw_after_mean_deg": -33.611052335293785,
+  "visual_yaw_delta_deg": -33.76203126354736,
+  "before_visual_sign": 1
+}

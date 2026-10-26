@@ -1,0 +1,34 @@
+{
+  "progress_percent": 100,
+  "status": "COMPLETE_WITH_DOCUMENTED_LIMITATIONS",
+  "adopted_setting": {
+    "frequency_hz": 12,
+    "sample_rate_k": 18,
+    "range_max_m": 15,
+    "baudrate": 512000
+  },
+  "stationary_measured_hz": 11.66643453885838,
+  "stationary_scan_span_s": 64.88700532099983,
+  "scan_messages": 758,
+  "matching_messages": 758,
+  "map_messages": 66,
+  "distinct_maps": 62,
+  "tests_passed": 20,
+  "packages_built": 12,
+  "preservation": "PASS",
+  "failures": [],
+  "changed_existing_files": [
+    "src/mvsim_slam_real_bringup/config/g6.yaml",
+    "src/mvsim_slam_real_bringup/config/g6_lidar_only.lua"
+  ],
+  "previous_evidence_preserved": true,
+  "all_owned_sensor_slam_processes_stopped": true,
+  "first_slam_run_excluded_due_to_user_confirmed_movement": true,
+  "report": "G6_12HZ_PERFORMANCE_REPORT.md",
+  "limitations": [
+    "earlier point timing warnings persist and increased",
+    "sampling register readback not provided for G6 by current SDK",
+    "15m physical target accuracy untested",
+    "vehicle extrinsics and moving SLAM outside stationary validation"
+  ]
+}

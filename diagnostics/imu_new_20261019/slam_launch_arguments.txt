@@ -1,0 +1,61 @@
+Arguments (pass arguments as '<name>:=<value>'):
+
+    'lidar_port':
+        Explicit G6 port; never inferred from ttyUSB numbering
+        (default: '')
+
+    'params_file':
+        G6 driver ROS parameters
+        (default: '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/g6.yaml')
+
+    'scan_topic':
+        Driver output and Cartographer LaserScan input
+        (default: '/scan')
+
+    'enable_rviz':
+        Display actual scans and map in RViz2
+        (default: 'false')
+
+    'rviz_config':
+        RViz display and camera configuration
+        (default: '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/rviz/g6.rviz')
+
+    'start_driver':
+        false subscribes to an already running driver
+        (default: 'true')
+
+    'frame_mode':
+        sensor: LiDAR-origin test; vehicle: measured extrinsics
+        (default: 'sensor')
+
+    'mount_file':
+        Measured LiDAR extrinsics
+        (default: '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/g6_mount.yaml')
+
+    'publish_mount_tf':
+        vehicle only; false uses existing external TF
+        (default: 'true')
+
+    'use_imu':
+        Enable EBIMU fusion with measured IMU extrinsics
+        (default: 'false')
+
+    'start_imu':
+        With use_imu: start driver; false uses external IMU topic
+        (default: 'true')
+
+    'imu_port':
+        Explicit IMU serial port, different from LiDAR
+        (default: '')
+
+    'imu_params_file':
+        11-field EBIMU parameters
+        (default: '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/ebimu_slam.yaml')
+
+    'publish_imu_tf':
+        false uses an external measured IMU TF
+        (default: 'true')
+
+    'imu_mount_file':
+        Measured IMU extrinsics
+        (default: '/home/venezuelachocolatemilk/mvsim_slam_real/install/mvsim_slam_real_bringup/share/mvsim_slam_real_bringup/config/g6_imu_mount.yaml')

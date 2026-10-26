@@ -1,0 +1,150 @@
+REAL_G6_TRACTOR_IMU_SLAM_TEST_20261020
+기록 시각: 2026-10-20T15:35:45.118039+09:00
+상태: 진행률 10%, 실제 물리 포트 식별에 필요한 사용자 확인 대기.
+이번 기록은 중간 결과이다. G6 SLAM 시험 성공 또는 전체 작업 완료 보고가 아니다.
+
+1. 실제 USB 조사
+CP210x 2개 인식. 양쪽 VID=10c4, PID=ea60, serial=0001, interface=00, revision=0100.
+/dev/ttyUSB0 -> /dev/serial/by-path/pci-0000:80:14.0-usb-0:7:1.0-port0 (USB 3-7)
+/dev/ttyUSB1 -> /dev/serial/by-path/pci-0000:80:14.0-usb-0:8:1.0-port0 (USB 3-8)
+역할: 둘 다 현재 G6/IMU 물리 역할 미확정. 번호/과거 기록으로 역할을 단정하지 않음.
+by-id 하나가 ttyUSB1을 가리키지만 식별자가 중복되어 역할 판별에 사용할 수 없음.
+/dev/imu_tractor 없음. 새 udev 규칙 설치/serial 변경 없음.
+사용자는 G6 1대, 트랙터 IMU 1대 연결 및 트레일러 IMU 미연결이라고 명시.
+초기 포트 점유 프로세스 없음, 사용자 dialout 그룹, 장치 권한 root:dialout 0660.
+과거 보고서의 3-8 IMU 기록은 현재 역할 보증이 아니므로 사용하지 않음.
+사용자에게 IMU USB만 분리 후 알려 달라고 요청. 응답 및 분리 확인 대기.
+현재까지 UART open/센서 TX 0회. 어느 포트에도 식별용 명령을 보내지 않음.
+
+2. G6 실제 기존 설정
+Launch: /home/venezuelachocolatemilk/mvsim_slam_real/src/mvsim_slam_real_bringup/launch/g6_slam.launch.py
+구현: src/mvsim_slam_real_bringup/mvsim_slam_real_bringup/g6_launch.py
+설정: src/mvsim_slam_real_bringup/config/g6.yaml
+baudrate=512000, sample_rate=18 (18K), frequency=12.0Hz, frame_id=laser_frame.
+range_min=0.15m, range_max=1.0m. 사용자 참고값 15m와 다름. 변경하지 않음.
+현재 g6_lidar_only.lua max_range=1.0m, missing_data_ray_length=1.0m.
+use_imu_data=false, frame_mode 기본 sensor, map -> odom -> laser_frame 구성.
+g6_mount.yaml measured=false; 차량 장착 xyz/rpy=null. 실제 base_footprint TF를 임의 생성하지 않음.
+소스와 빌드 runtime 주요 config/python 35개 비교 모두 일치. 재빌드 불필요.
+
+3. 실제 Scan 주파수
+미측정. /scan 실제 발행 및 스캔 회전/전원 정상은 아직 확인하지 않음.
+12Hz는 설정 목표이며 이번 실측값이 아님.
+
+4. Cartographer 실행 결과
+미실행. --show-args로 기존 Launch 인자만 확인.
+물리 포트 미확정으로 G6/Cartographer 시작 금지 조건을 지킴.
+기존 LiDAR-only 유지, IMU 추가 입력 없음.
+기존 실행 중인 SLAM/센서/제어 노드 없음.
+실행 환경: source /opt/ros/humble/setup.bash 및 실차 install/setup.bash.
+초기 환경 ROS_DOMAIN_ID=0, ROS_LOCALHOST_ONLY=0을 실제 확인했고 그대로 사용.
+초기 해당 domain의 ros2 node list --no-daemon 빈 목록, topic은 /parameter_events와 /rosout만 관측.
+UDP socket 조사에서 기존 ROS DDS 센서/SLAM 프로세스 미발견.
+원격 장치가 이후 참여할 가능성까지 배제하는 것은 아님.
+
+5. /map 및 TF
+8초 읽기 전용 구독 진단: 실제 /scan,/map,/tf,/scan_matched_points2,/submap_list 메시지 수신 없음.
+현재 시각화/진단 노드의 구독 때문에 topic 이름만 보일 수 있으며 Publisher/수신 성공이 아님.
+map->laser_frame, map->odom, map->base_footprint, map->base_link lookup 모두 불가.
+scan matching, 정지 지도 생성, 이동 위치추정 모두 미검증.
+차량 자동/수동 이동 시험을 수행하지 않음.
+
+6. 트랙터 IMU 현재 수신
+포트 역할 확인 전이므로 UART 진단/브리지 미실행. RX/정상 패킷/오류/Hz 모두 미측정.
+과거 37,481바이트/499패킷/99.99Hz 결과를 이번 PASS 근거로 사용하지 않음.
+현재 ROS IMU 수신 없음, tractor NO DATA.
+현재 trailer NOT CONNECTED (화면 R:NO_DATA), trailer IMU Publisher 없음, yaw/phi 생성 없음.
+검토한 기존 수신 도구: tools/diagnose_ebimu.py (query 미지정 시 TX=0).
+2D serial_bridge.py는 실제 수신만 발행하며 기본 115200 baud,
+11필드 qz,qy,qx,qw,gx,gy,gz,ax,ay,az,timestamp_ms 형식.
+물리 역할 확정 후 현재 raw 형식부터 확인해야 함.
+Yaw 초기 기준, 센서 장착축, 회전 부호, 물리 방향, 지도 정렬 모두 미검증.
+
+7. 실제 2D RViz 실행
+기존 설치 그대로 실행. 빌드 스크립트는 읽었으며 패키지 내부 build/install/log만 쓰고 삭제 명령 없음.
+기존 빌드와 소스 일치 확인하여 이번에 빌드는 실행하지 않음.
+Launch: tractor_trailer_rviz_2d visualization.launch.py
+slam_frame:=laser_frame (기존 G6 센서 모드 실제 추적 프레임을 읽는 런타임 인자).
+기존 config/live.yaml 및 RViz/소스 파일 수정 없음.
+RViz PID=17523, tt2d_visualizer PID=17521, launch PID=17519 (현재 조사 기준).
+Fixed Frame map, TopDownOrtho, Grid60/1m, 배경35/35/35,
+Scan FlatColor255/20/20, Map alpha0.8, camera Scale25/X10/Y0 기존 구성 사용.
+GUI 실제 열림 및 PNG 캡처 확인: rviz_initial_no_sensor.png.
+실제 화면은 Grid와 흰색 T:NO_DATA R:NO_DATA SLAM:NO_DATA 상태 텍스트.
+현재 지도/빨간 실측점/민트 차량 외곽선 없음. 3D 모델 실행 없음.
+8초 진단에서 status REAL_INPUT, valid=false, 양 IMU NO DATA,
+SLAM NO DATA, values=null, state_machine=STATE_UNKNOWN, tf_published=false.
+model Marker는 상태 텍스트만 발행. 윤곽선/방향/접힘각을 만들지 않음.
+원본 코드의 빨간 화살표는 트레일러용 하나이며 독립 트랙터 화살표는 구현되어 있지 않음.
+
+8. 발견한 제약 및 필요한 후속 변경 (미승인, 미실행)
+A. G6/IMU USB 식별자 중복: 사용자 IMU 단독 분리/재연결로 현재 물리 경로를 구분해야 함.
+B. 현재 G6/Cartographer 범위가 1m라 그 밖의 벽/장애물을 볼 수 없음. 설정 변경은 별도 승인 필요.
+C. 현재 2D visualizer는 require_alignment 및 coherent에서 양 IMU LIVE,
+양 센서 장착/sign 확인, 모든 실측 geometry, 수동 align을 모두 요구함.
+현재 두번째 IMU가 없으므로 트랙터 센서만 정상 수신해도 트랙터 외곽선 표시가 막힘.
+기존 코드 그대로 트랙터 단독 표시 가능하다고 보고하지 않음.
+트랙터 단독 2D 외곽선/화살표가 필요하면 별도 승인된 변경이 필요하며,
+트랙터 IMU LIVE와 실제 SLAM pose에만 의존하고 트레일러/phi를 숨기는 모드를 검토할 수 있음.
+실측 없는 rear axle 오프셋/장착 yaw를 0으로 가정하거나 confirmed=true로 위장하지 않음.
+현 작업에서는 어떤 기존 코드/설정도 수정하지 않음.
+
+9. 정확한 실행 명령
+상세: /home/venezuelachocolatemilk/mvsim_slam_real/verification/real_g6_tractor_imu_20261020_153135/commands_executed.txt
+환경: /home/venezuelachocolatemilk/mvsim_slam_real/verification/real_g6_tractor_imu_20261020_153135/environment.bash
+실제 실행 스크립트: /home/venezuelachocolatemilk/mvsim_slam_real/verification/real_g6_tractor_imu_20261020_153135/run_rviz.bash
+source /home/venezuelachocolatemilk/mvsim_slam_real/verification/real_g6_tractor_imu_20261020_153135/environment.bash
+ros2 launch tractor_trailer_rviz_2d visualization.launch.py slam_frame:=laser_frame output_directory:=/home/venezuelachocolatemilk/mvsim_slam_real/verification/real_g6_tractor_imu_20261020_153135/viz_live
+
+10. 실행 중 노드/세션
+real_g6_imu_20261020:rviz pid=17481 dead=0 cmd=bash
+
+실제 지속 노드: /tractor_trailer_2d_visualizer, /tractor_trailer_rviz_2d,
+RViz 내부 transform listener. 읽기 전용 진단 노드는 8초 뒤 정상 종료.
+G6/Cartographer/IMU UART는 미실행.
+ROS2 CLI가 자체 시작한 daemon이 있으면 센서/제어 노드로 간주하지 않음.
+전체 프로세스 및 진단 graph: processes_current.txt, before_port_confirmation/observation_summary.json.
+RViz 로그: /home/venezuelachocolatemilk/mvsim_slam_real/verification/real_g6_tractor_imu_20261020_153135/rviz.log
+
+11. 종료 방법
+RViz/시각화만 종료: tmux send-keys -t real_g6_imu_20261020:rviz C-c
+화면/세션 보기: tmux attach -t real_g6_imu_20261020
+관련 없는 프로세스 종료 금지. 이후 센서 노드 추가 시 각 window에 Ctrl+C.
+현재 G6를 시작하지 않았으므로 LiDAR 회전 정지 명령을 임의로 보내지 않음.
+
+12. 검증 표
+| 검증 항목 | 상태 |
+| G6 USB 인식 | N/A: CP210x 2개 인식, G6 역할 미확정 |
+| G6 실제 Scan 수신 | N/A: 미실행 |
+| Scan 주파수 | 미측정 |
+| Cartographer 실행 | N/A: 미실행 |
+| 실제 Occupancy Grid 생성 | N/A: 미실행 |
+| Map 및 TF 연결 | N/A: 미실행 |
+| 정지 상태 SLAM | N/A: 미실행 |
+| 이동 중 SLAM | NOT TESTED |
+| 트랙터 IMU UART 수신 | N/A: 미실행 |
+| 트랙터 IMU Yaw | N/A: 미실행 |
+| 트랙터 모델 2D 표시 | N/A: 입력/기하 미충족, 현재 미표시 |
+| 지도 위 차량 위치 표시 | N/A: 입력/기하 미충족, 현재 미표시 |
+| 트레일러 IMU | NOT CONNECTED |
+| 차량 제어 미실행 | PASS: 제어 노드 미실행, 명령 발행 없음 |
+| 기존 소스 무변경 | PASS: 보호 대상 765개 내용 해시 변경 0개 |
+추가: 기존 2D RViz GUI 시작/NO DATA 표시 PASS. SLAM 성공과 구분함.
+
+13. 미검증 항목 및 다음 실험
+우선 사용자 IMU USB 단독 분리 -> 사라진 by-path 확인 -> 재연결 안내 -> 역할 대조.
+역할 확정 후 기존 g6_slam.launch.py와 명시적 G6 by-path로 SLAM 실행.
+실제 LaserScan 값/연속 timestamp/주파수/scan matching/점군/map 데이터 갱신/TF 확인.
+정지 상태 시험만 수행하며 동적 SLAM PASS로 확대하지 않음.
+별도 IMU 수신에서 현재 packet 형식/Hz/Yaw/time 확인. Cartographer 입력 변경 없음.
+실제 벽/장애물 대응은 사용자 현장 확인 또는 관측 가능한 통제된 센서 시험이 필요.
+양 센서 방향 및 map 회전 부호는 물리 회전 확인 전 미검증.
+현 코드의 트랙터 단독 표시 제약은 위 8.C. 측정 및 승인 없이 우회하지 않음.
+
+14. 보호 및 생성 산출물
+기존 mvsim_slam/mvsim_slam_final 읽기만 수행. 기존 실차 src/드라이버/SLAM/시각화 변경 없음.
+원본 참고 src와 실차 src, 2D 패키지 source/config 등 765개 해시 검증.
+대용량 데이터셋/모든 역사 로그 전체를 해시한 것은 아님.
+신규 생성물은 verification 안의 보고서·환경/실행 스크립트·읽기 전용 관측기·해시·로그·캡처.
+ROS 런타임 로그/CLI 자동 생성 캐시는 소스 변경과 별개.
+증거 디렉터리: /home/venezuelachocolatemilk/mvsim_slam_real/verification/real_g6_tractor_imu_20261020_153135

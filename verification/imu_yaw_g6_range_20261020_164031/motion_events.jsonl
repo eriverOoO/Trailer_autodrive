@@ -1,0 +1,7 @@
+{"event": "before_fix_left_ccw_prompt", "stamp_ns": 1792482072567782957, "at": "2026-10-20T16:41:12.567786+09:00"}
+{"event": "before_fix_left_ccw_completed_user_confirmed", "stamp_ns": 1792482766077350443, "at": "2026-10-20T16:52:46.077409+09:00", "physical_direction": "CCW", "approx_angle_deg": [10, 20], "holding": true}
+{"event": "visual_sign_change_start", "stamp_ns": 1792482845133501321, "native_quaternion_unchanged": true}
+{"event": "after_fix_right_cw_prompt", "stamp_ns": 1792482920272250381, "at": "2026-10-20T16:55:20.272253+09:00", "visual_sign": -1}
+{"event": "after_fix_right_cw_completed_user_confirmed", "stamp_ns": 1792483104345091282, "at": "2026-10-20T16:58:24.345093+09:00", "physical_direction": "CW", "user_message": "\uc644\ub8cc", "context": "reply to requested clockwise return and hold"}
+{"event": "after_fix_right_cw_level_prompt", "stamp_ns": 1792483249715400658, "at": "2026-10-20T17:00:49.715403+09:00", "visual_sign": -1, "requirement": "CW viewed from above, preserve current pitch/roll; no drive"}
+{"event": "user_requested_shutdown", "stamp_ns": 1792483677405209354, "at": "2026-10-20T17:07:57.405212+09:00", "direction_validation": "INCONCLUSIVE; retest cancelled by shutdown request"}

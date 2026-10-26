@@ -1,0 +1,54 @@
+connection_length: 0.12
+forward_velocity: 0.14
+geometry_confirmed: false
+hitch_position:
+- -0.545
+- 0.0
+- 0.0
+hitch_to_axle_distance: 0.835
+initial_alignment_confirmed: true
+initial_articulation_rad: 0.0
+lidar_mounting_offset:
+- 0.0
+- 0.0
+- 0.35
+- 0.0
+- 0.0
+- 0.0
+maximum_steering_angle: 0.45
+reverse_velocity: 0.08775
+status: "PROVISIONAL \u2014 measure before actuation"
+steering_rate_limit: 0.9
+tractor_imu_offset:
+- 0.25
+- 0.0
+- 0.25
+- 0.0
+- 0.0
+- 0.0
+tractor_length: 0.97
+tractor_rear_axle_position:
+- -0.29
+- 0.0
+- 0.0
+tractor_steering_axis:
+- 0.29
+- 0.0
+- 0.0
+tractor_wheelbase: 0.58
+tractor_width: 0.585
+trailer_axle_position:
+- -0.29
+- 0.0
+- 0.0
+trailer_bias_confirmed: true
+trailer_gyro_bias_rad_s: 0.0
+trailer_imu_offset:
+- 0.25
+- 0.0
+- 0.25
+- 0.0
+- 0.0
+- 0.0
+trailer_length: 0.97
+trailer_width: 0.585

@@ -1,0 +1,16 @@
+[INFO] [1792239455.363274378] [map_saver]: 
+	map_saver lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1792239455.363362568] [map_saver]: Creating
+[INFO] [1792239455.363413108] [map_saver]: Configuring
+[INFO] [1792239455.364058303] [map_saver]: Saving map from 'map' topic to '/home/venezuelachocolatemilk/mvsim_slam_real/verification/g6_timestamps/maps/g6_timestamp_diagnostics' file
+[WARN] [1792239455.364069995] [map_saver]: Free threshold unspecified. Setting it to default value: 0.250000
+[WARN] [1792239455.364076443] [map_saver]: Occupied threshold unspecified. Setting it to default value: 0.650000
+[WARN] [1792239455.376364883] [map_io]: Image format unspecified. Setting it to: pgm
+[INFO] [1792239455.376412664] [map_io]: Received a 308 X 160 map @ 0.05 m/pix
+[INFO] [1792239455.405691266] [map_io]: Writing map occupancy data to /home/venezuelachocolatemilk/mvsim_slam_real/verification/g6_timestamps/maps/g6_timestamp_diagnostics.pgm
+[INFO] [1792239455.406054213] [map_io]: Writing map metadata to /home/venezuelachocolatemilk/mvsim_slam_real/verification/g6_timestamps/maps/g6_timestamp_diagnostics.yaml
+[INFO] [1792239455.406119460] [map_io]: Map saved
+[INFO] [1792239455.406125714] [map_saver]: Map saved successfully
+[INFO] [1792239455.406662865] [map_saver]: Destroying

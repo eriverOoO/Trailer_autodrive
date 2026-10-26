@@ -1,0 +1,188 @@
+{
+  "source": "ROS_TOPIC_OBSERVATION; confirm live G6 identity in accompanying driver log",
+  "test_scope": "stationary sensor-origin SLAM; no vehicle motion",
+  "requested_duration_s": 65.0,
+  "scan_pass": true,
+  "slam_pass": null,
+  "scan_count": 757,
+  "continuous_scan_span_s": 64.84439562800026,
+  "measured_scan_hz": 11.658679099070113,
+  "receipt_gap_s": {
+    "min": 0.08240719000013996,
+    "median": 0.08576936750023378,
+    "p95": 0.08670455799983756,
+    "max": 0.08889837099968645
+  },
+  "stamp_gap_s": {
+    "min": 0.083097,
+    "median": 0.0857795,
+    "p95": 0.086616,
+    "max": 0.088294
+  },
+  "timestamp_age_s": {
+    "min": 0.083674254,
+    "median": 0.086463201,
+    "p95": 0.087355671,
+    "max": 0.089769913
+  },
+  "valid_beams": {
+    "min": 652,
+    "median": 701,
+    "p95": 722,
+    "max": 741
+  },
+  "beam_count": {
+    "min": 1537,
+    "median": 1543,
+    "p95": 1547,
+    "max": 1549
+  },
+  "first_scan": {
+    "wall": 2403.364472123,
+    "stamp_ns": 1792237584355782000,
+    "frame": "laser_frame",
+    "age_s": 0.086807307,
+    "beams": 1547,
+    "valid": 690,
+    "valid_min_m": 0.4065000116825104,
+    "valid_max_m": 9.440999984741211,
+    "angle_min": -3.1415927410125732,
+    "angle_max": 3.1415927410125732,
+    "angle_increment": 0.004064156208187342,
+    "scan_time": 0.08596999943256378,
+    "time_increment": 5.5572076234966516e-05,
+    "range_min": 0.2800000011920929,
+    "range_max": 15.0,
+    "angle_count_error_beams": 3.895638591983303e-06,
+    "finite_over_15m": 0,
+    "zero_bins": 857,
+    "nan_bins": 0,
+    "infinite_bins": 0,
+    "below_min_positive_bins": 0
+  },
+  "last_scan": {
+    "wall": 2468.208867751,
+    "stamp_ns": 1792237649200344000,
+    "frame": "laser_frame",
+    "age_s": 0.086638471,
+    "beams": 1541,
+    "valid": 689,
+    "valid_min_m": 0.2800000011920929,
+    "valid_max_m": 9.546500205993652,
+    "angle_min": -3.1415927410125732,
+    "angle_max": 3.1415927410125732,
+    "angle_increment": 0.004079990554600954,
+    "scan_time": 0.08613000065088272,
+    "time_increment": 5.58922765776515e-05,
+    "range_min": 0.2800000011920929,
+    "range_max": 15.0,
+    "angle_count_error_beams": 6.847975960865187e-06,
+    "finite_over_15m": 0,
+    "zero_bins": 852,
+    "nan_bins": 0,
+    "infinite_bins": 0,
+    "below_min_positive_bins": 0
+  },
+  "map_count": 0,
+  "distinct_map_contents": 0,
+  "maps": [],
+  "matched_cloud_count": 0,
+  "last_matched_cloud": null,
+  "dynamic_tf_edges": {},
+  "static_tf_parents": {},
+  "scan_time_tf_lookup_successes": 0,
+  "tf_lookup_failures": {
+    "\"map\" passed to lookupTransform argument target_frame does not exist. ": 650
+  },
+  "latest_map_to_laser_pose": null,
+  "publishers": {
+    "/scan": [
+      {
+        "name": "ydlidar_ros2_driver_node",
+        "namespace": "/",
+        "type": "sensor_msgs/msg/LaserScan",
+        "reliability": "ReliabilityPolicy.BEST_EFFORT"
+      }
+    ],
+    "/map": [],
+    "/tf": [],
+    "/tf_static": [],
+    "/scan_matched_points2": []
+  },
+  "scan_subscribers": [
+    {
+      "name": "g6_real_data_probe",
+      "type": "sensor_msgs/msg/LaserScan"
+    }
+  ],
+  "nodes": [
+    "g6_real_data_probe",
+    "ydlidar_ros2_driver_node"
+  ],
+  "vehicle_extrinsics_verified": false,
+  "moving_slam_verified": false,
+  "physical_direction_verified": false,
+  "performance_pass": true,
+  "instantaneous_stamp_hz": {
+    "min": 11.325797902462229,
+    "median": 11.657797026492066,
+    "p95": 11.781754774556124,
+    "max": 12.034128789246301
+  },
+  "instantaneous_receipt_hz": {
+    "min": 11.248800048355521,
+    "median": 11.659174238421464,
+    "p95": 11.799231962019089,
+    "max": 12.134863474877635
+  },
+  "total_scan_bins": 1167859,
+  "total_valid_scan_returns": 530394,
+  "valid_scan_return_ratio": 0.4541592777895277,
+  "valid_ratio_per_scan": {
+    "min": 0.42310188189487347,
+    "median": 0.4548408057179987,
+    "p95": 0.46787800129785856,
+    "max": 0.4808565866320571
+  },
+  "estimated_scan_bins_per_second": 17986.319229358018,
+  "estimated_valid_returns_per_second": 8168.847822081792,
+  "positive_returns_over_15m": 0,
+  "zero_scan_bins": 637465,
+  "nan_scan_bins": 0,
+  "infinite_scan_bins": 0,
+  "range_bin_note": "LaserScan angular bins include invalid zero slots; they are not independent physical measurements. fixed_resolution remains false.",
+  "filtered_sdk_point_cloud_count": 757,
+  "filtered_sdk_points_per_cloud": {
+    "min": 662,
+    "median": 714,
+    "p95": 735,
+    "max": 755
+  },
+  "estimated_filtered_sdk_points_per_second": 8316.07906283969,
+  "filtered_sdk_points_over_15m": 0,
+  "positive_scan_time_overlap_count": 21,
+  "scan_time_overlap_s": {
+    "min": -0.0011296272277832031,
+    "median": -5.53131103515625e-05,
+    "p95": -2.3603439331054688e-05,
+    "max": 0.0010409355163574219
+  },
+  "matching_messages_per_scan": 0.0,
+  "process_cpu": {
+    "driver": {
+      "cpu_percent_one_core": {
+        "min": 0.0,
+        "median": 0.0,
+        "p95": 2.0000253483215,
+        "max": 2.0003540086503326
+      },
+      "rss_mib": {
+        "min": 21.9375,
+        "median": 22.6875,
+        "p95": 22.6875,
+        "max": 22.6875
+      },
+      "process_missing_samples": 0
+    }
+  }
+}
