@@ -1,0 +1,3 @@
+#!/usr/bin/env python3
+from real_parking.wallless_node import main
+main()

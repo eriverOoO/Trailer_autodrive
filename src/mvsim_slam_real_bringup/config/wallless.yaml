@@ -1,0 +1,20 @@
+wallless_validation:
+  ros__parameters:
+    fixed_frame: map
+    ego_frame: base_footprint
+    map_topic: /map
+    scan_topic: /scan
+    # Vehicle-sized candidates, NOT semantic vehicle identities.
+    cluster_min_length: 0.35
+    cluster_max_length: 1.6
+    cluster_max_width: 0.95
+    row_tolerance: 0.35
+    # Straight rig is 2.19m long; this only filters hypotheses, not maneuver feasibility.
+    min_gap: 2.6
+    max_gap: 7.0
+    bay_width: 0.95
+    min_free_fraction: 0.90
+    min_observations: 3
+    min_stationary_seconds: 2.0
+    association_distance: 0.3
+    max_track_age: 3.0
