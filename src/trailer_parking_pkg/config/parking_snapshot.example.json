@@ -1,0 +1,40 @@
+{
+  "schema": "parking_snapshot_v1",
+  "source": {
+    "kind": "synthetic_software_example",
+    "note": "Not a camera detection or real parking-space measurement"
+  },
+  "geometry": {
+    "wheelbase": 0.52,
+    "hitch_offset": 0.33,
+    "trailer_axle": 0.82,
+    "front": 0.755,
+    "rear": 0.235,
+    "width": 0.55,
+    "max_steer": 0.6,
+    "max_beta": 0.3490658503988659
+  },
+  "start": {
+    "x": 1.5,
+    "y": -0.25,
+    "yaw": 0,
+    "beta": 0
+  },
+  "slot": {
+    "x": 0,
+    "y": 0,
+    "yaw": 0,
+    "length": 3,
+    "width": 1.2
+  },
+  "scene": {
+    "obstacles": [],
+    "bounds": [
+      -10,
+      10,
+      -10,
+      10
+    ],
+    "margin": 0.1
+  }
+}

@@ -8,7 +8,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 rclpy = pytest.importorskip('rclpy')
 from std_msgs.msg import String
 from trailer_parking_pkg.controller_node import ParkingController
-from trailer_parking_pkg.core import State, trailer_pose
+from trailer_parking_pkg.core import State, Slot, Scene, trailer_pose
 
 
 @pytest.fixture
@@ -52,3 +52,34 @@ def test_fused_requires_both_lidars(controller):
     controller.use_lidar = True
     with pytest.raises(ValueError, match='WAIT_LIDAR'):
         controller.inputs(10.1)
+
+
+def test_capture_only_saves_recognized_scene_and_publishes_only_stop(controller, tmp_path, monkeypatch):
+    from types import SimpleNamespace
+    controller.capture_output = str(tmp_path / 'snapshot.json')
+    controller.slot = Slot(0, 0, 0, 11.1, 3.2)
+    state, scene = State(0, 0, 0, 0), Scene()
+    monkeypatch.setattr(controller, 'inputs', lambda now: (state, scene))
+    messages = []
+    controller.publisher = SimpleNamespace(publish=messages.append)
+    controller.control_tick()
+    snapshot = json.loads((tmp_path / 'snapshot.json').read_text())
+    assert snapshot['schema'] == 'parking_snapshot_v1'
+    assert snapshot['slot']['length'] == 11.1
+    assert controller.fault == 'SNAPSHOT_SAVED'
+    controller.publish_motion(.3, .4)
+    assert messages and all((m.steering, m.left_speed, m.right_speed) == (0, 0, 0) for m in messages)
+
+
+def test_capture_only_never_approaches_a_visible_slot(controller, tmp_path, monkeypatch):
+    from types import SimpleNamespace
+    controller.capture_output = str(tmp_path / 'snapshot.json')
+    inject(controller)
+    controller.observations['front']['slots'] = [dict(x=0, y=0, yaw=0, length=1, width=1)]
+    monkeypatch.setattr(controller, 'inputs', lambda now: (State(0, 0, 0, 0), Scene()))
+    messages = []
+    controller.publisher = SimpleNamespace(publish=messages.append)
+    controller.control_tick()
+    assert controller.phase == 'CAPTURE_WAIT_VISIBLE_SLOT_STATIONARY'
+    assert not (tmp_path / 'snapshot.json').exists()
+    assert messages and all(m.left_speed == m.right_speed == 0 for m in messages)

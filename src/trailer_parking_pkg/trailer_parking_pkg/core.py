@@ -176,7 +176,8 @@ class PlanningError(RuntimeError):
     pass
 
 
-def plan(start, slot, scene, g=Geometry(), max_nodes=90000, timeout=45.0):
+def plan(start, slot, scene, g=Geometry(), max_nodes=90000, timeout=45.0,
+         steering_values=None):
     """Bounded weighted Hybrid A* over (x, y, yaw, beta, direction).
 
     Motion primitives are integrated/collision-checked every 0.10 m. Search
@@ -187,21 +188,27 @@ def plan(start, slot, scene, g=Geometry(), max_nodes=90000, timeout=45.0):
         raise PlanningError('Slot too small for the complete articulated rig')
     if not scene.free(start, g) or not scene.free(slot.goal(g), g):
         raise PlanningError('Start or goal footprint is occupied/out of bounds')
+    if steering_values is not None and (not steering_values or any(
+            not math.isfinite(a) or abs(a) > g.max_steer for a in steering_values)):
+        raise ValueError('Invalid calibrated steering candidates')
     if goal_reached(start, slot, g):
         return [Step(start, 0, 0)]
     began = time.monotonic()
-    try:
-        from .optimizer import shooting_plan
-    except ImportError:
-        shooting_plan = None
+    shooting_plan = None
+    if steering_values is None:
+        try:
+            from .optimizer import shooting_plan
+        except ImportError:
+            pass
     if shooting_plan is not None:
         candidate = shooting_plan(start, slot, scene, g, timeout=timeout*0.7)
         if candidate:
             return candidate
     timeout = max(0.0, timeout-(time.monotonic()-began))
     goal = slot.goal(g)
+    xy_resolution = min(0.35, g.wheelbase * 0.2) if steering_values is not None else 0.35
     def key(s, direction):
-        return (round(s.x/0.35), round(s.y/0.35), round(wrap(s.yaw)/0.10),
+        return (round(s.x/xy_resolution), round(s.y/xy_resolution), round(wrap(s.yaw)/0.10),
                 round(s.beta/0.10), direction)
     def heuristic(s):
         tx, ty, _ = trailer_pose(s, g)
@@ -232,15 +239,18 @@ def plan(start, slot, scene, g=Geometry(), max_nodes=90000, timeout=45.0):
             return [Step(start, 0, 0.0)] + [p for seg in reversed(segments) for p in seg]
         expanded += 1
         for direction in (1, -1):
-            for beta_target in beta_targets:
+            for control in (steering_values if steering_values is not None else beta_targets):
                 q = s
                 segment = []
                 for _ in range(7):
                     # Invert the off-axle beta dynamics, so reverse primitives
                     # regulate articulation instead of amplifying it open-loop.
-                    beta_rate = direction * 0.65 * (beta_target-q.beta)
-                    curvature = (-math.sin(q.beta)-g.trailer_axle*beta_rate) / (g.trailer_axle+g.hitch_offset*math.cos(q.beta))
-                    steer = max(-g.max_steer, min(g.max_steer, math.atan(g.wheelbase*curvature)))
+                    if steering_values is not None:
+                        steer = control
+                    else:
+                        beta_rate = direction * 0.65 * (control-q.beta)
+                        curvature = (-math.sin(q.beta)-g.trailer_axle*beta_rate) / (g.trailer_axle+g.hitch_offset*math.cos(q.beta))
+                        steer = max(-g.max_steer, min(g.max_steer, math.atan(g.wheelbase*curvature)))
                     q = advance(q, direction*0.1, steer, g)
                     if not scene.free(q, g):
                         break

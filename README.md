@@ -1,6 +1,9 @@
 # Trailer Autodrive — 전후방 카메라 기반 평행주차
 
 ROS 2 Humble / Ubuntu 22.04 / Gazebo Classic용 실험 구현입니다.
+실차의 주차 공간 인식 결과를 저장하고 GPU·시뮬레이터·SLAM 없이
+계획과 동작 명령을 생성하는 방법은 [명령 저장·재생 안내](docs/parking_command_replay.md)를 참고하세요.
+USB 연결 확인과 G6의 미해결 회전 이상은 [하드웨어 연결 기록](docs/hardware_connection_notes.md)에 정리했습니다.
 `trailer_parking_pkg`에 **LiDAR + YOLO**와 **카메라 + YOLO 전용** 실행 파일을
 추가했습니다. 둘 다 견인차 전방 카메라와 트레일러 후방 카메라를 사용합니다.
 상공 카메라, `/odom`, `/front_pose`, `/trailer/articulation_angle`,

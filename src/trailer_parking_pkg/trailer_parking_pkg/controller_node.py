@@ -1,6 +1,6 @@
 """Two entry points share one articulated controller and differ in required sensors."""
 from concurrent.futures import ThreadPoolExecutor
-from dataclasses import replace
+from dataclasses import asdict, replace
 import json
 import math
 import time
@@ -16,12 +16,14 @@ from .core import (Geometry, State, Scene, Slot, Tracker, PlanningError, plan,
                    goal_reached, trailer_pose, wrap, advance)
 from .actuation import StrollerActuation, motion_values
 from .sensors import fresh, scan_obstacles
+from .replay import save_json
 
 
 class ParkingController(Node):
     def __init__(self, use_lidar):
         super().__init__('parallel_parking')
         self.use_lidar = use_lidar
+        self.capture_output = self.declare_parameter('capture_output', '').value
         self.timeout = self.declare_parameter('sensor_timeout', 0.8).value
         self.speed = self.declare_parameter('parking_speed', 0.30).value
         self.motor_pwm = int(self.declare_parameter('parking_pwm', 90).value)
@@ -102,6 +104,8 @@ class ParkingController(Node):
         self.status(why)
 
     def publish_motion(self, speed, steering):
+        if self.capture_output:
+            speed, steering = 0.0, 0.0
         values = motion_values(speed, steering, self.actuation)
         msg = MotionCommand()
         msg.steering, msg.left_speed, msg.right_speed = values
@@ -214,8 +218,19 @@ class ParkingController(Node):
                 if not scene.free(q, self.g):
                     self.stop('STOP_SEARCH_OBSTACLE')
                     return
-            self.publish_motion(0.12, 0.0)
-            self.status('APPROACH_VISIBLE_SLOT')
+            if self.capture_output:
+                self.stop('CAPTURE_WAIT_VISIBLE_SLOT_STATIONARY')
+            else:
+                self.publish_motion(0.12, 0.0)
+                self.status('APPROACH_VISIBLE_SLOT')
+            return
+        if self.capture_output:
+            save_json(self.capture_output, dict(
+                schema='parking_snapshot_v1', geometry=asdict(self.g),
+                start=asdict(state), slot=asdict(self.slot), scene=asdict(scene),
+                source={'kind': 'camera_observations', 'observations': self.observations}))
+            self.fault = 'SNAPSHOT_SAVED'
+            self.stop(self.fault)
             return
         if goal_reached(state, self.slot, self.g):
             self.done_count += 1

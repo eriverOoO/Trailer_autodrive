@@ -1,0 +1,47 @@
+{
+  "schema": "ride_on_platform_v1",
+  "vehicle_name": "Synthetic software example; NOT Daeho vehicle measurements",
+  "drive_type": "front_steer_dual_pwm",
+  "calibration_status": "example",
+  "geometry": {
+    "wheelbase": 0.52,
+    "hitch_offset": 0.33,
+    "trailer_axle": 0.82,
+    "front": 0.755,
+    "rear": 0.235,
+    "width": 0.55,
+    "max_steer": 0.6,
+    "max_beta": 0.3490658503988659
+  },
+  "steering_radians": {
+    "0": 0,
+    "1": -0.08571428571428572,
+    "2": -0.17142857142857143,
+    "3": -0.2571428571428571,
+    "4": -0.34285714285714286,
+    "5": -0.42857142857142855,
+    "6": -0.5142857142857142,
+    "7": -0.6,
+    "-7": 0.6,
+    "-6": 0.5142857142857142,
+    "-5": 0.42857142857142855,
+    "-4": 0.34285714285714286,
+    "-3": 0.2571428571428571,
+    "-2": 0.17142857142857143,
+    "-1": 0.08571428571428572
+  },
+  "drive_samples": [
+    {
+      "speed_mps": 0.12,
+      "left_pwm": 60,
+      "right_pwm": 60
+    },
+    {
+      "speed_mps": -0.1,
+      "left_pwm": -65,
+      "right_pwm": -65
+    }
+  ],
+  "steering_settle_s": 0.3,
+  "gear_settle_s": 0.6
+}

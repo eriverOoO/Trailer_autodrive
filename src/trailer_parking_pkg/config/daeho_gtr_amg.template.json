@@ -1,0 +1,49 @@
+{
+  "schema": "ride_on_platform_v1",
+  "vehicle_name": "대호토이즈 벤츠 NEW GTR AMG (Arduino modified)",
+  "drive_type": "front_steer_dual_pwm",
+  "calibration_status": "example",
+  "geometry": {
+    "wheelbase": null,
+    "hitch_offset": null,
+    "trailer_axle": null,
+    "front": null,
+    "rear": null,
+    "width": null,
+    "max_steer": null,
+    "max_beta": null
+  },
+  "steering_radians": {
+    "0": null,
+    "1": null,
+    "2": null,
+    "3": null,
+    "4": null,
+    "5": null,
+    "6": null,
+    "7": null,
+    "-7": null,
+    "-6": null,
+    "-5": null,
+    "-4": null,
+    "-3": null,
+    "-2": null,
+    "-1": null
+  },
+  "drive_samples": [
+    {
+      "speed_mps": null,
+      "left_pwm": null,
+      "right_pwm": null
+    },
+    {
+      "speed_mps": null,
+      "left_pwm": null,
+      "right_pwm": null
+    }
+  ],
+  "steering_settle_s": null,
+  "gear_settle_s": null,
+  "product_url": "https://www.daehotoys.com/product/detail.html?product_no=854",
+  "measurement_note": "All nulls require measurements on the modified vehicle. Set calibration_status to measured only after replacing every example value. Product name alone does not establish steering/PWM calibration. The current planner assumes both bodies share a footprint and a single effective trailer axle."
+}
