@@ -1,0 +1,3 @@
+#!/usr/bin/python3
+from real_parking.nodes import hybrid_astar_main
+hybrid_astar_main()

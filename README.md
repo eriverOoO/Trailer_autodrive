@@ -1,5 +1,7 @@
 # Trailer Autodrive — 전후방 카메라 기반 평행주차
 
+실차 개발은 [mvsim_slam_real](mvsim_slam_real/README.md)에서 시작합니다. G6 LiDAR, EBIMU, Cartographer와 Arduino를 연결하는 ROS 2 Humble 워크스페이스입니다. 아래 안내는 기존 카메라 기반 주차와 시뮬레이션을 다룹니다.
+
 ROS 2 Humble / Ubuntu 22.04 / Gazebo Classic용 실험 구현입니다.
 실차의 주차 공간 인식 결과를 저장하고 GPU·시뮬레이터·SLAM 없이
 계획과 동작 명령을 생성하는 방법은 [명령 저장·재생 안내](docs/parking_command_replay.md)를 참고하세요.

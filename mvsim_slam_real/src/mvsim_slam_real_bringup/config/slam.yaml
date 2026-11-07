@@ -1,0 +1,6 @@
+cartographer_node:
+  ros__parameters:
+    use_sim_time: false
+cartographer_occupancy_grid_node:
+  ros__parameters:
+    use_sim_time: false

@@ -1,0 +1,43 @@
+# Matching live-verified EBIMU profiles (2026-10-24).
+# Physical mounts are in vehicle_geometry.yaml; keep mounting_rpy zero here.
+# Device opening remains disabled unless launch explicitly enables it.
+tractor_imu:
+  ros__parameters:
+    port: /dev/imu_tractor
+    enable_device: false
+    baud: 115200
+    frame_id: tractor_imu_link
+    output_topic: /tractor/imu/data
+    orientation_format: quaternion
+    include_acceleration: true
+    include_timestamp: true
+    output_period: 0.01
+    timeout: 0.2
+    mounting_rpy:
+    - 0.0
+    - 0.0
+    - 0.0
+    publish_orientation: true
+    orientation_variance: 0.01
+    gyro_variance: 0.0001
+    acceleration_variance: 0.04
+trailer_imu:
+  ros__parameters:
+    port: /dev/imu_trailer
+    enable_device: false
+    baud: 115200
+    frame_id: trailer_imu_link
+    output_topic: /trailer/imu/data
+    orientation_format: quaternion
+    include_acceleration: true
+    include_timestamp: true
+    output_period: 0.01
+    timeout: 0.2
+    mounting_rpy:
+    - 0.0
+    - 0.0
+    - 0.0
+    publish_orientation: true
+    orientation_variance: 0.01
+    gyro_variance: 0.0001
+    acceleration_variance: 0.04

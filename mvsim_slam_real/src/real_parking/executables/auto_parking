@@ -1,0 +1,4 @@
+#!/usr/bin/python3
+from real_parking.nodes import auto_parking_main
+# Guarded: parallel planner workers spawn by re-running this file as __mp_main__.
+if __name__=='__main__':auto_parking_main()

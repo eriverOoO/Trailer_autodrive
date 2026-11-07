@@ -1,0 +1,118 @@
+Panels:
+- Class: rviz_common/Displays
+  Name: Displays
+Visualization Manager:
+  Class: ''
+  Displays:
+  - Class: rviz_default_plugins/Grid
+    Name: Grid
+    Enabled: true
+    Plane Cell Count: 60
+    Cell Size: 1
+    Plane: XY
+    Color: 100; 100; 100
+  - Class: rviz_default_plugins/Map
+    Name: TEST SIMULATED map
+    Enabled: true
+    Alpha: 0.8
+    Color Scheme: map
+    Topic:
+      Value: /vehicle_viz_test/map
+      Reliability Policy: Reliable
+      Durability Policy: Transient Local
+      History Policy: Keep Last
+      Depth: 1
+  - Class: rviz_default_plugins/LaserScan
+    Name: TEST SIMULATED scan
+    Enabled: true
+    Topic:
+      Value: /vehicle_viz_test/scan
+      Reliability Policy: Best Effort
+      Durability Policy: Volatile
+      History Policy: Keep Last
+      Depth: 5
+    Size (Pixels): 3
+    Size (m): 0.03
+    Style: Points
+    Color Transformer: FlatColor
+    Color: 255; 20; 20
+    Decay Time: 0
+  - Class: rviz_default_plugins/TF
+    Name: Existing SLAM TF (read only)
+    Enabled: false
+    Show Names: true
+    Show Axes: true
+    Show Arrows: true
+    Marker Scale: 0.5
+  - Class: rviz_default_plugins/MarkerArray
+    Name: Detected Bay and Planner Goal
+    Enabled: false
+    Topic:
+      Value: /parking/target_geometry
+      Reliability Policy: Reliable
+      Durability Policy: Volatile
+      History Policy: Keep Last
+      Depth: 10
+  - Class: rviz_default_plugins/Path
+    Name: Planned Parking Path
+    Enabled: false
+    Topic:
+      Value: /parking/planned_tractor_path
+      Reliability Policy: Reliable
+      Durability Policy: Volatile
+      History Policy: Keep Last
+      Depth: 10
+  - Class: rviz_default_plugins/MarkerArray
+    Name: Trailer Gyro Yaw and LQR Status
+    Enabled: false
+    Topic:
+      Value: /parking/debug_markers
+      Reliability Policy: Reliable
+      Durability Policy: Transient Local
+      History Policy: Keep Last
+      Depth: 10
+  - Class: rviz_default_plugins/Path
+    Name: Planned Trailer Path
+    Enabled: false
+    Topic:
+      Value: /parking/planned_trailer_path
+      Reliability Policy: Reliable
+      Durability Policy: Transient Local
+      History Policy: Keep Last
+      Depth: 10
+  - Class: rviz_default_plugins/Path
+    Name: Actual Estimated Tractor Trajectory
+    Enabled: false
+    Topic:
+      Value: /parking/estimated_tractor_trajectory
+      Reliability Policy: Reliable
+      Durability Policy: Volatile
+      History Policy: Keep Last
+      Depth: 10
+  - Class: rviz_default_plugins/MarkerArray
+    Name: TEST SIMULATED original meshes
+    Enabled: true
+    Topic:
+      Value: /vehicle_viz_test/model
+      Reliability Policy: Reliable
+      Durability Policy: Volatile
+      History Policy: Keep Last
+      Depth: 1
+  Global Options:
+    Fixed Frame: vehicle_viz_test_map
+    Background Color: 35; 35; 35
+    Frame Rate: 20
+  Tools:
+  - Class: rviz_default_plugins/Interact
+  - Class: rviz_default_plugins/MoveCamera
+  Views:
+    Current:
+      Class: rviz_default_plugins/TopDownOrtho
+      Name: Top View
+      Scale: 110
+      X: 0
+      Y: 0
+      Angle: 0
+Window Geometry:
+  Width: 1100
+  Height: 850

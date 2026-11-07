@@ -1,0 +1,3 @@
+#!/usr/bin/python3
+from real_parking.nodes import gap_detector_main
+gap_detector_main()

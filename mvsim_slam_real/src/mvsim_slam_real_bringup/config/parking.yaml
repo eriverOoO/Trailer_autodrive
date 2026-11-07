@@ -1,0 +1,31 @@
+tractor_parallel_parking_auto:
+  ros__parameters:
+    auto_execute: true
+    execute_parking: true
+    auto_detect_target: true
+    enable_pose_freshness_stop: true
+    parking_stop_policy: legacy
+    # Simulator bay/rig ratios applied to the 2.19 x 0.55 m rig (2026-10-27):
+    # physical bay about 3.6 m (opening) x 1.15 m (depth); start >= 1.8 m from the opening.
+    slot_length: 3.36
+    slot_width: 1.10
+    # Detected opening lower bound override (default 0.75*slot_length = 2.52 m).
+    gap_min_length: 1.9
+    # Forward search stops only on observed obstacles; LiDAR no-return (unknown) cells are ignored.
+    search_stop_on_unknown: false
+    search_speed: 0.14
+    # Forward search steering: bang-bang at two Arduino steps (2 x 25/7 deg).
+    # Heading only (lateral gain 0): facing right of the start heading -> Arduino -2 (left),
+    # facing left -> +2 (right), within the deadband (~1.25 deg heading) -> 0.
+    search_steer_limit_deg: 7.2
+    search_steer_sign: 1.0
+    search_steer_deadband_deg: 1.0
+    search_steer_lateral_gain: 0.0
+    # Heading part of the forward-search corridor stop (deg); 0 disables it. Lateral 1.0 m stop always applies.
+    search_heading_limit_deg: 15.0
+    parking_speed_factor: 1.755
+    completion_hinge_deg: 6.25
+    completion_settle_max_s: 8.0
+    planner_timeout: 90.0
+    beam_gap_filling: true
+    max_replans: 3

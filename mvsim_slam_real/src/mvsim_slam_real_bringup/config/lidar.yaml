@@ -1,0 +1,26 @@
+lidar_gateway:
+  ros__parameters:
+    input_topic: /lidar_raw
+    output_topic: /scan
+    frame_id: laser_frame
+    angle_offset: 0.0
+    reverse_direction: false
+    timeout: 0.5
+    # Self filter (laser_frame, x forward): drop returns from the rig itself.
+    # LiDAR sits 0.095 m ahead of the tractor rear; trailer front is ~0.31 m behind it,
+    # trailer ends ~1.30 m behind. y covers 0.55 m width plus articulation swing.
+    self_filter_x_min: -1.40
+    self_filter_x_max: 0.0
+    self_filter_y_abs: 0.45
+    # Tractor body ahead of the LiDAR: nose is 0.895 m ahead, chassis half width 0.275 m.
+    self_filter_front_x_max: 0.95
+    self_filter_front_y_abs: 0.30
+rplidar_source:
+  ros__parameters:
+    port: ''
+    enable_device: false
+    frame_id: laser_frame
+    bins: 720
+    range_min: 0.15
+    range_max: 12.0
+    clockwise: true

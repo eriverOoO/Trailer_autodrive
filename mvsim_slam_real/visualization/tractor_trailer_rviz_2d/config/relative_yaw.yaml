@@ -1,0 +1,43 @@
+# Startup assumes the two vehicles face the same direction, as user confirmed.
+# Orientation yaw is used only as a per-sensor change; no IMU feeds Cartographer.
+mode: LIVE
+visualization_mode: FULL_VEHICLE
+namespace: /vehicle_viz_2d
+fixed_frame: map
+slam_frame: base_footprint
+imu_timeout_s: 0.3
+pose_timeout_s: 0.5
+max_pair_skew_s: 0.05
+scan_topic: /scan
+relative_heading_only: true
+geometry_from_vehicle_file: true
+use_measured_polygon_origins: true
+startup_reference:
+  enabled: true
+  show_straight_preview: true
+  duration_s: 5.0
+  stationary_gyro_deg_s: 2.0
+  max_yaw_rate_deg_s: 120.0
+tractor:
+  topic: /tractor/imu/data
+  frame: tractor_imu_link
+  source: orientation
+  # Retain prior diagnostic sign; historical CW/CCW final check was inconclusive.
+  # Confirm real left/right before relying on the displayed direction.
+  sign: -1
+  sensor_to_body_rpy: [0.0, 0.0, 0.0]
+  mounting_and_sign_confirmed: false
+  gyro_bias_rad_s: 0.0
+  gyro_bias_confirmed: false
+trailer:
+  topic: /trailer/imu/data
+  frame: trailer_imu_link
+  source: orientation
+  # Same sensor convention. A 180-degree yaw mount does NOT negate yaw changes.
+  sign: -1
+  sensor_to_body_rpy: [0.0, 0.0, 3.141592653589793]
+  mounting_and_sign_confirmed: false
+  gyro_bias_rad_s: 0.0
+  gyro_bias_confirmed: false
+state_topic: /parking/status
+state_timeout_s: 3.0

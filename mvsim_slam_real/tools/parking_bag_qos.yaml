@@ -1,0 +1,18 @@
+# ros2 bag record --qos-profile-overrides-path for sensor topics published with
+# qos_profile_sensor_data (best effort); a reliable subscription records nothing.
+/scan:
+  reliability: best_effort
+  history: keep_last
+  depth: 10
+/lidar_raw:
+  reliability: best_effort
+  history: keep_last
+  depth: 10
+/tractor/imu/data:
+  reliability: best_effort
+  history: keep_last
+  depth: 50
+/trailer/imu/data:
+  reliability: best_effort
+  history: keep_last
+  depth: 50

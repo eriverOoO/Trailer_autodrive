@@ -1,0 +1,14 @@
+control_adapter:
+  ros__parameters:
+    enable_actuation: false
+    # Legacy scale parameter; moving output is fixed at PWM +/-50, stop at 0.
+    motor_scale_pwm_per_m_s: 1000.0
+    motor_scale_confirmed: true
+    steering_sign: -1.0
+    left_motor_sign: 1.0
+    right_motor_sign: 1.0
+    polarity_confirmed: true
+    command_timeout: 0.25
+    state_timeout: 0.25
+    require_tractor_imu: true
+    max_pwm: 255

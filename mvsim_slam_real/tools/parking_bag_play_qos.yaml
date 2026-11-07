@@ -1,0 +1,26 @@
+# ros2 bag play --qos-profile-overrides-path for viewing a parking bag in
+# rviz/real_parking.rviz: latched maps/static TF and a reliable /scan.
+/map:
+  reliability: reliable
+  durability: transient_local
+  history: keep_last
+  depth: 1
+/tractor/localization/local_map:
+  reliability: reliable
+  durability: transient_local
+  history: keep_last
+  depth: 1
+/parking/detection_map:
+  reliability: reliable
+  durability: transient_local
+  history: keep_last
+  depth: 1
+/tf_static:
+  reliability: reliable
+  durability: transient_local
+  history: keep_last
+  depth: 1
+/scan:
+  reliability: reliable
+  history: keep_last
+  depth: 10

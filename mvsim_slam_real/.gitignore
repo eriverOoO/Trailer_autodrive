@@ -1,0 +1,31 @@
+
+# ROS 2 build artifacts
+build/
+install/
+log/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# ROS bags and recorded data
+*.bag
+*.db3
+*.mcap
+
+# Credentials
+.env
+.env.*
+*.pem
+
+# Workbench captures, machine-specific setup and generated SDK install
+/backups/
+/diagnostics/
+/verification/
+/third_party/ydlidar_sdk_install/
+evidence/
+Collected_Datasets/
+.pytest_cache/
+*.egg-info/
+

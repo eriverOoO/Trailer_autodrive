@@ -1,0 +1,21 @@
+# Verified device 2026-10-19: <imu9dofv612b>, sof2/sog1/soa1/sots1/sor10.
+# Wire order: qz,qy,qx,qw,gx,gy,gz,ax,ay,az,timestamp_ms.
+# No sensor settings or calibration commands are sent at startup.
+tractor_imu:
+  ros__parameters:
+    port: /dev/imu_tractor
+    enable_device: true
+    baud: 115200
+    frame_id: tractor_imu_link
+    output_topic: /tractor/imu/data
+    orientation_format: quaternion
+    include_acceleration: true
+    include_timestamp: true
+    output_period: 0.01
+    timeout: 0.2
+    mounting_rpy: [0.0, 0.0, 0.0]
+    publish_orientation: true
+    # Initial covariance estimates; not measured calibration results.
+    orientation_variance: 0.01
+    gyro_variance: 0.0001
+    acceleration_variance: 0.04
