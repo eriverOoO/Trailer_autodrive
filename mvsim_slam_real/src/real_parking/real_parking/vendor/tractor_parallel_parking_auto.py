@@ -57,13 +57,15 @@ FINAL_CORRECTION_MAX_ALONG_M = .60
 class AutoParking(Node):
     def __init__(self):
         super().__init__('tractor_parallel_parking_auto')
-        defaults={'parking_stop_policy':'legacy','detection_only':False,'auto_execute':False,'auto_detect_target':True,'world_file':'',
+        defaults={'parking_side':'left','gap_min_lateral_m':.55,'parking_stop_policy':'legacy','detection_only':False,'auto_execute':False,'auto_detect_target':True,'world_file':'',
                   'execute_parking':False,'search_speed':.14,'parking_speed_factor':1.0,'completion_hinge_deg':6.25,'completion_settle_max_s':8.0,
                   'survey_before_parking':False,'planner_timeout':35.,'beam_gap_filling':True,
                   'slot_length':5.8,'slot_width':2.,'gap_min_length':0.,'search_stop_on_unknown':True,'search_steer_limit_deg':8.,'search_steer_sign':1.,'search_steer_deadband_deg':0.,'search_steer_lateral_gain':.25,'search_heading_limit_deg':15.,'warning_angle_deg':30.,'emergency_angle_deg':35.,
                   'max_replans':3,'blocked_debug_directory':'',
                   'enable_pose_freshness_stop':False,'localization_source':'local'}
         for k,v in defaults.items():self.declare_parameter(k,v)
+        if self.get_parameter('parking_side').value not in ('left','right'):
+            raise ValueError('parking_side must be left or right')
         self.auto=bool(self.get_parameter('auto_execute').value)
         self.detect=bool(self.get_parameter('auto_detect_target').value)
         if not self.detect:raise RuntimeError('Automatic gap mode requires auto_detect_target=true; no fixed-target fallback')
@@ -278,10 +280,15 @@ class AutoParking(Node):
         if self.detection_msg is None:raise RuntimeError('Cartographer detection grid not received')
         m=self.detection_msg;o=m.info.origin
         grid=planning_grid(np.asarray(m.data).reshape(m.info.height,m.info.width),m.info.resolution,[o.position.x,o.position.y,yaw(o.orientation)],simulation_clearance=True)
-        obs=observe_gap(grid,road_pose,length,width,min_length=float(self.get_parameter('gap_min_length').value))
+        parking_side = self.get_parameter('parking_side').value
+        min_lateral_m = self.get_parameter('gap_min_lateral_m').value
+        obs = observe_gap(grid, road_pose, length, width,
+                          min_length=self.get_parameter('gap_min_length').value,
+                          parking_side=parking_side, min_lateral_m=min_lateral_m)
         directory=self.get_parameter('blocked_debug_directory').value
         if directory:
             record={'sim_ns':self.get_clock().now().nanoseconds,'map_stamp_ns':m.header.stamp.sec*1000000000+m.header.stamp.nanosec,'source':'Cartographer /map: geometry identical, probabilities thresholded50, unknown preserved, no free-space injection','first':obs.first_obstacle,'gap':obs.gap_seen,'second':obs.second_obstacle,'reason':obs.reason,'center':obs.target.center.tolist() if obs.target else None,'yaw':obs.target.heading if obs.target else None,'length':obs.target.length if obs.target else None,'width':obs.target.width if obs.target else None}
+            record.update(parking_side=parking_side, gap_min_lateral_m=min_lateral_m)
             from pathlib import Path
             with (Path(directory)/'gap_observations.jsonl').open('a') as f:f.write(json.dumps(record)+'\n')
         return obs

@@ -4,6 +4,25 @@
 
 빌드 대상은 이 폴더의 `src/`입니다. `COLCON_IGNORE`로 상위 워크스페이스의 패키지 검색에서 분리했습니다. 원본 ZIP의 ROS bag, 장치 로그, 백업, 빌드 결과와 비전 예제 데이터는 저장소에서 제외했습니다. 아래 날짜별 기록과 G6 보고서는 원본 ZIP의 실험 이력입니다.
 
+## 좌측 주차공간 검출 (2026-11-09)
+
+실차 `config/parking.yaml`의 `parking_side: left`는 출발 시 진행방향 왼쪽(+Y)의 U자 공간을 검색합니다. 자동주차 노드와 별도 진단용 `gap_detector`의 기본 방향도 왼쪽입니다. 오른쪽 배치는 `parking_side: right`로 선택합니다. 별도 진단 노드를 실행할 때는 `--ros-args -p parking_side:=right`로 지정할 수 있습니다.
+
+검출기는 선택한 쪽의 벽 깊이, 내부 자유 공간, 목표 중심과 방향을 함께 계산합니다. `gap_min_lateral_m`의 실차 기본값은 0.55m이며, 출발 중심선에서 선택한 쪽으로 0.55~10m에 있는 점유 셀을 탐색합니다. 주행 중 충돌 검사는 주행 경로에서 차량과 트레일러가 차지하는 영역을 별도로 검사합니다. 실제 왼쪽 물체가 RViz의 `base_footprint` 기준 +Y에 표시되는지 확인해야 합니다.
+
+실차 Ubuntu 워크스페이스에서 다시 빌드하고 기존 실행 명령으로 노드를 재시작합니다.
+
+```bash
+colcon build --base-paths src --symlink-install --packages-select real_parking mvsim_slam_real_bringup
+source install/setup.bash
+# 기존 launch로 재시작한 다음 기대값은 left
+ros2 param get /tractor_parallel_parking_auto parking_side
+# 기대값은 0.55
+ros2 param get /tractor_parallel_parking_auto gap_min_lateral_m
+```
+
+ROS 없이 좌우 검출·회전된 시작 좌표·내부 장애물 및 미관측 영역 거부를 검증하려면 `python -m unittest discover -s tests -p test_gap_side.py -v`를 실행합니다. 실차 SLAM 및 주차 완료는 별도 검증이 필요합니다.
+
 ## B 개선 반영 (2026-10-27)
 
 기존 B 개선을 `src/real_parking/real_parking/{vendor,optimizer}`에 반영한 버전입니다. 조향 7단계·PWM 변환(`real_vehicle_bridge/adapter.py`), 시리얼, Arduino를 포함합니다.
@@ -13,7 +32,7 @@
 - 최종 정지: 마지막 구간 허용치 0.12m, PARKED 위치 기준 0.20m, 종방향 부족 시 직선 보정(최대 2회).
 - 후보 3개 병렬 탐색(spawn 프로세스, 첫 해 후 5초 대기). 작업자는 `real_parking.bootstrap.install_b()`로 B를 설치하며, 이를 위해 `executables/auto_parking`은 `__main__`에서만 실행됩니다.
 - 상태 1초 이내 끊김은 정지 후 재개, 탐색 정지는 staging(목표 +7m) 위치, 굴절각 guard 정지 시 전진으로 트레일러를 편 뒤 재계획(최대 3회).
-- 주차 칸 기준: `slot_length` 3.36, `slot_width` 1.10 (시뮬레이터 칸/차량 비율 적용, 실제 칸 약 3.6 × 1.15m). 출발 시 차량 중심선에서 칸 입구까지 1.8m 이상 두어야 합니다(탐지기는 1.5m 이내 벽을 무시).
+- 주차 칸 기준: `slot_length` 3.36, `slot_width` 1.10 (시뮬레이터 칸/차량 비율 적용, 실제 칸 약 3.6 × 1.15m). 당시 검출기는 1.5m 이내 벽을 제외했습니다.
 
 Ubuntu 22.04 / ROS 2 Humble용 독립 트랙터–트레일러 자율주차 워크스페이스입니다. 기존 최종 B 탐지·Hybrid A*·steering-priority·C/D/E·LQR·주차 상태 머신과 Arduino 계층을 보존합니다. 하드웨어 없이 개발·검증하며 기본 구동은 비활성화입니다. 실측 본체 크기는 각각 0.99 × 0.55m입니다. 일자 정렬 시 트랙터 뒤끝→연결 축은 0.15m, 연결 축→트레일러 앞끝은 0.06m로, 본체 사이 간격은 0.21m이고 전체 길이는 2.19m입니다. 차축·센서·모터 값은 아직 PROVISIONAL입니다.
 

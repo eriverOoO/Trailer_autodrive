@@ -58,7 +58,12 @@ def auto_parking_main(args=None):
 class GapDetector(Node):
     def __init__(self,**kwargs):
         super().__init__('gap_detector',**kwargs)
-        for k,v in {'slot_length':3.36,'slot_width':1.10}.items():self.declare_parameter(k,v)
+        defaults = {'slot_length': 3.36, 'slot_width': 1.10, 'gap_min_length': 1.9,
+                    'parking_side': 'left', 'gap_min_lateral_m': .55}
+        for name, value in defaults.items():
+            self.declare_parameter(name, value)
+        if self.get_parameter('parking_side').value not in ('left','right'):
+            raise ValueError('parking_side must be left or right')
         self.map=None;self.road=None;self.state_wall=0.;self.map_wall=0.
         self.pub=self.create_publisher(String,'/parking/gap_observation',10);self.target=self.create_publisher(PoseStamped,'/parking/diagnostic_target',10)
         q=QoSProfile(depth=1,durability=DurabilityPolicy.TRANSIENT_LOCAL)
@@ -76,7 +81,12 @@ class GapDetector(Node):
         if self.map is None or self.road is None or time.monotonic()-self.state_wall>.3 or time.monotonic()-self.map_wall>2.5:
             publish_json(self.pub,{'valid':False,'reason':'map/state unavailable'});return
         try:
-            obs=observe_gap(grid_from_message(self.map),self.road,self.get_parameter('slot_length').value,self.get_parameter('slot_width').value);t=obs.target
+            obs = observe_gap(grid_from_message(self.map), self.road,
+                              self.get_parameter('slot_length').value, self.get_parameter('slot_width').value,
+                              min_length=self.get_parameter('gap_min_length').value,
+                              parking_side=self.get_parameter('parking_side').value,
+                              min_lateral_m=self.get_parameter('gap_min_lateral_m').value)
+            t = obs.target
             publish_json(self.pub,{'valid':t is not None,'reason':obs.reason,'first_obstacle':obs.first_obstacle,'gap_seen':obs.gap_seen,'second_obstacle':obs.second_obstacle,'center':t.center.tolist() if t else None,'heading':t.heading if t else None,'length':t.length if t else None,'width':t.width if t else None})
             if t:
                 m=PoseStamped();m.header=self.map.header;m.pose.position.x=float(t.center[0]);m.pose.position.y=float(t.center[1]);m.pose.orientation.z=math.sin(t.heading/2);m.pose.orientation.w=math.cos(t.heading/2);self.target.publish(m)

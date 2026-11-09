@@ -1,7 +1,7 @@
 """Find a wall-backed parking gap in the observed local OccupancyGrid.
 
-Only occupied and observed-free cells are used. The road pose supplies the
-parking-side sign and a loose direction prior, never an obstacle location.
+Only occupied and observed-free cells are used. The road pose supplies a loose
+direction prior; parking_side selects the side, never an obstacle location.
 """
 from dataclasses import dataclass
 import math
@@ -153,19 +153,27 @@ def observe_parked_car_gap(grid, road_pose, slot_length=5.8, slot_width=2.0,
 
 
 def observe_gap(grid, road_pose, slot_length=5.8, slot_width=2.0,
-                car_width=1.7, min_length=0.0):
+                car_width=1.7, min_length=0.0, parking_side='right', min_lateral_m=1.5):
     """Measure an open-front U cavity from occupied faces and observed free cells.
 
     Road orientation is only a direction prior. Dimensions and all three wall
     positions come from the grid; slot dimensions provide broad size gates.
+    Left/right are relative to road_pose's initial forward heading (+Y/-Y).
+    min_lateral_m excludes occupied evidence near the initial road centerline.
     """
+    if parking_side not in ('left', 'right'):
+        raise ValueError('parking_side must be left or right')
+    if not 0 <= min_lateral_m < 10:
+        raise ValueError('min_lateral_m must be at least 0 and less than 10 m')
+    side_sign = 1.0 if parking_side == 'left' else -1.0
     result = GapObservation(reason='waiting for U-shaped occupied boundaries')
     cells = np.argwhere(grid.data >= 52)
     if len(cells) < 30:
         return result
     xy = grid.cell_to_world(cells[:, ::-1])
     local = transform(xy-road_pose[:2], [0, 0], -road_pose[2])
-    local = local[(local[:, 1] < -1.5) & (local[:, 1] > -10)]
+    depth = side_sign * local[:, 1]
+    local = local[(depth > min_lateral_m) & (depth < 10)]
     if len(local) < 30:
         return result
     candidates = []
@@ -173,7 +181,7 @@ def observe_gap(grid, road_pose, slot_length=5.8, slot_width=2.0,
     for angle in np.deg2rad(np.arange(-5, 5.01, .5)):
         c, s = math.cos(angle), math.sin(angle)
         u = local[:, 0]*c + local[:, 1]*s
-        d = local[:, 0]*s - local[:, 1]*c
+        d = side_sign * (-local[:, 0]*s + local[:, 1]*c)
         origin = math.floor(u.min()/bin_size)*bin_size
         n = int(math.ceil((u.max()-origin)/bin_size))+1
         # Long near-side horizontal surfaces reveal an opening between solids.
@@ -227,8 +235,8 @@ def observe_gap(grid, road_pose, slot_length=5.8, slot_width=2.0,
                     continue
                 uu, dd = np.meshgrid(np.arange(a+.18,b-.15,bin_size),
                                      np.arange(front+.18,back-.15,bin_size))
-                road_xy = np.c_[uu.ravel()*c+dd.ravel()*s,
-                                uu.ravel()*s-dd.ravel()*c]
+                road_xy = np.c_[uu.ravel()*c-side_sign*dd.ravel()*s,
+                                uu.ravel()*s+side_sign*dd.ravel()*c]
                 ij = grid.world_to_cell(transform(road_xy,road_pose[:2],road_pose[2]))
                 valid = (ij[:,0]>=0)&(ij[:,0]<grid.width)&(ij[:,1]>=0)&(ij[:,1]<grid.height)
                 values = np.full(len(ij),-1)
@@ -238,7 +246,7 @@ def observe_gap(grid, road_pose, slot_length=5.8, slot_width=2.0,
                     result.reason = f'U boundaries seen; interior free={free:.2f}, occupied={np.count_nonzero(values>=50)}'
                     continue
                 center_u, center_d = (a+b)/2, (front+back)/2
-                center = transform([[center_u*c+center_d*s,center_u*s-center_d*c]],road_pose[:2],road_pose[2])[0]
+                center = transform([[center_u*c-side_sign*center_d*s,center_u*s+side_sign*center_d*c]],road_pose[:2],road_pose[2])[0]
                 target = Target(center, road_pose[2]+angle, length, width,
                                 f'U map faces; free={free:.3f}, back coverage={coverage:.2f}, size={length:.2f}x{width:.2f}')
                 candidates.append((coverage-abs(angle)*.1, target, result.obstacle_intervals))

@@ -1,12 +1,16 @@
 tractor_parallel_parking_auto:
   ros__parameters:
+    # Relative to the initial forward heading: left = +Y, right = -Y.
+    parking_side: left
+    # Ignore occupied evidence close to the initial road centerline during gap detection.
+    gap_min_lateral_m: 0.55
     auto_execute: true
     execute_parking: true
     auto_detect_target: true
     enable_pose_freshness_stop: true
     parking_stop_policy: legacy
     # Simulator bay/rig ratios applied to the 2.19 x 0.55 m rig (2026-10-27):
-    # physical bay about 3.6 m (opening) x 1.15 m (depth); start >= 1.8 m from the opening.
+    # physical bay about 3.6 m (opening) x 1.15 m (depth).
     slot_length: 3.36
     slot_width: 1.10
     # Detected opening lower bound override (default 0.75*slot_length = 2.52 m).
