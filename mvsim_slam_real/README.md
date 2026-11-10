@@ -224,6 +224,31 @@ TF: Cartographer만 map→odom→base_footprint를 발행합니다. sensor_tf는
 
 기존 camera_perception_pkg, debug_pkg, decision_making_pkg의 소스를 포함합니다. 예제 영상과 데이터셋은 별도로 준비합니다. 카메라 장착·모델 준비 후 `ros2 launch mvsim_slam_real_bringup vision.launch.py camera_path:=<CAMERA_PATH> model:=<MODEL_FILE> device:=cpu`를 사용합니다. 이 Launch는 perception만 실행합니다. 원본 `launch_pkg/main.launch.py`는 구동 노드를 포함하므로 새 개발 모드에서 사용하지 않습니다.
 
+### 라바콘·흰색 전동차 후보 및 라이다 겹침 확인
+
+`parking_vision_diagnostic.launch.py`는 기존 USB 카메라 한 대에서 주황색 라바콘과 흰색 차체 후보를 OpenCV 색·윤곽으로 찾습니다. 전동차 후보는 조명과 흰색 배경에 따라 오검출될 수 있습니다. 진단 영상은 `/parking_vision/objects_overlay`에서 확인합니다.
+
+```bash
+colcon build --base-paths src --symlink-install --packages-select camera_perception_pkg mvsim_slam_real_bringup
+source install/setup.bash
+ros2 launch mvsim_slam_real_bringup parking_vision_diagnostic.launch.py \
+  camera_path:=/dev/v4l/by-id/<카메라_장치>
+```
+
+카메라가 이미 이미지를 발행 중이거나 bag을 재생한다면 `camera_path` 대신 `image_topic:=/기존_이미지_토픽`을 전달합니다. `detector_params:=/절대경로/params.yaml`로 `/parking_vision/parking_object_diagnostic`의 `ros__parameters`에 `roi_top`(기본 `0.25`, 영상 위쪽 제외 비율), `cone_hue_min`, `cone_hue_max`, `white_saturation_max`, `white_value_min`을 지정할 수 있습니다.
+
+카메라를 후방 프레임 왼쪽에 고정한 뒤, 카메라 해상도와 초점 상태를 유지하고 왼쪽 주차 구역이 시야에 들어오는지 확인합니다. G6는 한 높이만 스캔하므로 설치 전에 시험용 콘과 전동차 높이에서 실제 반사가 들어오는지 `/scan`으로 확인합니다. 장착 후 `calibration_file:=/절대경로/실측값.json`을 추가하면 기본 `/scan`의 유효 거리점을 영상에 그립니다. 입력이 다른 경우 `scan_topic`으로 지정합니다. JSON 필드는 다음과 같습니다.
+
+| 필드 | 값 |
+|---|---|
+| `image_size` | 내부 보정을 수행한 `[width, height]` |
+| `camera_frame` | 이미지 `header.frame_id`. 위 launch의 카메라를 쓰면 `parking_left_camera_optical_frame` |
+| `scan_frame` | 실제 `/scan` 메시지의 `header.frame_id` |
+| `camera_matrix`, `distortion_coefficients` | OpenCV 핀홀 모델의 3×3 내부 행렬과 왜곡 계수 |
+| `lidar_to_camera_rotation`, `lidar_to_camera_translation_m` | 스캔 프레임에서 카메라 광학 프레임(+X 오른쪽, +Y 아래, +Z 앞)으로 변환하는 3×3 회전과 3개 이동값(m). `p_camera = R @ p_scan + t` |
+
+청록색 점은 투영된 스캔이고 후보마다 윤곽 안에 들어간 반사점 수를 표시합니다. 가려진 배경 점도 겹칠 수 있으므로 정지 상태에서 실제 위치가 일치하는지 먼저 확인합니다. 시간 차이는 메시지 헤더 기준이며 스캔 중 차량 움직임은 보정하지 않습니다. 이 결과는 진단 영상으로 발행됩니다.
+
 개별 perception 엔트리: `image_publisher_node`, `yolov8_node`, `parking_space_detector_node`, `parking_space_info_extractor_node`, `car_detector_node` (camera_perception_pkg), `path_visualizer_node`, `yolov8_visualizer_node` (debug_pkg). 기존 motion_planner_node와 parking_space_path_planner_node(decision_making_pkg)는 보존했지만 새 제어와 동시에 실행하지 않습니다. 이 환경의 ROS Python에서 torch가 없어 YOLO 런타임은 미검증/의존성 미충족입니다. 모델 weights도 별도 준비해야 하며 핵심 빌드·실행에는 영향을 주지 않습니다. 시스템 Python 패키지는 변경하지 않았습니다.
 
 ## 하드웨어 없는 검증

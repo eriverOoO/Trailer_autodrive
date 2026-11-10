@@ -20,6 +20,7 @@ setup(
     entry_points={
         'console_scripts': [
             'image_publisher_node = camera_perception_pkg.image_publisher_node:main',
+            'parking_object_diagnostic = camera_perception_pkg.parking_object_diagnostic_node:main',
             'car_detector_node = camera_perception_pkg.car_detector_node:main',
             'yolov8_node = camera_perception_pkg.yolov8_node:main',
             'traffic_light_detector_node = camera_perception_pkg.traffic_light_detector_node:main',
