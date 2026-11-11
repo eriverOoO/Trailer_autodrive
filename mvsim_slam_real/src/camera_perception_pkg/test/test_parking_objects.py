@@ -2,6 +2,7 @@
 
 from types import SimpleNamespace
 import unittest
+from unittest.mock import Mock
 
 import cv2
 import numpy as np
@@ -9,6 +10,14 @@ import numpy as np
 from camera_perception_pkg.parking_objects import (
     ScanProjection, detect_candidates, draw_diagnostic,
 )
+
+try:
+    from cv_bridge import CvBridge
+    import rclpy
+except ImportError:
+    rclpy = None
+else:
+    from camera_perception_pkg.parking_object_diagnostic_node import ParkingObjectDiagnostic
 
 
 class ParkingObjectsTest(unittest.TestCase):
@@ -48,6 +57,41 @@ class ParkingObjectsTest(unittest.TestCase):
         np.testing.assert_array_equal(projection.pixels(scan), [[420, 240]])
         scan.ranges = [float('inf')]
         self.assertEqual(projection.pixels(scan).shape, (0, 2))
+
+
+@unittest.skipIf(rclpy is None, 'Requires ROS 2 and cv_bridge')
+class CameraMessageTest(unittest.TestCase):
+    """Pass real legacy and standard image messages through the diagnostic callback."""
+
+    def test_existing_publisher_image_encodings(self):
+        """Preserve BGR pixels and headers for 8UC3, bgr8 and rgb8 messages."""
+        rclpy.init(args=[])
+        node = None
+        try:
+            node = ParkingObjectDiagnostic()
+            node.overlay = Mock()
+            image = np.zeros((480, 640, 3), dtype=np.uint8)
+            cv2.rectangle(image, (250, 200), (370, 300), (240, 240, 240), -1)
+            image[450, 600] = (10, 20, 30)
+            bridge = CvBridge()
+            for encoding in ('8UC3', 'bgr8', 'rgb8'):
+                with self.subTest(encoding=encoding):
+                    source = cv2.cvtColor(image, cv2.COLOR_BGR2RGB) if encoding == 'rgb8' else image
+                    message = bridge.cv2_to_imgmsg(source, encoding=encoding)
+                    message.header.frame_id = 'existing_camera_frame'
+                    message.header.stamp.sec = 123
+                    node.overlay.reset_mock()
+                    node.on_image(message)
+                    node.overlay.publish.assert_called_once()
+                    output = node.overlay.publish.call_args.args[0]
+                    self.assertEqual(output.encoding, 'bgr8')
+                    self.assertEqual(output.header, message.header)
+                    actual = bridge.imgmsg_to_cv2(output, desired_encoding='bgr8')
+                    np.testing.assert_array_equal(actual[450, 600], image[450, 600])
+        finally:
+            if node is not None:
+                node.destroy_node()
+            rclpy.try_shutdown()
 
 
 if __name__ == '__main__':

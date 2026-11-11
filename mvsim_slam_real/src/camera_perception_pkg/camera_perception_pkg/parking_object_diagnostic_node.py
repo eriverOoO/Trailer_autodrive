@@ -77,7 +77,9 @@ class ParkingObjectDiagnostic(Node):
     def on_image(self, message):
         """Run detection on every frame, even without a usable scan."""
         try:
-            image = self.bridge.imgmsg_to_cv2(message, desired_encoding='bgr8').copy()
+            # The existing OpenCV publisher uses generic 8UC3 for its BGR frames.
+            encoding = 'passthrough' if message.encoding == '8UC3' else 'bgr8'
+            image = self.bridge.imgmsg_to_cv2(message, desired_encoding=encoding).copy()
             candidates = detect_candidates(image, **self.detector_options)
             pixels, status = self.scan_pixels(message, image)
             overlay = draw_diagnostic(image, candidates, pixels, status)
