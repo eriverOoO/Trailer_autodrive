@@ -8,7 +8,7 @@ from launch_ros.actions import Node
 from ament_index_python.packages import get_package_share_directory
 
 def enabled(context,name):return LaunchConfiguration(name).perform(context).lower() in ['true','1','yes']
-def launch_nodes(context):
+def launch_nodes(context, parking_executable='auto_parking', parking_parameters=()):
     share=Path(get_package_share_directory('mvsim_slam_real_bringup'));c=share/'config';dev=enabled(context,'development_mode');act=enabled(context,'enable_actuation')
     geometry=LaunchConfiguration('geometry_file').perform(context);g=yaml.safe_load(Path(geometry).read_text())
     controller=yaml.safe_load((c/'controller.yaml').read_text())['control_adapter']['ros__parameters']
@@ -35,7 +35,7 @@ def launch_nodes(context):
     if enabled(context,'enable_slam'):
         lua='reference_imu_optional.lua' if fusion else 'reference_lidar_only.lua'
         nodes += [Node(package='cartographer_ros',executable='cartographer_node',name='cartographer_node',parameters=[str(c/'slam.yaml')],arguments=['-configuration_directory',str(c),'-configuration_basename',lua],remappings=[('scan','/scan'),('imu','/tractor/imu/data')],output='screen'),Node(package='cartographer_ros',executable='cartographer_occupancy_grid_node',name='cartographer_occupancy_grid_node',parameters=[str(c/'slam.yaml')],arguments=['-resolution','0.05','-publish_period_sec','1.0'],output='screen')]
-    nodes.append(Node(package='real_parking',executable='auto_parking',parameters=[str(c/'parking.yaml'),{'world_file':geometry,'blocked_debug_directory':str(output)}],output='screen'))
+    nodes.append(Node(package='real_parking',executable=parking_executable,parameters=[str(c/'parking.yaml'),*parking_parameters,{'world_file':geometry,'blocked_debug_directory':str(output)}],output='screen'))
     if act:nodes.append(Node(package='serial_communication_pkg',executable='serial_sender_node',parameters=[{'port':ports['arduino_port'],'sub_topic':'/topic_control_signal'}],output='screen'))
     if enabled(context,'enable_rviz'):nodes.append(Node(package='rviz2',executable='rviz2',arguments=['-d',str(share/'rviz/real_parking.rviz')],output='screen'))
     if enabled(context,'enable_vision'):

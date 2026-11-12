@@ -10,8 +10,9 @@ import rclpy
 from rclpy.node import Node
 from rclpy.qos import qos_profile_sensor_data
 from sensor_msgs.msg import Image, LaserScan
+from std_msgs.msg import String
 
-from .parking_objects import ScanProjection, detect_candidates, draw_diagnostic
+from .parking_objects import ScanProjection, associate_candidates, detect_candidates, draw_diagnostic
 
 
 def stamp_ns(message):
@@ -49,6 +50,8 @@ class ParkingObjectDiagnostic(Node):
         self.bridge = CvBridge()
         self.recent_scans = deque(maxlen=8)
         self.overlay = self.create_publisher(Image, 'objects_overlay', 1)
+        self.associations = self.create_publisher(String, 'associations', 5)
+        self.selected_scan = None
         if self.projection is not None:
             self.create_subscription(LaserScan, 'scan', self.recent_scans.append,
                                      qos_profile_sensor_data)
@@ -57,6 +60,7 @@ class ParkingObjectDiagnostic(Node):
     def scan_pixels(self, image_message, image):
         """Use a nearby stamped scan only when its frames and image size match."""
         calibration = self.projection
+        self.selected_scan = None
         if calibration is None:
             return None, 'Camera only: no calibration file'
         if (image.shape[1::-1] != calibration.image_size
@@ -72,6 +76,7 @@ class ParkingObjectDiagnostic(Node):
             return None, 'No scan close to image timestamp'
         if scan.header.frame_id != calibration.scan_frame:
             return None, 'Calibration does not match scan frame'
+        self.selected_scan = scan
         return calibration.pixels(scan), f'Projected scan | stamp difference {delta / 1e6:.0f} ms'
 
     def on_image(self, message):
@@ -82,6 +87,20 @@ class ParkingObjectDiagnostic(Node):
             image = self.bridge.imgmsg_to_cv2(message, desired_encoding=encoding).copy()
             candidates = detect_candidates(image, **self.detector_options)
             pixels, status = self.scan_pixels(message, image)
+            scan = self.selected_scan
+            matched = []
+            if scan is not None:
+                paired_pixels, scan_xy = self.projection.projected_returns(scan)
+                matched = associate_candidates(candidates, paired_pixels, scan_xy)
+            association = String()
+            association.data = json.dumps({
+                'calibrated': self.projection is not None, 'valid': scan is not None,
+                'image_stamp_ns': stamp_ns(message),
+                'scan_stamp_ns': stamp_ns(scan) if scan is not None else None,
+                'scan_frame': scan.header.frame_id if scan is not None else None,
+                'objects': matched, 'reason': status,
+            }, allow_nan=False)
+            self.associations.publish(association)
             overlay = draw_diagnostic(image, candidates, pixels, status)
             output = self.bridge.cv2_to_imgmsg(overlay, encoding='bgr8')
         except CvBridgeError as exc:

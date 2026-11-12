@@ -942,7 +942,7 @@ class AutoParking(Node):
                     max_tracking_error=self.max_tracking_error,
                     gap_center=self.target.center.tolist() if self.target is not None else None,
                     gap_confidence=self.target.confidence if self.target is not None else None,
-                    gap_yaw=self.target.heading if self.target else None,gap_length=self.target.length if self.target else None,gap_width=self.target.width if self.target else None,target_source='observe_gap(Cartographer OccupancyGrid)')
+                    gap_yaw=self.target.heading if self.target else None,gap_length=self.target.length if self.target else None,gap_width=self.target.width if self.target else None,target_source=getattr(self,'target_source','observe_gap(Cartographer OccupancyGrid)'))
         info['goal_shift_m']=self.goal_shift
         info['parking_stop_policy']=self.stop_policy
         info['legacy_stop_evidence']=getattr(self,'legacy_stop_evidence',None)

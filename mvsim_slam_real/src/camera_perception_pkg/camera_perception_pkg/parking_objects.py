@@ -78,25 +78,53 @@ class ScanProjection:
                 or not np.isclose(np.linalg.det(self.rotation), 1.0, atol=1e-4)):
             raise ValueError('Invalid camera matrix or lidar-to-camera rotation')
 
-    def pixels(self, scan):
-        """Return the in-image pixels of valid scan returns in front of the camera."""
+    def projected_returns(self, scan):
+        """Keep each image pixel paired with its measured scan-frame XY point."""
         ranges = np.asarray(scan.ranges, dtype=np.float64)
         valid = np.isfinite(ranges) & (ranges >= scan.range_min) & (ranges <= scan.range_max)
         angles = scan.angle_min + np.flatnonzero(valid) * scan.angle_increment
         ranges = ranges[valid]
         points = np.column_stack((ranges * np.cos(angles), ranges * np.sin(angles),
                                   np.zeros_like(ranges)))
+        scan_xy = points[:, :2].copy()
         points = points @ self.rotation.T + self.translation
-        points = points[points[:, 2] > 0.0]
+        front = points[:, 2] > 0.0
+        points, scan_xy = points[front], scan_xy[front]
         if not points.size:
-            return np.empty((0, 2), dtype=np.int32)
+            return np.empty((0, 2), dtype=np.int32), np.empty((0, 2))
         zero = np.zeros(3)
         pixels, _ = cv2.projectPoints(points, zero, zero, self.matrix, self.distortion)
         pixels = np.rint(pixels.reshape(-1, 2))
         width, height = self.image_size
         inside = np.isfinite(pixels).all(axis=1) & (pixels >= 0).all(axis=1)
         inside &= (pixels[:, 0] < width) & (pixels[:, 1] < height)
-        return pixels[inside].astype(np.int32)
+        return pixels[inside].astype(np.int32), scan_xy[inside]
+
+    def pixels(self, scan):
+        """Return image pixels for the existing overlay interface."""
+        return self.projected_returns(scan)[0]
+
+
+def associate_candidates(candidates, pixels, scan_xy, min_returns=3, cluster_distance=.20):
+    """Select a contiguous foreground return cluster inside each contour.
+
+    This is a geometric association hypothesis, not semantic ground truth.
+    Keeping metric returns allows downstream map geometry to recheck it.
+    """
+    associations = []
+    for candidate in candidates:
+        keep = np.array([cv2.pointPolygonTest(candidate.contour, (float(u), float(v)), False)
+                         >= 0 for u, v in pixels], dtype=bool)
+        points = scan_xy[keep]
+        if len(points) < min_returns:
+            continue
+        splits = np.flatnonzero(np.linalg.norm(np.diff(points, axis=0), axis=1)
+                                > cluster_distance) + 1
+        clusters = [group for group in np.split(points, splits) if len(group) >= min_returns]
+        if clusters:
+            foreground = min(clusters, key=lambda group: float(np.median(np.linalg.norm(group, axis=1))))
+            associations.append({'label': candidate.label, 'scan_xy': foreground.tolist()})
+    return associations
 
 
 def draw_diagnostic(image, candidates, pixels, status):
