@@ -8,7 +8,7 @@ import cv2
 import numpy as np
 
 from camera_perception_pkg.parking_objects import (
-    ScanProjection, detect_candidates, draw_diagnostic,
+    Candidate, ScanProjection, associate_candidates, detect_candidates, draw_diagnostic,
 )
 
 try:
@@ -55,8 +55,20 @@ class ParkingObjectsTest(unittest.TestCase):
                                angle_min=0., angle_increment=np.pi / 4,
                                range_min=0.1, range_max=15.)
         np.testing.assert_array_equal(projection.pixels(scan), [[420, 240]])
+        pixels, points = projection.projected_returns(scan)
+        np.testing.assert_array_equal(pixels, [[420, 240]])
+        np.testing.assert_allclose(points, [[2., 0.]])
         scan.ranges = [float('inf')]
         self.assertEqual(projection.pixels(scan).shape, (0, 2))
+
+    def test_association_selects_measured_foreground_not_background(self):
+        contour = np.array([[[0, 0]], [[100, 0]], [[100, 100]], [[0, 100]]], dtype=np.int32)
+        pixels = np.array([[20, 20], [21, 20], [22, 20], [30, 30], [31, 30], [32, 30]])
+        points = np.array([[2., 0.], [2., .05], [2., .1], [5., .4], [5., .45], [5., .5]])
+        result = associate_candidates([Candidate('white body', contour)], pixels, points)
+        self.assertEqual(len(result), 1)
+        np.testing.assert_allclose(result[0]['scan_xy'], points[:3])
+        self.assertEqual(associate_candidates([Candidate('white body', contour)], pixels[:2], points[:2]), [])
 
 
 @unittest.skipIf(rclpy is None, 'Requires ROS 2 and cv_bridge')
@@ -70,6 +82,7 @@ class CameraMessageTest(unittest.TestCase):
         try:
             node = ParkingObjectDiagnostic()
             node.overlay = Mock()
+            node.associations = Mock()
             image = np.zeros((480, 640, 3), dtype=np.uint8)
             cv2.rectangle(image, (250, 200), (370, 300), (240, 240, 240), -1)
             image[450, 600] = (10, 20, 30)
@@ -83,6 +96,10 @@ class CameraMessageTest(unittest.TestCase):
                     node.overlay.reset_mock()
                     node.on_image(message)
                     node.overlay.publish.assert_called_once()
+                    association = __import__('json').loads(node.associations.publish.call_args.args[0].data)
+                    self.assertFalse(association['calibrated'])
+                    self.assertFalse(association['valid'])
+                    self.assertEqual(association['objects'], [])
                     output = node.overlay.publish.call_args.args[0]
                     self.assertEqual(output.encoding, 'bgr8')
                     self.assertEqual(output.header, message.header)

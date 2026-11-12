@@ -33,7 +33,7 @@ def path_from_json(j):
     if states.ndim!=2 or states.shape[1]!=4 or len(states)<2 or gears.shape!=(len(states),) or steering.shape!=(len(states),) or not np.isfinite(states).all() or not np.isfinite(steering).all() or not np.isin(gears,[-1,1]).all():raise ValueError('invalid planned 4D path')
     return RigPath(states,gears,steering)
 
-def auto_parking_main(args=None):
+def auto_parking_main(args=None, node_class=None):
     install_b()
     from tractor_trailer_model import Geometry
     from tractor_parallel_parking_auto import AutoParking
@@ -41,7 +41,7 @@ def auto_parking_main(args=None):
     Geometry.from_world=classmethod(lambda cls,filename:VehicleGeometry(filename).model())
     init_ros(args);node=None
     try:
-        node=AutoParking();directory=Path(node.get_parameter('blocked_debug_directory').value)
+        node=(node_class or AutoParking)();directory=Path(node.get_parameter('blocked_debug_directory').value)
         if not str(node.get_parameter('blocked_debug_directory').value):raise ValueError('explicit diagnostic output directory required')
         directory.mkdir(parents=True,exist_ok=True)
         budget=directory/'planner_supervisor_budget.json';budget.write_text(json.dumps({'deadline_monotonic':time.monotonic()+3600,'kind':'preserved Final B outer supervisor; internal CDE/search caps unchanged'}));os.environ['RESEARCH_BUDGET_FILE']=str(budget)

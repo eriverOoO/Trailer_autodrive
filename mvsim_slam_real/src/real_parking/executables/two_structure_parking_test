@@ -1,0 +1,5 @@
+#!/usr/bin/env python3
+from real_parking.two_structure_test import main
+
+if __name__ == '__main__':
+    main()
