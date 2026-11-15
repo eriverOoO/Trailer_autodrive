@@ -100,3 +100,49 @@ def test_lidar_only_bypass_cannot_start_automatic_motion(node):
     node.set_parameters([Parameter('require_camera', value=False)])
     node.streams_ready = node.stationary = lambda: True
     assert not node.start_search(Trigger.Request(), Trigger.Response()).success
+
+
+@pytest.fixture
+def lidar_only_node(tmp_path, monkeypatch):
+    geometry = Path(__file__).resolve().parents[1]/'src/mvsim_slam_real_bringup/config/vehicle_geometry.yaml'
+    monkeypatch.setattr(Geometry, 'from_world', classmethod(lambda cls, name: VehicleGeometry(name).model()))
+    rclpy.init(args=['--ros-args', '-p', f'world_file:={geometry}',
+                    '-p', f'blocked_debug_directory:={tmp_path}', '-p', 'slot_width:=1.10',
+                    '-p', 'require_camera:=false', '-p', 'allow_lidar_only_motion:=true'])
+    instance = TwoStructureParkingTest()
+    try:
+        yield instance
+    finally:
+        instance.planner_pool.shutdown(wait=True, cancel_futures=True)
+        instance.destroy_node()
+        rclpy.shutdown()
+
+
+def test_lidar_only_test_stage_starts_without_camera_and_is_launch_only(lidar_only_node):
+    from rclpy.parameter import Parameter
+    node = lidar_only_node
+    node.streams_ready = node.stationary = lambda: True
+    assert not node.camera_valid and node.lidar_only_motion()
+    response = node.start_search(Trigger.Request(), Trigger.Response())
+    assert response.success and node.test_motion_enabled and 'LiDAR-only' in response.message
+    assert not node.set_parameters([Parameter('allow_lidar_only_motion', value=False)])[0].successful
+
+
+def test_lidar_only_manual_handoff_without_camera(lidar_only_node):
+    node = lidar_only_node
+    node.operation = 'manual'
+    node.current = np.array([0., 0., 0., 0.])
+    node.road_pose = node.current[:3]
+    node.observation_hits = 3
+    node.streams_ready = node.stationary = lambda: True
+    node.detect_gap = lambda *args: PairObservation(target=Target(np.array([3., 2.]), 0., 3.3, 1.10))
+    assert node.start_parking(Trigger.Request(), Trigger.Response()).success
+
+
+def test_allow_flag_alone_keeps_camera_required(node):
+    # Default require_camera:=true: the LiDAR-only flag cannot be switched on at runtime either.
+    from rclpy.parameter import Parameter
+    assert not node.lidar_only_motion()
+    assert not node.set_parameters([Parameter('allow_lidar_only_motion', value=True)])[0].successful
+    node.streams_ready = node.stationary = lambda: True
+    assert not node.start_search(Trigger.Request(), Trigger.Response()).success

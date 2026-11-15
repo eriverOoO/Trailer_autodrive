@@ -21,6 +21,7 @@ from .bootstrap import load
 from .two_structure_gap import PairConfig, PairObservation, observe_two_structure_gap
 load()
 from tractor_parallel_parking_auto import AutoParking
+from tractor_parking_perception import planning_grid
 from tractor_trailer_model import wrap
 
 
@@ -39,21 +40,81 @@ def transform_points(points, transform):
     return transformed
 
 
+def block_behind_bay(data, resolution, origin, target, margin=0.0):
+    """Return a copy of data with every cell deeper than the bay's inner edge occupied.
+
+    Bay frame: target.center/heading, left normal = heading+90 deg. Cells whose centre lies
+    beyond target.width/2+margin along the normal become 100 over the whole map length.
+    Bay interior, road side and already occupied cells are left as they are.
+    """
+    margin = float(margin)
+    if not math.isfinite(margin) or margin < 0:
+        raise ValueError('rear block margin must be finite and >= 0')
+    data = np.array(data, dtype=np.int16, copy=True)
+    _, depth = bay_coordinates(data.shape, resolution, origin, target)
+    data[(depth > target.width/2+margin) & (data < 50)] = 100
+    return data
+
+
+def bay_coordinates(shape, resolution, origin, target):
+    """Cell-centre coordinates in the bay frame: (along heading, along left normal)."""
+    origin = np.asarray(origin, dtype=float)
+    rows, cols = np.indices(shape)
+    c, s = math.cos(origin[2]), math.sin(origin[2])
+    u, v = (cols+.5)*resolution, (rows+.5)*resolution
+    dx = origin[0]+c*u-s*v-target.center[0]
+    dy = origin[1]+s*u+c*v-target.center[1]
+    h = target.heading
+    return dx*math.cos(h)+dy*math.sin(h), -dx*math.sin(h)+dy*math.cos(h)
+
+
+def open_bay_unknown(data, resolution, origin, target):
+    """Return a copy of data with unobserved cells inside the confirmed bay rectangle free.
+
+    Matches the detection tolerance (a few unseen interior cells). Occupied cells and
+    everything outside the bay stay as measured.
+    """
+    data = np.array(data, dtype=np.int16, copy=True)
+    along, depth = bay_coordinates(data.shape, resolution, origin, target)
+    inside = (np.abs(along) <= target.length/2) & (np.abs(depth) <= target.width/2)
+    data[inside & (data < 0)] = 0
+    return data
+
+
+def sample_points(points, limit=300):
+    """Evenly thinned [[x, y], ...] list for JSON/marker output."""
+    points = np.asarray(points, dtype=float)
+    step = max(1, int(math.ceil(len(points)/limit)))
+    return np.round(points[::step], 3).tolist()
+
+
 class TwoStructureParkingTest(AutoParking):
     """Change perception and survey entry only; reuse planning/execution guards."""
 
     def __init__(self):
         self.test_motion_enabled = False
         super().__init__()
-        self.target_source = 'two observed LiDAR structures + calibrated camera; configured depth'
+        self.target_source = ('two observed LiDAR structures (+ camera unless LiDAR-only test); '
+                              'inner edge on measured rear wall or configured depth')
         self.declare_parameter('manual_survey', False)
         self.declare_parameter('require_camera', True)
+        # Test stage only: with require_camera:=false, also allow automatic search/parking
+        # on LiDAR alone. Camera confirmation is still computed and reported.
+        self.declare_parameter('allow_lidar_only_motion', False)
         self.declare_parameter('camera_evidence_lifetime_s', 180.0)
         self.declare_parameter('camera_stream_timeout_s', 1.0)
         for name, value in vars(PairConfig()).items():
             if name not in ('slot_width', 'min_lateral_m'):
                 self.declare_parameter('pair_'+name, value)
+        # Virtual wall behind the confirmed bay: planning/execution never route around
+        # the far side of the structures. Detection and forward search are unaffected.
+        self.declare_parameter('pair_block_behind_bay', True)
+        self.declare_parameter('pair_rear_block_margin_m', 0.0)
+        # Planning relaxation: unobserved cells inside the confirmed bay count as free.
+        self.declare_parameter('pair_bay_unknown_as_free', True)
+        self.rear_block_cache = {}
         self.pair_config()  # Reject invalid test dimensions at startup.
+        self.rear_block_margin()
         if self.get_parameter('parking_side').value != 'left':
             raise ValueError('This isolated test expects parking_side=left')
         for name in ('camera_evidence_lifetime_s', 'camera_stream_timeout_s'):
@@ -92,10 +153,49 @@ class TwoStructureParkingTest(AutoParking):
             values[name] = overrides.get(parameter, self.get_parameter(parameter).value)
         return PairConfig(**values)
 
+    def rear_block_margin(self, overrides=None):
+        value = (overrides or {}).get('pair_rear_block_margin_m',
+                                      self.get_parameter('pair_rear_block_margin_m').value)
+        if not math.isfinite(value) or value < 0:
+            raise ValueError('pair_rear_block_margin_m must be finite and >= 0')
+        return float(value)
+
+    def grid(self, fill=False):
+        grid = super().grid(fill)
+        target = getattr(self, 'target', None)
+        block = bool(self.get_parameter('pair_block_behind_bay').value)
+        open_bay = bool(self.get_parameter('pair_bay_unknown_as_free').value)
+        if target is None or not (block or open_bay):
+            return grid
+        margin = self.rear_block_margin()
+        key = (grid.map_sequence, tuple(np.asarray(target.center, dtype=float)),
+               float(target.heading), float(target.width), float(target.length), margin, block, open_bay)
+        cached = self.rear_block_cache.get(fill)
+        if cached is not None and cached[0] == key:
+            return cached[1]
+        data = grid.data
+        if open_bay:
+            data = open_bay_unknown(data, grid.resolution, grid.origin, target)
+        if block:
+            data = block_behind_bay(data, grid.resolution, grid.origin, target, margin)
+        # Rebuild instead of editing grid.data so clearance (distance transform) follows the wall.
+        blocked = planning_grid(data, grid.resolution, grid.origin, simulation_clearance=True)
+        blocked.map_stamp_ns = grid.map_stamp_ns
+        blocked.map_sequence = grid.map_sequence
+        blocked.frame_id = grid.frame_id
+        self.rear_block_cache[fill] = (key, blocked)
+        return blocked
+
+    def search_grid(self):
+        # Forward search keeps the original grid, without the virtual rear wall.
+        if bool(self.get_parameter('search_stop_on_unknown').value):
+            return super().grid(False)
+        return super().search_grid()
+
     def validate_parameters(self, parameters):
         overrides = {p.name: p.value for p in parameters}
         protected = {'slot_width', 'gap_min_lateral_m', 'parking_side', 'manual_survey',
-                     'require_camera', 'camera_evidence_lifetime_s', 'camera_stream_timeout_s'}
+                     'require_camera', 'allow_lidar_only_motion', 'camera_evidence_lifetime_s', 'camera_stream_timeout_s'}
         affected = any(name in protected or name.startswith('pair_') for name in overrides)
         try:
             if affected and self.test_motion_enabled:
@@ -104,7 +204,10 @@ class TwoStructureParkingTest(AutoParking):
                 raise ValueError('This test expects parking_side=left')
             if 'manual_survey' in overrides:
                 raise ValueError('Select manual_survey at launch, then restart to change it')
+            if 'allow_lidar_only_motion' in overrides:
+                raise ValueError('Select allow_lidar_only_motion at launch, then restart to change it')
             self.pair_config(overrides)
+            self.rear_block_margin(overrides)
             for name in ('camera_evidence_lifetime_s', 'camera_stream_timeout_s'):
                 if name in overrides and (not math.isfinite(overrides[name]) or overrides[name] <= 0):
                     raise ValueError(name+' must be finite and positive')
@@ -114,6 +217,10 @@ class TwoStructureParkingTest(AutoParking):
             return SetParametersResult(successful=True)
         except (ValueError, TypeError) as exc:
             return SetParametersResult(successful=False, reason=str(exc))
+
+    def lidar_only_motion(self):
+        return (not self.get_parameter('require_camera').value
+                and bool(self.get_parameter('allow_lidar_only_motion').value))
 
     def send(self, velocity, steering):
         if not self.test_motion_enabled:
@@ -232,13 +339,20 @@ class TwoStructureParkingTest(AutoParking):
             'lidar_pair_seen': target is not None,
             'camera_confirmed': observation.camera_confirmed,
             'require_camera': self.get_parameter('require_camera').value,
+            'lidar_only_motion': self.lidar_only_motion(),
             'camera_stream_ready': self.camera_ready(),
             'reason': observation.reason, 'free_fraction': observation.free_fraction,
             'center': target.center.tolist() if target else None,
             'heading': target.heading if target else None,
             'length': target.length if target else None,
             'width': self.get_parameter('slot_width').value,
-            'depth_source': 'configured; no rear wall inferred',
+            'depth_source': 'measured rear wall' if observation.rear_wall else 'configured; no rear wall within depth',
+            'rear_depth_m': observation.rear_depth_m,
+            'structures_found': observation.structures,
+            'rejected_pairs': [reason for _, reason in observation.rejected_pairs][:5],
+            'bay_polygon': target.polygon().tolist() if target else None,
+            'structure_points': [sample_points(c) for c in observation.components],
+            'wall_points': [sample_points(w) for w in observation.walls][:6],
         }, allow_nan=False)
         self.test_observation.publish(message)
         markers = [Marker(action=Marker.DELETEALL)]
@@ -253,14 +367,23 @@ class TwoStructureParkingTest(AutoParking):
             bay.points = [Point(x=float(x), y=float(y), z=.05)
                           for x, y in np.vstack([target.polygon(), target.polygon()[0]])]
             markers.append(bay)
-            for i, component in enumerate(observation.components):
-                marker = Marker(header=header, ns='measured_structures', id=i, type=Marker.POINTS,
-                                action=Marker.ADD)
-                marker.pose.orientation.w = 1.0
-                marker.scale.x = marker.scale.y = .06
-                marker.color.b = marker.color.a = 1.0
-                marker.points = [Point(x=float(x), y=float(y), z=.05) for x, y in component]
-                markers.append(marker)
+        # Structure candidates are shown even when no bay could be formed from them.
+        for i, component in enumerate(observation.components):
+            marker = Marker(header=header, ns='measured_structures', id=i, type=Marker.POINTS,
+                            action=Marker.ADD)
+            marker.pose.orientation.w = 1.0
+            marker.scale.x = marker.scale.y = .06
+            marker.color.b = marker.color.a = 1.0
+            marker.points = [Point(x=float(x), y=float(y), z=.05) for x, y in sample_points(component)]
+            markers.append(marker)
+        for i, wall in enumerate(observation.walls):
+            marker = Marker(header=header, ns='measured_walls', id=i, type=Marker.POINTS, action=Marker.ADD)
+            marker.pose.orientation.w = 1.0
+            marker.scale.x = marker.scale.y = .04
+            marker.color.r = marker.color.g = marker.color.b = .6
+            marker.color.a = 1.0
+            marker.points = [Point(x=float(x), y=float(y), z=.03) for x, y in sample_points(wall)]
+            markers.append(marker)
         self.test_markers.publish(MarkerArray(markers=markers))
 
     def stable_observation(self, target):
@@ -301,24 +424,28 @@ class TwoStructureParkingTest(AutoParking):
             response.message = 'Restart the test before starting another search'
         elif not self.streams_ready() or not self.camera_ready() or not self.stationary():
             response.message = 'Need current SLAM/IMU/scan/camera and a stationary rig for one second'
-        elif not self.get_parameter('require_camera').value:
-            response.message = 'LiDAR-only diagnostics cannot start automatic motion'
+        elif not self.get_parameter('require_camera').value and not self.lidar_only_motion():
+            response.message = ('LiDAR-only diagnostics cannot start automatic motion; '
+                                'launch with allow_lidar_only_motion:=true for the LiDAR-only test stage')
         else:
             self.operation = 'automatic_search'
             self.test_motion_enabled = True
             self.auto = True
             self.transition('WAIT_FOR_LOCALIZATION', 'explicit automatic search command')
             response.success = True
-            response.message = 'Automatic forward search -> bay confirmation -> existing B parking'
+            response.message = ('Automatic forward search -> bay confirmation -> existing B parking'
+                                + (' (LiDAR-only test stage; camera reported only)' if self.lidar_only_motion() else ''))
         return response
 
     def start_parking(self, request, response):
         if self.operation != 'manual' or self.test_motion_enabled:
             response.message = 'start_parking is for manual_survey only; use start_search for final autonomy'
             return response
-        if (not self.get_parameter('require_camera').value or not self.streams_ready()
+        if ((not self.get_parameter('require_camera').value and not self.lidar_only_motion())
+                or not self.streams_ready()
                 or not self.camera_ready() or not self.stationary()):
-            response.message = 'Need calibrated camera, current sensors and a stationary rig for one second'
+            response.message = ('Need calibrated camera (or allow_lidar_only_motion), current sensors '
+                                'and a stationary rig for one second')
             return response
         try:
             observation = self.detect_gap(self.road_pose, 0., self.get_parameter('slot_width').value)

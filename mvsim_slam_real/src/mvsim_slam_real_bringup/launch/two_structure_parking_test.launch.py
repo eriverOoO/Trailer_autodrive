@@ -31,6 +31,8 @@ def nodes(context):
     parameters = [value('test_params_file'), {
         'manual_survey': ParameterValue(LaunchConfiguration('manual_survey'), value_type=bool),
         'require_camera': ParameterValue(LaunchConfiguration('require_camera'), value_type=bool),
+        'allow_lidar_only_motion': ParameterValue(LaunchConfiguration('allow_lidar_only_motion'),
+                                                  value_type=bool),
     }]
     if value('slot_width'):
         parameters.append({'slot_width': float(value('slot_width'))})
@@ -77,6 +79,8 @@ def generate_launch_description():
         'slot_width': '',  # Empty retains the YAML depth; optional launch override in metres.
         'manual_survey': 'false',
         'require_camera': 'true',
+        # Test stage only; effective together with require_camera:=false.
+        'allow_lidar_only_motion': 'false',
         'start_stack': 'true',
         'start_g6_driver': 'false',
         'image_topic': '/parking_vision/image_raw',

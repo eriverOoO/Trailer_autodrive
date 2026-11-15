@@ -60,12 +60,49 @@ def test_one_or_wrong_side_structure_does_not_define_a_bay():
     assert lidar_observation(grid, road).lidar_target is None
 
 
+STRICT = replace(PairConfig(), max_speck_cells=0, max_unknown_fraction=0.)
+
+
 @pytest.mark.parametrize('value', [-1, 100])
-def test_unknown_or_even_one_occupied_interior_cell_is_rejected(value):
+def test_strict_config_rejects_even_one_unknown_or_occupied_interior_cell(value):
     grid, road = scene()
     grid.data[129, 174] = value
+    assert lidar_observation(grid, road, STRICT).target is None
+
+
+@pytest.mark.parametrize('cells', [[(129, 174)], [(129, 174), (130, 175)], [(129, 174), (135, 200)]])
+def test_isolated_specks_and_single_unknown_cell_are_tolerated(cells):
+    grid, road = scene()
+    for row, col in cells:
+        grid.data[row, col] = 100
+    grid.data[133, 190] = -1
     result = lidar_observation(grid, road)
-    assert result.target is None
+    assert result.target is not None, result.reason
+    assert 0 < result.free_fraction < 1
+
+
+def test_larger_occupied_group_or_wide_unknown_area_is_rejected():
+    grid, road = scene()
+    grid.data[129, 174:177] = 100  # three connected cells: an object, not noise
+    # With the default min_structure_cells=3 this object is itself a structure candidate and
+    # breaks the pair; raise it here so the interior check is what rejects the bay.
+    result = lidar_observation(grid, road, replace(PairConfig(), min_structure_cells=5))
+    assert result.lidar_target is not None and result.target is None
+    assert 'occupied_group_cells=3/2' in result.reason
+    # With defaults the 3-cell object is a recessed candidate: skipped for pairing, still an obstacle.
+    default = lidar_observation(grid, road)
+    assert default.lidar_target is not None and default.target is None and not default.rear_wall
+    grid, road = scene()
+    grid.data[125:145, 160:190] = -1  # ~40% of the interior never observed
+    result = lidar_observation(grid, road)
+    assert result.target is None and 'unknown=' in result.reason
+
+
+def test_speck_touching_a_larger_group_outside_the_interior_is_rejected():
+    grid, road = scene()
+    # Only one cell lies inside the inset interior, but its group continues past the rear edge.
+    grid.data[139:150, 174] = 100
+    assert lidar_observation(grid, road).target is None
 
 
 def test_configured_depth_moves_center_without_synthesizing_a_back_wall():
@@ -92,6 +129,65 @@ def test_gap_size_and_nonfinite_configuration_are_rejected():
     grid, road = scene()
     assert lidar_observation(grid, road, replace(PairConfig(), min_gap_length=4.)).target is None
     for kwargs in ({'slot_width': float('nan')}, {'slot_width': -.1},
-                   {'min_gap_length': 7.}, {'cluster_join_m': 0.}):
+                   {'min_gap_length': 7.}, {'cluster_join_m': 0.}, {'max_speck_cells': -1},
+                   {'max_unknown_fraction': 1.}, {'max_unknown_fraction': -.1}):
         with pytest.raises(ValueError):
             PairConfig(**kwargs)
+
+
+def wall_scene(structure_rows=16, structure_cols=20, wall_gap_rows=0, heading=0.0):
+    """Structures standing against a long building wall on the left (0.05 m cells)."""
+    data = np.zeros((260, 360), dtype=np.int16)
+    top = 120+structure_rows+wall_gap_rows  # wall face row
+    data[top:top+3, 20:340] = 100  # 16 m wall, 0.15 m thick
+    data[120:120+structure_rows, 120:120+structure_cols] = 100
+    data[120:120+structure_rows, 206:206+structure_cols] = 100
+    c, s = np.cos(heading), np.sin(heading)
+    rotation = np.array([[c, -s], [s, c]])
+    translation = np.array([2., -1.])
+    origin = np.array([-5., -5.])
+    grid = planning_grid(data, .05, [*(rotation@origin+translation), heading])
+    return grid, np.r_[translation, heading]
+
+
+@pytest.mark.parametrize('heading', [0., .5])
+def test_structures_flush_against_wall_define_a_shallow_bay_on_the_wall(heading):
+    grid, road = wall_scene(heading=heading)
+    result = lidar_observation(grid, road)
+    assert result.target is not None, result.reason
+    assert result.rear_wall and result.rear_depth_m == pytest.approx(.8, abs=.08)
+    assert result.target.width == 1.10
+    # Inner edge on the wall face (row 136 starts at 1.80 m), bay extending toward the road.
+    normal = np.array([-np.sin(heading), np.cos(heading)])
+    inner = (result.target.center-road[:2])@normal+.55
+    assert inner == pytest.approx(1.80, abs=.04)
+    assert len(result.walls) == 1
+
+
+def test_small_30cm_structures_against_wall_are_split_off():
+    grid, road = wall_scene(structure_rows=6, structure_cols=6)
+    result = lidar_observation(grid, road, replace(PairConfig(), min_gap_length=3.3))
+    assert result.target is not None, result.reason
+    assert result.structures == 2 and result.rear_wall
+    assert result.rear_depth_m == pytest.approx(.3, abs=.08)
+
+
+def test_wall_beyond_configured_depth_keeps_configured_bay():
+    grid, road = wall_scene(wall_gap_rows=14)  # wall face 0.8+0.7 = 1.5 m behind entrance
+    result = lidar_observation(grid, road)
+    assert result.target is not None, result.reason
+    assert not result.rear_wall and result.rear_depth_m is None
+
+
+def test_no_pair_reason_names_the_rejected_gap():
+    grid, road = scene()
+    result = lidar_observation(grid, road, replace(PairConfig(), min_gap_length=4.))
+    assert result.target is None and 'gap 3.' in result.reason and result.structures == 2
+    assert len(result.components) == 2
+
+
+def test_short_object_inside_bay_is_not_taken_as_rear_wall():
+    grid, road = scene()
+    grid.data[140:143, 160:170] = 100  # 0.5 m box half way into the bay
+    result = lidar_observation(grid, road)
+    assert result.target is None and not result.rear_wall

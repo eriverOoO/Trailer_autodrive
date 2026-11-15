@@ -4,6 +4,74 @@
 
 빌드 대상은 이 폴더의 `src/`입니다. `COLCON_IGNORE`로 상위 워크스페이스의 패키지 검색에서 분리했습니다. 원본 ZIP의 ROS bag, 장치 로그, 백업, 빌드 결과와 비전 예제 데이터는 저장소에서 제외했습니다. 아래 날짜별 기록과 G6 보고서는 원본 ZIP의 실험 이력입니다.
 
+## 두 구조물 주차 테스트 실행 (테스트 창)
+
+왼쪽 두 구조물 사이에 후진 평행주차하는 테스트를 **창에서 모드 선택 → 실행 → 시작/정지** 순서로 합니다.
+자세한 동작은 [TWO_STRUCTURE_TEST.md](tools/TWO_STRUCTURE_TEST.md), 실패 원인은
+[TWO_STRUCTURE_TROUBLESHOOTING.md](tools/TWO_STRUCTURE_TROUBLESHOOTING.md)를 봅니다.
+
+### 처음 한 번 (실차 Ubuntu PC)
+
+```bash
+sudo apt install python3-tk fonts-noto-cjk
+cd ~/Trailer_autodrive/mvsim_slam_real        # 실제 경로
+source /opt/ros/humble/setup.bash
+# YDLidar SDK 빌드와 전체 빌드는 아래 "빌드와 기본 실행" 절차를 따릅니다.
+source tools/g6_env.bash
+colcon build --base-paths src --symlink-install
+bash tools/install_two_structure_gui_shortcut.sh   # 앱 메뉴·바탕화면에 아이콘 추가
+```
+
+빌드 전에 `src/mvsim_slam_real_bringup/launch/__pycache__`가 있으면 지웁니다(있으면 빌드 실패).
+
+### 실행
+
+1. 바탕화면/앱 메뉴의 **두 구조물 주차 테스트** 아이콘을 누릅니다
+   (또는 `bash tools/run_two_structure_gui.sh`).
+2. 테스트 모드를 고릅니다.
+
+   | 모드 | 동작 |
+   |---|---|
+   | LiDAR만 · 손으로 밀어 탐색 → [주차 시작] | 카메라 없이. 손으로 밀며 공간 확인, 멈춘 뒤 [주차 시작] |
+   | LiDAR만 · 자동 탐색 → 주차 | 카메라 없이 [탐색 시작]부터 자동 |
+   | 카메라+LiDAR · 손으로 밀어 탐색 → [주차 시작] | 카메라 확인 필수, 손으로 밀며 탐색 |
+   | 카메라+LiDAR · 자동 탐색 → 주차 | 최종 형태 |
+
+3. 포트(LiDAR, IMU 2개), 카메라 모드면 카메라 장치·보정 파일을 넣습니다. 실제로 움직이려면
+   **모터 실제 구동**을 켜고 Arduino 포트를 넣습니다(끄면 명령만 발행, 모터는 안 움직임).
+   `ROS_DOMAIN_ID`를 쓰면 창의 입력칸에 넣습니다(바로가기는 `~/.bashrc`를 읽지 않음).
+4. **실행** → 오른쪽 상태가 채워지면 차를 1초 정지시킨 뒤
+   - 자동 모드: **탐색 시작**
+   - 밀기 모드: 밀어서 공간을 지나 멈춘 뒤, 차에서 1 m 이상 떨어지고 **주차 시작(밀기 후)**
+5. 멈추려면 **정지**(ROS 명령). 다시 하려면 **종료** 후 **실행**. 실제 모터 구동 시에는 물리 비상정지를 따로 준비합니다.
+
+창의 지도에 확정 공간(초록)·후보(노랑)·구조물(파랑)·벽(진회색)·차량(빨강)·계획 경로(주황)가 표시되고,
+인식이나 주차가 실패하면 이유와 확인할 것을 한국어로 보여 줍니다.
+
+### 배치 기준 (창의 "배치 안내"와 같음)
+
+| 항목 | 기준 |
+|---|---|
+| 구조물 | 진행방향 왼쪽에 두 개, 가로·세로 30 cm 이상, 벽에 붙어도 됨(벽보다 15 cm 이상 튀어나오면 됨) |
+| 구조물 높이 | **LiDAR 스캔 높이(현재 0.687 m)보다 높게, 약 0.75 m 이상.** 더 낮은 구조물은 LiDAR를 낮게 달고 재측정 |
+| 구조물 간격 (x) | 3.3~6.0 m (3.6 m 이상이면 한 번 후진으로 진입) |
+| 옆 (y) | 차 왼쪽 옆면 → 구조물 앞면 0.5~1.2 m |
+| 앞 (x) | 출발 시 차 앞코 → 첫 구조물 1~10 m |
+| 앞쪽 여유 | 두 번째 구조물 뒤로 도로 약 6 m (공간을 지나 멈춘 뒤 후진) |
+| 오른쪽 | 차 오른쪽 옆면에서 0.3 m 이상 (후진할 때 앞부분이 오른쪽으로 돎). 검출은 오른쪽을 보지 않음 |
+| 0.18 m 규칙 | 자동 주행 중에는 어느 방향이든 차체 0.18 m 안에 아무것도(사람 포함) 없어야 함 → 있으면 비상정지 |
+| 손으로 밀 때 | 미는 동안은 모터 0·충돌 검사 없음 → 뒤에서 미는 사람이 잡혀도 멈추지 않음. 트레일러 뒤 가운데서 밀고 공간 옆 도로에 머물지 않기(사람이 지도에 남을 수 있음). [주차 시작] 전 1 m 이상 떨어지기 |
+
+### 터미널로 직접 실행할 때 (창과 같은 명령)
+
+```bash
+source /opt/ros/humble/setup.bash && source install/setup.bash && source tools/g6_env.bash
+ros2 launch mvsim_slam_real_bringup two_structure_parking_test.launch.py development_mode:=false start_g6_driver:=true lidar_port:=/dev/lidar_g6 tractor_imu_port:=/dev/imu_tractor trailer_imu_port:=/dev/imu_trailer require_camera:=false allow_lidar_only_motion:=true manual_survey:=true
+ros2 service call /parking_test/start_parking std_srvs/srv/Trigger '{}'   # 밀기 모드: 멈춘 뒤
+ros2 service call /parking_test/start_search std_srvs/srv/Trigger '{}'    # 자동 모드
+ros2 service call /parking_test/stop std_srvs/srv/Trigger '{}'
+```
+
 ## 좌측 주차공간 검출 (2026-11-09)
 
 뒤쪽 벽 없이 왼쪽 두 구조물 사이를 카메라·LiDAR로 확인하는 별도 테스트는

@@ -5,7 +5,9 @@ tractor_parallel_parking_auto:
     # Lateral parking depth. NEW GTR AMG body width is 0.55 m;
     # 1.10 m leaves 0.275 m on each side when aligned. Change before a run.
     slot_width: 1.10
-    pair_min_gap_length: 2.60
+    # With the virtual rear wall, 3.3 m needs several forward/reverse shunts and
+    # 3.6 m and wider enters with a single reverse (synthetic planning test).
+    pair_min_gap_length: 3.30
     pair_max_gap_length: 6.0
     gap_min_lateral_m: 0.55
     pair_max_lateral_m: 6.0
@@ -16,7 +18,27 @@ tractor_parallel_parking_auto:
     pair_min_structure_cells: 3
     pair_max_structure_extent_m: 3.0
     pair_interior_margin_m: 0.10
+    # Bay interior tolerance: isolated occupied specks up to this many connected cells
+    # (0.05 m cells; LiDAR noise) and this fraction of unobserved cells. Larger occupied
+    # groups still reject. Final fit is decided by the planner's footprint clearance check.
+    pair_max_speck_cells: 2
+    pair_max_unknown_fraction: 0.10
+    # Structures standing against a building wall: split off the wall when they stick out
+    # toward the road by at least this much (structures are >= 0.30 m deep).
+    pair_structure_protrusion_m: 0.15
+    # A wall behind the gap (walls, or recessed wall pieces at least this long) sets the
+    # bay's inner edge when it is closer than slot_width; the bay then extends toward the road.
+    pair_min_wall_piece_m: 1.0
     pair_camera_match_distance_m: 0.20
+    # Virtual wall behind the confirmed bay (deeper than slot_width/2 + margin from the
+    # bay centre) for planning, pre-execute recheck and live collision checks only.
+    # Keeps the trailer from routing around behind the structures in open areas.
+    # Detection map and forward search are unaffected. No path -> FAILED as before.
+    pair_block_behind_bay: true
+    pair_rear_block_margin_m: 0.0
+    # Planning relaxation: unobserved cells inside the confirmed bay count as free for
+    # planning and collision checks (occupied cells are never changed).
+    pair_bay_unknown_as_free: true
     camera_evidence_lifetime_s: 180.0
     camera_stream_timeout_s: 1.0
     auto_execute: true

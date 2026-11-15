@@ -1,4 +1,8 @@
-"""Opt-in two-structure bay geometry; no rear wall or invented free cells."""
+"""Opt-in two-structure bay geometry; no rear wall required, no invented free cells.
+
+A measured wall behind the gap (e.g. structures standing against a building wall)
+sets the bay's inner edge; without one the configured depth is used.
+"""
 
 from dataclasses import dataclass
 import math
@@ -29,6 +33,17 @@ class PairConfig:
     min_structure_cells: int = 3
     interior_margin_m: float = .10
     camera_match_distance_m: float = .20
+    # Interior tolerance: isolated occupied specks of at most this many connected cells
+    # (LiDAR noise) and this fraction of unobserved cells. The planner's own footprint
+    # clearance check still decides whether the rig fits.
+    max_speck_cells: int = 2
+    max_unknown_fraction: float = .10
+    # A structure standing against a wall must stick out from it toward the road by at
+    # least this much to be split off the wall (structures are >= 0.30 m deep).
+    structure_protrusion_m: float = .15
+    # Rear boundary evidence: walls (runs longer than max_structure_extent_m) or recessed
+    # wall pieces at least this long. Shorter objects inside the bay stay obstacles.
+    min_wall_piece_m: float = 1.0
 
     def __post_init__(self):
         if not all(math.isfinite(float(v)) for v in vars(self).values()):
@@ -39,7 +54,9 @@ class PairConfig:
                 and self.min_longitudinal_m < self.max_longitudinal_m
                 and 0 < self.max_heading_deg <= 30
                 and self.cluster_join_m > 0 and self.max_structure_extent_m > 0
-                and self.min_structure_cells >= 3 and self.camera_match_distance_m > 0):
+                and self.min_structure_cells >= 3 and self.camera_match_distance_m > 0
+                and self.max_speck_cells >= 0 and 0 <= self.max_unknown_fraction < 1
+                and self.structure_protrusion_m > 0 and self.min_wall_piece_m > 0):
             raise ValueError('Invalid two-structure dimensions or thresholds')
 
 
@@ -49,6 +66,11 @@ class PairObservation(GapObservation):
     components: tuple = ()
     free_fraction: float = 0.0
     camera_confirmed: bool = False
+    rear_wall: bool = False            # bay inner edge set by a measured wall/boundary
+    rear_depth_m: float | None = None  # entrance -> measured rear boundary
+    walls: tuple = ()                  # long occupied runs (walls) in the left window
+    structures: int = 0                # structure candidates found
+    rejected_pairs: tuple = ()         # (gap_length_m or None, reason) of pairs not used
 
 
 def camera_confirms_pair(components, evidence, distance=.20):
@@ -73,13 +95,18 @@ def camera_confirms_pair(components, evidence, distance=.20):
     return confirmed == {0, 1}
 
 
-def observed_interior(grid, target, margin):
-    """Check every raster cell intersecting the inset interior; unknown stays blocked."""
+def observed_interior(grid, target, margin, max_unknown_fraction=0.0, max_speck_cells=0):
+    """Check every raster cell intersecting the inset interior.
+
+    Returns (ok, free_fraction, unknown_fraction, largest_blob). An occupied cell is
+    tolerated only if its whole 8-connected occupied group has at most max_speck_cells
+    cells; unknown cells are tolerated up to max_unknown_fraction. Defaults are strict.
+    """
     corners = target.polygon()
     ij = grid.world_to_cell(corners)
     lo, hi = ij.min(axis=0)-1, ij.max(axis=0)+2
     if np.any(lo < 0) or hi[0] > grid.width or hi[1] > grid.height:
-        return False, 0.0
+        return False, 0.0, 1.0, 0
     jj, ii = np.mgrid[lo[1]:hi[1], lo[0]:hi[0]]
     xy = grid.cell_to_world(np.c_[ii.ravel(), jj.ravel()])
     local = transform(xy-target.center, [0, 0], -target.heading)
@@ -87,16 +114,68 @@ def observed_interior(grid, target, margin):
     pad = grid.resolution/math.sqrt(2)
     keep = ((np.abs(local[:, 0]) <= target.length/2-margin+pad)
             & (np.abs(local[:, 1]) <= target.width/2-margin+pad))
-    values = grid.data[jj.ravel()[keep], ii.ravel()[keep]]
+    rows, cols = jj.ravel()[keep], ii.ravel()[keep]
+    values = grid.data[rows, cols]
     if not len(values):
-        return False, 0.0
+        return False, 0.0, 1.0, 0
     free = (values >= 0) & (values < 50)
-    return bool(np.all(free)), float(np.mean(free))
+    unknown = float(np.mean(values < 0))
+    largest = 0
+    occupied = values >= 50
+    if occupied.any():
+        # Size whole occupied groups in a window wide enough that a group cut by the
+        # window edge already exceeds the speck limit.
+        extra = int(max_speck_cells)+1
+        r0, c0 = max(lo[1]-extra, 0), max(lo[0]-extra, 0)
+        window = grid.data[r0:min(hi[1]+extra, grid.height), c0:min(hi[0]+extra, grid.width)] >= 50
+        labels, _ = label(window, structure=np.ones((3, 3), dtype=bool))
+        sizes = np.bincount(labels.ravel())
+        largest = int(sizes[labels[rows[occupied]-r0, cols[occupied]-c0]].max())
+    ok = largest <= max_speck_cells and unknown <= max_unknown_fraction
+    return bool(ok), float(np.mean(free)), unknown, largest
+
+
+def split_wall(local, points, config, resolution):
+    """Split structures off a long occupied run (a wall) by how far they stick out.
+
+    local/points: road-frame and world coordinates of one connected component longer
+    than max_structure_extent_m. Per longitudinal bin the cell nearest the road is kept;
+    a line fitted to the wall-level bins is the wall face, and runs of bins nearer than
+    structure_protrusion_m are structures. Returns a list of world point arrays.
+    """
+    u, v = local[:, 0], local[:, 1]
+    bins = np.floor((u-u.min())/resolution).astype(int)
+    nearest = np.full(bins.max()+1, np.inf)
+    np.minimum.at(nearest, bins, v)
+    have = np.isfinite(nearest)
+    centres = u.min()+(np.arange(len(nearest))+.5)*resolution
+    use = have.copy()
+    for _ in range(5):
+        if use.sum() < 2:
+            return []
+        slope, intercept = np.polyfit(centres[use], nearest[use], 1)
+        line = slope*centres+intercept
+        use = have & (nearest >= line-config.structure_protrusion_m)
+    if abs(math.atan(slope)) > math.radians(config.max_heading_deg):
+        return []
+    protruding = np.flatnonzero(have & (nearest < line-config.structure_protrusion_m))
+    if not len(protruding):
+        return []
+    join = max(1, int(math.ceil(config.cluster_join_m/resolution)))
+    runs = np.split(protruding, np.flatnonzero(np.diff(protruding) > join+1)+1)
+    structures = []
+    for run in runs:
+        keep = ((bins >= run[0]) & (bins <= run[-1])
+                & (v < slope*u+intercept-config.structure_protrusion_m/2))
+        if (keep.sum() >= config.min_structure_cells
+                and np.max(np.ptp(local[keep], axis=0)) <= config.max_structure_extent_m):
+            structures.append(points[keep])
+    return structures
 
 
 def observe_two_structure_gap(grid, road_pose, config=PairConfig(), *,
                               camera_evidence=(), require_camera=True):
-    """Measure left-side facing edges and apply a configurable lateral depth.
+    """Measure left-side facing edges; bay depth from a measured rear wall or configured.
 
     Heading is the line between the two road-facing structure anchors, bounded
     by the initial road-heading prior. Unknown space is never filled here.
@@ -104,7 +183,7 @@ def observe_two_structure_gap(grid, road_pose, config=PairConfig(), *,
     road_pose = np.asarray(road_pose, dtype=float)
     if road_pose.shape != (3,) or not np.isfinite(road_pose).all():
         raise ValueError('Expected finite initial road pose [x,y,yaw]')
-    result = PairObservation(reason='waiting for two observed left-side structures')
+    result = PairObservation(reason='waiting for two observed left-side structures (found 0)')
     ji = np.argwhere(grid.data >= 50)
     if not len(ji):
         return result
@@ -117,7 +196,13 @@ def observe_two_structure_gap(grid, road_pose, config=PairConfig(), *,
     mask[selected[:, 0], selected[:, 1]] = True
     radius = max(1, int(math.ceil(config.cluster_join_m/(2*grid.resolution))))
     labels, _ = label(binary_dilation(mask, iterations=radius))
-    components = []
+    components, walls = [], []
+
+    def add(points):
+        local = transform(points-road_pose[:2], [0, 0], -road_pose[2])
+        anchor = np.array([(local[:, 0].min()+local[:, 0].max())/2, local[:, 1].min()])
+        components.append((anchor, points, float(np.ptp(local[:, 0]))))
+
     # Iterate labels of occupied cells only, not all dilated background labels.
     for k in np.unique(labels[mask]):
         cells = np.argwhere(mask & (labels == k))
@@ -126,47 +211,86 @@ def observe_two_structure_gap(grid, road_pose, config=PairConfig(), *,
         points = grid.cell_to_world(cells[:, ::-1])
         local = transform(points-road_pose[:2], [0, 0], -road_pose[2])
         if np.max(np.ptp(local, axis=0)) > config.max_structure_extent_m:
+            # A wall, possibly with structures standing against it.
+            walls.append(points)
+            for structure in split_wall(local, points, config, grid.resolution):
+                add(structure)
             continue
-        anchor = np.array([(local[:, 0].min()+local[:, 0].max())/2,
-                           local[:, 1].min()])
-        components.append((anchor, points))
+        add(points)
     components.sort(key=lambda value: value[0][0])
+    wall_points = np.vstack(walls) if walls else np.zeros((0, 2))
     result.first_obstacle = bool(components)
-    valid, provisional = [], []
-    for (a, first), (b, second) in zip(components, components[1:]):
-        angle = math.atan2(b[1]-a[1], b[0]-a[0])
-        if abs(angle) > math.radians(config.max_heading_deg):
-            continue
-        heading = road_pose[2]+angle
-        one = transform(first-road_pose[:2], [0, 0], -heading)
-        two = transform(second-road_pose[:2], [0, 0], -heading)
-        pad = grid.resolution/math.sqrt(2)
-        start, end = float(one[:, 0].max()+pad), float(two[:, 0].min()-pad)
-        length = end-start
-        if not config.min_gap_length <= length <= config.max_gap_length:
-            continue
-        entrance = float((one[:, 1].min()+two[:, 1].min())/2-pad)
-        center = transform([[(start+end)/2, entrance+config.slot_width/2]],
-                           road_pose[:2], heading)[0]
-        target = Target(center, heading, length, config.slot_width,
-                        'two LiDAR structures; fixed lateral depth; no rear-wall assumption')
-        free, fraction = observed_interior(grid, target, config.interior_margin_m)
-        camera = camera_confirms_pair((first, second), camera_evidence,
-                                     config.camera_match_distance_m)
-        observation = PairObservation(
-            first_obstacle=True, gap_seen=True, second_obstacle=True,
-            target=target if free and (camera or not require_camera) else None,
-            obstacle_intervals=((float(one[:, 0].min()-pad), start),
-                                (end, float(two[:, 0].max()+pad))),
-            lidar_target=target, components=(first, second), free_fraction=fraction,
-            camera_confirmed=camera,
-            reason=('two structures and observed free interior confirmed' if free and camera else
-                    'LiDAR-only test: camera confirmation bypassed' if free and not require_camera else
-                    'waiting for calibrated camera confirmation of both LiDAR structures' if free else
-                    f'gap found; interior blocked or unknown (free={fraction:.3f})'))
-        (valid if observation.target is not None else provisional).append(observation)
+    result.walls = tuple(walls)
+    result.structures = len(components)
+    if len(components) < 2:
+        result.components = tuple(c[1] for c in components)
+        result.reason = f'waiting for two observed left-side structures (found {len(components)})'
+        return result
+    valid, provisional, rejected = [], [], []
+    pad = grid.resolution/math.sqrt(2)
+    for i, (a, first, _) in enumerate(components):
+        for j in range(i+1, min(i+5, len(components))):
+            b, second, _ = components[j]
+            # Skip only parts recessed behind both faces (rear wall pieces), never a front object.
+            between = [c[0][1] for c in components[i+1:j]]
+            if between and min(between) < max(a[1], b[1])+config.structure_protrusion_m:
+                break
+            angle = math.atan2(b[1]-a[1], b[0]-a[0])
+            if abs(angle) > math.radians(config.max_heading_deg):
+                rejected.append((None, f'pair heading {math.degrees(angle):.1f} deg > {config.max_heading_deg:.1f}'))
+                continue
+            heading = road_pose[2]+angle
+            one = transform(first-road_pose[:2], [0, 0], -heading)
+            two = transform(second-road_pose[:2], [0, 0], -heading)
+            start, end = float(one[:, 0].max()+pad), float(two[:, 0].min()-pad)
+            length = end-start
+            if not config.min_gap_length <= length <= config.max_gap_length:
+                rejected.append((length, f'gap {length:.2f} m outside {config.min_gap_length:.2f}..'
+                                         f'{config.max_gap_length:.2f} m'))
+                continue
+            entrance = float((one[:, 1].min()+two[:, 1].min())/2-pad)
+            # Nearest wall cell behind the entrance inside the gap span is the rear boundary;
+            # the bay's inner edge sits on it when within slot_width.
+            pieces = [c[1] for c in components[i+1:j] if c[2] >= config.min_wall_piece_m]
+            rear_points = np.vstack([wall_points, *pieces])
+            depth = None
+            if len(rear_points):
+                rear = transform(rear_points-road_pose[:2], [0, 0], -heading)
+                behind = ((rear[:, 0] > start+pad) & (rear[:, 0] < end-pad)
+                          & (rear[:, 1] > entrance+pad) & (rear[:, 1] < entrance+config.slot_width+pad))
+                if behind.any():
+                    depth = float(rear[behind, 1].min()-pad-entrance)
+            inner = entrance+depth if depth is not None else entrance+config.slot_width
+            center = transform([[(start+end)/2, inner-config.slot_width/2]], road_pose[:2], heading)[0]
+            target = Target(center, heading, length, config.slot_width,
+                            'two LiDAR structures; inner edge on measured rear wall' if depth is not None
+                            else 'two LiDAR structures; fixed lateral depth; no rear wall within depth')
+            free, fraction, unknown, blob = observed_interior(
+                grid, target, config.interior_margin_m, config.max_unknown_fraction, config.max_speck_cells)
+            camera = camera_confirms_pair((first, second), camera_evidence,
+                                         config.camera_match_distance_m)
+            observation = PairObservation(
+                first_obstacle=True, gap_seen=True, second_obstacle=True,
+                target=target if free and (camera or not require_camera) else None,
+                obstacle_intervals=((float(one[:, 0].min()-pad), start),
+                                    (end, float(two[:, 0].max()+pad))),
+                lidar_target=target, components=(first, second), free_fraction=fraction,
+                camera_confirmed=camera, rear_wall=depth is not None, rear_depth_m=depth,
+                walls=tuple(walls), structures=len(components),
+                reason=('two structures and observed free interior confirmed' if free and camera else
+                        'LiDAR-only test: camera confirmation bypassed' if free and not require_camera else
+                        'waiting for calibrated camera confirmation of both LiDAR structures' if free else
+                        f'gap found; interior blocked or unknown (free={fraction:.3f}, '
+                        f'unknown={unknown:.3f}/{config.max_unknown_fraction:.3f}, '
+                        f'occupied_group_cells={blob}/{config.max_speck_cells})'))
+            (valid if observation.target is not None else provisional).append(observation)
     choices = valid or provisional
     if choices:
         # Prefer confirmed pairs, then the nearest bay along the initial road.
         result = min(choices, key=lambda obs: float(np.linalg.norm(obs.lidar_target.center-road_pose[:2])))
+    else:
+        result.components = tuple(c[1] for c in components)
+        result.reason = (f'{len(components)} structures found but no usable pair: '
+                         + ('; '.join(r for _, r in rejected[:3]) or 'an object in front sits between them'))
+    result.rejected_pairs = tuple(rejected)
     return result
