@@ -1,5 +1,6 @@
 """SLAM-authoritative tractor pose + preserved Final B gyro integration."""
 import copy,json,math,time
+from collections import deque
 import numpy as np
 from rclpy.node import Node
 from rclpy.qos import qos_profile_sensor_data,QoSProfile,DurabilityPolicy
@@ -12,6 +13,7 @@ from sensor_msgs.msg import Imu,LaserScan,PointCloud2
 from std_msgs.msg import String
 from std_srvs.srv import Trigger
 from .common import spin,publish_json
+from .free_space import NoReturnFreeLayer
 from .geometry import VehicleGeometry
 from .yaw_estimator import GyroYaw
 
@@ -24,11 +26,15 @@ def ns(stamp):return stamp.sec*10**9+stamp.nanosec
 class StateEstimator(Node):
     def __init__(self,**kwargs):
         super().__init__('state_estimator',**kwargs)
-        for k,v in {'geometry_file':'','pose_timeout':.3,'imu_timeout':.15,'scan_timeout':.4,'map_timeout':2.5,'require_tractor_imu':True}.items():self.declare_parameter(k,v)
+        for k,v in {'geometry_file':'','pose_timeout':.3,'imu_timeout':.15,'scan_timeout':.4,'map_timeout':2.5,'require_tractor_imu':True,'no_return_free_range':3.}.items():self.declare_parameter(k,v)
         self.vehicle=VehicleGeometry(self.get_parameter('geometry_file').value);g=self.vehicle.values
         self.gyro=GyroYaw();self.gyro.bias=float(g['trailer_gyro_bias_rad_s']);self.gyro.bias_sigma=None
         self.aligned=bool(g['initial_alignment_confirmed']);self.biased=bool(g['trailer_bias_confirmed']);self.initial_phi=float(g['initial_articulation_rad'])
         if not math.isfinite(self.initial_phi) or abs(self.initial_phi)>=math.radians(30) or not math.isfinite(self.gyro.bias):raise ValueError('invalid initial yaw alignment/bias')
+        # No-return (+inf) beams count as free space up to this range [m]; 0 disables. See tools/TWO_STRUCTURE_TEST.md.
+        self.free_range=float(self.get_parameter('no_return_free_range').value)
+        if not 0<=self.free_range<=12:raise ValueError('no_return_free_range must be within 0..12 m')
+        self.pending_scans=deque(maxlen=40);self.free_layer=None;self.occupied_cache=None
         self.buffer=Buffer();self.listener=TransformListener(self.buffer,self);self.dynamic=TransformBroadcaster(self)
         self.imu_wall=0.;self.tractor_wall=0.;self.scan_wall=0.;self.match_wall=0.;self.match_stamp=0;self.scan=None;self.map=None;self.map_wall=0.;self.state=None;self.last_pose=None;self.last_pose_ns=0;self.pose_history=[];self.tf_packets={};self.pose_fault=None;self.error='waiting SLAM/IMU'
         self.pub=self.create_publisher(String,'/parking/state',100);self.status=self.create_publisher(String,'/tractor/localization/status',20)
@@ -85,22 +91,55 @@ class StateEstimator(Node):
         if m.header.frame_id=='tractor_imu_link' and self.acceptable_imu(m):self.tractor_wall=time.monotonic()
     def on_scan(self,m):
         self.scan=m;self.scan_wall=time.monotonic()
+        if self.free_range>0:self.pending_scans.append((self.scan_wall,m));self.integrate_scans()
+    @staticmethod
+    def map_origin(m):
+        try:return np.array([m.info.origin.position.x,m.info.origin.position.y,yaw(m.info.origin.orientation)])
+        except ValueError:return None
+    def integrate_scans(self):
+        # Accumulate no-return beams once map→scan TF at the scan stamp exists; wait up to 1s, then drop.
+        m=self.map
+        while self.pending_scans:
+            arrived,scan=self.pending_scans[0]
+            if m is None:
+                if time.monotonic()-arrived>1.:self.pending_scans.popleft();continue
+                return
+            try:tf=self.buffer.lookup_transform('map',scan.header.frame_id,Time.from_msg(scan.header.stamp))
+            except TransformException:
+                if time.monotonic()-arrived>1.:self.pending_scans.popleft();continue
+                return
+            self.pending_scans.popleft()
+            if self.free_layer is None or self.free_layer.resolution!=m.info.resolution:self.free_layer=NoReturnFreeLayer(m.info.resolution,self.free_range)
+            # Occupied grid from the latest /map, converted once per map message.
+            if self.occupied_cache is None or self.occupied_cache[0] is not m:
+                self.occupied_cache=(m,np.array(m.data,dtype=np.int16).reshape(m.info.height,m.info.width)>=50,self.map_origin(m))
+            _,occupied,origin=self.occupied_cache
+            try:
+                v=tf.transform.translation
+                self.free_layer.add_scan(scan.ranges,scan.angle_min,scan.angle_increment,scan.range_min,[v.x,v.y,yaw(tf.transform.rotation)],occupied if origin is not None else None,origin)
+            except ValueError:pass
+    def apply_free_layer(self,data,m):
+        origin=self.map_origin(m)
+        if self.free_layer is not None and origin is not None and self.free_layer.resolution==m.info.resolution:self.free_layer.apply(data,origin)
+        return data
     def matched(self,m):
         self.match_wall=time.monotonic();self.match_stamp=ns(m.header.stamp)
     def on_map(self,m):
         if m.header.frame_id!='map' or m.info.resolution<=0 or len(m.data)!=m.info.width*m.info.height:return
-        self.map=m;self.map_wall=time.monotonic()
-        observed=copy.deepcopy(m);observed.header.frame_id='local_map';observed.data=np.where(np.array(m.data)<0,-1,np.where(np.array(m.data)>=50,100,0)).astype(int).tolist();self.detection_map.publish(observed)
+        self.map=m;self.map_wall=time.monotonic();self.integrate_scans()
+        grid=np.array(m.data).reshape(m.info.height,m.info.width);thresholded=self.apply_free_layer(np.where(grid<0,-1,np.where(grid>=50,100,0)),m)
+        observed=copy.deepcopy(m);observed.header.frame_id='local_map';observed.data=thresholded.ravel().astype(int).tolist();self.detection_map.publish(observed)
         local=copy.deepcopy(m);local.header.frame_id='local_map';local.data=self.collision_data(m).ravel().astype(int).tolist();self.local_map.publish(local)
     def collision_data(self,m):
         # Preserve original measured-ray unknown→free augmentation, .15m endpoint margin.
-        data=np.array(m.data,dtype=np.int16).reshape(m.info.height,m.info.width);scan=self.scan
+        data=self.apply_free_layer(np.array(m.data,dtype=np.int16).reshape(m.info.height,m.info.width),m);scan=self.scan
         if scan is None or time.monotonic()-self.scan_wall>self.get_parameter('scan_timeout').value:return data
         try:tf=self.buffer.lookup_transform('map',scan.header.frame_id,Time.from_msg(scan.header.stamp))
         except TransformException:return data
         try:angle=yaw(tf.transform.rotation);origin_yaw=yaw(m.info.origin.orientation)
         except ValueError:return data
-        rs=np.asarray(scan.ranges);maxfree=np.where(np.isposinf(rs),scan.range_max-.15,rs-.15);valid=(rs>scan.range_min)&~np.isnan(rs)&(maxfree>scan.range_min)
+        # +inf (no-return) beams are trusted only up to no_return_free_range.
+        rs=np.asarray(scan.ranges);maxfree=np.where(np.isposinf(rs),min(scan.range_max-.15,self.free_range),rs-.15);valid=(rs>scan.range_min)&~np.isnan(rs)&(maxfree>scan.range_min)
         # Batch rays bounds memory for dense sensors while retaining original half-cell spacing.
         distances=np.arange(max(.02,scan.range_min),scan.range_max-.14,m.info.resolution*.5)
         for lo in range(0,len(rs),128):

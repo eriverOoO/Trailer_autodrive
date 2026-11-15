@@ -110,6 +110,16 @@ def test_scan_geometry_direction_timestamp_and_invalid_returns(ros):
         gateway.receive(m);assert gateway.error=='scan timestamp stale/backward' and gateway.pub.publish.call_count==1
     finally:gateway.destroy_node()
 
+def test_zero_range_is_no_return_opt_in(ros):
+    m=LaserScan();m.header.frame_id='raw';m.angle_min=-1.;m.angle_max=1.;m.angle_increment=1.;m.range_min=.1;m.range_max=10.;m.ranges=[0.,2.,.05]
+    out=normalize_scan(m,'laser_frame')
+    assert math.isnan(out.ranges[0]) and out.ranges[1]==2. and math.isnan(out.ranges[2])
+    out=normalize_scan(m,'laser_frame',zero_is_no_return=True)
+    assert out.ranges[0]==float('inf') and out.ranges[1]==2. and math.isnan(out.ranges[2])
+    gateway=LidarGateway()
+    try:assert gateway.get_parameter('zero_range_is_no_return').value is False
+    finally:gateway.destroy_node()
+
 def test_adapter_preview_timeout_estop_and_hardware_disabled(ros):
     a=ControlAdapter(parameter_overrides=params(geometry_file=str(GEOMETRY)));a.pub=MagicMock();a.preview=MagicMock()
     try:
@@ -140,6 +150,26 @@ def test_slam_rear_axle_articulation_dynamic_state_and_loss(ros,tmp_path):
         state,ts=node.evaluate();assert np.allclose(state,[-.305,0.,0.,.1]) and ts==now-20_000_000
         node.tick();assert json.loads(node.pub.publish.call_args.args[0].data)['valid']
         node.imu_wall-=1.;node.tick();assert not json.loads(node.pub.publish.call_args.args[0].data)['valid']
+    finally:node.destroy_node()
+
+def test_no_return_beams_accumulate_into_detection_and_local_map(ros):
+    with pytest.raises(ValueError,match='no_return_free_range'):StateEstimator(parameter_overrides=params(geometry_file=str(GEOMETRY),no_return_free_range=12.5))
+    node=StateEstimator(parameter_overrides=params(geometry_file=str(GEOMETRY)));node.detection_map=MagicMock();node.local_map=MagicMock()
+    try:
+        now=node.get_clock().now().nanoseconds
+        def stamp(m,ns):m.header.stamp.sec=ns//10**9;m.header.stamp.nanosec=ns%10**9
+        # 40x40 unknown grid, origin (-2,-2); one wall cell at world x 1.0..1.1 on the beam.
+        grid=OccupancyGrid();grid.header.frame_id='map';stamp(grid,now);grid.info.width=40;grid.info.height=40;grid.info.resolution=.1
+        grid.info.origin.position.x=-2.;grid.info.origin.position.y=-2.;grid.info.origin.orientation.w=1.;data=[-1]*1600;data[20*40+30]=100;grid.data=data
+        node.on_map(grid)
+        t=TransformStamped();t.header.frame_id='map';t.child_frame_id='laser_frame';stamp(t,now);t.transform.translation.x=.02;t.transform.translation.y=.05;t.transform.rotation.w=1.;node.buffer.set_transform(t,'offline fixture')
+        m=LaserScan();m.header.frame_id='laser_frame';stamp(m,now);m.angle_min=0.;m.angle_max=math.pi/2;m.angle_increment=math.pi/2;m.range_min=.1;m.range_max=12.;m.ranges=[float('inf'),float('nan')];node.on_scan(m)
+        assert not node.pending_scans and len(node.free_layer)>0
+        node.scan_wall-=10.;node.on_map(grid)
+        for pub in (node.detection_map,node.local_map):
+            row=np.array(pub.publish.call_args.args[0].data).reshape(40,40)[20]
+            assert (row[21:30]==0).all() and row[30]==100 and (row[31:]==-1).all() and row[19]==-1
+            assert (np.array(pub.publish.call_args.args[0].data).reshape(40,40)[21:]==-1).all()
     finally:node.destroy_node()
 
 def test_tf_buffer_preserves_publication_rate_for_coherent_pairing(ros):

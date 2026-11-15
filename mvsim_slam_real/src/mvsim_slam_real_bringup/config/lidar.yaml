@@ -6,6 +6,10 @@ lidar_gateway:
     angle_offset: 0.0
     reverse_direction: false
     timeout: 0.5
+    # G6 driver reports beams without any echo as exactly 0.0. Forward them as +inf (no return)
+    # instead of NaN so state_estimator can mark short-range open space free
+    # (no_return_free_range). Body-blocked beams from the self filter stay NaN.
+    zero_range_is_no_return: true
     # Self filter (laser_frame, x forward): drop returns from the rig itself.
     # LiDAR sits 0.095 m ahead of the tractor rear; trailer front is ~0.31 m behind it,
     # trailer ends ~1.30 m behind. y covers 0.55 m width plus articulation swing.

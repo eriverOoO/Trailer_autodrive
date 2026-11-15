@@ -8,7 +8,7 @@ from sensor_msgs.msg import LaserScan
 from std_msgs.msg import String
 from .common import spin,publish_json
 
-def normalize_scan(msg,frame,offset=0.,reverse=False):
+def normalize_scan(msg,frame,offset=0.,reverse=False,zero_is_no_return=False):
     n=len(msg.ranges)
     vals=[msg.angle_min,msg.angle_max,msg.angle_increment,msg.range_min,msg.range_max,msg.time_increment,msg.scan_time]
     if n<2 or not all(math.isfinite(v) for v in vals) or msg.angle_increment<=0 or not 0<=msg.range_min<msg.range_max or min(msg.time_increment,msg.scan_time)<0:
@@ -18,7 +18,9 @@ def normalize_scan(msg,frame,offset=0.,reverse=False):
     if reverse and msg.time_increment>0:raise ValueError('time-ordered scan reflection requires upstream timestamp-aware driver')
     if not msg.header.frame_id:raise ValueError('missing source frame')
     out=copy.deepcopy(msg)
-    out.ranges=[v if math.isfinite(v) and msg.range_min<=v<=msg.range_max else (float('inf') if v==float('inf') else float('nan')) for v in msg.ranges]
+    # zero_is_no_return: drivers such as G6 report a beam without any echo as exactly 0.0.
+    # Opt-in only; it is forwarded as +inf (no return) instead of NaN (invalid).
+    out.ranges=[v if math.isfinite(v) and msg.range_min<=v<=msg.range_max else (float('inf') if v==float('inf') or (zero_is_no_return and v==0.) else float('nan')) for v in msg.ranges]
     if not any(math.isfinite(v) for v in out.ranges):raise ValueError('no finite scan returns')
     if reverse:
         out.ranges.reverse();out.intensities.reverse();out.angle_min=-msg.angle_max;out.angle_max=-msg.angle_min
@@ -38,7 +40,7 @@ class LidarGateway(Node):
         super().__init__('lidar_gateway',**kwargs)
         d={'input_topic':'/lidar_raw','output_topic':'/scan','frame_id':'laser_frame','angle_offset':0.,'reverse_direction':False,'timeout':.5,
            'self_filter_x_min':0.,'self_filter_x_max':0.,'self_filter_y_abs':0.,
-           'self_filter_front_x_max':0.,'self_filter_front_y_abs':0.}
+           'self_filter_front_x_max':0.,'self_filter_front_y_abs':0.,'zero_range_is_no_return':False}
         for k,v in d.items():self.declare_parameter(k,v)
         self.last=None;self.last_stamp=0;self.error='no scan received'
         self.pub=self.create_publisher(LaserScan,self.get_parameter('output_topic').value,QoSProfile(depth=10))
@@ -49,7 +51,7 @@ class LidarGateway(Node):
         try:
             ns=m.header.stamp.sec*10**9+m.header.stamp.nanosec;age=(self.get_clock().now().nanoseconds-ns)/1e9
             if ns<=self.last_stamp or not -.03<=age<=self.get_parameter('timeout').value:raise ValueError('scan timestamp stale/backward')
-            out=normalize_scan(m,self.get_parameter('frame_id').value,self.get_parameter('angle_offset').value,self.get_parameter('reverse_direction').value)
+            out=normalize_scan(m,self.get_parameter('frame_id').value,self.get_parameter('angle_offset').value,self.get_parameter('reverse_direction').value,bool(self.get_parameter('zero_range_is_no_return').value))
             out=self_filter(out,*(float(self.get_parameter('self_filter_'+k).value) for k in ('x_min','x_max','y_abs')))
             # Second box: the tractor body ahead of the LiDAR (narrower, chassis width only).
             out=self_filter(out,0.,float(self.get_parameter('self_filter_front_x_max').value),float(self.get_parameter('self_filter_front_y_abs').value))

@@ -79,6 +79,37 @@ ros2 service call /parking_test/stop std_srvs/srv/Trigger '{}'
 보정 전 LiDAR 후보만 확인하려면 `require_camera:=false`를 명시할 수 있습니다.
 이 경우 자동 주행/주차 시작 서비스는 거부합니다.
 
+## 벽 없는 열린 공간 (무반사 광선)
+
+Cartographer는 반사가 돌아온 광선만 빈 공간으로 기록합니다. 벽이 없는 열린 방향은
+G6가 무반사 빔을 `0.0`으로 내보내므로 계속 미관측(-1)으로 남고, 계획·검출 격자는
+미관측을 막힘으로 취급해 `gap found; interior blocked or unknown`으로 거부됩니다.
+이를 위해 무반사 광선을 짧은 거리까지만 빈 공간으로 인정합니다.
+
+- `lidar_gateway`의 `zero_range_is_no_return` (`config/lidar.yaml`, 기본 코드값 false, G6 설정 true):
+  값이 정확히 `0.0`인 빔을 NaN 대신 `+inf`(무반사)로 `/scan`에 내보냅니다.
+- `state_estimator`의 `no_return_free_range` (기본 3.0 m, 허용 0~12, 0이면 비활성):
+  각 스캔 시각의 map→scan TF로 `+inf` 빔을 이 거리까지 누적해 `/parking/detection_map`과
+  `/tractor/localization/local_map`의 미관측 셀만 빈 공간으로 바꿉니다. 기존 현재 스캔 한 장의
+  `+inf` 보강 거리도 이 값으로 제한됩니다.
+
+안전 장치:
+
+- 미관측(-1) 셀만 바꾸며 점유 셀은 절대 바꾸지 않습니다. 각 광선은 최신 `/map`에서 처음 만나는
+  점유 셀에서 끊기고 그 뒤는 미관측으로 남습니다.
+- 자기 차체 필터에 걸린 빔은 NaN으로 남아 빈 공간 근거로 쓰이지 않습니다. `range_min` 안쪽도 무시합니다.
+- 스캔 시각의 TF가 1초 안에 조회되지 않으면 그 스캔은 버립니다.
+
+한계:
+
+- 3 m 안의 검은색·광택·투명 물체처럼 반사가 돌아오지 않는 물체는 빈 공간으로 잘못 기록될 수 있습니다.
+  이런 구조물·장애물은 실험 전에 확인하고, 필요하면 `state_estimator`의 `no_return_free_range`를 0으로 설정해 끕니다.
+- 누적은 기록 당시의 map 좌표로 저장됩니다. SLAM 지도가 루프 결합 등으로 크게 보정되면
+  누적 위치가 어긋날 수 있으며, 초기화는 `state_estimator` 노드(launch) 재시작입니다.
+
+실차 확인: 열린 방향의 `/scan` 값이 `inf`로 나오는지, `/parking/detection_map`에서
+주차 공간 내부가 빈 공간(0)으로 보이는지 RViz로 확인합니다.
+
 ## 확인 화면과 검증
 
 - `/parking_test/observation`: LiDAR 두 구조물, 카메라 확인, 내부 자유공간, 중심·방향·길이·깊이.
