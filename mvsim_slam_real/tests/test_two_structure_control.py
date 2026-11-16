@@ -146,3 +146,49 @@ def test_allow_flag_alone_keeps_camera_required(node):
     assert not node.set_parameters([Parameter('allow_lidar_only_motion', value=True)])[0].successful
     node.streams_ready = node.stationary = lambda: True
     assert not node.start_search(Trigger.Request(), Trigger.Response()).success
+
+
+@pytest.mark.parametrize('stage', ['PLAN', 'REPLAN', 'READY', 'FAILED', 'EMERGENCY_STOP', 'PARKED'])
+def test_recognition_continues_without_motion_or_replanning(node, stage):
+    node.stage = stage
+    node.failure = 'no bay-contained goal has a safe reverse entry'
+    node.road_pose = np.zeros(3)
+    target = Target(np.array([3., 2.]), 0., 3.3, 1.10)
+    node.target = target
+    node.cmd = Mock()
+    node.detect_gap = Mock(return_value=PairObservation(target=target, lidar_target=target))
+    node.select_goal = Mock(side_effect=AssertionError('recognition must not select parking goals'))
+    node.launch_plan = Mock(side_effect=AssertionError('recognition must not replan'))
+    node.grid = Mock(side_effect=AssertionError('recognition must not use the walled planning grid'))
+    for _ in range(2):
+        node.refresh_recognition()
+    assert node.detect_gap.call_count == 2
+    assert node.stage == stage and node.target is target
+    assert node.failure == 'no bay-contained goal has a safe reverse entry'
+    node.cmd.publish.assert_not_called()
+    node.select_goal.assert_not_called()
+    node.launch_plan.assert_not_called()
+
+
+def test_recognition_refresh_does_not_duplicate_forward_search_or_manual_detection(node):
+    node.road_pose = np.zeros(3)
+    node.detect_gap = Mock()
+    for stage in ('MANUAL_SURVEY', 'WAIT_FOR_START_COMMAND', 'SEARCH_FORWARD',
+                  'FIRST_OBSTACLE_SEEN', 'GAP_SEEN', 'SECOND_OBSTACLE_SEEN', 'DETECT_TARGET'):
+        node.stage = stage
+        node.refresh_recognition()
+    node.detect_gap.assert_not_called()
+
+
+def test_recognition_error_does_not_clear_the_confirmed_target_or_failure(node):
+    node.stage, node.failure = 'FAILED', 'parking path blocked by wall'
+    node.road_pose = np.zeros(3)
+    target = Target(np.array([3., 2.]), 0., 3.3, 1.10)
+    node.target = target
+    node.detect_gap = Mock(side_effect=RuntimeError('detection unavailable'))
+    node.publish_observation = Mock()
+    node.refresh_recognition()
+    observation = node.publish_observation.call_args.args[0]
+    assert observation.target is None and 'detection unavailable' in observation.reason
+    assert node.target is target and node.stage == 'FAILED'
+    assert node.failure == 'parking path blocked by wall'

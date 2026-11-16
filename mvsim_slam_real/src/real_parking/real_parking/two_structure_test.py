@@ -140,6 +140,9 @@ class TwoStructureParkingTest(AutoParking):
         self.create_service(Trigger, '/parking_test/start_search', self.start_search)
         self.create_service(Trigger, '/parking_test/start_parking', self.start_parking)
         self.create_service(Trigger, '/parking_test/stop', self.stop_test)
+        # Perception stays live independently of a blocked/failed parking plan.
+        # Search/manual stages already publish observations in tick_checked.
+        self.create_timer(.5, self.refresh_recognition)
         self.add_on_set_parameters_callback(self.validate_parameters)
         self.get_logger().info('Two-structure test: waiting for start_search; '
                                'manual_survey is an intermediate test option only')
@@ -470,6 +473,19 @@ class TwoStructureParkingTest(AutoParking):
         except (RuntimeError, ValueError) as exc:
             response.message = str(exc)
         return response
+
+    def refresh_recognition(self):
+        """Publish sensor-based bay recognition without changing motion/plan state."""
+        if self.stage not in ('PLAN', 'REPLAN', 'READY', 'EXECUTE',
+                              'FAILED', 'EMERGENCY_STOP', 'PARKED') or self.road_pose is None:
+            return
+        try:
+            # detect_gap uses the measured detection_msg, not self.grid(), which
+            # may include a virtual wall for parking-path collision checks.
+            self.detect_gap(self.road_pose, 0., self.get_parameter('slot_width').value)
+        except (RuntimeError, ValueError) as exc:
+            self.publish_observation(PairObservation(reason=f'perception update failed: {exc}'),
+                Header(frame_id='local_map', stamp=self.get_clock().now().to_msg()))
 
     def tick_checked(self):
         if self.stage in ('FAILED', 'EMERGENCY_STOP', 'PARKED'):
