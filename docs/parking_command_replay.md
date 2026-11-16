@@ -4,6 +4,11 @@
 MVSim, Gazebo, GPU, SLAM을 실행하지 않고도 저장된 인식 결과에서 계획과 명령 파일을 만들 수 있습니다.
 명령 파일을 만드는 데 실차를 먼저 주행시키거나 주행 중 명령을 녹화할 필요가 없습니다.
 
+UI에서 기존 예시의 동작 순서만 고정 ±50 PWM으로 시험하려면
+[주차 동작만 테스트](../mvsim_slam_real/tools/TWO_STRUCTURE_TEST.md#주차-동작만-테스트-인식slam-없이)를 사용합니다.
+이는 미측정 가정 속도로 시간을 환산하는 별도 구동 시험이며, 아래 실측 보정표 기반 재생이나
+충돌/목표 검증을 대신하지 않습니다.
+
 ## 차량과 명령 계약
 
 사용자가 지정한 차량은 [대호토이즈 벤츠 NEW GTR AMG](https://www.daehotoys.com/product/detail.html?product_no=854)입니다.

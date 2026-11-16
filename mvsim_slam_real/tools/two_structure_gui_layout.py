@@ -89,14 +89,16 @@ def build(ui, root, map_size):
     actions.pack(fill='x', pady=(6, 8))
     ui.primary_button = ttk.Button(actions, command=ui.start_action)
     ui.primary_button.pack(side='left', fill='x', expand=True)
-    ui.stop_button = tk.Button(actions, text='정지', command=lambda: ui.service('stop'),
+    ui.stop_button = tk.Button(actions, text='정지', command=ui.stop,
                                 bg='#b32d2d', fg='white', activebackground='#912323',
                                 activeforeground='white', font=('', 11, 'bold'), width=14)
     ui.stop_button.pack(side='left', fill='x', expand=True, padx=(6, 0))
+    ui.sequence_button = ttk.Button(side, text='주차 동작만 테스트…', command=ui.open_sequence)
+    ui.sequence_button.pack(fill='x', pady=(0, 8))
     if ui.preview:
         ui.run_button.configure(state='disabled')
         ui.primary_button.configure(state='disabled')
-        ui.stop_button.configure(state='disabled')
+        # This button can also stop the no-device timed sequence preview.
 
     ui.fields = {}
     summary = ttk.LabelFrame(side, text='진행 상황', padding=8)

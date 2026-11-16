@@ -16,6 +16,7 @@ import subprocess
 import sys
 import threading
 import time
+import tempfile
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import two_structure_gui_core as core  # noqa: E402
@@ -78,6 +79,12 @@ class RosLink:
         """True when a two-structure test node already offers its services on this domain."""
         return any(name == '/parking_test/start_search' for name, _ in self.node.get_service_names_and_types())
 
+    def motion_source_running(self):
+        return (self.stack_running()
+                or bool(self.node.get_publishers_info_by_topic('/topic_control_signal'))
+                or any(name in ('control_adapter', 'serial_sender_node', 'auto_parking', 'manual_motor_bridge')
+                       for name, _ in self.node.get_node_names_and_namespaces()))
+
     def call(self, name, done):
         client = self.clients[name]
         if not client.service_is_ready():
@@ -112,6 +119,7 @@ class TestWindow:
         self.preview, self.running_settings = preview, None
         self.ui_running = False
         self.process, self.lines = None, queue.Queue()
+        self.process_kind, self.sequence_dialog, self.sequence_file = 'stack', None, None
         self.photo, self.last_render, self.map_key, self.map_data = None, 0., None, None
         self.settings = dict(core.DEFAULT_SETTINGS, workspace=str(WORKSPACE))
         try:
@@ -168,6 +176,10 @@ class TestWindow:
         for widget, idle_state in self.setting_widgets:
             widget.configure(state='disabled' if running else idle_state)
         self.run_button.configure(state='disabled' if running or self.preview else 'normal')
+        self.sequence_button.configure(state='disabled' if running else 'normal')
+        self.primary_button.configure(state='disabled' if self.preview or (running and self.process_kind == 'sequence') else 'normal')
+        if self.sequence_dialog is not None:
+            self.sequence_dialog.set_busy(running and self.process_kind == 'sequence')
         if not running:
             self.running_settings = None
             self.mode_changed()
@@ -218,6 +230,7 @@ class TestWindow:
             return
         self.save(settings)
         command = core.launch_shell(workspace, arguments)
+        self.process_kind = 'stack'
         self.append('$ ros2 launch ... '+' '.join(arguments))
         # Own process group (Ctrl+C to the whole launch) and SIGINT to the launch if this
         # window dies, so the stack never keeps running without its stop button.
@@ -227,6 +240,66 @@ class TestWindow:
         self.running_settings = dict(settings)
         self.set_running(True)
         self.process_label.config(text='실행 중 · '+core.MODES[settings['mode']][0])
+
+    def open_sequence(self):
+        if self.sequence_dialog is not None:
+            self.sequence_dialog.window.lift()
+            return
+        from parking_sequence_dialog import SequenceDialog
+        self.sequence_dialog = SequenceDialog(self)
+
+    def launch_sequence(self, program, dialog):
+        from tkinter import messagebox
+        import parking_sequence_test as sequence
+        if self.process is not None and self.process.poll() is None:
+            messagebox.showerror('실행 중', '기존 테스트를 종료한 뒤 실행하세요.', parent=dialog.window)
+            return
+        try:
+            summary = sequence.validate_sequence(program)
+            if self.ros is not None and self.ros.motion_source_running():
+                raise ValueError('다른 주차/모터 송신 노드를 먼저 종료하세요.')
+            settings = self.current_settings()
+            actual = bool(settings['enable_actuation']) and not self.preview
+            port = settings.get('arduino_port', '').strip()
+            if actual and (not port or not os.path.exists(port)):
+                raise ValueError('연결 설정에 존재하는 Arduino 포트를 지정하세요.')
+            if actual and not messagebox.askyesno(
+                    '주차 동작만 실차 시험',
+                    f"PWM ±50, {summary['frames']}구간, {summary['duration_s']:.2f}초를 실행합니다.\n"
+                    '시간은 미측정 가정입니다. 인식·SLAM·장애물 감지·위치 보정 없이 움직입니다.\n'
+                    '주변 공간과 즉시 전원을 끌 수 있는 상태를 확인했나요?', parent=dialog.window):
+                return
+            with tempfile.NamedTemporaryFile(mode='w', suffix='.json', prefix='parking-sequence-',
+                                             encoding='utf-8', delete=False) as stream:
+                json.dump(program, stream, ensure_ascii=False, allow_nan=False)
+                self.sequence_file = Path(stream.name)
+            command = [sys.executable, '-u', str(Path(__file__).with_name('parking_sequence_test.py')),
+                       '--program', str(self.sequence_file)]
+            command += ['--execute', '--ack-unmeasured-test', '--port', port] if actual else ['--dry-run']
+            self.process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
+                                            text=True, bufsize=1, errors='replace', preexec_fn=child_setup)
+        except (ValueError, KeyError, OSError, RuntimeError) as exc:
+            if self.sequence_file is not None:
+                self.sequence_file.unlink(missing_ok=True)
+                self.sequence_file = None
+            messagebox.showerror('시퀀스 실행 오류', str(exc), parent=dialog.window)
+            return
+        self.process_kind = 'sequence'
+        self.running_settings = dict(settings)
+        self.set_running(True)
+        threading.Thread(target=self.reader, args=(self.process,), daemon=True).start()
+        label = '실차 구동' if actual else '명령 미리보기 · 모터 OFF'
+        self.process_label.configure(text='주차 동작만 · '+label)
+        self.fields['stage'].configure(text='SEQUENCE_TEST · '+label)
+        self.fields['recognition'].configure(text='미사용 · 인식/SLAM 없이 시간표 재생', foreground='')
+        self.fields['failure'].configure(text='실차 주차 성공 여부는 자동 판정하지 않음')
+        self.append(f'[주차 동작] {label} · {summary["duration_s"]:.2f}초 · {self.sequence_file}')
+
+    def stop(self):
+        if self.process_kind == 'sequence':
+            self.terminate()
+        else:
+            self.service('stop')
 
     def save(self, settings):
         saved = {k: v for k, v in settings.items() if k != 'enable_actuation'}
@@ -259,6 +332,10 @@ class TestWindow:
     def service(self, name):
         if self.preview:
             return
+        if getattr(self, 'process_kind', 'stack') == 'sequence':
+            if name == 'stop':
+                self.terminate()
+            return
         if name in ('start_search', 'start_parking'):
             expected, _ = core.primary_action(self.running_mode())
             if name != expected:
@@ -290,15 +367,23 @@ class TestWindow:
                 if self.lines.empty():
                     break
                 line = self.lines.get()
-                if self.vars['full_log'].get() or any(key in line for key in LOG_KEYS):
+                if line.startswith('[주차 동작]'):
+                    self.fields['response'].configure(text=line)
+                    if self.sequence_dialog is not None:
+                        self.sequence_dialog.progress(line)
+                if self.vars['full_log'].get() or line.startswith('[주차 동작]') or any(key in line for key in LOG_KEYS):
                     self.append(line)
             if self.process is not None and self.process.poll() is not None:
                 self.process_label.config(text=f'종료됨 (코드 {self.process.returncode})')
+                if self.sequence_file is not None:
+                    self.sequence_file.unlink(missing_ok=True)
+                    self.sequence_file = None
                 self.set_running(False)
             if self.ros is not None:
                 self.ros.spin()
-                self.update_status()
-                if time.monotonic()-self.last_render > .5:
+                if self.process_kind != 'sequence':
+                    self.update_status()
+                if self.process_kind != 'sequence' and time.monotonic()-self.last_render > .5:
                     self.last_render = time.monotonic()
                     self.draw()
         except Exception as exc:  # noqa: BLE001 - a display error must never stop updates/buttons
@@ -411,6 +496,8 @@ class TestWindow:
                 os.killpg(self.process.pid, signal.SIGKILL)
         if self.ros is not None:
             self.ros.close()
+        if self.sequence_file is not None:
+            self.sequence_file.unlink(missing_ok=True)
         self.root.destroy()
 
 

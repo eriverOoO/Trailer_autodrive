@@ -1,0 +1,96 @@
+{
+  "schema": "parking_sequence_source_v1",
+  "source": "Legacy CPU-planned synthetic replay example; no measured motion or parking success",
+  "dt_s": 0.05,
+  "reference_forward_mps": 0.12,
+  "reference_reverse_mps": 0.1,
+  "nominal_forward_at_50_mps": 0.14,
+  "nominal_reverse_at_50_mps": 0.08775,
+  "timing_basis": "Unmeasured nominal forward_velocity/reverse_velocity from vehicle_geometry.yaml; PWM is not assumed proportional to speed",
+  "frames": [
+    {
+      "ticks": 6,
+      "steering": 0,
+      "left_pwm": 0,
+      "right_pwm": 0
+    },
+    {
+      "ticks": 12,
+      "steering": 1,
+      "left_pwm": 0,
+      "right_pwm": 0
+    },
+    {
+      "ticks": 140,
+      "steering": 1,
+      "left_pwm": -65,
+      "right_pwm": -65
+    },
+    {
+      "ticks": 6,
+      "steering": -2,
+      "left_pwm": 0,
+      "right_pwm": 0
+    },
+    {
+      "ticks": 140,
+      "steering": -2,
+      "left_pwm": -65,
+      "right_pwm": -65
+    },
+    {
+      "ticks": 6,
+      "steering": -1,
+      "left_pwm": 0,
+      "right_pwm": 0
+    },
+    {
+      "ticks": 140,
+      "steering": -1,
+      "left_pwm": -65,
+      "right_pwm": -65
+    },
+    {
+      "ticks": 12,
+      "steering": -3,
+      "left_pwm": 0,
+      "right_pwm": 0
+    },
+    {
+      "ticks": 117,
+      "steering": -3,
+      "left_pwm": 60,
+      "right_pwm": 60
+    },
+    {
+      "ticks": 6,
+      "steering": 0,
+      "left_pwm": 0,
+      "right_pwm": 0
+    },
+    {
+      "ticks": 116,
+      "steering": 0,
+      "left_pwm": 60,
+      "right_pwm": 60
+    },
+    {
+      "ticks": 12,
+      "steering": -1,
+      "left_pwm": 0,
+      "right_pwm": 0
+    },
+    {
+      "ticks": 140,
+      "steering": -1,
+      "left_pwm": -65,
+      "right_pwm": -65
+    },
+    {
+      "ticks": 10,
+      "steering": 0,
+      "left_pwm": 0,
+      "right_pwm": 0
+    }
+  ]
+}
