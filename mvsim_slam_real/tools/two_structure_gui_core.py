@@ -83,6 +83,30 @@ DEFAULT_SETTINGS = {
     'enable_rviz': False,
 }
 
+SENSOR_CHOICES = {'camera': '카메라 + LiDAR', 'lidar': 'LiDAR만 · 진단'}
+SURVEY_CHOICES = {'manual': '손으로 밀기', 'auto': '자동 전진 탐색'}
+
+
+def mode_choices(mode):
+    if mode not in MODES:
+        raise ValueError(f'unknown mode {mode!r}')
+    sensor, survey = mode.split('_')
+    return SENSOR_CHOICES[sensor], SURVEY_CHOICES[survey]
+
+
+def mode_from_choices(sensor, survey):
+    sensors = {value: key for key, value in SENSOR_CHOICES.items()}
+    surveys = {value: key for key, value in SURVEY_CHOICES.items()}
+    if sensor not in sensors or survey not in surveys:
+        raise ValueError('Unknown sensor or survey selection')
+    return f'{sensors[sensor]}_{surveys[survey]}'
+
+
+def primary_action(mode):
+    """Only offer the start service appropriate for the selected survey mode."""
+    mode_choices(mode)  # validate before selecting a service
+    return ('start_parking', '주차 시작') if mode.endswith('_manual') else ('start_search', '자동 탐색 시작')
+
 
 def launch_arguments(settings):
     """ros2 launch arguments ('name:=value') for two_structure_parking_test.launch.py."""

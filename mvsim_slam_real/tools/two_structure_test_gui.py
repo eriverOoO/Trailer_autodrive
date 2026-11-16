@@ -24,7 +24,7 @@ CONFIG = Path.home()/'.config'/'two_structure_test_gui.json'
 WORKSPACE = Path(__file__).resolve().parents[1]
 LOG_KEYS = ('[Parking]', 'Waiting for map target', 'Target center', 'Plan found', '4D Hybrid A*',
             'ERROR', 'Error', 'error:', 'Traceback', 'FAILED', 'EMERGENCY', 'Exception', 'process has died')
-MAP_SIZE = 540
+MAP_SIZE = 500
 LOG_LINES = 3000
 PR_SET_PDEATHSIG = 1
 
@@ -105,10 +105,12 @@ class RosLink:
 
 
 class TestWindow:
-    def __init__(self, root):
+    def __init__(self, root, preview=False):
         import tkinter as tk
         from tkinter import ttk
         self.tk, self.root = tk, root
+        self.preview, self.running_settings = preview, None
+        self.ui_running = False
         self.process, self.lines = None, queue.Queue()
         self.photo, self.last_render, self.map_key, self.map_data = None, 0., None, None
         self.settings = dict(core.DEFAULT_SETTINGS, workspace=str(WORKSPACE))
@@ -124,92 +126,24 @@ class TestWindow:
                 os.environ[name] = value
             self.settings[name] = os.environ.get(name, '')
         try:
-            self.ros = RosLink()
+            self.ros = None if preview else RosLink()
             ros_error = ''
         except Exception as exc:  # noqa: BLE001 - window still usable for launching
             self.ros, ros_error = None, f'ROS 연결 실패: {exc} (run_two_structure_gui.sh로 실행하세요)'
         root.title('두 구조물 주차 테스트')
-        root.geometry('1500x1000')
+        root.geometry('1180x740')
+        root.minsize(1080, 680)
         root.protocol('WM_DELETE_WINDOW', self.close)
 
-        left = ttk.Frame(root, padding=8)
-        left.grid(row=0, column=0, sticky='ns')
-        self.vars = {}
-        ttk.Label(left, text='테스트 모드', font=('', 11, 'bold')).pack(anchor='w')
-        self.vars['mode'] = tk.StringVar(value=self.settings['mode'])
-        for key, (label, _) in core.MODES.items():
-            ttk.Radiobutton(left, text=label, value=key, variable=self.vars['mode'],
-                            command=self.mode_changed).pack(anchor='w')
-        ttk.Separator(left).pack(fill='x', pady=6)
-        for key, label in [('workspace', '워크스페이스'), ('lidar_port', 'LiDAR 포트'),
-                           ('tractor_imu_port', '견인차 IMU 포트'), ('trailer_imu_port', '트레일러 IMU 포트'),
-                           ('camera_path', '카메라 장치'), ('calibration_file', '카메라 보정 파일'),
-                           ('arduino_port', 'Arduino 포트'), ('slot_width', '주차 깊이 m (빈칸=YAML)'),
-                           ('ROS_DOMAIN_ID', 'ROS_DOMAIN_ID (바꾸면 창 다시 열기)'),
-                           ('ROS_LOCALHOST_ONLY', 'ROS_LOCALHOST_ONLY (1=이 PC만)')]:
-            ttk.Label(left, text=label).pack(anchor='w')
-            self.vars[key] = tk.StringVar(value=str(self.settings.get(key, '')))
-            ttk.Entry(left, textvariable=self.vars[key], width=38).pack(anchor='w')
-        self.vars['enable_actuation'] = tk.BooleanVar(value=False)  # never remembered as on
-        self.actuation = ttk.Checkbutton(left, text='모터 실제 구동 (밀기 모드는 [주차 시작] 이후만)', variable=self.vars['enable_actuation'],
-                                         command=self.actuation_changed)
-        self.actuation.pack(anchor='w', pady=(6, 0))
-        self.vars['enable_rviz'] = tk.BooleanVar(value=bool(self.settings.get('enable_rviz')))
-        ttk.Checkbutton(left, text='RViz도 열기', variable=self.vars['enable_rviz']).pack(anchor='w')
-        row = ttk.Frame(left)
-        row.pack(fill='x', pady=6)
-        self.run_button = ttk.Button(row, text='실행', command=self.launch)
-        self.run_button.pack(side='left', expand=True, fill='x')
-        ttk.Button(row, text='종료', command=self.terminate).pack(side='left', expand=True, fill='x')
-        row = ttk.Frame(left)
-        row.pack(fill='x')
-        ttk.Button(row, text='탐색 시작', command=lambda: self.service('start_search')).pack(side='left', expand=True, fill='x')
-        ttk.Button(row, text='주차 시작(밀기 후)', command=lambda: self.service('start_parking')).pack(side='left', expand=True, fill='x')
-        tk.Button(left, text='정지', bg='#c0392b', fg='white', font=('', 12, 'bold'),
-                  command=lambda: self.service('stop')).pack(fill='x', pady=6)
-        self.process_label = ttk.Label(left, text='실행 안 됨', wraplength=300)
-        self.process_label.pack(anchor='w')
-
-        middle = ttk.Frame(root, padding=8)
-        middle.grid(row=0, column=1, sticky='n')
-        self.canvas = tk.Canvas(middle, width=MAP_SIZE, height=MAP_SIZE, bg='#969696')
-        self.canvas.pack()
-        row = ttk.Frame(middle)
-        row.pack(fill='x')
-        ttk.Label(row, text='보기 범위(m)').pack(side='left')
-        self.vars['span'] = tk.DoubleVar(value=float(self.settings.get('span', 12.)))
-        ttk.Scale(row, from_=4., to=40., variable=self.vars['span'], length=220).pack(side='left')
-        self.vars['follow'] = tk.StringVar(value='bay')
-        for value, label in [('bay', '공간 중심'), ('vehicle', '차량 중심')]:
-            ttk.Radiobutton(row, text=label, value=value, variable=self.vars['follow']).pack(side='left')
-        ttk.Label(middle, text='초록=확정 공간  노랑=후보  파랑=구조물  진회색=벽  빨강=차량  주황=계획 경로\n'
-                               '흰색=빈 공간  검정=점유  회색=미관측').pack(anchor='w')
-
-        right = ttk.Frame(root, padding=8)
-        right.grid(row=0, column=2, sticky='nsew')
-        box = ttk.LabelFrame(right, text='배치 안내 (실행 전 확인)', padding=6)
-        box.pack(fill='x')
-        self.guide = ttk.Label(box, text='', wraplength=540, justify='left')
-        self.guide.pack(anchor='w')
-        self.fields = {}
-        for key, label in [('stage', '현재 단계'), ('recognition', '공간 인식'), ('hint', '확인할 것'),
-                           ('bay', '공간 정보'), ('camera', '카메라'), ('failure', '실패/정지 사유'),
-                           ('estimator', '위치 추정'), ('response', '마지막 명령 응답')]:
-            ttk.Label(right, text=label, font=('', 10, 'bold')).pack(anchor='w', pady=(6, 0))
-            self.fields[key] = ttk.Label(right, text='-', wraplength=520, justify='left')
-            self.fields[key].pack(anchor='w')
-
-        bottom = ttk.Frame(root, padding=8)
-        bottom.grid(row=1, column=0, columnspan=3, sticky='nsew')
-        self.vars['full_log'] = tk.BooleanVar(value=False)
-        ttk.Checkbutton(bottom, text='전체 로그 보기 (끄면 상태 변화·오류만)', variable=self.vars['full_log']).pack(anchor='w')
-        self.log = tk.Text(bottom, height=12, wrap='none')
-        self.log.pack(fill='both', expand=True)
-        root.grid_rowconfigure(1, weight=1)
-        root.grid_columnconfigure(2, weight=1)
+        from two_structure_gui_layout import build
+        build(self, root, MAP_SIZE)
         self.mode_changed()
         if ros_error:
             self.append(ros_error)
+            self.process_label.configure(text='ROS 연결 없음 · 로그 확인')
+            self.fields['estimator'].configure(text=ros_error)
+        if preview:
+            self.process_label.configure(text='미리보기 · ROS/장치 연결 없음')
         self.root.after(100, self.tick)
 
     # --- settings / process -------------------------------------------------
@@ -217,9 +151,34 @@ class TestWindow:
         values = {k: v.get() for k, v in self.vars.items() if k not in ('full_log', 'follow')}
         return dict(self.settings, **values)
 
+    def running_mode(self):
+        return (self.running_settings or self.current_settings())['mode']
+
+    def selection_changed(self, event=None):
+        self.vars['mode'].set(core.mode_from_choices(self.sensor_choice.get(), self.survey_choice.get()))
+        self.mode_changed()
+
+    def start_action(self):
+        self.service(core.primary_action(self.running_mode())[0])
+
+    def set_running(self, running):
+        if self.ui_running == running:
+            return
+        self.ui_running = running
+        for widget, idle_state in self.setting_widgets:
+            widget.configure(state='disabled' if running else idle_state)
+        self.run_button.configure(state='disabled' if running or self.preview else 'normal')
+        if not running:
+            self.running_settings = None
+            self.mode_changed()
+
     def mode_changed(self):
         geometry = Path(self.vars['workspace'].get())/'src/mvsim_slam_real_bringup/config/vehicle_geometry.yaml'
-        self.guide.config(text=core.placement_guide(self.vars['mode'].get(), core.lidar_height(geometry)))
+        self.guide.configure(state='normal')
+        self.guide.delete('1.0', 'end')
+        self.guide.insert('1.0', core.placement_guide(self.vars['mode'].get(), core.lidar_height(geometry)))
+        self.guide.configure(state='disabled')
+        self.primary_button.configure(text=core.primary_action(self.vars['mode'].get())[1])
 
     def actuation_changed(self):
         from tkinter import messagebox
@@ -231,6 +190,8 @@ class TestWindow:
         from tkinter import messagebox
         if self.process is not None and self.process.poll() is None:
             messagebox.showinfo('실행 중', '이미 실행 중입니다. 먼저 종료하세요.')
+            return
+        if self.preview:
             return
         settings = self.current_settings()
         try:
@@ -263,7 +224,9 @@ class TestWindow:
         self.process = subprocess.Popen(['bash', '-lc', command], stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
                                         text=True, bufsize=1, errors='replace', preexec_fn=child_setup)
         threading.Thread(target=self.reader, args=(self.process,), daemon=True).start()
-        self.process_label.config(text=f'실행 중 (모드: {core.MODES[settings["mode"]][0]})')
+        self.running_settings = dict(settings)
+        self.set_running(True)
+        self.process_label.config(text='실행 중 · '+core.MODES[settings['mode']][0])
 
     def save(self, settings):
         saved = {k: v for k, v in settings.items() if k != 'enable_actuation'}
@@ -294,6 +257,13 @@ class TestWindow:
         self.root.after(8000, lambda: escalate(signal.SIGTERM, 4000))
 
     def service(self, name):
+        if self.preview:
+            return
+        if name in ('start_search', 'start_parking'):
+            expected, _ = core.primary_action(self.running_mode())
+            if name != expected:
+                self.fields['response'].config(text='현재 탐색 방식과 맞지 않는 시작 명령입니다.')
+                return
         if self.ros is None:
             self.fields['response'].config(text='ROS 연결이 없어 명령을 보낼 수 없습니다.')
             return
@@ -324,6 +294,7 @@ class TestWindow:
                     self.append(line)
             if self.process is not None and self.process.poll() is not None:
                 self.process_label.config(text=f'종료됨 (코드 {self.process.returncode})')
+                self.set_running(False)
             if self.ros is not None:
                 self.ros.spin()
                 self.update_status()
@@ -444,9 +415,13 @@ class TestWindow:
 
 
 def main():
+    import argparse
     import tkinter as tk
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--preview', action='store_true', help='Open layout only, without ROS or hardware control')
+    args = parser.parse_args()
     root = tk.Tk()
-    TestWindow(root)
+    TestWindow(root, preview=args.preview)
     root.mainloop()
 
 

@@ -34,6 +34,37 @@ def test_modes_map_to_launch_arguments():
                for a in (lidar_manual, lidar_auto, camera))
 
 
+@pytest.mark.parametrize('mode', core.MODES)
+def test_compact_selectors_preserve_launch_mode_and_start_service(mode):
+    assert core.mode_from_choices(*core.mode_choices(mode)) == mode
+    service, label = core.primary_action(mode)
+    manual = args(mode=mode, camera_path='/dev/video0', calibration_file='/c.json').get('manual_survey') == 'true'
+    assert service == ('start_parking' if manual else 'start_search')
+    assert label == ('주차 시작' if manual else '자동 탐색 시작')
+
+
+def test_preview_and_mismatched_start_cannot_send_commands():
+    from types import SimpleNamespace
+    sys.path.insert(0, str(W/'tools'))
+    import two_structure_test_gui as gui
+    calls, responses = [], []
+    window = object.__new__(gui.TestWindow)
+    window.preview = True
+    window.ros = SimpleNamespace(call=lambda *args: calls.append(args))
+    window.fields = {'response': SimpleNamespace(config=lambda **kw: responses.append(kw))}
+    window.running_settings = {'mode': 'camera_manual'}
+    window.service('stop')
+    window.service('start_parking')
+    assert calls == []
+    window.preview = False
+    window.service('start_search')
+    assert calls == [] and '맞지 않는' in responses[-1]['text']
+    # Dispatch uses the launched mode, even if displayed settings were changed externally.
+    window.current_settings = lambda: {'mode': 'camera_auto'}
+    window.start_action()
+    assert calls[-1][0] == 'start_parking'
+
+
 def test_motors_off_by_default_and_need_arduino_when_enabled():
     assert args(mode='lidar_auto')['enable_actuation'] == 'false'
     # Hand-push modes may hand over to motor parking after [주차 시작].
