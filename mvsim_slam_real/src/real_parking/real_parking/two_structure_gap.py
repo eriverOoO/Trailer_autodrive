@@ -61,6 +61,11 @@ class PairConfig:
 
 
 @dataclass
+class PairTarget(Target):
+    depth_observed: bool = True
+
+
+@dataclass
 class PairObservation(GapObservation):
     lidar_target: Target | None = None
     components: tuple = ()
@@ -100,13 +105,14 @@ def observed_interior(grid, target, margin, max_unknown_fraction=0.0, max_speck_
 
     Returns (ok, free_fraction, unknown_fraction, largest_blob). An occupied cell is
     tolerated only if its whole 8-connected occupied group has at most max_speck_cells
-    cells; unknown cells are tolerated up to max_unknown_fraction. Defaults are strict.
+    cells; unknown cells are tolerated up to max_unknown_fraction. The blob size is
+    None when the interior cannot be evaluated on this map.
     """
     corners = target.polygon()
     ij = grid.world_to_cell(corners)
     lo, hi = ij.min(axis=0)-1, ij.max(axis=0)+2
     if np.any(lo < 0) or hi[0] > grid.width or hi[1] > grid.height:
-        return False, 0.0, 1.0, 0
+        return False, 0.0, 1.0, None
     jj, ii = np.mgrid[lo[1]:hi[1], lo[0]:hi[0]]
     xy = grid.cell_to_world(np.c_[ii.ravel(), jj.ravel()])
     local = transform(xy-target.center, [0, 0], -target.heading)
@@ -117,7 +123,7 @@ def observed_interior(grid, target, margin, max_unknown_fraction=0.0, max_speck_
     rows, cols = jj.ravel()[keep], ii.ravel()[keep]
     values = grid.data[rows, cols]
     if not len(values):
-        return False, 0.0, 1.0, 0
+        return False, 0.0, 1.0, None
     free = (values >= 0) & (values < 50)
     unknown = float(np.mean(values < 0))
     largest = 0
@@ -174,7 +180,7 @@ def split_wall(local, points, config, resolution):
 
 
 def observe_two_structure_gap(grid, road_pose, config=PairConfig(), *,
-                              camera_evidence=(), require_camera=True):
+                              camera_evidence=(), require_camera=True, minimum_goal_width=0.):
     """Measure left-side facing edges; bay depth from a measured rear wall or configured.
 
     Heading is the line between the two road-facing structure anchors, bounded
@@ -261,33 +267,48 @@ def observe_two_structure_gap(grid, road_pose, config=PairConfig(), *,
                 if behind.any():
                     depth = float(rear[behind, 1].min()-pad-entrance)
             inner = entrance+depth if depth is not None else entrance+config.slot_width
-            center = transform([[(start+end)/2, inner-config.slot_width/2]], road_pose[:2], heading)[0]
-            target = Target(center, heading, length, config.slot_width,
+            # Keep the rear boundary fixed. A shallow setup may place part of
+            # the parked rig on the road side of the two structures.
+            goal_width = max(config.slot_width, minimum_goal_width)
+            center = transform([[(start+end)/2, inner-goal_width/2]], road_pose[:2], heading)[0]
+            target = PairTarget(center, heading, length, goal_width,
                             'two LiDAR structures; inner edge on measured rear wall' if depth is not None
                             else 'two LiDAR structures; fixed lateral depth; no rear wall within depth')
             free, fraction, unknown, blob = observed_interior(
                 grid, target, config.interior_margin_m, config.max_unknown_fraction, config.max_speck_cells)
+            target.depth_observed = free
+            clear_of_obstacles = blob is not None and blob <= config.max_speck_cells
             camera = camera_confirms_pair((first, second), camera_evidence,
                                          config.camera_match_distance_m)
+            if blob is None:
+                reason = 'bay interior outside usable detection grid'
+            elif not clear_of_obstacles:
+                reason = (f'gap found; interior blocked or unknown (free={fraction:.3f}, '
+                          f'unknown={unknown:.3f}/{config.max_unknown_fraction:.3f}, '
+                          f'occupied_group_cells={blob}/{config.max_speck_cells})')
+            elif require_camera and not camera:
+                reason = 'waiting for calibrated camera confirmation of both LiDAR structures'
+            elif not free:
+                reason = 'pair confirmed; depth unobserved; verify parking path on measured grid'
+            elif camera:
+                reason = 'two structures and observed free interior confirmed'
+            else:
+                reason = 'LiDAR-only test: camera confirmation bypassed'
             observation = PairObservation(
                 first_obstacle=True, gap_seen=True, second_obstacle=True,
-                target=target if free and (camera or not require_camera) else None,
+                target=target if clear_of_obstacles and (camera or not require_camera) else None,
                 obstacle_intervals=((float(one[:, 0].min()-pad), start),
                                     (end, float(two[:, 0].max()+pad))),
                 lidar_target=target, components=(first, second), free_fraction=fraction,
                 camera_confirmed=camera, rear_wall=depth is not None, rear_depth_m=depth,
                 walls=tuple(walls), structures=len(components),
-                reason=('two structures and observed free interior confirmed' if free and camera else
-                        'LiDAR-only test: camera confirmation bypassed' if free and not require_camera else
-                        'waiting for calibrated camera confirmation of both LiDAR structures' if free else
-                        f'gap found; interior blocked or unknown (free={fraction:.3f}, '
-                        f'unknown={unknown:.3f}/{config.max_unknown_fraction:.3f}, '
-                        f'occupied_group_cells={blob}/{config.max_speck_cells})'))
+                reason=reason)
             (valid if observation.target is not None else provisional).append(observation)
     choices = valid or provisional
     if choices:
         # Prefer confirmed pairs, then the nearest bay along the initial road.
-        result = min(choices, key=lambda obs: float(np.linalg.norm(obs.lidar_target.center-road_pose[:2])))
+        result = min(choices, key=lambda obs: (not obs.lidar_target.depth_observed,
+                                              np.linalg.norm(obs.lidar_target.center-road_pose[:2])))
     else:
         result.components = tuple(c[1] for c in components)
         result.reason = (f'{len(components)} structures found but no usable pair: '

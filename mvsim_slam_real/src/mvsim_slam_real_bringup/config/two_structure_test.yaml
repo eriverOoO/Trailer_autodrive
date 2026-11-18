@@ -30,14 +30,14 @@ tractor_parallel_parking_auto:
     # bay's inner edge when it is closer than slot_width; the bay then extends toward the road.
     pair_min_wall_piece_m: 1.0
     pair_camera_match_distance_m: 0.20
-    # Virtual wall behind the confirmed bay (deeper than slot_width/2 + margin from the
-    # bay centre) for planning, pre-execute recheck and live collision checks only.
+    # Virtual wall at the confirmed inner edge plus margin, including when a shallow
+    # target extends toward the road. Used for planning and execution collision checks.
     # Keeps the trailer from routing around behind the structures in open areas.
     # Detection map and forward search are unaffected. No path -> FAILED as before.
     pair_block_behind_bay: true
     pair_rear_block_margin_m: 0.0
-    # Planning relaxation: unobserved cells inside the confirmed bay count as free for
-    # planning and collision checks (occupied cells are never changed).
+    # When the unknown fraction is within tolerance, unobserved cells inside the
+    # confirmed bay can count as free. Targets above tolerance use the measured grid.
     pair_bay_unknown_as_free: true
     camera_evidence_lifetime_s: 180.0
     camera_stream_timeout_s: 1.0

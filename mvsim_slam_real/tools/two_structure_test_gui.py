@@ -414,7 +414,7 @@ class TestWindow:
             if observation.get('length'):
                 depth = observation.get('rear_depth_m')
                 wall = f'뒤 벽까지 {depth:.2f} m (벽에 맞춤)' if depth is not None else '뒤 벽 없음 (설정 깊이)'
-                self.fields['bay'].config(text=f'간격 {observation["length"]:.2f} m × 깊이 {observation["width"]:.2f} m, '
+                self.fields['bay'].config(text=f'간격 {observation["length"]:.2f} m · 목표 영역 폭 {observation["width"]:.2f} m, '
                                                f'{wall}, 구조물 후보 {observation.get("structures_found", 0)}개, '
                                                f'내부 빈칸 비율 {observation.get("free_fraction", 0):.2f}')
             else:

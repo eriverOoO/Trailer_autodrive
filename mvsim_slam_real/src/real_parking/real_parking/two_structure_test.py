@@ -164,15 +164,17 @@ class TwoStructureParkingTest(AutoParking):
         return float(value)
 
     def grid(self, fill=False):
-        grid = super().grid(fill)
         target = getattr(self, 'target', None)
+        depth_observed = getattr(target, 'depth_observed', True)
+        grid = super().grid(fill and depth_observed)
         block = bool(self.get_parameter('pair_block_behind_bay').value)
-        open_bay = bool(self.get_parameter('pair_bay_unknown_as_free').value)
+        open_bay = depth_observed and bool(self.get_parameter('pair_bay_unknown_as_free').value)
         if target is None or not (block or open_bay):
             return grid
         margin = self.rear_block_margin()
         key = (grid.map_sequence, tuple(np.asarray(target.center, dtype=float)),
-               float(target.heading), float(target.width), float(target.length), margin, block, open_bay)
+               float(target.heading), float(target.width), float(target.length), margin, block, open_bay,
+               depth_observed)
         cached = self.rear_block_cache.get(fill)
         if cached is not None and cached[0] == key:
             return cached[1]
@@ -312,11 +314,11 @@ class TwoStructureParkingTest(AutoParking):
             self.publish_observation(observation, message.header)
             return observation
         config = self.pair_config()
+        minimum_goal_width = 0.
         if self.footprints is not None:
             config = replace(config, min_gap_length=max(config.min_gap_length,
                                                       float(self.footprints.size[0])+.36))
-            if config.slot_width < float(self.footprints.size[1])+.36:
-                raise RuntimeError('configured depth is too narrow for rig plus existing clearance')
+            minimum_goal_width = float(self.footprints.size[1])+.36
         try:
             evidence = self.evidence_in_map(message.header.frame_id)
         except (ValueError, TransformException) as exc:
@@ -324,7 +326,8 @@ class TwoStructureParkingTest(AutoParking):
             evidence = []
         observation = observe_two_structure_gap(
             grid_from_message(message), road_pose, config,
-            camera_evidence=evidence, require_camera=self.get_parameter('require_camera').value)
+            camera_evidence=evidence, require_camera=self.get_parameter('require_camera').value,
+            minimum_goal_width=minimum_goal_width)
         if self.get_parameter('require_camera').value and not self.camera_ready():
             observation.target = None
             observation.reason = 'camera unavailable: '+self.camera_reason
@@ -348,7 +351,8 @@ class TwoStructureParkingTest(AutoParking):
             'center': target.center.tolist() if target else None,
             'heading': target.heading if target else None,
             'length': target.length if target else None,
-            'width': self.get_parameter('slot_width').value,
+            'width': target.width if target else self.get_parameter('slot_width').value,
+            'configured_depth_m': self.get_parameter('slot_width').value,
             'depth_source': 'measured rear wall' if observation.rear_wall else 'configured; no rear wall within depth',
             'rear_depth_m': observation.rear_depth_m,
             'structures_found': observation.structures,

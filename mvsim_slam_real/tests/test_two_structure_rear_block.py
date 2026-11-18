@@ -86,20 +86,20 @@ def rig():
     return geometry, Footprints(*vehicle.polygons(), geometry)
 
 
-def detected_target(data, origin, road, footprints):
-    config = PairConfig(min_gap_length=max(2.6, float(footprints.size[0])+.36))
+def detected_target(data, origin, road, footprints, slot_width=1.10):
+    config = PairConfig(slot_width=slot_width, min_gap_length=max(2.6, float(footprints.size[0])+.36))
     observation = observe_two_structure_gap(planning_grid(data, RES, origin), road, config,
-                                            require_camera=False)
+                                            require_camera=False, minimum_goal_width=footprints.size[1]+.36)
     assert observation.target is not None, observation.reason
     return observation.target
 
 
-def plan_with_wall(gap, timeout=35., wall=False):
+def plan_with_wall(gap, timeout=35., wall=False, slot_width=1.10):
     """Same goal selection/parking_plan call as AutoParking, on the walled grid."""
     mod = install_b()
     geometry, footprints = rig()
     data, origin, road = scene(gap, wall)
-    target = detected_target(data, origin, road, footprints)
+    target = detected_target(data, origin, road, footprints, slot_width)
     grid = planning_grid(block_behind_bay(data, RES, origin, target), RES, origin, simulation_clearance=True)
     heading = target.heading
     along = np.array([math.cos(heading), math.sin(heading)])
@@ -123,6 +123,15 @@ def plan_with_wall(gap, timeout=35., wall=False):
 def max_rig_depth(path, target, footprints):
     return max(float(depth_of(polygon, target).max())
                for state in path.states for polygon in footprints.world(state))
+
+
+@pytest.mark.planning
+def test_shallow_open_bay_has_a_reverse_entry_with_the_virtual_wall():
+    target, grid, footprints, path = plan_with_wall(3.6, slot_width=.50)
+    assert path is not None
+    assert grid.path_free(path.states, footprints)
+    assert target.contains(footprints.world(path.states[-1]))
+    assert max_rig_depth(path, target, footprints) <= target.width/2+RES
 
 
 @pytest.mark.planning
@@ -211,6 +220,22 @@ def test_node_planning_grid_frees_unknown_cells_inside_the_bay(node):
     assert (node.grid(False).data < 0).sum() == 0
     node.set_parameters([Parameter('pair_bay_unknown_as_free', value=False)])
     assert (node.grid(False).data < 0).sum() == 1
+
+
+def test_unobserved_depth_keeps_unknown_blocked_and_virtual_wall_active(node):
+    data, origin, road = scene(3.6)
+    centres = cell_centres(data.shape, origin).reshape(*data.shape, 2)
+    unknown = ((centres[:, :, 0] > 3.2) & (centres[:, :, 0] < 5.8)
+               & (centres[:, :, 1] > 1.5) & (centres[:, :, 1] < 2.))
+    data[unknown] = -1
+    node.target = detected_target(data, origin, road, node.footprints or rig()[1])
+    assert not node.target.depth_observed
+    node.map_snapshot = occupancy(data, origin)
+    for fill in (False, True):
+        grid = node.grid(fill)
+        assert (grid.data[unknown] == -1).all() and grid.blocked[unknown].all()
+        behind = depth_of(centres, node.target) > node.target.width/2
+        assert grid.blocked[behind].all()
 
 
 def test_rear_block_parameters_validated_and_locked_during_motion(node):

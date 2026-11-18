@@ -162,6 +162,8 @@ def launch_shell(workspace, arguments):
 
 # (regex, 설명, 확인할 것) — first match wins. Patterns follow the exact strings in the code.
 EXPLANATIONS = [
+    (r'pair confirmed; depth unobserved', '두 구조물 간격 확인 · 안쪽 깊이 일부 미관측',
+     '계획기가 관측된 공간에서 진입 경로를 확인합니다.'),
     (r'two structures and observed free interior confirmed', '두 구조물과 공간 내부 확인 완료 (카메라 확인 포함)', ''),
     (r'LiDAR-only test: camera confirmation bypassed', 'LiDAR만으로 공간 확인 완료 (카메라 확인 생략)', ''),
     (r'waiting for two observed left-side structures \(found (\d+)\)',

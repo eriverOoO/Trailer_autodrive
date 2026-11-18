@@ -117,7 +117,8 @@ LiDAR [lidar.py](../src/real_vehicle_bridge/real_vehicle_bridge/lidar.py),
 
 - 공간 사각형(길이 = 간격, 깊이 = `slot_width` 1.10 m)에서 경계로부터 0.10 m 안쪽 셀을 검사합니다.
   - 점유 셀: 그 셀이 속한 점유 덩어리(8방향 연결, 공간 밖 부분 포함)가 `pair_max_speck_cells`(2) 이하면 노이즈로 허용, 넘으면 거부.
-  - 미관측 셀: 내부 셀 중 비율이 `pair_max_unknown_fraction`(0.10) 이하면 허용.
+  - 미관측 비율이 `pair_max_unknown_fraction`(0.10)을 넘으면 두 구조물의 간격은 확정하고
+    미관측 셀을 막힌 상태로 두어 경로계획에서 검사합니다.
   - 허용된 점·미관측이 주차 자세 차체 + 0.18 m 안에 있으면 검출은 통과해도 6절의
     `no bay-contained goal has a safe reverse entry`로 실패합니다(계획 격자는 미관측을 막힘으로 봄).
   - `parking_stop_policy: observed_safe`를 쓰면 vendor의 별도 내부 검사(`observed_stop.observed_interior`,
@@ -151,7 +152,7 @@ LiDAR [lidar.py](../src/real_vehicle_bridge/real_vehicle_bridge/lidar.py),
 
 ## 7. 경로 계획 (PLAN)
 
-계획 격자는 미관측을 막힘으로 봅니다. 공간 확정 후에는 **공간 사각형 안의 미관측은 빈 공간으로 보고**
+계획 격자는 미관측을 막힘으로 봅니다. 깊이 관측이 허용치 안인 목표에 한해 **공간 사각형 안의 미관측은 빈 공간으로 보고**
 (`pair_bay_unknown_as_free`), **공간 안쪽 끝보다 깊은 곳을 가상 벽으로 막습니다**
 (`pair_block_behind_bay`, `pair_rear_block_margin_m`; `TwoStructureParkingTest.grid`).
 

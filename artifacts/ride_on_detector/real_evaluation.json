@@ -1,0 +1,295 @@
+{
+  "confidence": 0.25,
+  "pretrained": {
+    "positives": 11,
+    "hits_at_iou_0_5": 2,
+    "unmatched_predictions": 0,
+    "frames": {
+      "0": {
+        "ground_truth": [
+          201,
+          21,
+          640,
+          335
+        ],
+        "best_iou": 0.0,
+        "hit": false,
+        "predictions": 0,
+        "top_confidence": 0.0
+      },
+      "2": {
+        "ground_truth": [
+          155,
+          23,
+          640,
+          332
+        ],
+        "best_iou": 0.0,
+        "hit": false,
+        "predictions": 0,
+        "top_confidence": 0.0
+      },
+      "5": {
+        "ground_truth": [
+          77,
+          23,
+          640,
+          341
+        ],
+        "best_iou": 0.0,
+        "hit": false,
+        "predictions": 0,
+        "top_confidence": 0.0
+      },
+      "12": {
+        "ground_truth": [
+          79,
+          24,
+          640,
+          344
+        ],
+        "best_iou": 0.0,
+        "hit": false,
+        "predictions": 0,
+        "top_confidence": 0.0
+      },
+      "17": {
+        "ground_truth": [
+          79,
+          26,
+          640,
+          342
+        ],
+        "best_iou": 0.0,
+        "hit": false,
+        "predictions": 0,
+        "top_confidence": 0.0
+      },
+      "18": {
+        "ground_truth": [
+          77,
+          156,
+          229,
+          329
+        ],
+        "best_iou": 0.0,
+        "hit": false,
+        "predictions": 0,
+        "top_confidence": 0.0
+      },
+      "19": {
+        "ground_truth": null,
+        "best_iou": 0.0,
+        "hit": false,
+        "predictions": 0,
+        "top_confidence": 0.0
+      },
+      "20": {
+        "ground_truth": [
+          78,
+          23,
+          640,
+          352
+        ],
+        "best_iou": 0.9066,
+        "hit": true,
+        "predictions": 1,
+        "top_confidence": 0.3547
+      },
+      "26": {
+        "ground_truth": [
+          64,
+          25,
+          640,
+          350
+        ],
+        "best_iou": 0.0,
+        "hit": false,
+        "predictions": 0,
+        "top_confidence": 0.0
+      },
+      "35": {
+        "ground_truth": [
+          69,
+          27,
+          640,
+          345
+        ],
+        "best_iou": 0.9023,
+        "hit": true,
+        "predictions": 1,
+        "top_confidence": 0.2521
+      },
+      "38": {
+        "ground_truth": [
+          79,
+          24,
+          640,
+          352
+        ],
+        "best_iou": 0.0,
+        "hit": false,
+        "predictions": 0,
+        "top_confidence": 0.0
+      },
+      "42": {
+        "ground_truth": [
+          94,
+          30,
+          640,
+          351
+        ],
+        "best_iou": 0.0,
+        "hit": false,
+        "predictions": 0,
+        "top_confidence": 0.0
+      }
+    }
+  },
+  "fine_tuned": {
+    "positives": 11,
+    "hits_at_iou_0_5": 10,
+    "unmatched_predictions": 2,
+    "frames": {
+      "0": {
+        "ground_truth": [
+          201,
+          21,
+          640,
+          335
+        ],
+        "best_iou": 0.9774,
+        "hit": true,
+        "predictions": 1,
+        "top_confidence": 0.9563
+      },
+      "2": {
+        "ground_truth": [
+          155,
+          23,
+          640,
+          332
+        ],
+        "best_iou": 0.9574,
+        "hit": true,
+        "predictions": 1,
+        "top_confidence": 0.9741
+      },
+      "5": {
+        "ground_truth": [
+          77,
+          23,
+          640,
+          341
+        ],
+        "best_iou": 0.9199,
+        "hit": true,
+        "predictions": 1,
+        "top_confidence": 0.9076
+      },
+      "12": {
+        "ground_truth": [
+          79,
+          24,
+          640,
+          344
+        ],
+        "best_iou": 0.9135,
+        "hit": true,
+        "predictions": 1,
+        "top_confidence": 0.9192
+      },
+      "17": {
+        "ground_truth": [
+          79,
+          26,
+          640,
+          342
+        ],
+        "best_iou": 0.9266,
+        "hit": true,
+        "predictions": 1,
+        "top_confidence": 0.7694
+      },
+      "18": {
+        "ground_truth": [
+          77,
+          156,
+          229,
+          329
+        ],
+        "best_iou": 0.0922,
+        "hit": false,
+        "predictions": 1,
+        "top_confidence": 0.7943
+      },
+      "19": {
+        "ground_truth": null,
+        "best_iou": 0.0,
+        "hit": false,
+        "predictions": 1,
+        "top_confidence": 0.3095
+      },
+      "20": {
+        "ground_truth": [
+          78,
+          23,
+          640,
+          352
+        ],
+        "best_iou": 0.9212,
+        "hit": true,
+        "predictions": 1,
+        "top_confidence": 0.8744
+      },
+      "26": {
+        "ground_truth": [
+          64,
+          25,
+          640,
+          350
+        ],
+        "best_iou": 0.8969,
+        "hit": true,
+        "predictions": 1,
+        "top_confidence": 0.9108
+      },
+      "35": {
+        "ground_truth": [
+          69,
+          27,
+          640,
+          345
+        ],
+        "best_iou": 0.9345,
+        "hit": true,
+        "predictions": 1,
+        "top_confidence": 0.9415
+      },
+      "38": {
+        "ground_truth": [
+          79,
+          24,
+          640,
+          352
+        ],
+        "best_iou": 0.9203,
+        "hit": true,
+        "predictions": 1,
+        "top_confidence": 0.9014
+      },
+      "42": {
+        "ground_truth": [
+          94,
+          30,
+          640,
+          351
+        ],
+        "best_iou": 0.9338,
+        "hit": true,
+        "predictions": 1,
+        "top_confidence": 0.9111
+      }
+    }
+  }
+}

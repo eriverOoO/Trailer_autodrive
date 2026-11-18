@@ -63,10 +63,9 @@ def test_one_or_wrong_side_structure_does_not_define_a_bay():
 STRICT = replace(PairConfig(), max_speck_cells=0, max_unknown_fraction=0.)
 
 
-@pytest.mark.parametrize('value', [-1, 100])
-def test_strict_config_rejects_even_one_unknown_or_occupied_interior_cell(value):
+def test_strict_config_rejects_even_one_occupied_interior_cell():
     grid, road = scene()
-    grid.data[129, 174] = value
+    grid.data[129, 174] = 100
     assert lidar_observation(grid, road, STRICT).target is None
 
 
@@ -81,7 +80,7 @@ def test_isolated_specks_and_single_unknown_cell_are_tolerated(cells):
     assert 0 < result.free_fraction < 1
 
 
-def test_larger_occupied_group_or_wide_unknown_area_is_rejected():
+def test_larger_occupied_group_is_rejected():
     grid, road = scene()
     grid.data[129, 174:177] = 100  # three connected cells: an object, not noise
     # With the default min_structure_cells=3 this object is itself a structure candidate and
@@ -92,10 +91,31 @@ def test_larger_occupied_group_or_wide_unknown_area_is_rejected():
     # With defaults the 3-cell object is a recessed candidate: skipped for pairing, still an obstacle.
     default = lidar_observation(grid, road)
     assert default.lidar_target is not None and default.target is None and not default.rear_wall
+
+
+def test_unknown_depth_allows_planning_only_after_both_camera_matches():
     grid, road = scene()
     grid.data[125:145, 160:190] = -1  # ~40% of the interior never observed
     result = lidar_observation(grid, road)
-    assert result.target is None and 'unknown=' in result.reason
+    assert result.target is not None and not result.target.depth_observed
+    first, second = result.components
+    assert observe_two_structure_gap(grid, road, camera_evidence=[first]).target is None
+    matched = observe_two_structure_gap(grid, road, camera_evidence=[first, second])
+    assert matched.target is not None and not matched.target.depth_observed
+
+
+@pytest.mark.parametrize('heading', [0., .7])
+def test_shallow_target_extends_only_toward_road(heading):
+    grid, road = scene(heading)
+    config = PairConfig(slot_width=.50)
+    nominal = lidar_observation(grid, road, config).target
+    goal = observe_two_structure_gap(grid, road, config, require_camera=False,
+                                     minimum_goal_width=.91).target
+    assert goal.width == pytest.approx(.91)
+    normal = np.array([-np.sin(heading), np.cos(heading)])
+    np.testing.assert_allclose(goal.center+normal*goal.width/2,
+                               nominal.center+normal*nominal.width/2)
+    assert goal.length == nominal.length
 
 
 def test_speck_touching_a_larger_group_outside_the_interior_is_rejected():

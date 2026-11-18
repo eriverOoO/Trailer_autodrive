@@ -1,0 +1,69 @@
+{
+  "confidence": 0.25,
+  "selected": "epoch40.pt",
+  "scores": {
+    "best.pt": {
+      "hits": 9,
+      "misses": 0,
+      "unmatched": 2,
+      "f1": 0.9,
+      "mean_best_iou": 0.9542361565892281
+    },
+    "epoch0.pt": {
+      "hits": 0,
+      "misses": 9,
+      "unmatched": 0,
+      "f1": 0.0,
+      "mean_best_iou": 0.0
+    },
+    "epoch10.pt": {
+      "hits": 6,
+      "misses": 3,
+      "unmatched": 0,
+      "f1": 0.8,
+      "mean_best_iou": 0.6385608789480535
+    },
+    "epoch20.pt": {
+      "hits": 8,
+      "misses": 1,
+      "unmatched": 2,
+      "f1": 0.8421052631578947,
+      "mean_best_iou": 0.86034403885055
+    },
+    "epoch30.pt": {
+      "hits": 9,
+      "misses": 0,
+      "unmatched": 1,
+      "f1": 0.9473684210526315,
+      "mean_best_iou": 0.9326510002177053
+    },
+    "epoch40.pt": {
+      "hits": 9,
+      "misses": 0,
+      "unmatched": 0,
+      "f1": 1.0,
+      "mean_best_iou": 0.9561272220666373
+    },
+    "epoch50.pt": {
+      "hits": 9,
+      "misses": 0,
+      "unmatched": 0,
+      "f1": 1.0,
+      "mean_best_iou": 0.9465306302783502
+    },
+    "epoch60.pt": {
+      "hits": 9,
+      "misses": 0,
+      "unmatched": 1,
+      "f1": 0.9473684210526315,
+      "mean_best_iou": 0.9541022770309829
+    },
+    "last.pt": {
+      "hits": 9,
+      "misses": 0,
+      "unmatched": 1,
+      "f1": 0.9473684210526315,
+      "mean_best_iou": 0.9471520703953105
+    }
+  }
+}
