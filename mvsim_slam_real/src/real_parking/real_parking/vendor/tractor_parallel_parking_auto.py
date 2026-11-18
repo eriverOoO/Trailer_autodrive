@@ -55,6 +55,8 @@ FINAL_CORRECTION_MAX_ALONG_M = .60
 
 
 class AutoParking(Node):
+    parking_goal_offsets=((.4,.1),(0.,0.),(.2,0.),(.4,-.1),(.6,0.))
+
     def __init__(self):
         super().__init__('tractor_parallel_parking_auto')
         defaults={'parking_side':'left','gap_min_lateral_m':.55,'parking_stop_policy':'legacy','detection_only':False,'auto_execute':False,'auto_detect_target':True,'world_file':'',
@@ -365,11 +367,7 @@ class AutoParking(Node):
         normal=np.array([-along[1],along[0]])
         # Extra longitudinal room at the tractor nose helps a U-bay shunt.
         # This offset is within the measured rectangle, never a world pose.
-        for shift in (.4,0.,.2,.6):
-            center=self.target.center-shift*along
-            goal=self.footprints.goal(center,heading)
-            if not self.target.contains(self.footprints.world(goal)) or not grid.check(goal,self.footprints):
-                continue
+        for goal,shift,lateral in self.goal_candidates(grid,((.4,0.),(0.,0.),(.2,0.),(.6,0.))):
             offset=float((self.current[:2]-goal[:2])@normal)
             staging=goal.copy();staging[:2]+=7.*along+offset*normal
             # A single smooth forward connector is not a feasibility oracle
@@ -381,8 +379,28 @@ class AutoParking(Node):
             else:staging_safe=grid.check(staging,self.footprints)
             if staging_safe:
                 self.goal_shift=shift
+                self.goal_lateral_shift=lateral
                 return goal
         raise RuntimeError('no bay-contained goal has a safe reverse entry')
+
+    def goal_candidates(self,grid,offsets):
+        along=np.array([math.cos(self.target.heading),math.sin(self.target.heading)])
+        normal=np.array([-along[1],along[0]])
+        for shift,lateral in offsets:
+            center=self.target.center-shift*along+lateral*normal
+            goal=self.footprints.goal(center,self.target.heading)
+            if self.target.contains(self.footprints.world(goal)) and grid.check(goal,self.footprints):
+                yield goal,shift,lateral
+
+    def staging_road_coordinate(self,normal):
+        return float(self.road_pose[:2]@normal)
+
+    def staging_distances(self,grid,goal,normal):
+        if self.stop_policy=='observed_safe':
+            from observed_stop import observed_staging_distance
+            ahead=observed_staging_distance(grid,goal,self.staging_road_coordinate(normal),self.footprints)
+            if ahead is not None:return (ahead,)
+        return (STAGING_AHEAD_M,)
 
     def launch_plan(self):
         self.raw_diagnostic_episode+=1
@@ -409,15 +427,13 @@ class AutoParking(Node):
             goal=np.r_[xy,self.road_pose[2],self.road_pose[2]]
         self.survey_plan=survey
         filled=self.grid(True) if self.get_parameter('beam_gap_filling').value else None
-        goal_candidates=[(goal,self.goal_shift,0.)]
+        goal_candidates=[(goal,self.goal_shift,self.goal_lateral_shift)]
         if not survey:
             along=np.array([math.cos(self.target.heading),math.sin(self.target.heading)])
             normal=np.array([-along[1],along[0]])
-            for shift,lateral in ((.4,.1),(0.,0.),(.2,0.),(.4,-.1),(.6,0.)):
-                candidate=self.footprints.goal(self.target.center-shift*along+lateral*normal,self.target.heading)
-                if self.target.contains(self.footprints.world(candidate)) and strict.check(candidate,self.footprints):
-                    if not any(np.linalg.norm(candidate-g)<.01 for g,_,_ in goal_candidates):
-                        goal_candidates.append((candidate,shift,lateral))
+            for candidate,shift,lateral in self.goal_candidates(strict,self.parking_goal_offsets):
+                if not any(np.linalg.norm(candidate-g)<.01 for g,_,_ in goal_candidates):
+                    goal_candidates.append((candidate,shift,lateral))
         # Preserve the original candidate order/count and snapshots. A path
         # rejected just before EXECUTE resumes AFTER its existing attempt;
         # it is neither executed nor charged to the execution replan budget.
@@ -441,8 +457,10 @@ class AutoParking(Node):
                         path=planner.plan(context['start'],candidate,gears=(1,))
                     else:
                         # Preserve observed-road staging during recovery.
-                        road_y=float((self.road_pose[:2]-candidate[:2])@context['normal'])
-                        path=planner.parking_plan(context['start'],candidate,road_y=road_y,staging_distances=(7.,))
+                        normal=context['normal']
+                        road_y=self.staging_road_coordinate(normal)-float(candidate[:2]@normal)
+                        path=planner.parking_plan(context['start'],candidate,road_y=road_y,
+                                                  staging_distances=self.staging_distances(grid,candidate,normal))
                     raw=path_metrics(self.grid(False),path.states,self.footprints)
                     if not raw['valid']:
                         raise RuntimeError(f"latest RAW candidate precheck rejected: minimum={raw['minimum_clearance_m']:.6f}m, hard={PLANNER_HARD_CLEARANCE_M:.2f}m (or footprint overlap)")
@@ -452,6 +470,40 @@ class AutoParking(Node):
                     context['failures'].append(detail);self.get_logger().info(detail)
             raise RuntimeError('candidate search exhausted: '+' | '.join(context['failures']))
         self.future=self.planner_pool.submit(work)
+
+    def legacy_search_stop(self,observation,road_forward):
+        if observation.target is None or self.footprints is None:
+            return math.inf,False
+        goal=self.footprints.goal(observation.target.center,observation.target.heading)
+        stop_u=float(transform([goal[:2]-self.road_pose[:2]],[0,0],-self.road_pose[2])[0,0])+STAGING_AHEAD_M+STAGING_STOP_MARGIN_M
+        return stop_u,self.observation_hits>=3 and road_forward>stop_u
+
+    def begin_stabilizing(self,state,now,reason,evidence=None):
+        self.send(0,0)
+        self.settle_until=now+10.
+        self.stop_started=evidence or {'sim_ns':self.get_clock().now().nanoseconds,
+                                       'mono_ns':time.monotonic_ns(),'state':state.tolist()}
+        self.observation_window=[];self.observation_hits=0;self.observation_stamp=None
+        self.transition('STOP_AND_STABILIZE',reason)
+
+    def stop_and_stabilize(self,state,now):
+        self.send(0,0)
+        if self.stop_policy=='legacy' and not hasattr(self,'legacy_stop_completed') and abs(self.measured_speed)<.06 and now-self.stop_started['mono_ns']/1e9>=2.:
+            self.legacy_stop_completed={'sim_ns':self.get_clock().now().nanoseconds,'state':state.tolist(),'measured_speed_m_s':self.measured_speed,'zero_command':[self.v,self.delta]}
+        if self.stop_policy=='observed_safe':
+            if not self.grid(False).collision_free(state,self.footprints) or self.collision_count:
+                self.transition('EMERGENCY_STOP','unsafe observed-stop current footprint');return
+            stationary=abs(self.measured_speed)<.06 and self.stop_started is not None and now-self.stop_started['mono_ns']/1e9>=2.
+            if stationary and self.stop_completed is None:
+                self.stop_completed={'sim_ns':self.get_clock().now().nanoseconds,'mono_ns':time.monotonic_ns(),'state':state.tolist(),'measured_speed_m_s':self.measured_speed,'zero_command':[self.v,self.delta]}
+                directory=self.get_parameter('blocked_debug_directory').value
+                if directory:
+                    from pathlib import Path
+                    (Path(directory)/'observed_stop_completed.json').write_text(json.dumps({'start':self.stop_started,'completed':self.stop_completed},indent=2))
+            if now>=self.settle_until and not stationary:
+                self.transition('FAILED','observed stop not stationary after existing stabilization interval');return
+        if now>=self.settle_until:self.transition('DETECT_TARGET')
+        else:self.publish_status()
 
     def tick(self):
         try:self.tick_checked()
@@ -526,11 +578,8 @@ class AutoParking(Node):
                 if self.gap_seen and self.stage=='FIRST_OBSTACLE_SEEN':self.transition('GAP_SEEN')
                 if self.second_seen and self.stage=='GAP_SEEN':self.transition('SECOND_OBSTACLE_SEEN')
                 target_u=transform([obs.target.center-self.road_pose[:2]],[0,0],-self.road_pose[2])[0,0] if obs.target is not None else math.inf
-                stop_u=math.inf
-                if obs.target is not None and self.footprints is not None:
-                    goal=self.footprints.goal(obs.target.center,obs.target.heading)
-                    stop_u=float(transform([goal[:2]-self.road_pose[:2]],[0,0],-self.road_pose[2])[0,0])+STAGING_AHEAD_M+STAGING_STOP_MARGIN_M
-                stop_allowed=self.observation_hits>=3 and road_error[0]>stop_u if self.stop_policy=='legacy' else False
+                stop_u,stop_allowed=(self.legacy_search_stop(obs,road_error[0])
+                                     if self.stop_policy=='legacy' else (math.inf,False))
                 stop_evidence={}
                 if self.stop_policy=='observed_safe':
                     from observed_stop import observed_interior,safe_stop_sweep
@@ -553,12 +602,9 @@ class AutoParking(Node):
                         with (Path(directory)/'observed_stop_audit.jsonl').open('a') as f:f.write(json.dumps(stop_evidence)+'\n')
                 if stop_allowed:
                     if self.stop_policy=='legacy':
-                        self.legacy_stop_evidence={'sim_ns':self.get_clock().now().nanoseconds,'state':s.tolist(),'road_pose':self.road_pose.tolist(),'road_coordinate':float(road_error[0]),'target_road_coordinate':float(target_u),'center_offset_m':float(road_error[0]-target_u),'stop_road_coordinate':stop_u,'observation_hits':self.observation_hits,'map_stamps':getattr(self,'legacy_observation_stamps',[]),'condition':'observation_hits>=3 and road_error[0]>staging road coordinate+margin','target_center':obs.target.center.tolist()}
-                    # Preserve the proven10s map settling and post-stop3-map
-                    # revalidation. No fixed extra forward displacement.
-                    self.send(0,0);self.settle_until=now+10.;self.stop_started=stop_evidence or {'sim_ns':self.get_clock().now().nanoseconds,'mono_ns':time.monotonic_ns(),'state':s.tolist()}
-                    self.observation_window=[];self.observation_hits=0;self.observation_stamp=None
-                    self.transition('STOP_AND_STABILIZE','three full stable observed maps and safe swept stop' if self.stop_policy=='observed_safe' else 'three independent stable U-bay map observations');return
+                        self.legacy_stop_evidence={'sim_ns':self.get_clock().now().nanoseconds,'state':s.tolist(),'road_pose':self.road_pose.tolist(),'road_coordinate':float(road_error[0]),'target_road_coordinate':float(target_u),'center_offset_m':float(road_error[0]-target_u),'stop_road_coordinate':stop_u,'observation_hits':self.observation_hits,'map_stamps':getattr(self,'legacy_observation_stamps',[]),'condition':'three stable maps and search stop criterion met','target_center':obs.target.center.tolist()}
+                    reason='three full stable observed maps and safe swept stop' if self.stop_policy=='observed_safe' else 'three independent stable map observations'
+                    self.begin_stabilizing(s,now,reason,stop_evidence);return
             pose_age=self.get_clock().now().nanoseconds*1e-9-self.est.pose_stamp
             search_speed=float(self.get_parameter('search_speed').value)
             # search_steer_limit_deg=0 holds the wheels straight during the forward search.
@@ -576,23 +622,8 @@ class AutoParking(Node):
                       search_steer)
             self.visualize();self.publish_status();return
         if self.stage=='STOP_AND_STABILIZE':
-            self.send(0,0)
-            if self.stop_policy=='legacy' and not hasattr(self,'legacy_stop_completed') and abs(self.measured_speed)<.06 and now-self.stop_started['mono_ns']/1e9>=2.:
-                self.legacy_stop_completed={'sim_ns':self.get_clock().now().nanoseconds,'state':s.tolist(),'measured_speed_m_s':self.measured_speed,'zero_command':[self.v,self.delta]}
-            if self.stop_policy=='observed_safe':
-                if not self.grid(False).collision_free(s,self.footprints) or self.collision_count:
-                    self.transition('EMERGENCY_STOP','unsafe observed-stop current footprint');return
-                stationary=abs(self.measured_speed)<.06 and self.stop_started is not None and now-self.stop_started['mono_ns']/1e9>=2.
-                if stationary and self.stop_completed is None:
-                    self.stop_completed={'sim_ns':self.get_clock().now().nanoseconds,'mono_ns':time.monotonic_ns(),'state':s.tolist(),'measured_speed_m_s':self.measured_speed,'zero_command':[self.v,self.delta]}
-                    directory=self.get_parameter('blocked_debug_directory').value
-                    if directory:
-                        from pathlib import Path
-                        (Path(directory)/'observed_stop_completed.json').write_text(json.dumps({'start':self.stop_started,'completed':self.stop_completed},indent=2))
-                if now>=self.settle_until and not stationary:
-                    self.transition('FAILED','observed stop not stationary after existing stabilization interval');return
-            if now>=self.settle_until:self.transition('DETECT_TARGET')
-            else:self.publish_status();return
+            self.stop_and_stabilize(s,now)
+            if self.stage!='DETECT_TARGET':return
         if self.stage=='DETECT_TARGET':
             self.send(0,0)
             if now<self.settle_until:return

@@ -21,6 +21,7 @@ from .bootstrap import load
 from .two_structure_gap import PairConfig, PairObservation, observe_two_structure_gap
 load()
 from tractor_parallel_parking_auto import AutoParking
+from tractor_parking_clearance import PLANNER_HARD_CLEARANCE_M
 from tractor_parking_perception import planning_grid
 from tractor_trailer_model import wrap
 
@@ -89,11 +90,15 @@ def sample_points(points, limit=300):
 
 
 class TwoStructureParkingTest(AutoParking):
-    """Change perception and survey entry only; reuse planning/execution guards."""
+    """Detect a two-structure bay and choose a staging pose on the measured road."""
+
+    parking_goal_offsets = ((.4, 0.), *AutoParking.parking_goal_offsets)
+    stop_timeout_reason = 'rig did not settle with fresh localization'
 
     def __init__(self):
         self.test_motion_enabled = False
         super().__init__()
+        self.staging_reference = None
         self.target_source = ('two observed LiDAR structures (+ camera unless LiDAR-only test); '
                               'inner edge on measured rear wall or configured depth')
         self.declare_parameter('manual_survey', False)
@@ -401,6 +406,96 @@ class TwoStructureParkingTest(AutoParking):
             return False
         return super().stable_observation(target)
 
+    def legacy_search_stop(self, observation, road_forward):
+        if observation.target is None or self.observation_hits < 3 or len(observation.components) != 2:
+            return math.inf, False
+        along = np.array([math.cos(self.road_pose[2]), math.sin(self.road_pose[2])])
+        far_edge = float(np.max((observation.components[1]-self.road_pose[:2])@along))
+        rear_extent = float(np.min((np.vstack(self.footprints.world(self.current))-self.current[:2])@along))
+        stop_u = far_edge - rear_extent + PLANNER_HARD_CLEARANCE_M
+        if road_forward >= stop_u:
+            return stop_u, True
+        # If forward room runs out, stop with the confirmed target and plan from
+        # here. Search still uses its original occupied-only policy by default.
+        from observed_stop import safe_stop_sweep
+        sweep = safe_stop_sweep(self.search_grid(), self.current, self.footprints, self.geometry,
+                                max(abs(self.v), abs(self.measured_speed)), self.delta)
+        return stop_u, not sweep['safe']
+
+    def staging_road_coordinate(self, normal):
+        if self.stop_policy != 'legacy':
+            return super().staging_road_coordinate(normal)
+        reference = self.current if self.staging_reference is None else self.staging_reference
+        return float(reference[:2]@normal)
+
+    def staging_distances(self, grid, goal, normal):
+        if self.stop_policy != 'legacy':
+            return super().staging_distances(grid, goal, normal)
+        along = np.array([normal[1], -normal[0]])
+        reference = self.current if self.staging_reference is None else self.staging_reference
+        past_opening = float((self.target.center-goal[:2])@along) + self.target.length/2
+        ahead = max(float((reference[:2]-goal[:2])@along), past_opening)
+        road_offset = self.staging_road_coordinate(normal) - float(goal[:2]@normal)
+        distances = []
+        for distance in dict.fromkeys((ahead, ahead+.5, ahead+1., ahead-.5, 7.)):
+            if distance < past_opening:
+                continue
+            endpoint = goal.copy()
+            endpoint[:2] += distance*along + road_offset*normal
+            if grid.check(endpoint, self.footprints):
+                distances.append(distance)
+        return tuple(distances)
+
+    def select_goal(self):
+        if self.stop_policy != 'legacy':
+            return super().select_goal()
+        grid = self.grid(False)
+        heading = self.target.heading
+        normal = np.array([-math.sin(heading), math.cos(heading)])
+        for goal, shift, lateral in self.goal_candidates(grid, self.parking_goal_offsets):
+            if self.staging_distances(grid, goal, normal):
+                self.goal_shift, self.goal_lateral_shift = shift, lateral
+                return goal
+        raise RuntimeError('no bay-contained goal has an observed-safe staging pose')
+
+    def record_stationary_sample(self, now, state):
+        self.stationary_samples.append((now, state.copy()))
+        while self.stationary_samples and now-self.stationary_samples[0][0] > 1.1:
+            self.stationary_samples.popleft()
+
+    def begin_stabilizing(self, state, now, reason, evidence=None):
+        self.stationary_samples.clear()
+        self.stop_pose_stamp = self.est.pose_stamp
+        super().begin_stabilizing(state, now, reason, evidence)
+
+    def stop_and_stabilize(self, state, now):
+        if self.stop_policy != 'legacy':
+            return super().stop_and_stabilize(state, now)
+        self.send(0., 0.)
+        pose_stamp = self.est.pose_stamp
+        if not self.streams_ready() or pose_stamp is None:
+            self.stationary_samples.clear()
+        elif self.stop_pose_stamp is None or pose_stamp > self.stop_pose_stamp:
+            if self.stationary_samples and now-self.stationary_samples[-1][0] > .3:
+                self.stationary_samples.clear()
+            self.stop_pose_stamp = pose_stamp
+            self.record_stationary_sample(now, state)
+        if self.stationary() and abs(self.measured_speed) < .06:
+            self.staging_reference = state.copy()
+            self.settle_until = now
+            if self.detection_msg is not None:
+                stamp = self.detection_msg.header.stamp
+                self.observation_stamp = (stamp.sec, stamp.nanosec)
+            self.legacy_stop_completed = {'sim_ns': self.get_clock().now().nanoseconds,
+                                          'state': state.tolist(),
+                                          'measured_speed_m_s': self.measured_speed,
+                                          'zero_command': [self.v, self.delta]}
+            self.transition('DETECT_TARGET', 'stationary rig; revalidate with new maps')
+        elif now >= self.settle_until:
+            self.transition('FAILED', self.stop_timeout_reason)
+        else:
+            self.publish_status()
+
     def stop_test(self, request, response):
         self.send(0., 0.)
         self.test_motion_enabled = False
@@ -462,16 +557,8 @@ class TwoStructureParkingTest(AutoParking):
             self.parking_started = True
             self.auto = True
             self.operation = 'parking_after_manual_survey'
-            self.send(0., 0.)
-            now = time.monotonic()
-            self.settle_until = now+10.0
-            self.stop_started = {'mono_ns': time.monotonic_ns(),
-                                 'sim_ns': self.get_clock().now().nanoseconds,
-                                 'state': self.current.tolist()}
-            self.observation_window = []
-            self.observation_hits = 0
-            self.observation_stamp = None
-            self.transition('STOP_AND_STABILIZE', 'manual survey complete; explicit parking command')
+            self.begin_stabilizing(self.current, time.monotonic(),
+                                   'manual survey complete; explicit parking command')
             response.success = True
             response.message = 'Revalidate bay after settling, then use existing B planner/controller'
         except (RuntimeError, ValueError) as exc:
@@ -499,7 +586,13 @@ class TwoStructureParkingTest(AutoParking):
                 self.send(0., 0.)
                 self.transition('EMERGENCY_STOP', 'calibrated camera/scan stream lost')
                 return
-            return super().tick_checked()
+            super().tick_checked()
+            # The base tick returns before the stop handler when localization
+            # is missing. That cannot keep a stopped test waiting indefinitely.
+            if (self.stop_policy == 'legacy' and self.stage == 'STOP_AND_STABILIZE'
+                    and time.monotonic() >= self.settle_until):
+                self.transition('FAILED', self.stop_timeout_reason)
+            return
         self.send(0., 0.)
         if not self.streams_ready():
             self.stationary_samples.clear()
@@ -515,9 +608,7 @@ class TwoStructureParkingTest(AutoParking):
             self.road_pose = self.est.initial_pose.copy()
         self.stage = 'MANUAL_SURVEY' if self.operation == 'manual' else 'WAIT_FOR_START_COMMAND'
         now = time.monotonic()
-        self.stationary_samples.append((now, state.copy()))
-        while self.stationary_samples and now-self.stationary_samples[0][0] > 1.1:
-            self.stationary_samples.popleft()
+        self.record_stationary_sample(now, state)
         if now-self.last_detect > .5:
             self.last_detect = now
             observation = self.detect_gap(self.road_pose, 0., self.get_parameter('slot_width').value)

@@ -5,9 +5,9 @@ tractor_parallel_parking_auto:
     # Lateral parking depth. NEW GTR AMG body width is 0.55 m;
     # 1.10 m leaves 0.275 m on each side when aligned. Change before a run.
     slot_width: 1.10
-    # With the virtual rear wall, 3.3 m needs several forward/reverse shunts and
-    # 3.6 m and wider enters with a single reverse (synthetic planning test).
-    pair_min_gap_length: 3.30
+    # Admit plausible gaps to the planner. The detector also enforces the rig
+    # length plus 0.36 m. Start practical tests at 3.60 m as in the synthetic run.
+    pair_min_gap_length: 2.60
     pair_max_gap_length: 6.0
     gap_min_lateral_m: 0.55
     pair_max_lateral_m: 6.0

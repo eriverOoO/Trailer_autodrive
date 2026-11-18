@@ -12,6 +12,7 @@ import pytest
 pytest.importorskip('rclpy')
 import rclpy
 from geometry_msgs.msg import TransformStamped
+from nav_msgs.msg import OccupancyGrid
 from std_msgs.msg import String
 from std_srvs.srv import Trigger
 
@@ -71,6 +72,41 @@ def test_manual_handoff_requires_stop_and_enters_existing_settle_state(node):
     assert node.start_parking(Trigger.Request(), Trigger.Response()).success
     assert node.stage == 'STOP_AND_STABILIZE'
     assert node.test_motion_enabled and node.observation_hits == 0
+
+
+def test_stop_uses_fresh_stationary_poses_and_requires_new_detection_maps(node):
+    node.streams_ready = lambda: True
+    node.est.pose_stamp = 1.
+    node.detection_msg = OccupancyGrid()
+    node.detection_msg.header.stamp.sec = 7
+    state = np.zeros(4)
+    now = time.monotonic()
+    node.begin_stabilizing(state, now-1., 'test stop')
+    node.stop_and_stabilize(state, now-.95)
+    assert node.stage == 'STOP_AND_STABILIZE' and not node.stationary_samples
+    for index, offset in enumerate((.9, .67, .45, .23, 0.)):
+        node.est.pose_stamp = 1.1 + index*.1
+        node.stop_and_stabilize(state, now-offset)
+    assert node.stage == 'DETECT_TARGET'
+    assert np.array_equal(node.staging_reference, state)
+    target = Target(np.array([3., 2.]), 0., 3.3, 1.10)
+    assert not node.stable_observation(target) and node.observation_hits == 0
+    for stamp in (8, 9, 10):
+        node.detection_msg.header.stamp.sec = stamp
+        assert node.stable_observation(target) == (stamp == 10)
+
+
+@pytest.mark.parametrize('has_state', [True, False])
+def test_stop_times_out_when_stationarity_cannot_be_confirmed(node, has_state):
+    node.streams_ready = lambda: False
+    state = np.zeros(4)
+    now = time.monotonic()
+    node.begin_stabilizing(state, now-11., 'test stop')
+    node.camera_ready = lambda: True
+    node.test_motion_enabled = True
+    node.est.update = lambda **kwargs: state if has_state else None
+    node.tick_checked()
+    assert node.stage == 'FAILED' and node.v == 0.
 
 
 def test_uncalibrated_camera_cannot_confirm_and_sequential_evidence_expires(node):

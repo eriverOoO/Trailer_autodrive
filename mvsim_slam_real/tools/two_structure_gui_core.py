@@ -50,7 +50,7 @@ def placement_guide(mode, height=None):
         f'차 크기: 길이 {RIG_LENGTH_M} m (견인차+트레일러), 폭 {RIG_WIDTH_M} m',
         '[구조물] 차 진행방향 왼쪽에 두 개, 가로·세로 30 cm 이상, 벽에 붙어도 됨(벽보다 15 cm 이상 튀어나오면 됨)',
         tall,
-        '· 두 구조물 사이 간격(x): 3.3~6.0 m  (3.6 m 이상이면 한 번 후진으로 진입)',
+        '· 두 구조물 사이 간격(x): 첫 시험은 3.60 m. 검출 기본 범위는 2.60~6.00 m.',
         '[차 위치] 출발할 때',
         '· 옆(y): 차 왼쪽 옆면 → 구조물 앞면 0.5~1.2 m',
         '· 앞(x): 차 앞코 → 첫 구조물 1~10 m',
@@ -173,7 +173,7 @@ EXPLANATIONS = [
     (r'waiting for two observed left-side structures', '왼쪽 구조물 후보가 2개 미만입니다',
      '구조물 위치와 LiDAR 높이를 확인하세요.'),
     (r'structures found but no usable pair: (.*)', '구조물은 찾았지만 쌍을 만들 수 없습니다: {0}',
-     '간격이 허용 범위(기본 3.30~6.0 m)인지, 두 구조물이 진행방향과 나란한지(10° 이내), '
+     '간격이 허용 범위(기본 2.60~6.00 m, 전체 차체 길이 + 0.36 m 이상)인지, 두 구조물이 진행방향과 나란한지(10° 이내), '
      '두 구조물 사이 앞쪽에 다른 물체가 없는지 확인하세요.'),
     (r'gap found; interior blocked or unknown \(free=([\d.]+), unknown=([\d.]+)/([\d.]+), '
      r'occupied_group_cells=(\d+)/(\d+)\)',
@@ -195,8 +195,11 @@ EXPLANATIONS = [
     (r'localization/map stream stale', '위치추정·지도·스캔 중 하나가 끊겼습니다', '/scan, /map, /parking/state 발행 주기를 확인하세요.'),
     (r'gap revalidation timed out', '정지 후 30초 안에 공간을 다시 확인하지 못했습니다',
      '정지 위치에서 공간이 가려지거나 카메라 시야를 벗어났는지 확인하세요.'),
-    (r'no bay-contained goal has a safe reverse entry', '공간 안에 차를 세울 자세를 찾지 못했습니다',
-     '주차 자세(차체 + 0.18 m) 안에 점유 셀이 있거나, 공간 앞쪽 약 7 m 도로가 막혔는지 확인하세요.'),
+    (r'rig did not settle with fresh localization', '최신 위치 정보에서 정지를 확인하지 못했습니다',
+     '차량이 움직이는지와 위치추정·지도·스캔 발행 주기를 확인하세요.'),
+    (r'no bay-contained goal has a safe reverse entry|no bay-contained goal has an observed-safe staging pose|no observed-safe staging pose for any goal candidate',
+     '충돌 여유가 있는 주차 자세와 진입 대기 위치를 찾지 못했습니다',
+     '주차 자세와 정지 위치 주변 도로에 차체 전체와 0.18 m 여유가 있는지 확인하세요.'),
     (r'candidate search exhausted', '경로를 찾지 못했습니다',
      '간격이 좁거나(3.3 m 근처는 여러 번 전후진), 도로 폭·앞쪽 공간이 부족하거나, 미관측 영역이 넓은지 확인하세요.'),
     (r'latest RAW candidate precheck rejected', '경로가 최신 지도에서 0.18 m 여유를 지키지 못했습니다', ''),

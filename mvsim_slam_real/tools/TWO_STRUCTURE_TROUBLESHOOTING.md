@@ -35,7 +35,7 @@ ros2 topic hz /scan
 WAIT_FOR_START_COMMAND (또는 MANUAL_SURVEY)
   └ /parking_test/start_search
 WAIT_FOR_LOCALIZATION → CALIBRATE_TRAILER → SEARCH_FORWARD → FIRST_OBSTACLE_SEEN → GAP_SEEN
-  → SECOND_OBSTACLE_SEEN → STOP_AND_STABILIZE(10 s) → DETECT_TARGET → PLAN → READY → EXECUTE → PARKED
+  → SECOND_OBSTACLE_SEEN → STOP_AND_STABILIZE → DETECT_TARGET → PLAN → READY → EXECUTE → PARKED
 ```
 
 코드: 테스트 노드 [two_structure_test.py](../src/real_parking/real_parking/two_structure_test.py),
@@ -78,7 +78,7 @@ LiDAR [lidar.py](../src/real_vehicle_bridge/real_vehicle_bridge/lidar.py),
 | EMERGENCY_STOP `forward search left road corridor` | 시작 위치 기준 옆으로 1.0 m 이상 또는 `search_heading_limit_deg` 이상 벗어남. 조향 부호(`search_steer_sign`), 바퀴 정렬, 바닥 경사 |
 | EMERGENCY_STOP `search footprint collides with observed map` | 차체가 지도상의 점유 셀과 겹침. 경로 옆 벽·물체가 너무 가깝거나 self filter 범위 부족(자기 차체가 점으로 찍힘) |
 | FAILED `automatic gap search limit reached` | 22 m 또는 220 s 안에 공간을 확정하지 못함 → 아래 5절의 검출 실패 원인 확인 |
-| 공간을 지나쳤는데 계속 전진 | 확정(`observation_hits >= 3`)이 안 됐거나, 확정 후 정지 위치(목표보다 약 7.1 m 앞)에 아직 도달 안 함. legacy 정지 정책은 공간을 지나 약 7 m를 더 가서 멈춤. 앞쪽 공간이 부족하면 벽에 걸림 |
+| 공간을 지나쳤는데 계속 전진 | 같은 공간이 새 지도 3장에서 확정됐는지 확인. 기본 두 구조물 모드는 확정 후 트레일러 후단이 두 번째 구조물을 통과했거나, 그 전에 전진 정지 여유가 부족할 때 정지 |
 
 ## 5. 공간 검출 실패 (`/parking_test/observation`의 reason)
 
@@ -89,7 +89,7 @@ LiDAR [lidar.py](../src/real_vehicle_bridge/real_vehicle_bridge/lidar.py),
 | `waiting for measured local_map detection grid` | 검출 격자 미수신 | state_estimator가 `/map`을 못 받음 |
 | `detection map timestamp stale/future` | 검출 격자가 2.5 s 이상 묵음 | Cartographer 지도 발행 주기, 시계 |
 | `waiting for two observed left-side structures (found N)` | 구조물 후보가 N개(2개 미만) | 구조물이 LiDAR 높이에 걸리는지, 왼쪽 0.55~6 m 안인지, 벽에 붙어 있으면 0.15 m 이상 튀어나왔는지 |
-| `N structures found but no usable pair: gap X m outside ...` / `pair heading ...` | 후보는 있으나 간격·방향 조건 불만족 | 간격 3.30~6.0 m, 진행방향과 10° 이내. 버린 쌍 목록이 `/parking_test/observation`의 `rejected_pairs`에 있음 |
+| `N structures found but no usable pair: gap X m outside ...` / `pair heading ...` | 후보는 있으나 간격·방향 조건 불만족 | 기본 간격 2.60~6.00 m(전체 차체 길이 + 0.36 m 이상), 진행방향과 10° 이내. 버린 쌍 목록이 `/parking_test/observation`의 `rejected_pairs`에 있음 |
 | `... no usable pair: an object in front sits between them` | 두 구조물 사이 앞쪽(입구 쪽)에 다른 후보가 있음 | 두 구조물 사이의 물체 |
 | (이전 문자열) `waiting for two observed left-side structures` | 조건에 맞는 쌍이 없음 | 아래 "구조물 후보 조건". 두 구조물 사이에 점유 셀 3개 이상인 물체가 있으면 그것도 구조물 후보가 되어 쌍이 깨지고, 내부 검사까지 가지 않고 이 메시지가 나옴 |
 | `gap found; interior blocked or unknown (free=…, unknown=a/b, occupied_group_cells=c/d)` | 두 구조물은 찾았지만 내부 조건 불만족 | 아래 "내부 조건". `unknown` a가 허용치 b를 넘으면 미관측이 넓음, `occupied_group_cells` c가 d를 넘으면 공간 안에 큰 점유 덩어리(물체·벽) |
@@ -111,7 +111,7 @@ LiDAR [lidar.py](../src/real_vehicle_bridge/real_vehicle_bridge/lidar.py),
 - 앞뒤 순서로 이웃한 두 덩어리가 쌍이 됩니다. 두 구조물보다 0.15 m 이상 뒤에 있는(오목한) 후보는 건너뛰고,
   입구 쪽에 있는 물체가 사이에 있으면 쌍을 만들지 않습니다.
 - 두 구조물 도로 쪽 면을 이은 방향이 진행방향과 10° 안이어야 합니다.
-- 간격은 `pair_min_gap_length`(3.30)~`pair_max_gap_length`(6.0) m이고, 차체 길이 + 0.36 m보다 좁으면 거부합니다.
+- 간격은 `pair_min_gap_length`(2.60)~`pair_max_gap_length`(6.00) m이고, 전체 차체 길이 + 0.36 m보다 좁으면 거부합니다.
 
 내부 조건(`observed_interior`):
 
@@ -146,9 +146,10 @@ LiDAR [lidar.py](../src/real_vehicle_bridge/real_vehicle_bridge/lidar.py),
 | 증상 | 원인 후보 |
 |---|---|
 | FAILED `observed stop not stationary after existing stabilization interval` | (observed_safe 정책) 10 s 뒤에도 속도 0.06 m/s 이상. 모터가 0 명령에도 밀림 |
+| FAILED `rig did not settle with fresh localization` | (기본 두 구조물 모드) 최대 10초 동안 최신 위치로 정지 상태를 확인하지 못함. 차량이 계속 움직이거나 위치·지도·스캔이 끊겼는지 확인 |
 | EMERGENCY_STOP `unsafe observed-stop current footprint` | 정지 위치 차체가 지도 점유와 겹침 |
 | FAILED `gap revalidation timed out; no fixed target fallback` | 정지 후 30 s 안에 같은 공간이 3회 다시 확정되지 않음. 정지 위치에서 공간이 가려지거나 카메라 시야를 벗어남 |
-| `Waiting for map target: no bay-contained goal has a safe reverse entry` (로그) | 공간 안에 차체를 넣을 목표 자세가 없음. 목표 차체 + 0.18 m 여유 안에 점유/미관측 셀이 있거나 공간 앞쪽 7 m 도로가 막힘 |
+| `Waiting for map target: no bay-contained goal has an observed-safe staging pose` (로그) | 공간 안의 목표 자세 또는 정지 위치 주변 도로 후보에서 차체 전체와 0.18 m 여유를 확보하지 못함 |
 
 ## 7. 경로 계획 (PLAN)
 

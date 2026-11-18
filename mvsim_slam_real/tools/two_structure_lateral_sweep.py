@@ -2,7 +2,7 @@
 
 Run on a built workspace (needs optimizer/libnative.so):
   PYTHONNOUSERSITE=1 python3 tools/two_structure_lateral_sweep.py
-Start pose = legacy stop (~7.1 m past the goal), as on the real rig. Synthetic map, all free.
+Start pose = historical 7.1 m staging case. Synthetic map, all free except the modelled structures.
 """
 import math
 import sys
@@ -53,7 +53,7 @@ def run(lateral, gap, wall, depth=.55, length=.99):
         goal = fp.goal(target.center-shift*along, target.heading)
         if not target.contains(fp.world(goal)) or not grid.check(goal, fp):
             continue
-        start = np.array([goal[0]+7.1, 0., 0., 0.])  # legacy stop: ~7.1 m past the goal
+        start = np.array([goal[0]+7.1, 0., 0., 0.])  # Preserve the original sweep baseline.
         try:
             path = mod.HybridAStar(geometry, fp, grid, timeout=35.).parking_plan(
                 start, goal, road_y=float((road[:2]-goal[:2])@normal), staging_distances=(7.,))

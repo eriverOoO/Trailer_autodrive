@@ -15,19 +15,17 @@ def install(cls):
    if getattr(mod,'_steering_priority',False):
     from priority_schedule import schedule
    queue=[];grids={}
+   normal=context['normal'];road=self.staging_road_coordinate(normal)
    for i,(grid,goal,shift,lateral) in enumerate(context['attempts']):
+    distances=self.staging_distances(grid,goal,normal)
+    if not distances:continue
     key=str(id(grid));grids[key]=grid;item={'index':i,'map_variant':key,'goal':goal.tolist(),'shift':shift,'lateral':lateral}
-    if getattr(self,'stop_policy','legacy')=='observed_safe':
-     from observed_stop import observed_staging_distance
-     ahead=observed_staging_distance(grid,goal,float(self.road_pose[:2]@context['normal']),self.footprints)
-     # No geometry veto is turned into a feasible endpoint. Retain the job
-     # for its normal4D failure if the observed-safe endpoint is absent.
-     item['staging_distances']=[ahead] if ahead is not None else [7.]
-     item['staging_source']='farthest actually observed-safe whole-rig endpoint within original7m extent' if ahead is not None else 'no observed-safe endpoint; original solver must fail safely'
+    item['staging_distances']=distances
     queue.append(item)
+   if not queue:raise RuntimeError('no observed-safe staging pose for any goal candidate')
    out=Path(self.get_parameter('blocked_debug_directory').value);beg=time.monotonic()
    while True:
-    winner,jobs,events=schedule(mod,context['start'],queue,grids,self.geometry,self.footprints,context['normal'],float(self.road_pose[:2]@context['normal']),timeout=context['timeout'],existing_jobs=context.get('resume_jobs'))
+    winner,jobs,events=schedule(mod,context['start'],queue,grids,self.geometry,self.footprints,normal,road,timeout=context['timeout'],existing_jobs=context.get('resume_jobs'))
     context['resume_jobs']=jobs
     if getattr(mod,'_steering_priority',False):
      # Hard-filter every available candidate on the same latest RAW grid, then rank.

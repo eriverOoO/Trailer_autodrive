@@ -4,6 +4,8 @@ from pathlib import Path
 import math
 import sys
 import time
+from dataclasses import replace
+from unittest.mock import Mock
 
 import numpy as np
 import pytest
@@ -220,6 +222,88 @@ def test_node_planning_grid_frees_unknown_cells_inside_the_bay(node):
     assert (node.grid(False).data < 0).sum() == 0
     node.set_parameters([Parameter('pair_bay_unknown_as_free', value=False)])
     assert (node.grid(False).data < 0).sum() == 1
+
+
+@pytest.mark.planning
+def test_node_plans_from_short_staging_when_seven_metres_is_blocked(node):
+    mod = install_b()
+    geometry, footprints = rig()
+    node.road_pose = road = np.zeros(3)
+    node.footprints = footprints
+    data, origin, _ = scene(3.6)
+    observation = observe_two_structure_gap(planning_grid(data, RES, origin), road,
+                                            require_camera=False)
+    node.target = target = observation.target
+    goal = footprints.goal(target.center-[.4, 0.], target.heading)
+    centres = cell_centres(data.shape, origin).reshape(*data.shape, 2)
+    data[centres[:, :, 0] >= goal[0]+6.4] = 100
+    node.map_snapshot = occupancy(data, origin)
+    node.observation_hits = 3
+    node.current = np.array([goal[0]+4.6, 0., 0., 0.])
+    stop_u, should_stop = node.legacy_search_stop(observation, node.current[0])
+    assert should_stop and stop_u < goal[0]+7.1
+    node.current[0] = stop_u+.02
+    node.staging_reference = node.current.copy()
+    node.goal = node.select_goal()
+    assert np.allclose(node.goal, goal)
+    normal = np.array([0., 1.])
+    grid = node.grid(False)
+    distances = node.staging_distances(grid, goal, normal)
+    assert distances[0] == pytest.approx(node.current[0]-goal[0])
+    assert 7. not in distances
+    planner = mod.HybridAStar(geometry, footprints, grid, timeout=10.)
+    path = planner.parking_plan(node.current, goal, road_y=-goal[1], staging_distances=distances)
+    assert grid.path_free(path.states, footprints)
+    assert target.contains(footprints.world(path.states[-1]))
+
+
+def test_configured_gap_floor_allows_a_measured_gap_just_below_three_point_three(node):
+    data, origin, road = scene(3.3)
+    grid = planning_grid(data, RES, origin)
+    config = node.pair_config()
+    result = observe_two_structure_gap(grid, road, config, require_camera=False)
+    assert result.target is not None and result.target.length < 3.3
+    old = observe_two_structure_gap(grid, road, replace(config, min_gap_length=3.3),
+                                    require_camera=False)
+    assert old.target is None
+
+
+def test_blocked_forward_sweep_can_stop_before_passing_second_structure(node):
+    node.road_pose = road = np.zeros(3)
+    _, node.footprints = rig()
+    data, origin, _ = scene(3.6)
+    observation = observe_two_structure_gap(planning_grid(data, RES, origin), road,
+                                            require_camera=False)
+    node.observation_hits = 3
+    node.v = .14
+    node.current = np.array([8., 0., 0., 0.])
+    node.map_snapshot = occupancy(data, origin)
+    stop_u, should_stop = node.legacy_search_stop(observation, node.current[0])
+    assert node.current[0] < stop_u and not should_stop
+    centres = cell_centres(data.shape, origin).reshape(*data.shape, 2)
+    front = np.vstack(node.footprints.world(node.current))[:, 0].max()
+    data[centres[:, :, 0] >= front+.25] = 100
+    node.map_snapshot = occupancy(data, origin, sequence=2)
+    assert node.legacy_search_stop(observation, node.current[0]) == (stop_u, True)
+
+
+def test_lateral_goal_candidate_survives_precheck_and_reaches_scheduler(node):
+    node.road_pose = np.zeros(3)
+    node.current = np.array([10., 0., 0., 0.])
+    _, node.footprints = rig()
+    node.target = Target(center=np.array([4., 1.6]), heading=0., length=3.6, width=1.5)
+    grid = Mock(map_stamp_ns=7, data=np.zeros((10, 10)), origin=np.zeros(3), resolution=RES)
+    # The road is accessible and only the road-side parking target has clearance.
+    grid.check.side_effect = lambda state, _: state[0] > 7. or state[1] < 1.55
+    node.grid = Mock(return_value=grid)
+    node.submit_plan_candidates = Mock()
+    node.goal = node.select_goal()
+    assert node.goal_lateral_shift == pytest.approx(-.1)
+    node.launch_plan()
+    _, goal, shift, lateral = node.plan_context['attempts'][0]
+    assert np.allclose(goal, node.goal)
+    assert (shift, lateral) == (.4, -.1)
+    node.submit_plan_candidates.assert_called_once()
 
 
 def test_unobserved_depth_keeps_unknown_blocked_and_virtual_wall_active(node):
