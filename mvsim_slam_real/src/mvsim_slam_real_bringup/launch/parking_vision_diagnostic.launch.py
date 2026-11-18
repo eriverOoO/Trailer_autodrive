@@ -14,7 +14,8 @@ def nodes(context):
     params_file = LaunchConfiguration('detector_params').perform(context)
     parameters = [params_file] if params_file else []
     parameters.append({'calibration_file': ParameterValue(LaunchConfiguration('calibration_file'),
-                                                          value_type=str)})
+                                                          value_type=str),
+                       'reliable_image': bool(camera_path)})
     actions = [Node(
         package='camera_perception_pkg', executable='parking_object_diagnostic',
         namespace='parking_vision', parameters=parameters,

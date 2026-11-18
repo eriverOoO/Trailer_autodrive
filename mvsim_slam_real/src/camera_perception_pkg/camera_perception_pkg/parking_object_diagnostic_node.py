@@ -8,7 +8,7 @@ from pathlib import Path
 from cv_bridge import CvBridge, CvBridgeError
 import rclpy
 from rclpy.node import Node
-from rclpy.qos import qos_profile_sensor_data
+from rclpy.qos import QoSProfile, qos_profile_sensor_data
 from sensor_msgs.msg import Image, LaserScan
 from std_msgs.msg import String
 
@@ -55,7 +55,11 @@ class ParkingObjectDiagnostic(Node):
         if self.projection is not None:
             self.create_subscription(LaserScan, 'scan', self.recent_scans.append,
                                      qos_profile_sensor_data)
-        self.create_subscription(Image, 'image_raw', self.on_image, qos_profile_sensor_data)
+        # Large raw images can lose fragments with best-effort delivery. Match
+        # the built-in reliable camera publisher when launched together.
+        reliable_image = self.declare_parameter('reliable_image', False).value
+        image_qos = QoSProfile(depth=1) if reliable_image else qos_profile_sensor_data
+        self.create_subscription(Image, 'image_raw', self.on_image, image_qos)
 
     def scan_pixels(self, image_message, image):
         """Use a nearby stamped scan only when its frames and image size match."""

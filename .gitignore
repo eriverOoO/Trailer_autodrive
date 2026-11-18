@@ -22,3 +22,4 @@ Thumbs.db
 .venv-parking-linux/
 artifacts/
 runs/
+mvsim_slam_real/models/mobilenet_ssd/*.caffemodel
