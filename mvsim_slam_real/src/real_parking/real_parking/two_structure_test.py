@@ -108,6 +108,8 @@ class TwoStructureParkingTest(AutoParking):
         self.declare_parameter('allow_lidar_only_motion', False)
         self.declare_parameter('camera_evidence_lifetime_s', 180.0)
         self.declare_parameter('camera_stream_timeout_s', 1.0)
+        self.declare_parameter('camera_object_labels', ['cone', 'white body', 'ride_on_car'])
+        self.declare_parameter('camera_min_confidence', 0.)
         for name, value in vars(PairConfig()).items():
             if name not in ('slot_width', 'min_lateral_m'):
                 self.declare_parameter('pair_'+name, value)
@@ -120,6 +122,7 @@ class TwoStructureParkingTest(AutoParking):
         self.rear_block_cache = {}
         self.pair_config()  # Reject invalid test dimensions at startup.
         self.rear_block_margin()
+        self.camera_filter()
         if self.get_parameter('parking_side').value != 'left':
             raise ValueError('This isolated test expects parking_side=left')
         for name in ('camera_evidence_lifetime_s', 'camera_stream_timeout_s'):
@@ -205,6 +208,7 @@ class TwoStructureParkingTest(AutoParking):
     def validate_parameters(self, parameters):
         overrides = {p.name: p.value for p in parameters}
         protected = {'slot_width', 'gap_min_lateral_m', 'parking_side', 'manual_survey',
+                     'camera_object_labels', 'camera_min_confidence',
                      'require_camera', 'allow_lidar_only_motion', 'camera_evidence_lifetime_s', 'camera_stream_timeout_s'}
         affected = any(name in protected or name.startswith('pair_') for name in overrides)
         try:
@@ -218,15 +222,31 @@ class TwoStructureParkingTest(AutoParking):
                 raise ValueError('Select allow_lidar_only_motion at launch, then restart to change it')
             self.pair_config(overrides)
             self.rear_block_margin(overrides)
+            self.camera_filter(overrides)
             for name in ('camera_evidence_lifetime_s', 'camera_stream_timeout_s'):
                 if name in overrides and (not math.isfinite(overrides[name]) or overrides[name] <= 0):
                     raise ValueError(name+' must be finite and positive')
             if affected:
                 self.observation_window = []
                 self.observation_hits = 0
+            if {'camera_object_labels', 'camera_min_confidence'} & overrides.keys():
+                self.camera_evidence = []
+                self.camera_valid = False
+                self.last_association_key = None
             return SetParametersResult(successful=True)
         except (ValueError, TypeError) as exc:
             return SetParametersResult(successful=False, reason=str(exc))
+
+    def camera_filter(self, overrides=None):
+        values = overrides or {}
+        labels = values.get('camera_object_labels', self.get_parameter('camera_object_labels').value)
+        minimum = values.get('camera_min_confidence', self.get_parameter('camera_min_confidence').value)
+        if (not isinstance(labels, (list, tuple)) or not labels
+                or not all(isinstance(label, str) and label.strip() for label in labels)):
+            raise ValueError('camera_object_labels must be a nonempty list of labels')
+        if type(minimum) not in (float, int) or not math.isfinite(minimum) or not 0 <= minimum <= 1:
+            raise ValueError('camera_min_confidence must be finite and within 0..1')
+        return labels, minimum
 
     def lidar_only_motion(self):
         return (not self.get_parameter('require_camera').value
@@ -270,6 +290,21 @@ class TwoStructureParkingTest(AutoParking):
             groups = data['objects']
             if not isinstance(groups, list) or len(groups) > 64:
                 raise ValueError('invalid association object list')
+            labels = self.get_parameter('camera_object_labels').value
+            minimum = self.get_parameter('camera_min_confidence').value
+            selected = []
+            for group in groups:
+                if not isinstance(group, dict):
+                    raise ValueError('invalid association object')
+                if group.get('label') not in labels:
+                    continue
+                if minimum > 0:
+                    confidence = group.get('confidence')
+                    if (type(confidence) not in (float, int) or not np.isfinite(confidence)
+                            or not minimum <= confidence <= 1):
+                        continue
+                selected.append(group)
+            groups = selected
             if groups:
                 tf = self.association_buffer.lookup_transform(
                     'odom', data['scan_frame'], Time(nanoseconds=scan_stamp)).transform

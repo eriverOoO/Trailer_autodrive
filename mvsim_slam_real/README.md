@@ -19,10 +19,11 @@ source /opt/ros/humble/setup.bash
 # YDLidar SDK 빌드와 전체 빌드는 아래 "빌드와 기본 실행" 절차를 따릅니다.
 source tools/g6_env.bash
 colcon build --base-paths src --symlink-install
+bash tools/prepare_ride_on_runtime.sh            # 카메라 모드: 전동차 모델·분리된 추론 환경 준비
 bash tools/install_two_structure_gui_shortcut.sh   # 앱 메뉴·바탕화면에 아이콘 추가
 ```
 
-빌드 전에 `src/mvsim_slam_real_bringup/launch/__pycache__`가 있으면 지웁니다(있으면 빌드 실패).
+Bringup 설치 목록은 일반 파일만 포함하므로 `launch/__pycache__`가 생겨도 빌드를 방해하지 않습니다.
 
 ### 실행
 

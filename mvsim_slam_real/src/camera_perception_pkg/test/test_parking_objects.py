@@ -92,7 +92,7 @@ class CameraMessageTest(unittest.TestCase):
                     source = cv2.cvtColor(image, cv2.COLOR_BGR2RGB) if encoding == 'rgb8' else image
                     message = bridge.cv2_to_imgmsg(source, encoding=encoding)
                     message.header.frame_id = 'existing_camera_frame'
-                    message.header.stamp.sec = 123
+                    message.header.stamp = node.get_clock().now().to_msg()
                     node.overlay.reset_mock()
                     node.on_image(message)
                     node.overlay.publish.assert_called_once()

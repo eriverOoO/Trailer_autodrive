@@ -1,0 +1,9 @@
+{
+  "replay_only": true,
+  "recorded_images": 43,
+  "recorded_scans": 232,
+  "processed_frames": 43,
+  "candidate_frames": 42,
+  "uncalibrated_associations_all_rejected": true,
+  "domain_id": 230
+}

@@ -30,6 +30,7 @@ def test_modes_map_to_launch_arguments():
     assert lidar_auto['require_camera'] == 'false' and lidar_auto['allow_lidar_only_motion'] == 'true'
     camera = args(mode='camera_auto', camera_path='/dev/video0', calibration_file='/c.json')
     assert camera['require_camera'] == 'true' and camera['camera_path'] == '/dev/video0'
+    assert camera['detector_backend']=='ride_on_onnx' and camera['detector_confidence']=='0.65'
     assert all(a['development_mode'] == 'false' and a['start_g6_driver'] == 'true'
                for a in (lidar_manual, lidar_auto, camera))
 
@@ -86,6 +87,16 @@ def test_shell_command_quotes_arguments():
     command = core.launch_shell('/home/a b/ws', core.launch_arguments(dict(BASE, slot_width='1.2')))
     assert "cd '/home/a b/ws'" in command and 'two_structure_parking_test.launch.py' in command
     assert 'slot_width:=1.200' in command
+
+
+def test_camera_model_override_and_bad_confidence():
+    values=args(mode='camera_manual',camera_path='/dev/video0',calibration_file='/c.json',
+                detector_model='/models/custom.onnx',detector_confidence='.7')
+    assert values['detector_model']=='/models/custom.onnx' and values['detector_confidence']=='0.7'
+    for confidence in ['nan','0','1','invalid']:
+        with pytest.raises(ValueError):
+            args(mode='camera_manual',camera_path='/dev/video0',calibration_file='/c.json',
+                 detector_confidence=confidence)
 
 
 def test_explanations_cover_real_detection_reasons():

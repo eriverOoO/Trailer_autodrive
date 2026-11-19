@@ -18,7 +18,7 @@ import rclpy
 from rclpy.qos import QoSProfile, qos_profile_sensor_data
 from sensor_msgs.msg import Image, LaserScan
 
-from sensor_compare_core import Detector, message_stamp, nearest_scan, scan_groups
+from sensor_compare_core import Detector, RideOnDetector, message_stamp, nearest_scan, scan_groups
 
 WORKSPACE = Path(__file__).resolve().parents[1]
 
@@ -219,11 +219,13 @@ class CompareWindow:
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--detector-backend', choices=['ride_on_onnx', 'mobilenet_ssd'], default='ride_on_onnx')
+    parser.add_argument('--model', type=Path, default=WORKSPACE.parent/'artifacts/ride_on_detector/ride_on_yolo11n.onnx')
     parser.add_argument('--model-dir', type=Path, default=WORKSPACE/'models/mobilenet_ssd')
     parser.add_argument('--output', type=Path, default=WORKSPACE/'artifacts/sensor_compare')
     args = parser.parse_args()
     cv2.setNumThreads(2)
-    detector = Detector(args.model_dir)
+    detector = RideOnDetector(args.model) if args.detector_backend=='ride_on_onnx' else Detector(args.model_dir)
     rclpy.init()
     root = tk.Tk()
     window = CompareWindow(root, detector, args.output)

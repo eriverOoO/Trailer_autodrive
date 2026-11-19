@@ -28,11 +28,19 @@ def nodes(context):
     if value('camera_path') and base.enabled(context, 'development_mode'):
         raise RuntimeError('Opening a camera device requires development_mode:=false; '
                            'recorded image_topic works in development mode')
+    backend = value('detector_backend')
+    if backend == 'auto':
+        backend = ('ride_on_onnx' if value('camera_path') or base.enabled(context, 'require_camera')
+                   else 'heuristic')
+    if backend not in ('heuristic', 'ride_on_onnx'):
+        raise RuntimeError('detector_backend must be auto, heuristic or ride_on_onnx')
     parameters = [value('test_params_file'), {
         'manual_survey': ParameterValue(LaunchConfiguration('manual_survey'), value_type=bool),
         'require_camera': ParameterValue(LaunchConfiguration('require_camera'), value_type=bool),
         'allow_lidar_only_motion': ParameterValue(LaunchConfiguration('allow_lidar_only_motion'),
                                                   value_type=bool),
+        'camera_object_labels': ['ride_on_car'] if backend == 'ride_on_onnx' else ['cone', 'white body'],
+        'camera_min_confidence': (float(value('detector_confidence')) if backend == 'ride_on_onnx' else 0.),
     }]
     if value('slot_width'):
         parameters.append({'slot_width': float(value('slot_width'))})
@@ -64,8 +72,10 @@ def nodes(context):
     share = Path(get_package_share_directory('mvsim_slam_real_bringup'))
     actions.append(GroupAction([IncludeLaunchDescription(
         PythonLaunchDescriptionSource(str(share/'launch/parking_vision_diagnostic.launch.py')),
-        launch_arguments={name: value(name) for name in
-                          ('camera_path', 'image_topic', 'calibration_file', 'detector_params')}.items())]))
+        launch_arguments={**{name: value(name) for name in
+                            ('camera_path', 'image_topic', 'calibration_file', 'detector_params',
+                             'detector_model', 'detector_confidence', 'vision_python', 'image_reliability')},
+                          'detector_backend': backend}.items())]))
     return actions
 
 
@@ -86,5 +96,10 @@ def generate_launch_description():
         'image_topic': '/parking_vision/image_raw',
         'calibration_file': '',
         'detector_params': '',
+        'detector_backend': 'auto',  # Camera modes use the trained ride-on detector.
+        'detector_model': '',  # Diagnostic launch resolves the prepared model/runtime.
+        'detector_confidence': '0.65',
+        'vision_python': '',
+        'image_reliability': 'auto',
     }.items()]
     return LaunchDescription(arguments+[OpaqueFunction(function=nodes)])

@@ -1,0 +1,955 @@
+{
+  "backend": "ROS RideOnOnnxDetector",
+  "input_shape": [
+    1,
+    3,
+    416,
+    416
+  ],
+  "confidence": 0.65,
+  "onnx_sha256": "173c7f0b2e0aaa02dc1eb2edd45f463b10521279dfbc87cb7fdb8727f51d2e0a",
+  "versions": {
+    "onnxruntime": "1.20.1",
+    "opencv": "4.5.4",
+    "numpy": "1.24.4"
+  },
+  "tp": 41,
+  "fp": 1,
+  "fn": 1,
+  "tn": 1,
+  "positive_frames": 42,
+  "median_inference_ms": 15.941850026138127,
+  "frames": [
+    {
+      "index": 0,
+      "ground_truth": [
+        201,
+        21,
+        640,
+        335
+      ],
+      "predictions": [
+        {
+          "box": [
+            200,
+            23,
+            639,
+            340
+          ],
+          "confidence": 0.9694465398788452
+        }
+      ],
+      "best_iou": 0.9736592734034898,
+      "hit": true
+    },
+    {
+      "index": 1,
+      "ground_truth": [
+        190,
+        24,
+        640,
+        348
+      ],
+      "predictions": [
+        {
+          "box": [
+            187,
+            16,
+            639,
+            343
+          ],
+          "confidence": 0.9759835600852966
+        }
+      ],
+      "best_iou": 0.9525047714682822,
+      "hit": true
+    },
+    {
+      "index": 2,
+      "ground_truth": [
+        155,
+        23,
+        640,
+        332
+      ],
+      "predictions": [
+        {
+          "box": [
+            156,
+            20,
+            639,
+            325
+          ],
+          "confidence": 0.9622763395309448
+        }
+      ],
+      "best_iou": 0.9639954002934296,
+      "hit": true
+    },
+    {
+      "index": 3,
+      "ground_truth": [
+        122,
+        24,
+        640,
+        348
+      ],
+      "predictions": [
+        {
+          "box": [
+            106,
+            20,
+            639,
+            329
+          ],
+          "confidence": 0.9462082386016846
+        }
+      ],
+      "best_iou": 0.9018610875980875,
+      "hit": true
+    },
+    {
+      "index": 4,
+      "ground_truth": [
+        82,
+        24,
+        640,
+        348
+      ],
+      "predictions": [
+        {
+          "box": [
+            73,
+            19,
+            639,
+            326
+          ],
+          "confidence": 0.9630600810050964
+        }
+      ],
+      "best_iou": 0.9027261994204143,
+      "hit": true
+    },
+    {
+      "index": 5,
+      "ground_truth": [
+        77,
+        23,
+        640,
+        341
+      ],
+      "predictions": [
+        {
+          "box": [
+            75,
+            19,
+            639,
+            323
+          ],
+          "confidence": 0.9602289199829102
+        }
+      ],
+      "best_iou": 0.9269338611248557,
+      "hit": true
+    },
+    {
+      "index": 6,
+      "ground_truth": [
+        79,
+        24,
+        640,
+        348
+      ],
+      "predictions": [
+        {
+          "box": [
+            75,
+            19,
+            639,
+            323
+          ],
+          "confidence": 0.9566023349761963
+        }
+      ],
+      "best_iou": 0.9012810851544838,
+      "hit": true
+    },
+    {
+      "index": 7,
+      "ground_truth": [
+        78,
+        24,
+        640,
+        348
+      ],
+      "predictions": [
+        {
+          "box": [
+            76,
+            19,
+            639,
+            323
+          ],
+          "confidence": 0.9595212936401367
+        }
+      ],
+      "best_iou": 0.9042484946172797,
+      "hit": true
+    },
+    {
+      "index": 8,
+      "ground_truth": [
+        78,
+        24,
+        640,
+        348
+      ],
+      "predictions": [
+        {
+          "box": [
+            76,
+            18,
+            639,
+            322
+          ],
+          "confidence": 0.963346540927887
+        }
+      ],
+      "best_iou": 0.898506949296471,
+      "hit": true
+    },
+    {
+      "index": 9,
+      "ground_truth": [
+        77,
+        24,
+        640,
+        348
+      ],
+      "predictions": [
+        {
+          "box": [
+            76,
+            18,
+            639,
+            323
+          ],
+          "confidence": 0.9643642902374268
+        }
+      ],
+      "best_iou": 0.9029980278253954,
+      "hit": true
+    },
+    {
+      "index": 10,
+      "ground_truth": [
+        78,
+        24,
+        640,
+        348
+      ],
+      "predictions": [
+        {
+          "box": [
+            76,
+            18,
+            639,
+            323
+          ],
+          "confidence": 0.9655578136444092
+        }
+      ],
+      "best_iou": 0.9015123828360134,
+      "hit": true
+    },
+    {
+      "index": 11,
+      "ground_truth": [
+        78,
+        24,
+        640,
+        348
+      ],
+      "predictions": [
+        {
+          "box": [
+            76,
+            18,
+            639,
+            323
+          ],
+          "confidence": 0.9630163908004761
+        }
+      ],
+      "best_iou": 0.9015123828360134,
+      "hit": true
+    },
+    {
+      "index": 12,
+      "ground_truth": [
+        79,
+        24,
+        640,
+        344
+      ],
+      "predictions": [
+        {
+          "box": [
+            76,
+            19,
+            639,
+            324
+          ],
+          "confidence": 0.9590338468551636
+        }
+      ],
+      "best_iou": 0.9168554042622862,
+      "hit": true
+    },
+    {
+      "index": 13,
+      "ground_truth": [
+        79,
+        24,
+        640,
+        348
+      ],
+      "predictions": [
+        {
+          "box": [
+            76,
+            18,
+            639,
+            323
+          ],
+          "confidence": 0.9612636566162109
+        }
+      ],
+      "best_iou": 0.9000263385634195,
+      "hit": true
+    },
+    {
+      "index": 14,
+      "ground_truth": [
+        79,
+        24,
+        640,
+        348
+      ],
+      "predictions": [
+        {
+          "box": [
+            76,
+            18,
+            639,
+            323
+          ],
+          "confidence": 0.9589163661003113
+        }
+      ],
+      "best_iou": 0.9000263385634195,
+      "hit": true
+    },
+    {
+      "index": 15,
+      "ground_truth": [
+        80,
+        24,
+        640,
+        348
+      ],
+      "predictions": [
+        {
+          "box": [
+            74,
+            19,
+            639,
+            326
+          ],
+          "confidence": 0.9312900900840759
+        }
+      ],
+      "best_iou": 0.907248074721755,
+      "hit": true
+    },
+    {
+      "index": 16,
+      "ground_truth": [
+        80,
+        24,
+        640,
+        348
+      ],
+      "predictions": [
+        {
+          "box": [
+            74,
+            19,
+            639,
+            329
+          ],
+          "confidence": 0.9078170657157898
+        }
+      ],
+      "best_iou": 0.91617184771219,
+      "hit": true
+    },
+    {
+      "index": 17,
+      "ground_truth": [
+        79,
+        26,
+        640,
+        342
+      ],
+      "predictions": [
+        {
+          "box": [
+            67,
+            20,
+            639,
+            328
+          ],
+          "confidence": 0.8887369632720947
+        }
+      ],
+      "best_iou": 0.9174749907775102,
+      "hit": true
+    },
+    {
+      "index": 18,
+      "ground_truth": [
+        77,
+        156,
+        229,
+        329
+      ],
+      "predictions": [
+        {
+          "box": [
+            48,
+            0,
+            639,
+            479
+          ],
+          "confidence": 0.883931040763855
+        }
+      ],
+      "best_iou": 0.09288951531143916,
+      "hit": false
+    },
+    {
+      "index": 19,
+      "ground_truth": null,
+      "predictions": [],
+      "best_iou": 0.0,
+      "hit": false
+    },
+    {
+      "index": 20,
+      "ground_truth": [
+        78,
+        23,
+        640,
+        352
+      ],
+      "predictions": [
+        {
+          "box": [
+            84,
+            18,
+            639,
+            326
+          ],
+          "confidence": 0.935080349445343
+        }
+      ],
+      "best_iou": 0.8960532415424701,
+      "hit": true
+    },
+    {
+      "index": 21,
+      "ground_truth": [
+        76,
+        24,
+        640,
+        348
+      ],
+      "predictions": [
+        {
+          "box": [
+            76,
+            18,
+            639,
+            323
+          ],
+          "confidence": 0.9596322774887085
+        }
+      ],
+      "best_iou": 0.9044832736924681,
+      "hit": true
+    },
+    {
+      "index": 22,
+      "ground_truth": [
+        74,
+        24,
+        640,
+        348
+      ],
+      "predictions": [
+        {
+          "box": [
+            76,
+            18,
+            639,
+            324
+          ],
+          "confidence": 0.9614344835281372
+        }
+      ],
+      "best_iou": 0.90435955922511,
+      "hit": true
+    },
+    {
+      "index": 23,
+      "ground_truth": [
+        73,
+        24,
+        640,
+        348
+      ],
+      "predictions": [
+        {
+          "box": [
+            76,
+            18,
+            639,
+            324
+          ],
+          "confidence": 0.9602532386779785
+        }
+      ],
+      "best_iou": 0.9027933677560053,
+      "hit": true
+    },
+    {
+      "index": 24,
+      "ground_truth": [
+        71,
+        24,
+        640,
+        348
+      ],
+      "predictions": [
+        {
+          "box": [
+            74,
+            20,
+            639,
+            327
+          ],
+          "confidence": 0.9636008739471436
+        }
+      ],
+      "best_iou": 0.917365070519141,
+      "hit": true
+    },
+    {
+      "index": 25,
+      "ground_truth": [
+        68,
+        24,
+        640,
+        348
+      ],
+      "predictions": [
+        {
+          "box": [
+            81,
+            21,
+            639,
+            333
+          ],
+          "confidence": 0.9507443308830261
+        }
+      ],
+      "best_iou": 0.9220329194340168,
+      "hit": true
+    },
+    {
+      "index": 26,
+      "ground_truth": [
+        64,
+        25,
+        640,
+        350
+      ],
+      "predictions": [
+        {
+          "box": [
+            77,
+            18,
+            639,
+            324
+          ],
+          "confidence": 0.961311936378479
+        }
+      ],
+      "best_iou": 0.8791633095106052,
+      "hit": true
+    },
+    {
+      "index": 27,
+      "ground_truth": [
+        64,
+        24,
+        640,
+        348
+      ],
+      "predictions": [
+        {
+          "box": [
+            76,
+            19,
+            639,
+            324
+          ],
+          "confidence": 0.9624757170677185
+        }
+      ],
+      "best_iou": 0.8915798753160648,
+      "hit": true
+    },
+    {
+      "index": 28,
+      "ground_truth": [
+        63,
+        24,
+        640,
+        348
+      ],
+      "predictions": [
+        {
+          "box": [
+            76,
+            18,
+            639,
+            323
+          ],
+          "confidence": 0.9623165130615234
+        }
+      ],
+      "best_iou": 0.8844666519550666,
+      "hit": true
+    },
+    {
+      "index": 29,
+      "ground_truth": [
+        64,
+        24,
+        640,
+        348
+      ],
+      "predictions": [
+        {
+          "box": [
+            75,
+            19,
+            639,
+            324
+          ],
+          "confidence": 0.9591861963272095
+        }
+      ],
+      "best_iou": 0.8931399252549566,
+      "hit": true
+    },
+    {
+      "index": 30,
+      "ground_truth": [
+        64,
+        24,
+        640,
+        348
+      ],
+      "predictions": [
+        {
+          "box": [
+            75,
+            20,
+            639,
+            327
+          ],
+          "confidence": 0.9563851356506348
+        }
+      ],
+      "best_iou": 0.9047649301143583,
+      "hit": true
+    },
+    {
+      "index": 31,
+      "ground_truth": [
+        61,
+        24,
+        640,
+        348
+      ],
+      "predictions": [
+        {
+          "box": [
+            79,
+            23,
+            639,
+            328
+          ],
+          "confidence": 0.9532533884048462
+        }
+      ],
+      "best_iou": 0.9047811390548268,
+      "hit": true
+    },
+    {
+      "index": 32,
+      "ground_truth": [
+        62,
+        24,
+        640,
+        348
+      ],
+      "predictions": [
+        {
+          "box": [
+            82,
+            27,
+            639,
+            342
+          ],
+          "confidence": 0.9318737983703613
+        }
+      ],
+      "best_iou": 0.9368992695117263,
+      "hit": true
+    },
+    {
+      "index": 33,
+      "ground_truth": [
+        64,
+        24,
+        640,
+        348
+      ],
+      "predictions": [
+        {
+          "box": [
+            80,
+            23,
+            639,
+            329
+          ],
+          "confidence": 0.9527875781059265
+        }
+      ],
+      "best_iou": 0.9108466046596112,
+      "hit": true
+    },
+    {
+      "index": 34,
+      "ground_truth": [
+        66,
+        24,
+        640,
+        348
+      ],
+      "predictions": [
+        {
+          "box": [
+            82,
+            24,
+            639,
+            332
+          ],
+          "confidence": 0.9375417232513428
+        }
+      ],
+      "best_iou": 0.9224631135200241,
+      "hit": true
+    },
+    {
+      "index": 35,
+      "ground_truth": [
+        69,
+        27,
+        640,
+        345
+      ],
+      "predictions": [
+        {
+          "box": [
+            88,
+            29,
+            639,
+            341
+          ],
+          "confidence": 0.938729465007782
+        }
+      ],
+      "best_iou": 0.946766678782672,
+      "hit": true
+    },
+    {
+      "index": 36,
+      "ground_truth": [
+        72,
+        24,
+        640,
+        348
+      ],
+      "predictions": [
+        {
+          "box": [
+            82,
+            22,
+            639,
+            327
+          ],
+          "confidence": 0.9510748386383057
+        }
+      ],
+      "best_iou": 0.9115562853099716,
+      "hit": true
+    },
+    {
+      "index": 37,
+      "ground_truth": [
+        76,
+        24,
+        640,
+        348
+      ],
+      "predictions": [
+        {
+          "box": [
+            81,
+            23,
+            639,
+            334
+          ],
+          "confidence": 0.9515097737312317
+        }
+      ],
+      "best_iou": 0.9437297456545223,
+      "hit": true
+    },
+    {
+      "index": 38,
+      "ground_truth": [
+        79,
+        24,
+        640,
+        352
+      ],
+      "predictions": [
+        {
+          "box": [
+            81,
+            22,
+            639,
+            329
+          ],
+          "confidence": 0.9459997415542603
+        }
+      ],
+      "best_iou": 0.9193297465482595,
+      "hit": true
+    },
+    {
+      "index": 39,
+      "ground_truth": [
+        82,
+        24,
+        640,
+        348
+      ],
+      "predictions": [
+        {
+          "box": [
+            79,
+            22,
+            639,
+            334
+          ],
+          "confidence": 0.9515074491500854
+        }
+      ],
+      "best_iou": 0.9443672679143742,
+      "hit": true
+    },
+    {
+      "index": 40,
+      "ground_truth": [
+        86,
+        24,
+        640,
+        348
+      ],
+      "predictions": [
+        {
+          "box": [
+            81,
+            22,
+            639,
+            327
+          ],
+          "confidence": 0.9570616483688354
+        }
+      ],
+      "best_iou": 0.9200118598560345,
+      "hit": true
+    },
+    {
+      "index": 41,
+      "ground_truth": [
+        90,
+        24,
+        640,
+        348
+      ],
+      "predictions": [
+        {
+          "box": [
+            84,
+            23,
+            639,
+            328
+          ],
+          "confidence": 0.9459773302078247
+        }
+      ],
+      "best_iou": 0.9242270695928098,
+      "hit": true
+    },
+    {
+      "index": 42,
+      "ground_truth": [
+        94,
+        30,
+        640,
+        351
+      ],
+      "predictions": [
+        {
+          "box": [
+            92,
+            28,
+            639,
+            337
+          ],
+          "confidence": 0.9341022372245789
+        }
+      ],
+      "best_iou": 0.9454213613299128,
+      "hit": true
+    }
+  ]
+}

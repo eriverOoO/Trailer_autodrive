@@ -127,6 +127,7 @@ def build(ui, root, map_size):
             ('workspace', '워크스페이스'), ('lidar_port', 'LiDAR'),
             ('tractor_imu_port', '견인차 IMU'), ('trailer_imu_port', '트레일러 IMU'),
             ('camera_path', '카메라'), ('calibration_file', '카메라 보정'),
+            ('detector_model', '전동차 ONNX 모델'), ('detector_confidence', '차체 검출 신뢰도'),
             ('arduino_port', 'Arduino'), ('slot_width', '주차 깊이(m)'),
             ('ROS_DOMAIN_ID', 'ROS_DOMAIN_ID'), ('ROS_LOCALHOST_ONLY', 'ROS_LOCALHOST_ONLY')]):
         ttk.Label(connections, text=label).grid(row=row, column=0, sticky='w', padx=(0, 8), pady=3)
@@ -135,8 +136,9 @@ def build(ui, root, map_size):
         entry.grid(row=row, column=1, sticky='ew', pady=3)
         ui.setting_widgets.append((entry, 'normal'))
     connections.columnconfigure(1, weight=1)
-    ttk.Label(connections, text='주차 깊이 빈칸 = YAML 사용\nROS 도메인 변경 후에는 창을 다시 여세요.',
-              style='Muted.TLabel').grid(row=10, column=0, columnspan=2, sticky='w', pady=6)
+    ttk.Label(connections, text='모델 빈칸 = 준비된 전동차 모델 사용 · 신뢰도 기본 0.65\n'
+              '주차 깊이 빈칸 = YAML 사용\nROS 도메인 변경 후에는 창을 다시 여세요.',
+              style='Muted.TLabel').grid(row=12, column=0, columnspan=2, sticky='w', pady=6)
     ui.guide = tk.Text(tabs['배치 안내'], wrap='word', height=10, padx=8, pady=8,
                        relief='flat', state='disabled')
     guide_scroll = ttk.Scrollbar(tabs['배치 안내'], command=ui.guide.yview)

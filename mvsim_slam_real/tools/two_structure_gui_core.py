@@ -78,6 +78,8 @@ DEFAULT_SETTINGS = {
     'arduino_port': '',
     'camera_path': '',
     'calibration_file': '',
+    'detector_model': '',
+    'detector_confidence': '0.65',
     'slot_width': '',
     'enable_actuation': False,
     'enable_rviz': False,
@@ -131,6 +133,15 @@ def launch_arguments(settings):
         args['camera_path'] = str(settings['camera_path']).strip()
         if str(settings.get('calibration_file', '')).strip():
             args['calibration_file'] = str(settings['calibration_file']).strip()
+    if camera or str(settings.get('camera_path', '')).strip():
+        args['detector_backend'] = 'ride_on_onnx'
+        confidence = float(settings.get('detector_confidence', '.65'))
+        if not math.isfinite(confidence) or not 0 < confidence < 1:
+            raise ValueError('detector_confidence must be between zero and one')
+        args['detector_confidence'] = str(confidence)
+        model = str(settings.get('detector_model', '')).strip()
+        if model:
+            args['detector_model'] = model
     slot = str(settings.get('slot_width', '')).strip()
     if slot:
         value = float(slot)

@@ -10,6 +10,22 @@ CLASSES = ('background', 'aeroplane', 'bicycle', 'bird', 'boat', 'bottle',
            'motorbike', 'person', 'pottedplant', 'sheep', 'sofa', 'train', 'tvmonitor')
 
 
+class RideOnDetector:
+    """Use the same trained inference backend as the parking ROS node."""
+    def __init__(self, model_path):
+        from camera_perception_pkg.ride_on_detector import RideOnOnnxDetector
+        self.model = RideOnOnnxDetector(model_path)
+
+    def detect(self, image, confidence=.65):
+        self.model.confidence = confidence
+        result = []
+        for candidate in self.model.detect(image):
+            x, y, w, h = cv2.boundingRect(candidate.contour)
+            result.append({'label': candidate.label, 'confidence': candidate.confidence,
+                           'box': [x, y, x+w-1, y+h-1]})
+        return result
+
+
 class Detector:
     def __init__(self, model_dir):
         model_dir = Path(model_dir)

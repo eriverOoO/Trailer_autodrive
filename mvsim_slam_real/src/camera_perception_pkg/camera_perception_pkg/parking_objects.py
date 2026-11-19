@@ -12,6 +12,7 @@ class Candidate:
 
     label: str
     contour: np.ndarray
+    confidence: float | None = None
 
 
 def detect_candidates(image, roi_top=0.25, cone_hue_min=3, cone_hue_max=28,
@@ -78,34 +79,38 @@ class ScanProjection:
                 or not np.isclose(np.linalg.det(self.rotation), 1.0, atol=1e-4)):
             raise ValueError('Invalid camera matrix or lidar-to-camera rotation')
 
-    def projected_returns(self, scan):
+    def projected_returns(self, scan, return_indices=False):
         """Keep each image pixel paired with its measured scan-frame XY point."""
         ranges = np.asarray(scan.ranges, dtype=np.float64)
         valid = np.isfinite(ranges) & (ranges >= scan.range_min) & (ranges <= scan.range_max)
-        angles = scan.angle_min + np.flatnonzero(valid) * scan.angle_increment
+        indices = np.flatnonzero(valid)
+        angles = scan.angle_min + indices * scan.angle_increment
         ranges = ranges[valid]
         points = np.column_stack((ranges * np.cos(angles), ranges * np.sin(angles),
                                   np.zeros_like(ranges)))
         scan_xy = points[:, :2].copy()
         points = points @ self.rotation.T + self.translation
         front = points[:, 2] > 0.0
-        points, scan_xy = points[front], scan_xy[front]
+        points, scan_xy, indices = points[front], scan_xy[front], indices[front]
         if not points.size:
-            return np.empty((0, 2), dtype=np.int32), np.empty((0, 2))
+            result = (np.empty((0, 2), dtype=np.int32), np.empty((0, 2)))
+            return (*result, np.empty(0, dtype=np.int64)) if return_indices else result
         zero = np.zeros(3)
         pixels, _ = cv2.projectPoints(points, zero, zero, self.matrix, self.distortion)
         pixels = np.rint(pixels.reshape(-1, 2))
         width, height = self.image_size
         inside = np.isfinite(pixels).all(axis=1) & (pixels >= 0).all(axis=1)
         inside &= (pixels[:, 0] < width) & (pixels[:, 1] < height)
-        return pixels[inside].astype(np.int32), scan_xy[inside]
+        result = (pixels[inside].astype(np.int32), scan_xy[inside])
+        return (*result, indices[inside]) if return_indices else result
 
     def pixels(self, scan):
         """Return image pixels for the existing overlay interface."""
         return self.projected_returns(scan)[0]
 
 
-def associate_candidates(candidates, pixels, scan_xy, min_returns=3, cluster_distance=.20):
+def associate_candidates(candidates, pixels, scan_xy, min_returns=3, cluster_distance=.20,
+                         beam_indices=None):
     """Select a contiguous foreground return cluster inside each contour.
 
     This is a geometric association hypothesis, not semantic ground truth.
@@ -118,12 +123,17 @@ def associate_candidates(candidates, pixels, scan_xy, min_returns=3, cluster_dis
         points = scan_xy[keep]
         if len(points) < min_returns:
             continue
-        splits = np.flatnonzero(np.linalg.norm(np.diff(points, axis=0), axis=1)
-                                > cluster_distance) + 1
+        separated = np.linalg.norm(np.diff(points, axis=0), axis=1) > cluster_distance
+        if beam_indices is not None:
+            separated |= np.diff(np.asarray(beam_indices)[keep]) != 1
+        splits = np.flatnonzero(separated) + 1
         clusters = [group for group in np.split(points, splits) if len(group) >= min_returns]
         if clusters:
             foreground = min(clusters, key=lambda group: float(np.median(np.linalg.norm(group, axis=1))))
-            associations.append({'label': candidate.label, 'scan_xy': foreground.tolist()})
+            item = {'label': candidate.label, 'scan_xy': foreground.tolist()}
+            if candidate.confidence is not None:
+                item['confidence'] = float(candidate.confidence)
+            associations.append(item)
     return associations
 
 
@@ -135,6 +145,8 @@ def draw_diagnostic(image, candidates, pixels, status):
     for candidate in candidates:
         x, y, w, h = cv2.boundingRect(candidate.contour)
         label = candidate.label
+        if candidate.confidence is not None:
+            label += f' {candidate.confidence:.0%}'
         if pixels is not None:
             in_box = pixels[(pixels[:, 0] >= x) & (pixels[:, 0] < x + w)
                             & (pixels[:, 1] >= y) & (pixels[:, 1] < y + h)]
