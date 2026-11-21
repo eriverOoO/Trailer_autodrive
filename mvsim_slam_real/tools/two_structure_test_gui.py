@@ -118,6 +118,7 @@ class TestWindow:
         self.tk, self.root = tk, root
         self.preview, self.running_settings = preview, None
         self.ui_running = False
+        self.hand_push_stop_alerted = False
         self.process, self.lines = None, queue.Queue()
         self.process_kind, self.sequence_dialog, self.sequence_file = 'stack', None, None
         self.photo, self.last_render, self.map_key, self.map_data = None, 0., None, None
@@ -126,6 +127,8 @@ class TestWindow:
             self.settings.update(json.loads(CONFIG.read_text()))
         except (OSError, ValueError):
             pass
+        if self.settings['mode'] not in core.MODES:
+            self.settings['mode'] = core.DEFAULT_SETTINGS['mode']
         # A desktop shortcut does not read ~/.bashrc: apply the saved ROS network settings
         # before rclpy starts, so this window and the launched stack use the same domain.
         for name in ('ROS_DOMAIN_ID', 'ROS_LOCALHOST_ONLY'):
@@ -163,7 +166,8 @@ class TestWindow:
         return (self.running_settings or self.current_settings())['mode']
 
     def selection_changed(self, event=None):
-        self.vars['mode'].set(core.mode_from_choices(self.sensor_choice.get(), self.survey_choice.get()))
+        self.vars['mode'].set(core.MODE_BY_LABEL[self.mode_choice.get()])
+        self.vars['enable_actuation'].set(False)
         self.mode_changed()
 
     def start_action(self):
@@ -190,16 +194,18 @@ class TestWindow:
         self.guide.delete('1.0', 'end')
         self.guide.insert('1.0', core.placement_guide(self.vars['mode'].get(), core.lidar_height(geometry)))
         self.guide.configure(state='disabled')
-        settings = self.current_settings()
-        self.primary_button.configure(text=core.primary_action(settings['mode'],
-                                                              plan_only=core.manual_plan_only(settings))[1])
+        service, label = core.primary_action(self.vars['mode'].get())
+        self.primary_button.configure(text=label)
+        if service == 'start_parking':
+            self.mode_hint.configure(text='손으로 밀기 · 모터 출력 없이 경로 계획까지')
+        else:
+            self.mode_hint.configure(text='실차를 움직이려면 실차 출력 허용을 켜세요.')
 
     def actuation_changed(self):
         from tkinter import messagebox
         if self.vars['enable_actuation'].get() and not messagebox.askyesno(
                 '모터 구동 확인', '실제로 모터를 구동합니다. 주변이 안전하고 정지 버튼을 바로 누를 수 있나요?'):
             self.vars['enable_actuation'].set(False)
-        self.mode_changed()
 
     def launch(self):
         from tkinter import messagebox
@@ -226,9 +232,10 @@ class TestWindow:
                 '이미 실행 중', '같은 ROS 도메인에 테스트 노드가 이미 있습니다(다른 터미널/창).\n'
                 '중복 실행하면 오동작합니다. 그래도 실행할까요?'):
             return
-        missing = [settings[k] for k in ('lidar_port', 'tractor_imu_port', 'trailer_imu_port', 'arduino_port', 'camera_path')
-                   if settings.get(k) and str(settings[k]).startswith('/dev/') and not os.path.exists(settings[k])
-                   and (k != 'arduino_port' or settings.get('enable_actuation'))]
+        launch_settings = dict(argument.split(':=', 1) for argument in arguments)
+        devices = (launch_settings.get(key, '') for key in
+                   ('lidar_port', 'tractor_imu_port', 'trailer_imu_port', 'arduino_port', 'camera_path'))
+        missing = [port for port in devices if port.startswith('/dev/') and not os.path.exists(port)]
         if missing and not messagebox.askyesno('장치 없음', '없는 장치: '+', '.join(missing)+'\n그래도 실행할까요?'):
             return
         self.save(settings)
@@ -241,9 +248,9 @@ class TestWindow:
                                         text=True, bufsize=1, errors='replace', preexec_fn=child_setup)
         threading.Thread(target=self.reader, args=(self.process,), daemon=True).start()
         self.running_settings = dict(settings)
+        self.hand_push_stop_alerted = False
         self.set_running(True)
-        label = '손밀기 탐색 → 경로 계획' if core.manual_plan_only(settings) else core.MODES[settings['mode']][0]
-        self.process_label.config(text='실행 중 · '+label)
+        self.process_label.config(text='실행 중 · '+core.MODES[settings['mode']][0])
 
     def open_sequence(self):
         if self.sequence_dialog is not None:
@@ -406,9 +413,13 @@ class TestWindow:
         state = self.fresh('state', 1.)
         if status:
             stage = str(status.get('state', '-'))
-            if stage == 'READY' and self.running_settings and core.manual_plan_only(self.running_settings):
-                stage = '경로 계획 완료 (READY)'
-            self.fields['stage'].config(text=stage)
+            if stage == 'MANUAL_SURVEY':
+                self.show_hand_push_stage(self.fresh('status'))
+            else:
+                if (stage == 'READY' and self.running_settings
+                        and core.MODES[self.running_settings['mode']][1]['execute_parking'] == 'false'):
+                    stage = '경로 계획 완료 (READY)'
+                self.fields['stage'].config(text=stage, foreground='')
             failure = status.get('failure') or ''
             summary, hint = core.explain(failure)
             self.fields['failure'].config(text=(summary+(f'\n→ {hint}' if hint else '')) if failure else '-')
@@ -438,6 +449,21 @@ class TestWindow:
             self.fields['estimator'].config(text='정상' if state.get('valid') else core.explain(state.get('reason'))[0])
         elif self.ros.latest:
             self.fields['estimator'].config(text='/parking/state 수신 없음')
+
+    def show_hand_push_stage(self, status):
+        remaining = (status or {}).get('hand_push_remaining_m')
+        color = ''
+        if remaining is None:
+            label = '손밀기 탐색 · 공간 확인 중'
+        elif remaining > 0:
+            label = f'공간 확인 · 정지 지점까지 약 {remaining:.2f} m'
+        else:
+            label = '지금 멈추세요 · 정지 후 시작 버튼'
+            color = '#b03a2e'
+            if not self.hand_push_stop_alerted:
+                self.hand_push_stop_alerted = True
+                self.root.bell()
+        self.fields['stage'].config(text=label, foreground=color)
 
     def draw(self):
         message = self.fresh('map', 10.)

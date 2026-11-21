@@ -25,7 +25,10 @@ def nodes(context):
     value = lambda name: LaunchConfiguration(name).perform(context)
     if base.enabled(context, 'enable_vision'):
         raise RuntimeError('Use this test camera_path/image_topic, not the legacy enable_vision launch')
-    if value('camera_path') and base.enabled(context, 'development_mode'):
+    vision_enabled = base.enabled(context, 'enable_camera_diagnostic')
+    if not vision_enabled and base.enabled(context, 'require_camera'):
+        raise RuntimeError('require_camera needs enable_camera_diagnostic')
+    if vision_enabled and value('camera_path') and base.enabled(context, 'development_mode'):
         raise RuntimeError('Opening a camera device requires development_mode:=false; '
                            'recorded image_topic works in development mode')
     backend = value('detector_backend')
@@ -46,6 +49,8 @@ def nodes(context):
         parameters.append({'slot_width': float(value('slot_width'))})
     if value('execute_parking'):
         parameters.append({'execute_parking': ParameterValue(LaunchConfiguration('execute_parking'), value_type=bool)})
+    if value('search_steer_limit_deg'):
+        parameters.append({'search_steer_limit_deg': float(value('search_steer_limit_deg'))})
     if base.enabled(context, 'start_stack'):
         actions = base.launch_nodes(context, parking_executable='two_structure_parking_test',
                                     parking_parameters=parameters)
@@ -71,13 +76,14 @@ def nodes(context):
             PythonLaunchDescriptionSource(str(share/'launch/g6_lidar.launch.py')),
             launch_arguments={'lidar_port': port, 'scan_topic': '/lidar_raw',
                               'enable_rviz': 'false'}.items())]))
-    share = Path(get_package_share_directory('mvsim_slam_real_bringup'))
-    actions.append(GroupAction([IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(str(share/'launch/parking_vision_diagnostic.launch.py')),
-        launch_arguments={**{name: value(name) for name in
-                            ('camera_path', 'image_topic', 'calibration_file', 'detector_params',
-                             'detector_model', 'detector_confidence', 'vision_python', 'image_reliability')},
-                          'detector_backend': backend}.items())]))
+    if vision_enabled:
+        share = Path(get_package_share_directory('mvsim_slam_real_bringup'))
+        actions.append(GroupAction([IncludeLaunchDescription(
+            PythonLaunchDescriptionSource(str(share/'launch/parking_vision_diagnostic.launch.py')),
+            launch_arguments={**{name: value(name) for name in
+                                ('camera_path', 'image_topic', 'calibration_file', 'detector_params',
+                                 'detector_model', 'detector_confidence', 'vision_python', 'image_reliability')},
+                              'detector_backend': backend}.items())]))
     return actions
 
 
@@ -90,8 +96,10 @@ def generate_launch_description():
         'test_params_file': str(share/'config/two_structure_test.yaml'),
         'slot_width': '',  # Empty retains the YAML depth; optional launch override in metres.
         'execute_parking': '',  # Empty retains the controller YAML setting.
+        'search_steer_limit_deg': '',  # Zero requests straight steering during the search.
         'manual_survey': 'false',
         'require_camera': 'true',
+        'enable_camera_diagnostic': 'true',
         # Test stage only; effective together with require_camera:=false.
         'allow_lidar_only_motion': 'false',
         'start_stack': 'true',

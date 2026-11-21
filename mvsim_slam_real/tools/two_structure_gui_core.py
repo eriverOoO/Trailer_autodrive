@@ -12,15 +12,18 @@ import numpy as np
 
 MODES = {
     # key: (label, launch arguments)
-    'lidar_manual': ('LiDAR만 · 손으로 밀어 탐색 → [주차 시작]',
-                     {'require_camera': 'false', 'allow_lidar_only_motion': 'true', 'manual_survey': 'true'}),
-    'lidar_auto': ('LiDAR만 · 자동 탐색 → 주차',
-                   {'require_camera': 'false', 'allow_lidar_only_motion': 'true'}),
-    'camera_manual': ('카메라+LiDAR · 손으로 밀어 탐색 → [주차 시작]',
-                      {'require_camera': 'true', 'manual_survey': 'true'}),
-    'camera_auto': ('카메라+LiDAR · 자동 탐색 → 주차',
-                    {'require_camera': 'true'}),
+    'lidar_manual': ('1. LiDAR · 손으로 밀기 → 계획',
+                     {'require_camera': 'false', 'manual_survey': 'true', 'execute_parking': 'false'}),
+    'lidar_auto': ('2. LiDAR · 자동 직진·정지 → 계획',
+                   {'require_camera': 'false', 'execute_parking': 'false'}),
+    'camera_manual': ('3. LiDAR+카메라 · 손으로 밀기 → 계획',
+                      {'require_camera': 'true', 'manual_survey': 'true', 'execute_parking': 'false'}),
+    'camera_auto': ('4. LiDAR+카메라 · 자동 직진·정지 → 계획',
+                    {'require_camera': 'true', 'execute_parking': 'false'}),
+    'camera_full': ('5. LiDAR+카메라 · 자동 탐색 → 실제 주차',
+                    {'require_camera': 'true', 'execute_parking': 'true'}),
 }
+MODE_BY_LABEL = {label: mode for mode, (label, _) in MODES.items()}
 
 # Rig and limits behind the placement guide (vehicle_geometry.yaml, two_structure_test.yaml,
 # vendor search constants). Distances from the tractor rear axle: nose +0.80 m, trailer end -1.39 m.
@@ -66,7 +69,7 @@ def placement_guide(mode, height=None):
             f'· 시작 버튼을 누르기 전에 차에서 1 m 이상 떨어지기 → 이후엔 어느 방향이든 차체 {CLEARANCE_M} m 안에 아무것도 없어야 함',
         ]
     else:
-        lines.append(f'[자동 주행] 어느 방향이든 차체 {CLEARANCE_M} m 안에 아무것도(사람 포함) 없어야 함 → 있으면 비상정지')
+        lines.append(f'[자동 주행] 출발 전에 바퀴를 곧게 맞춥니다. 주차 경로는 차체 여유 {CLEARANCE_M} m를 검사합니다.')
     return '\n'.join(lines)
 
 DEFAULT_SETTINGS = {
@@ -85,36 +88,14 @@ DEFAULT_SETTINGS = {
     'enable_rviz': False,
 }
 
-SENSOR_CHOICES = {'camera': '카메라 + LiDAR', 'lidar': 'LiDAR만 · 진단'}
-SURVEY_CHOICES = {'manual': '손으로 밀기', 'auto': '자동 전진 탐색'}
 ORIGINAL_DETECTOR = '기존 모델'
 WHEELS_DETECTOR = '바퀴 장착 보강 모델'
 
 
-def mode_choices(mode):
-    if mode not in MODES:
-        raise ValueError(f'unknown mode {mode!r}')
-    sensor, survey = mode.split('_')
-    return SENSOR_CHOICES[sensor], SURVEY_CHOICES[survey]
-
-
-def mode_from_choices(sensor, survey):
-    sensors = {value: key for key, value in SENSOR_CHOICES.items()}
-    surveys = {value: key for key, value in SURVEY_CHOICES.items()}
-    if sensor not in sensors or survey not in surveys:
-        raise ValueError('Unknown sensor or survey selection')
-    return f'{sensors[sensor]}_{surveys[survey]}'
-
-
-def manual_plan_only(settings):
-    return settings.get('mode', 'lidar_manual').endswith('_manual') and not settings.get('enable_actuation')
-
-
-def primary_action(mode, *, plan_only=False):
+def primary_action(mode):
     """Only offer the start service appropriate for the selected survey mode."""
-    mode_choices(mode)  # validate before selecting a service
-    if mode.endswith('_manual'):
-        return 'start_parking', '경로 계획 시작' if plan_only else '주차 시작'
+    if MODES[mode][1].get('manual_survey') == 'true':
+        return 'start_parking', '경로 계획 시작'
     return 'start_search', '자동 탐색 시작'
 
 
@@ -123,25 +104,19 @@ def launch_arguments(settings):
     mode = settings.get('mode', 'lidar_manual')
     if mode not in MODES:
         raise ValueError(f'unknown mode {mode!r}')
-    camera = MODES[mode][1].get('require_camera') == 'true'
     args = {'development_mode': 'false', 'start_g6_driver': 'true', **MODES[mode][1]}
+    manual = args.get('manual_survey') == 'true'
     for name in ('lidar_port', 'tractor_imu_port', 'trailer_imu_port'):
         value = str(settings.get(name, '')).strip()
         if not value:
             raise ValueError(f'{name} is required')
         args[name] = value
-    if camera:
+    if args['require_camera'] == 'true':
         for name in ('camera_path', 'calibration_file'):
             value = str(settings.get(name, '')).strip()
             if not value:
                 raise ValueError(f'{name} is required in camera modes')
             args[name] = value
-    elif str(settings.get('camera_path', '')).strip():
-        # Camera still runs for reporting in LiDAR-only modes when connected.
-        args['camera_path'] = str(settings['camera_path']).strip()
-        if str(settings.get('calibration_file', '')).strip():
-            args['calibration_file'] = str(settings['calibration_file']).strip()
-    if camera or str(settings.get('camera_path', '')).strip():
         args['detector_backend'] = 'ride_on_onnx'
         confidence = float(settings.get('detector_confidence', '.65'))
         if not math.isfinite(confidence) or not 0 < confidence < 1:
@@ -155,17 +130,18 @@ def launch_arguments(settings):
             model = ''
         if model:
             args['detector_model'] = model
+    else:
+        args.update(allow_lidar_only_motion='true', enable_camera_diagnostic='false')
     slot = str(settings.get('slot_width', '')).strip()
     if slot:
         value = float(slot)
         if not math.isfinite(value) or not .5 <= value <= 3.:
             raise ValueError('slot_width must be 0.5..3.0 m')
         args['slot_width'] = f'{value:.3f}'
-    # In hand-push modes the test node holds zero commands until [주차 시작].
-    actuation = bool(settings.get('enable_actuation'))
+    if not manual:
+        args['search_steer_limit_deg'] = '0.0'
+    actuation = not manual and bool(settings.get('enable_actuation'))
     args['enable_actuation'] = 'true' if actuation else 'false'
-    if manual_plan_only(settings):
-        args['execute_parking'] = 'false'
     if actuation:
         port = str(settings.get('arduino_port', '')).strip()
         if not port:

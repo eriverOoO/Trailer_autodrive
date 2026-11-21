@@ -54,19 +54,14 @@ def build(ui, root, map_size):
     side.grid(row=1, column=1, sticky='nsew')
     ui.setting_widgets = []
     ui.vars['mode'] = tk.StringVar(value=ui.settings['mode'])
-    sensor, survey = core.mode_choices(ui.settings['mode'])
-    ui.sensor_choice, ui.survey_choice = tk.StringVar(value=sensor), tk.StringVar(value=survey)
+    ui.mode_choice = tk.StringVar(value=core.MODES[ui.settings['mode']][0])
     modes = ttk.Frame(side)
     modes.pack(fill='x')
-    for column, (label, variable, values) in enumerate([
-            ('센서', ui.sensor_choice, core.SENSOR_CHOICES.values()),
-            ('탐색 이동', ui.survey_choice, core.SURVEY_CHOICES.values())]):
-        ttk.Label(modes, text=label, style='Section.TLabel').grid(row=0, column=column, sticky='w')
-        combo = ttk.Combobox(modes, textvariable=variable, values=list(values), state='readonly', width=23)
-        combo.grid(row=1, column=column, sticky='ew', padx=(0, 8) if column == 0 else 0, pady=(3, 6))
-        combo.bind('<<ComboboxSelected>>', ui.selection_changed)
-        modes.columnconfigure(column, weight=1)
-        ui.setting_widgets.append((combo, 'readonly'))
+    ttk.Label(modes, text='테스트 모드', style='Section.TLabel').pack(anchor='w')
+    combo = ttk.Combobox(modes, textvariable=ui.mode_choice, values=list(core.MODE_BY_LABEL), state='readonly')
+    combo.pack(fill='x', pady=(3, 6))
+    combo.bind('<<ComboboxSelected>>', ui.selection_changed)
+    ui.setting_widgets.append((combo, 'readonly'))
     outputs = ttk.Frame(side)
     outputs.pack(fill='x')
     ui.vars['enable_actuation'] = tk.BooleanVar(value=False)
@@ -77,8 +72,8 @@ def build(ui, root, map_size):
     rviz = ttk.Checkbutton(outputs, text='RViz 창 추가', variable=ui.vars['enable_rviz'])
     rviz.pack(side='left', padx=(12, 0))
     ui.setting_widgets.extend([(ui.actuation, 'normal'), (rviz, 'normal')])
-    ttk.Label(side, text='손으로 밀기 + 실차 출력 끔 → 경로 계획까지만',
-              style='Muted.TLabel').pack(anchor='w', pady=(2, 7))
+    ui.mode_hint = ttk.Label(side, style='Muted.TLabel')
+    ui.mode_hint.pack(anchor='w', pady=(2, 7))
 
     buttons = ttk.Frame(side)
     buttons.pack(fill='x')
