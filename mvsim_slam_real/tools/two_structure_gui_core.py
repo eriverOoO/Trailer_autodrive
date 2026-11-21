@@ -63,7 +63,7 @@ def placement_guide(mode, height=None):
             '[손으로 밀 때]',
             f'· 미는 동안은 모터 0, 충돌 검사 안 함 → 미는 사람이 {CLEARANCE_M} m 안에 잡혀도 멈추지 않음',
             '· 트레일러 뒤 가운데에서 밀기. 공간 옆 도로에 서 있거나 오래 머물지 않기 (사람이 지도에 장애물로 남을 수 있음)',
-            f'· [주차 시작] 전에 차에서 1 m 이상 떨어지기 → 이후엔 어느 방향이든 차체 {CLEARANCE_M} m 안에 아무것도 없어야 함',
+            f'· 시작 버튼을 누르기 전에 차에서 1 m 이상 떨어지기 → 이후엔 어느 방향이든 차체 {CLEARANCE_M} m 안에 아무것도 없어야 함',
         ]
     else:
         lines.append(f'[자동 주행] 어느 방향이든 차체 {CLEARANCE_M} m 안에 아무것도(사람 포함) 없어야 함 → 있으면 비상정지')
@@ -106,10 +106,16 @@ def mode_from_choices(sensor, survey):
     return f'{sensors[sensor]}_{surveys[survey]}'
 
 
-def primary_action(mode):
+def manual_plan_only(settings):
+    return settings.get('mode', 'lidar_manual').endswith('_manual') and not settings.get('enable_actuation')
+
+
+def primary_action(mode, *, plan_only=False):
     """Only offer the start service appropriate for the selected survey mode."""
     mode_choices(mode)  # validate before selecting a service
-    return ('start_parking', '주차 시작') if mode.endswith('_manual') else ('start_search', '자동 탐색 시작')
+    if mode.endswith('_manual'):
+        return 'start_parking', '경로 계획 시작' if plan_only else '주차 시작'
+    return 'start_search', '자동 탐색 시작'
 
 
 def launch_arguments(settings):
@@ -158,6 +164,8 @@ def launch_arguments(settings):
     # In hand-push modes the test node holds zero commands until [주차 시작].
     actuation = bool(settings.get('enable_actuation'))
     args['enable_actuation'] = 'true' if actuation else 'false'
+    if manual_plan_only(settings):
+        args['execute_parking'] = 'false'
     if actuation:
         port = str(settings.get('arduino_port', '')).strip()
         if not port:

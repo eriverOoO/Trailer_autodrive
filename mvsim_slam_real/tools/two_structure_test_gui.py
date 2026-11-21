@@ -190,13 +190,16 @@ class TestWindow:
         self.guide.delete('1.0', 'end')
         self.guide.insert('1.0', core.placement_guide(self.vars['mode'].get(), core.lidar_height(geometry)))
         self.guide.configure(state='disabled')
-        self.primary_button.configure(text=core.primary_action(self.vars['mode'].get())[1])
+        settings = self.current_settings()
+        self.primary_button.configure(text=core.primary_action(settings['mode'],
+                                                              plan_only=core.manual_plan_only(settings))[1])
 
     def actuation_changed(self):
         from tkinter import messagebox
         if self.vars['enable_actuation'].get() and not messagebox.askyesno(
                 '모터 구동 확인', '실제로 모터를 구동합니다. 주변이 안전하고 정지 버튼을 바로 누를 수 있나요?'):
             self.vars['enable_actuation'].set(False)
+        self.mode_changed()
 
     def launch(self):
         from tkinter import messagebox
@@ -239,7 +242,8 @@ class TestWindow:
         threading.Thread(target=self.reader, args=(self.process,), daemon=True).start()
         self.running_settings = dict(settings)
         self.set_running(True)
-        self.process_label.config(text='실행 중 · '+core.MODES[settings['mode']][0])
+        label = '손밀기 탐색 → 경로 계획' if core.manual_plan_only(settings) else core.MODES[settings['mode']][0]
+        self.process_label.config(text='실행 중 · '+label)
 
     def open_sequence(self):
         if self.sequence_dialog is not None:
@@ -401,7 +405,10 @@ class TestWindow:
         observation = self.fresh('observation')
         state = self.fresh('state', 1.)
         if status:
-            self.fields['stage'].config(text=str(status.get('state', '-')))
+            stage = str(status.get('state', '-'))
+            if stage == 'READY' and self.running_settings and core.manual_plan_only(self.running_settings):
+                stage = '경로 계획 완료 (READY)'
+            self.fields['stage'].config(text=stage)
             failure = status.get('failure') or ''
             summary, hint = core.explain(failure)
             self.fields['failure'].config(text=(summary+(f'\n→ {hint}' if hint else '')) if failure else '-')

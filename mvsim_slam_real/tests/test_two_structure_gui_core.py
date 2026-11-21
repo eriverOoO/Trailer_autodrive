@@ -76,6 +76,17 @@ def test_motors_off_by_default_and_need_arduino_when_enabled():
     assert auto['enable_actuation'] == 'true' and auto['arduino_port'] == '/dev/ttyACM0'
 
 
+@pytest.mark.parametrize('sensor', ('lidar', 'camera'))
+def test_hand_push_without_motor_output_stops_at_plan_ready(sensor):
+    settings = dict(mode=f'{sensor}_manual', camera_path='/dev/video0', calibration_file='/c.json')
+    assert args(**settings)['execute_parking'] == 'false'
+    assert core.primary_action(settings['mode'], plan_only=core.manual_plan_only(settings)) == (
+        'start_parking', '경로 계획 시작')
+    assert 'execute_parking' not in args(**settings, enable_actuation=True, arduino_port='/dev/ttyACM0')
+    settings['mode'] = f'{sensor}_auto'
+    assert 'execute_parking' not in args(**settings)
+
+
 @pytest.mark.parametrize('settings', [{'lidar_port': ''}, {'mode': 'camera_auto'}, {'slot_width': 'abc'},
                                       {'slot_width': '9'}, {'mode': 'nope'}])
 def test_invalid_settings_rejected(settings):

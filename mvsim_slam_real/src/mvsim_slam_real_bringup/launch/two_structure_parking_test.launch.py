@@ -44,6 +44,8 @@ def nodes(context):
     }]
     if value('slot_width'):
         parameters.append({'slot_width': float(value('slot_width'))})
+    if value('execute_parking'):
+        parameters.append({'execute_parking': ParameterValue(LaunchConfiguration('execute_parking'), value_type=bool)})
     if base.enabled(context, 'start_stack'):
         actions = base.launch_nodes(context, parking_executable='two_structure_parking_test',
                                     parking_parameters=parameters)
@@ -87,6 +89,7 @@ def generate_launch_description():
     arguments += [DeclareLaunchArgument(name, default_value=default) for name, default in {
         'test_params_file': str(share/'config/two_structure_test.yaml'),
         'slot_width': '',  # Empty retains the YAML depth; optional launch override in metres.
+        'execute_parking': '',  # Empty retains the controller YAML setting.
         'manual_survey': 'false',
         'require_camera': 'true',
         # Test stage only; effective together with require_camera:=false.

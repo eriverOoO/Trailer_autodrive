@@ -77,7 +77,7 @@ def build(ui, root, map_size):
     rviz = ttk.Checkbutton(outputs, text='RViz 창 추가', variable=ui.vars['enable_rviz'])
     rviz.pack(side='left', padx=(12, 0))
     ui.setting_widgets.extend([(ui.actuation, 'normal'), (rviz, 'normal')])
-    ttk.Label(side, text='설정은 테스트 실행 시 적용 · 실차 출력 기본 OFF',
+    ttk.Label(side, text='손으로 밀기 + 실차 출력 끔 → 경로 계획까지만',
               style='Muted.TLabel').pack(anchor='w', pady=(2, 7))
 
     buttons = ttk.Frame(side)
