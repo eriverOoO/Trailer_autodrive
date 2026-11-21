@@ -92,14 +92,18 @@ LiDAR 단독 모드는 센서·검출을 분리 확인하는 중간 시험이며
 
 ## 카메라 설치
 
-먼저 저장소 루트의 LFS 전동차 가중치가 준비돼 있는지 확인하고, 실차 워크스페이스에서
-`bash tools/prepare_ride_on_runtime.sh`를 한 번 실행합니다. 학습 환경과 ROS 추론 환경은
+먼저 저장소 루트의 LFS 전동차 가중치 두 개(`ride_on_yolo11n.pt`, `ride_on_yolo11n_wheels.pt`)가 준비돼
+있는지 확인하고, 실차 워크스페이스에서 `bash tools/prepare_ride_on_runtime.sh`를 실행해 두 모델의 ONNX를 준비합니다.
+학습 환경과 ROS 추론 환경은
 각각 `.venv-parking-linux`와 `.venv-vision-ros`로 분리합니다. 시스템 Python 패키지를 바꾸지 않습니다.
 카메라 모드 또는 카메라 장치를 지정한 모드에서는 `detector_backend:=auto`가 전동차 모델을 선택합니다.
 장치 없는 LiDAR 단독 모드의 비전 진단은 기존 방식으로 남으며 모델/추론 환경을 요구하지 않습니다.
 
-GUI의 `전동차 ONNX 모델`을 비워두면 준비한 기본 모델을 쓰며, `차체 검출 신뢰도` 기본값은 0.65입니다.
-CLI에서는 `detector_model:=/실제/model.onnx detector_confidence:=0.65`로 바꾸고,
+GUI의 **연결 설정 → 전동차 ONNX 모델**에서 **기존 모델** 또는 **바퀴 장착 보강 모델**을 선택합니다.
+기존 모델이 기본이며, 설정은 다음 테스트 실행 시 적용됩니다. 원하는 ONNX 경로를 직접 입력할 수도 있습니다.
+`차체 검출 신뢰도` 기본값은 두 모델 모두 0.65입니다. CLI에서 바퀴 장착 보강 모델을 고를 때는
+`detector_model:="$(realpath ../artifacts/ride_on_detector/ride_on_yolo11n_wheels.onnx)"`를 추가합니다.
+CLI에서 다른 모델이나 임계값을 쓰려면 `detector_model:=/실제/model.onnx detector_confidence:=0.65`로 지정하고,
 다른 ROS용 가상환경을 쓰면 `vision_python:=/가상환경/bin/python`을 지정합니다.
 모델/실행 환경이 없거나 모델 클래스가 다르면 오류로 중단하며 색상 검출로 자동 대체하지 않습니다.
 영상 구독은 전동차 모드에서 reliable입니다. 외부 best-effort 영상 발행기에 연결할 때만

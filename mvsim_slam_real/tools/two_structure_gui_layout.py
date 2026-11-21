@@ -131,12 +131,18 @@ def build(ui, root, map_size):
             ('arduino_port', 'Arduino'), ('slot_width', '주차 깊이(m)'),
             ('ROS_DOMAIN_ID', 'ROS_DOMAIN_ID'), ('ROS_LOCALHOST_ONLY', 'ROS_LOCALHOST_ONLY')]):
         ttk.Label(connections, text=label).grid(row=row, column=0, sticky='w', padx=(0, 8), pady=3)
-        ui.vars[key] = tk.StringVar(value=str(ui.settings.get(key, '')))
-        entry = ttk.Entry(connections, textvariable=ui.vars[key], width=30)
+        value = str(ui.settings.get(key, ''))
+        if key == 'detector_model':
+            ui.vars[key] = tk.StringVar(value=value or core.ORIGINAL_DETECTOR)
+            entry = ttk.Combobox(connections, textvariable=ui.vars[key], width=30,
+                                 values=(core.ORIGINAL_DETECTOR, core.WHEELS_DETECTOR))
+        else:
+            ui.vars[key] = tk.StringVar(value=value)
+            entry = ttk.Entry(connections, textvariable=ui.vars[key], width=30)
         entry.grid(row=row, column=1, sticky='ew', pady=3)
         ui.setting_widgets.append((entry, 'normal'))
     connections.columnconfigure(1, weight=1)
-    ttk.Label(connections, text='모델 빈칸 = 준비된 전동차 모델 사용 · 신뢰도 기본 0.65\n'
+    ttk.Label(connections, text='전동차 모델을 선택하거나 ONNX 경로를 입력하세요.\n'
               '주차 깊이 빈칸 = YAML 사용\nROS 도메인 변경 후에는 창을 다시 여세요.',
               style='Muted.TLabel').grid(row=12, column=0, columnspan=2, sticky='w', pady=6)
     ui.guide = tk.Text(tabs['배치 안내'], wrap='word', height=10, padx=8, pady=8,

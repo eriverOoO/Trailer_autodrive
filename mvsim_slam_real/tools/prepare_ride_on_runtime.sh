@@ -13,5 +13,8 @@ if [ ! -x "$TASK_ROOT/.venv-vision-ros/bin/python" ]; then
   uv venv "$TASK_ROOT/.venv-vision-ros" --python /usr/bin/python3 --system-site-packages
 fi
 uv pip install --python "$TASK_ROOT/.venv-vision-ros/bin/python" numpy==1.24.4 onnxruntime==1.20.1
-"$TASK_ROOT/.venv-parking-linux/bin/python" "$TASK_ROOT/tools/export_ride_on_onnx.py"
-echo 'Prepared ride-on detector and isolated ROS vision runtime (no device opened).'
+for model in ride_on_yolo11n ride_on_yolo11n_wheels; do
+  "$TASK_ROOT/.venv-parking-linux/bin/python" "$TASK_ROOT/tools/export_ride_on_onnx.py" \
+    --weights "$TASK_ROOT/artifacts/ride_on_detector/$model.pt"
+done
+echo 'Prepared both ride-on detectors and isolated ROS vision runtime (no device opened).'

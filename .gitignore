@@ -22,5 +22,11 @@ Thumbs.db
 .venv-parking-linux/
 .venv-vision-ros/
 artifacts/
+!/artifacts/
+/artifacts/*
+!/artifacts/ride_on_detector/
+/artifacts/ride_on_detector/*
+!/artifacts/ride_on_detector/ride_on_yolo11n_wheels.pt
+!/artifacts/ride_on_detector/wheel_augmentation/
 runs/
 mvsim_slam_real/models/mobilenet_ssd/*.caffemodel

@@ -63,6 +63,27 @@ RTX 4060에서 65에폭을 마쳤고, 최종 `ride_on_yolo11n.pt`는 합성 검�
 가림을 포함한 큰 박스를 출력했고, 차체가 보이지 않는 0019에도 박스를 출력했습니다.
 현장 적용 전에 전동차 없이 받침대와 배경만 보이는 별도 회차와 렌즈가 가려지는 장면이 필요합니다.
 
+## 바퀴 장착 이미지 보강 모델
+
+`ride_on_yolo11n_wheels.pt`는 기존 `ride_on_yolo11n.pt`에서 추가 학습한 모델입니다. 기존 합성 학습
+이미지 54장에 `wheel_augmentation/`의 장착 이미지 16장을 더했습니다. ImageGen에서 학습용 시트 A/F의
+구도와 차체를 유지하고 보이는 빈 휠하우스에 검은 타이어와 휠을 추가했습니다. 추가 이미지의 라벨은
+장착한 바퀴를 포함한 보이는 차체 영역이며, 검증 시트 E 및 실제 C920 영상은 학습 입력에서 제외했습니다.
+
+```bash
+python artifacts/ride_on_detector/prepare.py --wheel-augmentation
+python artifacts/ride_on_detector/train.py --wheel-augmentation --epochs 16 --device cpu
+```
+
+재학습 결과는 기본적으로 `runs/yolo11n_ride_on_ft_wheels/weights/best.pt`에 저장됩니다.
+실차의 두 구조물 테스트 창에서는 [전동차 ONNX 모델 선택](../../mvsim_slam_real/tools/TWO_STRUCTURE_TEST.md#카메라-설치)을 사용합니다.
+
+보강 모델은 Ultralytics 8.3.167과 PyTorch 2.7.1 CPU에서 16에폭을 학습한 `best.pt`입니다.
+두 모델을 416px ONNX로 변환하고 같은 추론 코드에서 신뢰도 0.65로 비교했습니다.
+두 모델 모두 저장 C920 양성 42장 중 41장(IoU ≥ 0.50)을 검출했고, 정답과 일치하지 않는 박스는
+각각 1개였습니다. 학습에 사용하지 않은 바퀴 합성 비교본 두 장도 두 모델이 모두 검출했습니다.
+바퀴를 장착한 실차에서의 성능은 별도 촬영으로 검증해야 합니다.
+
 ## 주차 파이프라인에서의 역할
 
 LiDAR의 두 군집으로 구조물의 위치와 사이 간격을 계산합니다. 카메라 모델은 영상에서 전동차 후보

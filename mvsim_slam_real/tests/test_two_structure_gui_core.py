@@ -99,6 +99,17 @@ def test_camera_model_override_and_bad_confidence():
                  detector_confidence=confidence)
 
 
+def test_camera_model_choices_use_separate_models_and_ignore_selection_without_camera(tmp_path):
+    camera = dict(mode='camera_auto', camera_path='/dev/video0', calibration_file='/c.json',
+                  workspace=str(tmp_path/'parking workspace'))
+    assert 'detector_model' not in args(**camera, detector_model=core.ORIGINAL_DETECTOR)
+    wheels = args(**camera, detector_model=core.WHEELS_DETECTOR)
+    assert Path(wheels['detector_model']) == tmp_path/'artifacts/ride_on_detector/ride_on_yolo11n_wheels.onnx'
+    assert args(mode='lidar_auto', detector_model=core.WHEELS_DETECTOR).get('detector_model') is None
+    camera['mode'] = 'lidar_auto'
+    assert args(**camera, detector_model=core.WHEELS_DETECTOR)['detector_model'] == wheels['detector_model']
+
+
 def test_explanations_cover_real_detection_reasons():
     from dataclasses import replace
     from real_parking.two_structure_gap import PairConfig, observe_two_structure_gap

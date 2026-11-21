@@ -87,6 +87,8 @@ DEFAULT_SETTINGS = {
 
 SENSOR_CHOICES = {'camera': '카메라 + LiDAR', 'lidar': 'LiDAR만 · 진단'}
 SURVEY_CHOICES = {'manual': '손으로 밀기', 'auto': '자동 전진 탐색'}
+ORIGINAL_DETECTOR = '기존 모델'
+WHEELS_DETECTOR = '바퀴 장착 보강 모델'
 
 
 def mode_choices(mode):
@@ -140,6 +142,11 @@ def launch_arguments(settings):
             raise ValueError('detector_confidence must be between zero and one')
         args['detector_confidence'] = str(confidence)
         model = str(settings.get('detector_model', '')).strip()
+        if model == WHEELS_DETECTOR:
+            workspace = Path(settings.get('workspace') or Path(__file__).resolve().parents[1])
+            model = str(workspace.expanduser().resolve().parent/'artifacts/ride_on_detector/ride_on_yolo11n_wheels.onnx')
+        if model == ORIGINAL_DETECTOR:
+            model = ''
         if model:
             args['detector_model'] = model
     slot = str(settings.get('slot_width', '')).strip()
