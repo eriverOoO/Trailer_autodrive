@@ -1,0 +1,86 @@
+{
+  "release_url": "https://github.com/eriverOoO/Trailer_autodrive/releases/tag/hand-push-20261127-172042",
+  "published": true,
+  "all_server_sha256_match": true,
+  "original_files": 129,
+  "assets": [
+    {
+      "name": "archive_verification.json",
+      "size": 88,
+      "digest": "sha256:edaf46a7a72a4a4915794a387f1c46c92f2000902c330372bd18a6c3509575fc",
+      "browser_download_url": "https://github.com/eriverOoO/Trailer_autodrive/releases/download/hand-push-20261127-172042/archive_verification.json"
+    },
+    {
+      "name": "hand_push_20261127_172042.tar.zst.part-000",
+      "size": 1048576000,
+      "digest": "sha256:1ede95630795e7325a3a8edfae47dced071480236505824db1a4b5aaca149769",
+      "browser_download_url": "https://github.com/eriverOoO/Trailer_autodrive/releases/download/hand-push-20261127-172042/hand_push_20261127_172042.tar.zst.part-000"
+    },
+    {
+      "name": "hand_push_20261127_172042.tar.zst.part-001",
+      "size": 1048576000,
+      "digest": "sha256:9ebe4933675a7bd121075b5756c413183e950b9cbd52c5202621aa78db1f582e",
+      "browser_download_url": "https://github.com/eriverOoO/Trailer_autodrive/releases/download/hand-push-20261127-172042/hand_push_20261127_172042.tar.zst.part-001"
+    },
+    {
+      "name": "hand_push_20261127_172042.tar.zst.part-002",
+      "size": 1048576000,
+      "digest": "sha256:753a63363008b6616fa714b973046126d3a52a1b62ce54efb5719fb8c3a26308",
+      "browser_download_url": "https://github.com/eriverOoO/Trailer_autodrive/releases/download/hand-push-20261127-172042/hand_push_20261127_172042.tar.zst.part-002"
+    },
+    {
+      "name": "hand_push_20261127_172042.tar.zst.part-003",
+      "size": 1048576000,
+      "digest": "sha256:043160f735379ff9d0b75f465352849e3479b24b7d0b7552244a3e34d0d9ad3e",
+      "browser_download_url": "https://github.com/eriverOoO/Trailer_autodrive/releases/download/hand-push-20261127-172042/hand_push_20261127_172042.tar.zst.part-003"
+    },
+    {
+      "name": "hand_push_20261127_172042.tar.zst.part-004",
+      "size": 1048576000,
+      "digest": "sha256:db3b43ebb68c7824b454369d7035ab437fbf0dcca39c7fc8ead3881221fcd596",
+      "browser_download_url": "https://github.com/eriverOoO/Trailer_autodrive/releases/download/hand-push-20261127-172042/hand_push_20261127_172042.tar.zst.part-004"
+    },
+    {
+      "name": "hand_push_20261127_172042.tar.zst.part-005",
+      "size": 1048576000,
+      "digest": "sha256:aa77035cbb4bee52f26f9bba184cdb3fd3cb346f5180265ee73048544076e3e1",
+      "browser_download_url": "https://github.com/eriverOoO/Trailer_autodrive/releases/download/hand-push-20261127-172042/hand_push_20261127_172042.tar.zst.part-005"
+    },
+    {
+      "name": "hand_push_20261127_172042.tar.zst.part-006",
+      "size": 382624121,
+      "digest": "sha256:d8864187ded9de8fbd5cd649d12ca386943777021dc657756d3bf90803da6480",
+      "browser_download_url": "https://github.com/eriverOoO/Trailer_autodrive/releases/download/hand-push-20261127-172042/hand_push_20261127_172042.tar.zst.part-006"
+    },
+    {
+      "name": "manifest.json",
+      "size": 25061,
+      "digest": "sha256:19f6e54cb633fa59a75274db64dfef307278a900c7a3f47ad2f1f56911b06828",
+      "browser_download_url": "https://github.com/eriverOoO/Trailer_autodrive/releases/download/hand-push-20261127-172042/manifest.json"
+    },
+    {
+      "name": "ORIGINAL_SHA256SUMS",
+      "size": 16233,
+      "digest": "sha256:7c5c506fb9c4324c8fdf2eb19b53369901daad781f68ce86c7429dd3c7c6e56b",
+      "browser_download_url": "https://github.com/eriverOoO/Trailer_autodrive/releases/download/hand-push-20261127-172042/ORIGINAL_SHA256SUMS"
+    },
+    {
+      "name": "README.txt",
+      "size": 489,
+      "digest": "sha256:afecc105a898def5074181a89f48870974d3b6efd4b31ab1a3d9ced8994092a9",
+      "browser_download_url": "https://github.com/eriverOoO/Trailer_autodrive/releases/download/hand-push-20261127-172042/README.txt"
+    },
+    {
+      "name": "restore.sh",
+      "size": 308,
+      "digest": "sha256:9c0be3835ff79c671d84e2bb3f0e65386eb59efb990f37478212a2901d0cc117",
+      "browser_download_url": "https://github.com/eriverOoO/Trailer_autodrive/releases/download/hand-push-20261127-172042/restore.sh"
+    },
+    {
+      "name": "SHA256SUMS",
+      "size": 1083,
+      "digest": "sha256:ae8d0bab833c8c9022fe44c51a4a6df2b79ca823345301458a62d6c57ace75ea",
+      "browser_download_url": "https://github.com/eriverOoO/Trailer_autodrive/releases/download/hand-push-20261127-172042/SHA256SUMS"
+    }
+  ]
+}
