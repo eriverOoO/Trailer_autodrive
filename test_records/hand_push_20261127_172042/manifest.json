@@ -1,0 +1,651 @@
+{
+  "files": [
+    {
+      "path": "hand_push_20261127_172042/README.md",
+      "bytes": 2842,
+      "sha256": "8d6e23c8ce3ce2c09aef76f613906ed390a98ef9ba067877c89ad4baa36f547d"
+    },
+    {
+      "path": "hand_push_20261127_172042/analysis.json",
+      "bytes": 2257,
+      "sha256": "0963156b8b2537b941cb00de0163a1acc7b01e6ba5294a9c2346f3d2f839e5be"
+    },
+    {
+      "path": "hand_push_20261127_172042/bag_info.txt",
+      "bytes": 3097,
+      "sha256": "d6c5ce2c0ce8f8e8bab3923100e987f1139e1d4c9725194f71080c157f7b5a5f"
+    },
+    {
+      "path": "hand_push_20261127_172042/config/camera_lidar_mount_estimate.yaml",
+      "bytes": 265,
+      "sha256": "d01e2edbabc3cf04c91e384fde335e41dea91d51684ce1826b705692c8e4fcbc"
+    },
+    {
+      "path": "hand_push_20261127_172042/config/controller.yaml",
+      "bytes": 411,
+      "sha256": "77b613df169caf4736a36f86648e725094cd6b381abf8e524eed2eeeabb4ad66"
+    },
+    {
+      "path": "hand_push_20261127_172042/config/ebimu_slam.yaml",
+      "bytes": 723,
+      "sha256": "e915930db5e489eeda1f6bf91c28a6892c54fe2198278e07ad6c41744f68960b"
+    },
+    {
+      "path": "hand_push_20261127_172042/config/g6.yaml",
+      "bytes": 798,
+      "sha256": "84c0d3ba41a6051adfd0d8799b73d2ed2b5874ad4770a4655039bf656fad3dc3"
+    },
+    {
+      "path": "hand_push_20261127_172042/config/g6_imu_mount.yaml",
+      "bytes": 587,
+      "sha256": "6d7208c2fc3d913b8eef06e22a471eed61cd50ec641d5ff377b38c790755458a"
+    },
+    {
+      "path": "hand_push_20261127_172042/config/g6_imu_optional.lua",
+      "bytes": 187,
+      "sha256": "c0f28d62d0e664f9219f31efb7db8283af0aed10b878c325808d6b04f487369b"
+    },
+    {
+      "path": "hand_push_20261127_172042/config/g6_lidar_only.lua",
+      "bytes": 410,
+      "sha256": "38f1c55cf7d5ff0f75585c9269f12c29c8081c936c60ecae1ddf87e589f19a94"
+    },
+    {
+      "path": "hand_push_20261127_172042/config/g6_mount.yaml",
+      "bytes": 612,
+      "sha256": "230f17b03100b56b266566ca3edda3db0a13de6af17bb80191395f86d680c764"
+    },
+    {
+      "path": "hand_push_20261127_172042/config/g6_sensor_imu.lua",
+      "bytes": 190,
+      "sha256": "fba130c8f936b5ecc9387d46ccd6718fb06a5c9762b42e430773b1b2b97695d7"
+    },
+    {
+      "path": "hand_push_20261127_172042/config/g6_vehicle.lua",
+      "bytes": 191,
+      "sha256": "0125f36275b5621e2a4d09d342bdb37e17c95928afaa28f0bf1f28e497b73abc"
+    },
+    {
+      "path": "hand_push_20261127_172042/config/hardware.yaml",
+      "bytes": 161,
+      "sha256": "48723439cbc793bd3ffe1bbe8dfc0e5cbf8f24f2449d1f9cd311fce41d6652c9"
+    },
+    {
+      "path": "hand_push_20261127_172042/config/imu.yaml",
+      "bytes": 1142,
+      "sha256": "e57709755129ee282ba9b7863de5809002182eb4f03b74685ec95cbf7718b50a"
+    },
+    {
+      "path": "hand_push_20261127_172042/config/lidar.yaml",
+      "bytes": 1130,
+      "sha256": "db9ba3396076477e2c3a7f33f76ad5270b307c59a061b4bf353ec287059e5841"
+    },
+    {
+      "path": "hand_push_20261127_172042/config/map_builder.lua",
+      "bytes": 811,
+      "sha256": "f58f56ef01ddb427608535ea5841699242846fe2b3f315b8657804c7b0c94159"
+    },
+    {
+      "path": "hand_push_20261127_172042/config/parking.yaml",
+      "bytes": 1544,
+      "sha256": "d6af4bfa1a00fc2caba8aa2b9cee720dadd78101c9476c9d4584a2060dfca0de"
+    },
+    {
+      "path": "hand_push_20261127_172042/config/pose_graph.lua",
+      "bytes": 3100,
+      "sha256": "2eb6515948a7fe92a9b055104525f19e38aa34f49ee95f1459682a9e30ff7e55"
+    },
+    {
+      "path": "hand_push_20261127_172042/config/reference_imu_optional.lua",
+      "bytes": 2003,
+      "sha256": "75ce40caa0bc7b97746f68ed0fe621407cacc7a4847e55b8f33d587d7a60c919"
+    },
+    {
+      "path": "hand_push_20261127_172042/config/reference_lidar_only.lua",
+      "bytes": 2002,
+      "sha256": "0ca3d9aaf2c60d094d8799fa853f240817bca4b5f6fa45854aebcbcefaff321d"
+    },
+    {
+      "path": "hand_push_20261127_172042/config/slam.yaml",
+      "bytes": 139,
+      "sha256": "0edb02cff2cfcbe95af53679c5268d4c27a56426e2a4911e5269e4c4de5618ab"
+    },
+    {
+      "path": "hand_push_20261127_172042/config/trajectory_builder.lua",
+      "bytes": 930,
+      "sha256": "4b8fb7053c0be2ac5f4db2609aa5d5747c8f43cffab2f83c0bfce2b68ae41186"
+    },
+    {
+      "path": "hand_push_20261127_172042/config/trajectory_builder_2d.lua",
+      "bytes": 3249,
+      "sha256": "c3142599308a80fdbbaf597f62cc105ebcfcb91b44e83526b9b91fd798196956"
+    },
+    {
+      "path": "hand_push_20261127_172042/config/trajectory_builder_3d.lua",
+      "bytes": 3207,
+      "sha256": "2ff3cea0a6770f08b9f595e75c45aea1e8a858d952d4e15b15277d7c448e417b"
+    },
+    {
+      "path": "hand_push_20261127_172042/config/two_structure_test.yaml",
+      "bytes": 2403,
+      "sha256": "6c14b7fbe209bf0eb20f50eef18fcb1c8020c95d6b9d1e0d7bcb1b7246091592"
+    },
+    {
+      "path": "hand_push_20261127_172042/config/vehicle_geometry.yaml",
+      "bytes": 2184,
+      "sha256": "d21a115914e0ec339cc8b8bc8d96e37766d38d20132b03d18ffadee87f34e560"
+    },
+    {
+      "path": "hand_push_20261127_172042/events.jsonl",
+      "bytes": 2000588,
+      "sha256": "68462cede133903ceb9302fafb407aed9d3af6e2d06cc2791ef26d2f591733c2"
+    },
+    {
+      "path": "hand_push_20261127_172042/git_diff.txt",
+      "bytes": 63234,
+      "sha256": "547e9a82f0d2128572b797ae118f740569fe9097281961e7947d96b3816235cc"
+    },
+    {
+      "path": "hand_push_20261127_172042/git_head.txt",
+      "bytes": 41,
+      "sha256": "9b0f179b1ccb0e2676507408c33325674f3675231beb7c5866436072928dced5"
+    },
+    {
+      "path": "hand_push_20261127_172042/git_status.txt",
+      "bytes": 981,
+      "sha256": "e5d82ddaf6f9bf16f02c0decf86d79b94baa38727293dbccfea95af48c5c0e41"
+    },
+    {
+      "path": "hand_push_20261127_172042/gui.log",
+      "bytes": 178,
+      "sha256": "6cf15cb87dc5ae9ade1a3fb1148d4109c08b635c9306b844097ac8c2cc338026"
+    },
+    {
+      "path": "hand_push_20261127_172042/gui_settings.json",
+      "bytes": 511,
+      "sha256": "a8202c18131feaa41d8b11310592f6e7fb932377401fc33c5e8fc04624314295"
+    },
+    {
+      "path": "hand_push_20261127_172042/launch_98813.log",
+      "bytes": 378,
+      "sha256": "70702d2aa570a1f2e9034752a602fb00c111ebf5ff02491062683562b1d71427"
+    },
+    {
+      "path": "hand_push_20261127_172042/parking_source/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "hand_push_20261127_172042/parking_source/bootstrap.py",
+      "bytes": 833,
+      "sha256": "91503fa3ac76b46f236c04d9156e2c4fc9303ef4cc62b8e461fa5e8f95ca20a0"
+    },
+    {
+      "path": "hand_push_20261127_172042/parking_source/hand_push_survey.py",
+      "bytes": 17603,
+      "sha256": "2e197fe0b93c7631a4b6754d85469799726806f1bad2ee66b61f8c4acb69f66f"
+    },
+    {
+      "path": "hand_push_20261127_172042/parking_source/nodes.py",
+      "bytes": 10800,
+      "sha256": "d653357d37b6e431199c6727d23bf06b9921a95d26c9baa2f90ce01d506a94f7"
+    },
+    {
+      "path": "hand_push_20261127_172042/parking_source/optimizer/native.cpp",
+      "bytes": 2523,
+      "sha256": "d724ceafd4c19f17b85d8954ae2ac78c5c08eb46122cd8b8980904c3c8cf53c3"
+    },
+    {
+      "path": "hand_push_20261127_172042/parking_source/optimizer/native.py",
+      "bytes": 1979,
+      "sha256": "51d2585ed5dfd3e017999c57dd28f46a6c0542a7f2329569c4a441de764aceb2"
+    },
+    {
+      "path": "hand_push_20261127_172042/parking_source/optimizer/priority_schedule.py",
+      "bytes": 7699,
+      "sha256": "2816e110a7b2cc9fa5755ba31c5af7a08e941234577a72b2ff6f1e28be1d06d2"
+    },
+    {
+      "path": "hand_push_20261127_172042/parking_source/optimizer/resumable.py",
+      "bytes": 5250,
+      "sha256": "8ba3e0b7d1fd2c547c0c7f02dd75ff1fb61a76dd4431d391f13e4850fb29f426"
+    },
+    {
+      "path": "hand_push_20261127_172042/parking_source/optimizer/steering_priority.py",
+      "bytes": 6905,
+      "sha256": "c74db95cedf99a3f9bc8d0a04f73c0ed25129fde502c93c171a79415ed62cf0e"
+    },
+    {
+      "path": "hand_push_20261127_172042/parking_source/optimizer/variants.py",
+      "bytes": 2566,
+      "sha256": "cb6c653f84daebc538885dd77086084118b4a9b4f03031ab7880d29f58519946"
+    },
+    {
+      "path": "hand_push_20261127_172042/parking_source/support/candidate_scheduler_online.py",
+      "bytes": 3604,
+      "sha256": "4b7ef399fc31d4adc6fb99d46a77a456ba1f5ac863e27d8a1f683c6629b1281d"
+    },
+    {
+      "path": "hand_push_20261127_172042/parking_source/support/path_geometry.py",
+      "bytes": 2361,
+      "sha256": "4f12b62c9e17df7015835f36da9416d892e7d40cfaef38653ba7bba491789edf"
+    },
+    {
+      "path": "hand_push_20261127_172042/parking_source/support/speed_clearance.py",
+      "bytes": 2791,
+      "sha256": "83a841ffa827f233944dede06f975495a1aad2038a7e18622875f85521eb6345"
+    },
+    {
+      "path": "hand_push_20261127_172042/parking_source/two_structure_gap.py",
+      "bytes": 16531,
+      "sha256": "2c051aa3379bb1029f0ae278733620b64a7947f34f23334e348d721b4ef53556"
+    },
+    {
+      "path": "hand_push_20261127_172042/parking_source/two_structure_test.py",
+      "bytes": 38795,
+      "sha256": "986b83d2aa3d68b923ef67921fc3dcbe495ae194395d413ef60bb163383f0262"
+    },
+    {
+      "path": "hand_push_20261127_172042/parking_source/vendor/observed_stop.py",
+      "bytes": 3299,
+      "sha256": "82f5e7a64d424d8c179066e77f64ff7cbd55968058fea6ae2778cf06ad4b1d8c"
+    },
+    {
+      "path": "hand_push_20261127_172042/parking_source/vendor/raw_reject_event_capture/raw_reject_capture.py",
+      "bytes": 16038,
+      "sha256": "ca22b37dc4bbafd0f35d2fab5ffeae0618adb881d41277025f466f78bfa23e8c"
+    },
+    {
+      "path": "hand_push_20261127_172042/parking_source/vendor/tractor_local_parking_gap_detector.py",
+      "bytes": 13198,
+      "sha256": "67374600b85f3790268606c3c64ff83093f48fd305ceb17d5328426f05aa3969"
+    },
+    {
+      "path": "hand_push_20261127_172042/parking_source/vendor/tractor_parallel_parking_auto.py",
+      "bytes": 71913,
+      "sha256": "4b29d09fa7453e81e04abe7c23dbc2e57773492ecba7390010d342e866f7b988"
+    },
+    {
+      "path": "hand_push_20261127_172042/parking_source/vendor/tractor_parking_articulation_safety.py",
+      "bytes": 3904,
+      "sha256": "2868511070a68da5974b6d8741b4d55c1c557b56100f9c522d5af70b324126a5"
+    },
+    {
+      "path": "hand_push_20261127_172042/parking_source/vendor/tractor_parking_blocked_debug.py",
+      "bytes": 6369,
+      "sha256": "527f65074d3bef9a3468e2ffd6d668ed2ebd36caa3f8fc259766a032a3ae77ff"
+    },
+    {
+      "path": "hand_push_20261127_172042/parking_source/vendor/tractor_parking_clearance.py",
+      "bytes": 10326,
+      "sha256": "73127a0e6702862452a856b68bd5cb7ecee8f4beed0808f961b680b229c0d2ba"
+    },
+    {
+      "path": "hand_push_20261127_172042/parking_source/vendor/tractor_parking_controller.py",
+      "bytes": 7225,
+      "sha256": "47c55acfc17dccc4c90a7f9ef85505085ae6fe72b71ff28655b0b3245b08906f"
+    },
+    {
+      "path": "hand_push_20261127_172042/parking_source/vendor/tractor_parking_map_safety.py",
+      "bytes": 7314,
+      "sha256": "44d1557d3c99a991a4cfb5b081987bf07d10bc5ede871475b2751792530d1fe8"
+    },
+    {
+      "path": "hand_push_20261127_172042/parking_source/vendor/tractor_parking_perception.py",
+      "bytes": 4463,
+      "sha256": "4cc899f6aac9fc9aa6be60c924788aaa21b3a0c61169e81b4b5dc88a8fefff72"
+    },
+    {
+      "path": "hand_push_20261127_172042/parking_source/vendor/tractor_slam_parking_adapter.py",
+      "bytes": 9402,
+      "sha256": "563b2deb847e5c23a979e2827988a4acd4c00875804168879409efdd54d17d38"
+    },
+    {
+      "path": "hand_push_20261127_172042/parking_source/vendor/tractor_trailer_hybrid_astar.py",
+      "bytes": 16870,
+      "sha256": "575ab367659e11450a0aef3cb00a0ec26cacb9ab30d98b2459bafce8b1ce3018"
+    },
+    {
+      "path": "hand_push_20261127_172042/parking_source/vendor/tractor_trailer_model.py",
+      "bytes": 8551,
+      "sha256": "e48a8ef3f9601703ab3f2ecc14148cefdcf907c3de03c8360fd646a6fdc8a0b9"
+    },
+    {
+      "path": "hand_push_20261127_172042/parking_source/vendor/tractor_trailer_state_estimator.py",
+      "bytes": 1274,
+      "sha256": "ed352b1892e26e443e9d54f93847f1c5849db65f036503de9dc8a84e6b3e5ce5"
+    },
+    {
+      "path": "hand_push_20261127_172042/processes.txt",
+      "bytes": 44633,
+      "sha256": "f6091dfa927e36a2a8869a3e8b74de44d42dda0e6a88d40e72e36c566646c61b"
+    },
+    {
+      "path": "hand_push_20261127_172042/recorder.log",
+      "bytes": 2749,
+      "sha256": "b69bf3322cc540a672da25384edc359acc752d006600e35f6d0d6b3a1a305d8e"
+    },
+    {
+      "path": "hand_push_20261127_172042/recorder.pid",
+      "bytes": 6,
+      "sha256": "5829dd1a0ec08322e488ba31be2d0ce58b262f1eb4f3c667e9678137e08c80c3"
+    },
+    {
+      "path": "hand_push_20261127_172042/recorder_mcap.log",
+      "bytes": 3131,
+      "sha256": "6ba56c926cd67428510037b14c830b7d18256b76e0aff7b12ff47c338e2576b8"
+    },
+    {
+      "path": "hand_push_20261127_172042/recording_finished.json",
+      "bytes": 339,
+      "sha256": "db0b67ead085ab84ce6bd24681f4e4ad705bbc0c6cc58f466d4fb81eae0dfbec"
+    },
+    {
+      "path": "hand_push_20261127_172042/ros_launch_2026-11-27-17-22-43-915705-heven-Sword-17-HX-B13VGKG-98813/launch.log",
+      "bytes": 307,
+      "sha256": "d29b156bf571e008d1717bb5116bb5696c36aa0db24a832a2c9c424975592fca"
+    },
+    {
+      "path": "hand_push_20261127_172042/rosbag/rosbag_0.db3",
+      "bytes": 2822836224,
+      "sha256": "8c4869e4f864ecd23201ac0e4c232330e97afe4826d4e3ffe0a8de99bba874f0"
+    },
+    {
+      "path": "hand_push_20261127_172042/rosbag_mcap/metadata.yaml",
+      "bytes": 13023,
+      "sha256": "af7b0066535ebbdeb339f6eae8bc4eb145746823c4af83422676cef02060b134"
+    },
+    {
+      "path": "hand_push_20261127_172042/rosbag_mcap/rosbag_mcap_0.mcap.zstd",
+      "bytes": 3195947561,
+      "sha256": "1a1dc990bba196d019d4e3f841de4cdb89f7d0ee59c9cdb8187b51e492117cf6"
+    },
+    {
+      "path": "hand_push_20261127_172042/rosbag_mcap/rosbag_mcap_1.mcap.zstd",
+      "bytes": 2213994396,
+      "sha256": "e11418b0d502b90e9f5c0dbfb3d4d467b55449329bb3b1a1b0a51f9f5319f847"
+    },
+    {
+      "path": "hand_push_20261127_172042/runtime_params/18055_launch_params_qzqoezpr",
+      "bytes": 237,
+      "sha256": "f289da17033c1fe0c8ff22addd5fd3a0c08372b990f864daf2ea8c15cbd11cf4"
+    },
+    {
+      "path": "hand_push_20261127_172042/runtime_params/22688_launch_params_lbpg6xid",
+      "bytes": 48,
+      "sha256": "b21c49e50b2f3fedc302a95a5d85492ae86f46b9813357e954ceaaa3b51d86bd"
+    },
+    {
+      "path": "hand_push_20261127_172042/runtime_params/22690_launch_params_38be_ms2",
+      "bytes": 48,
+      "sha256": "b21c49e50b2f3fedc302a95a5d85492ae86f46b9813357e954ceaaa3b51d86bd"
+    },
+    {
+      "path": "hand_push_20261127_172042/runtime_params/78113_launch_params_jqq2vxe8",
+      "bytes": 196,
+      "sha256": "c38662cf6cdfa6823a0fc1ac4e17ff59a978be9d33bb2124329a20e6c3b5ed26"
+    },
+    {
+      "path": "hand_push_20261127_172042/runtime_params/78359_g6.yaml",
+      "bytes": 798,
+      "sha256": "84c0d3ba41a6051adfd0d8799b73d2ed2b5874ad4770a4655039bf656fad3dc3"
+    },
+    {
+      "path": "hand_push_20261127_172042/runtime_params/78359_launch_params_hd47a8nb",
+      "bytes": 47,
+      "sha256": "457bc682905406339d86201f3e67b3c422ca3ce3b00c4e7a2f0a5cc5fb6b17b8"
+    },
+    {
+      "path": "hand_push_20261127_172042/runtime_params/99004_launch_params_ju2g9w1a",
+      "bytes": 361,
+      "sha256": "db3e50425f0985482b1ec916700f356ba57a133fe32b6d91840939159d83a31e"
+    },
+    {
+      "path": "hand_push_20261127_172042/session.json",
+      "bytes": 578,
+      "sha256": "44383777373b25bbfcb32e397197b2be1cbde637eed9f854062d662ba426c489"
+    },
+    {
+      "path": "hand_push_20261127_172042/summarize_recording.py",
+      "bytes": 2955,
+      "sha256": "1f4902851bb3fe0a32d110a1b8e6ff9039f441b371aed19a670f34ca1133f396"
+    },
+    {
+      "path": "hand_push_20261127_172042/tools_source/MANUAL_SLAM_CHECK.md",
+      "bytes": 8863,
+      "sha256": "80a726b930a6f1dcf4eccb52e442c2a91877bdafb3503cfdacba6590391f74a6"
+    },
+    {
+      "path": "hand_push_20261127_172042/tools_source/RELATIVE_YAW.md",
+      "bytes": 5655,
+      "sha256": "47ba8c0fb28ebe76ec81e14c9de096076f908e451039ec651f238c5e9444e1a1"
+    },
+    {
+      "path": "hand_push_20261127_172042/tools_source/RESEARCH_REVIEW.md",
+      "bytes": 11921,
+      "sha256": "480cbd4a6d64d202758c9a0e4a779080ad7c5a7e3df49084823c384bdd0d74e6"
+    },
+    {
+      "path": "hand_push_20261127_172042/tools_source/SENSOR_COMPARE.md",
+      "bytes": 4750,
+      "sha256": "0b0be71c27016d15c47a3e3295132baddfb6598030602d9b76fd99902627483a"
+    },
+    {
+      "path": "hand_push_20261127_172042/tools_source/TWO_STRUCTURE_TEST.md",
+      "bytes": 30889,
+      "sha256": "7f9eec77a3b45cd4965e2a68010ff61cd22b319c4d430f8e6e7028d4484a823b"
+    },
+    {
+      "path": "hand_push_20261127_172042/tools_source/TWO_STRUCTURE_TROUBLESHOOTING.md",
+      "bytes": 19818,
+      "sha256": "9a0228ca1f2533d876f3030e1d0658dfa2b298d1dc901b0a99cbb5b6baa66673"
+    },
+    {
+      "path": "hand_push_20261127_172042/tools_source/diagnose_ebimu.py",
+      "bytes": 7657,
+      "sha256": "dc72cf070af44e01dc1e9e9c0cc9373b28ffe8c0c6a8d58de2b8913137fad244"
+    },
+    {
+      "path": "hand_push_20261127_172042/tools_source/g6_env.bash",
+      "bytes": 464,
+      "sha256": "af74dc46e080841ad5fc72b5b9b3d9cbfcaffadf3f606583ef95d3f50b544d8c"
+    },
+    {
+      "path": "hand_push_20261127_172042/tools_source/g6_performance_probe.py",
+      "bytes": 9057,
+      "sha256": "c4abc83caafc84f11351ae880a73ce5d07a7afa84b5704bf55d4a42107ac067b"
+    },
+    {
+      "path": "hand_push_20261127_172042/tools_source/g6_probe.py",
+      "bytes": 9307,
+      "sha256": "04b7b803c2de9059e18613eaf7130b0ff63295e4ec193e5878b2fd319b4f076e"
+    },
+    {
+      "path": "hand_push_20261127_172042/tools_source/g6_timestamp_analysis.py",
+      "bytes": 4548,
+      "sha256": "09739ade1b5160882cb115fbd10f5fce43b4bafdf3660aaccdec31cde9c9fbef"
+    },
+    {
+      "path": "hand_push_20261127_172042/tools_source/g6_timestamp_probe.py",
+      "bytes": 6441,
+      "sha256": "52bd27baffb86deadb589b113dbde2596960ee7831aa2c3a3ea8cd9ea75a1bf8"
+    },
+    {
+      "path": "hand_push_20261127_172042/tools_source/g6_timestamp_validate.py",
+      "bytes": 5982,
+      "sha256": "6ba5f74320c2254c5fce03f990ce07bf5d33054888f0b1e1c3067ca29aca23b2"
+    },
+    {
+      "path": "hand_push_20261127_172042/tools_source/install_two_structure_gui_shortcut.sh",
+      "bytes": 994,
+      "sha256": "d2af8bb39ce6ed9316a82e5372ef1ba468ffc60b4f596cc669f2715ee710b425"
+    },
+    {
+      "path": "hand_push_20261127_172042/tools_source/live_camera_view.py",
+      "bytes": 2833,
+      "sha256": "ae9445df547bfc172f5b560c3abecdbf9eee438284950bc7a5de4f571b89b529"
+    },
+    {
+      "path": "hand_push_20261127_172042/tools_source/manual_motor_bridge.py",
+      "bytes": 7887,
+      "sha256": "9b1c58821a7cac08b1f864992eb6c2eb33e50cd85637765a4f2f8ee60013fabc"
+    },
+    {
+      "path": "hand_push_20261127_172042/tools_source/manual_slam_check.py",
+      "bytes": 12080,
+      "sha256": "959c0866be478ed16cb5c8a51d1c1d0d9b782d1e22333420724f744141ab6ba8"
+    },
+    {
+      "path": "hand_push_20261127_172042/tools_source/parking_bag_play_qos.yaml",
+      "bytes": 628,
+      "sha256": "09cda775c806246e24721854aeba7e4516615a08f494167a9bf845c7ddbdca74"
+    },
+    {
+      "path": "hand_push_20261127_172042/tools_source/parking_bag_qos.yaml",
+      "bytes": 459,
+      "sha256": "a206ccefb53b3264860ed2e6ce678316a69bb6e8aa76e1af2388a9fc46ca8e71"
+    },
+    {
+      "path": "hand_push_20261127_172042/tools_source/parking_data_control.py",
+      "bytes": 7788,
+      "sha256": "0e91f0d3bfef98b205a7d33cabc40eb3d88fd5a9848ee25c0e64413da2923c13"
+    },
+    {
+      "path": "hand_push_20261127_172042/tools_source/parking_sequence_dialog.py",
+      "bytes": 7498,
+      "sha256": "d43bd0df76760bc5bb7559553b1d50e78320f4c6ffc01023149b828bf0b6c07f"
+    },
+    {
+      "path": "hand_push_20261127_172042/tools_source/parking_sequence_source.json",
+      "bytes": 1822,
+      "sha256": "902ff40821523ddde8a6c45e753f1f113cfb010eef2ed14226a0460ccf23b783"
+    },
+    {
+      "path": "hand_push_20261127_172042/tools_source/parking_sequence_test.py",
+      "bytes": 8522,
+      "sha256": "bd47e4ae016b9c5ceaa2841a397bf5aa9585b0a164d00aca8e65963ca3cb8dc5"
+    },
+    {
+      "path": "hand_push_20261127_172042/tools_source/prepare_ride_on_runtime.sh",
+      "bytes": 1047,
+      "sha256": "62a5be54287b4a46e694110c249f60788ddd30bdb63674372b609235d687177a"
+    },
+    {
+      "path": "hand_push_20261127_172042/tools_source/record_parking_bag.sh",
+      "bytes": 704,
+      "sha256": "44f5065ddd7a77dcc32529f27d20877843a47beb2b875e80ba5021f87357668b"
+    },
+    {
+      "path": "hand_push_20261127_172042/tools_source/register_lidar_port.py",
+      "bytes": 3834,
+      "sha256": "f7b3543b43b9514da534447973327ec436111cf304d89e014204354a28c48c7b"
+    },
+    {
+      "path": "hand_push_20261127_172042/tools_source/register_tractor_imu_port.py",
+      "bytes": 4068,
+      "sha256": "c2e5ba7591b836608e7d5b7f22fe96530ed9ed987d7b58218fd2aedaf09d47b6"
+    },
+    {
+      "path": "hand_push_20261127_172042/tools_source/register_trailer_imu_port.py",
+      "bytes": 4128,
+      "sha256": "bc1fc25389c7bd825ba367c2e61ed66f4733e68f1a38de10cc4200442b855dbc"
+    },
+    {
+      "path": "hand_push_20261127_172042/tools_source/replay_sensor_capture.py",
+      "bytes": 4500,
+      "sha256": "df091690f75dea7f218900a2e3a0508e051fc2a82939da401daa4dd60be35ae8"
+    },
+    {
+      "path": "hand_push_20261127_172042/tools_source/ros_smoke.py",
+      "bytes": 7482,
+      "sha256": "6f19cff9148a02137a496789a57298b5249435de493ae3338d3ef86e0dcb1d45"
+    },
+    {
+      "path": "hand_push_20261127_172042/tools_source/run_manual_slam_wasd.sh",
+      "bytes": 1731,
+      "sha256": "d254ebdb75f1eb5d75b89e5c03815085ac92232f3437abfa0d044a1965b55224"
+    },
+    {
+      "path": "hand_push_20261127_172042/tools_source/run_relative_yaw.sh",
+      "bytes": 418,
+      "sha256": "710e5de87b900db7f2232e661f0986af7797e8f2029da5f12730f4efa13ea2c6"
+    },
+    {
+      "path": "hand_push_20261127_172042/tools_source/run_sensor_compare.sh",
+      "bytes": 383,
+      "sha256": "825390ea9303109dc8efb55d6cd07906ac36e6803e1bcab0d5342474ff8d3f4c"
+    },
+    {
+      "path": "hand_push_20261127_172042/tools_source/run_two_structure_gui.sh",
+      "bytes": 389,
+      "sha256": "4fc7d9ecf283df45548853f1c84ae936499ff42908b3faf2ba08337e336f1893"
+    },
+    {
+      "path": "hand_push_20261127_172042/tools_source/sensor_compare.py",
+      "bytes": 12018,
+      "sha256": "b8230efd4aa09f877b54487610129ae5d0d18285ad6757bed53badccf29205f3"
+    },
+    {
+      "path": "hand_push_20261127_172042/tools_source/sensor_compare_core.py",
+      "bytes": 3936,
+      "sha256": "c972f2f1d872c8c8be022c7644ac3a37aa2ecd569591a1a26f3b3613df856e98"
+    },
+    {
+      "path": "hand_push_20261127_172042/tools_source/setup_sensor_compare_model.sh",
+      "bytes": 800,
+      "sha256": "a5e0b0cc8f5faaa1701005744c1239e3f8a0156fb48665f9f841be91f08f5fea"
+    },
+    {
+      "path": "hand_push_20261127_172042/tools_source/two_structure_gui_core.py",
+      "bytes": 27316,
+      "sha256": "c7d48bee49f493944226063062da2ad0958f4e9ec6e58ea14ad2916f8c4f2949"
+    },
+    {
+      "path": "hand_push_20261127_172042/tools_source/two_structure_gui_layout.py",
+      "bytes": 11326,
+      "sha256": "e4628bb8e9adf105fbb271a474ed6877344fd258824cf6700c7785c0a8679a22"
+    },
+    {
+      "path": "hand_push_20261127_172042/tools_source/two_structure_lateral_sweep.py",
+      "bytes": 3573,
+      "sha256": "6c9ffe76482fe27b9d1252b7c1f8d80e60c7ea761af40a954a9b697da99b885d"
+    },
+    {
+      "path": "hand_push_20261127_172042/tools_source/two_structure_parking_conditions.png",
+      "bytes": 195016,
+      "sha256": "f4e51e144565a1ecbfdb26343f6a4e63ba5ab6f2081a70f88efb5a924f93d232"
+    },
+    {
+      "path": "hand_push_20261127_172042/tools_source/two_structure_test_gui.py",
+      "bytes": 37358,
+      "sha256": "7e040584bf7052bc1c0835492abcc975934978ea08df1e9d423e9957cdc754e8"
+    },
+    {
+      "path": "hand_push_20261127_172042/tools_source/udev/99-ebimu-tractor.rules",
+      "bytes": 296,
+      "sha256": "f54be8d70920a9b15c38cc1d51570d9fe12b1900a8b054fc09304375d9882ba9"
+    },
+    {
+      "path": "hand_push_20261127_172042/tools_source/udev/99-ebimu-trailer.rules",
+      "bytes": 296,
+      "sha256": "ed4fa36393de65cc91f7b7ce5a84a46d70c6eabc4fa058e82d85b696f1e40cf0"
+    },
+    {
+      "path": "hand_push_20261127_172042/tools_source/udev/99-lidar-g6.rules",
+      "bytes": 285,
+      "sha256": "4f32c785f6727f8f4f87886f893652aa9b367c8d3acd6592d6c8c1be7155e5e2"
+    },
+    {
+      "path": "hand_push_20261127_172042/tools_source/wasd_drive.py",
+      "bytes": 10701,
+      "sha256": "d18b9f3480b6cd2dacd94da9fe3fb08cb2134e4ca37f16e4f587525febfa22ae"
+    },
+    {
+      "path": "hand_push_20261127_172042/usb.txt",
+      "bytes": 763,
+      "sha256": "6ff36c3f02811f8babe1c87c645d9dd17ef4fce2609e2185f308038b644b9495"
+    }
+  ],
+  "count": 129,
+  "total_bytes": 8235758740
+}

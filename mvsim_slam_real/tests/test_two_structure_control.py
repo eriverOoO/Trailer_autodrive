@@ -20,7 +20,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]/'src/real_parking'))
 from real_parking.two_structure_test import TwoStructureParkingTest
 from real_parking.two_structure_gap import PairObservation
 from real_vehicle_bridge.geometry import VehicleGeometry
-from tractor_trailer_model import Geometry
+from tractor_trailer_model import Footprints, Geometry
 from tractor_parking_perception import Target
 
 
@@ -138,6 +138,34 @@ def test_manual_guidance_stops_on_frozen_detection_and_is_inactive_in_auto(node)
     assert node.manual_guidance()['stop_requested']
     node.operation = 'automatic_search'
     assert node.manual_guidance()['state'] == 'inactive'
+
+
+def test_hand_push_stop_cue_uses_the_trailer_rear_and_publishes_immediately(node):
+    geometry = Path(__file__).resolve().parents[1]/'src/mvsim_slam_real_bringup/config/vehicle_geometry.yaml'
+    vehicle = VehicleGeometry(geometry)
+    node.footprints = Footprints(*vehicle.polygons(), vehicle.model())
+    node.road_pose = np.zeros(3)
+    node.current = np.array([8., 0., 0., 0.])
+    observation = PairObservation(target=Target(np.array([4.8, 1.5]), 0., 3.6, 1.10),
+                                  components=(np.array([[2., 1.]]), np.array([[7.58, 1.]])))
+    node.observation_hits = 2
+    assert node.pair_stop_remaining(observation) is None
+    node.observation_hits = 3
+    remaining = node.pair_stop_remaining(observation)
+    assert remaining == pytest.approx(1.15)
+    node.publish_status = Mock()
+    node.publish_hand_push_status(remaining)
+    node.publish_status.assert_called_with(force=True)
+    node.publish_hand_push_status(remaining - .01)
+    node.publish_status.assert_called_with(force=False)
+    node.current[0] = 9.20
+    remaining = node.pair_stop_remaining(observation)
+    assert remaining == pytest.approx(-.05)
+    node.publish_hand_push_status(remaining)
+    node.publish_status.assert_called_with(force=True)
+    node.publish_hand_push_status()
+    assert node.hand_push_remaining_m is None
+    node.publish_status.assert_called_with(force=True)
 
 
 def test_stop_uses_fresh_stationary_poses_and_requires_new_detection_maps(node):

@@ -978,6 +978,8 @@ class AutoParking(Node):
         info['parking_stop_policy']=self.stop_policy
         info['legacy_stop_evidence']=getattr(self,'legacy_stop_evidence',None)
         info['legacy_stop_completed']=getattr(self,'legacy_stop_completed',None)
+        if self.stage=='MANUAL_SURVEY':
+            info['hand_push_remaining_m']=getattr(self,'hand_push_remaining_m',None)
         info['goal_lateral_shift_m']=self.goal_lateral_shift
         info['planning_map_stamp_ns']=getattr(self,'planning_map_stamp_ns',None)
         info.update(map_age_s=now-self.map_wall,lidar_age_s=now-self.scan_wall,

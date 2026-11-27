@@ -79,19 +79,14 @@ def build(ui, root, map_size):
     side.grid(row=2, column=2, sticky='nsew')
     ui.setting_widgets = []
     ui.vars['mode'] = tk.StringVar(value=ui.settings['mode'])
-    sensor, survey = core.mode_choices(ui.settings['mode'])
-    ui.sensor_choice, ui.survey_choice = tk.StringVar(value=sensor), tk.StringVar(value=survey)
+    ui.mode_choice = tk.StringVar(value=core.MODES[ui.settings['mode']][0])
     modes = ttk.Frame(side)
     modes.pack(fill='x')
-    for column, (label, variable, values) in enumerate([
-            ('센서', ui.sensor_choice, core.SENSOR_CHOICES.values()),
-            ('탐색 이동', ui.survey_choice, core.SURVEY_CHOICES.values())]):
-        ttk.Label(modes, text=label, style='Section.TLabel').grid(row=0, column=column, sticky='w')
-        combo = ttk.Combobox(modes, textvariable=variable, values=list(values), state='readonly', width=16)
-        combo.grid(row=1, column=column, sticky='ew', padx=(0, 8) if column == 0 else 0, pady=(3, 6))
-        combo.bind('<<ComboboxSelected>>', ui.selection_changed)
-        modes.columnconfigure(column, weight=1)
-        ui.setting_widgets.append((combo, 'readonly'))
+    ttk.Label(modes, text='테스트 모드', style='Section.TLabel').pack(anchor='w')
+    combo = ttk.Combobox(modes, textvariable=ui.mode_choice, values=list(core.MODE_BY_LABEL), state='readonly')
+    combo.pack(fill='x', pady=(3, 6))
+    combo.bind('<<ComboboxSelected>>', ui.selection_changed)
+    ui.setting_widgets.append((combo, 'readonly'))
     outputs = ttk.Frame(side)
     outputs.pack(fill='x')
     ui.vars['enable_actuation'] = tk.BooleanVar(value=False)
@@ -102,8 +97,8 @@ def build(ui, root, map_size):
     rviz = ttk.Checkbutton(outputs, text='RViz 창 추가', variable=ui.vars['enable_rviz'])
     rviz.pack(side='left', padx=(12, 0))
     ui.setting_widgets.extend([(ui.actuation, 'normal'), (rviz, 'normal')])
-    ttk.Label(side, text='설정은 테스트 실행 시 적용 · 실차 출력 기본 OFF',
-              style='Muted.TLabel').pack(anchor='w', pady=(2, 7))
+    ui.mode_hint = ttk.Label(side, style='Muted.TLabel')
+    ui.mode_hint.pack(anchor='w', pady=(2, 7))
 
     buttons = ttk.Frame(side)
     buttons.pack(fill='x')
@@ -156,12 +151,18 @@ def build(ui, root, map_size):
             ('arduino_port', 'Arduino'), ('slot_width', '주차 깊이(m)'),
             ('ROS_DOMAIN_ID', 'ROS_DOMAIN_ID'), ('ROS_LOCALHOST_ONLY', 'ROS_LOCALHOST_ONLY')]):
         ttk.Label(connections, text=label).grid(row=row, column=0, sticky='w', padx=(0, 8), pady=3)
-        ui.vars[key] = tk.StringVar(value=str(ui.settings.get(key, '')))
-        entry = ttk.Entry(connections, textvariable=ui.vars[key], width=30)
+        value = str(ui.settings.get(key, ''))
+        if key == 'detector_model':
+            ui.vars[key] = tk.StringVar(value=value or core.ORIGINAL_DETECTOR)
+            entry = ttk.Combobox(connections, textvariable=ui.vars[key], width=30,
+                                 values=(core.ORIGINAL_DETECTOR, core.WHEELS_DETECTOR))
+        else:
+            ui.vars[key] = tk.StringVar(value=value)
+            entry = ttk.Entry(connections, textvariable=ui.vars[key], width=30)
         entry.grid(row=row, column=1, sticky='ew', pady=3)
         ui.setting_widgets.append((entry, 'normal'))
     connections.columnconfigure(1, weight=1)
-    ttk.Label(connections, text='모델 빈칸 = 준비된 전동차 모델 사용 · 신뢰도 기본 0.65\n'
+    ttk.Label(connections, text='전동차 모델을 선택하거나 ONNX 경로를 입력하세요.\n'
               '주차 깊이 빈칸 = YAML 사용\nROS 도메인 변경 후에는 창을 다시 여세요.',
               style='Muted.TLabel').grid(row=12, column=0, columnspan=2, sticky='w', pady=6)
     ui.guide = tk.Text(tabs['배치 안내'], wrap='word', height=10, padx=8, pady=8,

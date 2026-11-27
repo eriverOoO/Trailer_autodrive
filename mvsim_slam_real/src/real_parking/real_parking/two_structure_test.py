@@ -141,6 +141,9 @@ class TwoStructureParkingTest(AutoParking):
         self.stationary_samples = deque()
         self.manual_survey_ready = False
         self.manual_stop_reason = None
+
+
+        self.hand_push_remaining_m = None
         self.association_buffer = Buffer()
         self.association_listener = TransformListener(self.association_buffer, self)
         self.test_observation = self.create_publisher(String, '/parking_test/observation', 10)
@@ -445,14 +448,21 @@ class TwoStructureParkingTest(AutoParking):
             return False
         return super().stable_observation(target)
 
-    def legacy_search_stop(self, observation, road_forward):
-        if observation.target is None or self.observation_hits < 3 or len(observation.components) != 2:
-            return math.inf, False
+    def pair_stop_remaining(self, observation):
+        if (observation is None or observation.target is None or self.observation_hits < 3
+                or len(observation.components) != 2):
+            return None
         along = np.array([math.cos(self.road_pose[2]), math.sin(self.road_pose[2])])
-        far_edge = float(np.max((observation.components[1]-self.road_pose[:2])@along))
-        rear_extent = float(np.min((np.vstack(self.footprints.world(self.current))-self.current[:2])@along))
-        stop_u = far_edge - rear_extent + PLANNER_HARD_CLEARANCE_M
-        if road_forward >= stop_u:
+        far_edge = np.max(observation.components[1]@along)
+        rig_rear = np.min(np.vstack(self.footprints.world(self.current))@along)
+        return float(far_edge - rig_rear + PLANNER_HARD_CLEARANCE_M)
+
+    def legacy_search_stop(self, observation, road_forward):
+        remaining = self.pair_stop_remaining(observation)
+        if remaining is None:
+            return math.inf, False
+        stop_u = road_forward + remaining
+        if remaining <= 0:
             return stop_u, True
         # If forward room runs out, stop with the confirmed target and plan from
         # here. Search still uses its original occupied-only policy by default.
@@ -460,6 +470,13 @@ class TwoStructureParkingTest(AutoParking):
         sweep = safe_stop_sweep(self.search_grid(), self.current, self.footprints, self.geometry,
                                 max(abs(self.v), abs(self.measured_speed)), self.delta)
         return stop_u, not sweep['safe']
+
+    def publish_hand_push_status(self, remaining=None):
+        previous = self.hand_push_remaining_m
+        self.hand_push_remaining_m = remaining
+        was_stop = previous is not None and previous <= 0
+        should_stop = remaining is not None and remaining <= 0
+        self.publish_status(force=(was_stop != should_stop or (previous is None) != (remaining is None)))
 
     def staging_road_coordinate(self, normal):
         if self.stop_policy != 'legacy':
@@ -681,11 +698,12 @@ class TwoStructureParkingTest(AutoParking):
         self.send(0., 0.)
         if not self.streams_ready():
             self.stationary_samples.clear()
-            self.publish_status()
+            self.publish_hand_push_status()
             return
         state = self.est.update(calibrate=self.road_pose is None)
         if state is None:
             self.stationary_samples.clear()
+            self.publish_hand_push_status()
             return
         self.current = state
         self.observe_pose_age()
@@ -703,7 +721,10 @@ class TwoStructureParkingTest(AutoParking):
             self.second_seen = observation.second_obstacle
             self.stable_observation(observation.target)
         self.visualize()
-        self.publish_status()
+        remaining = None
+        if self.stage == 'MANUAL_SURVEY' and self.camera_ready():
+            remaining = self.pair_stop_remaining(getattr(self, 'last_gap_observation', None))
+        self.publish_hand_push_status(remaining)
 
 
 def main(args=None):

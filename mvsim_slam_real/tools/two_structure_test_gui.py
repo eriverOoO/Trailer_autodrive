@@ -153,6 +153,7 @@ class TestWindow:
         self.tk, self.root = tk, root
         self.preview, self.running_settings = preview, None
         self.ui_running = False
+        self.hand_push_stop_alerted = False
         self.process, self.lines = None, queue.Queue()
         self.process_kind, self.sequence_dialog, self.sequence_file = 'stack', None, None
         self.photo, self.last_render, self.map_key, self.map_data = None, 0., None, None
@@ -169,6 +170,8 @@ class TestWindow:
             self.settings.update(json.loads(CONFIG.read_text()))
         except (OSError, ValueError):
             pass
+        if self.settings['mode'] not in core.MODES:
+            self.settings['mode'] = core.DEFAULT_SETTINGS['mode']
         # A desktop shortcut does not read ~/.bashrc: apply the saved ROS network settings
         # before rclpy starts, so this window and the launched stack use the same domain.
         for name in ('ROS_DOMAIN_ID', 'ROS_LOCALHOST_ONLY'):
@@ -206,9 +209,8 @@ class TestWindow:
         return (self.running_settings or self.current_settings())['mode']
 
     def selection_changed(self, event=None):
-        if self.sensor_choice.get() == core.SENSOR_CHOICES['survey']:
-            self.survey_choice.set(core.SURVEY_CHOICES['manual'])
-        self.vars['mode'].set(core.mode_from_choices(self.sensor_choice.get(), self.survey_choice.get()))
+        self.vars['mode'].set(core.MODE_BY_LABEL[self.mode_choice.get()])
+        self.vars['enable_actuation'].set(False)
         self.mode_changed()
 
     def start_action(self):
@@ -242,6 +244,16 @@ class TestWindow:
         self.actuation.configure(state='disabled' if survey or self.ui_running else 'normal')
         self.sequence_button.configure(state='disabled' if survey or self.ui_running else 'normal')
 
+
+        service, label = core.primary_action(self.vars['mode'].get())
+        self.primary_button.configure(text=label)
+        if service == 'start_parking':
+            self.vars['enable_actuation'].set(False)
+            self.actuation.configure(state='disabled')
+            self.mode_hint.configure(text=('보정/IMU 없이 관찰 · 트레일러 직선 가정 참고 계획' if survey else '손으로 밀기 · 모터 출력 없이 경로 계획까지'))
+        else:
+            self.mode_hint.configure(text='실차를 움직이려면 실차 출력 허용을 켜세요.')
+
     def actuation_changed(self):
         from tkinter import messagebox
         if self.vars['enable_actuation'].get() and not messagebox.askyesno(
@@ -273,10 +285,10 @@ class TestWindow:
                 '이미 실행 중', '같은 ROS 도메인에 테스트 노드가 이미 있습니다(다른 터미널/창).\n'
                 '중복 실행하면 오동작합니다. 그래도 실행할까요?'):
             return
-        devices = () if settings['mode'] == 'survey_manual' else ('lidar_port', 'tractor_imu_port', 'trailer_imu_port', 'arduino_port', 'camera_path')
-        missing = [settings[k] for k in devices
-                   if settings.get(k) and str(settings[k]).startswith('/dev/') and not os.path.exists(settings[k])
-                   and (k != 'arduino_port' or settings.get('enable_actuation'))]
+        launch_settings = dict(argument.split(':=', 1) for argument in arguments)
+        devices = (launch_settings.get(key, '') for key in
+                   ('lidar_port', 'tractor_imu_port', 'trailer_imu_port', 'arduino_port', 'camera_path'))
+        missing = [port for port in devices if port.startswith('/dev/') and not os.path.exists(port)]
         if missing and not messagebox.askyesno('장치 없음', '없는 장치: '+', '.join(missing)+'\n그래도 실행할까요?'):
             return
         self.save(settings)
@@ -289,6 +301,7 @@ class TestWindow:
                                         text=True, bufsize=1, errors='replace', preexec_fn=child_setup)
         threading.Thread(target=self.reader, args=(self.process,), daemon=True).start()
         self.running_settings = dict(settings)
+        self.hand_push_stop_alerted = False
         self.set_running(True)
         self.process_label.config(text='실행 중 · '+core.MODES[settings['mode']][0])
 
@@ -557,7 +570,14 @@ class TestWindow:
         observation = self.fresh('observation')
         state = self.fresh('state', 1.)
         if status:
-            self.fields['stage'].config(text=str(status.get('state', '-')))
+            stage = str(status.get('state', '-'))
+            if stage == 'MANUAL_SURVEY':
+                self.show_hand_push_stage(self.fresh('status'))
+            else:
+                if (stage == 'READY' and self.running_settings
+                        and core.MODES[self.running_settings['mode']][1]['execute_parking'] == 'false'):
+                    stage = '경로 계획 완료 (READY)'
+                self.fields['stage'].config(text=stage, foreground='')
             failure = status.get('failure') or ''
             summary, hint = core.explain(failure)
             self.fields['failure'].config(text=(summary+(f'\n→ {hint}' if hint else '')) if failure else '-')
@@ -592,6 +612,21 @@ class TestWindow:
                 if status.get('localization_ready') else 'LiDAR SLAM 준비 대기 · 출발 전 정지 필요'))
             self.fields['hint'].config(text='보정/IMU 없는 손밀기 관찰 · 경로는 트레일러 직선 가정 · 모터 구동 꺼짐')
             self.fields['camera'].config(text='영상·BBox 참고용 · 카메라와 라이다의 자동 물체 대응 없음')
+
+    def show_hand_push_stage(self, status):
+        remaining = (status or {}).get('hand_push_remaining_m')
+        color = ''
+        if remaining is None:
+            label = '손밀기 탐색 · 공간 확인 중'
+        elif remaining > 0:
+            label = f'공간 확인 · 정지 지점까지 약 {remaining:.2f} m'
+        else:
+            label = '지금 멈추세요 · 정지 후 시작 버튼'
+            color = '#b03a2e'
+            if not self.hand_push_stop_alerted:
+                self.hand_push_stop_alerted = True
+                self.root.bell()
+        self.fields['stage'].config(text=label, foreground=color)
 
     def draw(self):
         message = self.fresh('map', 10.)
