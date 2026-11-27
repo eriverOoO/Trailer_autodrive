@@ -1,0 +1,17 @@
+{
+  "status": "completed",
+  "finished_at": "2026-11-27T17:25:57.592146+09:00",
+  "duration_s": 105.887294727,
+  "message_count": 20915,
+  "bag": "rosbag_mcap",
+  "files": [
+    {
+      "name": "rosbag_mcap_0.mcap.zstd",
+      "bytes": 3195947561
+    },
+    {
+      "name": "rosbag_mcap_1.mcap.zstd",
+      "bytes": 2213994396
+    }
+  ]
+}

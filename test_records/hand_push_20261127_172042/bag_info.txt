@@ -1,0 +1,33 @@
+
+Files:             rosbag_mcap_0.mcap.zstd
+                   rosbag_mcap_1.mcap.zstd
+Bag size:          5.0 GiB
+Storage id:        mcap
+Duration:          105.887294727s
+Start:             Nov 27 2026 17:21:51.986330507 (1795767711.986330507)
+End:               Nov 27 2026 17:23:37.873625234 (1795767817.873625234)
+Messages:          20915
+Topic information: Topic: /parking_vision/associations | Type: std_msgs/msg/String | Count: 2838 | Serialization Format: cdr
+                   Topic: /parking_vision/objects_overlay | Type: sensor_msgs/msg/Image | Count: 2823 | Serialization Format: cdr
+                   Topic: /parking_test/observation | Type: std_msgs/msg/String | Count: 19 | Serialization Format: cdr
+                   Topic: /parking/planned_tractor_path | Type: nav_msgs/msg/Path | Count: 0 | Serialization Format: cdr
+                   Topic: /parking_test/manual_guidance | Type: std_msgs/msg/String | Count: 380 | Serialization Format: cdr
+                   Topic: /parking/state | Type: std_msgs/msg/String | Count: 0 | Serialization Format: cdr
+                   Topic: /parking/survey_planned_path | Type: nav_msgs/msg/Path | Count: 0 | Serialization Format: cdr
+                   Topic: /parking/status | Type: std_msgs/msg/String | Count: 380 | Serialization Format: cdr
+                   Topic: /parking/detection_map | Type: nav_msgs/msg/OccupancyGrid | Count: 0 | Serialization Format: cdr
+                   Topic: /events/write_split | Type: rosbag2_interfaces/msg/WriteSplitEvent | Count: 0 | Serialization Format: cdr
+                   Topic: /tf_static | Type: tf2_msgs/msg/TFMessage | Count: 0 | Serialization Format: cdr
+                   Topic: /tf | Type: tf2_msgs/msg/TFMessage | Count: 2718 | Serialization Format: cdr
+                   Topic: /submap_list | Type: cartographer_ros_msgs/msg/SubmapList | Count: 348 | Serialization Format: cdr
+                   Topic: /parameter_events | Type: rcl_interfaces/msg/ParameterEvent | Count: 5 | Serialization Format: cdr
+                   Topic: /scan_matched_points2 | Type: sensor_msgs/msg/PointCloud2 | Count: 1233 | Serialization Format: cdr
+                   Topic: /scan | Type: sensor_msgs/msg/LaserScan | Count: 1235 | Serialization Format: cdr
+                   Topic: /point_cloud | Type: sensor_msgs/msg/PointCloud | Count: 1235 | Serialization Format: cdr
+                   Topic: /parking_vision/image_raw | Type: sensor_msgs/msg/Image | Count: 3149 | Serialization Format: cdr
+                   Topic: /map | Type: nav_msgs/msg/OccupancyGrid | Count: 112 | Serialization Format: cdr
+                   Topic: /constraint_list | Type: visualization_msgs/msg/MarkerArray | Count: 211 | Serialization Format: cdr
+                   Topic: /rosout | Type: rcl_interfaces/msg/Log | Count: 30 | Serialization Format: cdr
+                   Topic: /landmark_poses_list | Type: visualization_msgs/msg/MarkerArray | Count: 1642 | Serialization Format: cdr
+                   Topic: /trajectory_node_list | Type: visualization_msgs/msg/MarkerArray | Count: 2557 | Serialization Format: cdr
+

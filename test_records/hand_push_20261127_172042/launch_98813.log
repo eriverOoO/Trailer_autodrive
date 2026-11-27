@@ -1,0 +1,5 @@
+[INFO] [launch]: All log files can be found below /home/heven/.ros/log/2026-11-27-17-22-43-915705-heven-Sword-17-HX-B13VGKG-98813
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [hand_push_survey-1]: process started with pid [99004]
+[WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+[INFO] [hand_push_survey-1]: process has finished cleanly [pid 99004]

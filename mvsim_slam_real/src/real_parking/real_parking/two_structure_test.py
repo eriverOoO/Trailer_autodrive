@@ -139,9 +139,12 @@ class TwoStructureParkingTest(AutoParking):
         self.camera_evidence = []
         self.last_association_key = None
         self.stationary_samples = deque()
+        self.manual_survey_ready = False
+        self.manual_stop_reason = None
         self.association_buffer = Buffer()
         self.association_listener = TransformListener(self.association_buffer, self)
         self.test_observation = self.create_publisher(String, '/parking_test/observation', 10)
+        self.manual_guidance_pub = self.create_publisher(String, '/parking_test/manual_guidance', 1)
         self.test_markers = self.create_publisher(MarkerArray, '/parking_test/markers', 10)
         self.create_subscription(String, '/parking_vision/associations', self.on_associations,
                                  qos_profile_sensor_data)
@@ -151,6 +154,7 @@ class TwoStructureParkingTest(AutoParking):
         # Perception stays live independently of a blocked/failed parking plan.
         # Search/manual stages already publish observations in tick_checked.
         self.create_timer(.5, self.refresh_recognition)
+        self.create_timer(.1, self.publish_manual_guidance)
         self.add_on_set_parameters_callback(self.validate_parameters)
         self.get_logger().info('Two-structure test: waiting for start_search; '
                                'manual_survey is an intermediate test option only')
@@ -553,8 +557,54 @@ class TwoStructureParkingTest(AutoParking):
         if samples[-1][0]-samples[0][0] < .8:
             return False
         states = np.array([s for _, s in samples])
-        return (np.max(np.linalg.norm(states[:, :2]-states[0, :2], axis=1)) < .025
-                and np.max(np.abs(wrap(states[:, 2:]-states[0, 2:]))) < math.radians(2))
+        return bool(np.max(np.linalg.norm(states[:, :2]-states[0, :2], axis=1)) < .025
+                    and np.max(np.abs(wrap(states[:, 2:]-states[0, 2:]))) < math.radians(2))
+
+    def manual_guidance(self):
+        """Operator advice only: never enables motion or starts parking."""
+        result = dict(state='inactive', stop_requested=False, stationary=False,
+                      distance_remaining_m=None, reason='손밀기 탐색 노드 대기')
+        if self.operation != 'manual' or self.test_motion_enabled:
+            return result
+        ready = self.streams_ready() and self.camera_ready()
+        if self.stage in ('FAILED', 'EMERGENCY_STOP', 'PARKED'):
+            self.manual_stop_reason = '테스트 종료 · 밀지 마세요'
+        if not ready:
+            if self.manual_survey_ready:
+                self.manual_stop_reason = self.manual_stop_reason or '센서·위치 추정 끊김 · 멈추고 확인하세요'
+            elif self.manual_stop_reason is None:
+                return dict(result, state='waiting', reason='준비 안 됨 · 밀지 마세요 (센서·위치 추정·카메라 확인)')
+        observation = getattr(self, 'last_gap_observation', None)
+        fresh = time.monotonic()-self.last_detect <= 1.0
+        if ready and not fresh and self.manual_survey_ready:
+            self.manual_stop_reason = self.manual_stop_reason or '공간 탐지 갱신 끊김 · 멈추고 확인하세요'
+        if self.manual_stop_reason is not None:
+            return dict(result, state='stop', stop_requested=True,
+                        stationary=ready and fresh and self.stationary(), reason=self.manual_stop_reason)
+        if not ready or not fresh or self.road_pose is None:
+            return dict(result, state='waiting', reason='준비 안 됨 · 밀지 마세요 (탐색 데이터 대기)')
+        self.manual_survey_ready = True
+        if observation is None or observation.target is None:
+            return dict(result, state='searching', reason='공간 탐색 중 · 주변을 보며 천천히 미세요')
+        if self.observation_hits < 3:
+            return dict(result, state='confirming',
+                        reason=f'공간 후보 확인 중 · 새 지도 {self.observation_hits}/3장')
+        along = np.array([math.cos(self.road_pose[2]), math.sin(self.road_pose[2])])
+        forward = float((self.current[:2]-self.road_pose[:2])@along)
+        stop_u, stop = self.legacy_search_stop(observation, forward)
+        if stop:
+            self.manual_stop_reason = ('공간 확인 · 정지 위치 도달' if forward >= stop_u else
+                                       '전방 정지 여유 부족 · 멈추고 확인하세요')
+            return dict(result, state='stop', stop_requested=True,
+                        stationary=self.stationary(), reason=self.manual_stop_reason)
+        remaining = max(0., stop_u-forward) if math.isfinite(stop_u) else None
+        return dict(result, state='approaching', distance_remaining_m=remaining,
+                    reason='공간 확인 · 트레일러 후단이 두 번째 차를 지날 때까지 천천히 미세요')
+
+    def publish_manual_guidance(self):
+        advice = self.manual_guidance()
+        advice['stamp_ns'] = self.get_clock().now().nanoseconds
+        self.manual_guidance_pub.publish(String(data=json.dumps(advice, allow_nan=False)))
 
     def start_search(self, request, response):
         if self.test_motion_enabled or self.stage in ('FAILED', 'EMERGENCY_STOP', 'PARKED'):

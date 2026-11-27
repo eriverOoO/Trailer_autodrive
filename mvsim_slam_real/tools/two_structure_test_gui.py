@@ -12,11 +12,13 @@ import os
 from pathlib import Path
 import queue
 import signal
+import shutil
 import subprocess
 import sys
 import threading
 import time
 import tempfile
+from collections import deque
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import two_structure_gui_core as core  # noqa: E402
@@ -49,21 +51,37 @@ class RosLink:
 
     def __init__(self):
         import rclpy
-        from rclpy.qos import QoSProfile, ReliabilityPolicy
+        from rclpy.qos import QoSProfile, ReliabilityPolicy, DurabilityPolicy, qos_profile_sensor_data
+        from rclpy.time import Time
+        from tf2_ros import Buffer, TransformListener
         from nav_msgs.msg import OccupancyGrid, Path as RosPath
+        from sensor_msgs.msg import Image, LaserScan
         from std_msgs.msg import String
         from std_srvs.srv import Trigger
         self.rclpy, self.Trigger = rclpy, Trigger
         rclpy.init()
         self.node = rclpy.create_node('two_structure_test_gui')
+        self.Time = Time
+        self.tf_buffer = Buffer()
+        self.tf_listener = TransformListener(self.tf_buffer, self.node)
         self.latest, self.pending = {}, []
+        self.frame_times = {'camera_overlay': deque(maxlen=60), 'camera_raw': deque(maxlen=60)}
         reliable = QoSProfile(depth=1, reliability=ReliabilityPolicy.RELIABLE)
         for topic, kind, key in [('/parking/status', String, 'status'),
                                  ('/parking_test/observation', String, 'observation'),
+                                 ('/parking_test/manual_guidance', String, 'manual_guidance'),
                                  ('/parking/state', String, 'state'),
                                  ('/parking/detection_map', OccupancyGrid, 'map'),
-                                 ('/parking/planned_tractor_path', RosPath, 'path')]:
+                                 ('/parking/planned_tractor_path', RosPath, 'path'),
+                                 ('/parking_vision/objects_overlay', Image, 'camera_overlay'),
+                                 ('/parking_vision/image_raw', Image, 'camera_raw'),
+                                 ('/parking_vision/associations', String, 'camera_association')]:
             self.node.create_subscription(kind, topic, lambda m, k=key: self.store(k, m), reliable)
+        latched = QoSProfile(depth=1, reliability=ReliabilityPolicy.RELIABLE,
+                             durability=DurabilityPolicy.TRANSIENT_LOCAL)
+        self.node.create_subscription(OccupancyGrid, '/map', lambda m: self.store('slam_map', m), latched)
+        self.node.create_subscription(RosPath, '/parking/survey_planned_path', lambda m: self.store('survey_path', m), latched)
+        self.node.create_subscription(LaserScan, '/scan', lambda m: self.store('scan', m), qos_profile_sensor_data)
         self.clients = {name: self.node.create_client(Trigger, '/parking_test/'+name)
                         for name in ('start_search', 'start_parking', 'stop')}
 
@@ -73,11 +91,15 @@ class RosLink:
                 message = json.loads(message.data)
             except ValueError:
                 return
-        self.latest[key] = (time.monotonic(), message)
+        now = time.monotonic()
+        self.latest[key] = (now, message)
+        if key in self.frame_times:
+            self.frame_times[key].append(now)
 
     def stack_running(self):
         """True when a two-structure test node already offers its services on this domain."""
-        return any(name == '/parking_test/start_search' for name, _ in self.node.get_service_names_and_types())
+        # The graph also lists this GUI's own service clients. Check an actual server.
+        return self.clients['start_search'].service_is_ready()
 
     def motion_source_running(self):
         return (self.stack_running()
@@ -93,7 +115,7 @@ class RosLink:
         self.pending.append((client.call_async(self.Trigger.Request()), done))
 
     def spin(self):
-        for _ in range(20):
+        for _ in range(40):
             self.rclpy.spin_once(self.node, timeout_sec=0)
         for item in list(self.pending):
             future, done = item
@@ -104,6 +126,19 @@ class RosLink:
                     done(result.success, result.message)
                 except Exception as exc:  # noqa: BLE001 - report any service failure
                     done(False, str(exc))
+
+    def scan_in_frame(self, frame, scan):
+        if scan is None:
+            return None
+        from tf2_ros import TransformException
+        try:
+            tf = self.tf_buffer.lookup_transform(frame, scan.header.frame_id,
+                                                 self.Time.from_msg(scan.header.stamp)).transform
+        except TransformException:
+            return None
+        q, t = tf.rotation, tf.translation
+        points = core.scan_points(scan, [t.x, t.y], [q.x, q.y, q.z, q.w])
+        return points, [t.x, t.y, quaternion_yaw(q)]
 
     def close(self):
         self.node.destroy_node()
@@ -121,6 +156,14 @@ class TestWindow:
         self.process, self.lines = None, queue.Queue()
         self.process_kind, self.sequence_dialog, self.sequence_file = 'stack', None, None
         self.photo, self.last_render, self.map_key, self.map_data = None, 0., None, None
+        self.camera_photo, self.camera_key = None, None
+        self.alarm_process, self.last_alarm, self.alert_test_until = None, 0., 0.
+        capture = os.environ.get('TRAILER_CAPTURE_DIR', '')
+        self.capture_dir = Path(capture) if capture else None
+        self.capture_log = None
+        if self.capture_dir is not None:
+            self.capture_dir.mkdir(parents=True, exist_ok=True)
+            self.capture_log = (self.capture_dir/'gui.log').open('a', buffering=1)
         self.settings = dict(core.DEFAULT_SETTINGS, workspace=str(WORKSPACE))
         try:
             self.settings.update(json.loads(CONFIG.read_text()))
@@ -139,8 +182,8 @@ class TestWindow:
         except Exception as exc:  # noqa: BLE001 - window still usable for launching
             self.ros, ros_error = None, f'ROS 연결 실패: {exc} (run_two_structure_gui.sh로 실행하세요)'
         root.title('두 구조물 주차 테스트')
-        root.geometry('1180x740')
-        root.minsize(1080, 680)
+        root.geometry('1850x900')
+        root.minsize(1480, 780)
         root.protocol('WM_DELETE_WINDOW', self.close)
 
         from two_structure_gui_layout import build
@@ -152,7 +195,7 @@ class TestWindow:
             self.fields['estimator'].configure(text=ros_error)
         if preview:
             self.process_label.configure(text='미리보기 · ROS/장치 연결 없음')
-        self.root.after(100, self.tick)
+        self.root.after(33, self.tick)
 
     # --- settings / process -------------------------------------------------
     def current_settings(self):
@@ -163,6 +206,8 @@ class TestWindow:
         return (self.running_settings or self.current_settings())['mode']
 
     def selection_changed(self, event=None):
+        if self.sensor_choice.get() == core.SENSOR_CHOICES['survey']:
+            self.survey_choice.set(core.SURVEY_CHOICES['manual'])
         self.vars['mode'].set(core.mode_from_choices(self.sensor_choice.get(), self.survey_choice.get()))
         self.mode_changed()
 
@@ -191,6 +236,11 @@ class TestWindow:
         self.guide.insert('1.0', core.placement_guide(self.vars['mode'].get(), core.lidar_height(geometry)))
         self.guide.configure(state='disabled')
         self.primary_button.configure(text=core.primary_action(self.vars['mode'].get())[1])
+        survey = self.vars['mode'].get() == 'survey_manual'
+        if survey:
+            self.vars['enable_actuation'].set(False)
+        self.actuation.configure(state='disabled' if survey or self.ui_running else 'normal')
+        self.sequence_button.configure(state='disabled' if survey or self.ui_running else 'normal')
 
     def actuation_changed(self):
         from tkinter import messagebox
@@ -223,7 +273,8 @@ class TestWindow:
                 '이미 실행 중', '같은 ROS 도메인에 테스트 노드가 이미 있습니다(다른 터미널/창).\n'
                 '중복 실행하면 오동작합니다. 그래도 실행할까요?'):
             return
-        missing = [settings[k] for k in ('lidar_port', 'tractor_imu_port', 'trailer_imu_port', 'arduino_port', 'camera_path')
+        devices = () if settings['mode'] == 'survey_manual' else ('lidar_port', 'tractor_imu_port', 'trailer_imu_port', 'arduino_port', 'camera_path')
+        missing = [settings[k] for k in devices
                    if settings.get(k) and str(settings[k]).startswith('/dev/') and not os.path.exists(settings[k])
                    and (k != 'arduino_port' or settings.get('enable_actuation'))]
         if missing and not messagebox.askyesno('장치 없음', '없는 장치: '+', '.join(missing)+'\n그래도 실행할까요?'):
@@ -310,8 +361,16 @@ class TestWindow:
             pass
 
     def reader(self, process):
-        for line in process.stdout:
-            self.lines.put(line.rstrip())
+        output = ((self.capture_dir/f'launch_{process.pid}.log').open('a', buffering=1)
+                  if self.capture_dir is not None else None)
+        try:
+            for line in process.stdout:
+                if output is not None:
+                    output.write(line)
+                self.lines.put(line.rstrip())
+        finally:
+            if output is not None:
+                output.close()
         self.lines.put(f'[launch 종료, 코드 {process.wait()}]')
 
     def terminate(self):
@@ -353,6 +412,8 @@ class TestWindow:
         self.ros.call(name, done)
 
     def append(self, line):
+        if self.capture_log is not None:
+            self.capture_log.write(f'{time.time():.3f} {line}\n')
         self.log.insert('end', line+'\n')
         # Bounded log so long runs do not slow the window down.
         if int(self.log.index('end-1c').split('.')[0]) > LOG_LINES:
@@ -362,6 +423,14 @@ class TestWindow:
     # --- periodic update ----------------------------------------------------
     def tick(self):
         try:
+            if self.capture_dir is not None:
+                try:
+                    pid = int((self.capture_dir/'recorder.pid').read_text())
+                    recording = 'bag' in Path(f'/proc/{pid}/cmdline').read_text()
+                except (OSError, ValueError):
+                    recording = False
+                self.recording_label.config(text='● 전체 로그 기록 중' if recording else '● 기록 중단 · 확인 필요',
+                                            foreground='#b03a2e')
             # The reader thread always drains the launch pipe; here at most a batch per tick.
             for _ in range(400):
                 if self.lines.empty():
@@ -381,6 +450,9 @@ class TestWindow:
                 self.set_running(False)
             if self.ros is not None:
                 self.ros.spin()
+            self.update_manual_guidance()
+            if self.ros is not None:
+                self.draw_camera()
                 if self.process_kind != 'sequence':
                     self.update_status()
                 if self.process_kind != 'sequence' and time.monotonic()-self.last_render > .5:
@@ -390,11 +462,95 @@ class TestWindow:
             if str(exc) != getattr(self, 'last_tick_error', ''):
                 self.last_tick_error = str(exc)
                 self.append(f'[창 표시 오류, 계속 동작: {type(exc).__name__}: {exc}]')
-        self.root.after(100, self.tick)
+        self.root.after(33, self.tick)
 
     def fresh(self, key, age=3.):
         item = self.ros.latest.get(key)
         return item[1] if item and time.monotonic()-item[0] <= age else None
+
+    def play_stop_sound(self):
+        if self.alarm_process is not None and self.alarm_process.poll() is None:
+            return
+        sound = Path('/usr/share/sounds/freedesktop/stereo/alarm-clock-elapsed.oga')
+        player = shutil.which('paplay')
+        if player and sound.is_file():
+            try:
+                self.alarm_process = subprocess.Popen([player, str(sound)],
+                    stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+                return
+            except OSError as exc:
+                self.append(f'[알림음 재생 실패: {exc}]')
+        self.root.bell()
+
+    def test_stop_alert(self):
+        self.alert_test_until = time.monotonic()+2.
+        self.play_stop_sound()
+        self.last_alarm = time.monotonic()
+        self.append('[정지 알림 시험 · 소리가 들리는지 확인하세요. 차량 명령은 보내지 않습니다.]')
+
+    def update_manual_guidance(self):
+        now = time.monotonic()
+        item = self.ros.latest.get('manual_guidance') if self.ros else None
+        packet = item[1] if item else None
+        clock_ns = self.ros.node.get_clock().now().nanoseconds if self.ros else 0
+        stamp_age = (clock_ns-packet.get('stamp_ns', 0))/1e9 if packet else 0.
+        text, color, alarm = core.manual_guidance_status(packet, now-item[0] if item else 0., stamp_age)
+        if now < self.alert_test_until and not alarm:
+            text, color, alarm = '알림 시험 · 밀기 중지\n소리가 들리는지 확인하세요 (차량 명령 없음)', '#b03a2e', False
+        flash = alarm and int(now*2) % 2 == 0
+        self.manual_alert.configure(text=text, bg='#e74c3c' if flash else color)
+        if alarm and now-self.last_alarm >= 1.5:
+            self.play_stop_sound()
+            self.last_alarm = now
+
+    def draw_camera(self):
+        now, clock_ns = time.monotonic(), self.ros.node.get_clock().now().nanoseconds
+        def age(item, stamp_ns):
+            if item is None or stamp_ns <= 0:
+                return None
+            header_age = (clock_ns-stamp_ns)/1e9
+            return max(now-item[0], header_age) if header_age>=-.03 else float('inf')
+        def stamp(message):
+            return message.header.stamp.sec*10**9+message.header.stamp.nanosec
+        overlay, raw = self.ros.latest.get('camera_overlay'), self.ros.latest.get('camera_raw')
+        overlay_age = age(overlay, stamp(overlay[1])) if overlay else None
+        if overlay_age is not None and overlay_age <= .75:
+            key, item = 'camera_overlay', overlay
+        elif raw:
+            key, item = 'camera_raw', raw
+        else:
+            key, item = 'camera_overlay', overlay
+        image_stamp = stamp(item[1]) if item else None
+        image_age = age(item, image_stamp) if item else None
+        record = self.ros.latest.get('camera_association')
+        association = record[1] if record else None
+        association_stamp = association.get('image_stamp_ns', 0) if isinstance(association, dict) else 0
+        association_age = age(record, association_stamp) if type(association_stamp) is int else None
+        times = self.ros.frame_times[key]
+        fps = (len(times)-1)/(times[-1]-times[0]) if len(times)>1 and times[-1]>times[0] else 0.
+        state = core.camera_status(association, image_age, association_age, fps, image_stamp)
+        source = ' · 인식 박스 영상' if key=='camera_overlay' else ' · 원본 영상 (인식 영상 대기)'
+        width, height = max(1, self.camera_canvas.winfo_width()), max(1, self.camera_canvas.winfo_height())
+        self.camera_stream_label.config(text=state['stream']+(source if item else ''), foreground=state['color'], wraplength=width)
+        self.camera_detection_label.config(text=state['detection'], wraplength=width)
+        self.camera_association_label.config(text=state['association'], wraplength=width)
+        render_key = (key, image_stamp, state['live'], width, height)
+        if render_key == self.camera_key:
+            return
+        self.camera_key = render_key
+        canvas = self.camera_canvas
+        canvas.delete('all')
+        if item:
+            try:
+                rgb = core.camera_rgb(item[1], width, height)
+                self.camera_photo = self.tk.PhotoImage(data=core.ppm(rgb), format='PPM')
+                canvas.create_image(width/2, height/2, image=self.camera_photo)
+            except ValueError as exc:
+                self.camera_stream_label.config(text=str(exc), foreground='#b03a2e')
+        if not state['live']:
+            canvas.create_rectangle(width*.1, height/2-40, width*.9, height/2+40, fill='#17212b', outline='')
+            canvas.create_text(width/2, height/2, text='영상 끊김' if item else '카메라 영상을 기다리는 중…',
+                               fill='white', font=('', 13))
 
     def update_status(self):
         status = self.fresh('status', 30.)
@@ -431,28 +587,47 @@ class TestWindow:
             self.fields['estimator'].config(text='정상' if state.get('valid') else core.explain(state.get('reason'))[0])
         elif self.ros.latest:
             self.fields['estimator'].config(text='/parking/state 수신 없음')
+        if status and status.get('survey_only'):
+            self.fields['estimator'].config(text=('LiDAR SLAM 위치 수신 중 · 트레일러 관절각 미측정'
+                if status.get('localization_ready') else 'LiDAR SLAM 준비 대기 · 출발 전 정지 필요'))
+            self.fields['hint'].config(text='보정/IMU 없는 손밀기 관찰 · 경로는 트레일러 직선 가정 · 모터 구동 꺼짐')
+            self.fields['camera'].config(text='영상·BBox 참고용 · 카메라와 라이다의 자동 물체 대응 없음')
 
     def draw(self):
         message = self.fresh('map', 10.)
+        source = '주차 검출 지도 /parking/detection_map'
+        if message is None:
+            message = self.fresh('slam_map', 10.)
+            source = 'SLAM 지도 /map · 주차 공간은 별도 판정'
         canvas = self.canvas
         if message is None:
+            self.map_stream_label.config(text='지도 갱신 대기 · /map 또는 /parking/detection_map 발행을 확인하세요')
             return
         import numpy as np
         info = message.info
-        key = (message.header.stamp.sec, message.header.stamp.nanosec, info.width, info.height)
+        if info.width<=0 or info.height<=0 or len(message.data)!=info.width*info.height:
+            self.map_stream_label.config(text='지도 형식 오류')
+            return
+        self.map_stream_label.config(text=f'{source} · {info.resolution:.2f}m 격자 · 좌표 {message.header.frame_id}')
+        key = (source, message.header.frame_id, message.header.stamp.sec, message.header.stamp.nanosec, info.width, info.height)
         if key != self.map_key:
             self.map_data = np.asarray(message.data, dtype=np.int16).reshape(info.height, info.width)
             self.map_key = key
         o = info.origin
         origin = [o.position.x, o.position.y, quaternion_yaw(o.orientation)]
         observation = self.fresh('observation') or {}
+        if observation.get('frame_id') != message.header.frame_id:
+            observation = {}
         state = self.fresh('state', 1.)
+        scan_view = self.ros.scan_in_frame(message.header.frame_id, self.fresh('scan', .75))
         # Follow the bay (or the vehicle); fall back to the map centre.
         center = None
         if self.vars['follow'].get() == 'bay' and observation.get('bay_polygon'):
             center = np.mean(observation['bay_polygon'], axis=0)
         elif state and state.get('valid') and state.get('state'):
             center = np.asarray(state['state'][:2])
+        if center is None and scan_view is not None:
+            center = np.asarray(scan_view[1][:2])
         if center is None:
             c, s = math.cos(origin[2]), math.sin(origin[2])
             half = np.array([info.width, info.height])*info.resolution/2
@@ -466,12 +641,19 @@ class TestWindow:
             self.dots(wall, '#404040', 1)
         for structure in observation.get('structure_points') or []:
             self.dots(structure, '#1f4fd1', 2)
+        if scan_view is not None:
+            points, laser_pose = scan_view
+            self.dots(points[::max(1, len(points)//800)], '#29b6f6', 1)
+            x, y, yaw = laser_pose
+            (px, py), (qx, qy) = self.view.pixel([[x, y], [x+.4*math.cos(yaw), y+.4*math.sin(yaw)]])
+            canvas.create_line(px, py, qx, qy, fill='#d35400', width=3, arrow='last')
+            canvas.create_text(px+8, py+8, text='LiDAR', fill='#d35400', anchor='nw')
         if observation.get('bay_polygon'):
             points = self.view.pixel(observation['bay_polygon'])
             canvas.create_polygon(*points.ravel().tolist(), outline='#1e8449' if observation.get('valid') else '#d4ac0d',
                                   fill='', width=3)
-        path = self.fresh('path', 600.)
-        if path is not None and len(path.poses) > 1:
+        path = self.fresh('survey_path' if observation.get('survey_only') else 'path', 600.)
+        if path is not None and path.header.frame_id == message.header.frame_id and len(path.poses) > 1:
             points = self.view.pixel([[p.pose.position.x, p.pose.position.y] for p in path.poses])
             canvas.create_line(*points.ravel().tolist(), fill='#e67e22', width=2)
         if state and state.get('valid') and state.get('state'):
@@ -498,6 +680,8 @@ class TestWindow:
             self.ros.close()
         if self.sequence_file is not None:
             self.sequence_file.unlink(missing_ok=True)
+        if self.alarm_process is not None and self.alarm_process.poll() is None:
+            self.alarm_process.terminate()
         self.root.destroy()
 
 

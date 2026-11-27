@@ -74,6 +74,72 @@ def test_manual_handoff_requires_stop_and_enters_existing_settle_state(node):
     assert node.test_motion_enabled and node.observation_hits == 0
 
 
+def test_manual_stop_advice_waits_for_three_maps_and_passing_far_car(node, monkeypatch):
+    import observed_stop
+    monkeypatch.setattr(observed_stop, 'safe_stop_sweep', lambda *args: {'safe': True})
+    node.operation = 'manual'
+    node.streams_ready = node.camera_ready = lambda: True
+    node.stationary = lambda: False
+    node.search_grid = lambda: None
+    node.cmd = Mock()
+    node.current, node.road_pose = np.array([6.5, 0., 0., 0.]), np.zeros(3)
+    node.footprints = Mock()
+    node.footprints.world.side_effect = lambda state: [np.array([[state[0]-1.39, 0.], [state[0]+.8, 0.]])]
+    target = Target(np.array([3., 2.]), 0., 3.3, 1.10)
+    node.last_gap_observation = PairObservation(target=target, components=[
+        np.array([[0., 1.], [1., 1.]]), np.array([[5., 1.], [6., 1.]])])
+    node.last_detect = time.monotonic()
+    node.detection_msg = OccupancyGrid()
+    for stamp in (1, 2):
+        node.detection_msg.header.stamp.sec = stamp
+        node.stable_observation(target)
+        assert node.manual_guidance()['state'] == 'confirming'
+    node.detection_msg.header.stamp.sec = 3
+    node.stable_observation(target)
+    advice = node.manual_guidance()
+    assert advice['state'] == 'approaching' and advice['distance_remaining_m'] > 0
+    assert not advice['stop_requested']
+    node.current[0] = 8.
+    assert node.manual_guidance()['stop_requested']
+    # A briefly lost target cannot tell the operator to start pushing again.
+    node.last_gap_observation = PairObservation()
+    assert node.manual_guidance()['stop_requested']
+    node.stationary = lambda: True
+    assert node.manual_guidance()['stationary']
+    assert not node.test_motion_enabled
+    node.cmd.publish.assert_not_called()
+
+
+def test_manual_guidance_initial_wait_and_sensor_loss_are_different(node):
+    node.operation = 'manual'
+    node.streams_ready = node.camera_ready = lambda: False
+    assert node.manual_guidance()['state'] == 'waiting'
+    assert not node.manual_guidance()['stop_requested']
+    node.streams_ready = node.camera_ready = lambda: True
+    node.road_pose = np.zeros(3)
+    node.last_detect = time.monotonic()
+    node.last_gap_observation = PairObservation()
+    assert node.manual_guidance()['state'] == 'searching'
+    node.streams_ready = lambda: False
+    assert node.manual_guidance()['stop_requested']
+    # Restoring a stream does not automatically clear a stop request.
+    node.streams_ready = lambda: True
+    assert node.manual_guidance()['stop_requested']
+
+
+def test_manual_guidance_stops_on_frozen_detection_and_is_inactive_in_auto(node):
+    node.operation = 'manual'
+    node.streams_ready = node.camera_ready = lambda: True
+    node.road_pose = np.zeros(3)
+    node.last_detect = time.monotonic()
+    node.last_gap_observation = PairObservation()
+    assert node.manual_guidance()['state'] == 'searching'
+    node.last_detect -= 2.
+    assert node.manual_guidance()['stop_requested']
+    node.operation = 'automatic_search'
+    assert node.manual_guidance()['state'] == 'inactive'
+
+
 def test_stop_uses_fresh_stationary_poses_and_requires_new_detection_maps(node):
     node.streams_ready = lambda: True
     node.est.pose_stamp = 1.

@@ -1,0 +1,17 @@
+{
+ "mode": "survey_manual",
+ "workspace": "/home/heven/Trailer_autodrive/mvsim_slam_real",
+ "lidar_port": "/dev/ttyUSB0",
+ "tractor_imu_port": "/dev/imu_tractor",
+ "trailer_imu_port": "/dev/imu_trailer",
+ "arduino_port": "",
+ "camera_path": "/dev/v4l/by-id/usb-046d_HD_Pro_Webcam_C920_7DB05C1F-video-index0",
+ "calibration_file": "",
+ "detector_model": "",
+ "detector_confidence": "0.65",
+ "slot_width": "",
+ "enable_rviz": false,
+ "ROS_DOMAIN_ID": "0",
+ "ROS_LOCALHOST_ONLY": "1",
+ "span": 14.242677824267783
+}

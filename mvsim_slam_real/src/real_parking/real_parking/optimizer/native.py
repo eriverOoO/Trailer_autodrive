@@ -2,7 +2,12 @@ import ctypes,math
 from pathlib import Path
 import numpy as np
 from tractor_parking_clearance import footprint_clearances as original_clearances
-LIB=ctypes.CDLL(str(Path(__file__).with_name('libnative.so')))
+_library=Path(__file__).with_name('libnative.so')
+if not _library.is_file():
+ from ament_index_python.packages import get_package_prefix
+ _built=list(Path(get_package_prefix('real_parking')).glob('**/real_parking/optimizer/libnative.so'))
+ if len(_built)==1:_library=_built[0]
+LIB=ctypes.CDLL(str(_library))
 P=np.ctypeslib.ndpointer(dtype=np.float64,flags='C_CONTIGUOUS')
 LIB.propagate_native.argtypes=[P,ctypes.c_double,ctypes.c_double,P,ctypes.c_int,P];LIB.propagate_native.restype=None
 LIB.clearance_native.argtypes=[P,ctypes.c_int,P,ctypes.c_int,ctypes.c_int,ctypes.c_double,P,ctypes.c_int,ctypes.c_int,P,ctypes.c_double,ctypes.c_int,P];LIB.clearance_native.restype=None

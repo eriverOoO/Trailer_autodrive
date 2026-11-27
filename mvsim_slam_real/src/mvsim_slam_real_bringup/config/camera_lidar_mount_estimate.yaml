@@ -1,0 +1,8 @@
+# User-reported rough placement, 2026-11-27. NOT a projection/TF calibration.
+measured: false
+source: user approximate placement
+camera_position_relative_to_lidar_forward_left_up_m:
+  forward: null
+  left: 0.30
+  up: null
+camera_orientation_relative_to_lidar: null

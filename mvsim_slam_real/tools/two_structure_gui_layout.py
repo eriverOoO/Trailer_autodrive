@@ -25,18 +25,30 @@ def build(ui, root, map_size):
     style.configure('Section.TLabel', font=('', 10, 'bold'))
     style.configure('Muted.TLabel', foreground='#607080')
     header = ttk.Frame(root, padding=(14, 10, 14, 6))
-    header.grid(row=0, column=0, columnspan=2, sticky='ew')
+    header.grid(row=0, column=0, columnspan=3, sticky='ew')
     ttk.Label(header, text='주차 테스트', style='Heading.TLabel').pack(side='left')
     ui.process_label = ttk.Label(header, text='대기 · 테스트 실행 전', style='Muted.TLabel')
     ui.process_label.pack(side='right')
+    ui.recording_label = ttk.Label(header, text='', foreground='#b03a2e', font=('', 11, 'bold'))
+    ui.recording_label.pack(side='right', padx=(12, 12))
+
+    alert = ttk.Frame(root, padding=(14, 0, 14, 6))
+    alert.grid(row=1, column=0, columnspan=3, sticky='ew')
+    ui.manual_alert = tk.Label(alert, text='손밀기 안내 · 탐색 노드 대기', bg='#34495e', fg='white',
+                               font=('', 19, 'bold'), height=2, anchor='center')
+    ui.manual_alert.pack(side='left', fill='x', expand=True)
+    ttk.Button(alert, text='정지 알림 시험', command=ui.test_stop_alert).pack(side='right', padx=(10, 0))
 
     map_panel = ttk.Frame(root, padding=(14, 6, 8, 12))
-    map_panel.grid(row=1, column=0, sticky='nsew')
+    map_panel.grid(row=2, column=0, sticky='nsew')
+    ttk.Label(map_panel, text='주차 관측 지도', style='Section.TLabel').pack(anchor='w', pady=(0, 6))
+    ui.map_stream_label = ttk.Label(map_panel, text='지도 수신 대기', style='Muted.TLabel', wraplength=500)
+    ui.map_stream_label.pack(anchor='w', pady=(0, 4))
     ui.canvas = tk.Canvas(map_panel, width=map_size, height=map_size,
                           bg='#969696', highlightthickness=0)
     ui.canvas.pack(anchor='n', pady=(0, 8))
     ui.canvas.create_text(map_size/2, map_size/2,
-                          text='테스트 실행 후 관측 지도가 표시됩니다', fill='white')
+                          text='SLAM 지도 또는 주차 검출 지도를 기다리는 중…', fill='white')
     view = ttk.Frame(map_panel)
     view.pack(fill='x')
     ttk.Label(view, text='범위(m)').pack(side='left')
@@ -46,12 +58,25 @@ def build(ui, root, map_size):
     ui.vars['follow'] = tk.StringVar(value='bay')
     for value, label in [('bay', '공간 중심'), ('vehicle', '차량 중심')]:
         ttk.Radiobutton(view, text=label, value=value, variable=ui.vars['follow']).pack(side='left')
-    ttk.Label(map_panel, text='초록 공간 · 노랑 후보 · 파랑 구조물 · 진회색 벽\n'
+    ttk.Label(map_panel, text='초록 공간 · 노랑 후보 · 파랑 구조물 · 진회색 벽 · 하늘색 라이다 점\n'
               '빨강 차량 · 주황 경로 / 흰색 빈 공간 · 검정 점유 · 회색 미관측',
               style='Muted.TLabel').pack(anchor='w', pady=(8, 0))
 
+    camera = ttk.Frame(root, padding=(8, 6, 8, 12))
+    camera.grid(row=2, column=1, sticky='nsew')
+    ttk.Label(camera, text='실시간 카메라 · 전동차 인식', style='Section.TLabel').pack(anchor='w', pady=(0, 6))
+    ui.camera_canvas = tk.Canvas(camera, width=600, height=450, bg='#17212b', highlightthickness=0)
+    ui.camera_canvas.pack(anchor='n', fill='x')
+    ui.camera_canvas.create_text(300, 225, text='카메라 영상을 기다리는 중…', fill='white', font=('', 13))
+    for name in ('stream', 'detection', 'association'):
+        label = ttk.Label(camera, text='대기 중', wraplength=570, justify='left', padding=(0, 7))
+        label.pack(anchor='w', fill='x')
+        setattr(ui, 'camera_'+name+'_label', label)
+    ttk.Label(camera, text='박스는 차체 후보입니다. 공간 확정 여부는 오른쪽의 공간 인식 상태를 확인하세요.',
+              wraplength=570, style='Muted.TLabel').pack(anchor='w', pady=(8, 0))
+
     side = ttk.Frame(root, padding=(8, 6, 14, 12))
-    side.grid(row=1, column=1, sticky='nsew')
+    side.grid(row=2, column=2, sticky='nsew')
     ui.setting_widgets = []
     ui.vars['mode'] = tk.StringVar(value=ui.settings['mode'])
     sensor, survey = core.mode_choices(ui.settings['mode'])
@@ -62,7 +87,7 @@ def build(ui, root, map_size):
             ('센서', ui.sensor_choice, core.SENSOR_CHOICES.values()),
             ('탐색 이동', ui.survey_choice, core.SURVEY_CHOICES.values())]):
         ttk.Label(modes, text=label, style='Section.TLabel').grid(row=0, column=column, sticky='w')
-        combo = ttk.Combobox(modes, textvariable=variable, values=list(values), state='readonly', width=23)
+        combo = ttk.Combobox(modes, textvariable=variable, values=list(values), state='readonly', width=16)
         combo.grid(row=1, column=column, sticky='ew', padx=(0, 8) if column == 0 else 0, pady=(3, 6))
         combo.bind('<<ComboboxSelected>>', ui.selection_changed)
         modes.columnconfigure(column, weight=1)
@@ -117,7 +142,7 @@ def build(ui, root, map_size):
         ui.notebook.add(tab, text=title)
         tabs[title] = tab
     details = scroll_frame(tabs['상태 상세'], tk)
-    for key, label in [('hint', '확인할 것'), ('bay', '공간 정보'), ('camera', '카메라'),
+    for key, label in [('hint', '확인할 것'), ('bay', '공간 정보'), ('camera', '주차 공간의 카메라 확인'),
                        ('estimator', '위치 추정'), ('response', '마지막 명령 응답')]:
         ttk.Label(details, text=label, style='Section.TLabel').pack(anchor='w', pady=(6, 2))
         ui.fields[key] = ttk.Label(details, text='-', wraplength=440, justify='left')
@@ -153,4 +178,5 @@ def build(ui, root, map_size):
     log_scroll.pack(side='right', fill='y')
     ui.log.pack(fill='both', expand=True)
     root.columnconfigure(1, weight=1)
-    root.rowconfigure(1, weight=1)
+    root.columnconfigure(2, weight=1)
+    root.rowconfigure(2, weight=1)

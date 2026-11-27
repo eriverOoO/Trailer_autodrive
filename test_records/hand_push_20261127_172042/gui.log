@@ -1,0 +1,1 @@
+1795767762.429 $ ros2 launch ... survey_only:=true manual_survey:=true require_camera:=false start_stack:=false start_g6_driver:=false enable_actuation:=false enable_rviz:=false

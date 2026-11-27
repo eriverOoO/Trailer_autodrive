@@ -9,8 +9,9 @@ const int FORWARD_LEFT_1 = 6;
 const int FORWARD_LEFT_2 = 7;
 const int POT = A2;
 const int STEERING_SPEED = 128;
-const int RESISTANCE_MOST_LEFT = 600;
-const int RESISTANCE_MOST_RIGHT = 445;
+// Measured steering potentiometer ADC endpoints.
+const int RESISTANCE_MOST_LEFT = 612;
+const int RESISTANCE_MOST_RIGHT = 463;
 const int MAX_STEERING_STEP = 7;
 const unsigned long COMMAND_INTERVAL_MS = 50;
 const unsigned long COMMAND_TIMEOUT_MS = 300;
@@ -81,7 +82,8 @@ void loop() {
   int resistance = analogRead(POT);
   int currentAngle = map(resistance, RESISTANCE_MOST_LEFT,
                          RESISTANCE_MOST_RIGHT, -MAX_STEERING_STEP,
-                         MAX_STEERING_STEP + 1);
+                         MAX_STEERING_STEP);
+  currentAngle = constrain(currentAngle, -MAX_STEERING_STEP, MAX_STEERING_STEP);
   if (currentAngle == angle) {
     analogWrite(STEERING_1, LOW);
     analogWrite(STEERING_2, LOW);

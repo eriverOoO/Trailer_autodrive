@@ -11,6 +11,8 @@ import shlex
 import numpy as np
 
 MODES = {
+    'survey_manual': ('영상+LiDAR · 보정/IMU 없이 손밀기 → 참고 경로',
+                      {'survey_only': 'true', 'manual_survey': 'true', 'require_camera': 'false'}),
     # key: (label, launch arguments)
     'lidar_manual': ('LiDAR만 · 손으로 밀어 탐색 → [주차 시작]',
                      {'require_camera': 'false', 'allow_lidar_only_motion': 'true', 'manual_survey': 'true'}),
@@ -41,6 +43,15 @@ def lidar_height(geometry_file):
 def placement_guide(mode, height=None):
     """Short placement rules shown in the window (Korean)."""
     manual = MODES.get(mode, ('', {}))[1].get('manual_survey') == 'true'
+    if mode == 'survey_manual':
+        return ('[보정/IMU 없이 손밀기]\n현재 실행 중인 카메라·LiDAR·SLAM을 사용합니다.\n'
+                '카메라는 영상·BBox 참고용, 공간 후보는 LiDAR로 탐지합니다.\n'
+                '출발 위치에서 약 1초간 멈추면 탐색 기준을 잡습니다.\n'
+                '빨간 밀기 중지 + 반복음이 나오면 멈추세요. 실제 제동은 하지 않습니다.\n'
+                '관절각 미측정: 정지 안내에는 전체 차체 크기의 보수적인 통과 여유를 사용합니다.\n'
+                '정지 확인 후 트레일러 직선 가정으로 참고 경로를 계획합니다.\n'
+                '실제 트레일러가 꺾여 있으면 계획의 시작 자세와 다릅니다. 모터 구동은 꺼져 있습니다.\n'
+                '낮은 차량이 LiDAR 스캔 높이에 잡히는지도 확인하세요.')
     if height is None:
         tall = '· 높이: LiDAR 스캔 높이보다 높아야 함 (vehicle_geometry.yaml의 lidar_mounting_offset z)'
     else:
@@ -61,6 +72,8 @@ def placement_guide(mode, height=None):
     if manual:
         lines += [
             '[손으로 밀 때]',
+            '· 출발 전 [정지 알림 시험]으로 소리 확인. 큰 빨강 [밀기 중지] + 반복음이 나오면 즉시 멈추기',
+            '· 새 지도 3장으로 공간 확인 + 트레일러 후단이 두 번째 차를 지난 뒤 정지 알림. 센서가 끊겨도 정지 알림',
             f'· 미는 동안은 모터 0, 충돌 검사 안 함 → 미는 사람이 {CLEARANCE_M} m 안에 잡혀도 멈추지 않음',
             '· 트레일러 뒤 가운데에서 밀기. 공간 옆 도로에 서 있거나 오래 머물지 않기 (사람이 지도에 장애물로 남을 수 있음)',
             f'· [주차 시작] 전에 차에서 1 m 이상 떨어지기 → 이후엔 어느 방향이든 차체 {CLEARANCE_M} m 안에 아무것도 없어야 함',
@@ -68,6 +81,28 @@ def placement_guide(mode, height=None):
     else:
         lines.append(f'[자동 주행] 어느 방향이든 차체 {CLEARANCE_M} m 안에 아무것도(사람 포함) 없어야 함 → 있으면 비상정지')
     return '\n'.join(lines)
+
+
+def manual_guidance_status(packet, receipt_age=0., stamp_age=0.):
+    """Turn current operator advice into a banner; a lost active stream requests stop."""
+    if not packet or packet.get('state') == 'inactive':
+        return '손밀기 안내 · 탐색 노드 대기', '#34495e', False
+    if not -.03 <= stamp_age <= 1. or receipt_age > 1.:
+        return '밀기 중지 · 탐색 안내 연결 끊김\n멈춘 뒤 센서·탐색 노드를 확인하세요', '#b03a2e', True
+    reason = packet.get('reason', '')
+    if packet.get('stop_requested'):
+        if packet.get('stationary'):
+            if packet.get('survey_only'):
+                return '정지 확인 · 그대로 유지하세요\n트레일러 직선 가정으로 참고 경로 계획 · 모터 구동 꺼짐', '#1e6b50', False
+            return '정지 확인 · 그대로 유지하세요\n주차하려면 손을 떼고 주변에서 떨어진 뒤 [주차 시작]', '#1e6b50', False
+        return '밀기 중지 · 지금 멈추세요\n'+reason, '#b03a2e', True
+    if packet.get('state') == 'waiting':
+        return reason, '#8c5900', False
+    distance = packet.get('distance_remaining_m')
+    if distance is not None:
+        reason += f' · 정지 기준까지 약 {distance:.2f} m'
+    # Searching is advisory, not certification that the forward path is clear.
+    return reason, '#245579', False
 
 DEFAULT_SETTINGS = {
     'mode': 'lidar_manual',
@@ -85,7 +120,7 @@ DEFAULT_SETTINGS = {
     'enable_rviz': False,
 }
 
-SENSOR_CHOICES = {'camera': '카메라 + LiDAR', 'lidar': 'LiDAR만 · 진단'}
+SENSOR_CHOICES = {'camera': '카메라 + LiDAR', 'lidar': 'LiDAR만 · 진단', 'survey': '영상+LiDAR · 보정/IMU 없이'}
 SURVEY_CHOICES = {'manual': '손으로 밀기', 'auto': '자동 전진 탐색'}
 
 
@@ -107,6 +142,8 @@ def mode_from_choices(sensor, survey):
 def primary_action(mode):
     """Only offer the start service appropriate for the selected survey mode."""
     mode_choices(mode)  # validate before selecting a service
+    if mode == 'survey_manual':
+        return 'start_parking', '정지 후 참고 경로 계획'
     return ('start_parking', '주차 시작') if mode.endswith('_manual') else ('start_search', '자동 탐색 시작')
 
 
@@ -115,6 +152,15 @@ def launch_arguments(settings):
     mode = settings.get('mode', 'lidar_manual')
     if mode not in MODES:
         raise ValueError(f'unknown mode {mode!r}')
+    if mode == 'survey_manual':
+        if settings.get('enable_actuation'):
+            raise ValueError('보정/IMU 없는 손밀기 모드는 모터를 구동할 수 없습니다.')
+        slot = str(settings.get('slot_width', '')).strip()
+        if slot and (not math.isfinite(float(slot)) or not .5 <= float(slot) <= 3.):
+            raise ValueError('slot_width must be 0.5..3.0 m')
+        return ['survey_only:=true', 'manual_survey:=true', 'require_camera:=false',
+                'start_stack:=false', 'start_g6_driver:=false', 'enable_actuation:=false',
+                'enable_rviz:=false']+([f'slot_width:={float(slot):.3f}'] if slot else [])
     camera = MODES[mode][1].get('require_camera') == 'true'
     args = {'development_mode': 'false', 'start_g6_driver': 'true', **MODES[mode][1]}
     for name in ('lidar_port', 'tractor_imu_port', 'trailer_imu_port'):
@@ -123,10 +169,13 @@ def launch_arguments(settings):
             raise ValueError(f'{name} is required')
         args[name] = value
     if camera:
-        for name in ('camera_path', 'calibration_file'):
+        for name, explanation in (
+                ('camera_path', '카메라 장치 경로가 비어 있습니다. [연결 설정]의 [카메라]에 C920 장치 경로를 입력하세요.'),
+                ('calibration_file', '실측 카메라–LiDAR 보정 파일이 없습니다. [연결 설정]의 [카메라 보정]을 지정하세요. '
+                 '현재 영상·점군 보기는 가능하지만 결합 판정과 주차 탐색은 준비되지 않았습니다.')):
             value = str(settings.get(name, '')).strip()
             if not value:
-                raise ValueError(f'{name} is required in camera modes')
+                raise ValueError(explanation)
             args[name] = value
     elif str(settings.get('camera_path', '')).strip():
         # Camera still runs for reporting in LiDAR-only modes when connected.
@@ -286,6 +335,95 @@ def ppm(rgb):
     """Binary PPM bytes for tkinter.PhotoImage(data=..., format='PPM')."""
     rgb = np.ascontiguousarray(rgb, dtype=np.uint8)
     return f'P6 {rgb.shape[1]} {rgb.shape[0]} 255 '.encode('ascii')+rgb.tobytes()
+
+
+def camera_rgb(message, width=600, height=450):
+    """Decode common ROS images, respecting row padding, and fit without stretching."""
+    import cv2
+    channels = {'rgb8': 3, 'bgr8': 3, '8UC3': 3, 'mono8': 1}.get(message.encoding)
+    if channels is None:
+        raise ValueError('지원하지 않는 영상 형식: '+str(message.encoding))
+    if message.width <= 0 or message.height <= 0 or message.step < message.width*channels:
+        raise ValueError('영상 크기 또는 행 간격이 잘못됐습니다')
+    raw = np.frombuffer(message.data, dtype=np.uint8)
+    if raw.size < message.height*message.step:
+        raise ValueError('영상 데이터가 잘렸습니다')
+    pixels = raw[:message.height*message.step].reshape(message.height, message.step)
+    pixels = pixels[:, :message.width*channels].reshape(message.height, message.width, channels)
+    if message.encoding in ('bgr8', '8UC3'):
+        pixels = pixels[:, :, ::-1]
+    elif channels == 1:
+        pixels = np.repeat(pixels, 3, axis=2)
+    scale = min(width/message.width, height/message.height)
+    w, h = max(1, round(message.width*scale)), max(1, round(message.height*scale))
+    result = np.full((height, width, 3), (23, 33, 43), dtype=np.uint8)
+    x, y = (width-w)//2, (height-h)//2
+    result[y:y+h, x:x+w] = cv2.resize(pixels, (w, h), interpolation=cv2.INTER_AREA if scale<1 else cv2.INTER_LINEAR)
+    return result
+
+
+def scan_points(scan, translation, quaternion):
+    """Project finite measured returns into the selected map using an actual TF."""
+    q = np.asarray(quaternion, dtype=float)
+    t = np.asarray(translation, dtype=float)
+    if (q.shape!=(4,) or t.shape!=(2,) or not np.isfinite(q).all() or not np.isfinite(t).all()
+            or abs(float(q@q)-1.)>.01):
+        raise ValueError('Invalid scan transform')
+    ranges = np.asarray(scan.ranges, dtype=float)
+    valid = np.isfinite(ranges) & (ranges>=scan.range_min) & (ranges<=scan.range_max)
+    angles = scan.angle_min+np.flatnonzero(valid)*scan.angle_increment
+    points = np.column_stack((ranges[valid]*np.cos(angles), ranges[valid]*np.sin(angles)))
+    x,y,z,w = q
+    rotation = np.array([[1-2*(y*y+z*z), 2*(x*y-z*w)],
+                         [2*(x*y+z*w), 1-2*(x*x+z*z)]])
+    return points@rotation.T+t
+
+
+def camera_status(association=None, image_age=None, association_age=None, fps=0., image_stamp_ns=None):
+    """Keep fresh video, detector output, and calibrated correspondence distinct."""
+    result = {'stream': '영상 대기 · 카메라 연결/실행 상태를 확인하세요',
+              'detection': '인식 결과 대기', 'association': '라이다 대응 대기',
+              'color': '#b03a2e', 'live': False}
+    if image_age is None:
+        return result
+    if not math.isfinite(image_age) or not -.03 <= image_age <= .75:
+        result.update(stream='영상 끊김 · 마지막 화면은 현재 상태가 아닙니다',
+                      detection='인식 상태 만료', association='라이다 대응 상태 만료')
+        return result
+    result.update(stream=f'LIVE · {fps:.1f} FPS · 영상 지연 {max(0., image_age)*1000:.0f} ms',
+                  color='#1e8449', live=True)
+    if (not isinstance(association, dict) or association_age is None
+            or not math.isfinite(association_age) or not -.03 <= association_age <= .75):
+        result.update(detection='인식 결과 대기/끊김 · 영상 수신과 별도입니다')
+        return result
+    stamp = association.get('image_stamp_ns')
+    if (image_stamp_ns is not None and (type(stamp) is not int or stamp <= 0
+                                       or abs(stamp-image_stamp_ns)>150_000_000)):
+        result.update(detection='영상에 맞는 인식 결과 갱신 대기')
+        return result
+    candidates = association.get('image_candidates') or []
+    if not isinstance(candidates, list):
+        candidates = []
+    cars = [item for item in candidates if isinstance(item, dict) and item.get('label')=='ride_on_car']
+    scores = [item['confidence'] for item in cars
+              if type(item.get('confidence')) in (int, float) and math.isfinite(item['confidence'])
+              and 0<=item['confidence']<=1]
+    if cars:
+        result['detection'] = f'차체 후보 {len(cars)}개'+(f' · 최대 신뢰도 {max(scores):.0%}' if scores else '')
+    else:
+        result['detection'] = '차체 미검출' if association.get('detector_backend')=='ride_on_onnx' else '색상·윤곽 진단 · 전동차 모델 미사용'
+    if association.get('calibrated') is not True:
+        result['association'] = '보정 없음 · 라이다 대응 전'
+    elif association.get('valid') is not True:
+        result['association'] = '보정 적용 · 라이다 대응 대기: '+str(association.get('reason', '입력 확인 필요'))
+    else:
+        groups = association.get('objects') or []
+        count = len(groups) if isinstance(groups, list) else 0
+        result['association'] = f'라이다 대응 후보 {count}개' if count else '보정 적용 · 차체에 대응하는 점 없음'
+        scan_stamp = association.get('scan_stamp_ns')
+        if type(stamp) is int and type(scan_stamp) is int:
+            result['association'] += f' · 시각차 {abs(stamp-scan_stamp)/1e6:.0f} ms'
+    return result
 
 
 class MapView:

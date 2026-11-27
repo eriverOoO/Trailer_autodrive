@@ -41,7 +41,18 @@ def test_compact_selectors_preserve_launch_mode_and_start_service(mode):
     service, label = core.primary_action(mode)
     manual = args(mode=mode, camera_path='/dev/video0', calibration_file='/c.json').get('manual_survey') == 'true'
     assert service == ('start_parking' if manual else 'start_search')
-    assert label == ('주차 시작' if manual else '자동 탐색 시작')
+    assert label == ('정지 후 참고 경로 계획' if mode == 'survey_manual' else
+                     '주차 시작' if manual else '자동 탐색 시작')
+
+
+def test_uncalibrated_hand_push_uses_existing_sensors_without_actuation():
+    values = args(mode='survey_manual', camera_path='', calibration_file='',
+                  tractor_imu_port='', trailer_imu_port='')
+    assert values['survey_only'] == 'true'
+    assert values['start_stack'] == values['start_g6_driver'] == values['enable_actuation'] == 'false'
+    assert values['require_camera'] == 'false'
+    with pytest.raises(ValueError, match='모터'):
+        args(mode='survey_manual', enable_actuation=True)
 
 
 def test_preview_and_mismatched_start_cannot_send_commands():
@@ -64,6 +75,17 @@ def test_preview_and_mismatched_start_cannot_send_commands():
     window.current_settings = lambda: {'mode': 'camera_auto'}
     window.start_action()
     assert calls[-1][0] == 'start_parking'
+
+
+def test_gui_service_client_does_not_count_as_running_stack():
+    from types import SimpleNamespace
+    sys.path.insert(0,str(W/'tools'))
+    from two_structure_test_gui import RosLink
+    link = object.__new__(RosLink)
+    link.clients = {'start_search': SimpleNamespace(service_is_ready=lambda: False)}
+    assert not link.stack_running()
+    link.clients['start_search'].service_is_ready = lambda: True
+    assert link.stack_running()
 
 
 def test_motors_off_by_default_and_need_arduino_when_enabled():

@@ -1,0 +1,12 @@
+{
+  "started_at": "2026-11-27T17:20:42.039423+09:00",
+  "purpose": "Second hand-push pass: all ROS topics and full UI launch output",
+  "mode": "survey_manual",
+  "actuation": false,
+  "camera_calibrated": false,
+  "trailer_articulation": "unmeasured; straight assumption for conditional plans",
+  "camera_approx_left_of_lidar_m": 0.3,
+  "ended_at": "2026-11-27T17:24:22.528894+09:00",
+  "recording_format": "MCAP with Zstandard file compression",
+  "sqlite_preflight_failure": "Preflight SQLite recorder stopped before user start; complete main test recorded in rosbag_mcap"
+}

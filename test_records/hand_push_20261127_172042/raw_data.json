@@ -1,0 +1,6 @@
+{
+  "release": "hand-push-20261127-172042",
+  "url": "https://github.com/eriverOoO/Trailer_autodrive/releases/tag/hand-push-20261127-172042",
+  "contains": "Entire original session directory including raw MCAP, failed SQLite preflight, logs, configuration and source snapshot",
+  "archive": "hand_push_20261127_172042.tar.zst.part-*"
+}

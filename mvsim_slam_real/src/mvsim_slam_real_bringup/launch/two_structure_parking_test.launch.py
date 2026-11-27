@@ -23,6 +23,13 @@ def base_launch():
 def nodes(context):
     base = base_launch()
     value = lambda name: LaunchConfiguration(name).perform(context)
+    if base.enabled(context, 'survey_only'):
+        if base.enabled(context, 'enable_actuation'):
+            raise RuntimeError('survey_only cannot enable actuation')
+        return [Node(package='real_parking', executable='hand_push_survey',
+                     parameters=[{'geometry_file': value('geometry_file'),
+                                  'test_params_file': value('test_params_file'),
+                                  'slot_width': float(value('slot_width') or 0.)}], output='screen')]
     if base.enabled(context, 'enable_vision'):
         raise RuntimeError('Use this test camera_path/image_topic, not the legacy enable_vision launch')
     if value('camera_path') and base.enabled(context, 'development_mode'):
@@ -86,6 +93,7 @@ def generate_launch_description():
                  if isinstance(action, DeclareLaunchArgument)]
     arguments += [DeclareLaunchArgument(name, default_value=default) for name, default in {
         'test_params_file': str(share/'config/two_structure_test.yaml'),
+        'survey_only': 'false',  # Existing live /map, /scan, camera; no IMU or control stack.
         'slot_width': '',  # Empty retains the YAML depth; optional launch override in metres.
         'manual_survey': 'false',
         'require_camera': 'true',
